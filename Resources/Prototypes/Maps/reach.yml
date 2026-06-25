@@ -2,6 +2,7 @@
   id: Reach
   mapName: 'Reach'
   mapPath: /Maps/reach.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 0
   maxPlayers: 7
   stations:

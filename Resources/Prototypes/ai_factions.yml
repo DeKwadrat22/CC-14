@@ -10,6 +10,8 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  friendly:
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: NanoTrasen
@@ -23,6 +25,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Mouse
@@ -45,6 +48,7 @@
   - Xeno
   - AllHostile
   - Dragon
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: SimpleHostile
@@ -62,6 +66,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: SimpleNeutral
@@ -78,6 +83,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Xeno
@@ -92,6 +98,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Zombie
@@ -107,6 +114,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Revolutionary
@@ -118,6 +126,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: AllHostile
@@ -135,6 +144,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Wizard
@@ -171,3 +181,23 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+
+# Claw Command - Lavaland mob faction
+- type: npcFaction
+  id: Lavafauna
+  hostile:
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard
+  - Xenoborg
+  - AllHostile
+  friendly:
+  - Dragon

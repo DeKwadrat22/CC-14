@@ -2,6 +2,7 @@
   id: Meta
   mapName: 'Meta Station'
   mapPath: /Maps/meta.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 25
   maxPlayers: 85
   stations:

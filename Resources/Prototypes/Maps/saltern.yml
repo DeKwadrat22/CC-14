@@ -2,6 +2,7 @@
   id: Saltern
   mapName: 'Saltern'
   mapPath: /Maps/saltern.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 0
   maxPlayers: 35
   fallback: true

@@ -1,0 +1,157 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Inert stubs for Goob-only entity prototypes referenced by ported lavaland
+# map YAML (mining outpost, ruins). The actual implementations either
+# - belong to systems we deliberately did not port (Shitmed surgery,
+#   ShaftMiner job), or
+# - haven't been wired up yet (Hierophant arena props).
+#
+# Without these stubs, MapLoaderSystem throws "Missing prototype for map"
+# when loading the ruin grid, which propagates up to GameTicker as an
+# entity-without-Transform exception and triggers an infinite RestartRound.
+#
+# Each stub spawns as an unobtrusive placeholder so the map loads; behavior
+# is added later when (and if) the corresponding system is ported.
+
+# --- Shitmed surgery tools (we don't port _Shitmed; replace as inert items)
+- type: entity
+  parent: BaseItem
+  id: AdvancedRetractor
+  suffix: "ClawCmd stub"
+  name: advanced retractor
+  description: Stub placeholder. (Shitmed surgery not ported.)
+- type: entity
+  parent: BaseItem
+  id: BoneGel
+  suffix: "ClawCmd stub"
+  name: bone gel
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: EnergyCautery
+  suffix: "ClawCmd stub"
+  name: energy cautery
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: EnergyScalpel
+  suffix: "ClawCmd stub"
+  name: energy scalpel
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: MedicalBiofabricator
+  suffix: "ClawCmd stub"
+  name: medical biofabricator
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: MedicalCyberneticEyes
+  suffix: "ClawCmd stub"
+  name: cybernetic eyes
+  description: Stub placeholder.
+
+# --- Shitmed implants
+- type: entity
+  parent: BaseItem
+  id: NutrimentImplanter
+  suffix: "ClawCmd stub"
+  name: nutriment implanter
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: SmokeImplanter
+  suffix: "ClawCmd stub"
+  name: smoke implanter
+  description: Stub placeholder.
+
+# --- ShaftMiner job (we use SalvageSpecialist) — substitute with fork's vanilla locker
+- type: entity
+  parent: LockerSalvageSpecialistFilledHardsuit
+  id: LockerShaftMinerFilledHardsuit
+  suffix: "ClawCmd substitute"
+
+# --- Hierophant arena props (Phase 5 partial)
+- type: entity
+  parent: WallReinforced
+  id: WallHierophantArena
+  suffix: "ClawCmd stub"
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconRuinHierophantArena
+  suffix: "ClawCmd stub"
+  name: Hierophant Arena
+- type: entity
+  parent: BaseStructure
+  id: SpawnMobHierophant
+  suffix: "ClawCmd stub"
+  name: Hierophant spawner
+  description: Stub placeholder. (Spawner system not wired.)
+
+# --- Mining outpost vendors / equipment
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMiningDrobe
+  suffix: "ClawCmd stub"
+  name: MiningDrobe
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cargodrobe.rsi
+- type: entity
+  parent: BaseItem
+  id: PKAUpgradePressure
+  suffix: "ClawCmd stub"
+  name: PKA pressure mod
+  description: Stub placeholder.
+
+# --- Syndicate ruin items
+- type: entity
+  parent: BaseItem
+  id: CardBoxSyndicate
+  suffix: "ClawCmd stub"
+  name: syndicate card box
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: MedkitCombatBlueFilled
+  suffix: "ClawCmd stub"
+  name: combat medkit (blue)
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: WeaponDisablerSyndicate
+  suffix: "ClawCmd stub"
+  name: syndicate disabler
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: WeaponRifleM90
+  suffix: "ClawCmd stub"
+  name: M90 rifle
+  description: Stub placeholder.
+
+# --- Other miscellaneous
+- type: entity
+  parent: BaseItem
+  id: UraniumChemistryVial
+  suffix: "ClawCmd stub"
+  name: uranium vial
+  description: Stub placeholder.
+- type: entity
+  parent: BaseItem
+  id: TelecomTransmitter
+  suffix: "ClawCmd stub"
+  name: telecom transmitter
+  description: Stub placeholder.
+
+# --- Office chair spawners (DM placeholder)
+- type: entity
+  parent: MarkerBase
+  id: SpawnVehicleChairOfficeDark
+  suffix: "ClawCmd stub"
+  name: chair spawner (dark)
+- type: entity
+  parent: MarkerBase
+  id: SpawnVehicleChairOfficeLight
+  suffix: "ClawCmd stub"
+  name: chair spawner (light)

@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported additively: small marker base used by crusher/katana weapons.
+
+- type: entity
+  id: BaseSalvageContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ SalvageSpecialist ] # _ClawCommand: fork uses SalvageSpecialist (Goob used ShaftMiner)

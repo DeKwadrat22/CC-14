@@ -105,3 +105,9 @@
   background: /Textures/_ClawCommand/LobbyScreens/nuke_club.png
   title: lobby-state-background-nukeclub-title
   artist: lobby-state-background-nukeclub-artist
+
+- type: lobbyBackground
+  id: enlist-lavaland
+  background: /Textures/LobbyScreens/enlist.webp
+  name: Nanotrasen wants YOU.
+  artist: thebiggestbruh

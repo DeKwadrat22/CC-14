@@ -2,6 +2,7 @@
   id: Box
   mapName: 'Box Station'
   mapPath: /Maps/box.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 14 # Claw Command
   stations:
     Boxstation:

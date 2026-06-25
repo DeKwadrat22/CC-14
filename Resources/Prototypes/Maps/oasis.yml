@@ -2,6 +2,7 @@
   id: Oasis
   mapName: 'Oasis'
   mapPath: /Maps/oasis.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 70
   stations:
     Oasis:

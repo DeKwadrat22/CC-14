@@ -3,6 +3,7 @@
   id: Pebble
   mapName: 'Pebble'
   mapPath: /Maps/pebble.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 0
   maxPlayers: 20
   stations:

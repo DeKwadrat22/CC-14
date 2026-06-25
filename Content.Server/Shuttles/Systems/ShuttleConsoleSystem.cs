@@ -38,6 +38,9 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private SharedContentEyeSystem _eyeSystem = default!;
     [Dependency] private EntityQuery<PilotComponent> _pilotQuery = default!;
+    // _ClawCommand Lavaland change start
+    [Dependency] private _ClawCommand.Lavaland.Shuttles.Systems.DockingConsoleSystem _dockingConsole = default!;
+    // _ClawCommand Lavaland change end
 
     private readonly HashSet<Entity<ShuttleConsoleComponent>> _consoles = new();
 
@@ -112,6 +115,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         {
             UpdateState(entity, ref dockState);
         }
+
+        // _ClawCommand Lavaland change start
+        _dockingConsole.UpdateConsolesUsing(gridUid);
+        // _ClawCommand Lavaland change end
     }
 
     /// <summary>
