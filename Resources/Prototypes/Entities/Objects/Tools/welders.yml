@@ -138,27 +138,6 @@
         Quantity: 100
 
 - type: entity
-  parent: [SolutionToolWelder, BaseWelder]
-  id: Welder
-  name: welding tool
-  description: "Melts anything as long as it's fueled, don't forget your eye protection!"
-  components:
-  - type: Sprite
-    sprite: Objects/Tools/welder.rsi
-
-- type: entity
-  parent: [SolutionWelder, SolutionSmall]
-  id: SolutionToolWelder
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Solution
-    solution:
-      maxVol: 100 # TODO: This needs to be dropped to 30
-      reagents:
-      - ReagentId: WeldingFuel
-        Quantity: 100
-
-- type: entity
   name: industrial welding tool
   parent: [SolutionToolWelderIndsutrial, BaseWelder]
   id: WelderIndustrial
