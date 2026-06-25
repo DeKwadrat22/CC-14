@@ -46,6 +46,7 @@
         - ClothingHandsGlovesLatex
       rareChance: 0.1
       prototypes:
+        - firstaidpen
         - Syringe
         - Dropper
         - Beaker

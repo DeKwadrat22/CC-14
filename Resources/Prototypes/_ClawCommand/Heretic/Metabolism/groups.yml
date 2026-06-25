@@ -1,0 +1,7 @@
+# Stub metabolismGroup prototypes referenced by the dragon polymorph in heretic.
+
+- type: metabolismGroup
+  id: Medicine
+
+- type: metabolismGroup
+  id: Poison

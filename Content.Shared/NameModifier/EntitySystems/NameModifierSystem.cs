@@ -96,7 +96,7 @@ public sealed partial class NameModifierSystem : EntitySystem
 /// Subscribe to this event and use its methods to add modifiers to the entity's name.
 /// </summary>
 [ByRefEvent]
-public sealed class RefreshNameModifiersEvent : IInventoryRelayEvent
+public sealed partial class RefreshNameModifiersEvent : IInventoryRelayEvent
 {
     /// <summary>
     /// The entity's name without any modifiers applied.

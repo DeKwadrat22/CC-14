@@ -1,0 +1,11 @@
+- type: playTimeTracker
+  id: JobClawCommandMaid
+
+- type: playTimeTracker
+  id: JobClawCommandOfficer
+
+- type: playTimeTracker
+  id: JobAdmiralClaw
+
+- type: playTimeTracker
+  id: JobPrisoner

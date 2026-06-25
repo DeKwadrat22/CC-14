@@ -75,3 +75,33 @@
   background: /Textures/LobbyScreens/reclaimer-nuke.webp
   title: lobby-state-background-reclaimernuke-title
   artist: lobby-state-background-reclaimernuke-artist
+
+- type: lobbyBackground
+  id: Robotics
+  background: /Textures/_ClawCommand/LobbyScreens/robotics.webp
+  title: lobby-state-background-robotics-title
+  artist: lobby-state-background-robotics-artist
+
+- type: lobbyBackground
+  id: Supermatter
+  background: /Textures/_ClawCommand/LobbyScreens/supermatter.webp
+  title: lobby-state-background-supermatter-title
+  artist: lobby-state-background-supermatter-artist
+
+- type: lobbyBackground
+  id: HellShift
+  background: /Textures/_ClawCommand/LobbyScreens/hellshift.png
+  title: lobby-state-background-hellshift-title
+  artist: lobby-state-background-hellshift-artist
+
+- type: lobbyBackground
+  id: MaintsBar
+  background: /Textures/_ClawCommand/LobbyScreens/The_Maints_Bar.png
+  title: lobby-state-background-maintsbar-title
+  artist: lobby-state-background-maintsbar-artist
+
+- type: lobbyBackground
+  id: NukeClub
+  background: /Textures/_ClawCommand/LobbyScreens/nuke_club.png
+  title: lobby-state-background-nukeclub-title
+  artist: lobby-state-background-nukeclub-artist

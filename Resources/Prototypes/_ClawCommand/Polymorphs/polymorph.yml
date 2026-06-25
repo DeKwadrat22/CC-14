@@ -1,0 +1,10 @@
+- type: polymorph
+  id: PolymorphKitsune
+  configuration:
+    entity: MobKitsuneFox
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: Transfer
+    allowRepeatedMorphs: true
+    revertOnCrit: true
+    revertOnDeath: true

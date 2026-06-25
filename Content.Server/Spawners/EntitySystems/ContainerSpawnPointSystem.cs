@@ -44,14 +44,21 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
             if (args.Station != null && _station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // If it's unset, then we allow it to be used for both roundstart and midround joins
-            if (spawnPoint.SpawnType == SpawnPointType.Unset)
-            {
-                // make sure we also check the job here for various reasons.
-                if (spawnPoint.Job == null || spawnPoint.Job == args.Job)
-                    possibleContainers.Add((uid, spawnPoint, container, xform));
-                continue;
-            }
+            // _ClawCommand: matches space/'s behaviour — disable spawning in
+            // cryo entirely. The "Cryosleep" SpawnPriorityPreference stays
+            // visible & saved in the lobby UI so the preference round-trips
+            // (and so we can re-enable cryo later by uncommenting), but at
+            // spawn time the player always falls through to arrivals via
+            // SpawnPointSystem. Cryo pods carry SpawnType.Unset, so leaving
+            // out the Unset branch is what neutralises them.
+            //
+            // if (spawnPoint.SpawnType == SpawnPointType.Unset)
+            // {
+            //     // make sure we also check the job here for various reasons.
+            //     if (spawnPoint.Job == null || spawnPoint.Job == args.Job)
+            //         possibleContainers.Add((uid, spawnPoint, container, xform));
+            //     continue;
+            // }
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {

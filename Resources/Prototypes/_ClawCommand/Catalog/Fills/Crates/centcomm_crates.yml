@@ -1,0 +1,54 @@
+# Ported from _Floof/Catalog/Fills/Crates/medical.yml and
+# DeltaV/Catalog/Fills/Crates/food.yml.
+# CrateERTSurgery references three items that don't exist in this fork:
+# BluespaceOmnimedTool, MedBiofabFlatpack, OperatingTableFlatpack. They're
+# dropped from the fill so the crate can still spawn with its remaining
+# ERT-relevant contents.
+
+- type: entity
+  id: CrateERTSurgery
+  parent: CrateSurgery
+  name: ERT surgical supplies crate
+  description: Special surgical instruments provided to Emergency Response Teams.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskBreathMedical
+      - id: NitrousOxideTankFilled
+      - id: BoxLatexGloves
+      - id: BoxSterileMask
+      - id: Multitool
+      - id: MaterialBiomass
+        amount: 3
+
+- type: entity
+  id: CrateFoodDonkpocketSavory
+  parent: CratePlastic
+  components:
+    - type: StorageFill
+      contents:
+        - id: FoodBoxDonkpocket
+          amount: 2
+        - id: FoodBoxDonkpocketPizza
+          amount: 1
+        - id: FoodBoxDonkpocketSpicy
+          amount: 1
+        - id: FoodBoxDonkpocketTeriyaki
+          amount: 1
+        - id: FoodBoxDonkpocketDink
+          prob: 0.1
+
+- type: entity
+  id: CrateFoodDonkpocketSweet
+  parent: CratePlastic
+  components:
+    - type: StorageFill
+      contents:
+        - id: FoodBoxDonkpocket
+          amount: 2
+        - id: FoodBoxDonkpocketHonk
+          amount: 1
+        - id: FoodBoxDonkpocketBerry
+          amount: 1
+        - id: FoodBoxDonkpocketDink
+          prob: 0.1

@@ -21,8 +21,17 @@ public sealed partial class TraitCategoryPrototype : IPrototype
     public LocId Name { get; private set; } = string.Empty;
 
     /// <summary>
-    ///     The maximum number of traits that can be taken in this category.
+    ///     The maximum number of trait points that can be spent in this category.
+    ///     If null, no limit is enforced for this category.
     /// </summary>
     [DataField]
     public int? MaxTraitPoints;
+
+    /// <summary>
+    ///     Claw Command - Optional shared budget pool. Categories with the same BudgetPool
+    ///     share a single trait point allocation while remaining visually separate in the UI.
+    ///     The MaxTraitPoints of the pool is taken from the first category that defines it.
+    /// </summary>
+    [DataField]
+    public string? BudgetPool;
 }

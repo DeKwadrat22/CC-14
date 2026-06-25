@@ -230,6 +230,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             case InGameICChatType.Emote:
                 SendEntityEmote(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
                 break;
+            case InGameICChatType.Subtle: // claw command
+                SendEntitySubtle(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
+                break;
         }
     }
 
@@ -527,6 +530,58 @@ public sealed partial class ChatSystem : SharedChatSystem
                     _adminLogger.Add(LogType.Chat, LogImpact.Low,
                     $"Whisper from {source}, original: {originalMessage}, transformed: {message}.");
             }
+    }
+
+    // claw command - subtle chat: very short range, LOS-restricted, no obfuscation, no accents
+    // Behaves like whisper: close players hear it, close ghosts hear it, far ghosts don't, admin ghosts always hear it.
+    private void SendEntitySubtle(
+        EntityUid source,
+        string originalMessage,
+        ChatTransmitRange range,
+        string? nameOverride,
+        bool hideLog = false,
+        bool ignoreActionBlocker = false
+        )
+    {
+        if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
+            return;
+
+        var message = FormattedMessage.RemoveMarkupOrThrow(originalMessage);
+        if (message.Length == 0)
+            return;
+
+        // get the entity's name by visual identity (if no override provided).
+        string name = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
+
+        var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
+            ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
+
+        foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
+        {
+            if (session.AttachedEntity is not { Valid: true } listener)
+                continue;
+
+            if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
+                continue;
+
+            // Observers (ghosts) that are in range get the message; far-away observers are filtered by GhostRangeLimit.
+            // Admin ghosts always pass MessageRangeCheck with GhostRangeLimit.
+            if (data.Observer)
+            {
+                // Close ghost or admin ghost - send it
+                _chatManager.ChatMessageToOne(ChatChannel.Subtle, message, wrappedMessage, source, false, session.Channel);
+            }
+            else if (data.Range <= WhisperClearRange && _examineSystem.InRangeUnOccluded(source, listener, WhisperClearRange))
+            {
+                // Living player within range with line of sight
+                _chatManager.ChatMessageToOne(ChatChannel.Subtle, message, wrappedMessage, source, false, session.Channel);
+            }
+        }
+
+        _replay.RecordServerMessage(new ChatMessage(ChatChannel.Subtle, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
+
+        if (!hideLog)
+            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Subtle from {source}: {originalMessage}.");
     }
 
     protected override void SendEntityEmote(

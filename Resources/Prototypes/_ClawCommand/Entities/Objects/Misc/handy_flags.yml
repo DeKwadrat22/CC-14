@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseItem
+  id: ClawHandyFlag
+  name: Claw Command handheld flag
+  description: "Glory to Claw Command!"
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Misc/Handy_Flags/claw_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: _ClawCommand/Objects/Misc/Handy_Flags/claw_handy_flag.rsi

@@ -1,0 +1,164 @@
+# Roundstart-spawnable dogborg player entities. Each mirrors the standard
+# PlayerBorgBattery pattern from Resources/Prototypes/Entities/Mobs/Player/
+# silicon.yml — pre-installed positronic brain + medium power cell + silicon
+# mind role — but inherits directly from the specific dogborg chassis chosen
+# for that department, and ships with a small, role-appropriate starter
+# module loadout.
+#
+# Single-parent inheritance is intentional: a previous multi-parent approach
+# (BasePlayerDogborg + chassis) hit a diamond-inheritance issue where the
+# upstream chassis.rsi sprite path leaked through and broke the lobby preview.
+#
+# The dogborg variants picked per department:
+#   Security    → Vale (security)        → BorgChassisSecurityVale
+#   Medical     → Medihound              → BorgChassisMedicalMedihound
+#   Engineering → Vale (engineering)     → BorgChassisEngineerVale
+#   Janitor     → Scrubpup               → BorgChassisJanitorScrubpup
+#   Service     → Vale (service)         → BorgChassisServiceVale
+#   Mining      → Blade                  → BorgChassisMiningBlade
+#
+# Module loadouts are deliberately conservative: 2 modules per dogborg
+# (1 for Service), covering the basics for the role. Players can pick more
+# from the borg type radial after spawn, and roboticists can swap modules.
+
+# ===== Security =====
+- type: entity
+  parent: BorgChassisSecurityVale
+  id: PlayerDogborgSecurity
+  suffix: Battery, Security
+  name: security dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      borg_module:
+      - BorgModuleSecurity
+      - BorgModulePrying
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
+
+# ===== Medical =====
+# Modules note: dogborg-medihound's borgType already ships Prying / Chemical /
+# Topicals / Rescue as defaultModules. Only fluff modules that aren't already
+# defaults go in ContainerFill, otherwise the borg spawns with duplicates.
+- type: entity
+  parent: BorgChassisMedicalMedihound
+  id: PlayerDogborgMedical
+  suffix: Battery, Medical
+  name: medical dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      borg_module:
+      - BorgModuleDiagnosis
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
+
+# ===== Engineering =====
+# Modules note: dogborg-vale-eng's borgType already ships Prying / Tool /
+# Construction / RCD / Cable as defaultModules. ContainerFill only adds the
+# fire extinguisher on top.
+- type: entity
+  parent: BorgChassisEngineerVale
+  id: PlayerDogborgEngineering
+  suffix: Battery, Engineering
+  name: engineering dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      borg_module:
+      - BorgModuleFireExtinguisher
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
+
+# ===== Janitor =====
+# Modules note: dogborg-scrubpup's borgType already ships Prying / Cleaning /
+# Custodial as defaultModules — no extra ContainerFill borg_module entries
+# needed (they would just spawn duplicates).
+- type: entity
+  parent: BorgChassisJanitorScrubpup
+  id: PlayerDogborgJanitor
+  suffix: Battery, Janitor
+  name: janitor dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
+
+# ===== Service =====
+- type: entity
+  parent: BorgChassisServiceVale
+  id: PlayerDogborgService
+  suffix: Battery, Service
+  name: service dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      borg_module:
+      - BorgModuleService
+      - BorgModuleMusique
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
+
+# ===== Mining =====
+# Modules note: dogborg-blade's borgType already ships Prying / Tool / Mining /
+# Traversal / Appraisal as defaultModules — no extra ContainerFill borg_module
+# entries needed.
+- type: entity
+  parent: BorgChassisMiningBlade
+  id: PlayerDogborgMining
+  suffix: Battery, Mining
+  name: mining dogborg
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true

@@ -1,10 +1,13 @@
 using Content.Client.Hands.Systems;
+using Content.Shared.Input;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
 using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
+using Robust.Shared.Input;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.RCD;
@@ -22,6 +25,56 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private HandsSystem _hands = default!;
 
     private Direction _placementDirection = default;
+    private bool _useMirrorPrototype = false;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        CommandBinds.Builder
+            .Bind(ContentKeyFunctions.EditorFlipObject, InputCmdHandler.FromDelegate(_ => HandleFlip()))
+            .Register<RCDConstructionGhostSystem>();
+    }
+
+    public override void Shutdown()
+    {
+        CommandBinds.Unregister<RCDConstructionGhostSystem>();
+        base.Shutdown();
+    }
+
+    private void HandleFlip()
+    {
+        if (_placementManager.CurrentPermission?.MobUid is not { } rcdUid)
+            return;
+
+        if (!TryComp<RCDComponent>(rcdUid, out var rcd))
+            return;
+
+        var prototype = _protoManager.Index(rcd.ProtoId);
+        if (string.IsNullOrEmpty(prototype.MirrorPrototype))
+            return;
+
+        _useMirrorPrototype = !_useMirrorPrototype;
+        var useProto = _useMirrorPrototype ? prototype.MirrorPrototype : prototype.Prototype;
+        CreatePlacer(rcdUid, prototype, useProto);
+        RaiseNetworkEvent(new RCDConstructionGhostFlipEvent(GetNetEntity(rcdUid), _useMirrorPrototype));
+    }
+
+    private void CreatePlacer(EntityUid uid, RCDPrototype prototype, string? proto)
+    {
+        var newObjInfo = new PlacementInformation
+        {
+            MobUid = uid,
+            PlacementOption = PlacementMode,
+            EntityType = proto,
+            Range = (int)Math.Ceiling(SharedInteractionSystem.InteractionRange),
+            IsTile = (prototype.Mode == RcdMode.ConstructTile),
+            UseEditorContext = false,
+        };
+
+        _placementManager.Clear();
+        _placementManager.BeginPlacing(newObjInfo);
+    }
 
     public override void Update(float frameTime)
     {
@@ -64,22 +117,14 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
             RaiseNetworkEvent(new RCDConstructionGhostRotationEvent(GetNetEntity(heldEntity.Value), _placementDirection));
         }
 
+        var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
+            ? prototype.MirrorPrototype
+            : prototype.Prototype;
+
         // If the placer has not changed, exit
-        if (heldEntity == placerEntity && prototype.Prototype == placerProto)
+        if (heldEntity == placerEntity && useProto == placerProto)
             return;
 
-        // Create a new placer
-        var newObjInfo = new PlacementInformation
-        {
-            MobUid = heldEntity.Value,
-            PlacementOption = PlacementMode,
-            EntityType = prototype.Prototype,
-            Range = (int)Math.Ceiling(SharedInteractionSystem.InteractionRange),
-            IsTile = (prototype.Mode == RcdMode.ConstructTile),
-            UseEditorContext = false,
-        };
-
-        _placementManager.Clear();
-        _placementManager.BeginPlacing(newObjInfo);
+        CreatePlacer(heldEntity.Value, prototype, useProto);
     }
 }

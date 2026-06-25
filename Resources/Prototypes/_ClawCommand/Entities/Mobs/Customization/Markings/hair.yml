@@ -1,0 +1,62 @@
+- type: marking
+  id: HumanHairShortBedhead
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: short_bedhead
+
+- type: marking
+  id: HumanHairBobClassic
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_bob
+
+- type: marking
+  id: HumanHairMessyClassic
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_messy
+
+- type: marking
+  id: HumanHairClassicNoFade
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_nofade
+
+- type: marking
+  id: HumanHairClassicGentle
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_gentle
+
+- type: marking
+  id: HumanHairClassicLowFade
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_lowfade
+
+- type: marking
+  id: HumanHairClassicMedFade
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_medfade
+
+- type: marking
+  id: HumanHairClassicOmbre
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_ombre
+
+- type: marking
+  id: HumanHairClassicCrewcut
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/hair.rsi
+      state: classic_crewcut

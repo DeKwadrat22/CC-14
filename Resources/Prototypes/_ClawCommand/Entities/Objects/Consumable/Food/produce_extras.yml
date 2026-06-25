@@ -1,0 +1,7 @@
+- type: entity
+  name: hairflower
+  id: FoodPoppyWhite
+  parent: FoodPoppy
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/poppywhite.rsi

@@ -10,6 +10,8 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Server.Voting; // claw command
+using Content.Server.Voting.Managers; // claw command
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
@@ -41,6 +43,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private SharedAudioSystem _audio = default!;
         [Dependency] private StationSystem _stationSystem = default!;
+        [Dependency] private IVoteManager _votes = default!; // Claw Command
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -63,6 +66,7 @@ namespace Content.Server.RoundEnd
 
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
+        private bool _evacVoteActive = false; // claw command
 
         public override void Initialize()
         {
@@ -96,6 +100,7 @@ namespace Content.Server.RoundEnd
             ExpectedCountdownEnd = null;
             SetAutoCallTime();
             _autoCalledBefore = false;
+            _evacVoteActive = false; // claw command
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
 
@@ -381,19 +386,79 @@ namespace Content.Server.RoundEnd
                                         : _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallTime);
             if (mins != 0 && _gameTiming.CurTime - AutoCallStartTime > TimeSpan.FromMinutes(mins))
             {
-                if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
+                if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null && !_evacVoteActive) // claw command - added vote active check
                 {
-                    RequestRoundEnd(checkCooldown: false, text: "round-end-system-shuttle-auto-called-announcement");
-                    _autoCalledBefore = true;
+                    // claw command - evac vote system
+                    if (_cfg.GetCVar(CCVars.EmergencyShuttleDoEvacVotes))
+                    {
+                        StartEvacVote();
+                    }
+                    else
+                    {
+                        RequestRoundEnd(checkCooldown: false, text: "round-end-system-shuttle-auto-called-announcement");
+                        _autoCalledBefore = true;
+                    }
                 }
 
                 // Always reset auto-call in case of a recall.
-                SetAutoCallTime();
+                if (!_evacVoteActive) // claw command - don't reset timer while vote is active
+                    SetAutoCallTime();
             }
+        }
+
+        // claw command - evac vote system
+        private void StartEvacVote()
+        {
+            _evacVoteActive = true;
+
+            var vote = _votes.CreateVote(new VoteOptions
+            {
+                Duration = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.EmergencyShuttleEvacVoteDuration)),
+                Title = Loc.GetString("cc-round-end-system-shuttle-vote-title"),
+                InitiatorText = Loc.GetString("cc-round-end-system-shuttle-vote-initiator"),
+                Options =
+                [
+                    (Loc.GetString("cc-round-end-system-shuttle-vote-leave"), true),
+                    (Loc.GetString("cc-round-end-system-shuttle-vote-stay"), false)
+                ],
+                DisplayVotes = true,
+            });
+
+            vote.OnFinished += (_, args) =>
+            {
+                _evacVoteActive = false;
+
+                if (args.Winner is true || args.Winner is null)
+                {
+                    // Leave wins or tie — call shuttle
+                    RequestRoundEnd(checkCooldown: false, text: args.Winner is null
+                        ? "cc-round-end-system-shuttle-vote-tie-announcement"
+                        : "round-end-system-shuttle-auto-called-announcement");
+                    _autoCalledBefore = true;
+                }
+                else
+                {
+                    // Stay wins — extend shift
+                    _chatSystem.DispatchGlobalAnnouncement(
+                        Loc.GetString("cc-round-end-system-shuttle-vote-stay-announcement"),
+                        Loc.GetString("cc-round-end-system-shuttle-vote-initiator"),
+                        false,
+                        colorOverride: Color.Gold);
+                    _autoCalledBefore = true;
+                }
+
+                SetAutoCallTime();
+            };
+
+            vote.OnCancelled += _ =>
+            {
+                _evacVoteActive = false;
+                SetAutoCallTime();
+            };
         }
     }
 
-    public sealed class RoundEndSystemChangedEvent : EntityEventArgs
+    public sealed partial class RoundEndSystemChangedEvent : EntityEventArgs
     {
         public static RoundEndSystemChangedEvent Default { get; } = new();
     }

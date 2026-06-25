@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/ARF-SS13/coyote-frontier/commit/36062e6bf10f9f58ee81fe2cb19943298551bb31",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "breasts_pairround_a_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_b_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_c_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_d_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_d_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_e_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_e_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_f_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pairround_f_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pair_a_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pair_b_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pair_c_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pair_d_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "breasts_pair_d_0_BEHIND",
+      "directions": 4
+    }
+  ]
+}

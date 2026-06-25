@@ -1,0 +1,11 @@
+# Heretic sound collections referenced by status-effect components.
+
+- type: soundCollection
+  id: Curse
+  files:
+  - /Audio/_ClawCommand/Heretic/curse/curse1.ogg
+  - /Audio/_ClawCommand/Heretic/curse/curse2.ogg
+  - /Audio/_ClawCommand/Heretic/curse/curse3.ogg
+  - /Audio/_ClawCommand/Heretic/curse/curse4.ogg
+  - /Audio/_ClawCommand/Heretic/curse/curse5.ogg
+  - /Audio/_ClawCommand/Heretic/curse/curse6.ogg

@@ -38,6 +38,7 @@
   category: cargoproduct-category-name-security
   group: market
 
+
 - type: cargoProduct
   id: SecurityRestraints
   icon:

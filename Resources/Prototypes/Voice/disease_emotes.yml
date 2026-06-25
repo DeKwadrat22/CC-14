@@ -47,13 +47,37 @@
   id: CatMeow
   name: chat-emote-name-catmeow
   category: Vocal
+  available: false # CC14
+  whitelist: # CC14
+    components:
+    - Vocal
+  blacklist: # CC14
+    tags:
+    - SiliconEmotes
   chatMessages: ["chat-emote-msg-catmeow"]
+  chatTriggers: # CC14
+  - meow
+  - meows
+  - meowed
+  - meowing
 
 - type: emote
   id: CatHisses
   name: chat-emote-name-cathisses
   category: Vocal
+  available: false # CC14
+  whitelist:  # CC14
+    components:
+    - Vocal
+  blacklist: # CC14
+    tags:
+    - SiliconEmotes
   chatMessages: ["chat-emote-msg-cathisses"]
+  chatTriggers:
+  - hiss
+  - hissess
+  - hisseded
+  - hissinging
 
 - type: emote
   id: MonkeyScreeches

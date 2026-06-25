@@ -48,6 +48,8 @@
 
 - type: npcFaction
   id: SimpleHostile
+  friendly:
+  - AnimalFriend # Claw Command
   hostile:
   - NanoTrasen
   - Syndicate
@@ -150,6 +152,9 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+
+- type: npcFaction # Claw Command
+  id: AnimalFriend
 
 - type: npcFaction
   id: Xenoborg

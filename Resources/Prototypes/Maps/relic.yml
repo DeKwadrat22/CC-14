@@ -60,5 +60,6 @@
             #supply (0)
             #civilian (0+)
             Passenger: [ -1, -1 ] #infinite, not counted
+            Prisoner: [ 5, 5 ] #claw command
             #silicon (1)
             StationAi: [ 1, 1 ]

@@ -1,0 +1,14 @@
+# Claw Command - IPC Name Datasets
+# Localized strings live in Resources/Locale/en-US/_ClawCommand/datasets/ipc_names.ftl
+
+- type: localizedDataset
+  id: IpcFirst
+  values:
+    prefix: names-ipc-first-dataset-
+    count: 100
+
+- type: localizedDataset
+  id: IpcLast
+  values:
+    prefix: names-ipc-last-dataset-
+    count: 52

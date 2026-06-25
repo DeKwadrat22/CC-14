@@ -1,0 +1,46 @@
+- type: entity
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
+  id: ClothingClawCommandArmourVest
+  suffix: Claw Command
+  name: claw command's security armour
+  description: An armoured vest with a claw command badge.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Armor/cco_armour.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Armor/cco_armour.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.65
+        Heat: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+
+- type: entity
+  parent: ClothingClawCommandArmourVest
+  id: ClothingClawCommandArmoredJacket
+  name: claw command's armored jacket
+  description: A jacket with sewn-in reinforcement layers.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Armor/clawcommand_jacket.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Armor/clawcommand_jacket.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: ClothingClawCommandArmourVest
+  id: ClothingClawCommandArmoredCowboyJacket
+  name: claw command's armored cowboy jacket
+  description: A jacket to protect important people in wild areas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Armor/clawcommand_cowboy_jacket.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Armor/clawcommand_cowboy_jacket.rsi
+  - type: Item
+    size: Normal

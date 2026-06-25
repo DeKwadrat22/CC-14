@@ -120,7 +120,7 @@ namespace Content.Server.Holiday
     /// <summary>
     ///     Event for when the list of currently active holidays has been refreshed.
     /// </summary>
-    public sealed class HolidaysRefreshedEvent : EntityEventArgs
+    public sealed partial class HolidaysRefreshedEvent : EntityEventArgs
     {
         public readonly IEnumerable<HolidayPrototype> Holidays;
 

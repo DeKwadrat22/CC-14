@@ -45,4 +45,10 @@ public sealed partial class TechDisciplinePrototype : IPrototype
     /// </summary>
     [DataField("lockoutTier")]
     public int LockoutTier = 3;
+
+    /// <summary>
+    /// Short label shown in the fancy R&D console UI for this discipline.
+    /// </summary>
+    [DataField]
+    public string UiName = string.Empty;
 }

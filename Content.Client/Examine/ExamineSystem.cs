@@ -451,7 +451,7 @@ namespace Content.Client.Examine
     /// <summary>
     /// An entity was examined on the client.
     /// </summary>
-    public sealed class ClientExaminedEvent : EntityEventArgs
+    public sealed partial class ClientExaminedEvent : EntityEventArgs
     {
         /// <summary>
         ///     The entity performing the examining.

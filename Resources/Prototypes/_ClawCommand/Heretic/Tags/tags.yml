@@ -1,0 +1,90 @@
+# Tag prototypes referenced by heretic YAML. These are imported from Goob-Station's
+# tag list (some are upstream tags not present in this fork, others are heretic-specific).
+# Adding the tag prototypes alone won't apply them to upstream entities; the gameplay
+# hooks that rely on them (e.g. HereticBlade detection, Mask check for ritual) only fire
+# for heretic-spawned items that explicitly carry the tag.
+
+- type: Tag
+  id: HereticItem
+
+- type: Tag
+  id: HereticBlade
+
+- type: Tag
+  id: HereticBladeBlade
+
+- type: Tag
+  id: HereticCarving
+
+- type: Tag
+  id: FollowerStayOnPolymorph
+
+- type: Tag
+  id: ShadowCloakAction
+
+- type: Tag
+  id: RoundstartAntag
+
+- type: Tag
+  id: CalmAntag
+
+- type: Tag
+  id: WideSwingIgnore
+
+# General-purpose item tags that heretic rituals depend on. These are upstream Goob tags
+# that didn't make it into this fork. Adding them so the ritual configuration validates;
+# the rituals will only succeed against items that actually have these tags (currently none).
+
+- type: Tag
+  id: Mask
+
+- type: Tag
+  id: Eyes
+
+- type: Tag
+  id: Heart
+
+- type: Tag
+  id: Chair
+
+- type: Tag
+  id: Lighter
+
+- type: Tag
+  id: Ash
+
+- type: Tag
+  id: Stunbaton
+
+- type: Tag
+  id: Muzzle
+
+- type: Tag
+  id: Stomach
+
+- type: Tag
+  id: Lungs
+
+- type: Tag
+  id: Table
+
+- type: Tag
+  id: GasMask
+
+- type: Tag
+  id: WaterTank
+
+- type: Tag
+  id: WinterCoat
+
+- type: Tag
+  id: Liver
+
+- type: Tag
+  id: SheetPlasma
+
+- type: Tag
+  id: Steel
+
+- type: Tag
+  id: SheetGlass

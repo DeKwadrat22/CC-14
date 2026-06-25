@@ -1,0 +1,42 @@
+# Extended irregular - calmer event pacing with longer gaps between events
+- type: entity
+  id: IrregularExtendedStationEventScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200
+    maximumSpanUntilFirstEvent: 2400
+    minMaxEventTiming:
+      min: 1200
+      max: 2300
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
+
+- type: entity
+  id: IrregularStationEventScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    averageChaos: 5
+    maxChaos: 10
+    #minChaos: 0.8
+    #maxChaos: 14
+    #startingSlope: 0.2
+    #downwardsLimit: -0.35
+    #upwardsLimit: 0.4
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
+
+- type: entity
+  id: HellshiftStationEventScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    averageChaos: 20
+    startingChaos: 6
+    #shiftLengthModifier: 2.5
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable

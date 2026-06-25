@@ -1,0 +1,157 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: MarkingsFelinid
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ CatEars ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 6
+      required: true
+      default: [ CatTail ]
+    enum.HumanoidVisualLayers.Genital:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFelinid
+  suffix: Claw Command
+  name: felinid appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganFelinidTorso
+      Head: OrganFelinidHead
+      ArmLeft: OrganFelinidArmLeft
+      ArmRight: OrganFelinidArmRight
+      HandRight: OrganFelinidHandRight
+      HandLeft: OrganFelinidHandLeft
+      LegLeft: OrganFelinidLegLeft
+      LegRight: OrganFelinidLegRight
+      FootLeft: OrganFelinidFootLeft
+      FootRight: OrganFelinidFootRight
+      Brain: OrganFelinidBrain
+      Eyes: OrganFelinidEyes
+      Tongue: OrganFelinidTongue
+      Appendix: OrganFelinidAppendix
+      Ears: OrganFelinidEars
+      Lungs: OrganFelinidLungs
+      Heart: OrganFelinidHeart
+      Stomach: OrganFelinidStomach
+      Liver: OrganFelinidLiver
+      Kidneys: OrganFelinidKidneys
+  - type: HumanoidProfile
+    species: SpeciesFelinid
+  #- type: ScaleVisuals
+  #  scale: 0.7, 0.7
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 5.5
+    baseWalkSpeed: 3.5
+  # Commented out for now, we need to be able to escape bags!
+  #- type: Item
+  #  size: Large
+  #  shape:
+  #  - 0,0,3,4
+
+- type: entity
+  parent:
+  - AppearanceFelinid
+  - BaseSpeciesMobOrganic
+  id: MobFelinid
+  name: Urist McMowMow
+  suffix: Claw Command
+  components:
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 3
+  - type: Vocal
+    sounds:
+      Male: UnisexFelinid
+      Female: FemaleFelinid
+      Unsexed: UnisexFelinid
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SpeechFelinid
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ]
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 4
+  - type: JumpAbility
+    action: ActionVulpkaninGravityJump
+    canCollide: true
+    jumpDistance: 2
+    jumpSound:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        pitch: 1.33
+        volume: -5
+        variation: 0.05
+  - type: Damageable
+    damageModifierSet: ModifierSetFelinid
+  - type: ReplacementAccent
+    accent: AccentFelinid
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: petting-success-generic
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/cat_meow.ogg

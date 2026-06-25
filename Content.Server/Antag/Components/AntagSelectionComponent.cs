@@ -100,3 +100,16 @@ public enum AntagSelectionTime : byte
     /// </summary>
     Never,
 }
+
+// _ClawCommand: upstream's antag refactor (Definitions: List<AntagSelectionDefinition> →
+// Antags: AntagCountSelector[]) removed the only consumer of this struct. We keep an
+// empty declaration so the HereticDeps partial extension (AntagSelectionDefinition.HereticExtensions.cs)
+// still compiles and the heretic-gamerule YAML can still deserialize chaosScore/jobBlacklist
+// fields. Those fields are runtime-inert in the new system — fully porting the heretic
+// gamerule to AntagCountSelector / AntagSpecifierPrototype is a separate follow-up.
+#pragma warning disable CS0282
+[DataDefinition]
+public partial struct AntagSelectionDefinition()
+#pragma warning restore CS0282
+{
+}

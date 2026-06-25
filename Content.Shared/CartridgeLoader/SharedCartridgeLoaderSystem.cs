@@ -56,7 +56,7 @@ public abstract partial class SharedCartridgeLoaderSystem : EntitySystem
 /// <summary>
 /// Gets sent to program / cartridge entities when they get inserted or installed
 /// </summary>
-public sealed class CartridgeAddedEvent : EntityEventArgs
+public sealed partial class CartridgeAddedEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
 
@@ -69,7 +69,7 @@ public sealed class CartridgeAddedEvent : EntityEventArgs
 /// <summary>
 /// Gets sent to cartridge entities when they get ejected
 /// </summary>
-public sealed class CartridgeRemovedEvent : EntityEventArgs
+public sealed partial class CartridgeRemovedEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
 
@@ -85,7 +85,7 @@ public sealed class CartridgeRemovedEvent : EntityEventArgs
 /// <remarks>
 /// Don't update the programs ui state in this events listener
 /// </remarks>
-public sealed class CartridgeActivatedEvent : EntityEventArgs
+public sealed partial class CartridgeActivatedEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
 
@@ -98,7 +98,7 @@ public sealed class CartridgeActivatedEvent : EntityEventArgs
 /// <summary>
 /// Gets sent to program / cartridge entities when they get deactivated
 /// </summary>
-public sealed class CartridgeDeactivatedEvent : EntityEventArgs
+public sealed partial class CartridgeDeactivatedEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
 
@@ -114,7 +114,7 @@ public sealed class CartridgeDeactivatedEvent : EntityEventArgs
 /// <remarks>
 /// This is used for the initial ui state update because updating the ui in the activate event doesn't work
 /// </remarks>
-public sealed class CartridgeUiReadyEvent : EntityEventArgs
+public sealed partial class CartridgeUiReadyEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
 

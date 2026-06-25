@@ -1,0 +1,69 @@
+- type: entity
+  name: harpy wings
+  parent: FoodMealBase
+  id: FoodHarpyWings
+  description: It's a bit stringy.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chicken
+  - type: Sprite
+    state: harpywings
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 13
+        - ReagentId: Protein
+          Quantity: 7
+
+- type: entity
+  name: grilled cheese
+  parent: FoodMealBase
+  id: FoodMealGrilledCheese
+  description: Two slices of bread cooked in butter with a lofty wedge of cheese in the middle.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - butter
+      - cheesy
+  - type: Sprite
+    sprite: DeltaV/Objects/Consumable/Food/Baked/grilledcheese.rsi
+    state: grilledcheese
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 2
+
+- type: entity
+  name: scrambled eggs
+  parent: FoodBowlBase
+  id: FoodMealScrambledEggs
+  description: Some cooked eggs with salt. Yummy!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+      - salty
+  - type: Sprite
+    sprite: DeltaV/Objects/Consumable/Food/scrambledeggs.rsi
+    layers:
+      - state: bowl
+      - state: scrambled-eggs
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+# Tastes like eggs, butter and salt

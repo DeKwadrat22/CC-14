@@ -1,0 +1,12 @@
+# Ported from DeltaV: DeltaV/Entities/Clothing/OuterClothing/wintercoats.yml
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterCorporateJacket
+  name: Nanotrasen Corporate Jacket
+  description: A cozy jacket with the Nanotrasen logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi

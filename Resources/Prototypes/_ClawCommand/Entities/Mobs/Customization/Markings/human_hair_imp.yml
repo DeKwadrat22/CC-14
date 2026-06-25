@@ -1,0 +1,27 @@
+- type: marking
+  id: HumanHairGatheredlow
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/human_hair.rsi
+      state: gatheredlow
+
+- type: marking
+  id: HumanHairLowpigtails
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/human_hair.rsi
+      state: lowpigtails
+
+- type: marking
+  id: HumanHairFrenchBraid
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/human_hair.rsi
+      state: frenchbraid
+
+- type: marking
+  id: HumanHairMessyPonytail
+  bodyPart: Hair
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/human_hair.rsi
+      state: messyponytail

@@ -14,17 +14,44 @@
   categories:
   - UplinkWeaponry
 
+# Claw Command
+# Fuck you. Removing the item was stupid. Even if it was supposedly "Niche"
+# More Niche items include but are not limited to; Mosin, Cybersun Pen, THE ENTIRE POINTLESS TAB, syndicate PAI, holoparasite, holoclown, syndi soap, grenade penguin, ECT.
+- type: listing
+  id: UplinkRevolverPython
+  name: uplink-revolver-python-name
+  description: uplink-revolver-python-desc
+  productEntity: WeaponRevolverPythonAP
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 7 # Claw | Price increased as per Steele's request. +1 mwahah :3 - Steele
+  categories:
+  - UplinkWeaponry
+
+# Claw Command - Syndicate outpost pinpointer
+- type: listing
+  id: UplinkPinpointerSyndieOutpost
+  name: uplink-pinpointer-syndie-outpost-name
+  description: uplink-pinpointer-syndie-outpost-desc
+  productEntity: PinpointerSyndieOutpost
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkDeception
+
 # Inbuilt suppressor so it's sneaky + more expensive.
 - type: listing
   id: UplinkPistolCobra
   name: uplink-pistol-cobra-name
   description: uplink-pistol-cobra-desc
   productEntity: WeaponPistolCobra
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 2
   cost:
-    Telecrystal: 4
+    Telecrystal: 2 # Claw | Reduced because the previous comment just lies, the weapon may have a quieter gunshot but is just as audible as a viper, while being a worse weapon in terms of fire rate, time to kill, and magazine capacity.
   categories:
   - UplinkWeaponry
 
@@ -34,6 +61,9 @@
   name: uplink-rifle-mosin-name
   description: uplink-rifle-mosin-desc
   productEntity: WeaponSniperMosin
+  discountCategory: usualDiscounts
+  discountDownTo:  # Claw | Such a terrible and rarely used weapon, the discount will help incentivise experimenting, and goofy loadouts.
+    Telecrystal: 0
   cost:
     Telecrystal: 1
   categories:
@@ -137,11 +167,7 @@
     Telecrystal: 8
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+  # Claw | Controversial change? Its expensive and rarely used, it's very loud and obvious aswell. May be reverted in the future.
 
 - type: listing
   id: uplinkRiggedBoxingGloves
@@ -496,14 +522,10 @@
   description: uplink-exploding-syndicate-bomb-desc
   productEntity: SyndicateBomb
   cost:
-    Telecrystal: 11
+    Telecrystal: 14
   categories:
     - UplinkExplosives
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Claw | Never actually gets use from nuclear operatives, as its expensive and inneffective as a distraction, since people are more often pre-occupied with the NUCLEAR BOMB, than this.  Incredibly powerful in the hands of an agent both for destruction and as distraction. Price increased accordingly, to make sure they REALLY want to do this. This will also make the fake bomb more effective as a distraction due to the possibility of it being real.
 
 - type: listing
   id: UplinkGrenadeShrapnel
@@ -884,6 +906,9 @@
   name: uplink-cyberpen-name
   description: uplink-cyberpen-desc
   productEntity: CyberPen
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 0 # Incredibly rare purchase, I hope this will encourage players to use it both as an overt but fairly effective melee weapon, and for the forgery of paperwork, as its a fun item, and would add variety to antag and sec/command gameplay :3
   cost:
     Telecrystal: 1
   categories:
@@ -1093,28 +1118,17 @@
   - UplinkDisruption
 
 - type: listing
-  id: UplinkTravelCamera
-  name: uplink-travel-camera-name
-  description: uplink-travel-camera-desc
-  productEntity: TravelCamera
+  id: UplinkDuffelSurgery
+  name: uplink-duffel-surgery-name
+  description: uplink-duffel-surgery-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledMedical
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
   cost:
-    Telecrystal: 1
+    Telecrystal: 4
   categories:
-  - UplinkDeception
-
-# Note: Removed for the time being until surgery/newmed is added. Considered bloat until then.
-# - type: listing
-#   id: UplinkDuffelSurgery
-#   name: uplink-duffel-surgery-name
-#   description: uplink-duffel-surgery-desc
-#   productEntity: ClothingBackpackDuffelSyndicateFilledMedical
-#   discountCategory: usualDiscounts
-#   discountDownTo:
-#     Telecrystal: 2
-#   cost:
-#     Telecrystal: 4
-#   categories:
-#   - UplinkDisruption
+  - UplinkPointless # Re-added, since it can provide utility in rare cases, but moved to the pointless tab in order to not overstate its usefulness.
 
 - type: listing
   id: UplinkPowerSink
@@ -1130,11 +1144,10 @@
   - UplinkExplosives
 
 - type: listing
-  id: UplinkSyndimovCircuitKit
+  id: UplinkSyndimovCircuitBoard
   name: uplink-syndimov-law-name
   description: uplink-syndimov-law-desc
-  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: syndicate_circuit }
-  productEntity: SyndimovCircuitKit
+  productEntity: SyndimovCircuitBoard
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 6
@@ -1459,7 +1472,7 @@
   id: UplinkEmpImplanter
   name: uplink-emp-implanter-name
   description: uplink-emp-implanter-desc
-  icon: { sprite: /Textures/Effects/emp.rsi, state: emp_disable }
+  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   productEntity: EmpImplanter
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -2278,20 +2291,3 @@
   - !type:BuyerJobCondition
     whitelist:
     - Lawyer
-
-#Objective items
-
-- type: listing
-  id: uplinkHijackBeacon
-  name: uplink-hijack-beacon-name
-  description: uplink-hijack-beacon-desc
-  productEntity: HijackBeacon
-  categories:
-    - UplinkObjective
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-  - !type:BuyerObjectiveWhitelistCondition
-    whitelist:
-      components:
-      - HijackTradeStationCondition

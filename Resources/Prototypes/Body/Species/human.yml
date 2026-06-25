@@ -42,10 +42,19 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 0
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.Special:
       limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Genital: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts: # Claw Command
+      limit: 1
       required: false
 
 - type: entity

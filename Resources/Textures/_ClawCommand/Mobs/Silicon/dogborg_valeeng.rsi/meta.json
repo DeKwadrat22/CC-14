@@ -1,0 +1,201 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Citadel-Station-13 (https://github.com/Citadel-Station-13). Original sprite art licensed CC-BY-SA-3.0 (see Resources/Textures/_ClawCommand/Mobs/Silicon/LICENSE.md). Ported to SS14 RSI format for Claw Command.",
+    "size": {
+        "x": 62,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "valeeng",
+            "directions": 4
+        },
+        {
+            "name": "valeeng_e",
+            "directions": 4
+        },
+        {
+            "name": "valeeng_l",
+            "directions": 4
+        },
+        {
+            "name": "valeeng-rest",
+            "directions": 4
+        },
+        {
+            "name": "valeeng-sit",
+            "directions": 4
+        },
+        {
+            "name": "valeeng-bellyup",
+            "directions": 4
+        },
+        {
+            "name": "valeeng-wreck",
+            "directions": 1
+        },
+        {
+            "name": "valeeng_moving",
+            "directions": 4,
+            "delays": [
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ]
+            ]
+        },
+        {
+            "name": "valeeng_e_moving",
+            "directions": 4,
+            "delays": [
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ]
+            ]
+        },
+        {
+            "name": "valeeng_l_moving",
+            "directions": 4,
+            "delays": [
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ],
+                [
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07,
+                    0.07
+                ]
+            ]
+        }
+    ]
+}

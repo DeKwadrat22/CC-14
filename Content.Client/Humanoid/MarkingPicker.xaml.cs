@@ -20,18 +20,34 @@ public sealed partial class MarkingPicker : Control
 
     public void SetModel(MarkingsViewModel model)
     {
-        _markingsModel = model;
+        /*
+        // _markingsModel = model;
+        //
+        // _markingsModel.OrganDataChanged += UpdateMarkings;
+        // _markingsModel.EnforcementsChanged += UpdateMarkings;
+        */
 
-        _markingsModel.OrganDataChanged += UpdateMarkings;
-        _markingsModel.EnforcementsChanged += UpdateMarkings;
+        if (_markingsModel != null)
+        {
+            _markingsModel.OrganDataChanged -= UpdateMarkings;
+            _markingsModel.EnforcementsChanged -= UpdateMarkings;
+        }
+
+        _markingsModel = model;
+        UpdateMarkings();
     }
 
     protected override void EnteredTree()
     {
         base.EnteredTree();
 
-        _markingsModel?.OrganDataChanged += UpdateMarkings;
-        _markingsModel?.EnforcementsChanged += UpdateMarkings;
+        if (_markingsModel == null)
+            return;
+
+        _markingsModel.OrganDataChanged -= UpdateMarkings;
+        _markingsModel.OrganDataChanged += UpdateMarkings;
+        _markingsModel.EnforcementsChanged -= UpdateMarkings;
+        _markingsModel.EnforcementsChanged += UpdateMarkings;
     }
 
     protected override void ExitedTree()

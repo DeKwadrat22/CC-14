@@ -46,10 +46,10 @@ namespace Content.Server.GameTicking
                 jObject["round_id"] = _gameTicker.RoundId;
                 jObject["players"] = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
                     ? _playerManager.PlayerCount
-                    : _playerManager.PlayerCount - _adminManager.ActiveAdmins.Count();
+                    : _playerManager.PlayerCount; //- _adminManager.ActiveAdmins.Count(); # Claw Command
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
-                jObject["run_level"] = (int) _runLevel;
+                jObject["run_level"] = (int)_runLevel;
                 if (preset != null)
                     jObject["preset"] = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
                 if (_runLevel >= GameRunLevel.InRound)

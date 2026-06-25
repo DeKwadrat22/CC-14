@@ -66,7 +66,7 @@ public sealed partial class BeforeLightTargetOverlay : Overlay
         base.DisposeBehavior();
     }
 
-    internal sealed class CachedResources : IDisposable
+    internal sealed partial class CachedResources : IDisposable
     {
         public IRenderTexture EnlargedLightTarget = default!;
 

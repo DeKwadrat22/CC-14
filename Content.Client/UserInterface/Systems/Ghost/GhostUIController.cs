@@ -127,6 +127,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
+        Gui.ReturnToRoundPressed += ReturnToRound;
 
         UpdateGui();
     }
@@ -140,6 +141,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
+        Gui.ReturnToRoundPressed -= ReturnToRound;
 
         Gui.Hide();
     }
@@ -148,7 +150,11 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     {
         _system?.ReturnToBody();
     }
-
+    // Claw Command
+    private void ReturnToRound()
+    {
+        _system?.ReturnToRound();
+    }
     private void RequestWarps()
     {
         _system?.RequestWarps();

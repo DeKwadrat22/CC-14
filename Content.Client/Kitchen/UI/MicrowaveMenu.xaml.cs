@@ -75,7 +75,7 @@ namespace Content.Client.Kitchen.UI
             }
         }
 
-        public sealed class MicrowaveCookTimeButton : Button
+        public sealed partial class MicrowaveCookTimeButton : Button
         {
             public uint CookTime;
         }

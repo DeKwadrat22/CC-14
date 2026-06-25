@@ -1,0 +1,73 @@
+# Claw Command - Syndicate Outpost ghost role spawn point (random syndie character)
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: SpawnPointGhostSyndicateListener
+  name: ghost role spawn point
+  suffix: syndicate listener
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-listeningop-name
+    description: ghost-role-information-listeningop-description
+    rules: ghost-role-information-rules-team-antagonist
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3.25h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 2h
+    raffle:
+      settings: short
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSyndicateListener
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Species/Human/parts.rsi
+        state: full
+
+# Claw Command - Syndicate Outpost ghost role spawn point (player's own character)
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: SpawnPointGhostSyndicateListenerCharacter
+  name: ghost role spawn point
+  suffix: syndicate listener, your character
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-listeningop-character-name
+    description: ghost-role-information-listeningop-character-description
+    rules: ghost-role-information-rules-team-antagonist
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3.25h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 2h
+    raffle:
+      settings: short
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: SyndicateListenerGear
+    factions:
+    - Syndicate
+    implants:
+    - DeathAcidifierImplant
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Species/Human/parts.rsi
+        state: full

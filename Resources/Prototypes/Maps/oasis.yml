@@ -57,9 +57,16 @@
             CargoTechnician: [ 4, 4 ]
             #civilian (3+)
             Passenger: [ -1, -1 ] #infinite, not counted
+            Prisoner: [ 5, 5 ] #claw command
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
             #silicon (3)
             Borg: [ 2, 2 ]
+            DogborgSecurity: [ 3, 3 ]
+            DogborgMedical: [ 3, 3 ]
+            DogborgEngineering: [ 3, 3 ]
+            DogborgJanitor: [ 3, 3 ]
+            DogborgService: [ 3, 3 ]
+            DogborgMining: [ 3, 3 ]
             StationAi: [ 1, 1 ]

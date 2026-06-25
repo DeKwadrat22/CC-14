@@ -1,0 +1,877 @@
+# Ball/Testicle markings - Single type
+- type: marking
+  id: Genital-Balls-Single1
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_1_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Single2
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_2_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Single2Alt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_2_1_FRONT
+
+- type: marking
+  id: Genital-Balls-Single3
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_3_0_FRONT
+
+# Ball/Testicle markings - Small single type
+- type: marking
+  id: Genital-Balls-Small1
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_1-s_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Small2
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_2-s_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Small3
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_single_3-s_0_FRONT
+
+# Ball/Testicle markings - Sheath type
+- type: marking
+  id: Genital-Balls-Sheath1
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_1_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Sheath1Alt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_1_1_FRONT
+
+- type: marking
+  id: Genital-Balls-Sheath2
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_2_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Sheath2Alt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_2_1_FRONT
+
+- type: marking
+  id: Genital-Balls-Sheath3
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_3_0_FRONT
+
+- type: marking
+  id: Genital-Balls-Sheath3Alt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/balls.rsi
+    state: testicles_sheath_3_1_FRONT
+
+# Vagina markings - Human type
+- type: marking
+  id: GenitalVaginaHuman
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_human_1_0_FRONT
+
+- type: marking
+  id: GenitalVaginaHumanAlt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_human_1_1_FRONT
+
+- type: marking
+  id: GenitalVaginaHumanSmall
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_human_1_s_0_FRONT
+
+- type: marking
+  id: GenitalVaginaHumanSmallAlt
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_human_1_s_1_FRONT
+
+# Vagina markings - Other types
+- type: marking
+  id: GenitalVaginaDentata
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_dentata_1_0_FRONT
+
+- type: marking
+  id: GenitalVaginaHairy
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_hairy_1_0_FRONT
+
+- type: marking
+  id: GenitalVaginaFurred
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_furred_1_0_FRONT
+
+- type: marking
+  id: GenitalVaginaSpade
+  bodyPart: Genital
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/vagina.rsi
+    state: vagina_spade_1_0_FRONT
+
+# Breast markings - Round Pair (A-Cup through F-Cup)
+- type: marking
+  id: GenitalBreastsRoundA
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_a_0_FRONT
+
+- type: marking
+  id: GenitalBreastsRoundB
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_b_0_FRONT
+
+- type: marking
+  id: GenitalBreastsRoundC
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_c_0_FRONT
+
+- type: marking
+  id: GenitalBreastsRoundD
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_d_0_FRONT
+
+- type: marking
+  id: GenitalBreastsRoundE
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_e_0_FRONT
+
+- type: marking
+  id: GenitalBreastsRoundF
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pairround_f_0_FRONT
+
+# Breast markings - Regular Pair (A-Cup through F-Cup)
+- type: marking
+  id: GenitalBreastsPairA
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pair_a_0_FRONT
+
+- type: marking
+  id: GenitalBreastsPairB
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pair_b_0_FRONT
+
+- type: marking
+  id: GenitalBreastsPairC
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pair_c_0_FRONT
+
+- type: marking
+  id: GenitalBreastsPairD
+  bodyPart: Breasts
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/breasts.rsi
+    state: breasts_pair_d_0_FRONT
+
+# Penis/Cock markings
+- type: marking
+  id: Genital-Penis-Nondescript-1-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_1_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Nondescript-1-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_1_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Nondescript-2-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_2_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Nondescript-2-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_2_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Nondescript-3-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_3_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Nondescript-3-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_nondescript_3_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-1-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_1_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-1-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_1_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-2-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_2_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-2-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_2_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-3-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_3_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-3-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_3_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-1-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_1_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-1-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_1_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-2-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_2_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-2-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_2_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-3-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_3_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-3-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_3_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-1-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_1_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-1-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_1_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-2-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_2_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-2-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_2_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-3-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_3_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-3-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_3_1_FRONT
+
+# Continue with the remaining penis variants (human sheath, knotted sheath, etc.)
+- type: marking
+  id: Genital-Penis-Human-1-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_1_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-1-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_1_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-2-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_2_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-2-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_2_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-3-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_3_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Human-3-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_human_3_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-1-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_1_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-1-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_1_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-2-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_2_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-2-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_2_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-3-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_3_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Knotted-3-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_knotted_3_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-1-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_1_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-1-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_1_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-2-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_2_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-2-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_2_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-3-S-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_3_s_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Barbknot-3-S-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_barbknot_3_s_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-1-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_1_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-1-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_1_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-2-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_2_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-2-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_2_1_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-3-0
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_3_0_FRONT
+
+- type: marking
+  id: Genital-Penis-Tipknotted-3-1
+  bodyPart: Penis
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Markings/Genital/cocks.rsi
+    state: penis_tipknotted_3_1_FRONT

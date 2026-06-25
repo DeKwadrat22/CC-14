@@ -1,0 +1,56 @@
+- type: roleLoadout
+  id: JobClawCommandOfficer
+  groups:
+  - ClawCommandHead
+  - ClawCommandOfficerJumpsuit
+  - ClawCommandBackpack
+  - ClawCommandOfficerOuterClothing
+  - SecurityShoes
+  - CCSecurityGloves # CC14
+  - CCOfficerWeapon # CC14
+  - SurvivalSecurity
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - SecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobPrisoner
+  groups:
+  - PrisonerJumpsuitGroup
+  - CommonBackpack
+  - PrisonerShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - CCFoodDrink # CC14
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobClawCommandMaid
+  groups:
+  - ClawCommandHead
+  - ClawCommandMaidJumpsuit
+  - ClawCommandBackpack
+  - ClawCommandOfficerOuterClothing
+  - SecurityShoes
+  - CCSecurityGloves # CC14
+  - CCMaidEquipment # CC14
+  - CCMaidWeapon # CC14
+  - SurvivalSecurity
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - LoadoutGroupCCMJobTrinkets
+  - GroupSpeciesBreathToolSecurity

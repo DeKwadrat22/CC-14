@@ -349,6 +349,10 @@ public abstract partial class SharedMoverController : VirtualController
             {
                 var soundModifier = mover.Sprinting ? InputMoverComponent.SprintingSoundModifier : InputMoverComponent.WalkingSoundModifier;
 
+                // Claw Command - apply step audio adjustment trait if present
+                if (TryComp<Content.Shared._ClawCommand.Traits.Components.StepAudioAdjustComponent>(uid, out var stepAudio))
+                    soundModifier += mover.Sprinting ? stepAudio.SprintAdjust : stepAudio.WalkAdjust;
+
                 var audioParams = sound.Params
                     .WithVolume(sound.Params.Volume + soundModifier)
                     .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);

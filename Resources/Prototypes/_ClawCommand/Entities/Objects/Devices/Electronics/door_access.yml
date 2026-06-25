@@ -1,0 +1,8 @@
+# Command
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsClawCommand
+  suffix: Claw Command, Locked
+  components:
+  - type: AccessReader
+    access: [["ClawCommand"], ["Captain"]]

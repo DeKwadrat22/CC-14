@@ -354,7 +354,7 @@ public sealed partial class DrawEvent : SimpleDoAfterEvent
 {
 }
 
-public sealed class AddImplantAttemptEvent : CancellableEntityEventArgs
+public sealed partial class AddImplantAttemptEvent : CancellableEntityEventArgs
 {
     public readonly EntityUid User;
     public readonly EntityUid Target;
@@ -374,7 +374,7 @@ public sealed class AddImplantAttemptEvent : CancellableEntityEventArgs
 /// Change the chosen implanter in the UI.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class DeimplantChangeVerbMessage : BoundUserInterfaceMessage
+public sealed partial class DeimplantChangeVerbMessage : BoundUserInterfaceMessage
 {
     public readonly string? Implant;
 

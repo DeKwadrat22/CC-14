@@ -1,0 +1,20 @@
+playtime-editor-title = Time Transfer
+playtime-editor-target-label = Player
+playtime-editor-duration = Time
+playtime-editor-add-time = Add Time
+playtime-editor-overwrite-time = Overwrite Time
+playtime-editor-overwrite-confirm = Confirm Overwrite
+playtime-editor-status-no-target = Please enter a player name.
+playtime-editor-status-no-perms = You do not have permission to use this panel.
+playtime-editor-status-no-role = No role selected.
+playtime-editor-status-batch-no-duration = Please enter a time for the batch.
+playtime-editor-status-add-success = Time successfully added.
+playtime-editor-status-overwrite-success = Time successfully overwritten.
+playtime-editor-status-processing = Processing time changes...
+playtime-editor-checkbox-batch = Batch
+playtime-editor-checkbox-overall = Overall
+playtime-editor-search-placeholder = Search roles...
+playtime-editor-target-not-found = Player not found in database.
+
+cmd-timetransferpanel-desc = Opens play time editor
+cmd-timetransferpanel-help = Usage: timetransferpanel

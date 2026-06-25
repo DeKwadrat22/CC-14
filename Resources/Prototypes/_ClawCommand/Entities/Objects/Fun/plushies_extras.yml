@@ -1,0 +1,109 @@
+# Moth plushies + HypnoTemp Captain plushie ported for asterisk map.
+# PlushieMoth + BasePlushie already exist in target so we only add variants + the HypnoTemp parent.
+
+# --- Moth plushie variants ---
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothRandom
+  name: moth plushie
+  suffix: Random
+  description: A cute little mothperson that you can hold in the palm of your hand.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Fun/Toys/moff.rsi
+    layers:
+      - state: moff1
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          moff1: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff2: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff3: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff4: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff5: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff6: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff7: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff8: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff9: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff10: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff11: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff12: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff13: ""
+      - enum.DamageStateVisualLayers.Base:
+          moff14: ""
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothMusician
+  name: moth musician plushie
+  description: A plushie depicting an adorable mothperson with a tiny synthesizer and tiny glasses.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Fun/Toys/moff.rsi
+    state: moffmusician
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothBartender
+  name: moth bartender plushie
+  description: A plushie depicting an adorable mothperson with a tiny tophat and tiny kevlar vest. It smells like cigarettes.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Fun/Toys/moff.rsi
+    state: moffbartender
+
+# --- HypnoTemp plushie chain ---
+- type: entity
+  parent: BasePlushie
+  id: BaseHypnoTempPlush
+  abstract: true
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 75
+  - type: UseDelay
+    delay: 3.0
+  - type: MixableSolution
+    solution: absorbed
+  - type: RefillableSolution
+    solution: absorbed
+  - type: DrainableSolution
+    solution: absorbed
+
+- type: entity
+  parent: BaseHypnoTempPlush
+  id: PlushieHypnoTempCap
+  name: HypnoTemp plushie
+  description: A larger than life HypnoTech Temporary Staffer plushie! This one is dressed in a delightfully commanding Captain uniform.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/HypnoTempPlushies/staffer_plushies.rsi
+    state: staffer_Cap
+  - type: SolutionContainerManager
+    solutions:
+      absorbed:
+        maxVol: 30
+        reagents:
+        - ReagentId: Cream
+          Quantity: 5
+        - ReagentId: Coffee
+          Quantity: 10
+        - ReagentId: Desoxyephedrine
+          Quantity: 7
+        - ReagentId: Diphenhydramine
+          Quantity: 8

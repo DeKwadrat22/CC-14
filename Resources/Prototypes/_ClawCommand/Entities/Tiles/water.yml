@@ -1,0 +1,133 @@
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterDeep
+  name: deep water
+  description: Crystal clear deep water. The bottom is barely visible beneath the shimmering surface.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: water_deep
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.2
+    sprintSpeedModifier: 0.2
+
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterMedium
+  name: water
+  description: Cool, refreshing water that reaches up to your waist. A gentle current flows through it.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: water_medium
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.4
+    sprintSpeedModifier: 0.4
+
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterShallow
+  name: shallow water
+  description: Pristine shallow water, gently lapping at your ankles. You can see the bottom clearly.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: water_shallow
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+
+# Pool / stream variants (light blue, clean)
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterPoolDeep
+  name: deep pool water
+  description: Beautifully clear deep pool water. The light blue shimmer is mesmerizing.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: sewer_deep
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.2
+    sprintSpeedModifier: 0.2
+
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterPoolMedium
+  name: pool water
+  description: Inviting light blue pool water, perfectly clear and refreshing.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: sewer_medium
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.4
+    sprintSpeedModifier: 0.4
+
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterPoolShallow
+  name: shallow pool water
+  description: Warm, shallow pool water. The light glistens beautifully off the surface.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Tiles/Water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: sewer_shallow
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+
+# Salt water variants
+- type: entity
+  parent: FloorWaterDeep
+  id: FloorWaterSaltDeep
+  name: deep salt water
+  description: Deep ocean water with a faint taste of salt. The depths below are dark and vast.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+
+- type: entity
+  parent: FloorWaterMedium
+  id: FloorWaterSaltMedium
+  name: salt water
+  description: Clear salt water lapping gently. You can taste the ocean breeze.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+
+- type: entity
+  parent: FloorWaterShallow
+  id: FloorWaterSaltShallow
+  name: shallow salt water
+  description: Warm, shallow salt water washing over your feet. Tiny waves catch the light.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999

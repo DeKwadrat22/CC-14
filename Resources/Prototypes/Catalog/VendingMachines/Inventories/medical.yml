@@ -7,6 +7,7 @@
     Ointment: 3
     Bloodpack: 3
     ChemistryBottleEpinephrine: 3
+    EpinephrineChemistryBottle: 3 # Claw Command - alt-ID reagent bottle
     Syringe: 3
     PillCanisterTricordrazine: 2
   contrabandInventory:

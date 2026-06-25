@@ -1,0 +1,7 @@
+- type: accessLevel
+  id: ClawCommand
+  name: cc-id-card-access-level-claw-command-officer
+
+- type: accessLevel
+  id: AdmiralClaw
+  name: id-card-access-level-admiralclaw

@@ -132,6 +132,15 @@
     Plastic: 250
 
 - type: latheRecipe
+  parent: BaseToolRecipe
+  id: RPD
+  result: RPDEmpty
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 400
+
+- type: latheRecipe
   parent: BaseBigToolRecipe
   id: HandHeldMassScanner
   result: HandHeldMassScannerEmpty

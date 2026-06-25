@@ -36,7 +36,14 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
 
         // This method uses two loops since some marking with constrained colors care about the colors of previous markings.
         // As such we want to ensure we can apply the markings they rely on first.
-        foreach (var marking in markings)
+
+        // CLAW COMMAND 14 - Sort markings by a new layering system. This was simple enough. - Cookie
+        var sorted = markings
+        .OrderBy(m => _marking.TryGetMarking(m, out var proto) ? proto.RenderPriority : 0)
+        .ToList();
+
+        // foreach (var marking in markings)
+        foreach (var marking in sorted)
         {
             if (!_marking.TryGetMarking(marking, out var proto))
                 continue;

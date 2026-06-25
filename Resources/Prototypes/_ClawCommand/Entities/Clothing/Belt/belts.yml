@@ -1,0 +1,61 @@
+# Claw Command - Ported from upstream
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltSuspenders
+  name: suspenders
+  description: For holding your pants up.
+  components:
+  - type: Tag
+    tags:
+    - MimeBelt
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/suspenders.rsi
+    state: icon
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/suspenders.rsi
+    quickEquip: true
+
+# CentComm sabre sheath
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase, BaseCentcommContraband]
+  id: ClothingBeltCentcommSheath
+  suffix: CentComm
+  name: CentComm sabre sheath
+  description: An green, ornate sheath designed to hold an officer's blade. Radiates with majesty.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Belt/centcomm_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Belt/centcomm_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - CentCommSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - CentCommSabre
+  - type: Appearance
+
+# CentComm sabre sheath [filled]
+- type: entity
+  id: ClothingBeltCentcommSheathFilled
+  parent: ClothingBeltCentcommSheath
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CentcommSabre

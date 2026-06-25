@@ -1,0 +1,6 @@
+# Stub collectiveMind prototype — referenced by eldritch mobs / star_gazer / polymorph
+# YAML so the prototype validates. Starlight CollectiveMind has no backing system in
+# this fork, so the channel never delivers messages.
+
+- type: collectiveMind
+  id: MansusLink

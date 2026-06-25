@@ -86,9 +86,14 @@ namespace Content.Shared.Chat
         Unspecified = 1 << 14,
 
         /// <summary>
+        ///     Subtle chat heard only by players right next to each other, with line of sight.
+        /// </summary>
+        Subtle = 1 << 15, // claw command
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
-        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications,
+        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications | Subtle, // claw command - added Subtle
 
         AdminRelated = Admin | AdminAlert | AdminChat,
     }

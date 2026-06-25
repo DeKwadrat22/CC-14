@@ -1,0 +1,54 @@
+# Claw Command satchel
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelClawCommand
+  suffix: Claw Command
+  name: claw command satchel
+  description: A very protective satchel, smells like fur.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Back/Satchels/clawcommand.rsi
+
+# Centcomm satchel
+- type: entity
+  name: centcomm satchel
+  parent: [ ClothingBackpackSatchel, BaseCentcommContraband ]
+  id: ClothingBackpackSatchelCentComm
+  suffix: CentComm
+  description: A leather satchel made from specially blended aramid-policarbon fiber, designed to be resistant to damage and explosions. It has the CentComm logo on it.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Back/Satchels/centcomm_satchel.rsi
+
+# Centcomm satchel [filled, official]
+- type: entity
+  id: ClothingBackpackSatchelCentCommFilledOfficial
+  parent: ClothingBackpackSatchelCentComm
+  suffix: Filled, official
+  components:
+  - type: ContainerFill
+    containers:
+      storagebase:
+      - BoxSurvivalMilitaryDouble
+      - BoxFolderCentComClipboardThreePapers
+      - MagazineMagnum
+      - MagazineMagnum
+      - RubberStampCentcom
+      - PenCentcom
+
+# Centcomm satchel [filled, officer]
+- type: entity
+  id: ClothingBackpackSatchelCentCommFilledOfficer
+  parent: ClothingBackpackSatchelCentComm
+  suffix: Filled, officer
+  components:
+  - type: ContainerFill
+    containers:
+      storagebase:
+      - BoxSurvivalMilitaryDouble
+      - PortableRecharger
+      - JawsOfLife
+      - MedkitCombatFilled
+      - CombatMedipen
+      - CombatMedipen
+      - PowerCellHigh

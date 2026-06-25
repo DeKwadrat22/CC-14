@@ -97,3 +97,24 @@
   cost: 2000
   category: cargoproduct-category-name-food
   group: market
+
+# Claw Command - bulk food crates
+- type: cargoProduct
+  id: FoodPizzaLarge
+  icon:
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    state: margherita
+  product: CrateFoodPizzaLarge
+  cost: 1800
+  category: cargoproduct-category-name-food
+  group: market
+
+- type: cargoProduct
+  id: FoodSoftdrinksLarge
+  icon:
+    sprite: Objects/Consumable/Drinks/colabottle.rsi
+    state: icon
+  product: CrateFoodSoftdrinksLarge
+  cost: 2400
+  category: cargoproduct-category-name-food
+  group: market

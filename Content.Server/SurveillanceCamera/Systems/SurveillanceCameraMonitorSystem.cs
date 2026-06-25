@@ -1,12 +1,16 @@
 using System.Linq;
 using Content.Server.DeviceNetwork;
+using Content.Server.DeviceNetwork.Components; // Claw Command
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Power.Components;
+using Content.Shared._ClawCommand.SyndieOutpost; // Claw Command
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components; // Claw Command
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Power;
-using Content.Shared.UserInterface;
 using Content.Shared.SurveillanceCamera;
+using Content.Shared.SurveillanceCamera.Components; // Claw Command
+using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
@@ -233,6 +237,14 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
+        // Claw Command - hacked monitors don't need heartbeats, just reset the timer
+        if (TryComp<SyndieOutpostHackComponent>(uid, out var hack) && hack.HackSucceeded)
+        {
+            monitor.LastHeartbeat = 0;
+            monitor.LastHeartbeatSent = 0;
+            return;
+        }
+
         var payload = new NetworkPayload()
         {
             { DeviceNetworkConstants.Command, SurveillanceCameraSystem.CameraHeartbeatMessage },
@@ -278,6 +290,21 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
+        // Claw Command - if hacked, directly populate subnets from all routers
+        if (TryComp<SyndieOutpostHackComponent>(uid, out var hack) && hack.HackSucceeded)
+        {
+            var routerQuery = EntityQueryEnumerator<SurveillanceCameraRouterComponent, DeviceNetworkComponent>();
+            while (routerQuery.MoveNext(out _, out var router, out var routerNet))
+            {
+                if (router.SubnetFrequencyId != null
+                    && router.Active
+                    && !monitor.KnownSubnets.ContainsKey(router.SubnetFrequencyId))
+                    monitor.KnownSubnets[router.SubnetFrequencyId] = routerNet.Address;
+            }
+            UpdateUserInterface(uid, monitor);
+            return;
+        }
+
         var payload = new NetworkPayload()
         {
             { DeviceNetworkConstants.Command, SurveillanceCameraSystem.CameraPingMessage }
@@ -313,6 +340,10 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
+        // Claw Command - hacked monitors already have cameras populated directly
+        if (HasComp<SyndieOutpostHackComponent>(uid))
+            return;
+
         var payload = new NetworkPayload()
         {
             {DeviceNetworkConstants.Command, SurveillanceCameraSystem.CameraPingSubnetMessage},
@@ -326,6 +357,13 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             || string.IsNullOrEmpty(subnet)
             || !monitor.KnownSubnets.TryGetValue(subnet, out var address))
         {
+            return;
+        }
+
+        // Claw Command - if hacked, directly populate cameras from the subnet's router
+        if (TryComp<SyndieOutpostHackComponent>(uid, out var hack) && hack.HackSucceeded)
+        {
+            HackedPopulateCameras(uid, subnet, monitor);
             return;
         }
 
@@ -346,6 +384,10 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
         {
             return;
         }
+
+        // Claw Command - hacked monitors don't need to send disconnect packets
+        if (HasComp<SyndieOutpostHackComponent>(uid))
+            return;
 
         var payload = new NetworkPayload()
         {
@@ -434,6 +476,13 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
         if (cameraSubnet != null && cameraSubnet != monitor.ActiveSubnet)
             SetActiveSubnet(uid, cameraSubnet, monitor);
 
+        // Claw Command - if hacked, find and connect to the camera directly
+        if (TryComp<SyndieOutpostHackComponent>(uid, out var hack) && hack.HackSucceeded)
+        {
+            HackedSwitchCamera(uid, address, monitor);
+            return;
+        }
+
         var activeSubnet = monitor.ActiveSubnet;
 
         if (string.IsNullOrEmpty(activeSubnet) || !monitor.KnownSubnets.TryGetValue(activeSubnet, out var subnetAddress))
@@ -503,5 +552,66 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
 
         var state = new SurveillanceCameraMonitorUiState(GetNetEntity(monitor.ActiveCamera), monitor.KnownSubnets.Keys.ToHashSet(), monitor.ActiveCameraAddress, monitor.ActiveSubnet, monitor.KnownCameras);
         _userInterface.SetUiState(uid, SurveillanceCameraMonitorUiKey.Key, state);
+    }
+
+    // Claw Command - directly populate cameras for a hacked monitor by querying camera entities
+    private void HackedPopulateCameras(EntityUid uid, string subnet, SurveillanceCameraMonitorComponent monitor)
+    {
+        // subnet is the SubnetFrequencyId (e.g. "SurveillanceCameraSecurity")
+        // Find the router for this subnet to get the actual uint frequency
+        var routerQuery = EntityQueryEnumerator<SurveillanceCameraRouterComponent>();
+        uint? subnetFreq = null;
+        while (routerQuery.MoveNext(out _, out var router))
+        {
+            if (router.SubnetFrequencyId == subnet)
+            {
+                subnetFreq = router.SubnetFrequency;
+                break;
+            }
+        }
+
+        if (!subnetFreq.HasValue)
+            return;
+
+        // Query all active cameras that receive on this subnet frequency
+        var cameraQuery = EntityQueryEnumerator<SurveillanceCameraComponent, DeviceNetworkComponent>();
+        while (cameraQuery.MoveNext(out var camUid, out var cam, out var camNet))
+        {
+            if (!cam.Active)
+                continue;
+
+            if (camNet.ReceiveFrequency != subnetFreq.Value)
+                continue;
+
+            var cameraName = cam.CameraId;
+            if (cam.UseEntityNameAsCameraId)
+                cameraName = Name(camUid);
+
+            monitor.KnownCameras[camNet.Address] = cameraName;
+        }
+
+        UpdateUserInterface(uid, monitor);
+    }
+
+    // Claw Command - directly switch to a camera by address for hacked monitors
+    private void HackedSwitchCamera(EntityUid uid, string address, SurveillanceCameraMonitorComponent monitor)
+    {
+        // Find camera entity by device network address
+        var cameraQuery = EntityQueryEnumerator<SurveillanceCameraComponent, DeviceNetworkComponent>();
+        while (cameraQuery.MoveNext(out var camUid, out var cam, out var camNet))
+        {
+            if (camNet.Address != address || !cam.Active)
+                continue;
+
+            monitor.ActiveCameraAddress = address;
+            monitor.LastHeartbeat = 0;
+
+            if (monitor.ActiveCamera == null)
+                SetCamera(uid, camUid, monitor);
+            else
+                SwitchCamera(uid, camUid, monitor);
+
+            return;
+        }
     }
 }

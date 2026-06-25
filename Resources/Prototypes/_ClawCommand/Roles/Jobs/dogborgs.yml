@@ -1,0 +1,99 @@
+# Roundstart dogborg jobs. One per department; players who already meet the
+# regular Borg playtime gate can pick any of these in the lobby, late-join
+# midround, or be observed taking them off the ghost role menu.
+#
+# Each job's `jobEntity` is the matching PlayerDogborg* — see
+# _ClawCommand/Entities/Mobs/Player/dogborg_player.yml.
+#
+# Each job uses its own PlayTimeTracker — the engine enforces a 1:1 mapping
+# between tracker and job (SharedJobSystem.SetupTrackerLookup adds them to a
+# dict keyed by tracker), so reusing `JobBorg` for all dogborgs would crash
+# at startup. Trackers are defined in
+# _ClawCommand/Roles/dogborg_play_time_trackers.yml.
+
+- type: job
+  id: DogborgSecurity
+  name: job-name-dogborg-security
+  description: job-description-dogborg-security
+  playTimeTracker: JobDogborgSecurity
+  requirements:
+  - !type:DepartmentTimeRequirement # Same as SecurityOfficer
+    department: Security
+    time: 14400 # 4h
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgSecurity
+  applyTraits: false
+
+- type: job
+  id: DogborgMedical
+  name: job-name-dogborg-medical
+  description: job-description-dogborg-medical
+  playTimeTracker: JobDogborgMedical
+  requirements:
+  - !type:DepartmentTimeRequirement # Same as MedicalDoctor
+    department: Medical
+    time: 9000 # 2.5h
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgMedical
+  applyTraits: false
+
+- type: job
+  id: DogborgEngineering
+  name: job-name-dogborg-engineering
+  description: job-description-dogborg-engineering
+  playTimeTracker: JobDogborgEngineering
+  requirements:
+  - !type:DepartmentTimeRequirement # Same as StationEngineer
+    department: Engineering
+    time: 9000 # 2.5h
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgEngineering
+  applyTraits: false
+
+- type: job
+  id: DogborgJanitor
+  name: job-name-dogborg-janitor
+  description: job-description-dogborg-janitor
+  playTimeTracker: JobDogborgJanitor
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 36000
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgJanitor
+  applyTraits: false
+
+- type: job
+  id: DogborgService
+  name: job-name-dogborg-service
+  description: job-description-dogborg-service
+  playTimeTracker: JobDogborgService
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 36000
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgService
+  applyTraits: false
+
+- type: job
+  id: DogborgMining
+  name: job-name-dogborg-mining
+  description: job-description-dogborg-mining
+  playTimeTracker: JobDogborgMining
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 36000
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerDogborgMining
+  applyTraits: false

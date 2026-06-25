@@ -24,4 +24,25 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
+
+    /// <summary>
+    /// Claw Command
+    ///     Custom species name that overrides the default species name in examine text.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string CustomSpeciesName = string.Empty;
+
+    /// <summary>
+    /// Claw Command
+    ///     The height of this humanoid.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Height = 1f;
+
+    /// <summary>
+    /// Claw Command
+    ///     The width of this humanoid.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Width = 1f;
 }

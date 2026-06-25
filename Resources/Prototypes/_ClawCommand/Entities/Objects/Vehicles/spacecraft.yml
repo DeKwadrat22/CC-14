@@ -1,0 +1,80 @@
+# Claw Command - Decorative spacecraft entities
+- type: entity
+  id: ClawCommandVoidfox
+  name: voidfox
+  description: Classified mass-producable spaceframe of unknown origin. Twin reactors, vacuum-tube avionics, and enough thrust to outrun a sensor lock. NTR scientists called it impossible until they nicked one.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false
+    noRot: true
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Vehicles/Spacecraft/voidfox.rsi
+    noRot: true
+    layers:
+    # Visible hull shifted 1 tile north so the entity-origin tile (where the
+    # PortablePipeNode actually connects) sits at the south-center of the ship.
+    - state: open_landed
+      offset: 0, 1
+    # Overlay stays at origin (0,0) → south-pointing connector renders on the
+    # south-center tile, indicating "wrench me onto a GasPortConnector below."
+    - sprite: Structures/Storage/canister.rsi
+      state: can-connector
+      visible: false
+      map: [ "fuelPort" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        fuelPort:
+          False: { visible: false }
+          True: { visible: true }
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+    flags:
+    - Anchorable
+  # Dynamic so it can be wrenched; Anchorable flips this to Static on anchor.
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          # Bounds shifted 1 tile north to match the visual hull offset above.
+          # Origin row (y=0) is the south edge of the hull = the fuel-port tile.
+          bounds: "-4,-0.5,4,2.5"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Pullable
+  # Pilot mechanics (drag-drop entry, single occupant) reused from the mech system.
+  - type: Mech
+    maxEquipmentAmount: 0
+    airtight: false
+    entryDelay: 2
+    exitDelay: 2
+  - type: Voidfox
+  - type: ActivatableUI
+    key: enum.VoidfoxUiKey.Terminal
+  - type: UserInterface
+    interfaces:
+      enum.VoidfoxUiKey.Terminal:
+        type: VoidfoxBoundUserInterface
+  # Single portable pipe node — same pattern as gas canisters. Player wrenches the
+  # spaceframe directly on top of a GasPortConnector to refuel; the connector tile is
+  # highlighted via the AnchorVisuals overlay layer above.
+  - type: NodeContainer
+    nodes:
+      fuelPort:
+        !type:PortablePipeNode
+        nodeGroupID: Pipe
+        rotationsEnabled: false
+        volume: 1
+  - type: GasPortable
+  - type: AtmosDevice

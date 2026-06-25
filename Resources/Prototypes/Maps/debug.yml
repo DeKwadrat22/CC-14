@@ -12,6 +12,7 @@
         - type: StationJobs
           availableJobs:
             Passenger: [ -1, -1 ]
+            Prisoner: [ 5, 5 ] #claw command
 
 - type: gameMap
   id: Dev

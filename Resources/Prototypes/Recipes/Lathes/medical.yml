@@ -276,3 +276,12 @@
     Plastic: 250
     Silver: 400
     Gold: 50 # A bit of gold for the gold ornaments on it!
+
+- type: latheRecipe
+  id: RefillableMedipen
+  result: RefillableMedipen
+  completetime: 10
+  materials:
+    Steel: 50
+    Glass: 50
+    Plastic: 100

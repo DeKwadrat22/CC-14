@@ -1,0 +1,81 @@
+- type: marking
+  id: MakeupLips
+  bodyPart: Head
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune] # Delta V - MarkingsFelinid, MarkingsTajaran, Harpy
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: lips
+
+- type: marking
+  id: MakeupBlush
+  bodyPart: Head
+  groupWhitelist: [Human, Reptilian, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsKitsune] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin, Harpy
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d39394"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: blush
+
+- type: marking
+  id: MakeupNailPolishRight
+  bodyPart: RHand
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#702020"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: nail_polish_r
+
+- type: marking
+  id: MakeupNailPolishLeft
+  bodyPart: LHand
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#702020"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: nail_polish_l
+
+# Moth-specific
+
+- type: marking
+  id: MakeupMothLips
+  bodyPart: Head   # The marking category is in Overlay instead of Head
+                             # because the Head category for moths only allows 1
+                             # marking and lips should be usable alongside blush
+  groupWhitelist: [Moth]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: moth_lips
+
+- type: marking
+  id: MakeupMothBlush
+  bodyPart: Head
+  groupWhitelist: [Moth]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d39394"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/makeup.rsi
+    state: moth_blush

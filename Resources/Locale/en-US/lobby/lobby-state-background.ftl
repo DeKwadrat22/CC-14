@@ -36,3 +36,18 @@ lobby-state-background-janishootout-artist = psychpsyo
 
 lobby-state-background-reclaimernuke-title = Reclaimer Nuke
 lobby-state-background-reclaimernuke-artist = GetOutMarutak
+
+lobby-state-background-robotics-title = Robotics
+lobby-state-background-robotics-artist = Veritius
+
+lobby-state-background-supermatter-title = Supermatter
+lobby-state-background-supermatter-artist = Veritius
+
+lobby-state-background-hellshift-title = Hell Shift
+lobby-state-background-hellshift-artist = JTCircus
+
+lobby-state-background-maintsbar-title = The Maints Bar
+lobby-state-background-maintsbar-artist = layziilykaotic
+
+lobby-state-background-nukeclub-title = Nuke Club
+lobby-state-background-nukeclub-artist = Wab.Boi

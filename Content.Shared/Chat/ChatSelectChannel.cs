@@ -51,6 +51,11 @@
         /// </summary>
         Admin = ChatChannel.AdminChat,
 
-        Console = ChatChannel.Unspecified
+        Console = ChatChannel.Unspecified,
+
+        /// <summary>
+        ///     Subtle chat heard only right next to each other
+        /// </summary>
+        Subtle = ChatChannel.Subtle, // claw command
     }
 }

@@ -123,6 +123,10 @@ public sealed partial class StoreSystem
             component.BalanceSpent[currency] += amount;
         }
 
+        // _ClawCommand: grant heretic knowledge before listings refresh so path/stage
+        // updates flow into the next condition-evaluation pass.
+        TryGrantHereticKnowledge(buyer, listing);
+
         //apply components
         if (listing.ProductComponents != null)
         {

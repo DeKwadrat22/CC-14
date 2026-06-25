@@ -112,6 +112,13 @@ namespace Content.Shared.Maps
         public float? MobFriction { get; private set; }
 
         /// <summary>
+        ///     "Average" static coefficient of friction for assuming a steel tile. Used as the fallback for the
+        ///     space-wind friction computation when nothing else applies (assumes rubber on steel).
+        /// </summary>
+        [DataField]
+        public float? MobFrictionNoInput;
+
+        /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
         /// </summary>
         [DataField("mobAcceleration")]
@@ -138,5 +145,20 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
+
+        /// <summary>
+        ///     Whether airflow is simulated across this tile. Disable to treat the tile as "shielded" against
+        ///     the Matrix Airflow / Space Wind solver while keeping it a normal floor for everything else.
+        ///     Note: For planet maps you can instead mark the GridAtmosphere as !Simulated.
+        /// </summary>
+        [DataField]
+        public bool SimulatedTurf = true;
+
+        /// <summary>
+        ///     Marks a tile as reinforced (e.g. r-glass / wall plating). Currently a marker for content systems
+        ///     that want to behave differently on hardened tiles.
+        /// </summary>
+        [DataField]
+        public bool Reinforced;
     }
 }

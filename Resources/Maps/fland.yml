@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.1.0
+  engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 01/08/2026 20:58:33
-  entityCount: 36094
+  time: 05/28/2026 23:01:00
+  entityCount: 36099
 maps:
 - 1
 grids:
@@ -15770,6 +15770,8 @@ entities:
     - type: NavMap
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 13351
@@ -79700,13 +79702,6 @@ entities:
     components:
     - type: Transform
       pos: 48.51168,29.54796
-      parent: 13329
-- proto: CaptainIDCard
-  entities:
-  - uid: 35821
-    components:
-    - type: Transform
-      pos: 81.9281,44.575443
       parent: 13329
 - proto: CarbonDioxideCanister
   entities:
@@ -190447,6 +190442,38 @@ entities:
     components:
     - type: Transform
       pos: 4.5,26.5
+      parent: 13329
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 35821
+    components:
+    - type: Transform
+      pos: 47.5,20.5
+      parent: 13329
+  - uid: 36095
+    components:
+    - type: Transform
+      pos: 47.5,19.5
+      parent: 13329
+  - uid: 36096
+    components:
+    - type: Transform
+      pos: 47.5,18.5
+      parent: 13329
+  - uid: 36097
+    components:
+    - type: Transform
+      pos: 45.5,20.5
+      parent: 13329
+  - uid: 36098
+    components:
+    - type: Transform
+      pos: 45.5,18.5
+      parent: 13329
+  - uid: 36099
+    components:
+    - type: Transform
+      pos: 45.5,19.5
       parent: 13329
 - proto: SpawnPointQuartermaster
   entities:

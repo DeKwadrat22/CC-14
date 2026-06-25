@@ -24,7 +24,7 @@
       limit: 3
       required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2
       required: true
       default: [ VulpTailVulp ]
     enum.HumanoidVisualLayers.LArm:
@@ -59,6 +59,15 @@
       limit: 1
       required: false
       nudityDefault: [ UndergarmentBottomBoxersVulpkanin ]
+    enum.HumanoidVisualLayers.Genital: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts: # Claw Command
+      limit: 1
+      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -93,11 +102,11 @@
   - type: Inventory
     speciesId: vulpkanin
     displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: jumpsuit
+      #jumpsuit:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: jumpsuit
       back:
         sizeMaps:
           32:
@@ -113,21 +122,21 @@
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hand
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: shoes
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
-      neck:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: neck
+      #shoes: # Claw Command comment those out so our paradise station sprites dont clip through clothing or shoes. Also so ears appear over helmets for that extra cuteness.
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: shoes
+      #head:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: head
+      #neck:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: neck
       eyes:
         sizeMaps:
           32:
@@ -153,12 +162,10 @@
         color: "#ccac1f"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-  - type: MessyDrinker
-    spillChance: 0.33
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
-    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl' ]
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ] # Claw Command
   - type: TypingIndicator
     proto: vulpkanin
   - type: Vocal
@@ -239,7 +246,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: _ClawCommand/Mobs/Species/Vulpkanin/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Vulpkanin
@@ -250,14 +257,14 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _ClawCommand/Mobs/Species/Vulpkanin/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninExternal ]
   id: OrganVulpkaninTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganVulpkaninExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganVulpkaninExternal ]
   id: OrganVulpkaninHead
   components:
   - type: VisualOrganMarkings
@@ -316,6 +323,10 @@
 - type: entity
   parent: [ OrganVulpkaninVisual, OrganBaseEyes, OrganVulpkaninInternal ]
   id: OrganVulpkaninEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVulpkaninInternal ]

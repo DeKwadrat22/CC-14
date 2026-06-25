@@ -38,6 +38,7 @@
   - StorageImplanter
   - DnaScramblerImplanter
   - ChemistryBottleEphedrine
+  - EphedrineChemistryBottle # Claw Command - alt-ID
   - SoapOmega
   - Syringe
   - DrinkShaker
@@ -68,6 +69,7 @@
   content:
   - ChemistryBottleNocturine
   - ChemistryBottleNocturine
+  - NocturineChemistryBottle # Claw Command - alt-ID
   - HypopenBox
   - NitrousOxideTankFilled
 

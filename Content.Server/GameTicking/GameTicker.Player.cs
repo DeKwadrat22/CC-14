@@ -225,7 +225,7 @@ namespace Content.Server.GameTicking
         }
     }
 
-    public sealed class PlayerJoinedLobbyEvent : EntityEventArgs
+    public sealed partial class PlayerJoinedLobbyEvent : EntityEventArgs
     {
         public readonly ICommonSession PlayerSession;
 

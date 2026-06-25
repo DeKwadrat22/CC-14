@@ -38,6 +38,15 @@
     enum.HumanoidVisualLayers.RFoot:
       limit: 1
       required: false
+    enum.HumanoidVisualLayers.Genital: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts: # Claw Command
+      limit: 1
+      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance

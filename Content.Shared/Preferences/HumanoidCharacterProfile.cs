@@ -80,6 +80,13 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
+        /// <summary>
+        ///     Claw Command
+        ///     Custom species name that overrides the default species name in examine text.
+        /// </summary>
+        [DataField]
+        public string CustomSpeciesName { get; set; } = string.Empty;
+
         [DataField]
         public int Age { get; set; } = 18;
 
@@ -123,6 +130,20 @@ namespace Content.Shared.Preferences
         public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
             PreferenceUnavailableMode.SpawnAsOverflow;
 
+        /// <summary>
+        ///     Claw Command
+        ///     The height of this humanoid.
+        /// </summary>
+        [DataField]
+        public float Height = 1f;
+
+        /// <summary>
+        ///     Claw Command
+        ///     The width of this humanoid.
+        /// </summary>
+        [DataField]
+        public float Width = 1f;
+
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
@@ -136,7 +157,10 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            float width = 1f, // Claw Command
+            float height = 1f, // Claw Command
+            string? customSpeciesName = null) // Claw Command
         {
             Name = name;
             FlavorText = flavortext;
@@ -144,6 +168,9 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
+            Width = width; // Claw Command
+            Height = height; // Claw Command
+            CustomSpeciesName = customSpeciesName ?? string.Empty; // Claw Command
             Appearance = appearance;
             SpawnPriority = spawnPriority;
             _jobPriorities = jobPriorities;
@@ -181,7 +208,10 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.Width, // Claw Command
+                other.Height, // Claw Command
+                other.CustomSpeciesName) // Claw Command
         {
         }
 
@@ -280,13 +310,30 @@ namespace Content.Shared.Preferences
 
         public HumanoidCharacterProfile WithAge(int age)
         {
-            return new(this) { Age = age };
+            // Claw command enforce min and max character age.
+            int clamped = Math.Clamp(age, 18, 150);
+            return new(this) { Age = clamped };
         }
 
         public HumanoidCharacterProfile WithSex(Sex sex)
         {
             return new(this) { Sex = sex };
         }
+        // Claw Command height and width
+        public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
+        public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
+        public HumanoidCharacterProfile WithWidthHeight(float width, float height) => new(this) { Width = width, Height = height };
+        // Claw Command custom species name
+        public HumanoidCharacterProfile WithCustomSpeciesName(string customSpeciesName)
+        {
+            var name = customSpeciesName.Trim();
+            if (name.Length > 15)
+                name = name[..15];
+            if (name.Length > 0 && name.Length < 3)
+                name = string.Empty;
+            return new(this) { CustomSpeciesName = name };
+        }
+
 
         public HumanoidCharacterProfile WithGender(Gender gender)
         {
@@ -371,7 +418,7 @@ namespace Content.Shared.Preferences
         {
             return new(this)
             {
-                _antagPreferences = new (antagPreferences),
+                _antagPreferences = new(antagPreferences),
             };
         }
 
@@ -409,7 +456,49 @@ namespace Content.Shared.Preferences
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
-            if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
+            // Claw Command - block trait if species doesn't match.
+            if (traitProto.RestrictedSpecies.Count > 0 && !traitProto.RestrictedSpecies.Contains(Species))
+                return new(this);
+
+            // Claw Command - check mutual exclusions before allowing the trait.
+            if (traitProto.Excludes.Count > 0)
+            {
+                foreach (var excluded in traitProto.Excludes)
+                {
+                    if (_traitPreferences.Contains(excluded))
+                        return new(this);
+                }
+            }
+
+            // Claw Command - block trait if any preferred job is in a restricted department.
+            if (traitProto.RestrictedDepts.Count > 0)
+            {
+                foreach (var dept in protoManager.EnumeratePrototypes<DepartmentPrototype>())
+                {
+                    if (!traitProto.RestrictedDepts.Contains(dept.ID))
+                        continue;
+
+                    foreach (var role in dept.Roles)
+                    {
+                        if (_jobPriorities.TryGetValue(role, out var pri) && pri > JobPriority.Never)
+                            return new(this);
+                    }
+                }
+            }
+
+            if (traitCategory == null)
+            {
+                return new(this)
+                {
+                    _traitPreferences = list,
+                };
+            }
+
+            // Claw Command - resolve shared BudgetPool for validation.
+            var poolKey = traitCategory.BudgetPool ?? traitCategory.ID;
+            var poolLimit = GetBudgetPoolLimit(poolKey, protoManager) ?? traitCategory.MaxTraitPoints;
+
+            if (poolLimit == null || poolLimit < 0)
             {
                 return new(this)
                 {
@@ -420,17 +509,22 @@ namespace Content.Shared.Preferences
             var count = 0;
             foreach (var trait in list)
             {
-                // If trait not found or another category don't count its points.
-                if (!protoManager.TryIndex<TraitPrototype>(trait, out var otherProto) ||
-                    otherProto.Category != traitCategory)
-                {
+                // If trait not found don't count its points.
+                if (!protoManager.TryIndex<TraitPrototype>(trait, out var otherProto))
                     continue;
-                }
+
+                // Claw Command - count all traits in the same BudgetPool, not just same category.
+                if (otherProto.Category == null || !protoManager.Resolve(otherProto.Category, out var otherCat))
+                    continue;
+
+                var otherPoolKey = otherCat.BudgetPool ?? otherCat.ID;
+                if (otherPoolKey != poolKey)
+                    continue;
 
                 count += otherProto.Cost;
             }
 
-            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
+            if (count > poolLimit && traitProto.Cost != 0)
             {
                 return new(this);
             }
@@ -467,6 +561,9 @@ namespace Content.Shared.Preferences
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
+            if (Width != other.Width) return false; // Claw Command
+            if (Height != other.Height) return false; // Claw Command
+            if (CustomSpeciesName != other.CustomSpeciesName) return false; // Claw Command
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -656,10 +753,58 @@ namespace Content.Shared.Preferences
             var groups = new Dictionary<string, int>();
             var result = new List<ProtoId<TraitPrototype>>();
 
+            // Claw Command - build a set of department-restricted jobs for fast lookup.
+            var blockedJobsByDept = new Dictionary<string, HashSet<ProtoId<JobPrototype>>>();
+            foreach (var dept in protoManager.EnumeratePrototypes<DepartmentPrototype>())
+            {
+                blockedJobsByDept[dept.ID] = new HashSet<ProtoId<JobPrototype>>(dept.Roles);
+            }
+
             foreach (var trait in traits)
             {
                 if (!protoManager.TryIndex(trait, out var traitProto))
                     continue;
+
+                // Claw Command - skip if species doesn't match.
+                if (traitProto.RestrictedSpecies.Count > 0 && !traitProto.RestrictedSpecies.Contains(Species))
+                    continue;
+
+                // Claw Command - skip if an already-accepted trait is mutually exclusive.
+                var excluded = false;
+                foreach (var ex in traitProto.Excludes)
+                {
+                    if (result.Contains(ex))
+                    {
+                        excluded = true;
+                        break;
+                    }
+                }
+                if (excluded)
+                    continue;
+
+                // Claw Command - skip if any preferred job is in a restricted department.
+                if (traitProto.RestrictedDepts.Count > 0)
+                {
+                    var deptBlocked = false;
+                    foreach (var deptId in traitProto.RestrictedDepts)
+                    {
+                        if (!blockedJobsByDept.TryGetValue(deptId, out var deptJobs))
+                            continue;
+
+                        foreach (var role in deptJobs)
+                        {
+                            if (_jobPriorities.TryGetValue(role, out var pri) && pri > JobPriority.Never)
+                            {
+                                deptBlocked = true;
+                                break;
+                            }
+                        }
+                        if (deptBlocked)
+                            break;
+                    }
+                    if (deptBlocked)
+                        continue;
+                }
 
                 // Always valid.
                 if (traitProto.Category == null)
@@ -672,18 +817,37 @@ namespace Content.Shared.Preferences
                 if (!protoManager.Resolve(traitProto.Category, out var category))
                     continue;
 
-                var existing = groups.GetOrNew(category.ID);
+                // Claw Command - use BudgetPool as the tracking key if set, otherwise use category ID.
+                var poolKey = category.BudgetPool ?? category.ID;
+                var poolLimit = GetBudgetPoolLimit(poolKey, protoManager) ?? category.MaxTraitPoints;
+
+                var existing = groups.GetOrNew(poolKey);
                 existing += traitProto.Cost;
 
                 // Too expensive.
-                if (existing > category.MaxTraitPoints)
+                if (existing > poolLimit)
                     continue;
 
-                groups[category.ID] = existing;
+                groups[poolKey] = existing;
                 result.Add(trait);
             }
 
             return result;
+        }
+
+        /// <summary>
+        ///     Claw Command - Resolves the MaxTraitPoints for a shared BudgetPool by finding the first
+        ///     category in the pool that defines it.
+        /// </summary>
+        private static int? GetBudgetPoolLimit(string pool, IPrototypeManager protoManager)
+        {
+            foreach (var cat in protoManager.EnumeratePrototypes<TraitCategoryPrototype>())
+            {
+                if (cat.BudgetPool == pool && cat.MaxTraitPoints.HasValue)
+                    return cat.MaxTraitPoints;
+            }
+
+            return null;
         }
 
         public HumanoidCharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
@@ -722,6 +886,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(_loadouts);
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
+            hashCode.Add(CustomSpeciesName); // Claw Command
             hashCode.Add(Species);
             hashCode.Add(Age);
             hashCode.Add((int)Sex);

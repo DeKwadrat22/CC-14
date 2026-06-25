@@ -329,7 +329,7 @@ public interface IAHelpUIHandler : IDisposable
     public Action<NetUserId, string, bool, bool>? SendMessageAction { get; set; }
     public event Action<NetUserId, string>? InputTextChanged;
 }
-public sealed class AdminAHelpUIHandler : IAHelpUIHandler
+public sealed partial class AdminAHelpUIHandler : IAHelpUIHandler
 {
     private readonly NetUserId _ownerId;
     public AdminAHelpUIHandler(NetUserId owner)
@@ -490,7 +490,7 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
     }
 }
 
-public sealed class UserAHelpUIHandler : IAHelpUIHandler
+public sealed partial class UserAHelpUIHandler : IAHelpUIHandler
 {
     private readonly NetUserId _ownerId;
     public UserAHelpUIHandler(NetUserId owner)

@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseWallmountCabinet
+  id: SpareIdCabinet
+  name: spare id cabinet
+  description: There is a small label that reads "Indestructible".
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: WallMount
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Appearance
+    - type: Lock
+    - type: ItemSlots
+      slots:
+        ItemCabinet:
+          ejectOnInteract: true
+          whitelist:
+            components:
+            - IdCard
+    - type: ContainerContainer
+      containers:
+        ItemCabinet: !type:ContainerSlot
+    - type: Sprite
+      sprite: _ClawCommand/Structures/Wallmounts/idcard_cabinet.rsi
+      layers:
+        - state: frame
+        - state: fill
+          map: ["enum.ItemCabinetVisuals.Layer"]
+          visible: true
+        - state: closed
+          map: ["enum.OpenableVisuals.Layer"]
+    - type: AccessReader
+      access: [["CC-SpareSafe"]]
+    - type: SpareIDSafe
+
+- type: entity
+  id: SpareIdCabinetFilled
+  parent: [SpareIdCabinet]
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - CaptainIDCard
+
+- type: entity
+  id: BaseStationCaptainState
+  abstract: true
+  components:
+  - type: CaptainState

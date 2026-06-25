@@ -137,3 +137,58 @@
     itemIconStyle: BigItem
   - type: InstantAction
     event: !type:ToggleActionEvent
+
+# Ported from space/ commit 520121b4d9 (then disabled on hardsuits in commit
+# aab875acb9 due to a visual toggle bug — see hardsuits.yml). Kept defined so
+# specific suits can opt in if/when the visual issue is fixed.
+- type: entity
+  id: BaseIntegratedMagboot
+  name: integrated magboots
+  description: A set of magnetic locks integrated into a suit.
+  abstract: true
+  components:
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: ComponentToggler
+      components:
+        - type: NoSlip
+    - type: Magboots
+      slot: outerClothing
+    - type: ItemToggle
+      onUse: false # can't really wear it like that
+
+# Integrated maneuvering thrusters — small jetpack baked into a hardsuit.
+# The GasTank is marked `isInternals: false` so it never connects to breath.
+- type: entity
+  id: BaseIntegratedManeuveringThrusters
+  name: integrated maneuvering thrusters
+  description: A set of maneuvering thrusters integrated into a suit.
+  abstract: true
+  components:
+    - type: GasTank
+      releasePressure: 42.6
+      air:
+        # 10 minutes of thrust
+        volume: 3.75
+        temperature: 293.15
+        moles:
+          Oxygen: 0.769267145
+          Nitrogen: 0.769267145
+      isInternals: false # So you don't suck on your integrated thrusters
+    - type: ActivatableUI
+      key: enum.SharedGasTankUiKey.Key
+      verbOnly: true
+    - type: UserInterface
+      interfaces:
+        enum.SharedGasTankUiKey.Key:
+          type: GasTankBoundUserInterface
+    - type: Jetpack
+      moleUsage: 0.00085
+    # NOTE: space/'s commit also added InputMover and CanMoveInAir here, but in this fork
+    # the Jetpack component drives movement on its own (see Resources/Prototypes/Entities/
+    # Objects/Tools/jetpacks.yml). Adding InputMover to the hardsuit entity triggers a
+    # KinematicController assertion because the suit has a Dynamic body, not a mover.
+    - type: MovementSpeedModifier
+      weightlessAcceleration: 1
+      weightlessFriction: 0.3
+      weightlessModifier: 1.2

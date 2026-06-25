@@ -40,7 +40,7 @@
         {
             "name": "containment-field-generator"
         },
-		{
+        {
             "name": "emitter"
         },
         {
@@ -48,6 +48,9 @@
         },
         {
             "name": "hydroponics-tray"
+        },
+        {
+            "name": "service_music"
         }
     ]
 }

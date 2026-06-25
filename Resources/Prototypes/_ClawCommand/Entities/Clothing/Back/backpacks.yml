@@ -1,0 +1,19 @@
+- type: entity
+  parent: ClothingBackpackIan
+  id: ClothingBackpackIanFilled
+  name: Ian's backpack
+  description: Sometimes he wears it.
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackRobotics
+  name: robotics backpack
+  description: A sturdy backpack to store all the tools and parts.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/robotics.rsi
+

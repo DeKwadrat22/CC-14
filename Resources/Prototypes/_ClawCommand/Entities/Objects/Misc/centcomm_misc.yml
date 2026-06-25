@@ -1,0 +1,236 @@
+# Miscellaneous CentComm-map entities ported from various sources.
+# Dropped components flagged inline.
+
+# --- Bedsheet "Invisibility Cloak" ---
+# Psionic and ClothingGrantPsionicPower components don't exist in this fork —
+# the cloak is reduced to a tattered bedsheet that can still be picked up.
+- type: entity
+  id: BedsheetInvisibilityCloak
+  parent: BedsheetBase
+  name: tattered bedsheet
+  description: A tattered bedsheet, It looks like its been through hell and back.
+  components:
+  - type: Sprite
+    state: sheetblack
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/black.rsi
+  # ClothingGrantPsionicPower / Psionic dropped — systems not present.
+
+# --- Bluespace Cigar ---
+- type: entity
+  id: CigarBluespace
+  parent: Cigar
+  name: bluespace cigar
+  description: A cigar designed using bluespace technology for nicotine addicts and the most hedonistic of smokers.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar-gold.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar-gold.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 6480
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 6480
+
+# --- Energy Sabre Sheath ---
+# Tag EnergySabre + ItemMapper layer reference still work (Tag IDs in
+# whitelists are tolerant; map layer simply won't match). Slot/sprite stay.
+- type: Tag
+  id: EnergySabre
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltEnergySheath
+  name: energy sabre sheath
+  description: An interesting charging device in the shape of a blade, fit for Fae Tech's MK 9 Energy Sabre.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Belts/e_sheath.rsi
+    state: e-sheath
+  - type: Clothing
+    sprite: _Floof/Clothing/Belts/e_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/flashlight_off.ogg
+        ejectSound: /Audio/Items/flashlight_on.ogg
+        whitelist:
+          tags:
+          - EnergySabre
+  - type: ItemMapper
+    mapLayers:
+      e-sheath-sabre:
+        whitelist:
+          tags:
+          - EnergySabre
+  - type: Appearance
+
+# --- Pen Light Base ---
+# PenLight and ToggleableLightVisuals components don't exist in this fork. The
+# entity stays a handheld light with a power cell slot.
+- type: entity
+  name: Pen Light
+  parent: Pen
+  id: PenLightBase
+  description: A pen-sized light, used by medical staff.
+  components:
+    - type: HandheldLight
+      addPrefix: false
+    - type: Sprite
+      sprite: Objects/Tools/penlight.rsi
+      layers:
+        - state: world
+        - state: world-on
+          shader: unshaded
+          visible: false
+          map: [ "light" ]
+    - type: Item
+      sprite: Objects/Tools/penlight.rsi
+      heldPrefix: off
+    - type: PointLight
+      enabled: false
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      radius: 2
+      netsync: false
+    - type: Appearance
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot {}
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellSmall
+    - type: Tag
+      tags:
+      - Flashlight
+      - Write
+      - Pen
+
+# --- Frosty-Blue Colored Light Tube (referenced by PoweredLightColoredFrostyBlue) ---
+- type: entity
+  parent: BaseLightbulb
+  name: blue light tube
+  description: A colorful light tube. These emit a frosty blue hue.
+  id: ColoredLightTubeFrostyBlue
+  components:
+  - type: LightBulb
+    bulb: Tube
+    color: "#00FFFF"
+    lightEnergy: 0.8
+    lightRadius: 10
+    lightSoftness: 1
+    PowerUse: 25
+  - type: Sprite
+    sprite: Objects/Power/light_tube.rsi
+    state: normal
+
+# --- Powered Light, Frosty Blue ---
+- type: entity
+  id: PoweredLightColoredFrostyBlue
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: Frosty
+  parent: Poweredlight
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: ColoredLightTubeFrostyBlue
+    damage:
+      types:
+        Heat: 0.2
+
+# --- Directional tinted window ---
+- type: entity
+  id: WindowTintedDirectional
+  parent: WindowDirectional
+  name: directional tinted window
+  description: Don't smudge up the glass down there.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    sprite: Structures/Windows/directional.rsi
+    state: tinted_window
+  - type: Tag
+    tags:
+      - ForceNoFixRotations
+      - WeldbotFixableStructure
+  - type: Icon
+    sprite: Structures/Windows/directional.rsi
+    state: tinted_window
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+# --- Nitrous Oxide mix canister (anesthesia) ---
+- type: entity
+  parent: GasCanister
+  id: NitrousOxideMixCanister
+  name: general anesthesia canister
+  description: A canister that can contain any type of gas. This one is supposed to contain nitrous oxide and oxygen in a 3-to-7 ratio. It can be attached to connector ports using a wrench.
+  components:
+    - type: Sprite
+      layers:
+        - state: redws
+    - type: GasCanister
+      gasMixture:
+        volume: 1000
+        moles:
+          - 1310.19735
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 561.51315
+        temperature: 293.15
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 600
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            NitrousOxideCanisterBroken:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+# --- Logistics direction sign ---
+- type: entity
+  parent: BaseSignDirectional
+  id: SignDirectionalLogistics
+  name: cargo sign
+  description:  A direction sign, pointing out which way the Cargo department is.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi
+    state: direction_logi

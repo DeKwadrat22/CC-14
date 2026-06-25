@@ -1,0 +1,111 @@
+# SOP entries are distributed into their respective job categories in the guidebook.
+# General SOPs are under Jobs, department-specific ones under their department.
+
+- type: guideEntry
+  id: GuideCompanyPolicy
+  name: guide-entry-companypolicy
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CompanyPolicy.xml"
+  # defaultCollapsed: true
+  children:
+  - GuideCodeofConduct
+  - GuideSelfDefense
+  - GuideConductUnbecoming
+  - GuideAppearanceStandards
+  - GuideDangersFromOurCompetitors
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCodeofConduct
+  name: guide-entry-policy-codeofconduct
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CodeofConduct.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideSelfDefense
+  name: guide-entry-policy-self-defence
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/SelfDefence.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideConductUnbecoming
+  name: guide-entry-policy-conductunbecoming
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ConductUnbecoming.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideAppearanceStandards
+  name: guide-entry-policy-appearancestandards
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AppearanceStandards.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideDangersFromOurCompetitors
+  name: guide-entry-policy-dangersfromcompetitors
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/DangersfromCompetitors.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideMutinyGuidelines
+  name: guide-entry-mutinyguidelines
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/MutinyGuidelines.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuidePermits
+  name: guide-entry-permits
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/Permits.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideGeneralRegulations
+  name: guide-entry-generalregulations
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/GeneralRegulations.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCommandHierarchy
+  name: guide-entry-commandhierarchy
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CommandHierarchy.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideAlertProcedure
+  name: guide-entry-alertprocedure
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AlertProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideEpistemicsSOP
+  name: guide-entry-epistemicsSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/EpistemicsStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideEngineeringSOP
+  name: guide-entry-engineeringSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/EngineeringStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideSecuritySOP
+  name: guide-entry-securitySOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/SecurityStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideBriggingSOP
+  name: guide-entry-briggingSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/BriggingStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideAnomalySOP
+  name: guide-entry-anomSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AnomalySOP.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideClawCommandOfficerSOP
+  name: guide-entry-ccoSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandOfficerStandardOperatingProcedure.xml"
+  filterEnabled: True

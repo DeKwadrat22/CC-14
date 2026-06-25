@@ -54,7 +54,7 @@ public sealed partial class IntrinsicUISystem : EntitySystem
 }
 
 // Competing with ActivatableUI for horrible event names.
-public sealed class IntrinsicUIOpenAttemptEvent : CancellableEntityEventArgs
+public sealed partial class IntrinsicUIOpenAttemptEvent : CancellableEntityEventArgs
 {
     public EntityUid User { get; }
     public Enum? Key { get; }

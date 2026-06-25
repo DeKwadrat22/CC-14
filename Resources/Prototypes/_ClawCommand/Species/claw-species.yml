@@ -1,0 +1,69 @@
+- type: species
+  id: SpeciesFelinid
+  name: cc-species-name-felinid
+  roundStart: true
+  prototype: MobFelinid
+  dollPrototype: AppearanceFelinid
+  skinColoration: HumanToned
+
+- type: species
+  id: SpeciesFeroxi
+  name: cc-species-name-feroxi
+  roundStart: true
+  prototype: MobFeroxi
+  dollPrototype: AppearanceFeroxi
+  skinColoration: Hues
+
+- type: species
+  id: SpeciesKitsunes
+  name: cc-species-name-kitsunes
+  roundStart: true
+  prototype: MobKitsunes
+  dollPrototype: AppearanceKitsunes
+  skinColoration: HumanToned
+
+- type: species
+  id: SpeciesShadowkin
+  name: cc-species-name-shadekin
+  roundStart: true
+  prototype: MobShadowkin
+  defaultSkinTone: "#FFFFFF"
+  dollPrototype: AppearanceShadowkin
+  skinColoration: Hues
+  naming: First
+  maleFirstNames: NamesShadowkin
+  femaleFirstNames: NamesShadowkin
+  minAge: 18
+  maxAge: 300
+  youngAge: 20
+  oldAge: 250
+  sexes:
+  - Male
+  - Female
+  - Unsexed
+
+- type: species
+  id: SpeciesTajaran
+  name: cc-species-name-tajaran
+  roundStart: true
+  prototype: MobTajaran
+  dollPrototype: AppearanceTajaran
+  skinColoration: VulpkaninColors
+  defaultSkinTone: "#5a3f2d"
+  maleFirstNames: NamesTajaranFirst
+  femaleFirstNames: NamesTajaranFirst
+  lastNames: NamesTajaranLast
+
+- type: species
+  id: SpeciesIPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  dollPrototype: AppearanceIPC
+  skinColoration: Hues
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  sexes:
+  - Unsexed
+  lastNames: IpcLast
+  naming: FirstDashLast # CC: Custom!

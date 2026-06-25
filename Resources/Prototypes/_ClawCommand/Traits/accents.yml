@@ -1,0 +1,31 @@
+# Claw Command - accent traits
+- type: trait
+  id: CowboyAccent
+  name: trait-cowboy-name
+  description: trait-cowboy-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: cowboy
+
+- type: trait
+  id: ItalianAccent
+  name: trait-italian-name
+  description: trait-italian-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: italian
+
+- type: trait
+  id: DogSpeech
+  name: trait-dogspeech-name
+  description: trait-dogspeech-desc
+  category: SpeechTraits
+  cost: 1
+  restrictedSpecies:
+    - Vulpkanin
+  components:
+  - type: DogSpeech

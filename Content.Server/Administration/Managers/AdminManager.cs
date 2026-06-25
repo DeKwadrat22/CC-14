@@ -36,6 +36,7 @@ namespace Content.Server.Administration.Managers
         [Dependency] private ILogManager _logManager = default!;
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
+        private readonly Dictionary<ICommonSession, AdminReg> _vips = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
 
         public event Action<AdminPermsChangedEventArgs>? OnPermsChanged;
@@ -53,7 +54,8 @@ namespace Content.Server.Administration.Managers
 
         public bool IsAdmin(ICommonSession session, bool includeDeAdmin = false)
         {
-            return GetAdminData(session, includeDeAdmin) != null;
+            var datz = GetAdminData(session, includeDeAdmin);
+            return datz != null && datz.HasFlag(AdminFlags.Admin);
         }
 
         public AdminData? GetAdminData(ICommonSession session, bool includeDeAdmin = false)
@@ -61,6 +63,10 @@ namespace Content.Server.Administration.Managers
             if (_admins.TryGetValue(session, out var reg) && (reg.Data.Active || includeDeAdmin))
             {
                 return reg.Data;
+            }
+            if (_vips.TryGetValue(session, out var reg2) && (reg2.Data.Active || includeDeAdmin))
+            {
+                return reg2.Data;
             }
 
             return null;
@@ -205,14 +211,26 @@ namespace Content.Server.Administration.Managers
 
                 if (curAdmin == null)
                 {
-                    // Now an admin.
-                    var reg = new AdminReg(player, aData)
+                    // Now an admin or VIP.
+                    if (aData.Flags.HasFlag(AdminFlags.Admin))
                     {
-                        IsSpecialLogin = special,
-                        RankId = rankId
-                    };
-                    _admins.Add(player, reg);
-                    _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-became-admin-message"));
+                        var reg = new AdminReg(player, aData)
+                        {
+                            IsSpecialLogin = special,
+                            RankId = rankId
+                        };
+                        _admins.Add(player, reg);
+                        _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-became-admin-message"));
+                    }
+                    else if (aData.Flags.HasFlag(AdminFlags.VIP))
+                    {
+                        var reg = new AdminReg(player, aData)
+                        {
+                            IsSpecialLogin = special,
+                            RankId = rankId
+                        };
+                        _vips.Add(player, reg);
+                    }
                 }
                 else
                 {
@@ -382,6 +400,23 @@ namespace Content.Server.Administration.Managers
             }
 
             var (dat, rankId, specialLogin) = adminDat.Value;
+
+            if (!dat.Flags.HasFlag(AdminFlags.Admin))
+            {
+                if (dat.Flags.HasFlag(AdminFlags.VIP))
+                {
+                    var reg2 = new AdminReg(session, dat)
+                    {
+                        IsSpecialLogin = specialLogin,
+                        RankId = rankId
+                    };
+
+                    reg2.Data.Active = true;
+                    _vips.Add(session, reg2);
+                }
+                return;
+            }
+
             var reg = new AdminReg(session, dat)
             {
                 IsSpecialLogin = specialLogin,

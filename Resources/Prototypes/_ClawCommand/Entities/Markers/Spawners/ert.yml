@@ -1,0 +1,12 @@
+# Claw Command Admiral spawn point (ERT spawnpoints are in base jobs.yml)
+- type: entity
+  id: SpawnPointAdmiralClaw
+  parent: SpawnPointJobBase
+  name: AdmiralClaw
+  components:
+  - type: SpawnPoint
+    job_id: AdmiralClaw
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader

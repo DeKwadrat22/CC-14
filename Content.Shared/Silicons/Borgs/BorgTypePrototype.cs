@@ -124,6 +124,37 @@ public sealed partial class BorgTypePrototype : IPrototype
     [DataField]
     public string SpriteToggleLightState { get; set; } = "robot_l";
 
+    /// <summary>
+    /// _ClawCommand: optional sprite state to show on the Body layer when the
+    /// borg is dead (e.g. a "wrecked" chassis pose). When null, the borg keeps
+    /// its <see cref="SpriteBodyState"/> on death. Mostly used by dogborg
+    /// variants which ship with a "&lt;variant&gt;-wreck" state from Citadel-13.
+    /// </summary>
+    [DataField]
+    public string? SpriteWreckState { get; set; }
+
+    /// <summary>
+    /// _ClawCommand: optional Body sprite state shown while the dogborg is in
+    /// the Sit pose. Triggered through <see cref="DogborgPoseSystem"/> from
+    /// the matching emote or action; null on non-dogborg variants.
+    /// </summary>
+    [DataField]
+    public string? SpriteSitState { get; set; }
+
+    /// <summary>
+    /// _ClawCommand: optional Body sprite state shown while the dogborg is in
+    /// the Rest pose (lying down). Triggered through <see cref="DogborgPoseSystem"/>.
+    /// </summary>
+    [DataField]
+    public string? SpriteRestState { get; set; }
+
+    /// <summary>
+    /// _ClawCommand: optional Body sprite state shown while the dogborg is in
+    /// the BellyUp pose (belly to ceiling). Triggered through <see cref="DogborgPoseSystem"/>.
+    /// </summary>
+    [DataField]
+    public string? SpriteBellyUpState { get; set; }
+
     //
     // Minor information
     //

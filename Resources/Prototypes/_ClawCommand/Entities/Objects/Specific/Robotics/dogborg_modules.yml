@@ -1,0 +1,23 @@
+# Dogborg-specific borg modules.
+#
+# Today: just a basic security combat module. The other dogborg variants
+# (medical / engineering / janitor / service / mining) reuse the existing
+# upstream modules from BorgModulesStatic + BorgLimbsStatic.
+
+- type: entity
+  id: BorgModuleSecurity
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: security cyborg module
+  description: A basic, low-lethal security module — a disabler, a stunbaton, and zipties for apprehending suspects without killing them.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-tools
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponDisabler
+    - item: Stunbaton
+    - item: Zipties
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: tool-module }

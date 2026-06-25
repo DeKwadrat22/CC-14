@@ -77,7 +77,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     }
 }
 
-public sealed class NPCSteeringOverlay : Overlay
+public sealed partial class NPCSteeringOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 

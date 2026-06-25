@@ -34,6 +34,8 @@
       prob: 0.05
     - id: SubXenoborgs
       prob: 0.05
+    - id: CalmHeretic # _ClawCommand: heretic as a sub-event during extended/secret/irregular
+      prob: 0.15
 
 - type: entity
   parent: BaseGameRule
@@ -56,6 +58,8 @@
       prob: 0.5
     - id: SubWizard
       prob: 0.05
+    - id: CalmHeretic # _ClawCommand: heretic as a sub-event
+      prob: 0.15
 
 - type: entity
   parent: BaseGameRule

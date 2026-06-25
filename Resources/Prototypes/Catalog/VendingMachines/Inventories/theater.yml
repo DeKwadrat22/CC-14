@@ -56,6 +56,93 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
+    # Claw Command - Ported clothing
+    ClothingUniformFlamenco: 2
+    ClothingUniformRedDancersGarb: 2
+    ClothingUniformBandedDancersGarb: 2
+    ClothingUniformRedSidelessDress: 2
+    ClothingUniformPurpleNightclubDress: 2
+    ClothingUniformBlackPetticoatDress: 2
+    ClothingUniformBlueFancyLad: 2
+    ClothingUniformJumpsuitKilt: 3
+    ClothingEyesEyepatch: 2
+    ClothingHeadHatWitch: 2
+    ClothingShrimpFishermanSuit: 2
+    ClothingUniformClassicalMaidDress: 2
+    ClothingMaskNeckGaiterRed: 2
+    ClothingHeadHatMagician: 2
+    ClothingUniformJumpskirtPerformer: 2
+    ClothingShoesBootsPerformer: 2
+    ClothingNeckCloakMoth: 2
+    ClothingUniformJumpskirtJanimaid: 2
+    ClothingNeckCloakVoid: 2
+    ClothingHeadBandRed: 1
+    ClothingHeadHatPirate: 1
+    ClothingOuterCoatPirate: 1
+    ClothingUniformJumpsuitPirate: 1
+    ClothingShoesBootsLaceup: 2
+    FoamCutlass: 2
+    ClothingHeadSafari: 2
+    ClothingUniformJumpsuitSafari: 2
+    ClothingHandsGlovesBoxingRed: 2
+    ClothingHandsGlovesBoxingBlue: 2
+    ClothingHandsGlovesBoxingYellow: 2
+    ClothingHandsGlovesBoxingGreen: 2
+    UniformShortsRed: 4
+    UniformShortsRedWithTop: 4
+    ClothingBackpackSatchelClown: 2
+    ClothingBackpackDuffelClown: 2
+    ClothingMaskClown: 2
+    ClothingShoesClown: 2
+    ClothingUniformJumpsuitClown: 2
+    RubberStampClown: 1
+    ClothingBackpackMime: 2
+    ClothingBackpackSatchelMime: 2
+    ClothingBackpackDuffelMime: 2
+    ClothingHeadHatMimesoft: 2
+    ClothingMaskMime: 2
+    ClothingUniformJumpsuitMime: 2
+    ClothingUniformJumpskirtMime: 2
+    ClothingBeltSuspenders: 2
+    RubberStampMime: 1
+    ClothingUniformSkirtTurtle: 2
+    ClothingUniformSwimsuitBlue: 2
+    ClothingCostumeBunnySuit: 2
+    ClothingHeadHatBunny: 2
+    ClothingUniformDressRed: 1
+    ClothingHeadHatCake: 2
+    ClothingUniformSchoolGakuranBlack: 2
+    UniformSchoolgirlBlack: 1
+    UniformSchoolgirlBlue: 1
+    UniformSchoolgirlCyan: 1
+    UniformSchoolgirlGreen: 1
+    UniformSchoolgirlOrange: 1
+    UniformSchoolgirlPink: 1
+    UniformSchoolgirlPurple: 1
+    UniformSchoolgirlRed: 1
+    UniformSchoolgirlDusk: 1
+    UniformSchoolgirlBlazerTan: 1
+    UniformGeisha: 1
+    ClothingKimonoBlue: 2
+    ClothingKimonoPink: 2
+    ClothingKimonoPurple: 2
+    ClothingKimonoSky: 2
+    ClothingKimonoGreen: 2
+    ClothingMaskOniBlue: 1
+    ClothingMaskOniRed: 1
+    ClothingCostumeArcDress: 1
+    ClothingCostumeMioSkirt: 1
+    ClothingCostumeNaota: 1
+    ClothingUniformJumpsuitSober: 1
+    ClothingShoesBootsWinterClown: 2
+    ClothingShoesBootsWinterMime: 2
+    ClothingHandsGoldRing: 2
+    ClothingHandsWebRing: 2
+    ClothingHandsDiamondBand: 2
+    ClothingHandsGoldRingSpiderGem: 2
+    ClothingHandsWebDiamondRing: 2
+    ClothingHandsWebRingSpiderGem: 2
+    ClothingUniformWeddingDress: 2
     ClothingHeadHatWizardFake: 1
     ClothingOuterWizardFake: 1
   contrabandInventory:
@@ -69,3 +156,20 @@
     ClothingMaskBlushingClown: 1
     ClothingMaskBlushingMime: 1
     ClothingHeadHatCowboyBountyHunter: 1
+    # Claw Command - Ported contraband
+    ClothingHeadHatMimesoftFlipped: 1
+    BarberScissors: 1
+    ClothingNeckBellCollar: 2
+    ClothingOuterUnathiRobe: 1
+    ClothingNeckCloakRedHood: 1
+    ClothingUniformMusicianThong: 2
+    ClothingUnderSocksMusician: 2
+    ClothingHandsMusicianWarmers: 2
+    ClothingHandsStripeWhiteWarmers: 1
+    ClothingUnderSocksStripedWhite: 1
+    ClothingUniformStripedThongWhite: 1
+    ClothingUniformMusicKingBlack: 2
+    ClothingUniformMusicKing: 2
+  emaggedInventory:
+    ClothingMaskSexyClown: 1
+    ClothingMaskSexyMime: 1

@@ -41,7 +41,7 @@
   name: guide-entry-rules-core
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
   - RuleC1
   - RuleC2
@@ -54,75 +54,75 @@
   - RuleC9
   - RuleC10
   - RuleC11
-  - RuleC12
-  - RuleC13
-  - RuleC14
+  #- RuleC12
+  #- RuleC13
+  #- RuleC14
 
 - type: guideEntry
   id: RuleC1
   name: guide-entry-rules-c1
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC1Admins.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC1OutofCharacter.xml"
 
 - type: guideEntry
   id: RuleC2
   name: guide-entry-rules-c2
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC2DBAD.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC2Consent.xml"
 
 - type: guideEntry
   id: RuleC3
   name: guide-entry-rules-c3
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC3NoHate.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC3Metagaming.xml"
 
 - type: guideEntry
   id: RuleC4
   name: guide-entry-rules-c4
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC4NoERP.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC4Powergaming.xml"
 
 - type: guideEntry
   id: RuleC5
   name: guide-entry-rules-c5
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC5Metacomms.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC5RoleplayandCharacters.xml"
 
 - type: guideEntry
   id: RuleC6
   name: guide-entry-rules-c6
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC6BanEvasion.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC6EroticRoleplayandNSFW.xml"
 
 - type: guideEntry
   id: RuleC7
   name: guide-entry-rules-c7
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC7EnglishOnly.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC7DeathandNewLife.xml"
 
 - type: guideEntry
   id: RuleC8
   name: guide-entry-rules-c8
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC8Exploits.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC8EndofRoundandEvacuation.xml"
 
 - type: guideEntry
   id: RuleC9
   name: guide-entry-rules-c9
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC9Multikey.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC9GeneralRolesandJobs.xml"
 
 - type: guideEntry
   id: RuleC10
   name: guide-entry-rules-c10
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC10AHelp.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC10CommandandSecurity.xml"
 
 - type: guideEntry
   id: RuleC11
   name: guide-entry-rules-c11
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC11AhelpThreats.xml"
+  text: "/ServerInfo/_ClawCommand/Guidebook/ServerRules/CoreRules/RuleC11Antagonists.xml"
 
 - type: guideEntry
   id: RuleC12

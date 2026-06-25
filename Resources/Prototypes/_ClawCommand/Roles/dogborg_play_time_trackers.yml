@@ -1,0 +1,21 @@
+# One PlayTimeTracker per dogborg job. SharedJobSystem.SetupTrackerLookup
+# enforces a 1:1 mapping between trackers and jobs (it adds them to a
+# dictionary keyed by tracker), so each dogborg job needs its own.
+
+- type: playTimeTracker
+  id: JobDogborgSecurity
+
+- type: playTimeTracker
+  id: JobDogborgMedical
+
+- type: playTimeTracker
+  id: JobDogborgEngineering
+
+- type: playTimeTracker
+  id: JobDogborgJanitor
+
+- type: playTimeTracker
+  id: JobDogborgService
+
+- type: playTimeTracker
+  id: JobDogborgMining

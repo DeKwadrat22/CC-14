@@ -37,15 +37,22 @@
     data:
       state: torso
   - type: VisualOrganMarkings
+    hideableLayers: # Claw Command - allow hiding genital markings when wearing a uniform
+    - enum.HumanoidVisualLayers.Genital
+    - enum.HumanoidVisualLayers.Penis
+    - enum.HumanoidVisualLayers.Breasts
     markingData:
       layers:
       - Chest
       - Tail
       - Overlay
-      - TailOverlay
+      - TailOversuit
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+      - Genital # Claw Command
+      - Penis # Claw Command
+      - Breasts # Claw Command
 
 - type: entity
   parent: OrganBase

@@ -61,6 +61,16 @@
   id: BorgModuleAdvancedTool
   result: BorgModuleAdvancedTool
 
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleRPD
+  result: BorgModuleRPD
+  materials:
+    Steel: 550
+    Glass: 550
+    Plastic: 300
+    Gold: 50
+
 # Janitor Modules
 
 - type: latheRecipe

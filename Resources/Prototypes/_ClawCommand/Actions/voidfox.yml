@@ -1,0 +1,35 @@
+- type: entity
+  abstract: true
+  parent: BaseAction
+  id: BaseVoidfoxAction
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+
+- type: entity
+  parent: BaseVoidfoxAction
+  id: ActionVoidfoxIgnite
+  name: action-voidfox-ignite-name
+  description: action-voidfox-ignite-desc
+  components:
+  - type: Action
+    useDelay: 1
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_eject
+  - type: InstantAction
+    event: !type:VoidfoxIgniteEvent
+
+- type: entity
+  parent: BaseVoidfoxAction
+  id: ActionVoidfoxMassScan
+  name: action-voidfox-massscan-name
+  description: action-voidfox-massscan-desc
+  components:
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_view_stats
+  - type: InstantAction
+    event: !type:VoidfoxMassScanEvent

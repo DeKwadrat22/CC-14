@@ -1,0 +1,189 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: MarkingsKitsune
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ KitsuneEars ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 2
+      required: true
+      default: [ KitsuneTail ]
+    enum.HumanoidVisualLayers.Special:
+      limit: 1
+      required: true
+      default: [ KitsuneFox ]
+    enum.HumanoidVisualLayers.Genital:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceKitsunes
+  suffix: Claw Command
+  name: kitsune appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganKitsuneTorso
+      Head: OrganKitsuneHead
+      ArmLeft: OrganKitsuneArmLeft
+      ArmRight: OrganKitsuneArmRight
+      HandRight: OrganKitsuneHandRight
+      HandLeft: OrganKitsuneHandLeft
+      LegLeft: OrganKitsuneLegLeft
+      LegRight: OrganKitsuneLegRight
+      FootLeft: OrganKitsuneFootLeft
+      FootRight: OrganKitsuneFootRight
+      Brain: OrganKitsuneBrain
+      Eyes: OrganKitsuneEyes
+      Tongue: OrganKitsuneTongue
+      Appendix: OrganKitsuneAppendix
+      Ears: OrganKitsuneEars
+      Lungs: OrganKitsuneLungs
+      Heart: OrganKitsuneHeart
+      Stomach: OrganKitsuneStomach
+      Liver: OrganKitsuneLiver
+      Kidneys: OrganKitsuneKidneys
+  - type: HumanoidProfile
+    species: SpeciesKitsunes
+  #- type: ScaleVisuals
+  #  scale: 1.25, 1.25
+
+- type: entity
+  parent:
+  - AppearanceKitsunes
+  - BaseSpeciesMobOrganic
+  id: MobKitsunes
+  name: Urist McYipYip
+  components:
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ]
+  - type: Vocal
+    sounds:
+      Male: UnisexKitsune
+      Female: FemaleKitsune
+      Unsexed: UnisexKitsune
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Heat: 5
+  - type: JumpAbility
+    action: ActionVulpkaninGravityJump
+    canCollide: true
+    jumpDistance: 3
+    jumpSound:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        pitch: 1.33
+        volume: -5
+        variation: 0.05
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: petting-success-generic
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      collection: Fox
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 2
+  - type: KitsuneFoxForm
+
+- type: entity
+  parent: MobFox
+  id: MobKitsuneFox
+  name: kitsune fox
+  suffix: Claw Command
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.KitsuneColorVisuals.Body", "movement_body" ]
+      sprite: _DeltaV/Mobs/Customization/Kitsunes/foxform.rsi
+      state: kitsune_fox_body
+    - map: [ "enum.KitsuneColorVisuals.Overlay", "movement_overlay" ]
+      sprite: _DeltaV/Mobs/Customization/Kitsunes/foxform.rsi
+      state: kitsune_fox_innerear
+  - type: Appearance
+  - type: KitsuneFox
+  - type: SpriteMovement
+    movementLayers:
+      movement_body:
+        state: kitsune_fox_moving_body
+      movement_overlay:
+        state: kitsune_fox_moving_innerear
+    noMovementLayers:
+      movement_body:
+        state: kitsune_fox_body
+      movement_overlay:
+        state: kitsune_fox_innerear
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepCarpet
+      params:
+        variation: 0.07
+  - type: MovementSpeedModifier # faster than human-form
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6

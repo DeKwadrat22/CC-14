@@ -1,0 +1,148 @@
+# Ported from _Floof/Entities/Objects/Consumable/Food/{Containers/bowl.yml,
+# icecream.yml} — only the two flavours referenced by the CentComm map. The
+# rainbow flavour reuses the existing IceCream reagent and Nutriment.
+
+- type: entity
+  name: bowl
+  parent: ReagentContainerBase
+  id: IceCreamBowl
+  description: A simple glass bowl, used for ice cream.
+  components:
+  - type: Item
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: bowl
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Trash
+
+# Base for the flavoured bowl (only Rainbow is needed by the map; the base is
+# private to this file).
+- type: entity
+  parent: FoodBase
+  id: IceCreamBowlBase
+  abstract: true
+  components:
+  - type: Item
+  - type: Edible
+    trash:
+    - IceCreamBowl
+    utensil: Spoon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 30
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: bowl
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: Spillable
+    solution: food
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: Damageable
+    damageContainer: Inorganic
+  # IceCream Tag isn't defined in this fork; dropped.
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -8
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodBowlBigTrash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: rainbow ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamRainbow
+  description: Colorful layers of lemon, grape and orange ice cream fruity goodness, topped with rainbow sprinkles.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - orange
+    - grape
+    - sour
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: rainbow
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22

@@ -1,0 +1,260 @@
+- type: loadoutGroup
+  id: ClawCommandOfficerOuterClothing
+  name: loadout-group-clawcommand-outerclothing
+  loadouts:
+  - ClothingClawCommandArmourVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+  - ClothingClawCommandArmoredCowboyJacket
+  - ClothingClawCommandArmoredJacket
+
+- type: loadoutGroup
+  id: ClawCommandOfficerJumpsuit
+  name: loadout-group-clawcommand-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitClawCommandOfficer
+  - ClothingUniformJumpskirtClawCommandOfficer
+
+- type: loadoutGroup
+  id: ClawCommandMaidJumpsuit
+  name: loadout-group-clawcommandmaid-jumpsuit
+  loadouts:
+  - ClothingUniformJumpskirtJanimaidmini
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtTacticalMaid
+
+- type: loadoutGroup
+  id: ClawCommandBackpack
+  name: loadout-group-clawcommand-backpack
+  loadouts:
+  - ClothingBackpackClawCommand
+  - ClothingBackpackSatchelClawCommand
+  - ClothingBackpackDuffelClawCommand
+
+#Head
+- type: loadoutGroup
+  id: ClawCommandHead
+  name: loadout-group-clawcommand-head
+  minLimit: 0
+  loadouts:
+  - SecurityHelmet
+  - TrooperHat
+
+- type: loadoutGroup
+  id: LoadoutGroupCCMJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - SecStar
+  - LoadoutCCMGoldenShaker
+  - LoadoutCCMGoldenPlunger
+
+# General Loadout Categories - CC14
+# Available to all jobs
+
+- type: loadoutGroup
+  id: CCEmergencyGear
+  name: cc-loadout-group-emergency-gear
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - LoadoutBreathingMask
+  - LoadoutEmergencyOxygenTank
+  - LoadoutExtendedOxygenTank
+  - LoadoutCrowbar
+  - LoadoutFireExtinguisher
+  - LoadoutFlashlight
+  - LoadoutLantern
+  - LoadoutFlare
+  - LoadoutEmergencyMedipen
+  - LoadoutSpaceMedipen
+  - LoadoutMedkit
+
+- type: loadoutGroup
+  id: CCFoodDrink
+  name: cc-loadout-group-food-drink
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutWaterBottle
+  - LoadoutMRE
+  - LoadoutFlaskShiny
+  - LoadoutFlaskLithium
+  - LoadoutFlaskVacuum
+  - LoadoutFlaskMRE
+
+- type: loadoutGroup
+  id: CCMiscItems
+  name: cc-loadout-group-misc-items
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutPersonalAI
+  - LoadoutCrayonBox
+  - LoadoutBarberScissors
+  - LoadoutHandLabeler
+  - LoadoutStationMap
+  - LoadoutWaistbag
+  - LoadoutPen
+  - LoadoutLuxuryPen
+  - LoadoutBookRandom
+
+- type: loadoutGroup
+  id: CCPlushiesToys
+  name: cc-loadout-group-plushies-toys
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutPlushieGhost
+  - LoadoutPlushieBee
+  - LoadoutPlushieHampter
+  - LoadoutPlushieNuke
+  - LoadoutPlushieSharkBlue
+  - LoadoutPlushieSharkPink
+  - LoadoutPlushieSharkGrey
+  - LoadoutPlushieCarp
+  - LoadoutPlushieSlime
+  - LoadoutPlushieSnake
+  - LoadoutPlushiePenguin
+  - LoadoutPlushieMoth
+  - LoadoutPlushieVox
+  - LoadoutPlushieVulp
+  - LoadoutPlushieArachind
+  - LoadoutPlushieDiona
+  - LoadoutRubberDuck
+  - LoadoutToyMouse
+  - LoadoutMagic9Ball
+  - LoadoutBeachBall
+
+- type: loadoutGroup
+  id: CCPets
+  name: cc-loadout-group-pets
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPetMouse
+  - LoadoutPetHamster
+  - LoadoutPetMothroach
+
+# CC Officer Weapon
+- type: loadoutGroup
+  id: CCOfficerWeapon
+  name: cc-loadout-group-officer-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCCOfficerMk58
+  - LoadoutCCOfficerDisabler
+
+# CC Maid Equipment
+- type: loadoutGroup
+  id: CCMaidEquipment
+  name: cc-loadout-group-maid-equipment
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCCMaidAdvancedMop
+
+# CC Maid Weapon
+- type: loadoutGroup
+  id: CCMaidWeapon
+  name: cc-loadout-group-maid-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCCMaidKatana
+  - LoadoutCCMaidDisabler
+
+# Security Gloves
+- type: loadoutGroup
+  id: CCSecurityGloves
+  name: cc-loadout-group-security-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutSecGlovesBlack
+  - LoadoutSecGlovesCombat
+  - LoadoutSecGlovesFingerless
+  - LoadoutSecGlovesRed
+
+# Captain Sidearm
+- type: loadoutGroup
+  id: CCCaptainSidearm
+  name: cc-loadout-group-captain-sidearm
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCaptainPulsePistol
+  - LoadoutCaptainDisabler
+
+# Bartender Weapon
+- type: loadoutGroup
+  id: CCBartenderWeapon
+  name: cc-loadout-group-bartender-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBartenderKnuckles
+  - LoadoutBartenderMosin
+
+# Prisoner
+- type: loadoutGroup
+  id: PrisonerJumpsuitGroup
+  name: loadout-group-prisoner-jumpsuit
+  loadouts:
+  - PrisonerJumpsuit
+  - PrisonerJumpskirt
+
+- type: loadoutGroup
+  id: PrisonerShoes
+  name: loadout-group-prisoner-shoes
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - BlackShoes
+  - WinterBoots
+
+# Captain
+- type: loadoutGroup
+  id: LoadoutGroupCaptainShoes
+  minLimit: 0
+  defaultSelected: 1
+  name: cc-loadout-group-captain-shoes
+  loadouts:
+  - LoadoutCaptainShoesLaceup
+  - BlackShoes
+  - LoadoutShoesBlue
+  - LoadoutShoesBrown
+  - WinterBoots
+  - JackBoots
+  - CombatBoots
+
+# Head of Personnel
+- type: loadoutGroup
+  id: LoadoutGroupHoPShoes
+  minLimit: 0
+  defaultSelected: 1
+  name: cc-loadout-group-hop-shoes
+  loadouts:
+  - LoadoutCaptainShoesLaceup
+  - BlackShoes
+  - LoadoutShoesBlue
+  - LoadoutShoesBrown
+  - WinterBoots
+  - JackBoots
+  - CombatBoots
+
+# Chief Medical Officer
+- type: loadoutGroup
+  id: LoadoutGroupCMOGlasses
+  name: cc-loadout-group-cmo-glasses
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - LoadoutEyesHudMedical
+  - LoadoutEyesHudMedicalEyepatch
+  - LoadoutEyesHudChemical # No chemistry eyepatch
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen

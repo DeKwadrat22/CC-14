@@ -50,6 +50,7 @@
   - ChiefMedicalOfficerJumpskirt
   - ChiefMedicalOfficerTurtleneckJumpsuit
   - ChiefMedicalOfficerTurtleneckJumpskirt
+  - CMOMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerOuterClothing
@@ -69,8 +70,12 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   name: loadout-group-chief-medical-officer-shoes
   loadouts:
+  - LoadoutShoesWhite # CC14
+  - LoadoutShoesBlue # CC14
   - BrownShoes
   - MedicalWinterBoots
 
@@ -106,6 +111,7 @@
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
+  - MedicMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
@@ -152,6 +158,7 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - ChemistMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -191,6 +198,7 @@
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
+  - ParamedMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ParamedicOuterClothing

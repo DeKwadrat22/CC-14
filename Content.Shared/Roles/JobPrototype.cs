@@ -145,6 +145,12 @@ namespace Content.Shared.Roles
         public bool Whitelisted;
 
         /// <summary>
+        ///     When true, this job always spawns at its job-specific spawn point, bypassing arrivals even for late joiners.
+        /// </summary>
+        [DataField]
+        public bool AlwaysUseSpawner { get; private set; } //claw command
+
+        /// <summary>
         /// Optional list of guides associated with this role. If the guides are opened, the first entry in this list
         /// will be used to select the currently selected guidebook.
         /// </summary>

@@ -1,0 +1,54 @@
+#- type: marking
+#  id: TailDebug
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Reptilian, Slime, MarkingsIPC, Rodentia, Vulpkanin, MarkingsFelinid, Human, Oni]
+#  layering:
+#    overtop: Tail
+#    underall: Chest
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: overtop
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: underall
+#
+#- type: marking
+#  id: TailDebugPro
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Reptilian, Slime, MarkingsIPC, Rodentia, Vulpkanin, MarkingsFelinid, Human, Oni]
+#  layering:
+#    tail_oversuit: TailOversuit
+#    tail_behind: TailBehind
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_oversuit
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_behind
+#
+#- type: marking
+#  id: TailDebugPro2
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Reptilian, Slime, MarkingsIPC, Rodentia, Vulpkanin, MarkingsFelinid, Human, Oni]
+#  layering:
+#    tail_oversuit: TailOversuit
+#    tail_behind: TailBehind
+#  colorLinks:
+#    tail_oversuit: tail_behind
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_oversuit
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_behind
+#
+#- type: marking
+#  id: TailDebugPro3
+#  bodyPart: TailBehind
+#  markingCategory: Tail
+#  speciesRestriction: [Reptilian, Slime, MarkingsIPC, Rodentia, Vulpkanin, MarkingsFelinid, Human, Oni]
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_oversuit
+#  - sprite: _ClawCommand/Mobs/Customization/debug.rsi
+#    state: tail_behind

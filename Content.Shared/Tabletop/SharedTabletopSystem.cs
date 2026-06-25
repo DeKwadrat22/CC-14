@@ -71,7 +71,7 @@ namespace Content.Shared.Tabletop
 
 
         [Serializable, NetSerializable]
-        public sealed class TabletopDraggableComponentState : ComponentState
+        public sealed partial class TabletopDraggableComponentState : ComponentState
         {
             public NetUserId? DraggingPlayer;
 
@@ -82,7 +82,7 @@ namespace Content.Shared.Tabletop
         }
 
         [Serializable, NetSerializable]
-        public sealed class TabletopRequestTakeOut : EntityEventArgs
+        public sealed partial class TabletopRequestTakeOut : EntityEventArgs
         {
             public NetEntity Entity;
             public NetEntity TableUid;

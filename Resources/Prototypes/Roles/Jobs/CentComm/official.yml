@@ -22,14 +22,21 @@
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatCentcom
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesColorBlack
+    gloves: ClothingHandsGlovesHop
     outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomPDA
     ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
-    pocket1: BoxFolderCentComClipboardThreePapers
-    pocket2: PenCentcom
-
+    back: ClothingBackpackSatchelCentComm
+    belt: ClothingBeltStorageWaistbag
+    pocket1: WeaponPistolN1984
+  storage:
+    back:
+      - BoxSurvivalMilitaryDouble
+      - BoxFolderCentComClipboardThreePapers
+      - MagazineMagnum
+      - MagazineMagnum
+      - RubberStampCentcom
+      - PenCentcom
 
 - type: chameleonOutfit
   id: CentralCommandOfficialOutfit

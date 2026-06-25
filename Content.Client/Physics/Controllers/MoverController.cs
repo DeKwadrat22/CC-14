@@ -2,6 +2,7 @@ using Content.Shared.Alert;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
 using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.Physics;
@@ -30,6 +31,30 @@ public sealed partial class MoverController : SharedMoverController
         SubscribeLocalEvent<InputMoverComponent, UpdateIsPredictedEvent>(OnUpdatePredicted);
         SubscribeLocalEvent<MovementRelayTargetComponent, UpdateIsPredictedEvent>(OnUpdateRelayTargetPredicted);
         SubscribeLocalEvent<PullableComponent, UpdateIsPredictedEvent>(OnUpdatePullablePredicted);
+
+        // Claw Command - send WalkByDefault preference to server when CVar changes
+        _cfg.OnValueChanged(CCVars.WalkByDefault, OnWalkByDefaultChanged);
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        _cfg.UnsubValueChanged(CCVars.WalkByDefault, OnWalkByDefaultChanged); // Claw Command
+    }
+
+    // Claw Command - tell the server our WalkByDefault preference changed
+    private void OnWalkByDefaultChanged(bool value)
+    {
+        RaiseNetworkEvent(new SetWalkByDefaultEvent(value));
+
+        // Also set it locally for immediate client prediction
+        if (_playerManager.LocalEntity is not { Valid: true } player)
+            return;
+
+        if (!MoverQuery.TryGetComponent(player, out var mover))
+            return;
+
+        mover.WalkByDefault = value;
     }
 
     private void OnUpdatePredicted(Entity<InputMoverComponent> entity, ref UpdateIsPredictedEvent args)
@@ -78,6 +103,11 @@ public sealed partial class MoverController : SharedMoverController
     private void OnPlayerAttached(Entity<InputMoverComponent> entity, ref LocalPlayerAttachedEvent args)
     {
         SetMoveInput(entity, MoveButtons.None);
+
+        // Claw Command - send our WalkByDefault preference to the server on attach
+        var walkByDefault = _cfg.GetCVar(CCVars.WalkByDefault);
+        RaiseNetworkEvent(new SetWalkByDefaultEvent(walkByDefault));
+        entity.Comp.WalkByDefault = walkByDefault; // local prediction
     }
 
     private void OnPlayerDetached(Entity<InputMoverComponent> entity, ref LocalPlayerDetachedEvent args)
@@ -119,7 +149,8 @@ public sealed partial class MoverController : SharedMoverController
         // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
         base.SetSprinting(entity, subTick, walking);
 
-        if (walking && _cfg.GetCVar(CCVars.ToggleWalk))
+        // Claw Command - Sprinting property already accounts for WalkByDefault via XOR
+        if (!entity.Comp.Sprinting && _cfg.GetCVar(CCVars.ToggleWalk))
             _alerts.ShowAlert(entity.Owner, WalkingAlert, showCooldown: false, autoRemove: false);
         else
             _alerts.ClearAlert(entity.Owner, WalkingAlert);

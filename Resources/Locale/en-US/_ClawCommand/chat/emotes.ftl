@@ -1,0 +1,21 @@
+cc-chat-emote-name-mew = Mew
+cc-chat-emote-name-purr = Purr
+cc-chat-emote-name-yip = Yip
+cc-chat-emote-name-yap = Yap
+
+cc-chat-emote-msg-mew = mews.
+cc-chat-emote-msg-purr = purrs.
+cc-chat-emote-msg-yip = yips!
+cc-chat-emote-msg-yap = yaps!
+cc-chat-emote-name-gekker = Gekker
+cc-chat-emote-msg-gekker = gekkers!
+cc-chat-emote-name-blink = Blink
+cc-chat-emote-msg-blink = blinks.
+cc-chat-emote-name-mars = Mars
+cc-chat-emote-msg-mars = mars!
+cc-chat-emote-name-wurble = Wurble
+cc-chat-emote-msg-wurble = wurbles.
+cc-chat-emote-name-boop = Boop
+cc-chat-emote-msg-boop = boops.
+cc-chat-emote-name-whirr = Whirr
+cc-chat-emote-msg-whirr = whirrs.

@@ -102,7 +102,7 @@
           - !type:RoundDurationCondition
             min: 2700 # 45 minutes
         - id: LoneOpsSpawn
-          weight: 5
+          weight: 3 # Claw Command from 5
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition

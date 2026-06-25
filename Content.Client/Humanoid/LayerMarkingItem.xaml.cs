@@ -65,7 +65,11 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
     {
         base.EnteredTree();
 
-        _markingsModel.MarkingsReset += UpdateSelection;
+        _markingsModel.MarkingsReset -= OnMarkingsReset;
+        _markingsModel.MarkingsReset += OnMarkingsReset;
+        _markingsModel.MarkingsColorsChanged -= OnMarkingsColorsChanged;
+        _markingsModel.MarkingsColorsChanged += OnMarkingsColorsChanged;
+        _markingsModel.MarkingsChanged -= MarkingsChanged;
         _markingsModel.MarkingsChanged += MarkingsChanged;
     }
 
@@ -73,13 +77,27 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
     {
         base.ExitedTree();
 
-        _markingsModel.MarkingsReset -= UpdateSelection;
+        _markingsModel.MarkingsReset -= OnMarkingsReset;
+        _markingsModel.MarkingsColorsChanged -= OnMarkingsColorsChanged;
         _markingsModel.MarkingsChanged -= MarkingsChanged;
+    }
+
+    private void OnMarkingsColorsChanged()
+    {
+        if (!VisibleInTree)
+            return;
+
+        UpdateSelection();
+    }
+
+    private void OnMarkingsReset()
+    {
+        UpdateSelection();
     }
 
     private void MarkingsChanged(ProtoId<OrganCategoryPrototype> organ, HumanoidVisualLayers layer)
     {
-        if (_organ != organ ||  _layer != layer)
+        if (_organ != organ || _layer != layer)
             return;
 
         UpdateSelection();
@@ -94,13 +112,22 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
     private void UpdateSelection()
     {
         var selected = _markingsModel.IsMarkingSelected(_organ, _layer, _markingPrototype.ID);
-        SelectButton.Pressed = selected && _interactive;
-        ColorsButton.Visible = selected && _interactive && _markingsModel.IsMarkingColorCustomizable(_organ, _layer, _markingPrototype.ID);
+        var newSelectPressed = selected && _interactive;
+        var newColorsVisible = selected && _interactive &&
+                               _markingsModel.IsMarkingColorCustomizable(_organ, _layer, _markingPrototype.ID);
+
+        if (SelectButton.Pressed != newSelectPressed)
+            SelectButton.Pressed = newSelectPressed;
+
+        if (ColorsButton.Visible != newColorsVisible)
+            ColorsButton.Visible = newColorsVisible;
 
         if (!selected || !_interactive)
         {
-            ColorsButton.Pressed = false;
-            ColorsContainer.Visible = false;
+            if (ColorsButton.Pressed)
+                ColorsButton.Pressed = false;
+            if (ColorsContainer.Visible)
+                ColorsContainer.Visible = false;
         }
 
         if (_markingsModel.GetMarking(_organ, _layer, _markingPrototype.ID) is { } marking &&
@@ -108,7 +135,8 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
         {
             for (var i = 0; i < _markingPrototype.Sprites.Count; i++)
             {
-                sliders[i].Color = marking.MarkingColors[i];
+                if (sliders[i].Color != marking.MarkingColors[i])
+                    sliders[i].Color = marking.MarkingColors[i];
             }
         }
     }

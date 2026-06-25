@@ -66,7 +66,7 @@ public abstract partial class SharedConfigurationSystem : EntitySystem
 /// <summary>
 /// Sent when configuration values got changes
 /// </summary>
-public sealed class ConfigurationUpdatedEvent : EntityEventArgs
+public sealed partial class ConfigurationUpdatedEvent : EntityEventArgs
 {
     public ConfigurationComponent Configuration;
 

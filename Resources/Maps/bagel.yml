@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 271.1.0
+  engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 01/22/2026 02:05:58
-  entityCount: 25402
+  time: 05/28/2026 22:43:42
+  entityCount: 25409
 maps:
 - 943
 grids:
@@ -51002,13 +51002,6 @@ entities:
     components:
     - type: Transform
       pos: 39.455097,-25.454304
-      parent: 60
-- proto: CaptainIDCard
-  entities:
-  - uid: 23919
-    components:
-    - type: Transform
-      pos: -8.433568,-5.5107408
       parent: 60
 - proto: CarbonDioxideCanister
   entities:
@@ -134290,6 +134283,48 @@ entities:
     components:
     - type: Transform
       pos: 10.5,13.5
+      parent: 60
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 1457
+    components:
+    - type: Transform
+      pos: -12.5,-19.5
+      parent: 60
+  - uid: 5955
+    components:
+    - type: Transform
+      pos: -13.5,-19.5
+      parent: 60
+  - uid: 6504
+    components:
+    - type: Transform
+      pos: -12.5,-16.5
+      parent: 60
+  - uid: 8596
+    components:
+    - type: Transform
+      pos: -14.5,-17.5
+      parent: 60
+  - uid: 8597
+    components:
+    - type: Transform
+      pos: -11.5,-17.5
+      parent: 60
+  - uid: 8970
+    components:
+    - type: Transform
+      pos: -11.5,-18.5
+      parent: 60
+  - uid: 9367
+    components:
+    - type: Transform
+      pos: -14.5,-18.5
+      parent: 60
+  - uid: 9562
+    components:
+    - type: Transform
+      pos: -13.5,-16.5
       parent: 60
 - proto: SpawnPointQuartermaster
   entities:

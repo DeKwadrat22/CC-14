@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Citadel-Station-13 (https://github.com/Citadel-Station-13). Original sprite art licensed CC-BY-SA-3.0 (see Resources/Textures/_ClawCommand/Mobs/Silicon/LICENSE.md). Ported to SS14 RSI format for Claw Command.",
+  "size": {
+    "x": 62,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "blade",
+      "directions": 4
+    },
+    {
+      "name": "blade_e",
+      "directions": 4
+    },
+    {
+      "name": "blade_l",
+      "directions": 4
+    },
+    {
+      "name": "blade-rest",
+      "directions": 4
+    },
+    {
+      "name": "blade-sit",
+      "directions": 4
+    },
+    {
+      "name": "blade-bellyup",
+      "directions": 4
+    },
+    {
+      "name": "blade-wreck",
+      "directions": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Claw Command - extra food crates ported from space
+- type: entity
+  id: CrateFoodPizzaLarge
+  parent: CratePlastic
+  name: disaster pizza delivery
+  description: In the ultimate event that all else has failed, find comfort in that more pizza solves everything. Includes 16 pizzas.
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodBoxPizzaFilled
+      amount: 16
+    - id: KnifePlastic
+      amount: 4
+    - id: LidSalami
+      prob: 0.04
+
+- type: entity
+  id: CrateFoodSoftdrinksLarge
+  parent: CratePlastic
+  name: softdrinks bulk crate
+  description: Lots of sodas taken straight out of Centcomm's own vending machines. Includes 26 sodas.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DrinkColaCan
+        amount: 8
+      - id: DrinkGrapeCan
+        amount: 4
+      - id: DrinkRootBeerCan
+        amount: 4
+      - id: DrinkIcedTeaCan
+        amount: 4
+      - id: DrinkLemonLimeCan
+        amount: 4
+      - id: DrinkFourteenLokoCan
+        amount: 2

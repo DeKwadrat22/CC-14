@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 272.0.0
+  engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 03/05/2026 17:56:37
-  entityCount: 29072
+  time: 05/29/2026 00:11:52
+  entityCount: 29078
 maps:
 - 1
 grids:
@@ -68790,12 +68790,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 15.441953,6.68369
       parent: 2
-  - uid: 6057
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.818525,3.6746788
-      parent: 2
   - uid: 6060
     components:
     - type: Transform
@@ -69104,6 +69098,18 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -57.582615,-38.654076
+      parent: 2
+  - uid: 29076
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 20.5,3.5
+      parent: 2
+  - uid: 29077
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,3.5
       parent: 2
 - proto: ChairFoldingSpawnFolded
   entities:
@@ -75810,32 +75816,6 @@ entities:
     - type: Transform
       pos: -2.5,-23.5
       parent: 2
-- proto: CrateVendingMachineRestockDonutFilled
-  entities:
-  - uid: 5077
-    components:
-    - type: Transform
-      pos: -9.5,21.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5078
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrayonBox
   entities:
   - uid: 6046
@@ -155810,6 +155790,33 @@ entities:
     - type: Transform
       pos: -59.5,-1.5
       parent: 2
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 5968
+    components:
+    - type: Transform
+      pos: 22.5,3.5
+      parent: 2
+  - uid: 5969
+    components:
+    - type: Transform
+      pos: 21.5,6.5
+      parent: 2
+  - uid: 6057
+    components:
+    - type: Transform
+      pos: 19.5,5.5
+      parent: 2
+  - uid: 29075
+    components:
+    - type: Transform
+      pos: 23.5,5.5
+      parent: 2
+  - uid: 29078
+    components:
+    - type: Transform
+      pos: 20.5,3.5
+      parent: 2
 - proto: SpawnPointQuartermaster
   entities:
   - uid: 13638
@@ -164564,6 +164571,34 @@ entities:
     - type: Transform
       pos: 5.5,-18.5
       parent: 2
+- proto: VendingMachineRestockDonut
+  entities:
+  - uid: 5077
+    components:
+    - type: Transform
+      pos: -9.5,21.5
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
+      closeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetclose.ogg
+      openSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetopen.ogg
+      whitelist:
+        components:
+        - MobState
+        - Item
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          ents:
+          - 5078
+        paper_label: !type:ContainerSlot {}
 - proto: VendingMachineRestockHotDrinks
   entities:
   - uid: 5078

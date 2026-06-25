@@ -12,8 +12,10 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
+    - id: ClothingLongcoatLO # Claw Command - Floof longcoat
     - id: PlushieLizardJobQuartermaster
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -35,6 +37,8 @@
       prob: 0.25
     - id: ClothingBeltSheathFilled
     - id: ClothingHeadsetAltCommand
+    - id: ClothingLongcoatCap # Claw Command - Floof longcoat
+    - id: ClothingOuterCoatCapTrench # Claw Command
     - id: ClothingOuterArmorCaptainCarapace
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
@@ -53,6 +57,7 @@
         max: 15
     - id: PlushieLizardJobCaptain
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 # No laser table + Laser table
 - type: entityTable
@@ -70,6 +75,7 @@
     children:
     - id: ClothingOuterHardsuitCap
     - id: ClothingMaskGasCaptain
+    - id: ClothingShoesBootsMag
     - id: JetpackCaptainFilled
     - id: OxygenTankFilled
 
@@ -129,6 +135,7 @@
     - id: ClothingBackpackIan
       prob: 0.5
     - id: ClothingHeadsetCommand
+    - id: ClothingLongcoatHoP # Claw Command - Floof longcoat
     - id: ClothingNeckGoldmedal
     - id: DoorRemoteService
     - id: HoPIDCard
@@ -136,6 +143,7 @@
     - id: ClothingEyesHudCommand
     - id: PlushieLizardJobHeadofpersonnel
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -160,14 +168,18 @@
     - id: ClothingEyesGlassesMeson
     - id: ClothingHandsGlovesColorYellow
     - id: ClothingHeadsetAltEngineering
+    - id: ClothingLongcoatCE # Claw Command - Floof longcoat
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
     - id: RCD
     - id: RCDAmmo
+    - id: RPD
+    - id: RCDAmmo # Extra compressed matter for the RPD
     - id: RubberStampCE
     - id: MetalFoamGrenade
     - id: PlushieLizardJobChiefengineer
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -211,8 +223,10 @@
   id: LockerFillChiefMedicalOfficerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: ClothingEyesHudMedical
+    # - id: ClothingEyesHudMedical
+    - id: ClothingEyesGlassesMedical # ClawCommand
     - id: ClothingBeltMedicalFilled
+    - id: ClothingLongcoatCMO # Claw Command - Floof longcoat
     - id: HandheldCrewMonitor
     - id: Hypospray
     - id: MedTekCartridge
@@ -224,6 +238,7 @@
     - id: BoxCMOCircuitboards
     - id: PlushieLizardJobChiefmedicalofficer
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -233,6 +248,7 @@
     - id: ClothingMaskBreathMedical
     - id: ClothingOuterHardsuitMedical
     - id: OxygenTankFilled
+    - id: ClothingShoesBootsMag
 
 # No hardsuit locker
 - type: entity
@@ -270,11 +286,13 @@
     - id: BoxRDCircuitboards
     - id: ClothingBeltUtilityFilled
     - id: ClothingHeadsetAltScience
+    - id: ClothingLongcoatRD # Claw Command - Floof longcoat
     - id: DoorRemoteResearch
     - id: HandTeleporter
     - id: RubberStampRd
     - id: PlushieLizardJobResearchdirector
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -284,6 +302,7 @@
     - id: ClothingMaskBreath
     - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
+    - id: ClothingShoesBootsMag
 
 # No hardsuit locker
 - type: entity
@@ -324,6 +343,7 @@
     - id: ClothingBeltSecurityFilled
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
+    - id: ClothingLongcoatHoS # Claw Command - Floof longcoat
     - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
     - id: FlashlightSeclite
@@ -337,6 +357,7 @@
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
+    - id: TrackingImplanter # CC14
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

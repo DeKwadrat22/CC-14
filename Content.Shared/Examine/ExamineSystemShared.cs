@@ -293,7 +293,7 @@ namespace Content.Shared.Examine
     ///     If you're pushing multiple messages that should be grouped together (or ordered in some way),
     ///     call <see cref="PushGroup"/> before pushing and <see cref="PopGroup"/> when finished.
     /// </summary>
-    public sealed class ExaminedEvent : EntityEventArgs
+    public sealed partial class ExaminedEvent : EntityEventArgs
     {
         /// <summary>
         ///     The message that will be displayed as the examine text.
@@ -535,7 +535,7 @@ namespace Content.Shared.Examine
     /// <summary>
     ///     Event raised directed at an entity that someone is attempting to examine
     /// </summary>
-    public sealed class ExamineAttemptEvent : CancellableEntityEventArgs
+    public sealed partial class ExamineAttemptEvent : CancellableEntityEventArgs
     {
         public readonly EntityUid Examiner;
 

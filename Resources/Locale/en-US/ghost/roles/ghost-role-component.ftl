@@ -65,6 +65,8 @@ ghost-role-information-hamlet-description = Lives in the station bridge, has a b
 ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
 
+ghost-role-information-bar-slime-description = A reagent slime with exactly one special interest, serving people at the bar. You are friendly to others.
+
 ghost-role-information-angry-slimes-name = Slime
 ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
 ghost-role-information-angry-slimes-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other angry slimes.

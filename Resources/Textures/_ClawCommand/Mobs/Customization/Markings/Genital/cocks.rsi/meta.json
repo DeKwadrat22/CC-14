@@ -1,0 +1,299 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/ARF-SS13/coyote-frontier/commit/36062e6bf10f9f58ee81fe2cb19943298551bb31",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "penis_nondescript_1_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_1_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_1_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_2_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_2_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_2_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_3_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_3_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_nondescript_3_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_s_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_s_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_1_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_2_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_human_3_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_1_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_2_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_knotted_3_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_1_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_2_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_barbknot_3_s_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_1_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_1_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_2_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_2_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_3_0_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_3_0_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_1_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_2_1_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "penis_tipknotted_3_1_FRONT",
+            "directions": 4
+        }
+    ]
+}

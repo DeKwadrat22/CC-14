@@ -1,7 +1,9 @@
+using System.Numerics;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
+using Content.Shared.Sprite;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Prototypes;
 
@@ -11,12 +13,19 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private GrammarSystem _grammar = default!;
+    [Dependency] private SharedScaleVisualsSystem _scaleVisuals = default!; // Claw Command
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<HumanoidProfileComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<HumanoidProfileComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<HumanoidProfileComponent> ent, ref MapInitEvent args)
+    {
+        ApplyScale(ent, ent.Comp.Width, ent.Comp.Height);
     }
 
     public void ApplyProfileTo(Entity<HumanoidProfileComponent?> ent, HumanoidCharacterProfile profile)
@@ -27,8 +36,13 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         ent.Comp.Gender = profile.Gender;
         ent.Comp.Age = profile.Age;
         ent.Comp.Species = profile.Species;
+        ent.Comp.CustomSpeciesName = profile.CustomSpeciesName; // Claw Command
         ent.Comp.Sex = profile.Sex;
+        ent.Comp.Width = profile.Width;
+        ent.Comp.Height = profile.Height;
         Dirty(ent);
+
+        ApplyScale(ent, profile.Width, profile.Height);
 
         var sexChanged = new SexChangedEvent(ent.Comp.Sex, profile.Sex);
         RaiseLocalEvent(ent, ref sexChanged);
@@ -39,10 +53,18 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         }
     }
 
+    public void ApplyScale(EntityUid uid, float width, float height)
+    {
+        _scaleVisuals.SetSpriteScale(uid, new Vector2(width, height));
+    }
+
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
     {
         var identity = Identity.Entity(ent, EntityManager);
-        var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
+        // Claw Command - use custom species name if set, otherwise use default species name
+        var species = !string.IsNullOrWhiteSpace(ent.Comp.CustomSpeciesName)
+            ? ent.Comp.CustomSpeciesName.ToLower()
+            : GetSpeciesRepresentation(ent.Comp.Species).ToLower();
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));

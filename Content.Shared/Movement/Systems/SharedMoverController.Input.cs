@@ -64,6 +64,9 @@ namespace Content.Shared.Movement.Systems
 
             Subs.CVar(_configManager, CCVars.CameraRotationLocked, obj => CameraRotationLocked = obj, true);
             Subs.CVar(_configManager, CCVars.GameDiagonalMovement, value => DiagonalMovementEnabled = value, true);
+
+            // Claw Command - server listens for clients requesting WalkByDefault changes
+            SubscribeNetworkEvent<SetWalkByDefaultEvent>(OnSetWalkByDefault);
         }
 
         /// <summary>
@@ -114,6 +117,7 @@ namespace Content.Shared.Movement.Systems
             entity.Comp.RelativeRotation = state.RelativeRotation;
             entity.Comp.TargetRelativeRotation = state.TargetRelativeRotation;
             entity.Comp.CanMove = state.CanMove;
+            entity.Comp.WalkByDefault = state.WalkByDefault; // Claw Command
             entity.Comp.RelativeEntity = EnsureEntity<InputMoverComponent>(state.RelativeEntity, entity.Owner);
 
             // Reset
@@ -141,12 +145,26 @@ namespace Content.Shared.Movement.Systems
                 HeldMoveButtons = entity.Comp.HeldMoveButtons,
                 RelativeRotation = entity.Comp.RelativeRotation,
                 TargetRelativeRotation = entity.Comp.TargetRelativeRotation,
+                WalkByDefault = entity.Comp.WalkByDefault, // Claw Command
             };
         }
 
         private void ShutdownInput()
         {
             CommandBinds.Unregister<SharedMoverController>();
+        }
+
+        // Claw Command - server receives this from clients to set WalkByDefault on their entity
+        private void OnSetWalkByDefault(SetWalkByDefaultEvent ev, EntitySessionEventArgs args)
+        {
+            if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
+                return;
+
+            if (!MoverQuery.TryGetComponent(uid, out var mover))
+                return;
+
+            mover.WalkByDefault = ev.WalkByDefault;
+            Dirty(uid, mover);
         }
 
         public bool DiagonalMovementEnabled { get; private set; }

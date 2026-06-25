@@ -11,9 +11,15 @@
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
-  - Glasses
+  - LoadoutGroupCMOGlasses
   - SurvivalMedical
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -31,6 +37,12 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -43,6 +55,12 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -58,6 +76,12 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -74,5 +98,11 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical

@@ -144,6 +144,8 @@
     - id: ClothingHeadBandBotany
     - id: ChemistryBottleRobustHarvest
       prob: 0.3
+    - id: RobustHarvestChemistryBottle # Claw Command - alt-ID
+      prob: 0.3
     - id: ClothingBeltPlantFilled
     - id: PlantBag ##Some maps don't have nutrivend
     - id: BoxMouthSwab

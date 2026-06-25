@@ -1,0 +1,123 @@
+- type: entity
+  name: humpshroom
+  parent: FoodProduceBase
+  id: FoodHumpShroom
+  description: A sweet-smelling mushroom that excretes a sticky and arousing liquid.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Philterex
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/humpshroom.rsi
+  - type: Produce
+    seedId: humpShroom
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: breedshroom
+  parent: FoodProduceBase
+  id: FoodBreedShroom
+  description: An overwhelmingly smelling mushroom that excretes an incredibly sticky and arousing liquid. It has been known to increase the population in colonies.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Libidozenithizine
+          Quantity: 2
+        - ReagentId: Philterex
+          Quantity: 4
+        - ReagentId: Happiness
+          Quantity: 4
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/breedshroom.rsi
+  - type: Produce
+    seedId: breedShroom
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity # Floofstation
+  name: pomegranate
+  parent: FoodProduceBase
+  id: FoodPomegranate
+  description: A delicious, sweet fruit, believed to have special properties.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - spooky
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Pomelustine
+          Quantity: 30
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+  - type: Produce
+    seedId: pomegranate
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePomegranate
+        Quantity: 20
+  - type: SliceableFood
+    count: 2
+    slice: FoodPomegranateSlice
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity # Floofstation
+  name: pomegranate slice
+  parent: ProduceSliceBase
+  id: FoodPomegranateSlice
+  description: A delicious, sweet fruit, believed to have special properties.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - spooky
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Pomelustine
+          Quantity: 15
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePomegranate
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+    - Slice

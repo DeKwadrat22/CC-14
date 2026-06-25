@@ -3,6 +3,7 @@ using Content.Server.Humanoid;
 using Content.Server.Mind;
 using Content.Server.PDA;
 using Content.Server.Station.Components;
+using Content.Server.Spawners.Components; //claw command
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Body;
@@ -63,6 +64,10 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
         var ev = new PlayerSpawningEvent(job, profile, station);
+
+        //claw command - force job spawner for AlwaysUseSpawner jobs (e.g. Prisoner)
+        if (job != null && _prototypeManager.TryIndex<JobPrototype>(job, out var jobProto) && jobProto.AlwaysUseSpawner)
+            ev.DesiredSpawnPointType = SpawnPointType.Job;
 
         RaiseLocalEvent(ev);
         DebugTools.Assert(ev.SpawnResult is { Valid: true } or null);
@@ -229,12 +234,16 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
 /// This event is designed to use ordered handling. You probably want SpawnPointSystem to be the last handler.
 /// </summary>
 [PublicAPI]
-public sealed class PlayerSpawningEvent : EntityEventArgs
+public sealed partial class PlayerSpawningEvent : EntityEventArgs
 {
     /// <summary>
     /// The entity spawned, if any. You should set this if you succeed at spawning the character, and leave it alone if it's not null.
     /// </summary>
     public EntityUid? SpawnResult;
+    /// <summary>
+    /// If set, overrides the spawn point type selection (e.g. forces Job spawn points even for late joiners).
+    /// </summary>
+    public SpawnPointType? DesiredSpawnPointType; //claw command
     /// <summary>
     /// The job to use, if any.
     /// </summary>

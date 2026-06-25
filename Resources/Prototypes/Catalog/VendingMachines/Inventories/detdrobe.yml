@@ -15,5 +15,7 @@
     ClothingHandsGlovesColorBlack: 2
     ClothingHandsGlovesLatex: 2
     ClothingHeadsetSecurity: 2
+    ClothingLongcoatBrown: 1 # Claw Command - Floof longcoat
+    ClothingLongcoatSec: 1 # Claw Command - Floof longcoat
   contrabandInventory:
     ToyFigurineDetective: 1

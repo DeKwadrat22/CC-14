@@ -11,13 +11,21 @@
   - PlushieLizard
   - PlushieSpaceLizard
   - ThreeCandles
+  - LoadoutCandleBox      # CC14
+  - LoadoutSmallCandleBox # CC14
+  - LoadoutMagicCandleBox # CC14
   - Lighter
+  - LoadoutCheapLighter   # CC14
+  - LoadoutFlippoLighter  # CC14
   - CigPackGreen
   - CigPackRed
   - CigPackBlue
   - CigPackBlack
+  - LoadoutCigPackMixed   # CC14
   - CigarCase
   - CigarGold
+  - LoadoutCigar          # CC14
+  - LoadoutSmokingPipe    # CC14
   - BoxFolderBaseThreePapers
   - BoxFolderPlasticClipboardThreePapers
   - BoxFolderClipboardThreePapers
@@ -73,6 +81,8 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencyWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -201,6 +211,22 @@
   - AncientJumpsuit
   - RainbowJumpsuit
   - RainbowJumpskirt
+  # Claw Command - Goob _NF military jumpsuit color variants
+  - BlackMJ
+  - BlueMJ
+  - BrownMJ
+  - DarkBlueMJ
+  - DarkGreenMJ
+  - GreenMJ
+  - GreyMJ
+  - LightBrownMJ
+  - MaroonMJ
+  - OrangeMJ
+  - PinkMJ
+  - PurpleMJ
+  - RedMJ
+  - TealMJ
+  - YellowMJ
 
 - type: loadoutGroup
   id: PassengerFace
@@ -240,9 +266,19 @@
 
 - type: loadoutGroup
   id: PassengerShoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   name: loadout-group-passenger-shoes
   loadouts:
   - BlackShoes
+  - LoadoutShoesWhite   # CC14
+  - LoadoutShoesBlue    # CC14
+  - LoadoutShoesBrown   # CC14
+  - LoadoutShoesGreen   # CC14
+  - LoadoutShoesOrange  # CC14
+  - LoadoutShoesRed     # CC14
+  - LoadoutShoesYellow  # CC14
+  - LoadoutShoesPurple  # CC14
   - WinterBoots
 
 #- type: loadoutGroup
@@ -482,6 +518,7 @@
   - BotanistJumpsuit
   - BotanistJumpskirt
   - BotanistOveralls
+  - HydroMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: BotanistBackpack
@@ -555,6 +592,8 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencyWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 - type: loadoutGroup
   id: ClownJobTrinkets
@@ -619,6 +658,8 @@
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencyWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 #- type: loadoutGroup
 #  id: MimeJobTrinkets
@@ -699,6 +740,7 @@
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
+  - QuartermasterMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: QuartermasterNeck
@@ -718,6 +760,8 @@
 - type: loadoutGroup
   id: QuartermasterShoes
   name: loadout-group-quartermaster-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - BrownShoes
   - CargoWinterBoots
@@ -741,6 +785,7 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+  - CargoTechMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -760,6 +805,8 @@
 - type: loadoutGroup
   id: CargoTechnicianShoes
   name: loadout-group-cargo-technician-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - BlackShoes
   - CargoWinterBoots
@@ -795,6 +842,8 @@
 - type: loadoutGroup
   id: SalvageSpecialistShoes
   name: loadout-group-salvage-specialist-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
@@ -822,6 +871,7 @@
   - ChiefEngineerJumpskirt
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
+  - ChiefEngineerMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
@@ -841,6 +891,8 @@
 - type: loadoutGroup
   id: ChiefEngineerShoes
   name: loadout-group-chief-engineer-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - BrownShoes
   - EngineeringWinterBoots
@@ -883,6 +935,7 @@
   - StationEngineerHazardsuit
   - SeniorEngineerJumpsuit
   - SeniorEngineerJumpskirt
+  - EngiMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: StationEngineerBackpack
@@ -903,6 +956,8 @@
 - type: loadoutGroup
   id: StationEngineerShoes
   name: loadout-group-station-engineer-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - WorkBoots
   - EngineeringWinterBoots
@@ -927,6 +982,7 @@
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianJumpskirt
   - AtmosphericTechnicianJumpsuitCasual
+  - AtmosMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
@@ -946,6 +1002,8 @@
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
   name: loadout-group-atmospheric-technician-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - WhiteShoes
   - EngineeringWinterBoots
@@ -965,6 +1023,8 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencyExtendedWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 # Science
 - type: loadoutGroup
@@ -988,6 +1048,7 @@
   loadouts:
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
+  - ResearchDirectorMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
@@ -1000,6 +1061,8 @@
 - type: loadoutGroup
   id: ResearchDirectorShoes
   name: loadout-group-research-director-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - BrownShoes
   - ScienceWinterBoots
@@ -1036,6 +1099,7 @@
   - RoboticistJumpskirt
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
+  - ResearchMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
   id: ScientistBackpack
@@ -1060,6 +1124,8 @@
 - type: loadoutGroup
   id: ScientistShoes
   name: loadout-group-scientist-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - WhiteShoes
   - BlackShoes
@@ -1179,6 +1245,7 @@
   - SecurityHelmet
   - SecurityBeret
   - SecurityHat
+  - SecurityHelmetAlt  # Claw Command - Goob port
   - TrooperHat
 
 - type: loadoutGroup
@@ -1219,6 +1286,8 @@
 - type: loadoutGroup
   id: SecurityShoes
   name: loadout-group-security-shoes
+  minLimit: 0 # CC14
+  defaultSelected: 1 # CC14
   loadouts:
   - JackBoots
   - SecurityWinterBoots
@@ -1299,6 +1368,8 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencySecurityWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 # Wildcards
 - type: loadoutGroup
@@ -1307,6 +1378,7 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+  - ReporterDress  # Claw Command - Goob port
 
 - type: loadoutGroup
   id: ReporterHead
@@ -1351,6 +1423,8 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutEmergencyExtendedWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 - type: loadoutGroup
   id: SurvivalMilitaryDouble
@@ -1360,6 +1434,8 @@
   loadouts:
   - EmergencyNitrogenMilitaryDouble
   - EmergencyOxygenMilitaryDouble
+  - LoadoutEmergencyExtendedWaterVapor # CC14
+  - LoadoutTankFeroxi # CC14
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

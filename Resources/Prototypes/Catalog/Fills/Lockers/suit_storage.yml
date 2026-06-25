@@ -114,8 +114,12 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
-    - id: ClothingOuterHardsuitPirateEVA
+    - !type:GroupSelector # Claw Command - 50/50 original vs Alt
+      children:
+      - id: ClothingOuterHardsuitPirateEVA
+      - id: ClothingOuterHardsuitPirateEVAAlt
     - id: ClothingMaskGas
+    - id: ClothingShoesBootsMag
 
 #NTSRA Voidsuit
 - type: entity

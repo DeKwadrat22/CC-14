@@ -3,6 +3,11 @@
   name: guide-entry-jobs
   text: "/ServerInfo/Guidebook/Jobs.xml"
   children:
+  - GuideCompanyPolicy #claw command
+  - GuideGeneralRegulations #claw command
+  - GuideMutinyGuidelines #claw command
+  - GuidePermits #claw command
+  - GuideAlertProcedure #claw command
   - Service
   - Cargo
   - Medical

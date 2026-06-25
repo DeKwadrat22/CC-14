@@ -157,6 +157,8 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: MovedByPressure # Required for integrated hardsuit thrusters to push the wearer in zero-g
+    cutoffTime: 1.0
 
 - type: entity
   abstract: true
@@ -228,3 +230,4 @@
   - type: FireVisuals
     alternateState: Standing
   - type: StunVisuals
+  - type: UndergarmentRemoval # CC14

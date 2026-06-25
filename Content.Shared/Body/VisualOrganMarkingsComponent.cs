@@ -29,8 +29,15 @@ public sealed partial class VisualOrganMarkingsComponent : Component
     /// <summary>
     /// Layers that are eligible for hiding based on e.g. clothing
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, AlwaysPushInheritance] // Claw Command - AlwaysPushInheritance added
     public HashSet<Enum> HideableLayers = new();
+
+    /// <summary>
+    /// CLAW COMMAND 14
+    /// Layers that start hidden and only become visible when explicitly shown e.g. fox form
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<Enum> InitiallyHiddenLayers = new();
 
     /// <summary>
     /// A dictionary of layers to other layers that visually depend on them for hiding, e.g. SnoutCover depends on Snout

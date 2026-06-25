@@ -336,7 +336,7 @@ namespace Content.Client.Popups
             }
         }
 
-        public abstract class PopupLabel
+        public abstract partial class PopupLabel
         {
             public PopupType Type = PopupType.Small;
             public string Text { get; set; } = string.Empty;
@@ -344,7 +344,7 @@ namespace Content.Client.Popups
             public int Repeats = 1;
         }
 
-        public sealed class WorldPopupLabel(EntityCoordinates coordinates) : PopupLabel
+        public sealed partial class WorldPopupLabel(EntityCoordinates coordinates) : PopupLabel
         {
             /// <summary>
             /// The original EntityCoordinates of the label.
@@ -352,7 +352,7 @@ namespace Content.Client.Popups
             public EntityCoordinates InitialPos = coordinates;
         }
 
-        public sealed class CursorPopupLabel(ScreenCoordinates screenCoords) : PopupLabel
+        public sealed partial class CursorPopupLabel(ScreenCoordinates screenCoords) : PopupLabel
         {
             public ScreenCoordinates InitialPos = screenCoords;
         }

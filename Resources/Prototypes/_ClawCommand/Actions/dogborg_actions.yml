@@ -1,0 +1,47 @@
+# Dogborg pose action buttons. Each one toggles the matching pose via
+# DogborgPoseSystem. Granted to every dogborg chassis through ActionGrant in
+# dogborg_chassis.yml; the pose only sticks while the dogborg is standing
+# still, movement clears it automatically.
+#
+# Note: entity prototype `name:`/`description:` fields are literal strings,
+# not loc keys. The matching FTL strings in dogborg-poses.ftl are for the
+# emote variants (which are emote prototypes, where `name:` IS a loc key).
+
+- type: entity
+  parent: BaseAction
+  id: ActionDogborgSit
+  name: Sit
+  description: Toggle sitting on your haunches. Moving stands you back up.
+  components:
+  - type: Action
+    useDelay: 1
+    icon: Interface/Actions/scream.png
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:DogborgSitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionDogborgRest
+  name: Rest
+  description: Toggle lying down to rest. Moving stands you back up.
+  components:
+  - type: Action
+    useDelay: 1
+    icon: Interface/Actions/scream.png
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:DogborgRestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionDogborgBellyUp
+  name: Belly Up
+  description: Toggle rolling over belly-up. Moving rights yourself.
+  components:
+  - type: Action
+    useDelay: 1
+    icon: Interface/Actions/scream.png
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:DogborgBellyUpActionEvent

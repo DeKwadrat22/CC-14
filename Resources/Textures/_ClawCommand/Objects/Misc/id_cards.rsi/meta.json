@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Edited by Claw Command, Taken from https://github.com/tgstation/tgstation // Icon Edit by FoxxoTrystan // further edits by Dzordz. clawcommand-new edited by DaCookieCakes.",
+    "size": { "x": 32, "y": 32 },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "clawcommand"
+        },
+        {
+            "name": "clawcommand-inhand-left"
+        },
+        {
+            "name": "clawcommand-inhand-right"
+        },
+		{
+			"name": "clawcommand-new"
+		},
+		{
+			"name": "stripe_bottom"
+		},
+		{
+			"name": "stripe_top"
+		}
+    ]
+}

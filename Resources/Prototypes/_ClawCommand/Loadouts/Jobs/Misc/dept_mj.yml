@@ -1,0 +1,67 @@
+# Dept-specific Military-style jumpsuit loadouts ported from Goob (_NF).
+# Entities live in _ClawCommand/Entities/Clothing/Uniforms/military_jumpsuits.yml.
+
+# Engineering
+- type: loadout
+  id: AtmosMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryAtmospherics
+
+- type: loadout
+  id: EngiMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryEngineering
+
+- type: loadout
+  id: ChiefEngineerMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryEngineeringChief
+
+# Medical
+- type: loadout
+  id: ChemistMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryChemistry
+
+- type: loadout
+  id: MedicMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryMedicalDoctor
+
+- type: loadout
+  id: ParamedMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryParamedic
+
+- type: loadout
+  id: CMOMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryCMO
+
+# Service / Hydroponics
+- type: loadout
+  id: HydroMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryHydroponics
+
+# Supply
+- type: loadout
+  id: CargoTechMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryCargo
+
+- type: loadout
+  id: QuartermasterMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryQM
+
+# Science
+- type: loadout
+  id: ResearchMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryScientist
+
+- type: loadout
+  id: ResearchDirectorMJ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryResearchDirector

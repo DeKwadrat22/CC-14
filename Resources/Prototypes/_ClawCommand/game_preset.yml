@@ -1,0 +1,40 @@
+- type: gamePreset
+  id: SurvivalHellshift
+  alias:
+    - hellshift
+  showInVote: false
+  name: hellshift-title
+  description: hellshift-description
+  rules:
+    - HellshiftStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+
+- type: gamePreset
+  id: SurvivalIrregular
+  alias: [irregular]
+  showInVote: false
+  name: irregular-title
+  description: irregular-description
+  rules:
+    #- IrregularStationEventScheduler
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+
+- type: gamePreset
+  id: SurvivalIrregularExtended
+  alias: [irregular-extended]
+  showInVote: true
+  name: irregular-extended-title
+  description: irregular-extended-description
+  rules:
+    - IrregularExtendedStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler

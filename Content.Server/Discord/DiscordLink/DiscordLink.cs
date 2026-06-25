@@ -12,7 +12,7 @@ namespace Content.Server.Discord.DiscordLink;
 /// <summary>
 /// Represents the arguments for the <see cref="DiscordLink.OnCommandReceived"/> event.
 /// </summary>
-public sealed class CommandReceivedEventArgs
+public sealed partial class CommandReceivedEventArgs
 {
     /// <summary>
     /// The command that was received. This is the first word in the message, after the bot prefix.

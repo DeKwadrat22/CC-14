@@ -1,0 +1,11 @@
+# Claw Command - Syndicate Listener starting gear
+- type: startingGear
+  id: SyndicateListenerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPyjamaSyndicateBlack
+    head: ClothingHeadPyjamaSyndicateBlack
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesSlippers
+    id: SyndiPDA
+# innerClothingSkirt: ClothingUniformJumpsuitPyjamaSyndicatePink

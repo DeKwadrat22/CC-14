@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 269.0.1
+  engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 12/23/2025 21:10:24
-  entityCount: 23881
+  time: 05/28/2026 23:02:57
+  entityCount: 23886
 maps:
 - 5350
 grids:
@@ -7579,6 +7579,8 @@ entities:
     - type: GridPathfinding
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 5350
     components:
     - type: MetaData
@@ -11784,7 +11786,7 @@ entities:
       pos: 34.5,45.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -48347.26
+      secondsUntilStateChange: -48403.527
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -47264,13 +47266,6 @@ entities:
     components:
     - type: Transform
       pos: -6.4990587,-5.49392
-      parent: 30
-- proto: CaptainIDCard
-  entities:
-  - uid: 23195
-    components:
-    - type: Transform
-      pos: -20.492418,30.561455
       parent: 30
 - proto: CarbonDioxideCanister
   entities:
@@ -125834,6 +125829,38 @@ entities:
     components:
     - type: Transform
       pos: -30.5,32.5
+      parent: 30
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 23195
+    components:
+    - type: Transform
+      pos: -46.5,66.5
+      parent: 30
+  - uid: 23882
+    components:
+    - type: Transform
+      pos: -48.5,66.5
+      parent: 30
+  - uid: 23883
+    components:
+    - type: Transform
+      pos: -47.5,66.5
+      parent: 30
+  - uid: 23884
+    components:
+    - type: Transform
+      pos: -48.5,63.5
+      parent: 30
+  - uid: 23885
+    components:
+    - type: Transform
+      pos: -47.5,63.5
+      parent: 30
+  - uid: 23886
+    components:
+    - type: Transform
+      pos: -46.5,63.5
       parent: 30
 - proto: SpawnPointPsychologist
   entities:

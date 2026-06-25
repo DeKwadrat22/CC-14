@@ -309,6 +309,85 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+- type: entity    #Claw Command
+  name: bartender slime
+  id: ReagentSlimeBar
+  suffix: beer
+  parent: [ MobAdultSlimes, MobCombat ]
+  description: It consists of beer, and wants you to enjoy that beer.
+  components:
+  - type: GhostRole
+    prob: 1
+    description: ghost-role-information-bar-slime-description
+    rules: ghost-role-information-nonantagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleNeutral
+    raffle:
+      settings: short
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: "#cfa85f"
+  - type: PointLight
+    radius: 2.0
+    energy: 3.5
+    color: "#cfa85f"
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.4
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Beer
+        Quantity: 100
+  - type: StatusEffects
+    allowed:
+    - Electrocution
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 5
+  - type: MeleeChemicalInjector
+    solution: bloodstream
+    transferAmount: 10
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide
+    - DoorBumpOpener
+    - StunImmune
+  - type: NoSlip
+  - type: ZombieImmune
+  - type: ExaminableSolution
+    solution: bloodstream
+  - type: InjectableSolution
+    solution: bloodstream
+  - type: DrainableSolution
+    solution: bloodstream
+
 - type: entity
   name: reagent slime
   id: ReagentSlime

@@ -1,0 +1,16 @@
+# Claw Command - expanded trait categories
+- type: traitCategory
+  id: TraitCategoryKinky
+  name: cc-trait-category-kinky
+  maxTraitPoints: 4
+
+- type: traitCategory
+  id: Physical
+  name: trait-category-physical
+  maxTraitPoints: 10
+  budgetPool: SharedTraitBudget
+
+- type: traitCategory
+  id: Psychological
+  name: trait-category-psychological
+  budgetPool: SharedTraitBudget

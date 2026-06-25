@@ -486,7 +486,7 @@ public sealed partial class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
 /// Gets sent to running programs when the cartridge loader receives a device net package
 /// </summary>
 /// <seealso cref="DeviceNetworkPacketEvent"/>
-public sealed class CartridgeDeviceNetPacketEvent : EntityEventArgs
+public sealed partial class CartridgeDeviceNetPacketEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
     public readonly DeviceNetworkPacketEvent PacketEvent;
@@ -502,7 +502,7 @@ public sealed class CartridgeDeviceNetPacketEvent : EntityEventArgs
 /// Gets sent to running programs when the cartridge loader receives an after interact event
 /// </summary>
 /// <seealso cref="AfterInteractEvent"/>
-public sealed class CartridgeAfterInteractEvent : EntityEventArgs
+public sealed partial class CartridgeAfterInteractEvent : EntityEventArgs
 {
     public readonly EntityUid Loader;
     public readonly AfterInteractEvent InteractEvent;

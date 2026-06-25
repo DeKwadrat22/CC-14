@@ -53,4 +53,12 @@ public sealed partial class GasTankComponent : GasMaxPressureHolderComponent
 
     [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;
+
+    /// <summary>
+    ///     If false, this tank is for things like jetpacks/integrated thrusters that aren't
+    ///     supposed to be connected to a breath supply. Toggling internals / connecting
+    ///     to an internals slot is disallowed when this is false.
+    /// </summary>
+    [DataField]
+    public bool IsInternals = true;
 }

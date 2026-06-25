@@ -32,6 +32,9 @@
     ClothingShoesColorBlue: 2
     ClothingShoesColorWhite: 2
     ClothingShoesBootsWinterMed: 2
+    ClothingHeadHatSurgcapCybersun: 2 # Claw Command - Delta-V surg cap
+    ClothingHandsMedicWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksMedic: 1 # Claw Command - Floof
   contrabandInventory:
     ClothingUniformJumpskirtOfLife: 1
     ToyFigurineMedicalDoctor: 1

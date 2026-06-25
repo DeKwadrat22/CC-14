@@ -27,6 +27,7 @@ namespace Content.Client.Communications.UI
             _menu.OnBroadcast += BroadcastButtonPressed;
             _menu.OnAlertLevel += AlertLevelSelected;
             _menu.OnEmergencyLevel += EmergencyShuttleButtonPressed;
+            _menu.OnRequestERT += RequestERTButtonPressed; // Claw Command
         }
 
         public void AlertLevelSelected(string level)
@@ -66,6 +67,12 @@ namespace Content.Client.Communications.UI
         public void RecallShuttle()
         {
             SendMessage(new CommunicationsConsoleRecallEmergencyShuttleMessage());
+        }
+
+        // Claw Command
+        public void RequestERTButtonPressed()
+        {
+            SendMessage(new CommunicationsConsoleRequestERTMessage());
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)

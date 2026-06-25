@@ -24,7 +24,7 @@
     whitelist:
       tags:
         - BulletFoam
-    capacity: 40
+    capacity: 10
     proto: BulletFoam
   - type: Sprite
     sprite: Objects/Storage/boxes.rsi

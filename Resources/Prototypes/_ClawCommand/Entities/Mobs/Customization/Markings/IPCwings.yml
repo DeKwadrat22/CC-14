@@ -1,0 +1,10 @@
+- type: marking
+  id: WingsRoboticMerciful
+  bodyPart: Tail
+  groupWhitelist: [Human, Slime, MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/IPCwings.rsi
+      state: merciful_base
+    - sprite: _ClawCommand/Mobs/Customization/IPCwings.rsi
+      state: merciful_light
+

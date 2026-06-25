@@ -209,17 +209,17 @@ public record struct DropHandItemsEvent();
 /// <summary>
 /// Subscribe if you can potentially block a down attempt.
 /// </summary>
-public sealed class DownAttemptEvent : CancellableEntityEventArgs;
+public sealed partial class DownAttemptEvent : CancellableEntityEventArgs;
 
 /// <summary>
 /// Subscribe if you can potentially block a stand attempt.
 /// </summary>
-public sealed class StandAttemptEvent : CancellableEntityEventArgs;
+public sealed partial class StandAttemptEvent : CancellableEntityEventArgs;
 
 /// <summary>
 /// Raised when an entity becomes standing
 /// </summary>
-public sealed class StoodEvent : EntityEventArgs, IInventoryRelayEvent
+public sealed partial class StoodEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public SlotFlags TargetSlots { get; } = SlotFlags.FEET;
 };
@@ -227,7 +227,7 @@ public sealed class StoodEvent : EntityEventArgs, IInventoryRelayEvent
 /// <summary>
 /// Raised when an entity is not standing
 /// </summary>
-public sealed class DownedEvent : EntityEventArgs, IInventoryRelayEvent
+public sealed partial class DownedEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public SlotFlags TargetSlots { get; } = SlotFlags.FEET;
 }

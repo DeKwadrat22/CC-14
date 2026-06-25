@@ -1,0 +1,14 @@
+- type: construction
+  id: PaperWall
+  graph: Girder
+  startNode: start
+  targetNode: paperWall
+  category: construction-category-structures
+  name: construction-recipe-paper-wall-name
+  description: construction-recipe-paper-wall-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

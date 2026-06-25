@@ -94,6 +94,12 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
             return Atmospherics.MinimumHeatCapacity;
         }
 
+        // Sub-kilogram entities (small clothing, paper, etc.) shouldn't get their heat capacity rounded
+        // toward zero — that produces nonsense temperatures when atmos pushes them around.
+        // Port: EE Physics-Based Air Throws (#342).
+        if (physics.Mass < 1f)
+            return comp.SpecificHeat;
+
         return comp.SpecificHeat * physics.FixturesMass;
     }
 }

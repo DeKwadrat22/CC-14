@@ -14,6 +14,7 @@ using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Maps;
 using Content.Server.RoundEnd;
+using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -557,7 +558,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 {
                     UserId = player.UserId.UserId,
                     Name = player.Name,
-                    IsAdmin = adminData != null,
+                    IsAdmin = (adminData != null && adminData.HasFlag(AdminFlags.Admin)),
                     IsDeadminned = !adminData?.Active ?? false
                 });
             }
@@ -761,7 +762,7 @@ public sealed partial class ServerApi : IPostInjectInit
         public required string? MOTD { get; init; }
         public required Dictionary<string, object> PanicBunker { get; init; }
 
-        public sealed class Player
+        public sealed partial class Player
         {
             public required Guid UserId { get; init; }
             public required string Name { get; init; }
@@ -769,7 +770,7 @@ public sealed partial class ServerApi : IPostInjectInit
             public required bool IsDeadminned { get; init; }
         }
 
-        public sealed class MapInfo
+        public sealed partial class MapInfo
         {
             public required string Id { get; init; }
             public required string Name { get; init; }
@@ -780,7 +781,7 @@ public sealed partial class ServerApi : IPostInjectInit
     {
         public required List<Preset> Presets { get; init; }
 
-        public sealed class Preset
+        public sealed partial class Preset
         {
             public required string Id { get; init; }
             public required string Description { get; init; }

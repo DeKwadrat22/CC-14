@@ -1,0 +1,13 @@
+# Miscellaneous microwave recipes ported alongside food entities not covered
+# by the other meal_recipes_* files in this folder.
+
+# Source upstream uses LeftLegHarpy + RightLegHarpy as ingredients; those body
+# parts don't exist in this fork, so substitute generic raw meat to keep the
+# recipe craftable.
+- type: microwaveMealRecipe
+  id: RecipeHarpyWings
+  name: harpy wings recipe
+  result: FoodHarpyWings
+  time: 15
+  solids:
+    FoodMeat: 2 # substituted from LeftLegHarpy + RightLegHarpy

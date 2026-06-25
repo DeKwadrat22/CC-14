@@ -1,0 +1,166 @@
+- type: job
+  id: ClawCommandOfficer
+  name: JobClawCommandOfficer
+  description: job-description-cco
+  playTimeTracker: JobClawCommandOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2h
+  startingGear: ClawCommandOfficerGear
+  icon: "JobIconClawCommandOfficer"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Atmospherics
+  - Medical
+  - Research
+  - Engineering
+  - Command
+  - CentralCommand
+  - ClawCommand
+  - Bar
+  - Service
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: ClawCommandOfficerGear
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+    ears: ClothingHeadsetAltSecurity
+    id: ClawCommandOfficerPDA
+  storage:
+    back:
+    - Flash
+
+- type: job
+  id: ClawCommandMaid
+  name: JobClawCommandMaid
+  description: job-description-ccm
+  playTimeTracker: JobClawCommandMaid
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2h
+  startingGear: ClawCommandMaidGear
+  icon: "JobIconClawCommandMaid"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Service
+  - Janitor
+  - Medical
+  - Command
+  - CentralCommand
+  - Bar
+  - Kitchen
+  - Hydroponics
+  - Theatre
+  - Cargo
+  - Salvage
+  - ClawCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: ClawCommandMaidGear
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+    ears: ClothingHeadsetAltCommand
+    id: ClawCommandMaidPDA
+  storage:
+    back:
+    - Flash
+
+
+- type: job
+  id: AdmiralClaw
+  name: job-name-admiralclaw
+  description: job-description-admiralclaw
+  playTimeTracker: JobAdmiralClaw
+  setPreference: false
+  startingGear: AdmiralClawGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - AdmiralClaw
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: AdmiralClawGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClawCommandOfficer
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesMedSec
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingClawCommandArmourVest
+    id: AdmiralClawPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityWebbingFilled
+    pocket1: MagazinePistol
+    pocket2: WeaponPistolMk58
+
+- type: chameleonOutfit
+  id: ClawCommandOfficerChameleonOutfit
+  job: ClawCommandOfficer
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpsuitClawCommandOfficer
+    shoes: ClothingShoesBootsJack
+
+- type: chameleonOutfit
+  id: ClawCommandMaidChameleonOutfit
+  job: ClawCommandMaid
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpskirtClawCommandOfficer
+    shoes: ClothingShoesBootsJack
+
+- type: chameleonOutfit
+  id: AdmiralClawChameleonOutfit
+  job: AdmiralClaw
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpskirtClawCommandOfficer
+    shoes: ClothingShoesBootsJack

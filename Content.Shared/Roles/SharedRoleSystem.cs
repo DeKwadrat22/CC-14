@@ -738,7 +738,7 @@ public abstract partial class SharedRoleSystem : EntitySystem
 /// Raised on the client to update Role Type on the character window, in case it happened to be open.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class MindRoleTypeChangedEvent : EntityEventArgs
+public sealed partial class MindRoleTypeChangedEvent : EntityEventArgs
 {
 
 }

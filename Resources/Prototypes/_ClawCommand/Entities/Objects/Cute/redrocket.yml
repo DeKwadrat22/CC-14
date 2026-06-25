@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseItem
+  id: BaseRocket
+  abstract: true
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 1
+    angle: 90
+#   heavyStaminaCost: 2.5
+#   heavyDamageBaseModifier: 1.50
+    damage:
+      types:
+        Blunt: 1
+  - type: StaminaDamageOnHit
+    damage: 10
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+  # staminaCost: 2.5
+  - type: StaticPrice
+    price: 75
+  - type: Tag
+    tags:
+    - Dildo
+
+- type: entity
+  parent: BaseRocket
+  id: CanineRocketRed
+  name: red canine rocket
+  description: You'll be seeing stars when you ride THIS red rocket.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Fun/Cute/Toys/dildo_canine_red.rsi
+    state: icon

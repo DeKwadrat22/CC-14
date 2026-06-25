@@ -73,6 +73,12 @@ namespace Content.Shared.Communications
     {
     }
 
+    // Claw Command
+    [Serializable, NetSerializable]
+    public sealed class CommunicationsConsoleRequestERTMessage : BoundUserInterfaceMessage
+    {
+    }
+
     [Serializable, NetSerializable]
     public enum CommunicationsConsoleUiKey
     {

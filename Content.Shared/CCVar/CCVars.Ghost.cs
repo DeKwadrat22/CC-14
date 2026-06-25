@@ -21,4 +21,16 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> GhostKillCrit =
         CVarDef.Create("ghost.kill_crit", true, CVar.REPLICATED | CVar.SERVER);
+
+    // Claw Command
+    public static readonly CVarDef<bool> GhostAllowSameCharacter =
+         CVarDef.Create("ghost.allow_same_character", true, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<double> GhostRespawnTime =
+        CVarDef.Create("ghost.respawn_time", 15d, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> GhostRespawnMaxPlayers =
+        CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
+
+
 }

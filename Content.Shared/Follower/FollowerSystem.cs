@@ -357,7 +357,7 @@ public sealed partial class FollowerSystem : EntitySystem
     }
 }
 
-public abstract class FollowEvent : EntityEventArgs
+public abstract partial class FollowEvent : EntityEventArgs
 {
     public EntityUid Following;
     public EntityUid Follower;
@@ -372,7 +372,7 @@ public abstract class FollowEvent : EntityEventArgs
 /// <summary>
 ///     Raised on an entity when it start following another entity.
 /// </summary>
-public sealed class StartedFollowingEntityEvent : FollowEvent
+public sealed partial class StartedFollowingEntityEvent : FollowEvent
 {
     public StartedFollowingEntityEvent(EntityUid following, EntityUid follower) : base(following, follower)
     {
@@ -382,7 +382,7 @@ public sealed class StartedFollowingEntityEvent : FollowEvent
 /// <summary>
 ///     Raised on an entity when it stops following another entity.
 /// </summary>
-public sealed class StoppedFollowingEntityEvent : FollowEvent
+public sealed partial class StoppedFollowingEntityEvent : FollowEvent
 {
     public StoppedFollowingEntityEvent(EntityUid following, EntityUid follower) : base(following, follower)
     {
@@ -392,7 +392,7 @@ public sealed class StoppedFollowingEntityEvent : FollowEvent
 /// <summary>
 ///     Raised on an entity when it start following another entity.
 /// </summary>
-public sealed class EntityStartedFollowingEvent : FollowEvent
+public sealed partial class EntityStartedFollowingEvent : FollowEvent
 {
     public EntityStartedFollowingEvent(EntityUid following, EntityUid follower) : base(following, follower)
     {
@@ -402,7 +402,7 @@ public sealed class EntityStartedFollowingEvent : FollowEvent
 /// <summary>
 ///     Raised on an entity when it starts being followed by another entity.
 /// </summary>
-public sealed class EntityStoppedFollowingEvent : FollowEvent
+public sealed partial class EntityStoppedFollowingEvent : FollowEvent
 {
     public EntityStoppedFollowingEvent(EntityUid following, EntityUid follower) : base(following, follower)
     {

@@ -41,7 +41,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         /// </summary>
         [DataField]
         [GuidebookData]
-        public float UnderPressureLockoutThreshold = 80; // this must be tuned in conjunction with atmos.mmos_spacing_speed
+        public float UnderPressureLockoutThreshold = 30; // needed for spacewind, less displacement from gasventpumps
 
         /// <summary>
         ///     Pressure locked vents still leak a little (leading to eventual pressurization of sealed sections)
@@ -119,7 +119,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         ///     room with gas.
         /// </remarks>
         [DataField]
-        public float TargetPressureChange = Atmospherics.OneAtmosphere;
+        public float TargetPressureChange = Atmospherics.OneAtmosphere /* needed for spacewind, less displacement from gasventpumps */ * 0.05f;
 
         /// <summary>
         ///     Ratio of max output air pressure and pipe pressure, representing the vent's ability to increase pressure

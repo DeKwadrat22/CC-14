@@ -336,6 +336,10 @@ public sealed partial class ArrivalsSystem : EntitySystem
         if (ev.SpawnResult != null)
             return;
 
+        //claw command - skip arrivals for jobs that must always use their own spawner (e.g. Prisoner)
+        if (ev.DesiredSpawnPointType != null)
+            return;
+
         // We use arrivals as the default spawn so don't check for job prio.
 
         // Only works on latejoin even if enabled.

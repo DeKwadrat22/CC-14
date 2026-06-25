@@ -1,0 +1,44 @@
+# Claw Command - Ported from Floofstation
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMusicKing
+  name: musician king
+  description: A musicians outfit, fit for a king.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Uniforms/musicianking.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Uniforms/musicianking.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMusicKingBlack
+  name: musician king black
+  description: A musicians outfit, fit for a king.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Uniforms/musiciankingblack.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Uniforms/musiciankingblack.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformMusicianThong
+  name: musician thong
+  description: Styled for musicians, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Departmental/Service/musicianthong.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Departmental/Service/musicianthong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformStripedThongWhite
+  name: striped white thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Uniforms/stripethongwhite.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Uniforms/stripethongwhite.rsi

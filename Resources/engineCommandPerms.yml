@@ -89,6 +89,7 @@
 
 - Flags: ADMIN
   Commands:
+  - ent # Claw Command
   - tp
   - tpto
 

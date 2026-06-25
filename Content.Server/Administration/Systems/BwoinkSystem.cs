@@ -862,7 +862,7 @@ namespace Content.Server.Administration.Systems
         }
     }
 
-    public sealed class AHelpMessageParams
+    public sealed partial class AHelpMessageParams
     {
         public string Username { get; set; }
         public string Message { get; set; }

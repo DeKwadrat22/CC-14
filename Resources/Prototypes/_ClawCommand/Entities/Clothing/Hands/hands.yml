@@ -1,0 +1,97 @@
+# Claw Command - Ported from Floofstation
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMusicianWarmers
+  name: musician arm-warmers
+  description: A pair of rather nice arm-warmers, styled for musicians.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Departmental/Service/musicianwarmer.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Departmental/Service/musicianwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-purple
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsStripeWhiteWarmers
+  name: striped white arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Under/Gloves/stripewarmerwhite.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Under/Gloves/stripewarmerwhite.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+# Rings
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGoldRing
+  name: gold band
+  description: A band for a special bond.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/goldband.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/goldband.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsWebRing
+  name: web band
+  description: A band for a special bond made out of Arachnid silk.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingband.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingband.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsDiamondBand
+  name: gold diamond ring
+  description: A band for a special bond encrusted with a well cut diamond.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/golddiamondring.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/golddiamondring.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGoldRingSpiderGem
+  name: gold spider gem ring
+  description: A band for a special bond with a well cut spider gem.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/goldspidergemring.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/goldspidergemring.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsWebDiamondRing
+  name: web diamond ring
+  description: A band for a special bond made out of Arachnid Silk and encrusted with a well cut diamond.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingdiamondring.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingdiamondring.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsWebRingSpiderGem
+  name: web spider gem ring
+  description: A band for a special bond made out of Arachnid Silk with a well cut spider gem.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingspidergemring.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Hands/Rings/webbingspidergemring.rsi

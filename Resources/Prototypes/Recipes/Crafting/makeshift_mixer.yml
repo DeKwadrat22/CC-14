@@ -1,0 +1,7 @@
+- type: construction
+  id: PortableChemMasterRecipe
+  graph: PortableChemMasterGraph
+  startNode: start
+  targetNode: portableChemMaster
+  category: construction-category-tools
+  objectType: Item

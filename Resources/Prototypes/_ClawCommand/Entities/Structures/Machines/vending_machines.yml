@@ -1,0 +1,189 @@
+# Ported from sibling SS14 project ("space") so the corresponding inventory packs
+# under Resources/Prototypes/Catalog/VendingMachines/Inventories/ aren't dangling.
+# Locale-backed Ads/Goodbyes datasets from the source weren't ported (out of scope),
+# so these entities omit DatasetVocalizer/SpeakOnUIClosed components and fall back
+# to the base VendingMachine's generic Vocalizer/SpookySpeaker.
+
+- type: entity
+  id: VendingMachineFitness
+  parent: VendingMachine
+  name: SweatMAX
+  description: An exercise aid and nutrition supplement vendor that preys on your inadequacy.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/fitness.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: "screen"
+      map: ["enum.VendingMachineVisualLayers.Screen"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: VendingMachine
+    pack: FitnessVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+    screenState: screen
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  id: VendingMachineHotfood
+  parent: VendingMachine
+  name: hot foods
+  description: An old vending machine promising 'hot foods'. You doubt any of its contents are still edible.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/hotfood.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: heater
+  - type: VendingMachine
+    pack: HotfoodInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  id: VendingMachineSolsnack
+  parent: VendingMachine
+  name: Mars Mart
+  description: A SolCentric vending machine dispensing treats from home.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/solsnack.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: VendingMachine
+    pack: SolsnackInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  id: VendingMachineWeeb
+  parent: VendingMachine
+  name: Nippon-tan
+  description: A distressingly ethnic vending machine loaded with high sucrose low calorie for lack of better words snacks.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/weeb.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: fan
+  - type: VendingMachine
+    pack: WeebVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+# Unlocked variant of the Booze-O-Mat - same sprite/inventory as the bartender's,
+# but no AccessReader. Uses the BoozeOMatUnlockedInventory pack which has slightly
+# different stock (extra glassware, jugs, ClawCommand's signature drink).
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoozeUnlocked
+  name: Booze-O-Mat
+  description: A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one.
+  suffix: Unlocked
+  components:
+  - type: VendingMachine
+    pack: BoozeOMatUnlockedInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    loopDeny: false
+  - type: DatasetVocalizer
+    dataset: BoozeOMatAds
+  - type: SpeakOnUIClosed
+    pack: BoozeOMatGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/boozeomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks

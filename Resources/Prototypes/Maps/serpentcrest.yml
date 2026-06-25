@@ -63,4 +63,10 @@
             Musician: [ 1, 1 ]
             #silicon 
             Borg: [ 3, 3 ]
+            DogborgSecurity: [ 3, 3 ]
+            DogborgMedical: [ 3, 3 ]
+            DogborgEngineering: [ 3, 3 ]
+            DogborgJanitor: [ 3, 3 ]
+            DogborgService: [ 3, 3 ]
+            DogborgMining: [ 3, 3 ]
             StationAi: [ 1, 1 ]

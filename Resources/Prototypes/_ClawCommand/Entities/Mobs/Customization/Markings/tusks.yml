@@ -1,0 +1,25 @@
+- type: marking
+  id: GoblinTusksSmall
+  bodyPart: Head
+  groupWhitelist: [Slime, Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d9d9d9"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/goblin_tusks.rsi
+    state: goblin_tusks_small
+
+- type: marking
+  id: GoblinTusksBig
+  bodyPart: Head
+  groupWhitelist: [Slime, Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d9d9d9"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/goblin_tusks.rsi
+    state: goblin_tusks_big

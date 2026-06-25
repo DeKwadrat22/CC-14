@@ -170,6 +170,18 @@
         },
         {
             "name": "figurine_spawner"
+        },
+        {
+            "name": "owlprize"
+        },
+        {
+            "name": "griffinprize"
+        },
+        {
+            "name": "skeletonprize"
+        },
+        {
+            "name": "thiefcharacter"
         }
     ]
 }

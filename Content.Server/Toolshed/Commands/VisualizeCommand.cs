@@ -33,7 +33,7 @@ public sealed partial class VisualizeCommand : ToolshedCommand
         _euiManager.QueueStateUpdate(ui);
     }
 }
-internal sealed class ToolshedVisualizeEui : BaseEui
+internal sealed partial class ToolshedVisualizeEui : BaseEui
 {
     private readonly (string name, NetEntity entity)[] _entities;
 

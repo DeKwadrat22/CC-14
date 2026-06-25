@@ -9,12 +9,20 @@ comms-console-menu-alert-level-button-tooltip = Change the station alert level. 
 comms-console-menu-call-shuttle = Call emergency shuttle
 comms-console-menu-recall-shuttle = Recall emergency shuttle
 comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the emergency shuttle. You can only recall when there's enough time left.
+comms-console-menu-request-ert = Request ERT
+comms-console-menu-request-ert-tooltip = Send a request for an Emergency Response Team. This notifies server admins for approval.
 comms-console-menu-time-remaining = Time remaining: {$time}
 
 # Popup
 comms-console-permission-denied = Permission denied
 comms-console-shuttle-unavailable = Shuttle is currently unavailable
 comms-console-message-too-long = Message is too long
+comms-console-ert-request-sent = ERT request sent to command.
+comms-console-ert-request-cooldown = ERT already requested. Try again in {$minutes} {$minutes ->
+    [one] minute
+    *[other] minutes
+}.
+comms-console-ert-request-admin = ERT REQUEST: {$sender} has requested an Emergency Response Team from the communications console.
 
 # Placeholder values
 comms-console-announcement-sent-by = Sent by

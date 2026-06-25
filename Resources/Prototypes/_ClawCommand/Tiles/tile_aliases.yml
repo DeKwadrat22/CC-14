@@ -1,0 +1,10 @@
+# Tile aliases for legacy / fork-specific tile ids referenced by ported maps.
+#
+# Asterisk references FloorMS13CarpetFancyBlue (a tile from the MS13 fork
+# that was never ported). Without an alias, the whole grid fails to load
+# with KeyNotFoundException, leaving the station empty. Aliasing to
+# FloorArcadeBlue keeps it a blue carpet-style tile with carpet footsteps.
+
+- type: tileAlias
+  id: FloorMS13CarpetFancyBlue
+  target: FloorArcadeBlue

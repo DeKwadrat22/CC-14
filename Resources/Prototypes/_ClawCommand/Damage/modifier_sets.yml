@@ -1,0 +1,39 @@
+- type: damageModifierSet
+  id: ModifierSetFelinid
+  coefficients:
+    Blunt: 0.85
+    Slash: 1.15
+    Piercing: 1.15
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: ModifierSetFeroxi
+  coefficients:
+    Blunt: 0.85
+    Piercing: 0.85
+    Shock: 1.5
+    Cold: 0.75
+
+- type: damageModifierSet
+  id: ModifierSetKitsune
+  coefficients:
+    Blunt: 1.20
+    Slash: 1.10
+    Piercing: 1.10
+    Heat: 0.85
+    Cold: 0.85
+    Radiation: 1.50
+
+- type: damageModifierSet
+  id: ModifierSetShadowkin
+  coefficients:
+    Blunt: 0.95
+    Slash: 1.2
+    Piercing: 1.1
+    Asphyxiation: 0
+    Cold: 0.75
+    Heat: 1.2
+    Cellular: 0.25
+    Bloodloss: 1.35
+    Shock: 1.25
+    Radiation: 1.3

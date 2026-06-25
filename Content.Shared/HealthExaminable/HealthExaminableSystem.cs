@@ -1,9 +1,14 @@
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
+using Content.Shared._ClawCommand.Traits.Components; // Claw Command
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.HealthExaminable;
@@ -11,7 +16,9 @@ namespace Content.Shared.HealthExaminable;
 public sealed partial class HealthExaminableSystem : EntitySystem
 {
     [Dependency] private ExamineSystemShared _examineSystem = default!;
+    [Dependency] private MobThresholdSystem _threshold = default!; // Claw Command
     [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IPrototypeManager _proto = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -31,7 +38,10 @@ public sealed partial class HealthExaminableSystem : EntitySystem
         {
             Act = () =>
             {
-                var markup = CreateMarkup(uid, component, damage);
+                // Claw Command - SelfAware trait: show precise damage when examining self.
+                var markup = args.User == uid && TryComp<SelfAwareComponent>(uid, out var selfAware)
+                    ? CreateMarkupSelfAware(uid, selfAware, component, damage)
+                    : CreateMarkup(uid, component, damage);
                 _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
             },
             Text = Loc.GetString("health-examinable-verb-text"),
@@ -47,12 +57,12 @@ public sealed partial class HealthExaminableSystem : EntitySystem
     public FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
     {
         var msg = new FormattedMessage();
+        var positiveDamage = _damageable.GetPositiveDamage((uid, damage));
 
         var first = true;
-        var damageSpecifier = _damageable.GetAllDamage((uid, damage));
         foreach (var type in component.ExaminableTypes)
         {
-            if (!damageSpecifier.DamageDict.TryGetValue(type, out var dmg))
+            if (!positiveDamage.DamageDict.TryGetValue(type, out var dmg))
                 continue;
 
             if (dmg == FixedPoint2.Zero)
@@ -101,6 +111,80 @@ public sealed partial class HealthExaminableSystem : EntitySystem
 
         return msg;
     }
+
+    // Claw Command - SelfAware trait: precise damage display for self-examination.
+    private FormattedMessage CreateMarkupSelfAware(EntityUid target, SelfAwareComponent selfAware, HealthExaminableComponent component, DamageableComponent damage)
+    {
+        var msg = new FormattedMessage();
+        var positiveDamage = _damageable.GetPositiveDamage((target, damage));
+        var first = true;
+
+        // Show exact damage values for analyzable types.
+        foreach (var type in selfAware.AnalyzableTypes)
+        {
+            if (!positiveDamage.DamageDict.TryGetValue(type, out var dmgRaw))
+                continue;
+
+            var dmg = (int) Math.Ceiling(dmgRaw.Float());
+            if (dmg <= 0)
+                continue;
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+
+            msg.AddMarkupOrThrow(Loc.GetString("health-examinable-selfaware-type",
+                ("type", type), ("damage", dmg)));
+        }
+
+        // Show severity descriptions for detectable groups.
+        var critThreshold = _threshold.GetThresholdForState(target, Mobs.MobState.Critical);
+        foreach (var groupId in selfAware.DetectableGroups)
+        {
+            if (!_proto.TryIndex<DamageGroupPrototype>(groupId, out var group))
+                continue;
+
+            var total = FixedPoint2.Zero;
+            foreach (var memberType in group.DamageTypes)
+            {
+                if (positiveDamage.DamageDict.TryGetValue(memberType, out var val))
+                    total += val;
+            }
+
+            if (total <= 0)
+                continue;
+
+            // Pick the highest matching threshold.
+            var fraction = critThreshold > 0 ? total / critThreshold : FixedPoint2.Zero;
+            string? severity = null;
+            if (fraction >= FixedPoint2.New(0.60))
+                severity = "severe";
+            else if (fraction >= FixedPoint2.New(0.40))
+                severity = "moderate";
+            else if (fraction >= FixedPoint2.New(0.25))
+                severity = "mild";
+            else if (fraction >= FixedPoint2.New(0.10))
+                severity = "trace";
+
+            if (severity == null)
+                continue;
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+
+            msg.AddMarkupOrThrow(Loc.GetString($"health-examinable-selfaware-group-{severity}",
+                ("group", groupId)));
+        }
+
+        if (msg.IsEmpty)
+            msg.AddMarkupOrThrow(Loc.GetString($"health-examinable-{component.LocPrefix}-none"));
+
+        RaiseLocalEvent(target, new HealthBeingExaminedEvent(msg), true);
+        return msg;
+    }
 }
 
 /// <summary>
@@ -108,7 +192,7 @@ public sealed partial class HealthExaminableSystem : EntitySystem
 ///     in order to add special text that is not handled by the
 ///     damage thresholds.
 /// </summary>
-public sealed class HealthBeingExaminedEvent
+public sealed partial class HealthBeingExaminedEvent
 {
     public FormattedMessage Message;
 

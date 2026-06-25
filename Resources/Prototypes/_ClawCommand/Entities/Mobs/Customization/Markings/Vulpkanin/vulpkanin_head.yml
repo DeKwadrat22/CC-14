@@ -1,0 +1,117 @@
+# Head Markings (Head)
+- type: marking
+  id: VulpHeadBlazeNew
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: blaze
+
+- type: marking
+  id: VulpHeadMaskNew
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: mask
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: nose
+
+- type: marking
+  id: VulpPatchNew
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: patch
+
+- type: marking
+  id: VulpSlashNew
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: slash
+
+- type: marking
+  id: VulpVulpineNew
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine
+
+- type: marking
+  id: VulpTigerHead
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: tiger_head
+
+- type: marking
+  id: VulpTigerFace
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: tiger_face
+
+- type: marking
+  id: VulpSnoutVulpineNew
+  bodyPart: Snout
+
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine-lines
+
+- type: marking
+  id: VulpVulpineLines
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine-lines
+
+- type: marking
+  id: VulpVulpineNose
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: nose
+
+- type: marking
+  id: VulpVulpineMuzzleSharp
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: muzzle_sharp
+
+- type: marking
+  id: VulpVulpineMuzzleFade
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: muzzle_sharp
+
+- type: marking
+  id: VulpVulpineMuzzleAlt
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: muzzle_alt
+
+- type: marking
+  id: VulpVulpineMuzzle
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune ]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: muzzle

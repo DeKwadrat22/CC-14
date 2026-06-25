@@ -8,6 +8,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Maps;
 using JetBrains.Annotations;
 using Robust.Shared.Player;
+using Content.Server.Ghost;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking;

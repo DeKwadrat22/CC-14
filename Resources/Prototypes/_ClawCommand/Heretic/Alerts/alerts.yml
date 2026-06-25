@@ -1,0 +1,10 @@
+# Stub alert prototypes referenced by heretic status effects.
+# Uses an existing upstream sprite to avoid file-not-found errors; can be re-skinned later.
+
+- type: alert
+  id: ShadowCloak
+  icons:
+  - sprite: /Textures/Interface/Alerts/breathing.rsi
+    state: not_enough_oxy
+  name: alerts-shadow-cloak-name
+  description: alerts-shadow-cloak-desc

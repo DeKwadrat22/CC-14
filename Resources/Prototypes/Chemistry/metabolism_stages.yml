@@ -21,3 +21,34 @@
 - type: metabolismStage
   id: PlantMetabolisms
   name: metabolism-stage-plant
+
+# Heretic port: Goob's reagent files use Medicine/Poison as metabolism stage
+# IDs (upstream uses Bloodstream). Declared here so heretic YAML loads cleanly.
+
+- type: metabolismStage
+  id: Medicine
+  name: metabolism-stage-bloodstream
+
+- type: metabolismStage
+  id: Poison
+  name: metabolism-stage-bloodstream
+
+# Drinks port: Floof/DeltaV/Nyano reagents use Drink/Narcotic as metabolism
+# stage IDs (this fork's vanilla uses Digestion). Declared here so the ported
+# drink reagent YAML loads cleanly.
+
+- type: metabolismStage
+  id: Drink
+  name: metabolism-stage-digestion
+
+- type: metabolismStage
+  id: Narcotic
+  name: metabolism-stage-digestion
+
+# Food reagent port: NF/Nyano/DeltaV food reagents use Food as metabolism stage
+# ID (this fork's vanilla uses Metabolites). Declared here so ported food reagent
+# YAML loads cleanly.
+
+- type: metabolismStage
+  id: Food
+  name: metabolism-stage-digestion

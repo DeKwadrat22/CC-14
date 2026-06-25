@@ -1,0 +1,23 @@
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateFunSex
+  name: sex items crate
+  description: A crate full of sexy and spicy supplies.
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WhipPink
+        - id: WhipTeal
+        - id: WhipPinkCrotch
+        - id: WhipTealCrotch
+        - id: SpankPinkPaddle
+        - id: SpankTealPaddle
+        - id: CanineRocketRed
+        - id: BoxCandle
+        - id: ClothingMaskGasMuffled
+        - id: ClothingMaskMuzzle
+        - id: ClothingEyesBlindfold

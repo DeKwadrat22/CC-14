@@ -1,0 +1,23 @@
+# Ported from upstream: Entities/Clothing/Masks/masks.yml
+
+- type: entity
+  parent: ClothingMaskClownBase
+  id: ClothingMaskSexyClown
+  name: sexy clown mask
+  description: Some naughty clowns think this is what the Honkmother looks like.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/sexyclown.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/sexyclown.rsi
+
+- type: entity
+  parent: ClothingMaskMime
+  id: ClothingMaskSexyMime
+  name: sexy mime mask
+  description: Those ruddy cheeks just want to be rubbed.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/sexymime.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/sexymime.rsi

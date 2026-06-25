@@ -43,7 +43,9 @@ public sealed partial class LayerMarkingOrderer : BoxContainer
     {
         base.EnteredTree();
 
+        _markingsModel.MarkingsReset -= UpdateItems;
         _markingsModel.MarkingsReset += UpdateItems;
+        _markingsModel.MarkingsChanged -= MarkingsChanged;
         _markingsModel.MarkingsChanged += MarkingsChanged;
     }
 
@@ -163,7 +165,7 @@ public sealed partial class LayerMarkingOrderer : BoxContainer
 
 internal readonly record struct LayerMarkingDragged(LayerMarkingItem Item, LayerMarkingItemContainer Container);
 
-internal sealed class LayerMarkingItemContainer : PanelContainer
+internal sealed partial class LayerMarkingItemContainer : PanelContainer
 {
     public LayerMarkingItemContainer()
     {
@@ -172,7 +174,7 @@ internal sealed class LayerMarkingItemContainer : PanelContainer
     }
 }
 
-internal sealed class LayerDragDropBeacon(CandidatePosition position, int index) : PanelContainer
+internal sealed partial class LayerDragDropBeacon(CandidatePosition position, int index) : PanelContainer
 {
     public readonly CandidatePosition CandidatePosition = position;
     public readonly int Index = index;

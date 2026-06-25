@@ -53,9 +53,16 @@
                 <RichTextLabel Name="CountdownLabel"/>
 
                 <Button Name="EmergencyShuttleButton"
-                    Access="Public" 
+                    Access="Public"
                     Text="Placeholder Text"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"/>
+
+                <!-- Claw Command -->
+                <Button Name="RequestERTButton"
+                    Access="Public"
+                    Text="{Loc 'comms-console-menu-request-ert'}"
+                    ToolTip="{Loc 'comms-console-menu-request-ert-tooltip'}"
+                    StyleClasses="Caution"/>
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>

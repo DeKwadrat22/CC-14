@@ -19,6 +19,8 @@
     - Moth
     - Reptilian
     - Vulpkanin
+    - SpeciesFelinid # CC14 - Added Felinids
+    - SpeciesKitsunes # CC14 - Added Kitsunes
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox

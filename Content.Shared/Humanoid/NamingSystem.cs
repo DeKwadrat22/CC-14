@@ -5,65 +5,74 @@ using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Enums;
 
-namespace Content.Shared.Humanoid
+namespace Content.Shared.Humanoid;
+
+// !! CLAW COMMAND MODIFIED !! //
+
+/// <summary>
+/// Figure out how to name a humanoid with these extensions.
+/// </summary>
+public sealed partial class NamingSystem : EntitySystem
 {
-    /// <summary>
-    /// Figure out how to name a humanoid with these extensions.
-    /// </summary>
-    public sealed partial class NamingSystem : EntitySystem
+    private static readonly ProtoId<SpeciesPrototype> FallbackSpecies = "Human";
+
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+
+    public string GetName(string species, Gender? gender = null)
     {
-        private static readonly ProtoId<SpeciesPrototype> FallbackSpecies = "Human";
-
-        [Dependency] private IRobustRandom _random = default!;
-        [Dependency] private IPrototypeManager _prototypeManager = default!;
-
-        public string GetName(string species, Gender? gender = null)
+        // if they have an old species or whatever just fall back to human I guess?
+        // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
+        if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
         {
-            // if they have an old species or whatever just fall back to human I guess?
-            // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
-            if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
-            {
-                speciesProto = _prototypeManager.Index(FallbackSpecies);
-                Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
-            }
-
-            switch (speciesProto.Naming)
-            {
-                case SpeciesNaming.First:
-                    return Loc.GetString("namepreset-first",
-                        ("first", GetFirstName(speciesProto, gender)));
-                case SpeciesNaming.TheFirstofLast:
-                    return Loc.GetString("namepreset-thefirstoflast",
-                        ("first", GetFirstName(speciesProto, gender)), ("last", GetLastName(speciesProto)));
-                case SpeciesNaming.FirstDashFirst:
-                    return Loc.GetString("namepreset-firstdashfirst",
-                        ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)));
-                case SpeciesNaming.FirstLast:
-                default:
-                    return Loc.GetString("namepreset-firstlast",
-                        ("first", GetFirstName(speciesProto, gender)), ("last", GetLastName(speciesProto)));
-            }
+            speciesProto = _prototypeManager.Index(FallbackSpecies);
+            Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
         }
 
-        public string GetFirstName(SpeciesPrototype speciesProto, Gender? gender = null)
+        // CC: Added 'FirstDashLast'
+        switch (speciesProto.Naming)
         {
-            switch (gender)
-            {
-                case Gender.Male:
+            case SpeciesNaming.First:
+                return Loc.GetString("namepreset-first",
+                    ("first", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.TheFirstofLast:
+                return Loc.GetString("namepreset-thefirstoflast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
+            case SpeciesNaming.FirstDashFirst:
+                return Loc.GetString("namepreset-firstdashfirst",
+                    ("first1", GetFirstName(speciesProto, gender)),
+                    ("first2", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.FirstDashLast:
+                return Loc.GetString("namepreset-firstdashlast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.FirstLast:
+            default:
+                return Loc.GetString("namepreset-firstlast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
+        }
+    }
+
+    public string GetFirstName(SpeciesPrototype speciesProto, Gender? gender = null)
+    {
+        switch (gender)
+        {
+            case Gender.Male:
+                return _random.Pick(_prototypeManager.Index(speciesProto.MaleFirstNames));
+            case Gender.Female:
+                return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
+            default:
+                if (_random.Prob(0.5f))
                     return _random.Pick(_prototypeManager.Index(speciesProto.MaleFirstNames));
-                case Gender.Female:
+                else
                     return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
-                default:
-                    if (_random.Prob(0.5f))
-                        return _random.Pick(_prototypeManager.Index(speciesProto.MaleFirstNames));
-                    else
-                        return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
-            }
         }
+    }
 
-        public string GetLastName(SpeciesPrototype speciesProto)
-        {
-            return _random.Pick(_prototypeManager.Index(speciesProto.LastNames));
-        }
+    public string GetLastName(SpeciesPrototype speciesProto)
+    {
+        return _random.Pick(_prototypeManager.Index(speciesProto.LastNames));
     }
 }

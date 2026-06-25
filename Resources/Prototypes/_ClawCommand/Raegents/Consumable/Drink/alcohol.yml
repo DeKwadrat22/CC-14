@@ -1,0 +1,24 @@
+- type: reagent
+  id: ReagentDrinkClawtail
+  name: reagent-name-clawtail
+  parent: BaseAlcohol
+  desc: reagent-desc-clawtail
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: FlavorClawtail
+  color: "#ff006f"
+  metamorphicSprite:
+    sprite: _ClawCommand/Objects/Consumable/Drinks/clawtail.rsi
+    state: icon
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.13
+  fizziness: 0.3
+

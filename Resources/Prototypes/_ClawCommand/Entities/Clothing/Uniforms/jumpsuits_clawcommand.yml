@@ -1,0 +1,33 @@
+# Claw Command officer jumpsuit + jumpskirt.
+# Originally lived in jumpsuits.yml + jumpskirts.yml but were wiped by the
+# "Mass port from old Claw EE fork" commit (0736f07514). Restored here from
+# git history at 0736f07514^.
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitClawCommandOfficer
+  suffix: Claw Command
+  name: claw command officer jumpsuit
+  description: A short-sleeved grey and red-pink jumpsuit, made out of a sturdy material. Claw Command's finest standard issue.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Uniforms/Jumpsuit/clawcommand_officer.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Uniforms/Jumpsuit/clawcommand_officer.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtClawCommandOfficer
+  suffix: Claw Command
+  name: claw command officer jumpskirt
+  description: A short-sleeved grey and red-pink jumpskirt, made out of a sturdy material. Claw Command's finest standard issue.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Uniforms/Jumpskirt/clawcommand_officer.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Uniforms/Jumpskirt/clawcommand_officer.rsi

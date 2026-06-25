@@ -61,10 +61,10 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 1200 # 20 min Claw Command
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 1200 # Claw Command
+      max: 12800 #  Claw Command
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
 
@@ -74,10 +74,10 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 1200 # Claw Command
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 1200 #  Claw Command
+      max: 12800 #  Claw Command
     scheduledGameRules: !type:NestedSelector
       tableId: MeteorSwarmMildTable
 
@@ -100,7 +100,7 @@
   - type: GameRule
   - type: StationEvent
     reoccurrenceDelay: 1
-    earliestStart: 12
+    earliestStart: 20
     minimumPlayers: 25
   - type: MeteorSwarm
 
@@ -109,9 +109,9 @@
   id: SpaceDustMinor
   components:
   - type: StationEvent
-    weight: 44
-    earliestStart: 2
-    minimumPlayers: 0
+    weight: 22 # fom 44,  Claw Command
+    earliestStart: 20 #Claw Command
+    minimumPlayers: 10 # Claw Command - medium dust not til 10 players
   - type: MeteorSwarm
     announcement: null
     announcementSound: null
@@ -130,8 +130,9 @@
   id: SpaceDustMajor
   components:
   - type: StationEvent
-    weight: 22
-    minimumPlayers: 0
+    weight: 11 # from 22, Claw Command
+    earliestStart: 20 # Claw Command
+    minimumPlayers: 15 # Claw Command - major dust not til 15 players
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
     announcementSound: /Audio/Announcements/attention.ogg
@@ -154,8 +155,8 @@
     minimumPlayers: 15
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 7
-      MeteorMedium: 3
+      MeteorSmall: 5 # from 7, Claw Command
+      MeteorMedium: 2 # from 3, Claw Command
 
 - type: entity
   parent: MeteorSwarm
@@ -163,10 +164,11 @@
   components:
   - type: StationEvent
     weight: 10
+    minimumPlayers: 10 # Claw Command - medium meteors not til 10 players
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 3
-      MeteorMedium: 6
+      MeteorSmall: 2 # from 3, Claw Command
+      MeteorMedium: 4 # from 6, Claw Command
       MeteorLarge: 1
 
 - type: entity
@@ -175,11 +177,12 @@
   components:
   - type: StationEvent
     weight: 5
+    minimumPlayers: 15 # Claw Command - major meteors not til 15 players
   - type: MeteorSwarm
     meteors:
-      MeteorSmall: 2
-      MeteorMedium: 4
-      MeteorLarge: 4
+      MeteorSmall: 1
+      MeteorMedium: 3 # from 4, Claw Command
+      MeteorLarge: 3 # from 4, Claw Command
 
 - type: entity
   parent: MeteorSwarm

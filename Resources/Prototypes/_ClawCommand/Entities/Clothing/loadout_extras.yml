@@ -1,0 +1,25 @@
+# Misc clothing entities ported from Goob for loadout picker options.
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetBasicAlt
+  suffix: Alt
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtReporter
+  name: reporter's dress
+  description: An extravagant black dress designed to catch the attention of as many people as possible.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi

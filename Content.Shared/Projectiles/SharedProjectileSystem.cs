@@ -224,7 +224,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed class ImpactEffectEvent : EntityEventArgs
+public sealed partial class ImpactEffectEvent : EntityEventArgs
 {
     public string Prototype;
     public NetCoordinates Coordinates;

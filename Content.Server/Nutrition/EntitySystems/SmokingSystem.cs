@@ -167,7 +167,7 @@ namespace Content.Server.Nutrition.EntitySystems
     /// <summary>
     ///     Directed event raised when the smokable solution is empty.
     /// </summary>
-    public sealed class SmokableSolutionEmptyEvent : EntityEventArgs
+    public sealed partial class SmokableSolutionEmptyEvent : EntityEventArgs
     {
     }
 }

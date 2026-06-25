@@ -34,9 +34,7 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # _ClawCommand: silicons can laugh (UnisexSilicon now ships a robot-laugh sound).
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laugh
@@ -81,9 +79,7 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # _ClawCommand: silicons can sigh (UnisexSilicon now ships a robot-sigh sound).
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sigh
@@ -98,9 +94,7 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # _ClawCommand: silicons can whistle (UnisexSilicon now ships a pai-whistle sound).
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistle
@@ -115,9 +109,7 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # _ClawCommand: silicons can cry (UnisexSilicon now ships a robot-cry sound).
   chatMessages: ["chat-emote-msg-crying"]
   chatTriggers:
     - cry
@@ -427,6 +419,17 @@
   name: chat-emote-name-deathgasp
   icon: Interface/Emotes/deathgasp.png
   chatMessages: ["chat-emote-msg-deathgasp-scurret"]
+
+- type: emote #claw command - IPC
+  id: SiliconDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  whitelist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-deathgasp-silicon"]
+  chatTriggers:
+  - sdeathgasp
 
 - type: emote
   id: Buzz

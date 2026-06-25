@@ -162,7 +162,7 @@ namespace Content.Client.Power
     }
 
     [UsedImplicitly]
-    public sealed class SolarControlConsoleBoundUserInterface : ComputerBoundUserInterface<SolarControlWindow, SolarControlConsoleBoundInterfaceState>
+    public sealed partial class SolarControlConsoleBoundUserInterface : ComputerBoundUserInterface<SolarControlWindow, SolarControlConsoleBoundInterfaceState>
     {
         public SolarControlConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {

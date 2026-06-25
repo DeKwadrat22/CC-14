@@ -13,6 +13,7 @@
     FoodCondimentPacketSoy: 5
     FoodCondimentPacketSugar: 5
     FoodCondimentPacketCornoil: 5
+    FoodCondimentPacketFrostoil: 5 # Claw Command
     ForkPlastic: 10
     SpoonPlastic: 10
     KnifePlastic: 10

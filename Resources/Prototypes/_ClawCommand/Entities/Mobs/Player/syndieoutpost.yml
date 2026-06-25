@@ -1,0 +1,15 @@
+# Claw Command - Syndicate Listener mob for outpost event
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: MobHumanSyndicateAgentBase
+  id: MobHumanSyndicateListener
+  name: Syndicate Listener
+  components:
+    - type: Loadout
+      prototypes: [SyndicateListenerGear]
+    - type: NpcFactionMember
+      factions:
+      - Syndicate
+    - type: AutoImplant
+      implants:
+      - DeathAcidifierImplant

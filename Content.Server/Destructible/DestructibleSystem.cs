@@ -213,7 +213,7 @@ namespace Content.Server.Destructible
     /// <summary>
     ///     Event raised when a <see cref="DamageThreshold"/> is reached.
     /// </summary>
-    public sealed class DamageThresholdReached : EntityEventArgs
+    public sealed partial class DamageThresholdReached : EntityEventArgs
     {
         public readonly DestructibleComponent Parent;
 

@@ -1,0 +1,77 @@
+# Claw Command - Shadekin markings ported from Floofstation/ADT
+# Ears
+
+- type: marking
+  id: EarsShadowkin
+  bodyPart: HeadTop
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/ears.rsi
+      state: shadowkin
+
+- type: marking
+  id: EarsShadowkinStriped
+  bodyPart: HeadTop
+  groupWhitelist: [MarkingsShadowkin]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      shadowkin_stripes:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/ears.rsi
+      state: shadowkin
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/ears.rsi
+      state: shadowkin_stripes
+
+# Tails
+
+- type: marking
+  id: TailShadowkin
+  bodyPart: Tail
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin
+
+- type: marking
+  id: TailShadowkinBig
+  bodyPart: Tail
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin_big
+
+- type: marking
+  id: TailShadowkinBigFluff
+  bodyPart: Tail
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin_big_fluff
+
+- type: marking
+  id: TailShadowkinShorter
+  bodyPart: Tail
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails32x32.rsi
+      state: shadowkin_shorter
+
+- type: marking
+  id: TailShadowkinMedium
+  bodyPart: Tail
+  groupWhitelist: [MarkingsShadowkin]
+  forcedColoring: true
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails32x32.rsi
+      state: shadowkin_medium

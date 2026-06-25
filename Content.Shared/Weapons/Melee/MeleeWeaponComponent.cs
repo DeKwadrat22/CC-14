@@ -7,6 +7,8 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Weapons.Melee;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 /// <summary>
 /// When given to a mob lets them do unarmed attacks, or when given to an item lets someone wield it to do attacks.
 /// </summary>
@@ -167,6 +169,13 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool MustBeEquippedToUse = false;
+
+    /// <summary>
+    ///     CC: Moved here from <see cref="SharedMeleeWeaponSystem"/>
+    ///     Maximum number of targets allowed for a wide-attack.
+    /// </summary>
+    [DataField]
+    public int MaxTargets = 5;
 }
 
 /// <summary>

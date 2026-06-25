@@ -47,6 +47,7 @@
   parent: BaseControllable
   id: BaseMob
   components:
+  - type: OwnInteractionVerbs # Claw Command
   - type: MobCollision
   - type: Physics
     bodyType: KinematicController

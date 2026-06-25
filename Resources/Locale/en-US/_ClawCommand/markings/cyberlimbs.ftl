@@ -1,0 +1,23 @@
+# claw command
+marking-MobIPCHeadDefault = Standard Operational Monitor
+marking-MobIPCHeadDefault-head_m = Head
+marking-MobIPCTorsoDefault = Standard Robotic Chassis
+marking-MobIPCTorsoDefault-torso_m = Chest
+marking-MobIPCTorsoFemaleDefault = Standard Robotic Chassis
+marking-MobIPCTorsoFemaleDefault-torso_f = Chest
+marking-MobIPCLArmDefault = Standard Left Robotic Arm
+marking-MobIPCLArmDefault-l_arm = Left Arm
+marking-MobIPCLHandDefault = Standard Left Robotic Hand
+marking-MobIPCLHandDefault-l_hand = Left Hand
+marking-MobIPCLLegDefault = Standard Left Robotic Leg
+marking-MobIPCLLegDefault-l_leg = Left Leg
+marking-MobIPCLFootDefault = Standard Left Robotic Foot
+marking-MobIPCLFootDefault-l_foot = Left Foot
+marking-MobIPCRArmDefault = Standard Right Robotic Arm
+marking-MobIPCRArmDefault-r_arm = Right Arm
+marking-MobIPCRHandDefault = Standard Right Robotic Hand
+marking-MobIPCRHandDefault-r_hand = Right Hand
+marking-MobIPCRLegDefault = Standard Right Robotic Leg
+marking-MobIPCRLegDefault-r_leg = Right Leg
+marking-MobIPCRFootDefault = Standard Right Robotic Foot
+marking-MobIPCRFootDefault-r_foot = Right Foot

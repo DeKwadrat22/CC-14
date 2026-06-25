@@ -4,7 +4,10 @@
     children:
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
-    - id: ClothingOuterHardsuitSpatio
+    - !type:GroupSelector # Claw Command - 50/50 original vs Alt
+      children:
+      - id: ClothingOuterHardsuitSpatio
+      - id: ClothingOuterHardsuitSpatioAlt
     - id: ClothingMaskGasExplorer
 
 - type: entityTable
@@ -21,6 +24,7 @@
       prob: 0.3
       rolls: !type:ConstantNumberSelector
         value: 3
+    - id: ClothingShoesBootsWinterMiner # Claw Command - Delta-V departmental winter boots
     - id: PlushieLizardJobSalvagespecialist
       prob: 0.02
 

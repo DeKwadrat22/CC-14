@@ -4,6 +4,9 @@
   components:
   - type: Sprite
     layers:
+    # Claw Command - Tail behind (rendered behind everything)
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
+
     # Torso
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
@@ -40,9 +43,9 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Claw Command
     - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "suitstorage" ]
 
     # Stuff that goes in front of equipment
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
@@ -51,7 +54,11 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
+
+    # Claw Command - genital marking layers (in front of tail, legs, and equipment)
+    - map: [ "enum.HumanoidVisualLayers.Genital" ]
+    - map: [ "enum.HumanoidVisualLayers.Penis" ]
+    - map: [ "enum.HumanoidVisualLayers.Breasts" ]
 
     # Stuff that goes in front of stuff that goes in front of equipment
     - map: [ "mask" ]
@@ -65,6 +72,9 @@
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
       visible: false
+
+    # Claw Command
+    - map: [ "enum.HumanoidVisualLayers.Special" ]
 
 - type: entity
   id: BaseSpeciesAppearance

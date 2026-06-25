@@ -1,0 +1,36 @@
+- type: Interaction
+  id: Kiss
+  parent: [BaseGlobal, BaseMouth]
+  priority: -1
+  delay: 0.4
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:EntityWhitelistRequirement
+    whitelist:
+      components: [MobState] # Don't go around kissing inanimate objects.
+  action:
+    !type:NoOpAction {}
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_ClawCommand/Cute/kiss.ogg}
+  effectFailure: null
+
+- type: Interaction
+  id: Lick
+  parent: [BaseGlobal, BaseMouth]
+  priority: -2
+  delay: 0.7
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:EntityWhitelistRequirement
+    whitelist:
+      components: [MobState, Anomaly, Edible]
+      tags: [Window] # yes.
+  action:
+    !type:NoOpAction {}
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_ClawCommand/Cute/lick.ogg}
+  effectFailure: null

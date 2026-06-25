@@ -1062,6 +1062,22 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
+                    // Claw Command
+                    b.Property<float>("Width")
+                        .HasColumnType("REAL")
+                        .HasColumnName("width");
+
+                    // Claw Command
+                    b.Property<float>("Height")
+                        .HasColumnType("REAL")
+                        .HasColumnName("height");
+
+                    // Claw Command
+                    b.Property<string>("CustomSpeciesName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_species_name");
+
                     b.HasKey("Id")
                         .HasName("PK_profile");
 
@@ -1080,6 +1096,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_loadout_id");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_name");
 
                     b.Property<string>("LoadoutName")
                         .IsRequired()

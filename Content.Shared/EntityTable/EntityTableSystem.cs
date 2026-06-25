@@ -71,7 +71,7 @@ public sealed partial class EntityTableSystem : EntitySystem
 /// <summary>
 /// Context used by selectors and conditions to evaluate in generic gamestate information.
 /// </summary>
-public sealed class EntityTableContext
+public sealed partial class EntityTableContext
 {
     private readonly Dictionary<string, object> _data = new();
 

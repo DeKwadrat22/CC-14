@@ -93,7 +93,16 @@
     ClothingHandsGlovesColorOrange: 2
     ClothingHandsGlovesColorPurple: 2
     ClothingEyesGlassesCheapSunglasses: 3
-    # DO NOT ADD MORE, USE UNIFORM DYING
+    # Claw Command - Ported clothing
+    ClothingNeckCollarBlue: 1
+    ClothingNeckCollarBlack: 1
+    ClothingNeckCollarPink: 1
+    ClothingLongcoatNT: 2
+    ClothingLongcoatAL: 2
+    ClothingLongcoatBrown: 2
+    ClothingLongcoatBlack: 2
+    ClothingOuterCorporateJacket: 2
+    ClothingClothWrap: 4
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 1

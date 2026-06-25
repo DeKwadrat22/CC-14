@@ -3,6 +3,7 @@
   name: Departmental
   colors:
     command: "#334E6DC8"
+    claw: "#FF005EFF"
     medical: "#52B4E996"
     service: "#9FED5896"
     engineering: "#EFB34196"

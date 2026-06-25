@@ -1,0 +1,50 @@
+- type: entity
+  name: blorbo donut
+  parent: FoodDonutBase
+  id: FoodDonutBlumpkin
+  description: Goes great with a mug of BLORBO.
+  components:
+  - type: Sprite
+    state: blue
+# Tastes like donut, blorbo.
+
+- type: entity
+  name: blumpkin jelly-donut
+  parent: FoodDonutBase
+  id: FoodDonutJellyBlumpkin
+  description: Goes great with a mug of soothing drunken blumpkin.
+  components:
+  - type: Sprite
+    state: jelly-blue
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Fruit
+# Tastes like jelly-donut, blumpkin.
+
+- type: entity
+  name: slugcat jelly-donut
+  parent: FoodDonutBase
+  id: FoodDonutJellySlugcat
+  description: No holes in this donut in case a suspicious looking pole shows up.
+  components:
+  - type: Sprite
+    state: jelly-slug
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 1
+# Tastes like jelly-donut, fizzy tutti frutti.

@@ -315,6 +315,8 @@
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
+    - DogborgKitsStatic # _ClawCommand: dogborg conversion kits
+    - DogborgModulesStatic # _ClawCommand: BorgModuleSecurity
     dynamicPacks:
     - Robotics
     - BorgModules

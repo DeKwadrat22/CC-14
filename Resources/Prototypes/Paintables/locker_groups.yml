@@ -8,6 +8,8 @@
     botanist: LockerBotanist
     brigmedic: LockerBrigmedic
     captain: LockerCaptain
+    cco: LockerClawCommandOfficer # CC14
+    ccm: LockerClawCommandMaid # CC14
     ce: LockerChiefEngineer
     chemical: LockerChemistry
     clown: LockerClown

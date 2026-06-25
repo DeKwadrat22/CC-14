@@ -84,7 +84,8 @@ public sealed partial class ChatUIController : UIController
         {SharedChatSystem.EmotesAltPrefix, ChatSelectChannel.Emotes},
         {SharedChatSystem.AdminPrefix, ChatSelectChannel.Admin},
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
-        {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead}
+        {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead},
+        {SharedChatSystem.SubtlePrefix, ChatSelectChannel.Subtle}, // claw command
     };
 
     public static readonly Dictionary<ChatSelectChannel, char> ChannelPrefixes = new()
@@ -97,7 +98,8 @@ public sealed partial class ChatUIController : UIController
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Admin, SharedChatSystem.AdminPrefix},
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
-        {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix}
+        {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix},
+        {ChatSelectChannel.Subtle, SharedChatSystem.SubtlePrefix}, // claw command
     };
 
     /// <summary>
@@ -202,6 +204,10 @@ public sealed partial class ChatUIController : UIController
 
         _input.SetInputCommand(ContentKeyFunctions.FocusWhisperChat,
             InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.Whisper)));
+
+        // claw command
+        _input.SetInputCommand(ContentKeyFunctions.FocusSubtle,
+            InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.Subtle)));
 
         _input.SetInputCommand(ContentKeyFunctions.FocusLOOC,
             InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.LOOC)));
@@ -532,6 +538,7 @@ public sealed partial class ChatUIController : UIController
             // can always hear local / radio / emote / notifications when in the game
             FilterableChannels |= ChatChannel.Local;
             FilterableChannels |= ChatChannel.Whisper;
+            FilterableChannels |= ChatChannel.Subtle; // claw command
             FilterableChannels |= ChatChannel.Radio;
             FilterableChannels |= ChatChannel.Emotes;
             FilterableChannels |= ChatChannel.Notifications;
@@ -542,6 +549,7 @@ public sealed partial class ChatUIController : UIController
             {
                 CanSendChannels |= ChatSelectChannel.Local;
                 CanSendChannels |= ChatSelectChannel.Whisper;
+                CanSendChannels |= ChatSelectChannel.Subtle; // claw command
                 CanSendChannels |= ChatSelectChannel.Radio;
                 CanSendChannels |= ChatSelectChannel.Emotes;
             }
@@ -779,7 +787,7 @@ public sealed partial class ChatUIController : UIController
 
         // we need to handle selected channel
         // and prefix-channel separately..
-        var allowedChannels = ChatSelectChannel.Local | ChatSelectChannel.Whisper;
+        var allowedChannels = ChatSelectChannel.Local | ChatSelectChannel.Whisper | ChatSelectChannel.Subtle; // claw command - added Subtle
         if ((chatBox.SelectedChannel & allowedChannels) == ChatSelectChannel.None)
             return;
 
@@ -821,7 +829,7 @@ public sealed partial class ChatUIController : UIController
     public void ProcessChatMessage(ChatMessage msg, bool speechBubble = true)
     {
         // color the name unless it's something like "the old man"
-        if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && _chatNameColorsEnabled)
+        if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper || msg.Channel == ChatChannel.Subtle) && _chatNameColorsEnabled) // claw command - added Subtle
         {
             var grammar = _ent.GetComponentOrNull<GrammarComponent>(_ent.GetEntity(msg.SenderEntity));
             if (grammar != null && grammar.ProperNoun == true)
@@ -876,6 +884,10 @@ public sealed partial class ChatUIController : UIController
                 break;
 
             case ChatChannel.Whisper:
+                AddSpeechBubble(msg, SpeechBubble.SpeechType.Whisper);
+                break;
+
+            case ChatChannel.Subtle: // claw command
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.Whisper);
                 break;
 

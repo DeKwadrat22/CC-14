@@ -1,6 +1,7 @@
 - type: traitCategory
   id: Disabilities
   name: trait-category-disabilities
+  budgetPool: SharedTraitBudget
 
 - type: traitCategory
   id: SpeechTraits
@@ -10,3 +11,4 @@
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+  budgetPool: SharedTraitBudget

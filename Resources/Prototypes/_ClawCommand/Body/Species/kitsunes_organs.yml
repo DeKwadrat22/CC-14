@@ -1,0 +1,132 @@
+
+- type: entity
+  parent: OrganBase
+  id: OrganKitsune
+  abstract: true
+  suffix: Claw Command, SpeciesKitsunes
+
+- type: entity
+  id: OrganKitsuneMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ MetabolizerKitsune ]
+
+- type: entity
+  parent: OrganKitsune
+  id: OrganKitsuneInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganKitsune
+  id: OrganKitsuneExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    layers:
+    - enum.HumanoidVisualLayers.Special
+    markingData:
+      group: MarkingsKitsune
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganKitsuneExternal ]
+  id: OrganKitsuneTorso
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Tail
+    initiallyHiddenLayers: # New to Claw Command
+    - enum.HumanoidVisualLayers.Special
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganKitsuneExternal ]
+  id: OrganKitsuneHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.HeadTop
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganKitsuneExternal ]
+  id: OrganKitsuneArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganKitsuneExternal ]
+  id: OrganKitsuneArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganKitsuneExternal ]
+  id: OrganKitsuneHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganKitsuneExternal ]
+  id: OrganKitsuneHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganKitsuneExternal ]
+  id: OrganKitsuneLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganKitsuneExternal ]
+  id: OrganKitsuneLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganKitsuneExternal ]
+  id: OrganKitsuneFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganKitsuneExternal ]
+  id: OrganKitsuneFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganKitsuneInternal ]
+  id: OrganKitsuneBrain
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganKitsuneInternal, OrganKitsuneExternal ]
+  id: OrganKitsuneEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganKitsuneInternal ]
+  id: OrganKitsuneTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganKitsuneInternal ]
+  id: OrganKitsuneAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganKitsuneInternal ]
+  id: OrganKitsuneEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
+  id: OrganKitsuneLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
+  id: OrganKitsuneHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
+  id: OrganKitsuneStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
+  id: OrganKitsuneLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
+  id: OrganKitsuneKidneys

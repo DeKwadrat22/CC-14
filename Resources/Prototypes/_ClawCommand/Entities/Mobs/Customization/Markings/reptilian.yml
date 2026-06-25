@@ -1,0 +1,73 @@
+- type: marking
+  id: LizardFloofNeckfull
+  bodyPart: HeadSide
+  groupWhitelist: [Reptilian, Human, Slime]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: floof_neckfull
+
+- type: marking
+  id: LizardCrestLargeTop
+  bodyPart: HeadTop
+  groupWhitelist: [Reptilian, Human, Slime]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/crest_large.rsi
+    state: primary
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/crest_large.rsi
+    state: secondary
+
+- type: marking
+  id: SnoutEasternDNW
+  bodyPart: Snout
+  groupWhitelist: [Reptilian]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: easterndnw_primary
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: easterndnw_secondary
+
+- type: marking
+  id: SnoutEasternDW
+  bodyPart: Snout
+  groupWhitelist: [Reptilian]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: easterndw_primary
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: easterndnw_secondary
+
+- type: marking
+  id: SnoutMagusSkull
+  bodyPart: Snout
+  groupWhitelist: [Reptilian]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: extra_magus
+
+- type: marking
+  id: SnoutBirdSkull
+  bodyPart: Snout
+  groupWhitelist: [Reptilian]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/snouts.rsi
+      state: skullbird
+
+- type: marking
+  id: LizardChestUnderbellyFeminine
+  bodyPart: Chest
+  groupWhitelist: [Reptilian]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/underbellyfemale.rsi
+    state: body_underbelly
+
+- type: marking
+  id: LizardChestFemaleAlternate
+  bodyPart: Chest
+  groupWhitelist: [Reptilian]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/chest_female_alternate.rsi
+    state: chest
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/chest_female_alternate.rsi
+    state: chest_secondary
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/chest_female_alternate.rsi
+    state: nipples

@@ -79,7 +79,10 @@ namespace Content.Shared.Movement.Components
         public const float SprintingSoundModifier = 3.5f;
         public const float WalkingSoundModifier = 1.5f;
 
-        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) == 0x0;
+        // Claw Command - when true, walking is default and holding shift sprints
+        public bool WalkByDefault;
+
+        public bool Sprinting => ((HeldMoveButtons & MoveButtons.Walk) == 0x0) ^ WalkByDefault; // Claw Command
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;
@@ -94,5 +97,6 @@ namespace Content.Shared.Movement.Components
         public Angle RelativeRotation;
         public TimeSpan LerpTarget;
         public bool CanMove;
+        public bool WalkByDefault; // Claw Command
     }
 }

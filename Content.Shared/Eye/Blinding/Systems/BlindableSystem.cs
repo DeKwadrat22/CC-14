@@ -119,13 +119,13 @@ public record struct EyeDamageChangedEvent(int Damage);
 /// <summary>
 ///     Raised directed at an entity to see whether the entity is currently blind or not.
 /// </summary>
-public sealed class CanSeeAttemptEvent : CancellableEntityEventArgs, IInventoryRelayEvent
+public sealed partial class CanSeeAttemptEvent : CancellableEntityEventArgs, IInventoryRelayEvent
 {
     public bool Blind => Cancelled;
     public SlotFlags TargetSlots => SlotFlags.EYES | SlotFlags.MASK | SlotFlags.HEAD;
 }
 
-public sealed class GetEyeProtectionEvent : EntityEventArgs, IInventoryRelayEvent
+public sealed partial class GetEyeProtectionEvent : EntityEventArgs, IInventoryRelayEvent
 {
     /// <summary>
     ///     Time to subtract from any temporary blindness sources.

@@ -1,0 +1,35 @@
+# Ported from Floofstation: _Floof/Entities/Clothing/OuterClothing/suits.yml
+# Includes the toggleable hood entity (ClothingHeadHatShrimpFishermanHood) referenced by the suit.
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingShrimpFishermanSuit
+  name: shrimp fisherman suit
+  description: A special shrimp trawling suit, a madman must've made this.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Suits/shrimpfishermansuit.rsi
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Suits/shrimpfishermansuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatShrimpFishermanHood
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShrimpFishermanHood
+  categories: [ HideSpawnMenu ]
+  name: shrimp fisherman hood
+  description: A hood in the shape of a shrimp head, whiskers included.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/Hoods/shrimpfishermansuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/Hoods/shrimpfishermansuit.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

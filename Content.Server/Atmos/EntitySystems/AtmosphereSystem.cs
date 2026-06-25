@@ -10,6 +10,9 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Decals;
 using Content.Shared.Doors.Components;
 using Content.Shared.Maps;
+using Content.Shared.Standing;
+using Content.Shared.Stunnable;
+using Content.Shared.Throwing;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -41,6 +44,11 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private MapSystem _map = default!;
     [Dependency] public PuddleSystem Puddle = default!;
     [Dependency] private DamageableSystem _damage = default!;
+    // Claw Command - spacewind dependencies
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private ThrownItemSystem _thrown = default!;
+    [Dependency] private SharedStunSystem _sharedStunSystem = default!;
+    [Dependency] private StandingStateSystem _standingSystem = default!;
 
     [Dependency] private EntityQuery<GridAtmosphereComponent> _gridAtmosQuery = default!;
     [Dependency] private EntityQuery<MapAtmosphereComponent> _mapAtmosQuery = default!;

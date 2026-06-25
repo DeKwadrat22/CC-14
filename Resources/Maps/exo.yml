@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 04/09/2026 13:14:58
-  entityCount: 20154
+  time: 05/28/2026 22:58:36
+  entityCount: 20053
 maps:
 - 1
 grids:
@@ -10259,7 +10259,7 @@ entities:
       pos: 11.5,-30.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -268731.2
+      secondsUntilStateChange: -260650.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10630,7 +10630,7 @@ entities:
       pos: 34.5,-36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44228.855
+      secondsUntilStateChange: -36148.56
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -104258,6 +104258,38 @@ entities:
     components:
     - type: Transform
       pos: 3.5,-3.5
+      parent: 2
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 19378
+    components:
+    - type: Transform
+      pos: 50.5,-15.5
+      parent: 2
+  - uid: 19391
+    components:
+    - type: Transform
+      pos: 51.5,-15.5
+      parent: 2
+  - uid: 19443
+    components:
+    - type: Transform
+      pos: 48.5,-18.5
+      parent: 2
+  - uid: 19448
+    components:
+    - type: Transform
+      pos: 47.5,-18.5
+      parent: 2
+  - uid: 19472
+    components:
+    - type: Transform
+      pos: 45.5,-18.5
+      parent: 2
+  - uid: 19475
+    components:
+    - type: Transform
+      pos: 44.5,-18.5
       parent: 2
 - proto: SpawnPointPsychologist
   entities:

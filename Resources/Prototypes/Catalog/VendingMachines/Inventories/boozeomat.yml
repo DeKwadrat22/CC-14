@@ -12,6 +12,8 @@
     BarSpoon: 3
     CustomDrinkJug: 2 #to allow for custom drinks in the soda/booze dispensers
     DrinkAbsintheBottleFull: 2
+    DrinkAngobittersBottleFull: 3 # Claw Command - DeltaV port
+    DrinkAnisetteBottleFull: 2 # Claw Command - Floof port
     DrinkAleBottleFull: 5
     DrinkBeerBottleFull: 5
     DrinkBlueCuracaoBottleFull: 2
@@ -45,6 +47,7 @@
     DrinkWineBottleFull: 5
     DrinkChampagneBottleFull: 2 #because the premium drink
     DrinkSakeBottleFull: 3
+    DrinkSojuBottleFull: 2 # Claw Command - DeltaV port
     DrinkBeerCan: 5
     DrinkWineCan: 5
   contrabandInventory:

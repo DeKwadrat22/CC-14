@@ -1,0 +1,28 @@
+# Claw Command - Crew pinpointer that tracks crew with suit sensors on cords mode
+- type: entity
+  name: crew pinpointer
+  description: A handheld crew tracking device that locks onto any crew member with their suit sensors set to cords. Keep upright to retain accuracy.
+  id: PinpointerCrew
+  parent: PinpointerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: pinpointer-way
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Icon
+    state: pinpointer-way
+  - type: Pinpointer
+    updateTargetName: true
+    canRetarget: true
+  - type: ActivatableUI
+    key: enum.PinpointerCrewUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.PinpointerCrewUiKey.Key:
+        type: PinpointerCrewBoundUserInterface
+  - type: PinpointerCrew

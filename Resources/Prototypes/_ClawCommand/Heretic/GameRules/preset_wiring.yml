@@ -1,0 +1,6 @@
+# _ClawCommand: Heretic gamemode wiring.
+#
+# Heretic does NOT exist as a standalone selectable preset. It only appears as a
+# probabilistic sub-event during existing presets (Extended / Irregular / Secret).
+# The hook is `CalmHeretic` (defined in roundstart.yml), added to the upstream
+# `SubGamemodesRule` entity in /Resources/Prototypes/GameRules/roundstart.yml.

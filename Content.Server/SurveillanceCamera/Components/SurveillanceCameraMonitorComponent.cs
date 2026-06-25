@@ -1,7 +1,10 @@
+using Content.Server._ClawCommand.SyndieOutpost; // Claw Command
+
 namespace Content.Server.SurveillanceCamera;
 
 [RegisterComponent]
-[Access(typeof(SurveillanceCameraMonitorSystem))]
+[Access(typeof(SurveillanceCameraMonitorSystem),
+    typeof(SyndieOutpostHackSystem))] // Claw Command - direct camera data tap
 public sealed partial class SurveillanceCameraMonitorComponent : Component
 {
     // Currently active camera viewed by this monitor.

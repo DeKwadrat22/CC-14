@@ -1,0 +1,120 @@
+- type: emote
+  id: Mew
+  name: cc-chat-emote-name-mew
+  category: Vocal
+  icon: Interface/Emotes/mew.png
+  available: false
+  chatMessages: [cc-chat-emote-msg-mew]
+  chatTriggers:
+    - mew
+    - mews
+
+- type: emote
+  id: Purr
+  name: cc-chat-emote-name-purr
+  category: Vocal
+  icon: Interface/Emotes/purr.png
+  available: false
+  chatMessages: [cc-chat-emote-msg-purr]
+  chatTriggers:
+    - purr
+    - purrs
+    - purring
+
+- type: emote
+  id: Yip
+  name: cc-chat-emote-name-yip
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [cc-chat-emote-msg-yip]
+  chatTriggers:
+    - yip
+    - yips
+
+- type: emote
+  id: Yap
+  name: cc-chat-emote-name-yap
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  available: false
+  chatMessages: [cc-chat-emote-msg-yap]
+  chatTriggers:
+    - yap
+    - yaps
+
+- type: emote
+  id: Gekker
+  name: cc-chat-emote-name-gekker
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [cc-chat-emote-msg-gekker]
+  chatTriggers:
+    - gekker
+    - gekkers
+
+- type: emote
+  id: Blink
+  name: cc-chat-emote-name-blink
+  category: General
+  chatMessages: [cc-chat-emote-msg-blink]
+  chatTriggers:
+    - blink
+    - blinks
+    - blinked
+
+- type: emote
+  id: Mars
+  name: cc-chat-emote-name-mars
+  category: Vocal
+  available: false
+  chatMessages: [cc-chat-emote-msg-mars]
+  chatTriggers:
+    - mars
+
+- type: emote
+  id: Wurble
+  name: cc-chat-emote-name-wurble
+  category: Vocal
+  available: false
+  chatMessages: [cc-chat-emote-msg-wurble]
+  chatTriggers:
+    - wurble
+
+# IPC Emotes
+- type: emote
+  id: Boop
+  name: cc-chat-emote-name-boop
+  category: Vocal
+  whitelist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [cc-chat-emote-msg-boop]
+  chatTriggers:
+    - boop
+    - boops
+
+- type: emote
+  id: Whirr
+  name: cc-chat-emote-name-whirr
+  category: Vocal
+  whitelist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [cc-chat-emote-msg-whirr]
+  chatTriggers:
+    - whirr
+    - whirrs

@@ -1,0 +1,528 @@
+## Plushies
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieJester #Weh!
+  name: jester plushie
+  description: A dubious little creature getting up to mischief.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_jester
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieSlips
+  name: janitor plushie
+  description: The silent cleaner, the one that you dont hear say "Weh"!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_slips
+  - type: EmitSoundOnUse
+    sound:
+  - type: EmitSoundOnLand
+    sound:
+  - type: EmitSoundOnActivate
+    sound:
+  - type: MeleeWeapon
+    soundHit:
+  - type: Tag
+    tags:
+    - Soap
+  - type: Slippery
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 10
+        mask:
+        - ItemMask
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGnome
+  name: gnome plushie
+  description: A stuffed toy that resembles a gnome! or a drawf...
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: gnome
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieLoveable
+  name: loveable plushie
+  description: A stuffed toy that resembles... a creature.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: loveable
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDeer
+  name: deer plushie
+  description: A stuffed toy that resembles a deer!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: deer
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieIpc
+  name: ipc plushie
+  description: A stuffed toy that resembles a ipc!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: ipc
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGrey
+  name: grey plushie
+  description: A stuffed toy that resembles a grey!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: grey
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAbductor
+  name: abductor plushie
+  description: A stuffed toy that resembles an abductor!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: abductor
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAbductorAgent
+  name: abductor agent plushie
+  description: A stuffed toy that resembles an abductor agent!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: abductor_agent
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieRedFox
+  name: red fox plushie
+  description: A cute plushie that look like a red foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: red
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePurpleFox
+  name: purple fox plushie
+  description: A cute plushie that look like a purple foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: purple
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePinkFox
+  name: pink fox plushie
+  description: A cute plushie that look like a pink foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: pink
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOrangeFox
+  name: orange fox plushie
+  description: A cute plushie that look like a orange foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: orange
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMarbleFox
+  name: marble fox plushie
+  description: A cute plushie that look like a marble foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: marble
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieCrimsonFox
+  name: crimson fox plushie
+  description: A cute plushie that look like a crimson foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: crimson
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieCoffeeFox
+  name: coffee fox plushie
+  description: A cute plushie that look like a coffee foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: coffee
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBlueFox
+  name: blue fox plushie
+  description: A cute plushie that look like a blue foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: blue
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBlackFox
+  name: black fox plushie
+  description: A cute plushie that look like a black foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: black
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieTrystan
+  name: office vulp plushie
+  description: The ones who yeeps!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_trystan
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieCorgi
+  name: corgi plushie
+  description: The ian plushie edition!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/corgiplushie.rsi
+    state: corgi
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieGirlyCorgi
+  name: girly corgi plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/corgiplushie.rsi
+    state: girlycorgi
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieRobotCorgi
+  name: robot corgi plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/corgiplushie.rsi
+    state: robotcorgi
+
+- type: entity
+  parent: BasePlushie
+  id: BasePlushieCat
+  description: A stuffed toy that resembles a cute kitty!
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound:
+  - type: EmitSoundOnLand
+    sound:
+  - type: EmitSoundOnActivate
+    sound:
+  - type: MeleeWeapon
+    soundHit:
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatBlack
+  name: black cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: black
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatGrey
+  name: grey cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: grey
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatOrange
+  name: orange cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: orange
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatSiames
+  name: siames cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: siames
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatTabby
+  name: tabby cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: tabby
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatTuxedo
+  name: tuxedo cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: tuxedo
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatWhite
+  name: white cat plushie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/catplushie.rsi
+    state: white
+
+## Cheapo Figurines
+
+- type: entity
+  parent: BaseItem
+  id: BaseFigurineCheapo
+  name: figurine
+  description: A small miniature.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 25
+  - type: Tag
+    tags:
+    - Figurine
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: FoamWeaponBase
+  components:
+  - type: Sprite
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: BaseItem
+  id: ToyGunBase
+  name: ToyGunBase
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+
+- type: entity
+  parent: ToyHammer
+  id: BwoinkHammer
+  name: bwoink hammer
+  description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unraisinable.
+  suffix: DO NOT MAP
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/bwoink_hammer.rsi
+      state: icon
+    - type: Item
+      size: Small
+      sprite: Objects/Fun/bwoink_hammer.rsi
+    - type: MeleeWeapon
+      soundHit:
+        collection: ToySqueak
+        params:
+            variation: 0.03
+            volume: 3
+      soundNoDamage:
+        collection: ToySqueak
+        params:
+            variation: 0.03
+            volume: 3
+      damage:
+        types:
+          Blunt: 0
+
+- type: entity
+  name: The Throngler
+  parent: ToyHammer
+  id: ThronglerToy
+  suffix: Toy
+  description: Why would you make this?
+  components:
+    - type: Sprite
+      sprite: Objects/Weapons/Melee/Throngler2.rsi
+      state: icon
+    - type: StaminaDamageOnHit
+      damage: 0.8
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      attackRate: 10 # Floofstation - this is hertz, not seconds
+      damage:
+        types:
+          Blunt: 0
+      soundHit:
+        path: /Audio/Effects/explosion_small1.ogg
+      soundNoDamage:
+        path: /Audio/Effects/explosion_small1.ogg
+    - type: Item
+      size: Ginormous
+      sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+    - type: DisarmMalus
+      malus: 0
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMort
+  name: morty plushie
+  description: A plushie of the lovely Morty. It's a resilient, yet sensitive type of plush.
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/toys.rsi
+      state: mortplush
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieHarpy
+  name: harpy plushie
+  description: A soft plushie of a harpy! A small tag on it guarantees that all feathers are ethically sourced.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: harpyplushie
+  - type: StaminaDamageOnHit
+    damage: 0.8
+  - type: EmitSoundOnActivate
+    sound:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+  - type: EmitSoundOnLand
+    sound:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.8
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 2 # Floofstation - this is hertz, not seconds
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+    soundSwing:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+    soundNoDamage:
+      collection: ToySqueak
+      params:
+        variation: 0.05
+
+# Claw Command originals (Steele, Mattew, Stefanie) - audio refs sanitized for upstream compat
+- type: entity
+  parent: BasePlushie
+  id: PlushieSteele
+  name: Steele plushie
+  description: A stuffed toy of Steele Sharpclaw!
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Fun/steele_plushie.rsi
+    state: steele
+  - type: Item
+    heldPrefix: steele
+  - type: UseDelay
+    delay: 3.0
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMattew
+  name: Mattew Chief plushie
+  description: A much more pettable version of Mattew Chief. It seems like it had a ruff day.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Fun/mattew_plushie.rsi
+    state: mattew-plushie
+  - type: Item
+    heldPrefix: mattew
+  - type: UseDelay
+    delay: 3.0
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieStefanie
+  name: Stefanie plushie
+  description: This plushie seems... evil. You have no clue why.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Fun/stefanie_plushie.rsi
+    state: stefanie-plushie
+  - type: Item
+    heldPrefix: stefanie
+  - type: UseDelay
+    delay: 5.0

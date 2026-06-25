@@ -287,6 +287,15 @@
   components:
   - type: SpawnPoint
     job_id: Borg
+    # _ClawCommand: dogborg variants share this spawn point so mappers don't
+    # need a per-variant marker — every dogborg job spawns where regular Borgs do.
+    additionalJobs:
+    - DogborgSecurity
+    - DogborgMedical
+    - DogborgEngineering
+    - DogborgJanitor
+    - DogborgService
+    - DogborgMining
   - type: Sprite
     layers:
     - state: green

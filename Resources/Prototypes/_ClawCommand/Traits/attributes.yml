@@ -1,0 +1,328 @@
+# Claw Command - Physical attribute traits
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  category: Physical
+  cost: 3
+  excludes:
+    - GlassJaw
+    - BrittleBoneDisease
+  components:
+    - type: HealthCritAdjust
+      offset: 5
+
+- type: trait
+  id: WillToLive
+  name: trait-will-to-live-name
+  description: trait-will-to-live-desc
+  category: Physical
+  cost: 1
+  excludes:
+    - WillToDie
+    - Redshirt
+  components:
+    - type: HealthDeadAdjust
+      offset: 10
+
+- type: trait
+  id: HeavyweightDrunk
+  name: trait-heavyweight-drunk-name
+  description: trait-heavyweight-drunk-desc
+  category: Physical
+  cost: 1
+  excludes:
+    - LightweightDrunk
+  components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 0.5
+
+- type: trait
+  id: Vigor
+  name: trait-vigor-name
+  description: trait-vigor-desc
+  category: Physical
+  cost: 6
+  excludes:
+    - Lethargy
+  components:
+    - type: StaminaCapAdjust
+      offset: 10
+
+- type: trait
+  id: Thieving
+  name: trait-thieving-name
+  description: trait-thieving-desc
+  category: Physical
+  cost: 8
+  components:
+    - type: Thieving
+      stealthy: true
+      stripTimeReduction: 2
+
+- type: trait
+  id: TrapAvoider
+  name: trait-trap-avoider-name
+  description: trait-trap-avoider-desc
+  category: Physical
+  cost: 3
+  excludes:
+    - Clumsy
+  components:
+    - type: ProtectedFromStepTriggers
+
+- type: trait
+  id: TemperatureTolerance
+  name: trait-temperature-tolerance-name
+  description: trait-temperature-tolerance-desc
+  category: Physical
+  cost: 1
+  components:
+    - type: TemperatureProtection
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1
+
+- type: trait
+  id: Steadfast
+  name: trait-steadfast-name
+  description: trait-steadfast-desc
+  category: Physical
+  cost: 4
+  excludes:
+    - Feeble
+  components:
+    - type: InjurySlowAdjust
+      thresholdShift: 10
+
+- type: trait
+  id: LightStep
+  name: trait-light-step-name
+  description: trait-light-step-desc
+  category: Physical
+  cost: 2
+  components:
+    - type: StepAudioAdjust
+      sprintAdjust: -10
+      walkAdjust: -10
+
+- type: trait
+  id: GlassJaw
+  name: trait-glass-jaw-name
+  description: trait-glass-jaw-desc
+  category: Physical
+  cost: -2
+  excludes:
+    - Tenacity
+  components:
+    - type: HealthCritAdjust
+      offset: -10
+
+- type: trait
+  id: WillToDie
+  name: trait-will-to-die-name
+  description: trait-will-to-die-desc
+  category: Physical
+  cost: -2
+  excludes:
+    - WillToLive
+  components:
+    - type: HealthDeadAdjust
+      offset: -15
+
+- type: trait
+  id: Lethargy
+  name: trait-lethargy-name
+  description: trait-lethargy-desc
+  category: Physical
+  cost: -4
+  excludes:
+    - Vigor
+  components:
+    - type: StaminaCapAdjust
+      offset: -15
+
+- type: trait
+  id: Sluggish
+  name: trait-sluggish-name
+  description: trait-sluggish-desc
+  category: Physical
+  cost: -3
+  excludes:
+    - SnailPaced
+  restrictedDepts:
+    - Security
+  components:
+    - type: GaitSpeedAdjust
+      sprintFactor: 0.84
+      walkFactor: 0.84
+
+- type: trait
+  id: SnailPaced
+  name: trait-snailpaced-name
+  description: trait-snailpaced-desc
+  category: Physical
+  cost: -5
+  excludes:
+    - Sluggish
+  restrictedDepts:
+    - Security
+    - Command
+  components:
+    - type: GaitSpeedAdjust
+      sprintFactor: 0.68
+      walkFactor: 0.68
+
+- type: trait
+  id: Clumsy
+  name: trait-clumsy-name
+  description: trait-clumsy-desc
+  category: Physical
+  cost: -1
+  excludes:
+    - TrapAvoider
+  components:
+    - type: Clumsy
+
+- type: trait
+  id: Feeble
+  name: trait-feeble-name
+  description: trait-feeble-desc
+  category: Physical
+  cost: -3
+  excludes:
+    - Steadfast
+  components:
+    - type: InjurySlowAdjust
+      thresholdShift: -15
+
+- type: trait
+  id: BrittleBoneDisease
+  name: trait-brittle-bone-name
+  description: trait-brittle-bone-desc
+  category: Physical
+  cost: -10
+  excludes:
+    - Tenacity
+  restrictedDepts:
+    - Security
+    - Command
+  components:
+    - type: HealthCritAdjust
+      offset: -50
+
+- type: trait
+  id: Redshirt
+  name: trait-redshirt-name
+  description: trait-redshirt-desc
+  category: Physical
+  cost: -8
+  excludes:
+    - WillToLive
+  restrictedDepts:
+    - Security
+    - Command
+  components:
+    - type: HealthDeadAdjust
+      offset: -100
+
+- type: trait
+  id: DermalArmor
+  name: trait-dermal-armor-name
+  description: trait-dermal-armor-desc
+  category: Physical
+  cost: 5
+  excludes:
+    - HeavyDermalArmor
+  components:
+    - type: DamageProtectionBuff
+      modifiers:
+        dermal:
+          id: DermalArmorModifier
+          flatReductions:
+            Blunt: 1.5
+            Slash: 1.5
+            Piercing: 1.5
+    - type: ExamineAppend
+      entries:
+        - text: examine-dermal-armor-message
+          fontSize: 12
+          needsProximity: true
+
+- type: trait
+  id: HeavyDermalArmor
+  name: trait-heavy-dermal-armor-name
+  description: trait-heavy-dermal-armor-desc
+  category: Physical
+  cost: 10
+  excludes:
+    - DermalArmor
+  components:
+    - type: DamageProtectionBuff
+      modifiers:
+        heavyDermal:
+          id: HeavyDermalArmorModifier
+          flatReductions:
+            Blunt: 3
+            Slash: 3
+            Piercing: 3
+    - type: ExamineAppend
+      entries:
+        - text: examine-heavy-dermal-armor-message
+          fontSize: 12
+          needsProximity: true
+
+- type: trait
+  id: PlateletFactories
+  name: trait-platelet-factories-name
+  description: trait-platelet-factories-desc
+  category: Physical
+  cost: 10
+  components:
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+        - Critical
+      damage:
+        types:
+          Blunt: -0.30
+          Piercing: -0.30
+          Slash: -0.30
+          Heat: -0.30
+          Cold: -0.30
+          Asphyxiation: -0.25
+          Bloodloss: -0.25
+          Poison: -0.30
+          Cellular: -0.2
+          Radiation: -0.2
+    - type: BloodRegenBoost
+      regenMultiplier: 1.15
+
+- type: trait
+  id: SelfAware
+  name: trait-selfaware-name
+  description: trait-selfaware-desc
+  category: Psychological
+  cost: 4
+  components:
+    - type: SelfAware
+      analyzableTypes:
+        - Blunt
+        - Slash
+        - Piercing
+        - Heat
+        - Shock
+        - Cold
+        - Caustic
+      detectableGroups:
+        - Airloss
+        - Toxin
+
+- type: trait
+  id: AnimalFriend
+  name: trait-animalfriend-name
+  description: trait-animalfriend-desc
+  category: Psychological
+  cost: 3
+  components:
+    - type: AnimalFriend

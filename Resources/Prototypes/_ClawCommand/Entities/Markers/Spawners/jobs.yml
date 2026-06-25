@@ -1,0 +1,47 @@
+- type: entity
+  id: SpawnPointCentralCommand
+  parent: SpawnPointJobBase
+  name: central command
+  components:
+  - type: SpawnPoint
+    job_id: CentralCommandOfficial
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
+
+- type: entity
+  id: SpawnPointClawCommandOfficer
+  parent: SpawnPointJobBase
+  name: claw command officer
+  components:
+  - type: SpawnPoint
+    job_id: ClawCommandOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
+
+- type: entity
+  id: SpawnPointClawCommandMaid
+  parent: SpawnPointJobBase
+  name: claw command maid
+  components:
+  - type: SpawnPoint
+    job_id: ClawCommandMaid
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
+
+- type: entity
+  id: SpawnPointPrisoner
+  parent: SpawnPointJobBase
+  name: prisoner
+  components:
+  - type: SpawnPoint
+    job_id: Prisoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: prisoner

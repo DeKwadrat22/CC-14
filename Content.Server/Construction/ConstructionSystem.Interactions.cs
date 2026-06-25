@@ -635,7 +635,7 @@ namespace Content.Server.Construction
 
     #endregion
 
-    public sealed class OnConstructionTemperatureEvent : HandledEntityEventArgs
+    public sealed partial class OnConstructionTemperatureEvent : HandledEntityEventArgs
     {
         public HandleResult? Result;
     }

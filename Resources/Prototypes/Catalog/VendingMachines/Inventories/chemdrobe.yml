@@ -15,5 +15,8 @@
     ClothingOuterWinterChem: 1
     ClothingHandsGlovesLatex: 1
     ClothingShoesColorWhite: 1
+    ClothingHandsChemistsWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksChemists: 1 # Claw Command - Floof
+    ClothingUniformJumpsuitChemShirt: 1 # Claw Command - Floof
   contrabandInventory:
     ToyFigurineChemist: 1

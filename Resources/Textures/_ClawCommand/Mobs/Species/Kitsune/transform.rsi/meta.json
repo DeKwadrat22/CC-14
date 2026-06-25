@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "taken from commit at https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b and modified by @absolis. humanform https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf. Both edited by DaCookieCakes for Claw Command 14. ",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "foxform"
+        },
+        {
+            "name": "humanform"
+        }
+    ]
+}

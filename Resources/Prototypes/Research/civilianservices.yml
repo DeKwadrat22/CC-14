@@ -1,3 +1,12 @@
+# Civilian Services discipline — tech-tree layout
+#
+# X axis: tier progression (T1 cols 0-2, T2 cols 3-5, T3 col 7)
+# Y axis: themed row clustering inside the CivilianServices band (rows 15-18)
+#   Row 15  Biology & medical core
+#   Row 16  Communications, syringe weaponry, bluespace logistics
+#   Row 17  Robotics & clowning mechs
+#   Row 18  Utility, sanitation, fabric
+
 # Tier 1
 
 - type: technology
@@ -9,6 +18,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
+  position: 1,15
   recipeUnlocks:
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
@@ -23,6 +33,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
+  position: 0,17
   recipeUnlocks:
   - HamtrHarness
   - HamtrLArm
@@ -43,6 +54,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
+  position: 0,16
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -62,6 +74,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
+  position: 1,16
   recipeUnlocks:
     - ComputerTelevisionCircuitboard
     - SynthesizerInstrument
@@ -78,6 +91,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
+  position: 0,15
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
@@ -94,6 +108,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 5000
+  position: 3,18
   recipeUnlocks:
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
@@ -107,6 +122,9 @@
   - FauxTileDesertAstroSand
   - FauxTileAstroIronsand
   - FauxTileAstroIronsandBorderless
+  technologyPrerequisites:
+  - AudioVisualCommunication
+
 
 - type: technology
   id: BiochemicalStasis
@@ -117,11 +135,15 @@
   discipline: CivilianServices
   tier: 2
   cost: 7500
+  position: 3,15
   recipeUnlocks:
   - StasisBedMachineCircuitboard
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  technologyPrerequisites:
+  - MeatManipulation
+
 
 - type: technology # Merge with other T2 medical research if possible!
   id: MechanizedTreatment
@@ -132,6 +154,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 5000
+  position: 4,15
   recipeUnlocks:
   - BorgModuleAdvancedTopical
   - AdvancedJetInjector
@@ -145,10 +168,15 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
+  position: 4,18
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  - BasicRobotics
+
 
 - type: technology
   id: HONKMech
@@ -159,6 +187,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 7500
+  position: 3,17
   recipeUnlocks:
   - HonkerHarness
   - HonkerLArm
@@ -169,6 +198,10 @@
   - HonkerPeripheralsElectronics
   - HonkerTargetingElectronics
   - MechEquipmentHorn
+  technologyPrerequisites:
+  - PushHorn
+  - RipleyAPLU
+
 
 - type: technology
   id: AdvancedSpray
@@ -179,9 +212,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
+  position: 5,18
   recipeUnlocks:
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
+  technologyPrerequisites:
+  - AdvancedCleaning
+
 
 - type: technology
   id: BluespaceCargoTransport
@@ -192,8 +229,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 15000
+  position: 4,16
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
+  technologyPrerequisites:
+  - MeatManipulation
+  - FauxAstroTiles
+
 
 - type: technology
   id: PushHorn
@@ -204,9 +246,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 4000
+  position: 4,17
   recipeUnlocks:
   - PushHorn
   - BorgModuleAdvancedClowning
+  technologyPrerequisites:
+  - CritterMechs
+
 
 # Tier 3
 
@@ -219,8 +265,12 @@
   discipline: CivilianServices
   tier: 3
   cost: 10000
+  position: 7,18
   recipeUnlocks:
   - ClothingShoesBootsSpeed
+  technologyPrerequisites:
+  - FauxAstroTiles
+
 
 - type: technology
   id: BluespaceChemistry
@@ -231,9 +281,13 @@
   discipline: CivilianServices
   tier: 3
   cost: 10000
+  position: 7,15
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  technologyPrerequisites:
+  - BiochemicalStasis
+
 
 - type: technology
   id: LauncherSyringe
@@ -244,6 +298,10 @@
   discipline: CivilianServices
   tier: 3
   cost: 15000
+  position: 7,16
   recipeUnlocks:
   - LauncherSyringe
   - MiniSyringe
+  technologyPrerequisites:
+  - BiochemicalStasis
+

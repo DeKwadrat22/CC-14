@@ -1,0 +1,9 @@
+# Ported from Floofstation: _Floof/Entities/Clothing/Masks/masks.yml
+# Note: only the gas mask muffled variant is needed locally; the other two muffled gas masks
+# (explorer/security) exist upstream/in the fork already if their parents resolve.
+
+- type: entity
+  parent: [ GasMaskTags, ClothingMaskGas, ClothingMaskMuzzle ]
+  id: ClothingMaskGasMuffled
+  name: muffled gas mask
+  description: A face-covering mask that can be connected to an air supply. This one blocks your speech.

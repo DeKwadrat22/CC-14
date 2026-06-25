@@ -25,6 +25,9 @@
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSec: 2
     ClothingHeadHelmetJustice: 1
+    ClothingUniformJumpskirtSecBlue: 3 # Claw Command - Delta-V variant
+    ClothingHandsSecurityWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksSecurity: 1 # Claw Command - Floof
   contrabandInventory:
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1

@@ -107,10 +107,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     public int MaxAge = 120;
 }
 
+// !! CLAW COMMAND MODIFIED !! //
+// CC : Added 'FirstDashLast'
 public enum SpeciesNaming : byte
 {
     First,
     FirstLast,
     FirstDashFirst,
     TheFirstofLast,
+    FirstDashLast,
 }

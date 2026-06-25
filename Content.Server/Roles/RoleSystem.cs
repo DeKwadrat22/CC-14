@@ -74,7 +74,7 @@ public sealed partial class RoleSystem : SharedRoleSystem
 /// Handlers can either replace or append to the briefing, whichever is more appropriate.
 /// </summary>
 [ByRefEvent]
-public sealed class GetBriefingEvent
+public sealed partial class GetBriefingEvent
 {
     /// <summary>
     /// The text that will be shown on the Character Screen

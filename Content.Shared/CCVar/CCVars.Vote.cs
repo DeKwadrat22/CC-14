@@ -170,7 +170,7 @@ public sealed partial class CCVars
     ///     Duration of a ban caused by a votekick (in minutes).
     /// </summary>
     public static readonly CVarDef<int> VotekickBanDuration =
-        CVarDef.Create("votekick.ban_duration", 180, CVar.SERVERONLY);
+        CVarDef.Create("votekick.ban_duration", 18000, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether the ghost requirement settings for votekicks should be ignored for the lobby.

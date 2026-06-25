@@ -23,6 +23,7 @@ public sealed partial class PlacementLoggerSystem : EntitySystem
     {
         _player.TryGetSessionById(ev.PlacerNetUserId, out var actor);
         var actorEntity = actor?.AttachedEntity;
+        var action = ev.PlacementEventAction.ToString().ToLower();
 
         var logType = ev.PlacementEventAction switch
         {
@@ -33,13 +34,14 @@ public sealed partial class PlacementLoggerSystem : EntitySystem
 
         if (actorEntity != null)
             _adminLogger.Add(logType, LogImpact.Medium,
-                $"{ToPrettyString(actorEntity.Value):actor} used placement system to {ev.PlacementEventAction.ToString().ToLower()} {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
+                $"{ToPrettyString(actorEntity.Value):actor} used placement system to {action} {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
         else if (actor != null)
             _adminLogger.Add(logType, LogImpact.Medium,
-                $"{actor:actor} used placement system to {ev.PlacementEventAction.ToString().ToLower()} {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
+                $"{actor:actor} used placement system to {action} {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
         else
             _adminLogger.Add(logType, LogImpact.Medium,
-                $"Placement system {ev.PlacementEventAction.ToString().ToLower()}ed {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
+                $"Placement system {action}ed {ToPrettyString(ev.EditedEntity):subject} at {ev.Coordinates}");
+
     }
 
     private void OnTilePlacement(PlacementTileEvent ev)

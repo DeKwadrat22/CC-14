@@ -150,6 +150,8 @@
         - id: HydroponicsToolSpade
         - id: HydroponicsToolClippers
         - id: ChemistryBottleRobustHarvest
+        - id: RobustHarvestChemistryBottle # Claw Command - alt-ID
+        - id: EZNutrientChemistryBottle # Claw Command
 
 - type: entity
   id: ClothingBeltSheathFilled
@@ -198,6 +200,11 @@
         - id: ChemistryBottleEphedrine
           amount: 2
         - id: ChemistryBottleOmnizine
+        - id: EpinephrineChemistryBottle # Claw Command - alt-ID bottles
+          amount: 2
+        - id: EphedrineChemistryBottle # Claw Command
+          amount: 2
+        - id: OmnizineChemistryBottle # Claw Command
         - id: MedkitCombatFilled
 
 - type: entity

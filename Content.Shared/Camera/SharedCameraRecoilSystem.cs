@@ -101,7 +101,7 @@ public abstract partial class SharedCameraRecoilSystem : EntitySystem
 
 [Serializable]
 [NetSerializable]
-public sealed class CameraKickEvent : EntityEventArgs
+public sealed partial class CameraKickEvent : EntityEventArgs
 {
     public readonly NetEntity NetEntity;
     public readonly Vector2 Recoil;

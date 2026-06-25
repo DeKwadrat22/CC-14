@@ -1,0 +1,18 @@
+# Lathe recipes for dogborg-specific borg modules. Added to the Exosuit
+# Fabricator alongside the regular BorgModulesStatic pack via the
+# DogborgModulesStatic pack entry below.
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: BorgModuleSecurity
+  result: BorgModuleSecurity
+  completetime: 2
+  materials:
+    Steel: 300
+    Glass: 200
+    Plastic: 100
+
+- type: latheRecipePack
+  id: DogborgModulesStatic
+  recipes:
+  - BorgModuleSecurity

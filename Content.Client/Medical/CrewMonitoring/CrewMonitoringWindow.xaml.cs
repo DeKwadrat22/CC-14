@@ -449,7 +449,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
     }
 }
 
-public sealed class CrewMonitoringButton : Button
+public sealed partial class CrewMonitoringButton : Button
 {
     public int IndexInTable;
     public NetEntity SuitSensorUid;

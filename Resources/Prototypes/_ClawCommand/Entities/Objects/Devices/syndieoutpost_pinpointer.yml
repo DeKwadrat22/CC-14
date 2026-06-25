@@ -1,0 +1,37 @@
+# Claw Command - Pinpointer that tracks syndicate outpost grids
+- type: entity
+  name: outpost pinpointer
+  description: A pinpointer tuned to locate syndicate outpost signals. Only works if an outpost is active.
+  id: PinpointerSyndieOutpost
+  parent: [ PinpointerBase, BaseSyndicateContraband ]
+  components:
+  - type: Pinpointer
+    component: SyndieOutpostMarker
+    targetName: syndicate outpost
+    mediumDistance: 100
+    closeDistance: 50
+    reachedDistance: 10
+  - type: Sprite
+    layers:
+    - state: pinpointer-syndicate
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-base
+        color: "#1b7528"
+      - state: inhand-left-stripe
+        color: "#1b7528"
+      - state: inhand-left-top
+      right:
+      - state: inhand-right-base
+        color: "#1b7528"
+      - state: inhand-right-stripe
+        color: "#1b7528"
+      - state: inhand-right-top
+  - type: Icon
+    state: pinpointer-syndicate

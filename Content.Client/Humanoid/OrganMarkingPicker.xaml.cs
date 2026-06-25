@@ -43,6 +43,7 @@ public sealed partial class OrganMarkingPicker : Control
         base.EnteredTree();
 
         _markingsModel.OrganProfileDataChanged += OnOrganProfileDataChanged;
+        _markingsModel.EnforcementsChanged -= UpdateMarkings;
         _markingsModel.EnforcementsChanged += UpdateMarkings;
     }
 

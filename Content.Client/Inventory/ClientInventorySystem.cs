@@ -271,7 +271,7 @@ namespace Content.Client.Inventory
                 ReloadInventory(inventorySlots);
         }
 
-        public sealed class SlotData
+        public sealed partial class SlotData
         {
             [ViewVariables] public SlotDefinition SlotDef;
             [ViewVariables] public EntityUid? HeldEntity => Container?.ContainedEntity;

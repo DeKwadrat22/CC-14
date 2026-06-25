@@ -1,0 +1,188 @@
+# While the Feroxi sprites are from DeltaV, all of this code is ours.
+
+- type: markingsGroup
+  parent: Undergarments
+  id: MarkingsFeroxi
+  onlyGroupWhitelisted: false
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 2
+      required: true
+      default: [ FeroxiTail ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: true
+      default: [ FeroxiBodyCountershadingFemale, FeroxiBodyCountershadingMale ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+      default: [ FeroxiSnout ]
+    enum.HumanoidVisualLayers.Head:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ FeroxiEars ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Genital:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFeroxi
+  suffix: Claw Command
+  name: feroxi appearance
+  components:
+  - type: Inventory
+    speciesId: SpeciesFeroxi
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+      #head:
+      #  sizeMaps:
+      #    32:
+      #      sprite: _ClawCommand/Mobs/Species/Feroxi/displacement.rsi
+      #      state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _ClawCommand/Mobs/Species/Feroxi/displacement.rsi
+            state: mask
+    displacements:
+      #head:
+      #  sizeMaps:
+      #    32:
+      #      sprite: _ClawCommand/Mobs/Species/Feroxi/displacement.rsi
+      #      state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _ClawCommand/Mobs/Species/Feroxi/displacement.rsi
+            state: mask
+  - type: InitialBody
+    organs:
+      Torso: OrganFeroxiTorso
+      Head: OrganFeroxiHead
+      ArmLeft: OrganFeroxiArmLeft
+      ArmRight: OrganFeroxiArmRight
+      HandRight: OrganFeroxiHandRight
+      HandLeft: OrganFeroxiHandLeft
+      LegLeft: OrganFeroxiLegLeft
+      LegRight: OrganFeroxiLegRight
+      FootLeft: OrganFeroxiFootLeft
+      FootRight: OrganFeroxiFootRight
+      Brain: OrganFeroxiBrain
+      Eyes: OrganFeroxiEyes
+      Tongue: OrganFeroxiTongue
+      Appendix: OrganFeroxiAppendix
+      Ears: OrganFeroxiEars
+      Lungs: OrganFeroxiGills
+      Heart: OrganFeroxiHeart
+      Stomach: OrganFeroxiStomach
+      Liver: OrganFeroxiLiver
+      Kidneys: OrganFeroxiKidneys
+  - type: HumanoidProfile
+    species: SpeciesFeroxi
+
+- type: entity
+  parent:
+  - AppearanceFeroxi
+  - BaseSpeciesMobOrganic
+  id: MobFeroxi
+  name: Urist McFin
+  suffix: Claw Command
+  components:
+  - type: Puller
+    needsHands: false
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatLizard
+      amount: 5
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: SpeechFeroxi
+    allowedEmotes: ['Thump']
+  - type: TypingIndicator
+    proto: lizard
+  - type: Vocal
+    sounds:
+      Male: MaleFeroxi
+      Female: FemaleFeroxi
+      Unsexed: MaleFeroxi
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: Damageable
+    damageModifierSet: ModifierSetFeroxi
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 6
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 38
+  - type: TemperatureDamage
+    heatDamageThreshold: 400
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold : 0.05 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat : 1.5 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      301: 0.9
+      295: 0.8
+      285: 0.7
+  # - type: Wagging # TODO - CC14 - Animated tail sprites for Feroxi and Felinids
+  - type: Thirst
+    baseDecayRate: 1.0

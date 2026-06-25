@@ -136,8 +136,11 @@
     children:
     - id: ClothingUniformJumpsuitFamilyGuy
       weight: 5
-    - id: ClothingOuterHardsuitCBURN
+    - !type:GroupSelector # Claw Command - 50/50 original vs Alt
       weight: 0.1
+      children:
+      - id: ClothingOuterHardsuitCBURN
+      - id: ClothingOuterHardsuitCBURNAlt
     - id: ClothingOuterHardsuitSanta
       weight: 0.1
     - id: ClothingBackpackERTClown
@@ -222,6 +225,7 @@
     - id: ToyAmongPequeno
     - id: Lamp
     - id: FloraTreeLarge
+    - id: FloraTreeLarge05 # Claw Command - Floof flora variant
     - id: LightTree #Funny mobs maybe
 
 - type: entityTable

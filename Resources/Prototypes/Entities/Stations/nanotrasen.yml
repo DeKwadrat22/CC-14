@@ -27,6 +27,8 @@
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
     - BaseStationDeliveries
+    - BaseStationCaptainState # Claw Command
+    - BaseStationEmergencyAccessMedbayState  # Claw Command
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

@@ -5,3 +5,12 @@ marking-VoxFacialHairNeck = Vox Beard (Neck Quills)
 marking-VoxFacialHairMane = Vox Beard (Mane)
 marking-VoxFacialHairManeSmall = Vox Beard (Small Mane)
 marking-VoxFacialHairTufts = Vox Sideburns (Tufts)
+
+# CLAW COMMAND 14 - Fixed color locale
+marking-VoxFacialHairBeard-beard_s = Vox Beard (Quills)
+marking-VoxFacialHairColonel-colonel_s = Vox Moustache (Colonel)
+marking-VoxFacialHairFu-fu_s = Vox Moustache (Quill Fu)
+marking-VoxFacialHairNeck-neck_s = Vox Beard (Neck Quills)
+marking-VoxFacialHairMane-mane_s = Vox Beard (Mane)
+marking-VoxFacialHairManeSmall-manesmall_s = Vox Beard (Small Mane)
+marking-VoxFacialHairTufts-tuft_s = Vox Sideburns (Tufts)

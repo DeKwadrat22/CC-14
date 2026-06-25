@@ -15,13 +15,17 @@
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
+    - id: MothroachSpawn # Claw Command
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
+    - id: SlimesSpawn # Claw Command
     - id: SlimesSpawnHorde
     - id: SolarFlare
     - id: SnakeSpawnHorde
+    - id: SpiderClownSpawn # Claw Command
     - id: SpiderClownSpawnHorde
+    - id: SpiderSpawn # Claw Command
     - id: SpiderSpawnHorde
     - id: VentClog
 
@@ -32,6 +36,7 @@
     - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
+    - id: XenoVentsWeak # Claw Command
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -46,6 +51,8 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: SyndieOutpostSpawn #claw command
+    - id: XenoVents # Claw Command
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -497,7 +504,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 5.5
+    weight: 3 # Claw Command from 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids

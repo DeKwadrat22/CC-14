@@ -190,6 +190,20 @@ public sealed partial class CCVars
     public static readonly CVarDef<int> EmergencyShuttleAutoCallExtensionTime =
         CVarDef.Create("shuttle.auto_call_extension_time", 45, CVar.SERVERONLY);
 
+    // claw command
+    /// <summary>
+    ///     Whether to initiate a crew vote instead of auto-calling the shuttle.
+    /// </summary>
+    public static readonly CVarDef<bool> EmergencyShuttleDoEvacVotes =
+        CVarDef.Create("shuttle.emergency_do_evac_votes", true, CVar.SERVERONLY);
+
+    // claw command
+    /// <summary>
+    ///     Duration of the evac vote in seconds.
+    /// </summary>
+    public static readonly CVarDef<float> EmergencyShuttleEvacVoteDuration =
+        CVarDef.Create("shuttle.emergency_vote_duration", 120f, CVar.SERVERONLY);
+
     /// <summary>
     ///     Impulse multiplier for player interactions that move grids (other than shuttle thrusters, gyroscopes and grid collisons).
     ///     At the moment this only affects the pushback in SpraySystem.

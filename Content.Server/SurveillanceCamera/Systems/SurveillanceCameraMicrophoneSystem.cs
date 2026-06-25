@@ -95,7 +95,7 @@ public sealed partial class SurveillanceCameraMicrophoneSystem : EntitySystem
     }
 }
 
-public sealed class SurveillanceCameraSpeechSendEvent : EntityEventArgs
+public sealed partial class SurveillanceCameraSpeechSendEvent : EntityEventArgs
 {
     public EntityUid Speaker { get; }
     public string Message { get; }

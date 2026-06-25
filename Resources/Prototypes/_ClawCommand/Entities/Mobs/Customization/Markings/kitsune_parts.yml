@@ -1,0 +1,148 @@
+# Ears
+- type: marking
+  id: KitsuneEars
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/ears.rsi
+    state: foxears
+
+# Ears
+- type: marking
+  id: KitsuneEarsFluffy
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      kitsune_fluffy_ears:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      kitsune_fluffy_fluff:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/ears.rsi
+    state: kitsune_fluffy_ears
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/ears.rsi
+    state: kitsune_fluffy_fluff
+
+# Tails
+- type: marking
+  id: KitsuneTail
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      kitsune_primary:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      kitsune_secondary:
+        type:
+          !type:SimpleColoring
+          color: "#000000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: kitsune_primary
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: kitsune_secondary
+
+- type: marking
+  id: KitsuneTailNine
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      foxninetailstone1:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      foxninetailstone2:
+        type:
+          !type:SimpleColoring
+          color: "#000000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxninetailstone1
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxninetailstone2
+
+- type: marking
+  id: KitsuneTailThree
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      foxthreetailstone1:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      foxthreetailstone2:
+        type:
+          !type:SimpleColoring
+          color: "#000000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxthreetailstone1
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxthreetailstone2
+
+- type: marking
+  id: KitsuneTailTwo
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      foxtwotailstone1:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      foxtwotailstone2:
+        type:
+          !type:SimpleColoring
+          color: "#000000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxtwotailstone1
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/tails.rsi
+    state: foxtwotailstone2
+
+# Special
+- type: marking
+  id: KitsuneFox
+  bodyPart: Special
+  groupWhitelist: [ MarkingsKitsune ]
+  coloring:
+    layers:
+      kitsune_fox_body:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      kitsune_fox_innerear:
+        type:
+          !type:SimpleColoring
+          color: "#000000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/foxform.rsi
+    state: kitsune_fox_body
+  - sprite: _ClawCommand/Mobs/Customization/kitsune/foxform.rsi
+    state: kitsune_fox_innerear

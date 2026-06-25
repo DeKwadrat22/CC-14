@@ -1,0 +1,20 @@
+# Ported from upstream/DeltaV psionic.yml — verbatim.
+# Restored over earlier substitution: Ectoplasm was substituted with Vitamin.
+# Used by produce_dv.yml and the morgue's revenant Ectoplasm entity.
+
+- type: reagent
+  id: Ectoplasm
+  name: reagent-name-ectoplasm
+  group: Toxins
+  desc: reagent-desc-ectoplasm
+  flavor: sublime
+  color: "#61a79d"
+  physicalDesc: reagent-physical-desc-mystical # was reagent-physical-desc-ethereal in upstream; fork has no such locale key
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        probability: 0.4
+        damage:
+          types:
+            Poison: 2

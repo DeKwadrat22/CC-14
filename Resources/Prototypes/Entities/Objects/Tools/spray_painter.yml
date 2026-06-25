@@ -17,14 +17,21 @@
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
     colorPalette:
-      red: '#FF1212FF'
-      yellow: '#B3A234FF'
-      brown: '#947507FF'
-      green: '#3AB334FF'
-      cyan: '#03FCD3FF'
-      blue: '#0335FCFF'
-      white: '#FFFFFFFF'
-      black: '#333333FF'
+      # CC14 - Upstream colors
+      # yellow: '#B3A234FF'
+      # green: '#3AB334FF'
+      # blue: '#0335FCFF'
+      red: '#FF1212'
+      orange: '#FF9900'
+      yellow: '#FFFF00'
+      brown: '#947507'
+      green: '#00FF00'
+      cyan: '#03FCD3'
+      blue: '#5050FF'
+      white: '#FFFFFF'
+      black: '#333333'
+      pink: '#FF99FF' # CC14
+      purple: '#FF00FF' # CC14
       # standard atmos pipes
       waste: '#990000'
       distro: '#0055cc'
@@ -44,8 +51,32 @@
   id: SprayPainterRecharging
   suffix: Admeme
   components:
-  - type: AutoRecharge
-    rechargeDuration: 1
+  #- type: AutoRecharge # CC14
+  #  rechargeDuration: 1
+  - type: SprayPainter # CC14
+    pipeChargeCost: 0
+    decalChargeCost: 0
+    colorPalette:
+      # CC14 - Upstream colors
+      # yellow: '#B3A234FF'
+      # green: '#3AB334FF'
+      # blue: '#0335FCFF'
+      red: '#FF1212'
+      orange: '#FF9900'
+      yellow: '#FFFF00'
+      brown: '#947507'
+      green: '#00FF00'
+      cyan: '#03FCD3'
+      blue: '#5050FF'
+      white: '#FFFFFF'
+      black: '#333333'
+      pink: '#FF99FF' # CC14
+      purple: '#FF00FF' # CC14
+      # standard atmos pipes
+      waste: '#990000'
+      distro: '#0055cc'
+      air: '#03fcd3'
+      mix: '#947507'
 
 - type: entity
   parent: SprayPainter

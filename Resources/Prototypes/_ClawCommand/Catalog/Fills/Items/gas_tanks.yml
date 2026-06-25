@@ -1,0 +1,154 @@
+# Normal
+
+- type: entity
+  parent: GasTankRoundBase
+  id: TankWaterVapor
+  suffix: Claw Command
+  name: water vapor tank
+  description: A standard cylindrical gas tank for water vapor. It can hold 5 L of gas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Tanks/purple.rsi
+  - type: Item
+    sprite: _ClawCommand/Objects/Tanks/purple.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Objects/Tanks/purple.rsi
+
+- type: entity
+  id: TankWaterVaporFilled
+  parent: TankWaterVapor
+  suffix: Claw Command, Filled
+  components:
+  - type: GasTank
+    releasePressure: 21.3
+    air:
+      # 31 minutes
+      volume: 5
+      moles:
+        WaterVapor: 2.051379050
+      temperature: 293.15
+
+# Emergency
+- type: entity
+  parent: GasTankRoundBase
+  id: EmergencyTankWaterVapor
+  suffix: Claw Command
+  name: emergency water vapor tank
+  description: An easily portable tank for emergencies. Contains very little water vapor, rated for Feroxi survival use only. It can hold 0.66 L of gas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple.rsi
+  - type: Item
+    size: Small
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple.rsi
+    storedSprite:
+      state: storage
+      sprite: _ClawCommand/Objects/Tanks/emergency_purple.rsi
+  - type: GasTank
+    air:
+      volume: 0.66
+      temperature: 293.15
+  - type: Clothing
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple.rsi
+    slots:
+    - Pocket
+    - Belt
+    - suitStorage
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+
+- type: entity
+  id: EmergencyTankWaterVaporFilled
+  parent: EmergencyTankWaterVapor
+  suffix: Claw Command, Filled
+  components:
+  - type: GasTank
+    releasePressure: 21.3
+    air:
+      # 4 minutes
+      volume: 0.66
+      moles:
+        WaterVapor: 0.270782035
+      temperature: 293.15
+
+# Extended Emergency
+- type: entity
+  parent: EmergencyTankWaterVapor
+  id: EmergencyTankExtendedWaterVapor
+  suffix: Claw Command
+  name: extended-capacity emergency water vapor tank
+  description: An emergency tank with extended capacity. Technically rated for prolonged use. It can hold 1.5 L of gas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_extended.rsi
+  - type: Item
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_extended.rsi
+    storedSprite:
+      state: storage
+      sprite: _ClawCommand/Objects/Tanks/emergency_purple_extended.rsi
+  - type: GasTank
+    air:
+      volume: 1.5
+      temperature: 293.15
+  - type: Clothing
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_extended.rsi
+
+- type: entity
+  id: EmergencyTankExtendedWaterVaporFilled
+  parent: EmergencyTankExtendedWaterVapor
+  suffix: Claw Command, Filled
+  components:
+  - type: GasTank
+    releasePressure: 21.3
+    air:
+      # 9 minutes
+      volume: 1.5
+      moles:
+        WaterVapor: 0.615413715
+      temperature: 293.15
+
+# Double Extended Emergency
+- type: entity
+  parent: EmergencyTankExtendedWaterVapor
+  id: EmergencyTankDoubleExtendedWaterVapor
+  suffix: Claw Command
+  name: double emergency water vapore tank
+  description: A high-grade dual-tank emergency life support container. It holds a decent amount of water vapor for its small size. It can hold 2.5 L of gas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_double.rsi
+  - type: Item
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_double.rsi
+    storedSprite:
+      state: storage
+      sprite: _ClawCommand/Objects/Tanks/emergency_purple_double.rsi
+  - type: GasTank
+    air:
+      volume: 2.5
+      temperature: 293.15
+  - type: Clothing
+    sprite: _ClawCommand/Objects/Tanks/emergency_purple_double.rsi
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Blunt: 7.5
+
+- type: entity
+  id: EmergencyTankDoubleExtendedWaterVaporFilled
+  parent: EmergencyTankDoubleExtendedWaterVapor
+  suffix: Claw Command, Filled
+  components:
+  - type: GasTank
+    releasePressure: 21.3
+    air:
+      # 15 minutes
+      volume: 2.5
+      moles:
+        WaterVapor: 1.025689525
+      temperature: 293.15

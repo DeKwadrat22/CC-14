@@ -10,6 +10,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
+using Content.Shared.Sprite;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -28,6 +29,7 @@ public sealed partial class ProfilePreviewSpriteView
             return;
 
         EntMan.System<SharedVisualBodySystem>().ApplyProfileTo(PreviewDummy, humanoid);
+        EntMan.System<SharedScaleVisualsSystem>().SetSpriteScale(PreviewDummy, new System.Numerics.Vector2(humanoid.Width, humanoid.Height));
     }
 
     /// <summary>
@@ -53,6 +55,7 @@ public sealed partial class ProfilePreviewSpriteView
             var dummy = _prototypeManager.Index(humanoid.Species).DollPrototype;
             PreviewDummy = EntMan.SpawnEntity(dummy, MapCoordinates.Nullspace);
             EntMan.System<SharedVisualBodySystem>().ApplyProfileTo(PreviewDummy, humanoid);
+            EntMan.System<SharedScaleVisualsSystem>().SetSpriteScale(PreviewDummy, new System.Numerics.Vector2(humanoid.Width, humanoid.Height));
         }
         else
         {

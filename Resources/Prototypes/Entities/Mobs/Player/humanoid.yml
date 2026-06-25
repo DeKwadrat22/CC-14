@@ -84,6 +84,19 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: EventHumanoidCentcomm
+  # Claw Command — ERT species restriction ported from space/. ALL ERT variants
+  # inherit through ERTLeader so this single blacklist covers ERTChaplain,
+  # ERTJanitor, ERTEngineer(+Armed), ERTSecurity(+EVA/Armed*), ERTMedical(+Armed),
+  # and ERTLeaderEVA/Armed.
+  speciesBlacklist:
+    - Arachnid
+    - Diona
+    - Human
+    - Moth
+    - SlimePerson
+    - SpeciesIPC
+    - SpeciesShadowkin
+    - Vox
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -589,6 +602,36 @@
     - type: Loadout
       prototypes: [ CentcommGear ]
       roleLoadout: [ RoleSurvivalStandard ]
+
+## Claw Command Admiral
+
+- type: entity
+  name: Claw Command Admiral
+  id: RandomHumanoidSpawnerAdmiralClaw
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: AdmiralClaw
+
+- type: randomHumanoidSettings
+  id: AdmiralClaw
+  parent: EventHumanoidCentcomm
+  # Claw Command — same species blacklist as ERTLeader (ported from space/).
+  speciesBlacklist:
+    - Arachnid
+    - Diona
+    - Human
+    - Moth
+    - SlimePerson
+    - SpeciesIPC
+    - SpeciesShadowkin
+    - Vox
+  components:
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ AdmiralClawGear ]
 
 ## Syndicate
 

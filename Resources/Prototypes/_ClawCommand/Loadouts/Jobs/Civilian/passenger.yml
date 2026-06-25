@@ -1,0 +1,47 @@
+- type: loadout
+  id: LoadoutShoesWhite
+  equipment:
+    shoes: ClothingShoesColorWhite
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesBlue
+  equipment:
+    shoes: ClothingShoesColorBlue
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesBrown
+  equipment:
+    shoes: ClothingShoesColorBrown
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesGreen
+  equipment:
+    shoes: ClothingShoesColorGreen
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesOrange
+  equipment:
+    shoes: ClothingShoesColorOrange
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesRed
+  equipment:
+    shoes: ClothingShoesColorRed
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesYellow
+  equipment:
+    shoes: ClothingShoesColorYellow
+  groupBy: "coloredshoes"
+
+- type: loadout
+  id: LoadoutShoesPurple
+  equipment:
+    shoes: ClothingShoesColorPurple
+  groupBy: "coloredshoes"

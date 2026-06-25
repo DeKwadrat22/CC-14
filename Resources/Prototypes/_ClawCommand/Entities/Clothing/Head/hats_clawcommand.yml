@@ -1,0 +1,20 @@
+# Claw Command custom hats.
+# ClothingHeadHatCowboyClawCommand was deleted by the "Mass port from old Claw EE
+# fork" commit (0736f07514) when hats.yml got overwritten. Restored here from
+# git history at 0736f07514^. Sprite folder _ClawCommand/Clothing/Head/Hats/cowboyhatcco.rsi still on disk.
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCowboyClawCommand
+  suffix: Claw Command
+  name: claw command cowboy hat
+  description: Sheriff's back in town, plebs
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hats/cowboyhatcco.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hats/cowboyhatcco.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

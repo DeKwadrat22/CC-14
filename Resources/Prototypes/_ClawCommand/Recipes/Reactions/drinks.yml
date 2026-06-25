@@ -1,0 +1,13 @@
+- type: reaction
+  id: ReactionClawtail
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Iron:
+      amount: 2
+    JuiceLime:
+      amount: 1
+    Whiskey:
+      amount: 1
+  products:
+    ReagentDrinkClawtail: 2

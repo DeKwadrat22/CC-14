@@ -1,0 +1,11 @@
+- type: metabolizerType
+  id: MetabolizerFelinid
+  name: cc-metabolizer-type-felinid
+
+- type: metabolizerType
+  id: MetabolizerFeroxi
+  name: cc-metabolizer-type-feroxi
+
+- type: metabolizerType
+  id: MetabolizerKitsune
+  name: cc-metabolizer-type-kitsune

@@ -14,6 +14,8 @@
     Syringe: 5
     ChemistryBottleRobustHarvest: 3
     ChemistryBottleEZNutrient: 3
+    RobustHarvestChemistryBottle: 3 # Claw Command - alt-ID
+    EZNutrientChemistryBottle: 3 # Claw Command - alt-ID
     Bucket: 3
     BoxMouthSwab: 1
     BoxAgrichem: 1
@@ -25,3 +27,4 @@
     ChemistryBottleUnstableMutagen: 1
     Joint: 1
     ChemistryBottleLeft4Zed: 1
+    Left4ZedChemistryBottle: 1 # Claw Command - alt-ID

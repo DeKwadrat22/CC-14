@@ -1,0 +1,71 @@
+- type: marking
+  id: TailAxolotl
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: axolotl
+
+- type: marking
+  id: TailEasternDragon
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: easternd_primary
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: easternd_secondary
+
+- type: marking
+  id: TailFish
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: fish_primary
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: fish_secondary
+
+- type: marking
+  id: TailGecko
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: gecko_primary
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: gecko_secondary
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: gecko_tertiary
+
+- type: marking
+  id: TailMaw
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: maw
+
+- type: marking
+  id: TailSnake
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: snake
+
+- type: marking
+  id: TailSuccubus
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: succubus
+
+- type: marking
+  id: TailTentacle
+  bodyPart: Tail
+  groupWhitelist: [Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/tails32x32.rsi
+      state: tentacle

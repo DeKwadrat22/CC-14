@@ -252,7 +252,7 @@ public enum MagicMirrorUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class MagicMirrorSelectMessage : BoundUserInterfaceMessage
+public sealed partial class MagicMirrorSelectMessage : BoundUserInterfaceMessage
 {
     public MagicMirrorSelectMessage(Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
     {
@@ -264,7 +264,7 @@ public sealed class MagicMirrorSelectMessage : BoundUserInterfaceMessage
 
 
 [Serializable, NetSerializable]
-public sealed class MagicMirrorUiState : BoundUserInterfaceState
+public sealed partial class MagicMirrorUiState : BoundUserInterfaceState
 {
     public MagicMirrorUiState(Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> profiles,
         Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> markings,

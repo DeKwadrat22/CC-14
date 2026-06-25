@@ -1,0 +1,116 @@
+- type: entity
+  parent: DrinkBase
+  id: DrinkGlassBase
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 25
+  - type: ExaminableSolution
+    solution: drink
+  - type: FitsInDispenser
+    solution: drink
+  - type: Tag
+    tags:
+      - DrinkGlass
+
+- type: entity
+  parent: DrinkBase
+  id: DrinkBasePlastic
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+
+- type: entity
+  parent: DrinkBasePlastic
+  id: DrinkFitnessShakerBlack
+  name: fitness shaker
+  description: Big enough to contain enough protein to get perfectly swole. Don't mind the bits.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/shakerblack.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerRed
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/shakerred.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerBlue
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/shakerblue.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkIrishCarBomb
+  suffix: irish car bomb
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: IrishCarBomb
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkKiraSpecial
+  suffix: kira special
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: KiraSpecial
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/kiraspecial.rsi
+    state: icon

@@ -1,0 +1,29 @@
+# Ported from Floofstation: _Floof/Entities/Clothing/Uniforms/weddingdress.yml
+# Floofstation's ClothingUniformBaseSwitch base entity allowed switching between inner/outer slots.
+# Ported here alongside the wedding dress so the dress can be worn in either slot.
+
+- type: entity
+  abstract: true
+  parent: ClothingUniformBase
+  id: ClothingUniformBaseSwitch
+  components:
+  - type: Clothing
+    slots: [innerclothing, outerClothing]
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  parent: ClothingUniformBaseSwitch
+  id: ClothingUniformWeddingDress
+  name: wedding dress
+  description: a beautiful wedding dress fit for a princess
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/weddingdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/weddingdress.rsi
+    unequipDelay: 0
+  - type: Tag # needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt

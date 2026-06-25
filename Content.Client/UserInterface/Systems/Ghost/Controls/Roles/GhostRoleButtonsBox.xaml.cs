@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
     [GenerateTypedNameReferences]
@@ -35,6 +37,26 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                     {
                         var tooltip = new Tooltip();
                         tooltip.SetMessage(reason);
+                        button.RequestButton.TooltipSupplier = _ => tooltip;
+                    }
+
+                    button.RequestButton.AddChild(new TextureRect
+                    {
+                        TextureScale = new Vector2(0.4f, 0.4f),
+                        Stretch = TextureRect.StretchMode.KeepCentered,
+                        Texture = _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                        HorizontalExpand = true,
+                        HorizontalAlignment = HAlignment.Right,
+                    });
+                }
+                else if (!role.MeetsRequirements) // Claw Command - playtime requirement check
+                {
+                    button.RequestButton.Disabled = true;
+
+                    if (role.RequirementText != null)
+                    {
+                        var tooltip = new Tooltip();
+                        tooltip.SetMessage(FormattedMessage.FromMarkupOrThrow(role.RequirementText));
                         button.RequestButton.TooltipSupplier = _ => tooltip;
                     }
 

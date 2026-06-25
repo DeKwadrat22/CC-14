@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid.Prototypes; // Claw Command
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -69,4 +70,25 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
+
+    /// <summary>
+    ///     Claw Command - Trait IDs that are mutually exclusive with this trait.
+    ///     If any of these traits are already selected, this trait cannot be taken (and vice versa).
+    /// </summary>
+    [DataField]
+    public List<ProtoId<TraitPrototype>> Excludes { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - Department IDs where this trait is forbidden.
+    ///     If any of the player's preferred jobs belong to a restricted department, the trait is blocked.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<DepartmentPrototype>> RestrictedDepts { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - Species IDs that are allowed to take this trait.
+    ///     If set, only characters of the listed species can see and select this trait.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<SpeciesPrototype>> RestrictedSpecies { get; private set; } = new();
 }

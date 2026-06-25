@@ -1,0 +1,60 @@
+# Claw Command - Ported from DeltaV/upstream
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterClown
+  name: clown winter boots
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Shoes/Boots/winterbootsclown.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Shoes/Boots/winterbootsclown.rsi
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterMime
+  name: mime winter boots
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Shoes/Boots/winterbootsmime.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Shoes/Boots/winterbootsmime.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksMusician
+  name: musician thigh-high socks
+  description: A pair of thigh-high socks, styled for musicians.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Departmental/Service/musiciansocks.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Departmental/Service/musiciansocks.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksStripedWhite
+  name: striped white thigh-high socks
+  description: Just a plain pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Under/Socks/stripesockswhite.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Under/Socks/stripesockswhite.rsi
+
+- type: entity
+  parent: Clothing
+  id: ClothingClothWrap
+  name: cloth wraps
+  description: A roll of treated canvas used for wrapping claws or paws.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Sprite
+    state: icon
+    sprite: _ClawCommand/Clothing/Shoes/clothWrap.rsi
+  - type: Clothing
+    slots:
+    - gloves
+    - FEET
+    sprite: _ClawCommand/Clothing/Shoes/clothWrap.rsi

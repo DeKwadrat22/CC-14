@@ -1,0 +1,30 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites by The Trashpanda.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-reptilian",
+            "directions": 4
+        }
+    ]
+}

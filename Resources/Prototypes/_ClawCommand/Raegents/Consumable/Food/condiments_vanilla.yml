@@ -1,0 +1,11 @@
+# Ported from vanilla — verbatim.
+# Restored over earlier substitution: Frostoil was substituted with Coldsauce.
+
+- type: reagent
+  id: Frostoil
+  name: reagent-name-frostoil
+  group: Foods
+  desc: reagent-desc-frostoil
+  physicalDesc: reagent-physical-desc-cold
+  flavor: cold
+  color: skyblue

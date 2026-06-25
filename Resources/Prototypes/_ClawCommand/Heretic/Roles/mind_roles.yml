@@ -1,0 +1,26 @@
+# Mind role prototypes for heretic & ghoul. Without these, the Heretic gamerule
+# fails to resolve `MindRoleHeretic` in AntagSelection and gets rejected as invalid.
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleHeretic
+  name: Heretic Role
+  components:
+  - type: MindRole
+    antagPrototype: Heretic
+    exclusiveAntag: true
+    roleType: SoloAntagonist
+    subtype: role-subtype-heretic
+  - type: HereticRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleGhoul
+  name: Ghoul
+  components:
+  - type: MindRole
+    antagPrototype: Ghoul
+    exclusiveAntag: false
+    roleType: Familiar
+    subtype: role-subtype-ghoul
+  - type: GhoulRole

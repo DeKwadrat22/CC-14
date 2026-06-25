@@ -412,7 +412,7 @@ namespace Content.Client.Construction
         }
     }
 
-    public sealed class CraftingAvailabilityChangedArgs : EventArgs
+    public sealed partial class CraftingAvailabilityChangedArgs : EventArgs
     {
         public bool Available { get; }
 

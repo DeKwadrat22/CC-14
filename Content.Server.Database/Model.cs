@@ -339,6 +339,9 @@ namespace Content.Server.Database
         public string FacialHairColor { get; set; } = null!;
         public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
+        public float Width { get; set; } = 1f; // Claw Command
+        public float Height { get; set; } = 1f; // Claw Command
+        public string CustomSpeciesName { get; set; } = ""; // Claw Command
         public int SpawnPriority { get; set; } = 0;
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
@@ -461,9 +464,8 @@ namespace Content.Server.Database
         /// </summary>
         public string LoadoutName { get; set; } = string.Empty;
 
-        /*
-         * Insert extra data here like custom descriptions or colors or whatever.
-         */
+        // Claw Command - custom loadout item data
+        public string? CustomName { get; set; }
     }
 
     #endregion

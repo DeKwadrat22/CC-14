@@ -1,0 +1,147 @@
+# Dogborg conversion kits. Each kit is a small circuit-board / module item
+# that's printed at the Exosuit Fabricator and inserted during cyborg
+# construction to make the result a specific dogborg variant rather than a
+# regular cyborg shell. The cyborg construction graph branches on the kit's
+# Tag — see Resources/Prototypes/Recipes/Construction/Graphs/machines/cyborg.yml
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseDogborgKit
+  name: dogborg conversion kit
+  description: A specialized circuit board that, when installed during cyborg construction, configures the resulting chassis as a quadrupedal "dogborg" variant.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: mainboard
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 80
+
+# ===== Security =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitK9
+  name: K9 dogborg conversion kit
+  description: Installs a K9-pattern canine security frame onto a cyborg endoskeleton.
+  suffix: K9
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitK9
+
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitK9Dark
+  name: K9 dark dogborg conversion kit
+  description: Installs a dark-finish K9-pattern canine security frame onto a cyborg endoskeleton.
+  suffix: K9 Dark
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitK9Dark
+
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitValeSec
+  name: Vale security dogborg conversion kit
+  description: Installs a sleek Vale-pattern canine security frame onto a cyborg endoskeleton.
+  suffix: Vale (security)
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitValeSec
+
+# ===== Medical =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitMedihound
+  name: medihound dogborg conversion kit
+  description: Installs a Medihound-pattern canine medical frame onto a cyborg endoskeleton.
+  suffix: Medihound
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitMedihound
+
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitMedihoundDark
+  name: medihound dark dogborg conversion kit
+  description: Installs a dark-finish Medihound-pattern canine medical frame onto a cyborg endoskeleton.
+  suffix: Medihound Dark
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitMedihoundDark
+
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitValeMed
+  name: Vale medical dogborg conversion kit
+  description: Installs a sleek Vale-pattern canine medical frame onto a cyborg endoskeleton.
+  suffix: Vale (medical)
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitValeMed
+
+# ===== Engineering =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitPupDozer
+  name: pup dozer dogborg conversion kit
+  description: Installs a bulky Pup Dozer-pattern canine engineering frame onto a cyborg endoskeleton.
+  suffix: Pup Dozer
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitPupDozer
+
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitValeEng
+  name: Vale engineering dogborg conversion kit
+  description: Installs a sleek Vale-pattern canine engineering frame onto a cyborg endoskeleton.
+  suffix: Vale (engineering)
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitValeEng
+
+# ===== Janitor =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitScrubpup
+  name: scrubpup dogborg conversion kit
+  description: Installs a small Scrubpup-pattern canine janitor frame onto a cyborg endoskeleton.
+  suffix: Scrubpup
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitScrubpup
+
+# ===== Service =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitValeServ
+  name: Vale service dogborg conversion kit
+  description: Installs a sleek Vale-pattern canine service frame onto a cyborg endoskeleton.
+  suffix: Vale (service)
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitValeServ
+
+# ===== Mining =====
+- type: entity
+  parent: BaseDogborgKit
+  id: DogborgKitBlade
+  name: Blade dogborg conversion kit
+  description: Installs a Blade-pattern canine mining frame onto a cyborg endoskeleton.
+  suffix: Blade
+  components:
+  - type: Tag
+    tags:
+    - DogborgKitBlade
