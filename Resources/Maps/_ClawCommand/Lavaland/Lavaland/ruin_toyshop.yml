@@ -1926,7 +1926,6 @@ entities:
   - uid: 293
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 15.5,10.5
       parent: 1
 - proto: PosterLegitFoamForceAd
@@ -1958,7 +1957,6 @@ entities:
   - uid: 298
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 15.5,7.5
       parent: 1
 - proto: SingularityToy
@@ -3005,7 +3003,6 @@ entities:
   - uid: 446
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 13.5,8.5
       parent: 1
 - proto: VendingMachineMagivend

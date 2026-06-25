@@ -2742,7 +2742,6 @@ entities:
   - uid: 393
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -14.5,9.5
       parent: 1
 - proto: SignScience
@@ -2750,7 +2749,6 @@ entities:
   - uid: 394
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -14.5,5.5
       parent: 1
 - proto: SMESBasic

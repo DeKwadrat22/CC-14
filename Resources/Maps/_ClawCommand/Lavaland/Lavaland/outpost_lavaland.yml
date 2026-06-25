@@ -11386,7 +11386,6 @@ entities:
   - uid: 1726
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 28.5,-4.5
       parent: 1
 - proto: VendingMachineCondiments
@@ -11427,7 +11426,6 @@ entities:
   - uid: 1732
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 22.5,2.5
       parent: 1
 - proto: WallMining

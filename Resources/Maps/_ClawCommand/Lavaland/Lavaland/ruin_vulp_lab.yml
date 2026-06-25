@@ -1529,7 +1529,6 @@ entities:
   - uid: 182
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,13.5
       parent: 1
     - type: SignalSwitch
@@ -1537,7 +1536,6 @@ entities:
   - uid: 183
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,5.5
       parent: 1
     - type: SignalSwitch
@@ -1550,7 +1548,6 @@ entities:
   - uid: 184
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 6.5,5.5
       parent: 1
     - type: SignalSwitch

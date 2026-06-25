@@ -18153,7 +18153,6 @@ entities:
   - uid: 2791
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 32.5,-18.5
       parent: 1
 - proto: PosterContrabandInterdyne
@@ -19490,7 +19489,6 @@ entities:
   - uid: 2994
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 7.5,0.5
       parent: 1
 - proto: SignBridge
@@ -19552,7 +19550,6 @@ entities:
   - uid: 3003
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 20.5,-6.5
       parent: 1
 - proto: SignRedOne
@@ -19560,7 +19557,6 @@ entities:
   - uid: 3004
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 15.5,-3.5
       parent: 1
 - proto: SignRedThree
@@ -19568,7 +19564,6 @@ entities:
   - uid: 3005
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 14.5,-6.5
       parent: 1
 - proto: SignRedTwo
@@ -19576,7 +19571,6 @@ entities:
   - uid: 3006
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 21.5,-3.5
       parent: 1
 - proto: SignSecureMedRed
@@ -19584,7 +19578,6 @@ entities:
   - uid: 3007
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 10.5,0.5
       parent: 1
 - proto: SignSecureSmallRed
@@ -19592,7 +19585,6 @@ entities:
   - uid: 3008
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 2.5,0.5
       parent: 1
 - proto: SignServer
@@ -20409,7 +20401,6 @@ entities:
   - uid: 3131
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 12.5,7.5
       parent: 1
 - proto: VendingMachineColaRed
@@ -20506,13 +20497,11 @@ entities:
   - uid: 3145
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 20.5,5.5
       parent: 1
   - uid: 3146
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 21.5,3.5
       parent: 1
 - proto: VestineChemistryVial

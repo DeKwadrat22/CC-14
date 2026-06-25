@@ -34,38 +34,12 @@ namespace Content.Shared._ClawCommand.Lavaland.LavalandDeps
     // prototype loader accepts the YAML; runtime behavior they would have
     // driven is silently absent until a real system is ported.
 
-    // Goob tendril mob spawner — counts triggers, used with TriggerCounterLimit.
-    [RegisterComponent]
-    public sealed partial class TriggerCounterComponent : Component
-    {
-    }
-
-    // Cap on TriggerCounter, gates SpawnTableOnTrigger.
-    [RegisterComponent]
-    public sealed partial class TriggerCounterLimitComponent : Component
-    {
-        [DataField]
-        public int MaxCount = 1;
-    }
-
     // Goob worldgen-radius chunk loader (mining console). Fork lacks worldgen.
     [RegisterComponent]
     public sealed partial class WorldLoaderComponent : Component
     {
         [DataField]
         public float Radius = 256f;
-    }
-
-    // _DV.Weather marker — mob immune to ashstorm/etc.
-    [RegisterComponent]
-    public sealed partial class WeatherImmuneComponent : Component
-    {
-    }
-
-    // Goob boss music driver (Phase 4 lavaland audio). Inert; SharedBossMusicSystem stub does nothing.
-    [RegisterComponent]
-    public sealed partial class BossMusicComponent : Component
-    {
     }
 
     // Goob station-events combat power metric. Used by mob YAML for threat scaling.
@@ -76,51 +50,11 @@ namespace Content.Shared._ClawCommand.Lavaland.LavalandDeps
         public float Power = 0f;
     }
 
-    // Goob trigger spawn-table component (tendril mob spawner). Inert until trigger system is ported.
-    [RegisterComponent]
-    public sealed partial class SpawnTableOnTriggerComponent : Component
-    {
-    }
-
-    // Goob crop/decoration harvestable. Inert.
-    [RegisterComponent]
-    public sealed partial class HarvestableComponent : Component
-    {
-    }
-
-    // Goob melee dash mechanic (katana). Inert.
-    [RegisterComponent]
-    public sealed partial class MeleeDashComponent : Component
-    {
-    }
-
-    // Goob multi-shot gun firing (pistol PKA). Inert.
+    // Goob multi-shot gun firing (pistol PKA). Inert — Goob's SharedMultishotSystem
+    // is heavily entangled with _Shitmed.Targeting and Goob's MissChanceSystem which
+    // the fork doesn't carry. Skipping the real port; YAML loads, behavior silent.
     [RegisterComponent]
     public sealed partial class MultishotComponent : Component
-    {
-    }
-
-    // Goob held-grant (Hierophant Club). Inert.
-    [RegisterComponent]
-    public sealed partial class HeldGrantComponent : Component
-    {
-    }
-
-    // Goob block-melee delay component (crusher). Inert.
-    [RegisterComponent]
-    public sealed partial class UseDelayBlockMeleeComponent : Component
-    {
-    }
-
-    // Goob NPC speech-bark advertise (Colossus boss). Inert.
-    [RegisterComponent]
-    public sealed partial class AdvertiseComponent : Component
-    {
-    }
-
-    // Goob crusher upgrade — flips entity on hit. Inert.
-    [RegisterComponent]
-    public sealed partial class FlipOnHitComponent : Component
     {
     }
 
@@ -128,50 +62,6 @@ namespace Content.Shared._ClawCommand.Lavaland.LavalandDeps
     [RegisterComponent]
     public sealed partial class FTLDriveComponent : Component
     {
-    }
-
-    // Goob bossMusic prototype kind — minimal stub so YAML loads.
-    [Prototype]
-    public sealed partial class BossMusicPrototype : IPrototype
-    {
-        [IdDataField]
-        public string ID { get; private set; } = default!;
-    }
-
-    // _DV.Weather scheduler. Inert; ashfall/scheduling won't fire until a real weather scheduler lands.
-    // Fields mirror Goob's `Content.Server._DV.Weather.WeatherSchedulerComponent` so the YAML loads.
-    [RegisterComponent]
-    public sealed partial class WeatherSchedulerComponent : Component
-    {
-        [DataField(required: true)]
-        public List<LavalandWeatherStage> Stages = new();
-
-        [DataField]
-        public int Stage;
-    }
-
-    [Serializable, DataDefinition]
-    public partial struct LavalandWeatherStage
-    {
-        [DataField(required: true)]
-        public Content.Shared.Destructible.Thresholds.MinMax Duration = new(0, 0);
-
-        [DataField]
-        public EntProtoId? Weather;
-
-        [DataField]
-        public LocId? Message;
-    }
-}
-
-namespace Content.Shared._ClawCommand.Lavaland.Audio
-{
-    // Real boss-music system is part of Phase 6/Audio polish. Stub provides
-    // the API surface (StartBossMusic/EndAllMusic) so AggressorsSystem compiles.
-    public sealed partial class SharedBossMusicSystem : EntitySystem
-    {
-        public void StartBossMusic(EntityUid source) { }
-        public void EndAllMusic() { }
     }
 }
 

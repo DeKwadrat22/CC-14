@@ -740,7 +740,7 @@
     emptySpriteName: morphen_empty
   - type: SolutionContainerManager
     solutions:
-      pen:
+      hypospray: # _ClawCommand fix: was "pen" — Injector/Spillable/Visualizer all read solution "hypospray", so the pen rendered empty and injected 0u
         maxVol: 40
         reagents:
         - ReagentId: Tricordrazine
