@@ -84,7 +84,8 @@ public sealed partial class GatewayGeneratorSystem : EntitySystem
 
         generator.NextUnlock = TimeSpan.FromMinutes(5);
 
-        for (var i = 0; i < 3; i++)
+        // _ClawCommand: reduced initial planet spawn from 3 → 1 to cut round-start overhead.
+        for (var i = 0; i < 1; i++)
         {
             GenerateDestination(uid, generator);
         }
