@@ -87,3 +87,44 @@
     sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
   - type: Icon
     sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
+
+# Added for the new Saltern map import.
+- type: entity
+  parent: ChairWood
+  id: N14ChairArmchair
+  name: armchair
+  description: A padded armchair.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: armchair
+
+- type: entity
+  parent: Chair
+  id: N14ChairMetalRed
+  name: red metal chair
+  description: A red metal chair for sitting on.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: metal_chair_red
+
+- type: entity
+  parent: OfficeChairBase
+  id: N14ChairOfficeErgonomic
+  name: ergonomic office chair
+  description: An ergonomic chair built for long shifts.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: ergo_chair
+
+- type: entity
+  parent: Table
+  id: N14TableDeskWood2
+  name: wooden desk
+  description: A wooden desk.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
+    state: desk_wood

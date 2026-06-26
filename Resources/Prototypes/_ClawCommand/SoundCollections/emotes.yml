@@ -4,6 +4,14 @@
   - /Audio/_ClawCommand/Voice/Felinid/cat_mew1.ogg
   - /Audio/_ClawCommand/Voice/Felinid/cat_mew2.ogg
 
+# Ported from space/ (Nyanotrasen) — varied meows for humanoid felinids using *meows*
+- type: soundCollection
+  id: FelinidMeows
+  files:
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow1.ogg
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow2.ogg
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow3.ogg
+
 - type: soundCollection
   id: FelinidPurrs
   files:

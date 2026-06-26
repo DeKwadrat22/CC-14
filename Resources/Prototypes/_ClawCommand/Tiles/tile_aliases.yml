@@ -8,3 +8,11 @@
 - type: tileAlias
   id: FloorMS13CarpetFancyBlue
   target: FloorArcadeBlue
+
+- type: tileAlias
+  id: FloorMS13CarpetFancyGreen
+  target: FloorCarpetOffice
+
+- type: tileAlias
+  id: FloorMS13CarpetFancyRed
+  target: FloorArcadeRed

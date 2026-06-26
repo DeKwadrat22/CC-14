@@ -141,6 +141,10 @@ public sealed partial class BorgSystem : SharedBorgSystem
             && TryGetPoseBodyState(ent.Owner, poseComp.Pose, out var poseState))
         {
             _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Light, false);
+            // _ClawCommand: also hide the light-strip layer — its RSI only ships
+            // the standing pose, so leaving it visible while the body sits/rests
+            // renders a floating standing-pose strip above the seated body.
+            _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus, false);
             if (bakedBody)
                 _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Body, true);
             _sprite.LayerSetRsiState((ent.Owner, ent.Comp3), BorgVisualLayers.Body, poseState);

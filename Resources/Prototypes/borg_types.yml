@@ -52,6 +52,7 @@
   - BorgModuleTool
   - BorgModuleConstruction
   - BorgModuleRCD
+  - BorgModuleRPD # _ClawCommand: shipped by default — within ExtraModuleCount budget (3 extras + 6 defaults = 9 max, leaves 3 swap slots)
   - BorgModuleCable
 
   radioChannels:

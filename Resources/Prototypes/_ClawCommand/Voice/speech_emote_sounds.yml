@@ -10,7 +10,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # _ClawCommand: ported from /space/ — varied humanoid felinid meows
     CatHisses:
       collection: CatHisses
     Mew:
@@ -69,7 +69,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # _ClawCommand: ported from /space/ — varied humanoid felinid meows
     CatHisses:
       collection: CatHisses
     Mew:
@@ -186,7 +186,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # _ClawCommand: ported from /space/ — varied humanoid felinid meows
     CatHisses:
       collection: CatHisses
     Mew:
@@ -248,7 +248,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # _ClawCommand: ported from /space/ — varied humanoid felinid meows
     CatHisses:
       collection: CatHisses
     Mew:
