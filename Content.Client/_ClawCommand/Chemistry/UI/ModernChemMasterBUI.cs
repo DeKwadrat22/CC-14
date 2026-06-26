@@ -32,18 +32,21 @@ public sealed class ModernChemMasterBui(EntityUid owner, Enum uiKey) : BoundUser
             new ItemSlotButtonPressedEvent(SharedChemMaster.InputSlotName));
         _window.OutputEjectButton.OnPressed += _ => SendMessage(
             new ItemSlotButtonPressedEvent(SharedChemMaster.OutputSlotName));
+        _window.BufferSortButton.OnPressed += _ => SendMessage(
+            new ChemMasterSortingTypeCycleMessage());
         _window.BufferTransferButton.OnPressed += _ => SendMessage(
             new ChemMasterSetModeMessage(ChemMasterMode.Transfer));
         _window.BufferDiscardButton.OnPressed += _ => SendMessage(
             new ChemMasterSetModeMessage(ChemMasterMode.Discard));
         _window.CreatePillButton.OnPressed += _ => SendMessage(
             new ChemMasterCreatePillsMessage(
-                (uint) _window.PillDosage.Value, (uint) _window.PillNumber.Value, _window.LabelLine));
+                (uint) _window.PillDosage.Value,
+                (uint) _window.PillNumber.Value,
+                _window.LabelLine));
         _window.CreateBottleButton.OnPressed += _ => SendMessage(
             new ChemMasterOutputToBottleMessage(
-                (uint) _window.BottleDosage.Value, _window.LabelLine));
-        _window.BufferSortButton.OnPressed += _ => SendMessage(
-            new ChemMasterSortingTypeCycleMessage());
+                (uint) _window.BottleDosage.Value,
+                _window.LabelLine));
         _window.OutputBufferDraw.OnPressed += _ => SendMessage(
             new ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource.Internal));
         _window.OutputBeakerDraw.OnPressed += _ => SendMessage(
@@ -68,8 +71,6 @@ public sealed class ModernChemMasterBui(EntityUid owner, Enum uiKey) : BoundUser
             new ChemMasterOutputToBottleMessage(
                 (uint) _window.BottleDosage.Value,
                 _window.LabelLine));
-        _window.BufferSortButtonClassic.OnPressed += _ => SendMessage(
-            new ChemMasterSortingTypeCycleMessage());
 
         for (uint i = 0; i < _window.PillTypeButtons.Length; i++)
         {
