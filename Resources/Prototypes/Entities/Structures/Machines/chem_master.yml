@@ -58,7 +58,7 @@
   - type: UserInterface
     interfaces:
       enum.ChemMasterUiKey.Key:
-        type: ChemMasterBoundUserInterface
+        type: ModernChemMasterBui # CC14: New UI
   - type: ApcPowerReceiver
     powerLoad: 250
   - type: Appearance

@@ -62,6 +62,25 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputDrawSourceMessage>(OnSetDrawSourceMessage);
+
+            // CLAW COMMAND SPECIFIC //
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetTransferAmountMessage>(OnSetTransferAmountMessage);
+        }
+
+        /// <summary>
+        /// CLAW COMMAND SPECIFIC
+        /// <para>Sets the new UI trasnfer amount.</para>
+        /// </summary>
+        /// <param name="ent"></param>
+        /// <param name="args"></param>
+        private void OnSetTransferAmountMessage(Entity<ChemMasterComponent> ent, ref ChemMasterSetTransferAmountMessage args)
+        {
+            if (!Enum.IsDefined(typeof(ChemMasterReagentAmount), args.Amount))
+                return;
+
+            ent.Comp.TransferAmount = args.Amount;
+            UpdateUiState(ent);
+            ClickSound(ent);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev)
@@ -72,7 +91,10 @@ namespace Content.Server.Chemistry.EntitySystems
         private void UpdateUiState(Entity<ChemMasterComponent> ent, bool updateLabel = false)
         {
             var (owner, chemMaster) = ent;
-            if (!_solutionContainerSystem.TryGetSolution(owner, SharedChemMaster.BufferSolutionName, out _, out var bufferSolution))
+            if (!_solutionContainerSystem.TryGetSolution(owner,
+                    SharedChemMaster.BufferSolutionName,
+                    out _,
+                    out var bufferSolution))
                 return;
             var inputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.InputSlotName);
             var outputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.OutputSlotName);
@@ -81,8 +103,18 @@ namespace Content.Server.Chemistry.EntitySystems
             var bufferCurrentVolume = bufferSolution.Volume;
 
             var state = new ChemMasterBoundUserInterfaceState(
-                chemMaster.Mode, chemMaster.SortingType, BuildInputContainerInfo(inputContainer), BuildOutputContainerInfo(outputContainer),
-                bufferReagents, bufferCurrentVolume, bufferSolution.MaxVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel, chemMaster.DrawSource);
+                chemMaster.Mode,
+                chemMaster.SortingType,
+                BuildInputContainerInfo(inputContainer),
+                BuildOutputContainerInfo(outputContainer),
+                bufferReagents,
+                bufferCurrentVolume,
+                bufferSolution.MaxVolume,
+                chemMaster.PillType,
+                chemMaster.PillDosageLimit,
+                updateLabel,
+                chemMaster.DrawSource,
+                chemMaster.TransferAmount); // CC14: Added transfer amount.
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }

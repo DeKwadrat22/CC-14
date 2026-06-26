@@ -32,5 +32,8 @@ namespace Content.Server.Chemistry.Components
         /// </summary>
         [DataField]
         public ChemMasterDrawSource DrawSource = ChemMasterDrawSource.Internal;
+
+        [DataField]
+        public ChemMasterReagentAmount TransferAmount = ChemMasterReagentAmount.U5;
     }
 }
