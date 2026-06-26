@@ -197,6 +197,9 @@
   loadouts:
   - LoadoutBartenderKnuckles
   - LoadoutBartenderMosin
+  - LoadoutBartenderDoubleBarrelRubber # _ClawCommand: non-lethal loaded DB
+  - LoadoutBartenderDoubleBarrel       # _ClawCommand: simple bar DB shotgun
+  - LoadoutBartenderSawnOff            # _ClawCommand: sawed-off bar shotgun
 
 # Prisoner
 - type: loadoutGroup

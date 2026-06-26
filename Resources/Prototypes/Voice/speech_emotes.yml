@@ -208,6 +208,11 @@
   - barks
   - barked
   - barking
+  # _ClawCommand: "woof" aliases — *woofs* fires the same Bark emote as *barks*.
+  - woof
+  - woofs
+  - woofed
+  - woofing
 
 - type: emote
   id: Snarl
@@ -244,6 +249,12 @@
   - whines
   - whined
   - whining
+  # _ClawCommand: "whimper" aliases — *whimper* fires the same Whine emote as *whines*,
+  # so vulps get the VulpkaninWhimpers sound. Sister to *sob* which routes through Crying.
+  - whimper
+  - whimpers
+  - whimpered
+  - whimpering
 
 - type: emote
   id: Howl

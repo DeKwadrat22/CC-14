@@ -419,6 +419,26 @@
     back:
     - WeaponSniperMosin
 
+# _ClawCommand: bartender shotgun loadouts — locker already ships BoxBeanbag for refills.
+
+- type: loadout
+  id: LoadoutBartenderDoubleBarrelRubber
+  storage:
+    back:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutBartenderDoubleBarrel
+  storage:
+    back:
+    - WeaponShotgunDoubleBarreled
+
+- type: loadout
+  id: LoadoutBartenderSawnOff
+  storage:
+    back:
+    - WeaponShotgunSawn
+
 # === Pets ===
 
 - type: loadout

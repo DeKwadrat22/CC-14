@@ -125,6 +125,13 @@
   name: wooden desk
   description: A wooden desk.
   components:
+  # Override Table's IconSmooth layers — N14 desk RSI is a single-state standalone sprite.
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
+    layers:
+    - state: desk_wood
+  - type: Icon
+    sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: desk_wood
+  - type: IconSmooth
+    mode: NoSprite
