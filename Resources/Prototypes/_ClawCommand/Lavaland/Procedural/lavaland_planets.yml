@@ -59,15 +59,18 @@
     - duration: # 10-15 minutes of calm
         min: 600
         max: 900
-    - weather: AshfallLight
+    # _ClawCommand: scheduler stages reference entity-prototype IDs (the fork's weather is entity-based,
+    # not a WeatherPrototype class). The bare "Ashfall"/"AshfallLight" IDs Goob uses don't resolve here —
+    # they map to the WeatherAshfall/WeatherAshfallLight entities in Entities/StatusEffects/weather.yml.
+    - weather: WeatherAshfallLight
       duration:
         min: 90
         max: 120
-    - weather: Ashfall
+    - weather: WeatherAshfall
       duration:
         min: 90
         max: 120
-    - weather: AshfallLight
+    - weather: WeatherAshfallLight
       duration:
         min: 30
         max: 30

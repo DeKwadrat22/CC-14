@@ -5,6 +5,7 @@
   description: It's a space carp.
   abstract: true
   components:
+    - type: WeatherImmune # _ClawCommand: lavaland Ashfall heat 4/s — mirrors Goob carp.yml.
     - type: InputMover
     - type: MobMover
     - type: HTN
