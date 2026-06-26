@@ -70,10 +70,6 @@ public sealed class ModernChemMasterBui(EntityUid owner, Enum uiKey) : BoundUser
                 _window.LabelLine));
         _window.BufferSortButtonClassic.OnPressed += _ => SendMessage(
             new ChemMasterSortingTypeCycleMessage());
-        _window.OutputBufferDrawClassic.OnPressed += _ => SendMessage(
-            new ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource.Internal));
-        _window.OutputBeakerDrawClassic.OnPressed += _ => SendMessage(
-            new ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource.External));
 
         for (uint i = 0; i < _window.PillTypeButtons.Length; i++)
         {
