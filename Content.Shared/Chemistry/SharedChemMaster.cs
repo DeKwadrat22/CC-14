@@ -199,11 +199,22 @@ namespace Content.Shared.Chemistry
 
         public readonly ChemMasterDrawSource DrawSource;
 
+        // CLAW COMMAND SPECIFIC
+        public ChemMasterReagentAmount TransferAmount;
+
         public ChemMasterBoundUserInterfaceState(
-            ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
-            IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
+            ChemMasterMode mode,
+            ChemMasterSortingType sortingType,
+            ContainerInfo? inputContainerInfo,
+            ContainerInfo? outputContainerInfo,
+            IReadOnlyList<ReagentQuantity> bufferReagents,
+            FixedPoint2 bufferCurrentVolume,
             FixedPoint2 bufferMaxVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
+            uint selectedPillType,
+            uint pillDosageLimit,
+            bool updateLabel,
+            ChemMasterDrawSource drawSource,
+            ChemMasterReagentAmount transferAmount) // CC14: Added transfer amounts.
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -216,6 +227,7 @@ namespace Content.Shared.Chemistry
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
             DrawSource = drawSource;
+            TransferAmount = transferAmount;
         }
     }
 
@@ -223,5 +235,15 @@ namespace Content.Shared.Chemistry
     public enum ChemMasterUiKey
     {
         Key
+    }
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     Transfer Amount message between the BUI and the server.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterSetTransferAmountMessage(ChemMasterReagentAmount amount) : BoundUserInterfaceMessage
+    {
+        public ChemMasterReagentAmount Amount = amount;
     }
 }
