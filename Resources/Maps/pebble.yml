@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 275.2.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/13/2026 10:27:15
-  entityCount: 12904
+  time: 06/26/2026 15:47:15
+  entityCount: 12908
 maps:
 - 1
 grids:
@@ -40336,28 +40336,33 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 42
+    - type: AirlockAtmosBlockOpen
   - uid: 6179
     components:
     - type: Transform
       pos: 5.5,-6.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6180
     components:
     - type: Transform
       pos: 8.5,-7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6181
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 12.5,30.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6182
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 12.5,31.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6183
     components:
     - type: Transform
@@ -40366,6 +40371,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 56
+    - type: AirlockAtmosBlockOpen
   - uid: 6184
     components:
     - type: Transform
@@ -40374,6 +40380,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 59
+    - type: AirlockAtmosBlockOpen
   - uid: 6185
     components:
     - type: Transform
@@ -40382,6 +40389,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 63
+    - type: AirlockAtmosBlockOpen
   - uid: 6186
     components:
     - type: Transform
@@ -40390,6 +40398,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 42
+    - type: AirlockAtmosBlockOpen
   - uid: 6187
     components:
     - type: Transform
@@ -40399,6 +40408,7 @@ entities:
       deviceLists:
       - 64
       - 6175
+    - type: AirlockAtmosBlockOpen
 - proto: FirelockEdge
   entities:
   - uid: 6188
@@ -40407,6 +40417,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,-16.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6189
     components:
     - type: Transform
@@ -40417,6 +40428,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6190
     components:
     - type: Transform
@@ -40427,6 +40439,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6191
     components:
     - type: Transform
@@ -40437,6 +40450,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6192
     components:
     - type: Transform
@@ -40447,6 +40461,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6193
     components:
     - type: Transform
@@ -40457,6 +40472,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6194
     components:
     - type: Transform
@@ -40466,6 +40482,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 51
+    - type: AirlockAtmosBlockOpen
   - uid: 6195
     components:
     - type: Transform
@@ -40475,6 +40492,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 51
+    - type: AirlockAtmosBlockOpen
   - uid: 6196
     components:
     - type: Transform
@@ -40484,6 +40502,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 51
+    - type: AirlockAtmosBlockOpen
   - uid: 6197
     components:
     - type: Transform
@@ -40493,6 +40512,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 51
+    - type: AirlockAtmosBlockOpen
   - uid: 6198
     components:
     - type: Transform
@@ -40503,6 +40523,7 @@ entities:
       deviceLists:
       - 58
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6199
     components:
     - type: Transform
@@ -40513,6 +40534,7 @@ entities:
       deviceLists:
       - 58
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6200
     components:
     - type: Transform
@@ -40523,6 +40545,7 @@ entities:
       deviceLists:
       - 6168
       - 42
+    - type: AirlockAtmosBlockOpen
   - uid: 6201
     components:
     - type: Transform
@@ -40533,6 +40556,7 @@ entities:
       deviceLists:
       - 6168
       - 42
+    - type: AirlockAtmosBlockOpen
   - uid: 6202
     components:
     - type: Transform
@@ -40541,6 +40565,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
   - uid: 6203
     components:
     - type: Transform
@@ -40549,6 +40574,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
 - proto: FirelockFrame
   entities:
   - uid: 6204
@@ -40566,6 +40592,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 25
+    - type: AirlockAtmosBlockOpen
   - uid: 6206
     components:
     - type: Transform
@@ -40574,6 +40601,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 25
+    - type: AirlockAtmosBlockOpen
   - uid: 6207
     components:
     - type: Transform
@@ -40582,6 +40610,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 25
+    - type: AirlockAtmosBlockOpen
   - uid: 6208
     components:
     - type: Transform
@@ -40590,6 +40619,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 25
+    - type: AirlockAtmosBlockOpen
   - uid: 6209
     components:
     - type: Transform
@@ -40601,6 +40631,7 @@ entities:
       - 62
       - 6160
       - 6172
+    - type: AirlockAtmosBlockOpen
   - uid: 6210
     components:
     - type: Transform
@@ -40609,6 +40640,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 17
+    - type: AirlockAtmosBlockOpen
   - uid: 6211
     components:
     - type: Transform
@@ -40618,6 +40650,7 @@ entities:
       deviceLists:
       - 58
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6212
     components:
     - type: Transform
@@ -40627,6 +40660,7 @@ entities:
       deviceLists:
       - 56
       - 53
+    - type: AirlockAtmosBlockOpen
   - uid: 6213
     components:
     - type: Transform
@@ -40636,6 +40670,7 @@ entities:
       deviceLists:
       - 56
       - 54
+    - type: AirlockAtmosBlockOpen
   - uid: 6214
     components:
     - type: Transform
@@ -40644,6 +40679,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 54
+    - type: AirlockAtmosBlockOpen
   - uid: 6215
     components:
     - type: Transform
@@ -40653,6 +40689,7 @@ entities:
       deviceLists:
       - 56
       - 60
+    - type: AirlockAtmosBlockOpen
   - uid: 6216
     components:
     - type: Transform
@@ -40662,6 +40699,7 @@ entities:
       deviceLists:
       - 56
       - 55
+    - type: AirlockAtmosBlockOpen
   - uid: 6217
     components:
     - type: Transform
@@ -40670,6 +40708,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 29
+    - type: AirlockAtmosBlockOpen
   - uid: 6218
     components:
     - type: Transform
@@ -40679,6 +40718,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 50
+    - type: AirlockAtmosBlockOpen
   - uid: 6219
     components:
     - type: Transform
@@ -40688,6 +40728,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 49
+    - type: AirlockAtmosBlockOpen
   - uid: 6220
     components:
     - type: Transform
@@ -40698,6 +40739,7 @@ entities:
       - 10
       - 6170
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6221
     components:
     - type: Transform
@@ -40709,6 +40751,7 @@ entities:
       - 6169
       - 8
       - 45
+    - type: AirlockAtmosBlockOpen
   - uid: 6222
     components:
     - type: Transform
@@ -40717,67 +40760,80 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6223
     components:
     - type: Transform
       pos: 2.5,14.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6224
     components:
     - type: Transform
       pos: -1.5,14.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6225
     components:
     - type: Transform
       pos: 9.5,10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6226
     components:
     - type: Transform
       pos: -2.5,6.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6227
     components:
     - type: Transform
       pos: -14.5,-3.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6228
     components:
     - type: Transform
       pos: -14.5,-2.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6229
     components:
     - type: Transform
       pos: -14.5,-4.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6230
     components:
     - type: Transform
       pos: -13.5,-7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6231
     components:
     - type: Transform
       pos: 5.5,-4.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6232
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 28.5,20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6233
     components:
     - type: Transform
       pos: 18.5,-9.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6234
     components:
     - type: Transform
       pos: -6.5,15.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6235
     components:
     - type: Transform
@@ -40787,21 +40843,25 @@ entities:
       deviceLists:
       - 6170
       - 46
+    - type: AirlockAtmosBlockOpen
   - uid: 6236
     components:
     - type: Transform
       pos: -5.5,30.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6237
     components:
     - type: Transform
       pos: -3.5,24.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6238
     components:
     - type: Transform
       pos: 3.5,10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6239
     components:
     - type: Transform
@@ -40811,16 +40871,19 @@ entities:
       deviceLists:
       - 62
       - 6172
+    - type: AirlockAtmosBlockOpen
   - uid: 6240
     components:
     - type: Transform
       pos: -3.5,31.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6241
     components:
     - type: Transform
       pos: -3.5,32.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6242
     components:
     - type: Transform
@@ -40829,6 +40892,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6243
     components:
     - type: Transform
@@ -40837,6 +40901,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6244
     components:
     - type: Transform
@@ -40845,6 +40910,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6245
     components:
     - type: Transform
@@ -40853,6 +40919,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6246
     components:
     - type: Transform
@@ -40861,6 +40928,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6247
     components:
     - type: Transform
@@ -40869,6 +40937,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6248
     components:
     - type: Transform
@@ -40877,6 +40946,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6249
     components:
     - type: Transform
@@ -40885,6 +40955,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6250
     components:
     - type: Transform
@@ -40893,22 +40964,26 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6251
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 29.5,20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6252
     components:
     - type: Transform
       pos: 9.5,6.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6253
     components:
     - type: Transform
       pos: -7.5,15.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6254
     components:
     - type: Transform
@@ -40917,56 +40992,67 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6255
     components:
     - type: Transform
       pos: 1.5,11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6256
     components:
     - type: Transform
       pos: 2.5,11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6257
     components:
     - type: Transform
       pos: -12.5,11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6258
     components:
     - type: Transform
       pos: -3.5,13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6259
     components:
     - type: Transform
       pos: -3.5,12.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6260
     components:
     - type: Transform
       pos: -11.5,11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6261
     components:
     - type: Transform
       pos: -12.5,1.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6262
     components:
     - type: Transform
       pos: -11.5,1.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6263
     components:
     - type: Transform
       pos: -12.5,-8.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6264
     components:
     - type: Transform
       pos: -11.5,-8.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6265
     components:
     - type: Transform
@@ -40976,6 +41062,7 @@ entities:
       deviceLists:
       - 48
       - 6171
+    - type: AirlockAtmosBlockOpen
   - uid: 6266
     components:
     - type: Transform
@@ -40985,6 +41072,7 @@ entities:
       deviceLists:
       - 48
       - 6171
+    - type: AirlockAtmosBlockOpen
   - uid: 6267
     components:
     - type: Transform
@@ -40993,21 +41081,25 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6169
+    - type: AirlockAtmosBlockOpen
   - uid: 6268
     components:
     - type: Transform
       pos: -6.5,30.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6269
     components:
     - type: Transform
       pos: -11.5,31.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6270
     components:
     - type: Transform
       pos: -3.5,27.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6271
     components:
     - type: Transform
@@ -41016,6 +41108,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6170
+    - type: AirlockAtmosBlockOpen
   - uid: 6272
     components:
     - type: Transform
@@ -41024,31 +41117,37 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6170
+    - type: AirlockAtmosBlockOpen
   - uid: 6273
     components:
     - type: Transform
       pos: 3.5,-7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6274
     components:
     - type: Transform
       pos: 4.5,-7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6275
     components:
     - type: Transform
       pos: -3.5,28.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6276
     components:
     - type: Transform
       pos: -9.5,-18.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6277
     components:
     - type: Transform
       pos: -4.5,-18.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6278
     components:
     - type: Transform
@@ -41057,11 +41156,13 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6170
+    - type: AirlockAtmosBlockOpen
   - uid: 6279
     components:
     - type: Transform
       pos: 16.5,-16.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6280
     components:
     - type: Transform
@@ -41070,16 +41171,19 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6281
     components:
     - type: Transform
       pos: 21.5,-20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6282
     components:
     - type: Transform
       pos: 16.5,-13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6283
     components:
     - type: Transform
@@ -41088,16 +41192,19 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6284
     components:
     - type: Transform
       pos: 6.5,-12.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6285
     components:
     - type: Transform
       pos: 6.5,-11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6286
     components:
     - type: Transform
@@ -41106,6 +41213,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6287
     components:
     - type: Transform
@@ -41114,6 +41222,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6288
     components:
     - type: Transform
@@ -41122,16 +41231,19 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 14
+    - type: AirlockAtmosBlockOpen
   - uid: 6289
     components:
     - type: Transform
       pos: 7.5,-13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6290
     components:
     - type: Transform
       pos: 8.5,-13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6291
     components:
     - type: Transform
@@ -41140,6 +41252,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
   - uid: 6292
     components:
     - type: Transform
@@ -41149,6 +41262,7 @@ entities:
       deviceLists:
       - 62
       - 6172
+    - type: AirlockAtmosBlockOpen
   - uid: 6293
     components:
     - type: Transform
@@ -41158,6 +41272,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6294
     components:
     - type: Transform
@@ -41167,61 +41282,73 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6295
     components:
     - type: Transform
       pos: -10.5,8.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6296
     components:
     - type: Transform
       pos: -10.5,9.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6297
     components:
     - type: Transform
       pos: -10.5,10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6298
     components:
     - type: Transform
       pos: 17.5,13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6299
     components:
     - type: Transform
       pos: 9.5,16.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6300
     components:
     - type: Transform
       pos: 11.5,11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6301
     components:
     - type: Transform
       pos: 10.5,14.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6302
     components:
     - type: Transform
       pos: 11.5,14.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6303
     components:
     - type: Transform
       pos: -13.5,-12.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6304
     components:
     - type: Transform
       pos: -13.5,-11.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6305
     components:
     - type: Transform
       pos: -13.5,-20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6306
     components:
     - type: Transform
@@ -41230,6 +41357,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6173
+    - type: AirlockAtmosBlockOpen
   - uid: 6307
     components:
     - type: Transform
@@ -41238,6 +41366,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6173
+    - type: AirlockAtmosBlockOpen
   - uid: 6308
     components:
     - type: Transform
@@ -41246,11 +41375,13 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6173
+    - type: AirlockAtmosBlockOpen
   - uid: 6309
     components:
     - type: Transform
       pos: 7.5,22.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6310
     components:
     - type: Transform
@@ -41259,6 +41390,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6135
+    - type: AirlockAtmosBlockOpen
   - uid: 6311
     components:
     - type: Transform
@@ -41267,123 +41399,146 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6135
+    - type: AirlockAtmosBlockOpen
   - uid: 6312
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -27.5,26.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6313
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -26.5,26.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6314
     components:
     - type: Transform
       pos: -24.5,25.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6315
     components:
     - type: Transform
       pos: -24.5,24.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6316
     components:
     - type: Transform
       pos: -21.5,-7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6317
     components:
     - type: Transform
       pos: -9.5,7.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6318
     components:
     - type: Transform
       pos: -10.5,5.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6319
     components:
     - type: Transform
       pos: 30.5,10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6320
     components:
     - type: Transform
       pos: 22.5,13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6321
     components:
     - type: Transform
       pos: 22.5,10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6322
     components:
     - type: Transform
       pos: 6.5,-8.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6323
     components:
     - type: Transform
       pos: -21.5,-15.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6324
     components:
     - type: Transform
       pos: -21.5,-16.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6325
     components:
     - type: Transform
       pos: 10.5,-5.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6326
     components:
     - type: Transform
       pos: -4.5,6.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6327
     components:
     - type: Transform
       pos: 18.5,-10.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6328
     components:
     - type: Transform
       pos: -31.5,28.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6329
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,27.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6330
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,23.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6331
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,21.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6332
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6333
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,19.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6334
     components:
     - type: Transform
@@ -41392,6 +41547,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
   - uid: 6335
     components:
     - type: Transform
@@ -41400,6 +41556,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
   - uid: 6336
     components:
     - type: Transform
@@ -41408,6 +41565,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6168
+    - type: AirlockAtmosBlockOpen
   - uid: 6337
     components:
     - type: Transform
@@ -41417,6 +41575,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 42
+    - type: AirlockAtmosBlockOpen
   - uid: 6338
     components:
     - type: Transform
@@ -41425,6 +41584,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6174
+    - type: AirlockAtmosBlockOpen
   - uid: 6339
     components:
     - type: Transform
@@ -41433,6 +41593,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6174
+    - type: AirlockAtmosBlockOpen
   - uid: 6340
     components:
     - type: Transform
@@ -41441,6 +41602,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6341
     components:
     - type: Transform
@@ -41449,6 +41611,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 43
+    - type: AirlockAtmosBlockOpen
   - uid: 6342
     components:
     - type: Transform
@@ -41457,6 +41620,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 25
+    - type: AirlockAtmosBlockOpen
   - uid: 6343
     components:
     - type: Transform
@@ -41466,6 +41630,7 @@ entities:
       deviceLists:
       - 45
       - 44
+    - type: AirlockAtmosBlockOpen
   - uid: 6344
     components:
     - type: Transform
@@ -41476,6 +41641,7 @@ entities:
       deviceLists:
       - 14
       - 49
+    - type: AirlockAtmosBlockOpen
   - uid: 6345
     components:
     - type: Transform
@@ -41486,6 +41652,7 @@ entities:
       deviceLists:
       - 14
       - 49
+    - type: AirlockAtmosBlockOpen
   - uid: 6346
     components:
     - type: Transform
@@ -41495,6 +41662,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 49
+    - type: AirlockAtmosBlockOpen
   - uid: 6347
     components:
     - type: Transform
@@ -41504,6 +41672,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6348
     components:
     - type: Transform
@@ -41513,6 +41682,7 @@ entities:
       deviceLists:
       - 51
       - 52
+    - type: AirlockAtmosBlockOpen
   - uid: 6349
     components:
     - type: Transform
@@ -41522,6 +41692,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 51
+    - type: AirlockAtmosBlockOpen
   - uid: 6350
     components:
     - type: Transform
@@ -41531,6 +41702,7 @@ entities:
       deviceLists:
       - 57
       - 60
+    - type: AirlockAtmosBlockOpen
   - uid: 6351
     components:
     - type: Transform
@@ -41540,6 +41712,7 @@ entities:
       deviceLists:
       - 54
       - 57
+    - type: AirlockAtmosBlockOpen
   - uid: 6352
     components:
     - type: Transform
@@ -41548,6 +41721,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 16
+    - type: AirlockAtmosBlockOpen
   - uid: 6353
     components:
     - type: Transform
@@ -41558,6 +41732,7 @@ entities:
       - 62
       - 25
       - 6172
+    - type: AirlockAtmosBlockOpen
   - uid: 6354
     components:
     - type: Transform
@@ -41569,6 +41744,7 @@ entities:
       - 62
       - 6160
       - 6172
+    - type: AirlockAtmosBlockOpen
   - uid: 6355
     components:
     - type: Transform
@@ -41579,6 +41755,7 @@ entities:
       - 42
       - 64
       - 6175
+    - type: AirlockAtmosBlockOpen
   - uid: 6356
     components:
     - type: Transform
@@ -41589,6 +41766,7 @@ entities:
       - 42
       - 64
       - 6175
+    - type: AirlockAtmosBlockOpen
   - uid: 6357
     components:
     - type: Transform
@@ -41597,6 +41775,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 63
+    - type: AirlockAtmosBlockOpen
   - uid: 6358
     components:
     - type: Transform
@@ -41607,6 +41786,7 @@ entities:
       - 64
       - 63
       - 6175
+    - type: AirlockAtmosBlockOpen
   - uid: 6359
     components:
     - type: Transform
@@ -41617,6 +41797,7 @@ entities:
       - 64
       - 63
       - 6175
+    - type: AirlockAtmosBlockOpen
 - proto: Fireplace
   entities:
   - uid: 6360
@@ -69726,6 +69907,26 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-51.5
+      parent: 2
+  - uid: 12905
+    components:
+    - type: Transform
+      pos: -6.5,40.5
+      parent: 2
+  - uid: 12906
+    components:
+    - type: Transform
+      pos: -8.5,40.5
+      parent: 2
+  - uid: 12907
+    components:
+    - type: Transform
+      pos: -6.5,38.5
+      parent: 2
+  - uid: 12908
+    components:
+    - type: Transform
+      pos: -8.5,38.5
       parent: 2
 - proto: SpawnPointBotanist
   entities:
