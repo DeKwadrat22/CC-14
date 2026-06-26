@@ -1712,13 +1712,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,26.5
       parent: 1
-- proto: DefaultStationBeaconRuinBeachBiodome
-  entities:
-  - uid: 649
-    components:
-    - type: Transform
-      pos: 9.5,17.5
-      parent: 1
 - proto: DoubleEmergencyNitrogenTankFilled
   entities:
   - uid: 222

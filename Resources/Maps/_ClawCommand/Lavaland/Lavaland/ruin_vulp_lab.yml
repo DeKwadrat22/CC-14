@@ -1073,13 +1073,6 @@ entities:
     - type: Transform
       pos: 2.5,9.5
       parent: 1
-- proto: DefaultStationBeaconRuinRougeAI
-  entities:
-  - uid: 310
-    components:
-    - type: Transform
-      pos: 2.5,10.5
-      parent: 1
 - proto: FloorDrain
   entities:
   - uid: 108

@@ -464,13 +464,6 @@ entities:
     - type: Transform
       pos: 10.465552,16.411768
       parent: 1
-- proto: DefaultStationBeaconRuinChemistryLab
-  entities:
-  - uid: 56
-    components:
-    - type: Transform
-      pos: 8.5,6.5
-      parent: 1
 - proto: Grille
   entities:
   - uid: 40

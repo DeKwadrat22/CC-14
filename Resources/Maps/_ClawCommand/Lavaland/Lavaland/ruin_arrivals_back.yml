@@ -183,13 +183,6 @@ entities:
     - type: Transform
       pos: 3.4509692,-2.9956234
       parent: 1
-- proto: DefaultStationBeaconRuinArrivals
-  entities:
-  - uid: 50
-    components:
-    - type: Transform
-      pos: -3.5,-1.5
-      parent: 1
 - proto: EmergencyNitrogenTank
   entities:
   - uid: 18

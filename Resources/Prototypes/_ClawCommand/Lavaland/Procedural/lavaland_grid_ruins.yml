@@ -130,12 +130,6 @@
   priority: 17
 
 - type: lavalandGridRuin
-  id: AbductorDebris
-  name: lavaland-ruin-abductor
-  path: /Maps/_ClawCommand/Lavaland/Lavaland/ruin_abductor.yml
-  priority: 19
-
-- type: lavalandGridRuin
   id: CultBase
   name: lavaland-ruin-cult
   path: /Maps/_ClawCommand/Lavaland/Lavaland/ruin_cult.yml

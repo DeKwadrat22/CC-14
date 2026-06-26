@@ -1629,13 +1629,6 @@ entities:
     - type: Transform
       pos: -5.5,2.5
       parent: 1
-- proto: DefaultStationBeaconRuinGolemShuttle
-  entities:
-  - uid: 569
-    components:
-    - type: Transform
-      pos: -7.5,7.5
-      parent: 1
 - proto: EncryptionKeyFreelance
   entities:
   - uid: 238

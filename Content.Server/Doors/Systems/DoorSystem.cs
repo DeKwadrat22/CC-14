@@ -55,10 +55,13 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
         if (door.ChangeAirtight && TryComp(uid, out AirtightComponent? airtight))
         {
-            // Claw Command
+            // Claw Command — EnsureComp instead of AddComp: doors can re-enter
+            // the open state multiple times (map init, then runtime toggle), and
+            // AddComp throws "already occupied" on the second call, crashing the
+            // round.
             if (door.BlockOpenAtmos && collidable == false)
             {
-                AddComp<AirlockAtmosBlockOpenComponent>(uid);
+                EnsureComp<AirlockAtmosBlockOpenComponent>(uid);
             }
             else
             {

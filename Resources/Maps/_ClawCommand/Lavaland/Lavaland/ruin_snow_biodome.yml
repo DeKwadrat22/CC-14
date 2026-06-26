@@ -3870,13 +3870,6 @@ entities:
     - type: Transform
       pos: 3.5,8.5
       parent: 1
-- proto: DefaultStationBeaconRuinSnowBiodome
-  entities:
-  - uid: 1027
-    components:
-    - type: Transform
-      pos: -0.5,0.5
-      parent: 1
 - proto: DrinkIcedTeaCan
   entities:
   - uid: 694
