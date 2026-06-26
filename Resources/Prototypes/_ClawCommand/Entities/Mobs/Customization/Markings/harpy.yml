@@ -4,8 +4,8 @@
 - type: marking
   id: HarpyWingDefaultHuescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -21,8 +21,8 @@
 - type: marking
   id: HarpyWingDefaultWhitescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -38,8 +38,8 @@
 - type: marking
   id: HarpyWingClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -55,8 +55,8 @@
 - type: marking
   id: HarpyWingFoldedHuescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -72,8 +72,8 @@
 - type: marking
   id: HarpyWingFoldedWhitescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -89,8 +89,8 @@
 - type: marking
   id: HarpyWingOwlHuescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -106,8 +106,8 @@
 - type: marking
   id: HarpyWingOwlWhitescale
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -123,8 +123,8 @@
 - type: marking
   id: HarpyEarsDefault
   bodyPart: Head
-# groupWhitelist: [Harpy, Human, Slime, Diona, Reptilian] # CC: No Harpy yet.
-  groupWhitelist: [Human, Slime, Diona, Reptilian]
+# groupWhitelist: [Harpy, Human, Slime, Diona, Reptilian, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, Slime, Diona, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -140,8 +140,8 @@
 - type: marking
   id: HarpyEarsLarge
   bodyPart: Head
-# groupWhitelist: [Harpy, Human, Slime, Diona, Reptilian] # CC: No Harpy yet.
-  groupWhitelist: [Human, Slime, Diona, Reptilian]
+# groupWhitelist: [Harpy, Human, Slime, Diona, Reptilian, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, Slime, Diona, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -157,8 +157,8 @@
 - type: marking
   id: HarpyTailPhoenix
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human, Slime]
-  groupWhitelist: [Human, Slime]
+# groupWhitelist: [Harpy, Human, Slime, MarkingsAvali]
+  groupWhitelist: [Human, Slime, MarkingsAvali]
   coloring:
     default:
       type:
@@ -174,8 +174,8 @@
 - type: marking
   id: HarpyTailRooster
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -190,8 +190,8 @@
 - type: marking
   id: HarpyTailForkedWhitescale
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -206,8 +206,8 @@
 - type: marking
   id: HarpyTailForkedHuescale
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -222,8 +222,8 @@
 - type: marking
   id: HarpyTailFinch
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -238,8 +238,8 @@
 - type: marking
   id: HarpyTailPeacock
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human, Slime]
-  groupWhitelist: [Human, Slime]
+# groupWhitelist: [Harpy, Human, Slime, MarkingsAvali]
+  groupWhitelist: [Human, Slime, MarkingsAvali]
   coloring:
     default:
       type:
@@ -256,8 +256,8 @@
 - type: marking
   id: HarpyTailHaven
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -274,8 +274,8 @@
 - type: marking
   id: HarpyTailForkedLong
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -290,8 +290,8 @@
 - type: marking
   id: HarpyTailSwallow
   bodyPart: Tail
-#  groupWhitelist: [Harpy, Human, Slime, Reptilian]
-  groupWhitelist: [Human, Slime, Reptilian]
+#  groupWhitelist: [Harpy, Human, Slime, Reptilian, MarkingsAvali]
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsAvali]
   coloring:
     default:
       type:
@@ -306,8 +306,8 @@
 - type: marking
   id: HarpyWing2ToneClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_2tone_1
@@ -317,8 +317,8 @@
 - type: marking
   id: HarpyWing3ToneClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_3tone_1
@@ -330,8 +330,8 @@
 - type: marking
   id: HarpyWingSpeckledClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_speckled_1
@@ -341,8 +341,8 @@
 - type: marking
   id: HarpyWingUndertoneClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_undertone_1
@@ -352,8 +352,8 @@
 - type: marking
   id: HarpyWingTipsClassic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_wingtip_1
@@ -363,8 +363,8 @@
 - type: marking
   id: HarpyWingBat
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: bat_wings_tone_1
@@ -374,8 +374,8 @@
 - type: marking
   id: HarpyWingBionic
   bodyPart: Tail
-# groupWhitelist: [Harpy, Human] # CC: No Harpy yet.
-  groupWhitelist: [Human]
+# groupWhitelist: [Harpy, Human, MarkingsAvali] # CC: No Harpy yet.
+  groupWhitelist: [Human, MarkingsAvali]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Harpy/harpy_wings.rsi
       state: bionic_wings_tone_1

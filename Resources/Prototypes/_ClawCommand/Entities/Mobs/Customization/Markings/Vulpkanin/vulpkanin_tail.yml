@@ -4,7 +4,7 @@
 - type: marking
   id: VulpTailFennecNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fennec
@@ -12,7 +12,7 @@
 - type: marking
   id: VulpTailFluffyNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fluffy
@@ -20,7 +20,7 @@
 - type: marking
   id: VulpTailHuskyNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: husky
@@ -32,7 +32,7 @@
 - type: marking
   id: VulpTailLongNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: long
@@ -42,7 +42,7 @@
 - type: marking
   id: VulpTailVulpNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -52,7 +52,7 @@
 - type: marking
   id: VulpTailVulpFadeNew
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -62,7 +62,7 @@
 - type: marking
   id: VulpTailVulpAlt
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
@@ -76,7 +76,7 @@
 - type: marking
   id: VulpTailVulpAltTip
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
@@ -91,7 +91,7 @@
   id: VulpTailFox
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox
@@ -113,7 +113,7 @@
   id: VulpTailFoxTip
   bodyPart: Tail
 
-  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox
@@ -135,7 +135,7 @@
   id: VulpTailBushy
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: bushfluff
@@ -153,7 +153,7 @@
   id: VulpTailCorgi
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: corgi
@@ -171,7 +171,7 @@
   id: VulpTailVulpNewAnimated
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
@@ -180,7 +180,7 @@
   id: VulpTailVulpTipAnimated
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
@@ -191,7 +191,7 @@
   id: VulpTailVulpFadeNewAnimated
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
@@ -202,7 +202,7 @@
   id: VulpTailHuskyAlt
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: husky
@@ -211,7 +211,7 @@
   id: VulpTailFox2
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox2
@@ -220,7 +220,7 @@
   id: VulpTailFox3
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox3
@@ -232,7 +232,7 @@
   id: VulpTailDalmatian
   bodyPart: Tail
 
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: dalmatian
@@ -249,7 +249,7 @@
 - type: marking
   id: VulpTailVulpAlt2
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -269,7 +269,7 @@
 - type: marking
   id: VulpTailVulpFadeAlt2
   bodyPart: Tail
-  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune ]
+  groupWhitelist: [ Reptilian, Slime, Vulpkanin, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali ]
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp

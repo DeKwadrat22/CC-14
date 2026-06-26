@@ -1,0 +1,158 @@
+# _ClawCommand: Avali species.
+# Port intent (from space):
+#   - Space ships Avali voice/emote infrastructure (MaleAvali/FemaleAvali speech + emote bundles)
+#     but never wires a full SpeciesAvali entry — the bundles are reused by Resomi.
+#   - The "gameplay-as-played" Avali in space is Resomi's stat-line (small, cold-tolerant,
+#     ammonia-blooded, claws, faster in zero-g) wearing the Avali voice.
+#   - We therefore implement Avali as a first-class Claw Command species that adopts those
+#     Resomi-derived stats but follows our fork's species convention (human body sprites,
+#     custom markings, sex-aware speech, Felinid-style organ wiring).
+
+- type: markingsGroup
+  parent: Undergarments
+  id: MarkingsAvali
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ AvaliEars ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentBottom:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Genital:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceAvali
+  suffix: Claw Command
+  name: avali appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganAvaliTorso
+      Head: OrganAvaliHead
+      ArmLeft: OrganAvaliArmLeft
+      ArmRight: OrganAvaliArmRight
+      HandRight: OrganAvaliHandRight
+      HandLeft: OrganAvaliHandLeft
+      LegLeft: OrganAvaliLegLeft
+      LegRight: OrganAvaliLegRight
+      FootLeft: OrganAvaliFootLeft
+      FootRight: OrganAvaliFootRight
+      Brain: OrganAvaliBrain
+      Eyes: OrganAvaliEyes
+      Tongue: OrganAvaliTongue
+      Appendix: OrganAvaliAppendix
+      Ears: OrganAvaliEars
+      Lungs: OrganAvaliLungs
+      Heart: OrganAvaliHeart
+      Stomach: OrganAvaliStomach
+      Liver: OrganAvaliLiver
+      Kidneys: OrganAvaliKidneys
+  - type: HumanoidProfile
+    species: SpeciesAvali
+
+- type: entity
+  parent:
+  - AppearanceAvali
+  - BaseSpeciesMobOrganic
+  id: MobAvali
+  name: Urist McChirp
+  suffix: Claw Command
+  components:
+  # Voice — uses the ported Avali speech + emote sound profiles (MaleAvali / FemaleAvali).
+  - type: Vocal
+    sounds:
+      Male: MaleAvali
+      Female: FemaleAvali
+      Unsexed: MaleAvali
+  - type: Speech
+    speechSounds: MaleAvali
+    speechVerb: Parrot
+  # Resomi-derived gameplay: cold-loving, ammonia bloodstream, claw melee, zero-g specialists.
+  - type: Bloodstream
+    bloodReagent: AmmoniaBlood
+  - type: Temperature
+    coldDamageThreshold: 195.4   # cold-tolerant (ammonia freezing point ~ -77 C)
+    heatDamageThreshold: 320.15  # heat-fragile (47 C)
+    coldDamage:
+      types:
+        Cold: 0.05
+    heatDamage:
+      types:
+        Heat: 3
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 2.5  # pack-hunter zero-g advantage
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 30
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 2

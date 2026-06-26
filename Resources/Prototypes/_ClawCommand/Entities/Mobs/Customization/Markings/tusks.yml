@@ -1,7 +1,7 @@
 - type: marking
   id: GoblinTusksSmall
   bodyPart: Head
-  groupWhitelist: [Slime, Human]
+  groupWhitelist: [Slime, Human, MarkingsAvali]
   coloring:
     default:
       type:
@@ -14,7 +14,7 @@
 - type: marking
   id: GoblinTusksBig
   bodyPart: Head
-  groupWhitelist: [Slime, Human]
+  groupWhitelist: [Slime, Human, MarkingsAvali]
   coloring:
     default:
       type:

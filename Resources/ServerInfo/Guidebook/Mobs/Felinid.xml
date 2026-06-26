@@ -1,0 +1,27 @@
+<Document>
+  # Felinids
+
+  <Box>
+    <GuideEntityEmbed Entity="AppearanceFelinid" Caption=""/>
+  </Box>
+
+  Small and mischievous cat-eared people.
+
+  ## Diet
+
+  - Can eat raw meat.
+  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+
+  ## Benefits
+
+  - Uses their claws and bite to do Piercing damage in melee.
+  - Carries the Felinid accent, replacement vocalizations, and a felinid-specific speech style.
+  - Can perform a short Gravity Jump using their ability action.
+  - Move slightly faster than the average crewmember.
+
+  ## Drawbacks
+
+  - Take modified damage per the Felinid damage modifier set — be careful in fights.
+  - Cannot tolerate dog food. Hairballs and other felinid quirks may apply.
+
+</Document>

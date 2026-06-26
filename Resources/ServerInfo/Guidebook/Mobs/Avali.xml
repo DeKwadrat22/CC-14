@@ -1,0 +1,30 @@
+<Document>
+  # Avali
+
+  <Box>
+    <GuideEntityEmbed Entity="AppearanceAvali" Caption=""/>
+  </Box>
+
+  Avali are a small, feathered, pack-living species hailing from a frigid world. They are quick, talkative, and surprisingly capable in low-gravity environments — though life on a temperate station is a constant balancing act.
+
+  ## Diet
+
+  - Omnivore. Their stomach handles raw meat, vegetables, and pills without issue.
+
+  ## Benefits
+
+  - [color=#1e90ff]Cold-adapted[/color]: an ammonia-based bloodstream lets them tolerate temperatures down to around -77 C.
+  - [color=#1e90ff]Light cold damage[/color]: they take very little Cold damage even when overexposed.
+  - [color=#1e90ff]Zero-G specialists[/color]: pack-hunter instincts give Avali noticeably better acceleration when weightless.
+  - [color=#1e90ff]Claws[/color]: their unarmed attack deals Slash damage with the sound of an alien claw strike.
+
+  ## Drawbacks
+
+  - [color=#ffa500]Heat-fragile[/color]: temperatures above roughly 47 C burn them quickly and they take significantly more Heat damage than humans.
+  - [color=#ffa500]Specialised blood[/color]: their ammonia-based blood means standard transfusion reagents won't help — find another Avali in a pinch.
+
+  ## Voice
+
+  Avali speech is a stream of clicks, chirps and trills. In-game this comes through as the Parrot speech verb backed by the Avali voice profile, and emotes like *scream*, *laugh*, *honk*, *whistle*, and *weh* play the Avali-specific sound bank.
+
+</Document>

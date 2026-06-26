@@ -4,7 +4,7 @@
 - type: marking
   id: SnoutCanidAlt2
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_canid_alt2
@@ -13,7 +13,7 @@
 #  id: SnoutCanidAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_canid_alt
@@ -23,7 +23,7 @@
 - type: marking
   id: SnoutFLCanid
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_flcanid_primary
@@ -33,7 +33,7 @@
 - type: marking
   id: SnoutLCanid
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_lcanid_primary
@@ -43,7 +43,7 @@
 - type: marking
   id: SnoutFLCanidAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_flcanidalt_primary
@@ -51,7 +51,7 @@
 - type: marking
   id: SnoutFLCanidStripe
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_flcanidstripe_primary
@@ -61,7 +61,7 @@
 - type: marking
   id: SnoutLCanidStripe
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_lcanidstripe_primary
@@ -71,7 +71,7 @@
 - type: marking
   id: SnoutFLCanidStripeAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_flcanidstripealt_primary
@@ -81,7 +81,7 @@
 - type: marking
   id: SnoutLCanidStripeAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_lcanidstripealt_primary
@@ -92,7 +92,7 @@
 #  id: SnoutFHusky
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fhusky_primary
@@ -102,7 +102,7 @@
 - type: marking
   id: SnoutHusky
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_husky_primary
@@ -113,7 +113,7 @@
 #  id: SnoutFWolf
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fwolf_primary
@@ -123,7 +123,7 @@
 - type: marking
   id: SnoutWolf
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_wolf_primary
@@ -134,7 +134,7 @@
 #  id: SnoutFWolfAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fwolfalt_primary
@@ -142,7 +142,7 @@
 - type: marking
   id: SnoutWolfAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_wolfalt_primary
@@ -150,7 +150,7 @@
 - type: marking
   id: SnoutFSCanid
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_fscanid_primary
@@ -160,7 +160,7 @@
 - type: marking
   id: SnoutSCanid
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_scanid_primary
@@ -171,7 +171,7 @@
 #  id: SnoutFSCanidAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt_primary
@@ -182,7 +182,7 @@
 #  id: SnoutFSCanidAlt2
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt2_primary
@@ -191,7 +191,7 @@
 #  id: SnoutFSCanidAlt3
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt3_primary
@@ -201,7 +201,7 @@
 - type: marking
   id: SnoutSCanidAlt3
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_scanidalt3_primary
@@ -213,7 +213,7 @@
 - type: marking
   id: SnoutRound
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_round
@@ -221,7 +221,7 @@
 - type: marking
   id: SnoutSharp
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_sharp
@@ -229,7 +229,7 @@
 - type: marking
   id: SnoutRoundLight
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_roundlight
@@ -237,7 +237,7 @@
 - type: marking
   id: SnoutSharpLight
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_sharplight
@@ -248,7 +248,7 @@
 #  id: SnoutFBird
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fbird_primary
@@ -260,7 +260,7 @@
 - type: marking
   id: SnoutBird
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_bird_primary
@@ -273,7 +273,7 @@
 #  id: SnoutFBigBeak
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fbigbeak_primary
@@ -281,7 +281,7 @@
 - type: marking
   id: SnoutBigBeak
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_bigbeak_primary
@@ -290,7 +290,7 @@
 #  id: SnoutFCorvidBeak
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fcorvidbeak_primary
@@ -299,7 +299,7 @@
 #  id: SnoutFToucan
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_ftoucan_primary
@@ -309,7 +309,7 @@
 - type: marking
   id: SnoutToucan
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_toucan_primary
@@ -319,7 +319,7 @@
 - type: marking
   id: SnoutBirdSmall
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_birdsmall_primary
@@ -331,7 +331,7 @@
 - type: marking
   id: SnoutBigBeakShort
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_bigbeakshort_primary
@@ -339,7 +339,7 @@
 - type: marking
   id: SnoutSlimBeak
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_slimbeak_primary
@@ -347,7 +347,7 @@
 - type: marking
   id: SnoutSlimBeakAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_slimbeakalt_primary
@@ -355,7 +355,7 @@
 - type: marking
   id: SnoutSlimBeakShort
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_slimbeakshort_primary
@@ -363,7 +363,7 @@
 - type: marking
   id: SnoutHookBeak
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_hookbeak_primary
@@ -371,7 +371,7 @@
 - type: marking
   id: SnoutHookBeakBig
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_hookbeakbig_primary
@@ -382,7 +382,7 @@
 #  id: SnoutFWah
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fwah_primary
@@ -394,7 +394,7 @@
 - type: marking
   id: SnoutWah
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_wah_primary
@@ -407,7 +407,7 @@
 #  id: SnoutFWahAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fwahalt_primary
@@ -417,7 +417,7 @@
 - type: marking
   id: SnoutWahAlt
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_wahalt_primary
@@ -428,7 +428,7 @@
 #  id: SnoutFOtie
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fotie_primary
@@ -438,7 +438,7 @@
 - type: marking
   id: SnoutOtie
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_otie_primary
@@ -449,7 +449,7 @@
 #  id: SnoutFOtieSmile
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fotiesmile_primary
@@ -459,7 +459,7 @@
 - type: marking
   id: SnoutOtieSmile
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_otiesmile_primary
@@ -470,7 +470,7 @@
 #  id: SnoutFPede
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fpede_primary
@@ -480,7 +480,7 @@
 - type: marking
   id: SnoutPede
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_pede_primary
@@ -491,7 +491,7 @@
 #  id: SnoutFRodent
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_frodent_primary
@@ -499,7 +499,7 @@
 - type: marking
   id: SnoutRodent
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_rodent_primary
@@ -508,7 +508,7 @@
 #  id: SnoutFSergal
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fsergal_primary
@@ -519,7 +519,7 @@
 #  id: SnoutFRhino
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_frhino_primary
@@ -529,7 +529,7 @@
 - type: marking
   id: SnoutRhino
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_rhino_primary
@@ -542,7 +542,7 @@
 #  id: SnoutFBovine
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fbovine_primary
@@ -554,7 +554,7 @@
 - type: marking
   id: SnoutBovine
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_bovine_primary
@@ -567,7 +567,7 @@
 #  id: SnoutFElephant
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_felephant_primary
@@ -577,7 +577,7 @@
 - type: marking
   id: SnoutElephant
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_elephant_primary
@@ -588,7 +588,7 @@
 #  id: SnoutFRound
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fround
@@ -597,7 +597,7 @@
 #  id: SnoutFSharpLight
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fsharplight
@@ -606,7 +606,7 @@
 #  id: SnoutFRoundLight
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_froundlight
@@ -615,7 +615,7 @@
 #  id: SnoutFShark
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fshark_primary
@@ -623,7 +623,7 @@
 - type: marking
   id: SnoutShark
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_shark_primary
@@ -631,7 +631,7 @@
 - type: marking
   id: SnoutHShark
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hshark_primary
@@ -641,7 +641,7 @@
 - type: marking
   id: SnoutHSharkEyes
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hshark_eyes_primary
@@ -652,7 +652,7 @@
 #  id: SnoutFBug
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  colorLinks:
 #    snout_fbug_FRONT_primary: snout_fbug_primary
 #  sprites:
@@ -666,7 +666,7 @@
 - type: marking
   id: SnoutBug
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_bug_primary
@@ -676,7 +676,7 @@
 - type: marking
   id: SnoutBugNoEyes
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_bug_no_eyes
@@ -684,7 +684,7 @@
 - type: marking
   id: SnoutSergal
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_sergal_primary
@@ -694,7 +694,7 @@
 - type: marking
   id: SnoutHHorse
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hhorse_primary
@@ -704,7 +704,7 @@
 - type: marking
   id: SnoutHZebra
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hzebra_primary
@@ -714,7 +714,7 @@
 - type: marking
   id: SnoutHAnubus
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hanubus_primary
@@ -724,7 +724,7 @@
 - type: marking
   id: SnoutHPanda
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hpanda_primary
@@ -734,7 +734,7 @@
 - type: marking
   id: SnoutHJackal
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state:  snout_hjackal_primary
@@ -744,7 +744,7 @@
 - type: marking
   id: SnoutHSpots
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_hspots_primary
@@ -755,7 +755,7 @@
 #  id: SnoutFSkulldog
 #  bodyPart: Snout
 #  markingCategory: Snout
-#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune]
+#  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsKitsune, MarkingsAvali]
 #  sprites:
 #  - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fskulldog_primary
@@ -767,7 +767,7 @@
 - type: marking
   id: SnoutSkulldog
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_skulldog_primary
@@ -779,7 +779,7 @@
 - type: marking
   id: SnoutSharkBlubber
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_sharkblubber_primary
@@ -789,7 +789,7 @@
 - type: marking
   id: SnoutRat
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_rat_primary
@@ -799,7 +799,7 @@
 - type: marking
   id: SnoutNTajaran
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_ntajaran
@@ -807,7 +807,7 @@
 - type: marking
   id: SnoutStubby
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_stubby_primary
@@ -817,7 +817,7 @@
 - type: marking
   id: SnoutLeporid
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyratsnouts.rsi
     state: snout_leporid_primary

@@ -4,12 +4,19 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
   - Arachnid
+  - Avali       # _ClawCommand
   - Diona
   - Dwarf
+  - Felinid     # _ClawCommand
+  - Feroxi      # _ClawCommand
   - Human
+  - IPCs        # _ClawCommand
+  - Kitsunes    # _ClawCommand
   - Moth
   - Reptilian
+  - Shadowkin   # _ClawCommand
   - SlimePerson
+  - Tajaran     # _ClawCommand
   - Vox
   - Vulpkanin
 
@@ -57,3 +64,40 @@
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+
+# _ClawCommand: custom species pages.
+
+- type: guideEntry
+  id: Felinid
+  name: cc-species-name-felinid
+  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+
+- type: guideEntry
+  id: Feroxi
+  name: cc-species-name-feroxi
+  text: "/ServerInfo/Guidebook/Mobs/Feroxi.xml"
+
+- type: guideEntry
+  id: Kitsunes
+  name: cc-species-name-kitsunes
+  text: "/ServerInfo/Guidebook/Mobs/Kitsunes.xml"
+
+- type: guideEntry
+  id: Shadowkin
+  name: cc-species-name-shadekin
+  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
+  id: Tajaran
+  name: cc-species-name-tajaran
+  text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+
+- type: guideEntry
+  id: IPCs
+  name: species-name-ipc
+  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+
+- type: guideEntry
+  id: Avali
+  name: cc-species-name-avali
+  text: "/ServerInfo/Guidebook/Mobs/Avali.xml"

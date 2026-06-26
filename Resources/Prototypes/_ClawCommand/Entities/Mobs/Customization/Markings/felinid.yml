@@ -1,7 +1,7 @@
 - type: marking
   id: FelinidTiger
   bodyPart: Tail
-  groupWhitelist: [MarkingsFelinid, MarkingsKitsune, Vulpkanin, Human, MarkingsIPC, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsFelinid, MarkingsKitsune, Vulpkanin, Human, MarkingsIPC, MarkingsTajaran, Slime, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Felinid/tiger_tail.rsi
     state: m_tail_tiger_primary

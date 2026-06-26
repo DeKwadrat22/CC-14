@@ -1,7 +1,7 @@
 ﻿- type: marking
   id: NeckChestfluff
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune] # Floof - Marking Restrictions
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali] # Floof - Marking Restrictions
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/vulpkanin.rsi
     state: chestfloof
@@ -10,7 +10,7 @@
 - type: marking
   id: TailBrushtip
   bodyPart: Tail
-  groupWhitelist: [Vulpkanin, Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune] # Floof - Anthro Marking Restrictions
+  groupWhitelist: [Vulpkanin, Reptilian, Slime, MarkingsIPC, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune, MarkingsAvali] # Floof - Anthro Marking Restrictions
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/vulpkanin.rsi
     state: brushtiptail
@@ -20,7 +20,7 @@
 - type: marking
   id: SnoutCheesegal
   bodyPart: Snout
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune] # Floof - Marking Restrictions
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali] # Floof - Marking Restrictions
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergsnoutredux-1
@@ -30,7 +30,7 @@
 - type: marking
   id: EarsCheesegal
   bodyPart: HeadTop
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune] # Floof - Marking Restrictions
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali] # Floof - Marking Restrictions
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergears-1
@@ -40,7 +40,7 @@
 - type: marking
   id: TailCheesegal
   bodyPart: Tail
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune] # Floof - Marking Restrictions
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali] # Floof - Marking Restrictions
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergtail-1

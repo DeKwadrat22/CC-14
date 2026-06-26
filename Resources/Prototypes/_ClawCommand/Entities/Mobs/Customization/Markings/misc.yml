@@ -642,7 +642,7 @@
 - type: marking
   id: VitiligoHeadL
   bodyPart: Head
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -656,7 +656,7 @@
 - type: marking
   id: VitiligoHeadR
   bodyPart: Head
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -670,7 +670,7 @@
 - type: marking
   id: VitiligoHeadJaw
   bodyPart: Head
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -684,7 +684,7 @@
 - type: marking
   id: VitiligoChestF
   bodyPart: Chest
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -698,7 +698,7 @@
 - type: marking
   id: VitiligoChestSpots
   bodyPart: Chest
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -712,7 +712,7 @@
 - type: marking
   id: VitiligoArmR
   bodyPart: RArm
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -726,7 +726,7 @@
 - type: marking
   id: VitiligoArmL
   bodyPart: LArm
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -740,7 +740,7 @@
 - type: marking
   id: VitiligoHandR
   bodyPart: RHand
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -754,7 +754,7 @@
 - type: marking
   id: VitiligoHandL
   bodyPart: LHand
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -768,7 +768,7 @@
 - type: marking
   id: VitiligoLegR
   bodyPart: RLeg
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:
@@ -782,7 +782,7 @@
 - type: marking
   id: VitiligoLegL
   bodyPart: LLeg
-  groupWhitelist: [ Human ]
+  groupWhitelist: [ Human, MarkingsAvali ]
   forcedColoring: true
   coloring:
     default:

@@ -1,0 +1,29 @@
+# _ClawCommand: Avali head markings.
+# Sprites originate from space/Resources/Textures/_ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+# (avali_inner / avali_outer states), copied into our own avali_ears.rsi so the asset isn't bound
+# to the unrelated reptilian marking namespace.
+
+# Ears (inner + outer, two-layer colour like CatEars)
+- type: marking
+  id: AvaliEars
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsAvali ]
+  coloring:
+    layers:
+      avali_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      avali_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/avali_ears.rsi
+    state: avali_outer
+  - sprite: _ClawCommand/Mobs/Customization/avali_ears.rsi
+    state: avali_inner

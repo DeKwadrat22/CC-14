@@ -1,7 +1,7 @@
 - type: marking
   id: UndershirtStandard
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -14,7 +14,7 @@
 - type: marking
   id: UndershirtSleeveless
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -27,7 +27,7 @@
 - type: marking
   id: UndershirtRolled
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -40,7 +40,7 @@
 - type: marking
   id: UndershirtRolledSleeveless
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -53,7 +53,7 @@
 - type: marking
   id: UndershirtLong
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -66,7 +66,7 @@
 - type: marking
   id: UndershirtClassic
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -79,7 +79,7 @@
 - type: marking
   id: UndershirtSports
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -92,7 +92,7 @@
 - type: marking
   id: UndershirtStrapless
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -105,7 +105,7 @@
 - type: marking
   id: UndershirtBra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -118,7 +118,7 @@
 - type: marking
   id: UndershirtBraalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -131,7 +131,7 @@
 - type: marking
   id: UndershirtBrathin
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -144,7 +144,7 @@
 - type: marking
   id: UndershirtSportsbra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -157,7 +157,7 @@
 - type: marking
   id: UndershirtSportsbraalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -170,7 +170,7 @@
 - type: marking
   id: UndershirtBrastrapless
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -183,7 +183,7 @@
 - type: marking
   id: UndershirtBrastraplessalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -196,7 +196,7 @@
 - type: marking
   id: UndershirtHalterneckbra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -209,7 +209,7 @@
 - type: marking
   id: UndershirtBraneko
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -222,7 +222,7 @@
 - type: marking
   id: UndershirtBraswimming
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -235,7 +235,7 @@
 - type: marking
   id: UndershirtBraswimmingalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -248,7 +248,7 @@
 - type: marking
   id: UndershirtTubetop
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -261,7 +261,7 @@
 - type: marking
   id: UndershirtBabydoll
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -274,7 +274,7 @@
 - type: marking
   id: UndershirtBrakinky
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -287,7 +287,7 @@
 - type: marking
   id: UndershirtBraassblastusa
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -300,7 +300,7 @@
 - type: marking
   id: UndershirtBrabeekini
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -313,7 +313,7 @@
 - type: marking
   id: UndershirtBracommie
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -326,7 +326,7 @@
 - type: marking
   id: UndershirtBrauk
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -339,7 +339,7 @@
 - type: marking
   id: UndershirtBrastriped
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -352,7 +352,7 @@
 - type: marking
   id: UndershirtSwimsuitblue
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -365,7 +365,7 @@
 - type: marking
   id: UndershirtSwimsuitred
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -378,7 +378,7 @@
 - type: marking
   id: UndershirtSwimsuitblack
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -391,7 +391,7 @@
 - type: marking
   id: UndershirtFishnet
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -404,7 +404,7 @@
 - type: marking
   id: UndershirtFishnetbody
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -417,7 +417,7 @@
 - type: marking
   id: UndershirtFishnetsleeves
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -430,7 +430,7 @@
 - type: marking
   id: UndershirtFishnetgloves
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -443,7 +443,7 @@
 - type: marking
   id: UndershirtUndershirtgeneric
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -456,7 +456,7 @@
 - type: marking
   id: UndershirtShortsleeve
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -469,7 +469,7 @@
 - type: marking
   id: UndershirtPolo
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -482,7 +482,7 @@
 - type: marking
   id: UndershirtTanktop
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -495,7 +495,7 @@
 - type: marking
   id: UndershirtTanktoprainbow
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -508,7 +508,7 @@
 - type: marking
   id: UndershirtTanktopstripes
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -521,7 +521,7 @@
 - type: marking
   id: UndershirtTanktopalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -534,7 +534,7 @@
 - type: marking
   id: UndershirtTanktopmidriff
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -547,7 +547,7 @@
 - type: marking
   id: UndershirtTanktopmidriffalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -560,7 +560,7 @@
 - type: marking
   id: UndershirtTanktopsun
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -573,7 +573,7 @@
 - type: marking
   id: UndershirtIanshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -586,7 +586,7 @@
 - type: marking
   id: UndershirtLovershirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -599,7 +599,7 @@
 - type: marking
   id: UndershirtLoventshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -612,7 +612,7 @@
 - type: marking
   id: UndershirtUkshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -625,7 +625,7 @@
 - type: marking
   id: UndershirtPeaceshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -638,7 +638,7 @@
 - type: marking
   id: UndershirtBandshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -651,7 +651,7 @@
 - type: marking
   id: UndershirtPogomanshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -664,7 +664,7 @@
 - type: marking
   id: UndershirtGreensportshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -677,7 +677,7 @@
 - type: marking
   id: UndershirtRedsportshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -690,7 +690,7 @@
 - type: marking
   id: UndershirtBluesportshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -703,7 +703,7 @@
 - type: marking
   id: UndershirtMatroska
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -716,7 +716,7 @@
 - type: marking
   id: UndershirtSs13shirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -729,7 +729,7 @@
 - type: marking
   id: UndershirtQuestionshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -742,7 +742,7 @@
 - type: marking
   id: UndershirtSkullshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -755,7 +755,7 @@
 - type: marking
   id: UndershirtTankfireshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -768,7 +768,7 @@
 - type: marking
   id: UndershirtCommieshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -781,7 +781,7 @@
 - type: marking
   id: UndershirtNanoshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -795,7 +795,7 @@
 - type: marking
   id: UndershirtMeatshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -808,7 +808,7 @@
 - type: marking
   id: UndershirtStripesshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -821,7 +821,7 @@
 - type: marking
   id: UndershirtTiedyeshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -834,7 +834,7 @@
 - type: marking
   id: UndershirtRedjersey
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -847,7 +847,7 @@
 - type: marking
   id: UndershirtBluejersey
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -860,7 +860,7 @@
 - type: marking
   id: UndershirtBowlingshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -874,7 +874,7 @@
 - type: marking
   id: UndershirtBowlingpshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -887,7 +887,7 @@
 - type: marking
   id: UndershirtBowlingashirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -900,7 +900,7 @@
 - type: marking
   id: UndershirtBowlingwshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -913,7 +913,7 @@
 - type: marking
   id: UndershirtBeeshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -926,7 +926,7 @@
 - type: marking
   id: UndershirtAlienshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -939,7 +939,7 @@
 - type: marking
   id: UndershirtClownshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -952,7 +952,7 @@
 - type: marking
   id: UndershirtNavycowboyshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -965,7 +965,7 @@
 - type: marking
   id: UndershirtRedcowboyshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -978,7 +978,7 @@
 - type: marking
   id: UndershirtLongstripeshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -991,7 +991,7 @@
 - type: marking
   id: UndershirtBluelongstripeshirt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1004,7 +1004,7 @@
 - type: marking
   id: UndershirtShapelyshirtgirlish
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1017,7 +1017,7 @@
 - type: marking
   id: UndershirtShapelyshirtpetite
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1030,7 +1030,7 @@
 - type: marking
   id: UndershirtShapelyshirtcurvy
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1043,7 +1043,7 @@
 - type: marking
   id: UndershirtShapelyshirtbusty
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1056,7 +1056,7 @@
 - type: marking
   id: UndershirtShapelyshirtmassive
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1069,7 +1069,7 @@
 - type: marking
   id: UndershirtShapelyshirtbackbreaker
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1082,7 +1082,7 @@
 - type: marking
   id: UndershirtBrabinder
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1095,7 +1095,7 @@
 - type: marking
   id: UndershirtBrabinderstrapless
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1108,7 +1108,7 @@
 - type: marking
   id: UndershirtScrubsgreen
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1121,7 +1121,7 @@
 - type: marking
   id: UndershirtScrubspurple
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1134,7 +1134,7 @@
 - type: marking
   id: UndershirtBluebridebra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1147,7 +1147,7 @@
 - type: marking
   id: UndershirtOrangebridebra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1160,7 +1160,7 @@
 - type: marking
   id: UndershirtPurplebridebra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1173,7 +1173,7 @@
 - type: marking
   id: UndershirtRedbridebra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1186,7 +1186,7 @@
 - type: marking
   id: UndershirtBowbra
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1199,7 +1199,7 @@
 - type: marking
   id: UndershirtBowbraalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1212,7 +1212,7 @@
 - type: marking
   id: UndershirtBowbraneko
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1225,7 +1225,7 @@
 - type: marking
   id: UndershirtBowbraswimming
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:
@@ -1238,7 +1238,7 @@
 - type: marking
   id: UndershirtBowbraswimmingalt
   bodyPart: UndergarmentTop
-  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune]
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali]
   coloring:
     default:
       type:

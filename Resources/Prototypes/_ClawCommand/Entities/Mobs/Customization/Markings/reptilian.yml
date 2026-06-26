@@ -1,7 +1,7 @@
 - type: marking
   id: LizardFloofNeckfull
   bodyPart: HeadSide
-  groupWhitelist: [Reptilian, Human, Slime]
+  groupWhitelist: [Reptilian, Human, Slime, MarkingsAvali]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: floof_neckfull
@@ -9,7 +9,7 @@
 - type: marking
   id: LizardCrestLargeTop
   bodyPart: HeadTop
-  groupWhitelist: [Reptilian, Human, Slime]
+  groupWhitelist: [Reptilian, Human, Slime, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Reptilian/crest_large.rsi
     state: primary

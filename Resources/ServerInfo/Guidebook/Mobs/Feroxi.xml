@@ -1,0 +1,28 @@
+<Document>
+  # Feroxi
+
+  <Box>
+    <GuideEntityEmbed Entity="AppearanceFeroxi" Caption=""/>
+  </Box>
+
+  The Feroxi (fer-ox-i) are a race of humanoid shark-like beings. Carnivorous in nature with a strong bite force.
+
+  ## Diet
+
+  - Can ONLY eat meat.
+  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+
+  ## Benefits
+
+  - Uses their jaws to do piercing damage, hitting harder than most species.
+  - Their cartilaginous skeleton allows them to resist blunt force trauma more easily.
+  - Their adaptation to native environments allows them to resist the cold.
+  - Their biology lets them tolerate water vapour better than most.
+
+  ## Drawbacks
+
+  - They take more Slash damage than humans.
+  - Gets thirsty faster than other species. Have water handy!
+  - Saline is too salty — it hydrates them much less than fresh water.
+
+</Document>

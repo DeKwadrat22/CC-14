@@ -1,7 +1,7 @@
 - type: marking
   id: HumanoidEyebags
   bodyPart: Head
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle2.rsi
     state: eyebags
@@ -9,7 +9,7 @@
 - type: marking
   id: HumanoidAbs
   bodyPart: Chest
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC, MarkingsAvali]
   coloring:
     default:
       type:
@@ -21,7 +21,7 @@
 - type: marking
   id: EyebrowsBig
   bodyPart: Head
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle2.rsi
     state: eyebrowsthick
@@ -29,7 +29,7 @@
 - type: marking
   id: EyebrowsBigger
   bodyPart: Head
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle2.rsi
     state: eyebrowsultra
@@ -37,7 +37,7 @@
 - type: marking
   id: EyebrowsUnibrow
   bodyPart: Head
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Reptilian, Vulpkanin, MarkingsIPC, MarkingsAvali]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle2.rsi
     state: eyebrowsunibrow

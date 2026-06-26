@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Avali ear sprites originally from S.P.L.U.R.T Station 13 (commit 8b4abff). Ported into Claw Command via space/Resources/Textures/_ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi.",
+    "states": [
+        {
+            "name": "avali_inner",
+            "directions": 4
+        },
+        {
+            "name": "avali_outer",
+            "directions": 4
+        }
+    ]
+}

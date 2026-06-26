@@ -67,3 +67,19 @@
   - Unsexed
   lastNames: IpcLast
   naming: FirstDashLast # CC: Custom!
+
+- type: species
+  id: SpeciesAvali
+  name: cc-species-name-avali
+  roundStart: true
+  prototype: MobAvali
+  dollPrototype: AppearanceAvali
+  skinColoration: Hues
+  defaultSkinTone: "#faf7f7"
+  maleFirstNames: NamesAvaliMale
+  femaleFirstNames: NamesAvaliFemale
+  naming: First
+  sexes:
+  - Male
+  - Female
+  - Unsexed
