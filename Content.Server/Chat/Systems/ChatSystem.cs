@@ -292,6 +292,15 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     #region Announcements
 
+    // _ClawCommand: red/pink brand tint applied when an announcement is sent under the default Claw Command sender.
+    // Matches space/'s behavior: if a caller (admin announce menu, AlertLevel "Claw Command" auto-announce, ERT, etc.)
+    // identifies as Claw Command, the message paints brand pink; any other sender keeps the caller-supplied colorOverride.
+    public const string ClawCommandSender = "Claw Command";
+    public static readonly Color ClawCommandColor = Color.FromHex("#ff2768ff");
+
+    private Color? ResolveAnnouncementColor(string sender, Color? colorOverride)
+        => sender == ClawCommandSender ? ClawCommandColor : colorOverride;
+
     /// <inheritdoc />
     public override void DispatchGlobalAnnouncement(
         string message,
@@ -304,7 +313,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
-        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
+        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, ResolveAnnouncementColor(sender, colorOverride));
         if (playSound)
         {
             _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
@@ -325,7 +334,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
-        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
+        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, ResolveAnnouncementColor(sender, colorOverride));
         if (playSound)
         {
             _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
@@ -357,7 +366,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var filter = _stationSystem.GetInStation(stationDataComp);
 
-        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
+        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, ResolveAnnouncementColor(sender, colorOverride));
 
         if (playDefaultSound)
         {

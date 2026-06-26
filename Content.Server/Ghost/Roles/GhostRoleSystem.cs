@@ -683,7 +683,11 @@ public sealed partial class GhostRoleSystem : EntitySystem // Claw Command - par
             if (player != null && role.Requirements.Count > 0)
             {
                 var playTimes = _playTime.GetTrackerTimes(player);
-                JobRequirements.TryRequirementsMet(
+                // Use the return value, NOT `reason != null`. Each JobRequirement.Check
+                // initializes `reason = new FormattedMessage()` even on success, so the old
+                // `reason != null` check failed for every player on every gated role and
+                // produced an empty tooltip (the cause of the LPO bug).
+                meetsRequirements = JobRequirements.TryRequirementsMet(
                     role.Requirements.ToHashSet(),
                     playTimes,
                     out FormattedMessage? reason,
@@ -691,11 +695,8 @@ public sealed partial class GhostRoleSystem : EntitySystem // Claw Command - par
                     _prototype,
                     null);
 
-                if (reason != null)
-                {
-                    meetsRequirements = false;
+                if (!meetsRequirements && reason != null)
                     requirementText = reason.ToMarkup();
-                }
             }
             // CC: End //
 

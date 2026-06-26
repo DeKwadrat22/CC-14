@@ -1,6 +1,10 @@
 cc-trait-milkable-name = Milkable
 cc-trait-milkable-desc = Your breasts are larger than normal and are capable of producing milk year-round.
 
+# Claw Command — ported from space/: Pirate Punk accent variant.
+trait-punk-accent-name = Pirate Punk accent
+trait-punk-accent-desc = Your interactions with space pirates or a fascination with their culture have influenced your speech, causing you to communicate in a manner characteristic of younger pirates.
+
 cc-trait-egglaying-name = Egg Layer
 cc-trait-egglaying-desc = Through surgery or specie preference, you are capable of producing and laying eggs at a moments notice.
 

@@ -25,6 +25,7 @@
       rolls: !type:ConstantNumberSelector
         value: 3
     - id: ClothingShoesBootsWinterMiner # Claw Command - Delta-V departmental winter boots
+    - id: LavalandJaunter # Claw Command - chasm-rescue teleport, ported from Goob
     - id: PlushieLizardJobSalvagespecialist
       prob: 0.02
 

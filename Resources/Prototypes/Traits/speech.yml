@@ -32,9 +32,19 @@
   name: trait-pirate-accent-name
   description: trait-pirate-accent-desc
   category: SpeechTraits
-  cost: 1
+  cost: -1 # Claw Command — point-giving (matches space/: pirate accents are downside traits).
   components:
   - type: PirateAccent
+
+# Claw Command — ported from space/: punkier pirate variant with its own word list + prefix pool.
+- type: trait
+  id: PunkAccent
+  name: trait-punk-accent-name
+  description: trait-punk-accent-desc
+  category: SpeechTraits
+  cost: -1 # Claw Command — point-giving (matches space/).
+  components:
+  - type: PunkAccent
 
 - type: trait
   id: GermanAccent

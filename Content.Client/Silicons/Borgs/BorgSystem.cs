@@ -61,13 +61,17 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     /// <summary>
     /// _ClawCommand: returns the input state's "_moving" counterpart when the
-    /// entity is currently moving and has a <see cref="SpriteMovementComponent"/>.
-    /// Lets dogborgs swap between static and walk-cycle frames cleanly without
-    /// duplicating logic. Returns the base state for any entity that isn't
-    /// motion-aware (regular borgs, MMIs, etc.).
+    /// entity is a dogborg (i.e. has <see cref="BorgBakedBodyComponent"/>) AND
+    /// is currently moving. Only dogborg RSIs ship `*_e_moving` / `*_l_moving`
+    /// variants for the Light and LightStatus layers; regular cyborg chassis.rsi
+    /// only has `<type>_moving` on the Body layer (handled separately by
+    /// upstream SpriteMovementSystem via BorgSwitchableTypeSystem).
+    /// Returns the base state for any non-dogborg or non-moving entity.
     /// </summary>
     public string GetMotionState(EntityUid uid, string baseState)
     {
+        if (!HasComp<BorgBakedBodyComponent>(uid))
+            return baseState;
         if (TryComp<SpriteMovementComponent>(uid, out var move) && move.IsMoving)
             return $"{baseState}_moving";
         return baseState;
