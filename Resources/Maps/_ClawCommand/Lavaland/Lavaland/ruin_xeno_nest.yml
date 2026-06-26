@@ -761,13 +761,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.35518587,12.419423
       parent: 1
-- proto: MedicalStitches
-  entities:
-  - uid: 769
-    components:
-    - type: Transform
-      pos: 0.5265415,12.609372
-      parent: 1
 - proto: OrganXenomorphStomach
   entities:
   - uid: 254

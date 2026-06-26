@@ -16,3 +16,31 @@
 - type: tileAlias
   id: FloorMS13CarpetFancyRed
   target: FloorArcadeRed
+
+# Ruin maps reference FloorWoodDark which doesn't exist in this fork.
+# Alias to the closest dark wood-ish tile to keep the grid loadable.
+- type: tileAlias
+  id: FloorWoodDark
+  target: FloorWoodTile
+
+# Cosmic Cult floor tiles — the cult tile system isn't ported, but the cult
+# ruin map's tilemap references these. Alias to FloorDark so the grid loads.
+- type: tileAlias
+  id: FloorCosmicGlyph
+  target: FloorDark
+
+- type: tileAlias
+  id: FloorCosmicHalf
+  target: FloorDark
+
+- type: tileAlias
+  id: FloorCosmicNotched
+  target: FloorDark
+
+- type: tileAlias
+  id: FloorCosmicSmooth
+  target: FloorDark
+
+- type: tileAlias
+  id: FloorCosmicSplit
+  target: FloorDark

@@ -81,12 +81,20 @@
   id: DefaultStationBeaconRuinHierophantArena
   suffix: "ClawCmd stub"
   name: Hierophant Arena
+# Hierophant spawner — fully ported from Goob _Lavaland/Entities/Markers/Spawners/megafauna.yml.
+# MobHierophant already exists at _ClawCommand/Lavaland/Entities/Mobs/Bosses/hierophant.yml.
 - type: entity
-  parent: BaseStructure
+  parent: MarkerBase
   id: SpawnMobHierophant
-  suffix: "ClawCmd stub"
-  name: Hierophant spawner
-  description: Stub placeholder. (Spawner system not wired.)
+  name: Hierophant Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobHierophant
 
 # --- Mining outpost vendors / equipment
 - type: entity

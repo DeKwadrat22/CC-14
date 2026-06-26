@@ -1,0 +1,81 @@
+# Chemistry / medical items referenced by Lavaland ruin maps.
+# SyringeGun and SyringePoisonLethalInjection's full mechanics aren't ported
+# (no syringe-gun system, no Cyanide reagent guarantee); they're functional
+# items but minimal. MedicalStitches NOT ported (per _Shitmed rule).
+
+- type: entity
+  parent: BaseItem
+  id: BorgBeaker
+  name: integrated beaker
+  description: An internal compartment installed into a cyborg. Rated for 50 units of any liquid.
+  components:
+  - type: Tag
+    tags:
+    - GlassBeaker
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+
+- type: entity
+  parent: BasePayload
+  id: ShrapnelPayload
+  name: shrapnel payload
+  description: An explosive payload that releases lethal shrapnel.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/payload.rsi
+    state: payload-explosive-armed
+
+- type: entity
+  parent: Syringe
+  id: SyringePoisonLethalInjection
+  suffix: lethal injection
+  description: A somewhat humane way to put down prisoners.
+
+- type: entity
+  parent: BaseItem
+  id: portableChemicalMixer
+  name: portable chemical mixer
+  description: A "Tider" grade chemical manipulator.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/portablechemicalmaster.rsi
+    state: icon
+  - type: Item
+    size: Huge
+
+# Random chemistry bottle spawners. The actual loot tables are not ported,
+# so these spawn a vanilla ChemBag-style starter item as a fallback.
+- type: entity
+  parent: MarkerBase
+  id: RandomChemistryBottleMedicalSpawner
+  name: random medical chemistry bottle spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Specific/Chemistry/bottle.rsi
+      state: bottle
+  - type: RandomSpawner
+    prototypes:
+    - Beaker
+    chance: 1
+
+- type: entity
+  parent: RandomChemistryBottleMedicalSpawner
+  id: RandomChemistryBottleMedicalTier1Spawner
+  suffix: tier 1
+
+- type: entity
+  parent: RandomChemistryBottleMedicalSpawner
+  id: RandomChemistryBottleMedicalTier2Spawner
+  suffix: tier 2
+
+- type: entity
+  parent: RandomChemistryBottleMedicalSpawner
+  id: RandomChemistryBottleMedicalTier3Spawner
+  suffix: tier 3
