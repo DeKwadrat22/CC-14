@@ -1,0 +1,108 @@
+# _ClawCommand: reagents ported from space/ that were actually missing in the fork.
+#
+# Survey-vs-reality correction (verified by grep against fork): Frostoil / HolyWater / IrishCarBomb /
+# KiraSpecial / Ectoplasm reagents already shipped in _ClawCommand/Raegents/Consumable/* — porting
+# them again would duplicate IDs. This file only carries the genuinely-absent ones.
+#
+# System-availability adaptations:
+#   - SoulbreakerToxin: drops ChemRemovePsionic (fork lacks the psionic system) — keeps toxin damage + plant adjust.
+#   - LotophagoiOil: drops ChemRerollPsionic + ChemAddMoodlet (no psionic/mood systems) — keeps SeeingRainbows + ScrambledAccent.
+#   - PsionicRegenerationEssence: pure healing reagent, no psionic-only effects in source so no stripping needed.
+
+# === Drinks ===
+
+- type: reagent
+  id: JuicePotato
+  name: reagent-name-juice-potato
+  parent: BaseJuice
+  desc: reagent-desc-juice-potato
+  physicalDesc: reagent-physical-desc-starchy
+  flavor: potatoes
+  color: "#302000"
+
+# === Medicine ===
+
+- type: reagent
+  id: PsionicRegenerationEssence
+  name: reagent-name-prometheum
+  group: Biological
+  desc: reagent-desc-prometheum
+  flavor: metallic
+  color: "#700055"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+        factor: -3
+      - !type:SatiateHunger
+        factor: -3
+      - !type:ModifyBleedAmount
+        amount: -1
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -5
+            Brute: -4
+          types:
+            Caustic: -3
+            Poison: -3
+            Bloodloss: -3
+
+# === Toxins ===
+
+- type: reagent
+  id: SoulbreakerToxin
+  name: reagent-name-soulbreaker-toxin
+  group: Toxins
+  desc: reagent-desc-soulbreaker-toxin
+  flavor: bitter
+  color: "#FFFFF0"
+  physicalDesc: reagent-physical-desc-cloudy
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 40
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        probability: 0.4
+        damage:
+          groups:
+            Toxin: 2
+
+# === Narcotics ===
+
+- type: reagent
+  id: LotophagoiOil
+  name: reagent-name-lotophagoi-oil
+  group: Narcotics
+  desc: reagent-desc-lotophagoi-oil
+  flavor: enthralling
+  color: "#FFBF00"
+  physicalDesc: reagent-physical-desc-overpowering
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.2
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: ScrambledAccent
+
+# === Fun ===
+
+- type: reagent
+  id: Saxoite
+  name: reagent-name-saxoite
+  desc: reagent-desc-saxoite
+  physicalDesc: reagent-physical-desc-ground-brass
+  flavor: sax
+  color: "#B8A603"

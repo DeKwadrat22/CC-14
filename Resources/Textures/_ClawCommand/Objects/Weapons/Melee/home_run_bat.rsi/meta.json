@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-4.0",
-  "copyright": "drawn by the kind @ squire_snake and hilarious Hyenh#6078 (313846233099927552) and @ 2013toyotacorolla",
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Homerun bat variant modified by Mike, Taken from goonstation and modified by Swept at commit https://github.com/goonstation/goonstation/pull/3555/commits/b24eb6260647c0fcfe858268a26b6160bc50017a, wielded version by Easypoll",
   "size": {
     "x": 32,
     "y": 32
@@ -9,15 +9,6 @@
   "states": [
     {
       "name": "icon"
-    },
-    {
-      "name": "base"
-    },
-    {
-      "name": "bolt-open"
-    },
-    {
-      "name": "mag-0"
     },
     {
       "name": "inhand-left",

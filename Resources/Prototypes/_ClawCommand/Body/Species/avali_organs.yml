@@ -1,13 +1,24 @@
 # _ClawCommand: Avali organs.
 # Mirrors the Felinid organ wiring (felinid_organs.yml) so the human body sprite + the species's
-# markings group are picked up. Avali don't have a custom metabolizer in space, so we use the
-# generic OrganHumanMetabolizer pattern (no MetabolizerAvali). Stomach allows omnivore digestion.
+# markings group are picked up. Stomach allows omnivore digestion.
+#
+# Metabolizer type: Avali internal organs MUST carry a metabolizer-type allow-listed by the Oxygen
+# reagent (Oxygenate effect — Reagents/gases.yml line ~19), or Avali physically can't be oxygenated
+# and suffocate even in a breathable atmosphere. Vulpkanin uses `Animal`; we follow the same
+# pattern to avoid editing the Oxygen reagent's allow-list.
 
 - type: entity
   parent: OrganBase
   id: OrganAvaliBase
   abstract: true
   suffix: Claw Command, Avali
+
+- type: entity
+  id: OrganAvaliMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
 
 - type: entity
   parent: OrganAvaliBase
@@ -101,15 +112,15 @@
   id: OrganAvaliEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganAvaliInternal ]
+  parent: [ OrganBaseLungs, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliLungs
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganAvaliInternal ]
+  parent: [ OrganBaseHeart, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganAvaliInternal ]
+  parent: [ OrganBaseStomach, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliStomach
   components:
   - type: Stomach
@@ -121,9 +132,9 @@
       - TagNutribrick
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganAvaliInternal ]
+  parent: [ OrganBaseLiver, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganAvaliInternal ]
+  parent: [ OrganBaseKidneys, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliKidneys

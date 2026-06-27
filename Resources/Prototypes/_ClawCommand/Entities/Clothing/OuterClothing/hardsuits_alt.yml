@@ -377,8 +377,12 @@
     - Snout
 
 # Spationaut Hardsuit Helmet
+# Matches the layout used by the fork's vanilla ClothingHeadHelmetHardsuitSpatio so the
+# visor unshaded glow and head-light overlay render correctly. The original port carried
+# only a flat single-layer Sprite/Clothing pair from upstream, which made the worn helmet
+# show as a flat silhouette with no visor glow or togglable light.
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSpatioAlt
   name: spationaut hardsuit helmet
   description: A sturdy helmet designed for complex industrial operations in space.
@@ -386,15 +390,50 @@
   - type: BreathMask
   - type: Sprite
     sprite: _ClawCommand/Clothing/Head/Hardsuits/spatiohelm.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/spatiohelm.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      head-feroxi:
+      - state: equipped-head-feroxi
+  - type: PointLight
+    radius: 6
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
 
 # Salvage Hardsuit Helmet
+# Mirrors vanilla ClothingHeadHelmetHardsuitSalvage by inheriting ClothingHeadSuitWithLightBase
+# so the head-mounted floodlight works and the worn sprite swaps between off-/on-equipped-HELMET.
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSalvageAlt
   name: mining hardsuit helmet
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
@@ -404,6 +443,9 @@
     sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
+  - type: PointLight
+    radius: 7
+    energy: 3
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -451,8 +493,10 @@
         Radiation: 0.75
 
 # Warden's Hardsuit Helmet
+# Mirrors vanilla ClothingHeadHelmetHardsuitWarden by inheriting ClothingHeadSuitWithLightBase
+# so the helmet's flashlight works and the worn sprite swaps between off-/on-equipped-HELMET.
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitWardenAlt
   name: warden's hardsuit helmet
   description: A modified riot helmet. Oddly comfortable.
@@ -462,6 +506,8 @@
     sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
+  - type: PointLight
+    color: "#ffeead"
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -548,8 +594,13 @@
     energy: 2
 
 # CBURN Helmet
+# Mirrors vanilla ClothingHeadHelmetCBURN: multi-layer Sprite for the icon's visor unshaded glow
+# plus a light-overlay layer mapped to the toggle, and explicit clothingVisuals so the worn
+# sprite layers the unshaded glow on top of the base. The alt cburn.rsi has no equipped-head-light
+# variants so we don't add a worn-sprite layer for the toggle — only the icon glows, matching
+# the upstream behavior.
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetCBURNAlt
   name: CBURN exosuit helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
@@ -557,8 +608,27 @@
   - type: BreathMask
   - type: Sprite
     sprite: _ClawCommand/Clothing/Head/Hardsuits/cburn.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/cburn.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+  - type: PointLight
+    color: orange
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -605,8 +675,12 @@
 
 # Combat hardsuit helmets (no upstream equivalent — DeltaV import, kept as-is)
 
+# Combat helmets — alt rsi has icon-flash and off-/on-equipped-HELMET states, so they support
+# the same prefix+light pattern the fork's other combat-class helmets use. Without inheriting
+# ClothingHeadSuitWithLightBase the worn sprite stayed on the default "equipped-HELMET" lookup
+# (which doesn't exist in the rsi) and the helmet had no flashlight.
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatRiotAlt
   name: riot combat hardsuit helmet
   description: A purpose-built combat hardsuit helmet for crowd control.

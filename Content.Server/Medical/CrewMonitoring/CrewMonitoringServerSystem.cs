@@ -70,19 +70,32 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Drop the sensor status if it hasn't been updated for to long
+    /// Drop the sensor status if it hasn't been updated for too long.
+    /// Two upstream bugs fixed here:
+    /// 1) `dif.Seconds` returns only the seconds component (0-59), not the elapsed total — so
+    ///    a 70-second gap evaluates to 10 and timed-out sensors were getting kept while
+    ///    sensors that had been gone for over a minute looked fresh.
+    /// 2) Calling `Dictionary.Remove` from inside `foreach` on the same dictionary throws
+    ///    `InvalidOperationException` on the next MoveNext, aborting the broadcast tick.
     /// </summary>
     private void UpdateTimeout(EntityUid uid, CrewMonitoringServerComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
 
+        List<string>? toRemove = null;
         foreach (var (address, sensor) in component.SensorStatus)
         {
             var dif = _gameTiming.CurTime - sensor.Timestamp;
-            if (dif.Seconds > component.SensorTimeout)
-                component.SensorStatus.Remove(address);
+            if (dif.TotalSeconds > component.SensorTimeout)
+                (toRemove ??= new List<string>()).Add(address);
         }
+
+        if (toRemove == null)
+            return;
+
+        foreach (var address in toRemove)
+            component.SensorStatus.Remove(address);
     }
 
     /// <summary>

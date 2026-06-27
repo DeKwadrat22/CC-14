@@ -1,0 +1,38 @@
+# _ClawCommand: premium-brand drink bottles ported from space.
+# Pure data; each is a re-named/re-described parent of an existing fork drink bottle.
+
+- type: entity
+  id: DrinkPremiumVodkaBottleFull
+  parent: DrinkVodkaBottleFull
+  name: Moment of Clarity vodka bottle
+  description: When things get a bit hectic, all you need is a Moment of Clarity.
+
+- type: entity
+  id: DrinkPremiumGinBottleFull
+  parent: DrinkGinBottleFull
+  name: Harry's gin bottle
+  description: An interesting set of botanicals, for sure. Is that pumpkin?
+
+- type: entity
+  id: DrinkPremiumTequilaBottleFull
+  parent: DrinkTequilaBottleFull
+  name: Casa del Eorg tequila bottle
+  description: Save the best for last. Casa del Eorg, 100% agave.
+
+- type: entity
+  id: DrinkPremiumWhiskeyBottleFull
+  parent: DrinkWhiskeyBottleFull
+  name: Ol' Prowler 18 whiskey bottle
+  description: Surprisingly smooth, it has a nasty habit of sneaking up on you.
+
+- type: entity
+  id: DrinkPremiumRumBottleFull
+  parent: DrinkRumBottleFull
+  name: Redeemer's Bounty rum bottle
+  description: Well, you asked for it. Navy strength.
+
+- type: entity
+  id: DrinkPremiumAbsintheBottleFull
+  parent: DrinkAbsintheBottleFull
+  name: Bureaucracy's Kiss absinthe bottle
+  description: A refined taste that tends to linger.

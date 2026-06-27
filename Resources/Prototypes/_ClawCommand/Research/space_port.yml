@@ -1,0 +1,129 @@
+# _ClawCommand: research technologies ported from space/.
+# Adaptations:
+#   - softCapContribution field stripped (fork doesn't have it on TechnologyPrototype)
+#   - Nightvision/thermal goggle icons point at _ClawCommand-copied RSIs since the fork's
+#     vanilla tree has these under Glasses/, not Goggles/.
+#   - recipeUnlocks lists kept verbatim — recipes that don't exist yet just won't unlock
+#     anything until matching latheRecipes get ported in later batches.
+
+# Arsenal — tier 3
+
+- type: technology
+  id: LaserTurrets
+  name: research-technology-laser-sentry-turrets
+  icon:
+    sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi
+    state: base
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  technologyPrerequisites:
+  - ConcentratedLaserWeaponry
+  position: 5,-1
+
+# Industrial — tier 2
+
+- type: technology
+  id: Ripley2
+  name: research-technology-ripley-mkii
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: ripleymkii
+  discipline: Industrial
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - RipleyMKIIHarness
+  - RipleyUpgradeKit
+  position: 0,-7
+  technologyPrerequisites:
+  - RipleyAPLU
+
+- type: technology
+  id: Clarke
+  name: research-technology-clarke
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: clarke
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - BorgModulePka
+  - BorgModuleJetpack
+  - ClarkeHarness
+  - ClarkeHead
+  - ClarkeLArm
+  - ClarkeRArm
+  - ClarkeTreads
+  - ClarkeCentralElectronics
+  - ClarkePeripheralsElectronics
+  technologyPrerequisites:
+  - Ripley2
+  position: 0,-8
+
+# Experimental — tier 2
+
+- type: technology
+  id: RapidPartExchange
+  name: research-technology-rped
+  icon:
+    sprite: Objects/Specific/Research/rped.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - RPED
+  position: -3,-6
+
+- type: technology
+  id: NightVisionTech
+  name: research-technology-night-vision
+  icon:
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesNightVisionGoggles
+  - ClothingEyesNightVisionSecurityGoggles
+  - ClothingEyesNightVisionMedicalGoggles
+  - ClothingEyesNightVisionDiagnosticGoggles
+  position: -3,-7
+
+- type: technology
+  id: ThermalVisionTech
+  name: research-technology-thermal-vision
+  icon:
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesThermalVisionGoggles
+  position: -3,-4
+
+# Experimental — tier 3
+
+- type: technology
+  id: SuperParts
+  name: research-technology-super-parts
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: super_matter_bin
+  discipline: Experimental
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+  position: -3,-5

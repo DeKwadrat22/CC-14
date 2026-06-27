@@ -1,0 +1,40 @@
+# _ClawCommand: home run bat ported from space.
+# Sprite copied verbatim into _ClawCommand/Objects/Weapons/Melee/home_run_bat.rsi.
+
+- type: entity
+  parent: BaseBallBat
+  id: BaseBallBatHomeRun
+  name: home run bat
+  description: Heavy metal bat with an extra kick.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Melee/home_run_bat.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 2.5
+    angle: 120
+    soundHit:
+      collection: ExplosionSmall
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: MeleeRequiresWield
+  - type: MeleeThrowOnHit
+    speed: 30
+    lifetime: 5
+  - type: Item
+    size: Large
+  - type: Tool
+    speedModifier: 0.5
+  - type: UseDelay
+    delay: 2
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 350

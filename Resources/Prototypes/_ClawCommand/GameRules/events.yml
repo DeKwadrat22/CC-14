@@ -76,6 +76,9 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-xeno-vents-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    startAnnouncementColor: "#ff4d4d"
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
@@ -137,6 +140,9 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-xeno-vents-weak-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    startAnnouncementColor: "#ff4d4d"
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 9

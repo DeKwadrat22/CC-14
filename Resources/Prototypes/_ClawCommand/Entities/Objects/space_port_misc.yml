@@ -1,0 +1,258 @@
+# _ClawCommand: misc items ported from space.
+#
+# Survey vs verify methodology used: direct entity-ID diff between space's Objects/Misc + Specific
+# + Tools dirs and fork's full Prototypes tree (word-boundary). After triaging deps + system
+# divergence, the following 16 items are truly portable.
+#
+# SKIPPED (system/dep gap):
+#   - DelayedEMP, DelayedSmoke  — DelayedItem component does not exist in fork
+#   - BaseChemistryEmptyVial    — fork's vial.rsi uses different state names (icon_empty/fill-N vs vial-1/vial-1-1)
+#   - All stock parts, borg parts, lingering items, shitmed medical items, translators, mail papers
+#   - SyringeOpporozidone source has its reagent commented out in space ("we don't have that yet");
+#     fork has Opporozidone reagent so we put 15u in the syringe.
+#
+# Adaptations:
+#   - FlashlightEmp drops EmpOnHit clause (fork has no EmpOnHit component).
+#   - ScentTrackEffect drops EffectVisuals clause (no EffectVisuals component in fork).
+#   - CMOPenLight sprite copied under _ClawCommand/Objects/Tools/cmopenlight.rsi.
+#   - WebCocoon cuffedRSI sprite copied under _ClawCommand/Clothing/OuterClothing/Misc/webcocoon.rsi.
+
+# === Chemistry containers ===
+
+- type: entity
+  parent: Jug
+  id: JugNutriment
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-nutriment
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 200
+
+- type: entity
+  id: NecrosolChemistryBottle
+  parent: BaseChemistryBottleFilled
+  name: necrosol bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Necrosol
+          Quantity: 30
+
+- type: entity
+  id: SyringeCognizine
+  parent: Syringe
+  name: cognizine syringe
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 15
+        reagents:
+        - ReagentId: Cognizine
+          Quantity: 15
+
+- type: entity
+  id: SyringeOpporozidone
+  parent: Syringe
+  name: opporozidone syringe
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 15
+        reagents:
+        - ReagentId: Opporozidone
+          Quantity: 15
+
+# === Pills & canisters ===
+
+- type: entity
+  name: pax
+  parent: Pill
+  id: PillPax
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Pax
+          Quantity: 10
+
+- type: entity
+  name: pill canister (Pax 10u)
+  parent: PillCanister
+  id: PillCanisterPax
+  suffix: Pax, 5
+  components:
+  - type: Label
+    currentLabel: Pax 10u
+  - type: StorageFill
+    contents:
+    - id: PillPax
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSpaceDrugs
+  suffix: Space Drugs, 5
+  components:
+  - type: Label
+    currentLabel: LSD 15u
+  - type: StorageFill
+    contents:
+    - id: PillSpaceDrugs
+      amount: 5
+
+# === Research ===
+
+- type: entity
+  parent: ResearchDisk
+  id: ResearchDisk20000
+  name: research point disk (20000)
+  description: A disk for the R&D server containing 20000 points.
+  components:
+  - type: ResearchDisk
+    points: 20000
+
+# === Tools ===
+
+- type: entity
+  parent: FlashlightLantern
+  id: FlashlightEmp
+  name: flashlight
+  description: It lights the way to freedom.
+  suffix: EMP
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-clot-component-spot-name-default
+        startingItem: PowerCellHigh
+
+- type: entity
+  parent: PenLightBase
+  id: CMOPenLight
+  description: A pen-sized light, this one belonging to the Chief Medical Officer. When you get promoted you get a better pen.
+  components:
+  - type: HandheldLight
+    addPrefix: false
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Tools/cmopenlight.rsi
+    layers:
+    - state: world
+    - state: world-on
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+# === Jetpacks ===
+
+- type: entity
+  id: JetpackMicro
+  parent: BaseJetpack
+  name: micro jetpack
+  suffix: Empty
+  components:
+  - type: Item
+    sprite: Objects/Tanks/Jetpacks/mini.rsi
+  - type: Sprite
+    sprite: Objects/Tanks/Jetpacks/mini.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/Jetpacks/mini.rsi
+    slots:
+    - Back
+    - suitStorage
+    - Belt
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      volume: 0.75
+
+- type: entity
+  id: JetpackMicroFilled
+  parent: JetpackMicro
+  name: micro jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      volume: 0.75
+      temperature: 293.15
+
+# === Materials / Misc ===
+
+- type: entity
+  parent: BaseItem
+  id: CoreSilver
+  name: silver alloy core
+  description: A synthetic alloy made of silver and other materials.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/guardian_info.rsi
+    state: guardian_info
+  - type: Tag
+    tags:
+    - CoreSilver
+
+# === Restraints ===
+
+- type: entity
+  parent: ClothingOuterStraightjacket
+  id: WebCocoon
+  name: web cocoon
+  description: Strong web cocoon used to restrain criminals or prey. Also prevents rotting.
+  components:
+  - type: Handcuff
+    cuffedRSI: _ClawCommand/Clothing/OuterClothing/Misc/webcocoon.rsi
+    bodyIconState: body-overlay
+    breakOnRemove: true
+    brokenPrototype: MaterialWebSilk1
+    startCuffSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+    endCuffSound:
+      path: /Audio/Items/Handcuffs/rope_end.ogg
+    startUncuffSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+    endUncuffSound:
+      path: /Audio/Items/Handcuffs/rope_end.ogg
+
+# === Effects / Forensics ===
+
+- type: entity
+  id: ScentTrackEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke
+    scale: "0.08, 0.08"
+    color: "#ffff00"
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+# SpaceshroomGather skipped — `type: entityLootTable` prototype kind doesn't exist in fork.

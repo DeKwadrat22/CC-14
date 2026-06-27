@@ -84,14 +84,35 @@
         layer:
         - WallLayer
 
+# Decoration-only resin door. Reparented to BaseStructure because the Airlock parent layers
+# in closed_unlit/welded/bolted_unlit/emergency_unlit/panel_open/sparks states that the resin
+# door RSI doesn't have, which spammed sprite errors. Sprite from the fork's _RMC14 xeno set.
 - type: entity
-  parent: Airlock
+  parent: BaseStructure
   id: ResinDoor
   name: resin door
   description: Thick resin solidified into a door.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/generic.rsi
+    sprite: _RMC14/Structures/Xenos/xeno_resin_door.rsi
+    state: resin
+    drawdepth: Doors
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        layer:
+        - WallLayer
 
 - type: entity
   parent: BaseStructure
@@ -102,8 +123,9 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Beds/medical.rsi
-    state: icon
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: nest_overlay
+    drawdepth: BelowFloor
 
 - type: entity
   parent: BaseStructure
@@ -114,8 +136,9 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Effects/contraband.rsi
-    state: contraband
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: weed0
+    drawdepth: BelowFloor
 
 - type: entity
   parent: ResinWeed
@@ -123,6 +146,11 @@
   suffix: node
   name: resin weed node
   description: A cluster of resin at the source of the weed spread.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: weednode
+    drawdepth: BelowFloor
 
 - type: entity
   parent: BaseStructure
@@ -133,8 +161,8 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Mobs/Aliens/Xenos/egg.rsi
-    state: idle
+    sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
+    state: egg_opened
 
 - type: entity
   parent: BaseItem

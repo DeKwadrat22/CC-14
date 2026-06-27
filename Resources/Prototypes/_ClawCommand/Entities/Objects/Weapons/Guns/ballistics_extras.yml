@@ -121,7 +121,10 @@
 
 - type: entity
   name: Vulcan
-  parent: BaseWeaponRifle
+  # BaseGunWieldable mirrors space's BaseWeaponRifle wield setup (Wieldable +
+  # GunWieldBonus). Fork's BaseWeaponRifle omits Wieldable, so we add it here
+  # rather than mutating the shared base.
+  parent: [ BaseWeaponRifle, BaseGunWieldable ]
   id: WeaponRifleVulcan
   description: One of the first firearms modified for space usage, this rifle was purpose-designed to punch holes in Cargonian "combat mechs." Uses .30 rifle ammo.
   components:
@@ -132,6 +135,7 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: GunRequiresWield
   - type: Gun
     fireRate: 2
     selectedMode: SemiAuto

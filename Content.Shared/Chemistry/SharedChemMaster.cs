@@ -200,7 +200,10 @@ namespace Content.Shared.Chemistry
         public readonly ChemMasterDrawSource DrawSource;
 
         // CLAW COMMAND SPECIFIC
-        public ChemMasterReagentAmount TransferAmount;
+        // Must be readonly to match the rest of the class's pattern and so the sandbox's
+        // ILVerify accepts callers that read the field (it rejected the mutable form when
+        // accessed from cross-assembly client BUIs).
+        public readonly ChemMasterReagentAmount TransferAmount;
 
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode,
@@ -240,10 +243,17 @@ namespace Content.Shared.Chemistry
     /// <summary>
     ///     CLAW COMMAND SPECIFIC
     ///     Transfer Amount message between the BUI and the server.
+    ///     Rewritten away from the C# 12 primary-constructor pattern that the engine's ILVerify
+    ///     sandbox rejected at type-load when referenced from a cross-assembly Client BUI lambda.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class ChemMasterSetTransferAmountMessage(ChemMasterReagentAmount amount) : BoundUserInterfaceMessage
+    public sealed class ChemMasterSetTransferAmountMessage : BoundUserInterfaceMessage
     {
-        public ChemMasterReagentAmount Amount = amount;
+        public readonly ChemMasterReagentAmount Amount;
+
+        public ChemMasterSetTransferAmountMessage(ChemMasterReagentAmount amount)
+        {
+            Amount = amount;
+        }
     }
 }

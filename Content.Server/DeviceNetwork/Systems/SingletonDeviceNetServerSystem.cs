@@ -83,7 +83,11 @@ public sealed partial class SingletonDeviceNetServerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Disconnects the server losing power
+    /// Disconnects the server losing power, or reconnects it when power is restored.
+    /// Without the power-restore branch a flickered server stays Active=false until some
+    /// sensor pings TryGetActiveServerAddress; if no sensor on the station has a valid mode
+    /// (e.g. round-start before crew equip) the crew monitor console reads "Server not found"
+    /// indefinitely.
     /// </summary>
     private void OnPowerChanged(EntityUid uid, SingletonDeviceNetServerComponent component, ref PowerChangedEvent args)
     {
@@ -91,6 +95,8 @@ public sealed partial class SingletonDeviceNetServerSystem : EntitySystem
 
         if (!args.Powered && component.Active)
             DisconnectServer(uid, component);
+        else if (args.Powered && !component.Active)
+            ConnectServer(uid, component);
     }
 
     private void ConnectServer(EntityUid uid, SingletonDeviceNetServerComponent? server = null, DeviceNetworkComponent? device = null)
