@@ -85,10 +85,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: ReagentDrinkClawtail
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _ClawCommand/Objects/Consumable/Drinks/clawtail.rsi
     state: icon

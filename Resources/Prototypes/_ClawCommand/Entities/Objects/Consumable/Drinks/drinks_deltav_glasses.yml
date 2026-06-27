@@ -7,10 +7,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: HealthViolation
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/healthcodeviolation.rsi
     state: icon
@@ -24,10 +24,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: Gunmetal
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/gunmetal.rsi
     state: icon
@@ -41,10 +41,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: LemonDrop
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/lemondrop.rsi
     state: icon
@@ -58,10 +58,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: GreenGrass
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/greengrass.rsi
     state: icon
@@ -75,10 +75,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: Daiquiri
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/daiquiri.rsi
     state: icon
@@ -92,10 +92,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: ArsonistsBrew
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: DeltaV/Objects/Consumable/Drinks/arsonist.rsi
     state: icon
@@ -109,10 +109,10 @@
     - type: SolutionContainerManager
       solutions:
         drink:
-          maxVol: 30
+          maxVol: 60
           reagents:
             - ReagentId: Kvass
-              Quantity: 30
+              Quantity: 60
     - type: Icon
       sprite: DeltaV/Objects/Consumable/Drinks/kvass.rsi
       state: icon
@@ -126,10 +126,10 @@
     - type: SolutionContainerManager
       solutions:
         drink:
-          maxVol: 30
+          maxVol: 60
           reagents:
             - ReagentId: Mothamphetamine
-              Quantity: 30
+              Quantity: 60
     - type: Icon
       sprite: DeltaV/Objects/Consumable/Drinks/mothamphetamine.rsi
       state: icon

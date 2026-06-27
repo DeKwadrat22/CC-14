@@ -6,10 +6,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: ABLustine
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/ablustine.rsi
     state: icon
@@ -22,10 +22,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: BlueBaller
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/blueballer.rsi
     state: icon
@@ -38,10 +38,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: DragonsBlood
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/dragonsblood.rsi
     state: icon
@@ -54,10 +54,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: DragonsBreath
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/dragonsbreath.rsi
     state: icon
@@ -70,10 +70,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: EmeraldSwinger
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/emeraldswinger.rsi
     state: icon
@@ -86,10 +86,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: Eminence
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/eminence.rsi
     state: icon
@@ -102,10 +102,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: GoldbloomSpecial
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/goldbloomspecial.rsi
     state: icon
@@ -118,10 +118,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: GrandNavy
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/grandnavy.rsi
     state: icon
@@ -134,10 +134,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: HornyStallion
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/hornystallion.rsi
     state: icon
@@ -150,10 +150,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: KoboldKooler
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/koboldkooler.rsi
     state: icon
@@ -166,10 +166,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: Lamplight
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/lamplight.rsi
     state: icon
@@ -182,10 +182,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: LemonPopsicle
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/lemonpopsicle.rsi
     state: icon
@@ -198,10 +198,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: LoversKiss
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/loverskiss.rsi
     state: icon
@@ -214,10 +214,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: MarieJulep
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/mariejulep.rsi
     state: icon
@@ -230,10 +230,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: MossBloodShot
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/mossbloodshot.rsi
     state: icon
@@ -246,10 +246,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: OpsShine
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/opsshine.rsi
     state: icon
@@ -262,10 +262,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: PomPassion
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/pompassion.rsi
     state: icon
@@ -278,10 +278,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: PomTwist
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/pomtwist.rsi
     state: icon
@@ -294,10 +294,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: PrairieOyster
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/prairieoyster.rsi
     state: icon
@@ -310,10 +310,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: RandyStallion
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/randystallion.rsi
     state: icon
@@ -326,10 +326,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: RedRocket
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/redrocket.rsi
     state: icon
@@ -342,10 +342,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: SalvagersDelight
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/salvagersdelight.rsi
     state: icon
@@ -358,10 +358,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: SyndicatesOverseer
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/syndicatesoverseer.rsi
     state: icon
@@ -374,10 +374,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: Voltage
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/voltage.rsi
     state: icon
@@ -390,10 +390,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: WhiskeySour
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/whiskeysour.rsi
     state: icon
@@ -406,10 +406,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: YeOlHandy
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/yeolhandy.rsi
     state: icon
@@ -422,10 +422,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: GinandPussy
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/ginandpussy.rsi
     state: icon

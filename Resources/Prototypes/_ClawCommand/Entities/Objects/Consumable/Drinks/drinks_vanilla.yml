@@ -91,10 +91,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: IrishCarBomb
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
     state: icon
@@ -107,10 +107,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60
         reagents:
         - ReagentId: KiraSpecial
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: Objects/Consumable/Drinks/kiraspecial.rsi
     state: icon
