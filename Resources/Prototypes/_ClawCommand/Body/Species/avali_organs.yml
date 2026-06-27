@@ -1,6 +1,9 @@
 # _ClawCommand: Avali organs.
-# Mirrors the Felinid organ wiring (felinid_organs.yml) so the human body sprite + the species's
-# markings group are picked up. Stomach allows omnivore digestion.
+# Body sheet: deliberately Human/parts.rsi. The canonical Avali silhouette is tiny and
+# four-legged — neither Resomi (too small, head reads as transparent at humanoid scale)
+# nor Harpy (wrong shape) maps cleanly onto our humanoid rig without proper Avali-drawn
+# sprites + species scaling + reworked clothing displacements. Until those exist we lean
+# on the AvaliEars + tail/feather/fluff markings on a Human body to carry the species look.
 #
 # Metabolizer type: Avali internal organs MUST carry a metabolizer-type allow-listed by the Oxygen
 # reagent (Oxygenate effect — Reagents/gases.yml line ~19), or Avali physically can't be oxygenated

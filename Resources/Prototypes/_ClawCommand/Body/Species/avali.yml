@@ -39,10 +39,12 @@
       required: false
     enum.HumanoidVisualLayers.LHand:
       limit: 2
-      required: false
+      required: true
+      default: [ AvaliLArmFeathers ]
     enum.HumanoidVisualLayers.RHand:
       limit: 2
-      required: false
+      required: true
+      default: [ AvaliRArmFeathers ]
     enum.HumanoidVisualLayers.LLeg:
       limit: 2
       required: false
@@ -51,13 +53,16 @@
       required: false
     enum.HumanoidVisualLayers.LFoot:
       limit: 2
-      required: false
+      required: true
+      default: [ AvaliLLegFeathers ]
     enum.HumanoidVisualLayers.RFoot:
       limit: 2
-      required: false
+      required: true
+      default: [ AvaliRLegFeathers ]
     enum.HumanoidVisualLayers.Tail:
       limit: 6
-      required: false
+      required: true
+      default: [ AvaliTail, AvaliTailFeathers ]
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
       required: false
@@ -80,6 +85,9 @@
   suffix: Claw Command
   name: avali appearance
   components:
+  # No custom clothing displacements — body is currently Human-sheet sized (see
+  # avali_organs.yml), so default Human displacements fit. Keep only the female jumpsuit
+  # override that ships with the base port.
   - type: Inventory
     femaleDisplacements:
       jumpsuit:
