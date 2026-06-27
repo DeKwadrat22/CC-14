@@ -539,9 +539,12 @@ LightTree06: LightTree
 DrinkIrishCarBomb: DrinkIrishSlammer
 
 # 2025-01-06
-BorgModuleRadiationDetection: null
-BorgModuleGPS: null
-BorgModuleLightReplacer: BorgModuleCustodial
+# Claw Command: BorgModuleRadiationDetection, BorgModuleGPS and BorgModuleLightReplacer
+# were brought back as part of the space-port modules port
+# (_ClawCommand/Entities/Objects/Specific/Robotics/space_port_modules.yml). The upstream
+# migration entries would silently delete or rename them at map-load, so we drop them
+# here for the three we re-added. AdvancedTreatment stays removed (we explicitly skipped
+# it during the port because HandheldHealthAnalyzerUnpowered isn't in the fork).
 BorgModuleAdvancedTreatment: null
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime

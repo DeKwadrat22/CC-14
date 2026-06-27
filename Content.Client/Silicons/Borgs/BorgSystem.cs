@@ -171,6 +171,16 @@ public sealed partial class BorgSystem : SharedBorgSystem
         {
             _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Body, !lightOn);
 
+            // _ClawCommand: for the same reason, force-hide the LightStatus
+            // (light strip) layer whenever the Light overlay is on. Dogborg
+            // RSIs ship their light strip as a *full-body* unshaded animation
+            // (because the strip art and the silhouette are baked into the
+            // same PNG), so leaving LightStatus visible alongside Light renders
+            // two animated bodies overlapping — the "double sprite" the user
+            // sees while walking. Regular cyborgs (no BorgBakedBody) keep the
+            // upstream behaviour where LightStatus is a tiny strip overlay.
+            _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus, !lightOn);
+
             // When the Body becomes the only visible layer (no brain, no player),
             // pin it to the static base so an unoccupied chassis can't trot.
             if (!lightOn && TryGetBaseBodyState(ent.Owner, out var baseBody))

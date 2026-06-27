@@ -317,9 +317,16 @@
   parent: [BaseBorgChassis, BaseBorgTransponder]
   abstract: true
   components:
-  - type: RandomMetadata
-    nameSegments:
-    - NamesBorg
+  # Claw Command: disabled. RandomMetadata stamps a "Borg-XX-YY" name onto every
+  # chassis-NT-derived entity at init, which overrode the player's character
+  # name for roundstart and late-join borg/dogborg jobs. We assign the profile
+  # name from BorgSpawnNameSystem on PlayerSpawnCompleteEvent instead. Ghost
+  # role variants (PlayerBorgDerelict / PlayerEngineeringBorgDerelict /
+  # PlayerJanitorBorgDerelict / PlayerMedicalBorgDerelict / syndicate ghosts)
+  # carry their own RandomMetadata so the no-profile fallback still works.
+  # - type: RandomMetadata
+  #   nameSegments:
+  #   - NamesBorg
   - type: NpcFactionMember
     factions:
     - NanoTrasen
