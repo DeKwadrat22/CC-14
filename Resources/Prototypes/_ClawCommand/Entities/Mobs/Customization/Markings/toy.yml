@@ -49,7 +49,7 @@
 - type: marking
   id: OverlayPlushSeamsHeadLongSnout
   bodyPart: HeadTop
-  groupWhitelist: [Vulpkanin, MarkingsFeroxi, Reptilian, MarkingsKitsune, Slime] # Floof - M3739 - #1063 - Add Kitsune
+  groupWhitelist: [Vulpkanin, MarkingsFeroxi, Reptilian, MarkingsKitsune, Slime, MarkingsIPC] # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:

@@ -14,7 +14,7 @@
 - type: marking
   id: MakeupBlush
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsKitsune, MarkingsAvali] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin, Harpy
+  groupWhitelist: [Human, Reptilian, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsKitsune, MarkingsAvali, MarkingsIPC] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin, Harpy
   coloring:
     default:
       type:
@@ -27,7 +27,7 @@
 - type: marking
   id: MakeupNailPolishRight
   bodyPart: RHand
-  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
   coloring:
     default:
       type:
@@ -40,7 +40,7 @@
 - type: marking
   id: MakeupNailPolishLeft
   bodyPart: LHand
-  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC] # Delta V - MarkingsFelinid, MarkingsTajaran, Vulpkanin
   coloring:
     default:
       type:

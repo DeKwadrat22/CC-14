@@ -159,7 +159,7 @@
 - type: marking
   id: TattooEyeVulpkaninRight
   bodyPart: Eyes
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [Vulpkanin, MarkingsIPC]
   coloring:
     default:
       type:
@@ -172,7 +172,7 @@
 - type: marking
   id: TattooEyeVulpkaninLeft
   bodyPart: Eyes
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [Vulpkanin, MarkingsIPC]
   coloring:
     default:
       type:

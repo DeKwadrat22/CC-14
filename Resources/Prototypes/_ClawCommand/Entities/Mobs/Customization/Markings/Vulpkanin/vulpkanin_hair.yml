@@ -2,7 +2,7 @@
 - type: marking
   id: VulpHairAdharaNew
   bodyPart: Hair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
@@ -11,7 +11,7 @@
 - type: marking
   id: VulpHairAnitaNew
   bodyPart: Hair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
@@ -20,7 +20,7 @@
 - type: marking
   id: VulpHairApolloNew
   bodyPart: Hair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
@@ -29,7 +29,7 @@
 - type: marking
   id: VulpHairBelleNew
   bodyPart: Hair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
@@ -39,7 +39,7 @@
   id: VulpHairBraidedNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: braided
@@ -48,7 +48,7 @@
   id: VulpHairBunNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: bun
@@ -57,7 +57,7 @@
   id: VulpHairCleanCutNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: clean_cut
@@ -66,7 +66,7 @@
   id: VulpHairCurlNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: curl
@@ -75,7 +75,7 @@
   id: VulpHairHawkNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: hawk
@@ -84,7 +84,7 @@
   id: VulpHairJaggedNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: jagged
@@ -93,7 +93,7 @@
   id: VulpHairJeremyNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: jeremy
@@ -102,7 +102,7 @@
   id: VulpHairKajamNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: kajam
@@ -111,7 +111,7 @@
   id: VulpHairKeidNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: keid
@@ -120,7 +120,7 @@
   id: VulpHairKleeiaNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: kleeia
@@ -129,7 +129,7 @@
   id: VulpHairMizarNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: mizar
@@ -138,7 +138,7 @@
   id: VulpHairPunkBraidedNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: punkbraided
@@ -147,7 +147,7 @@
   id: VulpHairRaineNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: raine
@@ -156,7 +156,7 @@
   id: VulpHairRoughNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: rough
@@ -165,7 +165,7 @@
   id: VulpHairShortNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: short
@@ -174,7 +174,7 @@
   id: VulpHairShort2New
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: short2
@@ -183,7 +183,7 @@
   id: VulpHairSpikeNew
   bodyPart: Hair
   canBeDisplaced: false
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/hair.rsi
       state: spike
@@ -192,7 +192,7 @@
 - type: marking
   id: VulpFacialHairRuffNew
   bodyPart: FacialHair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/facial_hair.rsi
@@ -201,7 +201,7 @@
 - type: marking
   id: VulpFacialHairElderNew
   bodyPart: FacialHair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/facial_hair.rsi
@@ -210,7 +210,7 @@
 - type: marking
   id: VulpFacialHairElderChinNew
   bodyPart: FacialHair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/facial_hair.rsi
@@ -219,7 +219,7 @@
 - type: marking
   id: VulpFacialHairKitaNew
   bodyPart: FacialHair
-  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune]
+  groupWhitelist: [Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsIPC]
   canBeDisplaced: false
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/facial_hair.rsi

@@ -4,7 +4,7 @@
 - type: marking
   id: KitsuneTailDefault
   bodyPart: Tail
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -21,7 +21,7 @@
 - type: marking
   id: KitsuneTailsNine
   bodyPart: Tail
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -38,7 +38,7 @@
 - type: marking
   id: KitsuneTailsThree
   bodyPart: Tail
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -55,7 +55,7 @@
 - type: marking
   id: KitsuneTailsTwo
   bodyPart: Tail
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -74,7 +74,7 @@
 - type: marking
   id: KitsuneEarsDefault
   bodyPart: HeadTop
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -91,7 +91,7 @@
 - type: marking
   id: KitsuneEarsFox
   bodyPart: HeadTop
-  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime]
+  groupWhitelist: [MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsTajaran, Slime, MarkingsIPC]
   coloring:
     default:
       type: !type:CategoryColoring

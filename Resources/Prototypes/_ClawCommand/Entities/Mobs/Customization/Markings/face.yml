@@ -14,7 +14,7 @@
 - type: marking
   id: FaceFullblush
   bodyPart: Head
-  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Human, Slime, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
   coloring:
     default:
       type:
