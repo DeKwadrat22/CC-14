@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/26/2026 15:51:48
+  time: 06/28/2026 17:46:39
   entityCount: 13957
 maps:
 - 1
@@ -37790,7 +37790,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -101282.03
+      secondsUntilStateChange: -101328.3
     - type: AirlockAtmosBlockOpen
   - uid: 6042
     components:
@@ -75247,13 +75247,6 @@ entities:
     - type: Transform
       pos: -19.5,-7.5
       parent: 2
-- proto: SpawnPointBrigmedic
-  entities:
-  - uid: 11463
-    components:
-    - type: Transform
-      pos: 18.5,0.5
-      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 11464
@@ -75422,6 +75415,13 @@ entities:
     components:
     - type: Transform
       pos: 10.5,8.5
+      parent: 2
+- proto: SpawnPointLibrarian
+  entities:
+  - uid: 11463
+    components:
+    - type: Transform
+      pos: -43.5,-7.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
