@@ -29,12 +29,12 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
         if (args.SpawnResult != null)
             return;
 
-        // If it's just a spawn pref check if it's for cryo (silly).
-        if (args.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Cryosleep &&
-            (!_proto.Resolve(args.Job, out var jobProto) || jobProto.JobEntity == null))
-        {
+        // Claw Command: the Cryosleep SpawnPriorityPreference is intentionally ignored — the lobby
+        // UI still shows/saves it (preference round-trips), but here we only handle JobEntity jobs
+        // (AI, Borg) that need to be inserted into a specific container. Humanoid players fall
+        // through to ArrivalsSystem, which is now subscribed before us so it always wins anyway.
+        if (!_proto.Resolve(args.Job, out var jobProto) || jobProto.JobEntity == null)
             return;
-        }
 
         var query = EntityQueryEnumerator<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>();
         var possibleContainers = new List<Entity<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>>();
@@ -44,21 +44,18 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
             if (args.Station != null && _station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // _ClawCommand: matches space/'s behaviour — disable spawning in
-            // cryo entirely. The "Cryosleep" SpawnPriorityPreference stays
-            // visible & saved in the lobby UI so the preference round-trips
-            // (and so we can re-enable cryo later by uncommenting), but at
-            // spawn time the player always falls through to arrivals via
-            // SpawnPointSystem. Cryo pods carry SpawnType.Unset, so leaving
-            // out the Unset branch is what neutralises them.
-            //
-            // if (spawnPoint.SpawnType == SpawnPointType.Unset)
-            // {
-            //     // make sure we also check the job here for various reasons.
-            //     if (spawnPoint.Job == null || spawnPoint.Job == args.Job)
-            //         possibleContainers.Add((uid, spawnPoint, container, xform));
-            //     continue;
-            // }
+            // Claw Command: require an explicit job match on the container. This keeps AI in the
+            // AI core (PlayerStationAi has job: StationAi) and Borg in its pod, while jobless
+            // cryo containers (CryogenicSleepUnitSpawner / *LateJoin) are skipped completely —
+            // even when a Cryosleep-pref player somehow reaches this code, no container matches.
+            if (spawnPoint.Job == null || spawnPoint.Job != args.Job)
+                continue;
+
+            if (spawnPoint.SpawnType == SpawnPointType.Unset)
+            {
+                possibleContainers.Add((uid, spawnPoint, container, xform));
+                continue;
+            }
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
@@ -66,8 +63,7 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
             }
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
-                spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job == args.Job))
+                spawnPoint.SpawnType == SpawnPointType.Job)
             {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
             }

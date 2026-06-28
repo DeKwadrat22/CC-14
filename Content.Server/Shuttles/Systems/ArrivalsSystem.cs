@@ -94,7 +94,11 @@ public sealed partial class ArrivalsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(SpawnPointSystem)}, after: new [] { typeof(ContainerSpawnPointSystem)});
+        // Claw Command: subscribe BEFORE ContainerSpawnPointSystem so arrivals always wins for
+        // humanoid players, regardless of their saved SpawnPriority preference. Previously this
+        // ran AFTER container, which let cryo containers (CryogenicSleepUnitSpawnerLateJoin) grab
+        // Cryosleep-pref players before arrivals could fire. Matches space/ subscription order.
+        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(ContainerSpawnPointSystem), typeof(SpawnPointSystem)});
 
         SubscribeLocalEvent<StationArrivalsComponent, StationPostInitEvent>(OnStationPostInit);
 
@@ -340,7 +344,14 @@ public sealed partial class ArrivalsSystem : EntitySystem
         if (ev.DesiredSpawnPointType != null)
             return;
 
-        // We use arrivals as the default spawn so don't check for job prio.
+        // Claw Command: skip arrivals for JobEntity jobs (AI, Borg). Those need to be inserted into
+        // their specific container/pod by ContainerSpawnPointSystem or routed to a Job spawn point,
+        // not dumped at arrivals as a stray AI brain.
+        if (_protoManager.Resolve(ev.Job, out var jobProto) && jobProto.JobEntity != null)
+            return;
+
+        // We use arrivals as the default spawn so don't check for job prio (Cryosleep/Arrivals
+        // SpawnPriorityPreference is intentionally ignored — preference still saves in the UI).
 
         // Only works on latejoin even if enabled.
         if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
