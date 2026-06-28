@@ -1,0 +1,11 @@
+# Clarke mech electronics lathe recipes.
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ClarkeCentralElectronics
+  result: ClarkeCentralElectronics
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ClarkePeripheralsElectronics
+  result: ClarkePeripheralsElectronics

@@ -1,0 +1,27 @@
+# Toggle action entity prototypes for NightVision / ThermalVision goggles.
+
+- type: entity
+  id: ToggleNightVision
+  name: action-name-toggle-night-vision
+  description: action-description-toggle-night-vision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
+      state: icon
+    useDelay: 0.5
+    event: !type:ToggleNightVisionEvent
+
+- type: entity
+  id: ToggleThermalVision
+  name: action-name-toggle-thermal-vision
+  description: action-description-toggle-thermal-vision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Clothing/Eyes/Glasses/thermal.rsi
+      state: icon
+    useDelay: 0.5
+    event: !type:ToggleThermalVisionEvent

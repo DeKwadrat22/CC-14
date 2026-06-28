@@ -1,0 +1,14 @@
+# Vision overlay shaders ported from Goobstation under AGPL-3.0-or-later.
+# Used by NightVisionSystem/ThermalVisionSystem in Content.Goobstation.Client.Overlays.
+
+- type: shader
+  id: NightVision
+  kind: source
+  path: "/Textures/_ClawCommand/Shaders/nightvision.swsl"
+
+- type: shader
+  id: ThermalVision
+  kind: source
+  path: "/Textures/_ClawCommand/Shaders/thermal.swsl"
+  params:
+    pixelSize: 32.0

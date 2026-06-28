@@ -1,0 +1,112 @@
+# Ripley MK II + Clarke mech entities ported from Goobstation under AGPL-3.0-or-later.
+# Original authors: NULL882, gluesniffler, Aiden, GoobBot, Fishbait, Ilya246, Killerqu00,
+#   SX-7, fishbait, holorain, Ted Lukin, deltanedas, BramvanZijp, Aviu00, Aidenkrz.
+# Fork adaptations: stripped Goob's CombatMech/IndustrialMech wrappers and Cargo contraband
+# parent (fork uses different contraband layout); reduced to BaseMech parentage.
+
+# Ripley APLU MK-II
+- type: entity
+  id: MechRipley2
+  parent: BaseMech
+  name: Ripley APLU MK-II
+  description: The "MK-II" has a pressurized cabin for space operations, but the added weight has slowed it down.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleymkii
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: ripleymkii
+    openState: ripleymkii-open
+    brokenState: ripleymkii-broken
+    mechToPilotDamageMultiplier: 0.4
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 20
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.2
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - RipleyMkII
+
+- type: entity
+  id: MechRipley2Battery
+  parent: MechRipley2
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Clarke
+- type: entity
+  id: MechClarke
+  parent: BaseMech
+  name: Clarke
+  description: A fast-moving mech for space travel. It has built-in thrusters.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: clarke
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: Mech
+    baseState: clarke
+    openState: clarke-open
+    brokenState: clarke-broken
+    mechToPilotDamageMultiplier: 0.5
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 26
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 4.5
+  - type: CanMoveInAir
+  - type: StaticPrice
+    price: 1500
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - Clarke
+
+- type: entity
+  id: MechClarkeBattery
+  parent: MechClarke
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh

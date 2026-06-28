@@ -32,6 +32,8 @@
     sprite: Clothing/Mask/gassecurity.rsi
   - type: Clothing
     sprite: Clothing/Mask/gassecurity.rsi
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -52,6 +54,8 @@
     sprite: Clothing/Mask/gassyndicate.rsi
   - type: FlashImmunity
   - type: EyeProtection
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -87,6 +91,7 @@
     sprite: Clothing/Mask/gascaptain.rsi
   - type: BreathMask
   - type: IngestionBlocker
+    blockSmokeIngestion: true # Claw Command: passive smoke protection (Goob port)
 
 - type: entity
   parent: [ ClothingMaskGasAtmos, BaseCentcommContraband ]
@@ -100,6 +105,7 @@
     sprite: Clothing/Mask/gascentcom.rsi
   - type: BreathMask
   - type: IngestionBlocker
+    blockSmokeIngestion: true # Claw Command: passive smoke protection (Goob port)
 
 - type: entity
   parent: [ClothingMaskGas, BaseCargoContraband]
@@ -111,6 +117,8 @@
     sprite: Clothing/Mask/gasexplorer.rsi
   - type: Clothing
     sprite: Clothing/Mask/gasexplorer.rsi
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -154,6 +162,8 @@
     sprite: Clothing/Mask/medicalsecurity.rsi
   - type: Clothing
     sprite: Clothing/Mask/medicalsecurity.rsi
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -267,6 +277,8 @@
     sprite: Clothing/Mask/clown_security.rsi
   - type: Clothing
     sprite: Clothing/Mask/clown_security.rsi
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -417,6 +429,8 @@
     - HeadTop
     - HeadSide
     hideOnToggle: true
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -435,6 +449,8 @@
     sprite: Clothing/Mask/merc.rsi
   - type: Clothing
     sprite: Clothing/Mask/merc.rsi
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -463,6 +479,8 @@
     hideOnToggle: true
   - type: FlashImmunity
   - type: EyeProtection
+  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port) — also inherited by DeathSquad
+    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:

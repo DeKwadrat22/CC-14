@@ -10,6 +10,9 @@ ingestion-try-use-wrong-utensil = You can't {$verb} {THE($food)} with {INDEFINIT
 
 ingestion-remove-mask = You need to take off the {$entity} first.
 
+# Claw Command: examine hint for gas masks with BlockSmokeIngestion (ported from Goob-Station).
+ingestion-blocker-block-smoke-examine = It [color=lightblue]filters smoke[/color] out of the air you breathe.
+
 ## Failed Ingestion
 
 ingestion-you-cannot-ingest-any-more = You can't {$verb} any more!

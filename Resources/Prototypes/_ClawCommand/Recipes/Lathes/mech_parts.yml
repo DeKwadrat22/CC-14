@@ -1,0 +1,71 @@
+# Ripley MK II + Clarke lathe recipes ported from Goobstation under AGPL-3.0-or-later.
+
+# Ripley MK II
+- type: latheRecipe
+  id: RipleyMKIIHarness
+  result: RipleyMKIIHarness
+  categories:
+  - RipleyMKII
+  completetime: 10
+  materials:
+    Steel: 1500
+    Glass: 1200
+
+- type: latheRecipe
+  id: RipleyUpgradeKit
+  result: RipleyUpgradeKit
+  categories:
+  - RipleyMKII
+  completetime: 10
+  materials:
+    Steel: 500
+
+# Clarke
+- type: latheRecipe
+  id: ClarkeHarness
+  result: ClarkeHarness
+  categories:
+  - Clarke
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1500
+
+- type: latheRecipe
+  id: ClarkeHead
+  result: ClarkeHead
+  categories:
+  - Clarke
+  completetime: 10
+  materials:
+    Steel: 1550
+    Glass: 950
+
+- type: latheRecipe
+  id: ClarkeLArm
+  result: ClarkeLArm
+  categories:
+  - Clarke
+  completetime: 10
+  materials:
+    Steel: 900
+    Glass: 800
+
+- type: latheRecipe
+  id: ClarkeRArm
+  result: ClarkeRArm
+  categories:
+  - Clarke
+  completetime: 10
+  materials:
+    Steel: 900
+    Glass: 800
+
+- type: latheRecipe
+  id: ClarkeTreads
+  result: ClarkeTreads
+  categories:
+  - Clarke
+  completetime: 10
+  materials:
+    Steel: 950

@@ -13,7 +13,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -55,7 +55,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -153,7 +153,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -197,7 +197,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -320,7 +320,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -363,7 +363,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -511,7 +511,7 @@
     variation: 0.125
   sounds:
     CatMeow:
-      collection: CatMeows # Claw Command
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses # Claw Command
     Mew:
@@ -567,7 +567,7 @@
     variation: 0.125
   sounds:
     CatMeow:
-      collection: CatMeows # Claw Command
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses # Claw Command
     Mew:

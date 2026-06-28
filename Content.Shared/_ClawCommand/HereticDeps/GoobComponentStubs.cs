@@ -35,38 +35,7 @@ namespace Content.Goobstation.Client.Clothing.Components
 }
 
 // --- Goob Overlays (NightVision/ThermalVision) ---
-namespace Content.Goobstation.Shared.Overlays
-{
-    [RegisterComponent]
-    public sealed partial class NightVisionComponent : Component
-    {
-        [DataField] public Color Color = Color.White;
-        [DataField] public SoundSpecifier? ActivateSound;
-        [DataField] public SoundSpecifier? DeactivateSound;
-        [DataField] public bool DrawOverlay = true;
-        [DataField] public bool IsActive;
-        [DataField] public bool IsEquipment;
-        [DataField] public float LightRadius;
-        [DataField] public float FlashDurationMultiplier = 1f;
-        [DataField] public string? ThermalShader;
-        [DataField] public EntProtoId? ToggleAction;
-    }
-
-    [RegisterComponent]
-    public sealed partial class ThermalVisionComponent : Component
-    {
-        [DataField] public Color Color = Color.White;
-        [DataField] public SoundSpecifier? ActivateSound;
-        [DataField] public SoundSpecifier? DeactivateSound;
-        [DataField] public bool DrawOverlay = true;
-        [DataField] public bool IsActive;
-        [DataField] public bool IsEquipment;
-        [DataField] public float LightRadius = 2f;
-        [DataField] public float FlashDurationMultiplier = 1f;
-        [DataField] public string? ThermalShader = "ThermalVision";
-        [DataField] public EntProtoId? ToggleAction;
-    }
-}
+// Real implementations live in Content.Shared/_ClawCommand/Overlays/ — stubs removed.
 
 // --- Goob Contraband ---
 namespace Content.Goobstation.Shared.Contraband

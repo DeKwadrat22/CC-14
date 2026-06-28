@@ -1,0 +1,196 @@
+# Ripley MK II + Clarke mech parts ported from Goobstation under AGPL-3.0-or-later.
+# Adapted to the fork's PartAssembly pattern (single-entity harness with Construction).
+
+# --- Ripley MK II ---
+
+- type: entity
+  id: BaseRipleyMKIIPart
+  parent: BaseMechPart
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Items
+    noRot: false
+    sprite: _ClawCommand/Objects/Specific/Mech/ripleymkii_construction.rsi
+
+- type: entity
+  parent: BaseRipleyMKIIPart
+  id: RipleyMKIIHarness
+  name: ripley MK-II harness
+  description: The core of the Ripley MK-II.
+  components:
+  - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      ripleymkii_upgrade_kit+o:
+        whitelist:
+          tags:
+          - RipleyMKIIUpgradeKit
+      ripleymkii_l_arm+o:
+        whitelist:
+          tags:
+          - RipleyLArm
+      ripleymkii_r_arm+o:
+        whitelist:
+          tags:
+          - RipleyRArm
+      ripleymkii_l_leg+o:
+        whitelist:
+          tags:
+          - RipleyLLeg
+      ripleymkii_r_leg+o:
+        whitelist:
+          tags:
+          - RipleyRLeg
+    sprite: _ClawCommand/Objects/Specific/Mech/ripleymkii_construction.rsi
+  - type: ContainerContainer
+    containers:
+      mech-assembly-container: !type:Container
+      battery-container: !type:Container
+  - type: MechAssemblyVisuals
+    statePrefix: ripleymkii
+  - type: Sprite
+    state: ripleymkii_harness+o
+    noRot: true
+  - type: PartAssembly
+    parts:
+      RipleyMKII:
+      - RipleyMKIIUpgradeKit
+      - RipleyLArm
+      - RipleyRArm
+      - RipleyLLeg
+      - RipleyRLeg
+    containerId: mech-assembly-container
+  - type: Construction
+    graph: RipleyMKII
+    node: start
+
+- type: entity
+  parent: BaseRipleyMKIIPart
+  id: RipleyUpgradeKit
+  name: exosuit upgrade kit
+  description: This kit allows you to assemble an exosuit Ripley MK-II.
+  components:
+  - type: Item
+    storedRotation: 0
+    size: Ginormous
+  - type: Sprite
+    state: ripleymkii_upgrade_kit
+  - type: Tag
+    tags:
+    - RipleyMKIIUpgradeKit
+
+# --- Clarke ---
+
+- type: entity
+  id: BaseClarkePart
+  parent: BaseMechPart
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Items
+    noRot: false
+    sprite: _ClawCommand/Objects/Specific/Mech/clarke_construction.rsi
+
+- type: entity
+  id: BaseClarkePartItem
+  parent: BaseClarkePart
+  abstract: true
+  components:
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseClarkePart
+  id: ClarkeHarness
+  name: clarke harness
+  description: The core of the Clarke.
+  components:
+  - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      clarke_head+o:
+        whitelist:
+          tags:
+          - ClarkeHead
+      clarke_r_arm+o:
+        whitelist:
+          tags:
+          - ClarkeRArm
+      clarke_l_arm+o:
+        whitelist:
+          tags:
+          - ClarkeLArm
+      clarke_treads+o:
+        whitelist:
+          tags:
+          - ClarkeTreads
+    sprite: _ClawCommand/Objects/Specific/Mech/clarke_construction.rsi
+  - type: ContainerContainer
+    containers:
+      mech-assembly-container: !type:Container
+      battery-container: !type:Container
+  - type: MechAssemblyVisuals
+    statePrefix: clarke
+  - type: Sprite
+    state: clarke_harness+o
+    noRot: true
+  - type: PartAssembly
+    parts:
+      Clarke:
+      - ClarkeHead
+      - ClarkeLArm
+      - ClarkeRArm
+      - ClarkeTreads
+    containerId: mech-assembly-container
+  - type: Construction
+    graph: Clarke
+    node: start
+
+- type: entity
+  parent: BaseClarkePartItem
+  id: ClarkeHead
+  name: clarke head
+  description: The head of the Clarke. It belongs on the chassis of the mech.
+  components:
+  - type: Sprite
+    state: clarke_head
+  - type: Tag
+    tags:
+    - ClarkeHead
+
+- type: entity
+  parent: BaseClarkePartItem
+  id: ClarkeLArm
+  name: clarke left arm
+  description: The left arm of the Clarke. It belongs on the chassis of the mech.
+  components:
+  - type: Sprite
+    state: clarke_l_arm
+  - type: Tag
+    tags:
+    - ClarkeLArm
+
+- type: entity
+  parent: BaseClarkePartItem
+  id: ClarkeRArm
+  name: clarke right arm
+  description: The right arm of the Clarke. It belongs on the chassis of the mech.
+  components:
+  - type: Sprite
+    state: clarke_r_arm
+  - type: Tag
+    tags:
+    - ClarkeRArm
+
+- type: entity
+  parent: BaseClarkePartItem
+  id: ClarkeTreads
+  name: clarke treads
+  description: The treads of the Clarke. They belong on the chassis of the mech.
+  components:
+  - type: Sprite
+    state: clarke_treads
+  - type: Tag
+    tags:
+    - ClarkeTreads

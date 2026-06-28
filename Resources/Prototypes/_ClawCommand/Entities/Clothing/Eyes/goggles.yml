@@ -1,0 +1,83 @@
+# NightVision / ThermalVision goggle entities ported from Goobstation under AGPL-3.0-or-later.
+# Components live in Content.Goobstation.Shared.Overlays (see Content.Shared/_ClawCommand/Overlays/).
+
+- type: entity
+  parent: [ClothingEyesBase, BaseSecurityContraband]
+  id: ClothingEyesNightVisionGoggles
+  name: night vision goggles
+  description: Civilian-grade light-amplifying goggles. Lets you see in low light without burning out your retinas.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesBase, BaseSecurityContraband]
+  id: ClothingEyesNightVisionSecurityGoggles
+  name: security night vision goggles
+  description: Security-issued light-amplifying goggles. Hardened polymer frame.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/security_nightvision.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/security_nightvision.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesBase, BaseMedicalContraband]
+  id: ClothingEyesNightVisionMedicalGoggles
+  name: medical night vision goggles
+  description: Medical-issued light-amplifying goggles. Useful in dimly lit triage situations.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/medical_nightvision.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/medical_nightvision.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesBase, BaseEngineeringContraband]
+  id: ClothingEyesNightVisionDiagnosticGoggles
+  name: diagnostic night vision goggles
+  description: Engineering diagnostic light-amplifying goggles. Useful in dark maintenance shafts.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesBase, BaseSecurityContraband]
+  id: ClothingEyesThermalVisionGoggles
+  name: thermal vision goggles
+  description: Detects heat signatures through walls. Disorients the wearer if used too long.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+  - type: ThermalVision
+    isEquipment: true
+    lightRadius: 2
+  - type: Tag
+    tags:
+    - WhitelistChameleon

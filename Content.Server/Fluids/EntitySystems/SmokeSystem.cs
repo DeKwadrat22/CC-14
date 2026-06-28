@@ -9,6 +9,8 @@ using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
+using Content.Shared.Inventory; // Claw Command: passive smoke block check on mask slot
+using Content.Shared.Nutrition.Components; // Claw Command: IngestionBlocker.BlockSmokeIngestion
 using Content.Shared.Smoking;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
@@ -39,6 +41,7 @@ public sealed partial class SmokeSystem : EntitySystem
     [Dependency] private AppearanceSystem _appearance = default!;
     [Dependency] private BloodstreamSystem _blood = default!;
     [Dependency] private InternalsSystem _internals = default!;
+    [Dependency] private InventorySystem _inventory = default!; // Claw Command: needed for mask-slot smoke block check
     [Dependency] private ReactiveSystem _reactive = default!;
     [Dependency] private SharedBroadphaseSystem _broadphase = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -262,6 +265,17 @@ public sealed partial class SmokeSystem : EntitySystem
             return;
 
         var blockIngestion = _internals.AreInternalsWorking(entity);
+
+        // Claw Command: ported from Goob-Station. A mask-slot item whose IngestionBlocker
+        // is enabled and flagged BlockSmokeIngestion grants passive smoke protection
+        // even without an active internals supply — so "real" gas masks (security, swat,
+        // syndicate, ERT, etc.) actually keep smoke chems out of the bloodstream when worn.
+        if (_inventory.TryGetSlotEntity(entity, "mask", out var maskUid)
+            && TryComp<IngestionBlockerComponent>(maskUid, out var blocker)
+            && blocker is { Enabled: true, BlockSmokeIngestion: true })
+        {
+            blockIngestion = true;
+        }
 
         var cloneSolution = solution.Clone();
         var availableTransfer = FixedPoint2.Min(cloneSolution.Volume, component.TransferRate);

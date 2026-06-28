@@ -128,7 +128,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     Bark:
@@ -392,7 +392,7 @@
       params:
         variation: 0.125
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - varied space-ported meows for *meows emote
       params:
         variation: 0.125
     CatHisses:
@@ -444,7 +444,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     Bark:

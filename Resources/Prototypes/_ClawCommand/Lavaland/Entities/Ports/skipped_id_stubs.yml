@@ -1,26 +1,7 @@
-# Minimal entity prototypes for IDs the maps referenced but I previously skipped
-# (SyringeGun, ClothingEyesNightVisionGoggles). Map loads, items can be picked up.
-#
-# These are MINIMAL ports — they intentionally don't carry over Goob's full
-# functionality:
-#   - NightVisionGoggles: no overlay-shader system (Goob has BaseVisionOverlay,
-#     SwitchableOverlaySystem, ThermalVision dependency). Wear them like normal
-#     goggles. TODO: real port of the overlay system.
-#   - SyringeGun: no SyringeGunSystem (Goob has its own ranged-injection system).
-#     Reparented to a vanilla pistol skeleton so it exists and slots into hand,
-#     but doesn't fire syringes. TODO: real port of the syringe-fire system.
-
-# --- Night Vision Goggles ---
-- type: entity
-  parent: ClothingEyesGlassesMeson
-  id: ClothingEyesNightVisionGoggles
-  name: night vision goggles
-  description: Lets you see in the dark, supposedly. (Stub — full vision system not ported.)
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Hud/meson.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Hud/meson.rsi
+# Minimal entity prototypes for IDs the maps referenced but I previously skipped.
+# NightVisionGoggles stub removed — real implementation now lives in
+# Resources/Prototypes/_ClawCommand/Entities/Clothing/Eyes/goggles.yml with a full
+# Goob NightVision overlay system port. SyringeGun stub kept until real port.
 
 # --- Syringe Gun ---
 # Reparent to Pistol Mk58 so it exists as a holdable weapon. No syringe-shoot.

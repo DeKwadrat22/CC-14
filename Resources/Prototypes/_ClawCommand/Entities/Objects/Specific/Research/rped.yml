@@ -1,0 +1,35 @@
+# Rapid Part Exchange Device.
+# Note: the fork's machine system does not use slot-based stock parts (machines = MachineBoard +
+# materials only), so the classic "click machine to swap parts" behavior has no surface to act on.
+# Until a stock-part machine slot system is ported, RPED is implemented here as a high-capacity
+# portable parts container — Storage of all stock parts with quick-equip/use ergonomics.
+# This makes the RapidPartExchange research unlock a real, useful item rather than nothing.
+
+- type: entity
+  name: rapid part exchange device
+  parent: BaseItem
+  id: RPED
+  description: A device used to rapidly exchange parts in machines. Currently functions as a high-capacity stock-part container.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/rped.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Research/rped.rsi
+    size: Normal
+  - type: Storage
+    grid:
+    - 0,0,9,3
+    whitelist:
+      tags:
+      - ConstructionMaterial
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: GuideHelp
+    guides:
+    - Robotics
