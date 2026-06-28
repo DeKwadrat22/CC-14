@@ -153,6 +153,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
         SubscribeLocalEvent<HereticMansusLinkDoAfter>(OnMansusLinkDoafter);
 
         SubscribeLock();
+        SubscribePathLock(); // Claw Command: handlers for the Path of Lock progression
     }
 
     public override void InvokeTouchSpell<T>(Entity<T> ent, EntityUid user)

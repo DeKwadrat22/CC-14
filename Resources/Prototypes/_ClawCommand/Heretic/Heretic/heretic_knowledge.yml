@@ -623,3 +623,49 @@
   stage: 8
   actionPrototypes:
   - ActionHereticCleave
+
+### lock path
+# Claw Command: Path of Lock implementation. The starter listing existed but the path was a stub
+# (no stages 2-5, no knowledge, no abilities) and the C# defined two event classes
+# (EventHereticBulglarFinesse, EventHereticLastRefugee) and HereticAscensionLockEvent with no
+# handlers or YAML wiring. This section fills in the gap so the path is actually playable end-to-end.
+- type: hereticKnowledge
+  id: OpeningLecture
+  path: Lock
+  stage: 1
+  ritualPrototypes:
+  - BladeLock
+
+- type: hereticKnowledge
+  id: GraspOfLock
+  path: Lock
+  stage: 2
+
+- type: hereticKnowledge
+  id: BurglarFinesse
+  path: Lock
+  stage: 3
+  actionPrototypes:
+  - ActionHereticBurglarFinesse
+
+- type: hereticKnowledge
+  id: LastRefugee
+  path: Lock
+  stage: 4
+  actionPrototypes:
+  - ActionHereticLastRefugee
+
+- type: hereticKnowledge
+  id: AscensionLock
+  path: Lock
+  stage: 9
+  ritualPrototypes:
+  - AscensionLock
+
+- type: hereticKnowledge
+  id: WaltzOfKeys
+  path: Lock
+  stage: 10
+  event: !type:HereticAscensionLockEvent
+    addedComponents:
+    - type: LockMaster

@@ -91,3 +91,28 @@ knowledge-path-lock-s10-desc =
     Bring 3 corpses without organs in their torso to a transmutation rune to complete the ritual.
     When completed, you will create a tear to the Labyrinth's heart; a tear in reality located at the site of this ritual.
     Eldritch creatures will endlessly pour from this rift who are bound to obey your instructions.
+
+# Claw Command: Path of Lock MVP — strings that describe what our current implementations
+# actually do (open nearest sealed thing / vanish into a sealed locker). The original Goob design
+# had a deeper 9-stage path, kept in the s3-s9 entries above for future expansion.
+knowledge-path-lock-burglar-finesse-name = Burglar's Finesse
+knowledge-path-lock-burglar-finesse-desc =
+    Consorting with Burglar spirits is frowned upon, but a Steward will always want to learn about new doors.
+
+    Grants the Burglar's Finesse ability — force the nearest sealed door, airlock, locker, or crate within reach
+    to spring open, regardless of access or bolts. The Mansus knows every keyhole.
+
+knowledge-path-lock-last-refugee-name = Caretaker's Last Refuge
+knowledge-path-lock-last-refugee-desc =
+    Jealously, the Guard and the Hound hunted me. But I unlocked the nearest hiding place and was simply gone.
+
+    Grants Last Refugee — vanish through the nearest closed locker within range, reappearing sealed inside it.
+    A heretic of the Lock is never truly cornered.
+
+# Ability popups + speech for the two Lock actions
+heretic-burglar-finesse-success = The lock yields to your touch.
+heretic-burglar-finesse-fail = No sealed lock answers your call.
+heretic-last-refugee-success = The Mansus swallows you whole.
+heretic-last-refugee-fail = No refuge is open to you here.
+heretic-speech-burglar-finesse = WHAT WAS LOCKED SHALL OPEN!
+heretic-speech-last-refugee = SHIELD ME, LABYRINTH!

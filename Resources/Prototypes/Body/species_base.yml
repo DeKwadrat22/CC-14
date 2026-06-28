@@ -231,3 +231,4 @@
     alternateState: Standing
   - type: StunVisuals
   - type: UndergarmentRemoval # CC14
+  - type: SprinterDust # Claw Command: dust cloud beneath the feet when moving above walking speed

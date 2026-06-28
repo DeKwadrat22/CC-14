@@ -465,3 +465,35 @@
     Knife: 1
   output:
     CarvingKnife: 1
+
+### lock path
+# Claw Command: Path of Lock rituals. BladeLock crafts the path's signature blade; AscensionLock
+# is the end-game transformation ritual that grants WaltzOfKeys (passive door-access bypass).
+- type: hereticRitual
+  id: BladeLock
+  locName: knowledge-path-lock-s1-name
+  locDesc: knowledge-path-lock-s1-desc
+  icon:
+    sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi
+    state: icon
+  requiredTags:
+    Knife: 1
+    Crowbar: 1
+  output:
+    HereticBladeLock: 1
+  limit: 2
+
+- type: hereticRitual
+  id: AscensionLock
+  locName: knowledge-path-lock-s9-name
+  locDesc: knowledge-path-lock-s9-desc
+  icon:
+    sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi
+    state: icon
+  customBehaviors:
+  - !type:RitualCanAscend
+  - !type:RitualSacrificeBehavior
+    min: 3
+    max: 3
+  outputKnowledge: WaltzOfKeys
+  outputEvent: !type:EventHereticAscension
