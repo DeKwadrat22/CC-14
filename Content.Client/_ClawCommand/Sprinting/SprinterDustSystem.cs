@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._ClawCommand.Sprinting;
 
-public sealed class SprinterDustSystem : EntitySystem
+public sealed partial class SprinterDustSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 
