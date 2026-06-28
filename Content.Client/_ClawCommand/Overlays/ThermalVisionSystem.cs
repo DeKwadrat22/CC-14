@@ -39,8 +39,13 @@ public sealed partial class ThermalVisionSystem : EquipmentHudSystem<ThermalVisi
     protected override void OnRefreshEquipmentHud(Entity<ThermalVisionComponent> ent,
         ref InventoryRelayedEvent<RefreshEquipmentHudEvent<ThermalVisionComponent>> args)
     {
-        if (ent.Comp.IsEquipment)
-            base.OnRefreshEquipmentHud(ent, ref args);
+        // Don't route through base.OnRefreshComponentHud — the override there skips on IsEquipment=true,
+        // which would silently drop equipment goggles from the refresh list.
+        if (!ent.Comp.IsEquipment)
+            return;
+
+        args.Args.Active = true;
+        args.Args.Components.Add(ent.Comp);
     }
 
     private void OnToggle(Entity<ThermalVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

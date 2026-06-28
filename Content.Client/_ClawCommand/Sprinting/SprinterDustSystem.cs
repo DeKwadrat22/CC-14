@@ -6,10 +6,14 @@
 // slow zones, drugs, hyperzine, slipping, stamina drain, etc. The authoritative signal is
 // InputMoverComponent.Sprinting, which is true when the player is intentionally running
 // (default movement, no Walk button held) — that's what we now key off.
+//
+// Also plays a one-shot puff sound on the not-sprinting → sprinting transition, ported from
+// Goob's SprinterComponent.SprintStartupSound.
 
 using Content.Shared._ClawCommand.Sprinting;
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Client._ClawCommand.Sprinting;
@@ -18,6 +22,7 @@ public sealed partial class SprinterDustSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     public override void Update(float frameTime)
     {
@@ -31,12 +36,19 @@ public sealed partial class SprinterDustSystem : EntitySystem
         while (query.MoveNext(out var uid, out var dust, out var mover, out var xform))
         {
             // No floor → no dust (no ground to kick up).
-            if (xform.GridUid == null || _gravity.IsWeightless((uid, null)))
-                continue;
+            var grounded = xform.GridUid != null && !_gravity.IsWeightless((uid, null));
 
             // Player must be sprinting (default movement, NOT holding Walk) and actively pressing
             // a direction. Sprinting-but-stationary doesn't kick up dust either.
-            if (!mover.Sprinting || !mover.HasDirectionalMovement)
+            var sprintingNow = grounded && mover.Sprinting && mover.HasDirectionalMovement;
+
+            // Rising edge — play the puff sound exactly once when sprint begins.
+            if (sprintingNow && !dust.WasSprinting)
+                _audio.PlayPredicted(dust.StartSound, uid, uid);
+
+            dust.WasSprinting = sprintingNow;
+
+            if (!sprintingNow)
                 continue;
 
             if (now - dust.LastStep < dust.StepInterval)

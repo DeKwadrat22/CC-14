@@ -206,19 +206,3 @@
     state: icon
   - type: Item
     sprite: _ClawCommand/Heretic/Blades/blade_cosmos-inhand.rsi
-
-# Claw Command: Path of Lock blade. Sprite assets shipped already but the entity was never wired.
-- type: entity
-  parent: HereticBladeBase
-  id: HereticBladeLock
-  name: key blade
-  description: A wrought-iron skeleton key sharpened to a vicious crescent edge. Every lock you have ever opened whispers its name when you draw it.
-  suffix: Lock
-  components:
-  - type: HereticBlade
-    path: Lock
-  - type: Sprite
-    sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi
-    state: icon
-  - type: Item
-    sprite: _ClawCommand/Heretic/Blades/blade_lock-inhand.rsi

@@ -11,7 +11,10 @@
     canShuttle: false
     global: true
     announceSentBy: false
-    sound: /Audio/Announcements/war.ogg
+    # Claw Command: override the parent SyndicateComputerComms war.ogg sting (designed for the
+    # nukie war declaration). The outpost makes regular crew-facing announcements, so it should
+    # play the standard station chime so it sounds the same as any other announcement.
+    sound: /Audio/Announcements/announce.ogg
   - type: AccessReader
     access: [] # No access restriction for outpost operatives
 

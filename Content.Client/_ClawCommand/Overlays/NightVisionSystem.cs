@@ -35,8 +35,13 @@ public sealed partial class NightVisionSystem : EquipmentHudSystem<NightVisionCo
     protected override void OnRefreshEquipmentHud(Entity<NightVisionComponent> ent,
         ref InventoryRelayedEvent<RefreshEquipmentHudEvent<NightVisionComponent>> args)
     {
-        if (ent.Comp.IsEquipment)
-            base.OnRefreshEquipmentHud(ent, ref args);
+        // Don't route through base.OnRefreshComponentHud — the override there skips on IsEquipment=true,
+        // which would silently drop equipment goggles from the refresh list.
+        if (!ent.Comp.IsEquipment)
+            return;
+
+        args.Args.Active = true;
+        args.Args.Components.Add(ent.Comp);
     }
 
     private void OnToggle(Entity<NightVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

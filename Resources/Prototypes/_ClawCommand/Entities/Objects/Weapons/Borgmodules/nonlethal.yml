@@ -1,0 +1,31 @@
+# Claw Command: borg-only variants of security non-lethals that auto-recharge their internal
+# battery. Ported from space/_Floof/Entities/Objects/Weapons/Borgmodules/nonlethal.yml so our
+# dogborg-sec module doesn't have to find a recharger station every time it empties its disabler
+# or stunbaton. These IDs are HideSpawnMenu — they should only ever come out of a borg module's
+# `hands:`, not be spawned standalone.
+#
+# Rates match space:
+#   * Disabler — 30 / s   (~7s to refill from empty given typical fireCost)
+#   * Stunbaton — 40 / s  (~1.25s per use given energyPerUse 50)
+
+- type: entity
+  parent: WeaponDisabler
+  suffix: Robot
+  id: WeaponBorgDisabler
+  categories: [ HideSpawnMenu ]
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 30
+
+- type: entity
+  parent: Stunbaton
+  suffix: Robot
+  id: BorgStunbaton
+  categories: [ HideSpawnMenu ]
+  description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40

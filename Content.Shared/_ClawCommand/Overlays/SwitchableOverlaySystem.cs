@@ -4,6 +4,7 @@
 
 using Content.Shared.Actions;
 using Content.Shared.Inventory;
+using Content.Shared.Inventory.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
@@ -20,6 +21,7 @@ public abstract partial class SwitchableOverlaySystem<TComp, TEvent> : EntitySys
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
@@ -30,6 +32,16 @@ public abstract partial class SwitchableOverlaySystem<TComp, TEvent> : EntitySys
         SubscribeLocalEvent<TComp, GetItemActionsEvent>(OnGetItemActions);
         SubscribeLocalEvent<TComp, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<TComp, ComponentHandleState>(OnHandleState);
+        // Upstream's InventorySystem.InitializeRelay() only registers a fixed set of
+        // RefreshEquipmentHudEvent<X> types for inventory relay. NightVision/ThermalVision
+        // aren't in that list, so without this the refresh event never reaches the worn
+        // goggles and the shader pipeline thinks nothing is active.
+        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<TComp>>(RelayRefreshHud);
+    }
+
+    private void RelayRefreshHud(Entity<InventoryComponent> ent, ref RefreshEquipmentHudEvent<TComp> args)
+    {
+        _inventory.RelayEvent((ent.Owner, ent.Comp), ref args);
     }
 
     public override void FrameUpdate(float frameTime)
