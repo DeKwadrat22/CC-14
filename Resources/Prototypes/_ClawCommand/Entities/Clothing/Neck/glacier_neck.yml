@@ -1,0 +1,27 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- ClothingNeckCloakMiner ---
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMiner
+  name: miner's cloak
+  description: Worn by the most skilled miners, for one who has moved mountains and filled valleys.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/miner.rsi
+
+# --- ClothingNeckHeadphones ---
+# Stripped ToggleableLightVisuals / ItemToggle / ToggleVisuals refs (component+enum not in this fork).
+# Headphones are a static cosmetic item here; no on/off toggle.
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckHeadphones
+  name: headphones
+  description: Quality headphones from Drunk Masters, with good sound insulation.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/headphones.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/headphones.rsi
+

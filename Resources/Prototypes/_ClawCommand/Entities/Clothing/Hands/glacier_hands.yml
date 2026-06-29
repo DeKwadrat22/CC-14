@@ -1,0 +1,41 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- ClothingHandsGlovesChemist ---
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesChemist
+  name: heavy nitrile gloves
+  description: A pair of thick gloves that provide some protection from caustic chemicals.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/Hands/Gloves/hvchemresgloves.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/Hands/Gloves/hvchemresgloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
+  - type: TemperatureProtection
+    coefficient: 1
+
+# --- ClothingHandsGlovesColorYellowUnsulated ---
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesColorYellowUnsulated
+  name: unsulated gloves
+  description: Flimsy synthrubber work gloves styled in a drab yellow color. They are not electrically insulated, and provide no protection against any shocks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+  # Stripped: ClothingGrantPsionicPower + Psionic (Nyanotrasen psionic system not ported)
+

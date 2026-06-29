@@ -1,0 +1,162 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- ClothingOuterApronChemist ---
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApronChemist
+  name: chemical resistant apron
+  suffix: Chemistry
+  description: Made out of thick rubber, the color of this apron still leaves you perplexed.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/OuterClothing/Misc/chemapron.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/OuterClothing/Misc/chemapron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.25
+  - type: TemperatureProtection
+    coefficient: 1
+
+# --- ClothingOuterChiefJustice ---
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterChiefJustice
+  name: chief justice's robes
+  description: Heavy black robes with magenta and gold trim. It smells old.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/OuterClothing/Coats/cjrobe.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/OuterClothing/Coats/cjrobe.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
+
+# --- ClothingOuterCoatHyenhSweater ---
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatHyenhSweater
+  name: comfy sweater
+  description: It's comfy.
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/hyenh.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/hyenh.rsi
+    - type: TemperatureProtection
+      coefficient: 0.1
+
+# --- ClothingOuterCoatLettermanRed ---
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatLettermanRed
+  name: red letterman jacket
+  description: It's a red highschool jacket with a big '14' stitched onto the back.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_red.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_red.rsi
+  - type: TemperatureProtection
+    coefficient: 0.4
+## mnk
+
+# --- ClothingOuterHardsuitFreelancerPilot ---
+- type: entity
+  parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
+  id: ClothingOuterHardsuitFreelancerPilot
+  name: FL-02bt - "Pilot" Freelancer Softsuit
+  description: A armored soft suit. "Maximum speed for minimal protection."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/softsuitpilot.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/softsuitpilot.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.7
+        Heat: 0.8
+        Caustic: 0.8
+        Radiation: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  # Stripped: StaminaDamageResistance (component not present in this fork)
+
+# --- ClothingOuterRobeBrown ---
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterRobeBrown
+  name: brown robe
+  description: This doesn't look creepy at all.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/OuterClothing/Robes/brown.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/OuterClothing/Robes/brown.rsi
+  - type: TemperatureProtection
+    coefficient: 0.2
+
+# --- ClothingOuterRobeTechPriest ---
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterRobeTechPriest
+  name: automaturge robe
+  description: Robots are basically bulls when you think about it, so best to wear red.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/OuterClothing/Robes/techpriest.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/OuterClothing/Robes/techpriest.rsi
+  - type: TemperatureProtection
+    coefficient: 0.2
+
+# --- ClothingOuterWinterCoatLong ---
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWinterCoatLong
+  name: long winter coat
+  description: Even your legs will be warm with this stylish coat.
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/long_winter_coat.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/long_winter_coat.rsi
+
+# --- ClothingOuterWinterCoatMantis ---
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWinterCoatMantis
+  name: mantis' winter coat
+  description: Solve cold cases in style.
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mantis_winter_coat.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mantis_winter_coat.rsi
+
+# --- ClothingOuterWinterCoatPlaid ---
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWinterCoatPlaid
+  name: plaid winter coat
+  description: It might be made out of actual wool.
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/plaid_winter_coat.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/plaid_winter_coat.rsi
+
+# --- ClothingOuterWinterMystagogue ---
+- type: entity
+  parent: ClothingOuterWinterRD
+  id: ClothingOuterWinterMystagogue
+  name: Research Director's winter coat
+

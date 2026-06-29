@@ -31,7 +31,7 @@
     startAnnouncement: station-event-spider-spawn-announcement
     earliestStart: 20
     minimumPlayers: 7
-    weight: 5
+    weight: 3.35
     duration: 60
   - type: VentCrittersRule
     entries:

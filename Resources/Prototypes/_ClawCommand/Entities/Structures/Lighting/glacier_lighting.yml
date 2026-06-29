@@ -1,0 +1,47 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- AlwaysPoweredLightBlueInterior ---
+- type: entity
+  parent: AlwaysPoweredWallLight
+  id: AlwaysPoweredLightBlueInterior
+  suffix: Always Powered, Blue Exterior, Delta V
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  components:
+  - type: PointLight
+    radius: 12
+    energy: 3
+    softness: 0.5
+    color: "#B4FCF0"
+
+# --- AlwaysPoweredLightColoredRed ---
+- type: entity
+  id: AlwaysPoweredLightColoredRed
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: Always Powered, Red
+  parent: AlwaysPoweredWallLight
+  components:
+  - type: PointLight
+    radius: 10
+    energy: 0.9
+    softness: 0.5
+    color: "#FF6666"
+
+# --- PoweredLightPostSmallRed ---
+- type: entity
+  id: PoweredLightPostSmallRed
+  name: post light
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: Red
+  parent: PoweredLightPostSmallEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PoweredLight
+    hasLampOnSpawn: ColoredLightTubeRed
+    damage:
+      types:
+        Heat: 2
+  - type: StaticPrice #DynamicPrice
+    price: 25
+

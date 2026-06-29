@@ -1,0 +1,33 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- SpawnMobArcticFoxSeb ---
+# Substituted MobArcticFox/MobArcticFoxSeb (not in fork) with MobFox.
+- type: entity
+  name: Arctic Fox Seb Spawner
+  id: SpawnMobArcticFoxSeb
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobFox
+
+# --- SpawnMobSecDogLaika ---
+# Substituted MobSecDogLaika (not in fork) with MobCorgiIan.
+- type: entity
+  name: Sec Dog Laika Spawner
+  id: SpawnMobSecDogLaika
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCorgiIan
+

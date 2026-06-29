@@ -1,0 +1,25 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- RandomRockSpawner ---
+- type: entity
+  name: Mining Rock Spawner
+  id: RandomRockSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: DeltaV/Structures/Walls/asteroid_rock.rsi
+        state: full
+  - type: RandomSpawner
+    prototypes:
+      - AsteroidRock
+    chance: .90
+    rarePrototypes:
+      - Barricade
+      - MountainRockMining
+      - MountainRock
+      - RandomStalagmiteOrCrystal
+    rareChance: 0.05
+

@@ -1,0 +1,86 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- ToySpawner ---
+- type: entity
+  name: Toy Spawner
+  id: ToySpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Fun/toys.rsi
+          state: plushie_h
+    - type: RandomSpawner
+      rarePrototypes:
+        - FoamBlade
+        - PlushieGhost
+        - PlushieAbductorAgent
+      rareChance: 0.03
+      prototypes:
+        - PlushieBee
+        - PlushieAtmosian
+        - PlushieNuke
+        - PlushieLizard
+        - PlushieNar
+        - PlushieCarp
+        - PlushieSlime
+        - PlushieSnake
+        - PlushieVox
+        - PlushieRatvar
+        - PlushieSpaceLizard
+        - PlushieRouny
+        - PlushieLamp
+        - PlushieSharkBlue
+        - PlushieSharkPink
+        - PlushieSharkGrey
+        - ToyAmongPequeno
+        - ToyMouse
+        - PlushieDiona
+        - PlushieMoth
+        - PlushieMothRandom # Nyanotrasen Random Moth Plushies
+        - PlushieArachind
+        - PlushieArachne
+        - PlushieAbductor
+        - PlushieGnome
+        - PlushieLoveable
+        - PlushieDeer
+        - PlushieIpc
+        - PlushieGrey
+        - PlushieRedFox
+        - PlushiePurpleFox
+        - PlushiePinkFox
+        - PlushieOrangeFox
+        - PlushieMarbleFox
+        - PlushieCrimsonFox
+        - PlushieCoffeeFox
+        - PlushieBlueFox
+        - PlushieBlackFox
+        - PlushieVulp
+        - PlushieCorgi
+        - PlushieGirlyCorgi
+        - PlushieRobotCorgi
+        - PlushieCatBlack
+        - PlushieCatGrey
+        - PlushieCatOrange
+        - PlushieCatSiames
+        - PlushieCatTabby
+        - PlushieCatTuxedo
+        - PlushieCatWhite
+        - PlushieRatvar
+        - PlushieNar
+        - PlushieTrystan # Floof Plushies Start
+        - PlushieSlips
+        - PlushieJester
+        - PlushieHypnoTempCap
+        # - Plushiegirlfailure
+        # - PlushieFeistyBartender
+        # - PlushieCoolVulp
+        # - PlushieNoticeableSecurityOfficer
+        - PlushieHarpy
+        - PlushieMort
+        # Floof Plushies End
+      chance: 0.5
+      offset: 0.2
+
