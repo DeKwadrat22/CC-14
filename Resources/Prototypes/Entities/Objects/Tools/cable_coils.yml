@@ -34,6 +34,17 @@
     guides:
     - VoltageNetworks
     - Power
+  # _ClawCommand: IPC burn repair. Promised by the IPC guidebook; ported from Goob with
+  # Silicon container instead of SiliconRadiation (we don't track radiation on IPCs)
+  # and without Ion (no Ion damage type in this fork).
+  - type: Healing
+    delay: 1
+    damageContainers:
+    - Silicon
+    damage:
+      types:
+        Heat: -4
+        Shock: -4
   - type: Damageable
     damageModifierSet: Metallic
   - type: Injurable
