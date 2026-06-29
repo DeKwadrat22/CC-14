@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/28/2026 17:45:37
-  entityCount: 12160
+  time: 06/29/2026 01:39:33
+  entityCount: 12161
 maps:
 - 1
 grids:
@@ -4446,7 +4446,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -3090.3594
+      secondsUntilStateChange: -3106.384
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -23431,6 +23431,13 @@ entities:
       angularDamping: 0
       linearDamping: 0
       canCollide: False
+- proto: CargoMailTeleporter
+  entities:
+  - uid: 399
+    components:
+    - type: Transform
+      pos: 1.5,18.5
+      parent: 2
 - proto: CargoRequestComputerCircuitboard
   entities:
   - uid: 3617
