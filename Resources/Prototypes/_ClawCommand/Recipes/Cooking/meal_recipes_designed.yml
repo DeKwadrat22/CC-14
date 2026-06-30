@@ -139,6 +139,19 @@
     Sugar: 10
     JuiceBerry: 5
 
+# Wrapped cherry lollypop — gives a chef route to the plain Goob-ported
+# lollypop. Unwrap on use to get the eatable FoodSnackLollypopBase. Medical
+# / faction / mystery variants intentionally stay vendor-only.
+- type: microwaveMealRecipe
+  id: RecipeLollypopWrapped
+  name: cherry lollypop recipe
+  result: FoodSnackLollypopWrapped
+  time: 5
+  group: Candy
+  reagents:
+    Sugar: 15
+    JuiceCherry: 5
+
 # === COOKED MEATS =========================================================
 
 - type: microwaveMealRecipe

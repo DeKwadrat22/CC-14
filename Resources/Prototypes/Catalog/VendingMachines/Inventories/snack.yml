@@ -7,6 +7,14 @@
     FoodSnackPistachios: 3
     FoodSnackSus: 3
     FoodSnackSemki: 3
+    # Claw Command — ported lollypop family. Plain cherry + a couple of fun variants
+    # stocked in the regular tray; rarer Mystery picks live in contraband below.
+    FoodSnackLollypopWrapped: 4
+    FoodSnackLollypopWrappedRainbow: 2
+    FoodSnackLollypopWrappedWeh: 1
   contrabandInventory:
     FoodSnackSwirlLollipop: 2
     FoodSnackSyndi: 3
+    # Claw Command
+    FoodSnackLollypopWrappedMystery: 2
+    FoodSnackLollypopWrappedMysteryNeutral: 1

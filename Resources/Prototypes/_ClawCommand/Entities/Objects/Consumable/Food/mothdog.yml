@@ -1,0 +1,67 @@
+# Claw Command — mothdog snack ported from Goob-Station
+# (_Goobstation/Entities/Objects/Consumable/Food/snacks.yml).
+# Sprite copied to _ClawCommand/Objects/Consumable/Food/mothdog.rsi.
+# Flavor `chuddy` is defined in _ClawCommand/Flavors/flavors.yml.
+
+- type: entity
+  name: mothdog
+  parent: FoodMeatBase
+  id: FoodSnackMothdog
+  description: He is in his prime.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+  - type: FlavorProfile
+    flavors:
+    - chuddy
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/mothdog.rsi
+    layers:
+    - state: mothdog-4
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: mothdog-
+    changeColor: false
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 10
+  - type: Appearance
+  - type: Edible
+    trash:
+    - FoodSnackMothdogTrash
+
+- type: entity
+  parent: FoodPacketTrash
+  id: FoodSnackMothdogTrash
+  name: mothdog stick
+  description: He is no longer in his prime.
+  components:
+  - type: Tag
+    tags:
+    - Trash
+    - ClothMade
+  - type: Item
+    sprite: _ClawCommand/Objects/Consumable/Food/mothdog.rsi
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/mothdog.rsi
+    state: mothdognt
+  - type: Edible
+    solution: food
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5

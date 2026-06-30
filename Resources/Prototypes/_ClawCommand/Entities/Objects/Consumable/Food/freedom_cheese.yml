@@ -1,0 +1,75 @@
+# Claw Command — freedom cheese ported from Goob-Station
+# (_Goobstation/Entities/Objects/Consumable/Food/ingredients.yml). Sprite copied
+# to _ClawCommand/Objects/Consumable/Food/freedom_cheese.rsi.
+#
+# Bundled with a foodSequenceElement entry so the slice can be used inside a
+# burger sequence the same way Goob has it.
+
+- type: entity
+  name: freedom cheese block
+  parent: FoodBakingBase
+  id: FoodFreedomCheeseBlock
+  description: A solid block of artery-clogging cheese based on a questionable old world recipe. Slice it for your buddies… or just eat the entire block for yourself, you weirdo.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - creamy
+      - cheesy
+    ignoreReagents:
+      - Nutriment
+      - GastroToxin
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/freedom_cheese.rsi
+    state: cheese_block
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 28
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 16
+        - ReagentId: GastroToxin
+          Quantity: 4
+  - type: SliceableFood
+    count: 4
+    slice: FoodFreedomCheeseSlice
+
+- type: entity
+  name: freedom cheese slice
+  parent: FoodBakingBase
+  id: FoodFreedomCheeseSlice
+  description: Highly questionable amalgamation of cheddar, fillers and the spirit of freedom. NanoTrasen's healthcare does not cover incidents regarding the consumption of this item.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - creamy
+      - cheesy
+    ignoreReagents:
+      - Nutriment
+      - GastroToxin
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/freedom_cheese.rsi
+    state: cheese_slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: GastroToxin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: FSE_FoodFreedomCheeseSlice
+
+# Burger sequence element so the cheese slice can stack inside a burger.
+- type: foodSequenceElement
+  id: FSE_FoodFreedomCheeseSlice
+  name: food-sequence-content-freedom-cheese-slice
+  sprites:
+  - sprite: _ClawCommand/Objects/Consumable/Food/freedom_cheese.rsi
+    state: cheese_slice_burger

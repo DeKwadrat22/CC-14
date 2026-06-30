@@ -10,6 +10,19 @@
     EpinephrineChemistryBottle: 3 # Claw Command - alt-ID reagent bottle
     Syringe: 3
     PillCanisterTricordrazine: 2
+    # Claw Command — ported medicinal lollypops. Self-medicate by sticking one
+    # in the mask slot (eat manually — fork lacks Goob's PassiveConsumable
+    # auto-tick component). Reagents rerouted from Goob originals to fork
+    # equivalents (Ibuprofen/Mitotrophin → Bicaridine, Anacea → Charcoal, etc.).
+    FoodSnackLollypopWrappedTricordrazine: 4
+    FoodSnackLollypopWrappedBicaridine: 3
+    FoodSnackLollypopWrappedKelotane: 3
+    FoodSnackLollypopWrappedDermaline: 2
+    FoodSnackLollypopWrappedDylovene: 2
+    FoodSnackLollypopWrappedDexalinPlus: 2
+    FoodSnackLollypopWrappedHyronalin: 2
+    FoodSnackLollypopWrappedOmnizine: 1
+    FoodSnackLollypopWrappedMystery: 3
   contrabandInventory:
     PillCanisterRandom: 1
 
@@ -25,6 +38,10 @@
     ChemistryBottleInaprovaline: 3
     Syringe: 3
     PillTricordrazine: 10
+    # Claw Command — basic lollypops on the public-access medvend too.
+    FoodSnackLollypopWrappedTricordrazine: 3
+    FoodSnackLollypopWrappedBicaridine: 2
+    FoodSnackLollypopWrappedMystery: 2
   contrabandInventory:
     PillCanisterRandom: 1
 

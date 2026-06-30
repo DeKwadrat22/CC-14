@@ -1,0 +1,32 @@
+# Claw Command — construction graphs for Goob exotic steaks (Gondola, Bingle).
+# Same heat-driven pattern as upstream steak.yml — raw → cooked at 345 K.
+
+- type: constructionGraph
+  id: GondolaSteak
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: gondola steak
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 345
+  - node: gondola steak
+    entity: FoodMeatGondolaCooked
+
+- type: constructionGraph
+  id: BingleSteak
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bingle steak
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 345
+  - node: bingle steak
+    entity: FoodMeatBingleCooked

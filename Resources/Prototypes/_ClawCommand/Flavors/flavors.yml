@@ -267,3 +267,15 @@
   id: vanilla
   flavorType: Complex
   description: flavor-complex-vanilla
+
+# Ported from Goob-Station (_Goobstation/Flavors/flavors.yml) alongside the
+# vox-fried "chicken" entity and the rainbow lollypop.
+- type: flavor
+  id: chuddy
+  flavorType: Complex
+  description: flavor-complex-chuddy
+
+- type: flavor
+  id: unicorntears
+  flavorType: Complex
+  description: flavor-complex-unicorntears

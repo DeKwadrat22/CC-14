@@ -66,3 +66,7 @@ flavor-complex-avocado = creamy and buttery
 flavor-complex-pear = juicy and floral
 flavor-complex-vanilla = sweet and vanilla
 
+# Ported from Goob — vox-fried "chicken", rainbow lollypop.
+flavor-complex-chuddy = chuddy
+flavor-complex-unicorntears = sparkling and impossibly sweet
+
