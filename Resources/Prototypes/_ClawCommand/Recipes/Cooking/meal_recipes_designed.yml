@@ -1,0 +1,722 @@
+# Claw Command — designed microwave recipes for fork foods that ship with no
+# upstream/space recipe. Each recipe gives the chef a route to make a food
+# that previously was vendor/cargo-only. Ingredient choices favour what's
+# already routine in a fork kitchen (milk, cream, juices, ice, bowls).
+
+# === SOUPS (fork-original / upstream entities lacking recipes) =============
+
+- type: microwaveMealRecipe
+  id: RecipeSoupBeet
+  name: beet soup recipe
+  result: FoodSoupBeet
+  time: 15
+  group: Soup
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodTomato: 1
+    FoodCabbage: 1
+    FoodOnion: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSoupBeetRed
+  name: red beet soup recipe
+  result: FoodSoupBeetRed
+  time: 15
+  group: Soup
+  reagents:
+    Water: 5
+  solids:
+    FoodBowlBig: 1
+    FoodTomato: 2
+    FoodOnion: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSoupElectron
+  name: electron soup recipe
+  result: FoodSoupElectron
+  time: 20
+  group: Soup
+  reagents:
+    Licoxide: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMushroom: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSoupMiso
+  name: miso soup recipe
+  result: FoodSoupMiso
+  time: 10
+  group: Soup
+  reagents:
+    Water: 10
+    JuiceTomato: 5
+  solids:
+    FoodBowlBig: 1
+    FoodTofuSlice: 2
+    FoodNoodlesBoiled: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSoupMystery
+  name: mystery soup recipe
+  result: FoodSoupMystery
+  time: 15
+  group: Soup
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatCutlet: 1
+    FoodCabbage: 1
+    FoodCarrot: 1
+    FoodTomato: 1
+    FoodOnion: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSoupPotato
+  name: sweet potato soup recipe
+  result: FoodSoupPotato
+  time: 15
+  group: Soup
+  reagents:
+    Cream: 10
+    Sugar: 5
+  solids:
+    FoodBowlBig: 1
+    FoodPotato: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSoupSlime
+  name: slime soup recipe
+  result: FoodSoupSlime
+  time: 10
+  group: Soup
+  reagents:
+    Water: 10
+    Slime: 10
+  solids:
+    FoodBowlBig: 1
+
+# NOTE: Frozen foods (snowcones, popsicles, ice cream sandwiches, freezy, sundae,
+# cornuto) intentionally have NO microwave recipe — matches upstream design where
+# they're vendor / cargo only (chefvend, food crates). You can't microwave-cook
+# frozen treats. See ../../Reagents/Reactions/food_extras.yml for the chef-makeable
+# cheese ingredients (mozzarella, curd) and coffee bean roasting under
+# Construction/Graphs/food/coffee_beans.yml.
+
+# === CANDY ================================================================
+
+- type: microwaveMealRecipe
+  id: RecipeLollipop
+  name: lollipop recipe
+  result: FoodLollipop
+  time: 5
+  group: Candy
+  reagents:
+    Sugar: 10
+    JuiceOrange: 5
+
+- type: microwaveMealRecipe
+  id: RecipeSwirlLollipop
+  name: swirl lollipop recipe
+  result: FoodSnackSwirlLollipop
+  time: 5
+  group: Candy
+  reagents:
+    Sugar: 10
+    JuiceBerry: 5
+    JuiceLime: 5
+
+- type: microwaveMealRecipe
+  id: RecipeGumball
+  name: gumball recipe
+  result: FoodGumball
+  time: 5
+  group: Candy
+  reagents:
+    Sugar: 10
+    JuiceBerry: 5
+
+# === COOKED MEATS =========================================================
+
+- type: microwaveMealRecipe
+  id: RecipeMeatBaconCooked
+  name: cooked bacon recipe
+  result: FoodMeatBaconCooked
+  time: 5
+  group: Meat
+  solids:
+    FoodMeatBacon: 1
+
+# === BREAKFAST / EGG MEALS ================================================
+
+- type: microwaveMealRecipe
+  id: RecipeMealFriedegg
+  name: fried egg recipe
+  result: FoodMealFriedegg
+  time: 5
+  group: Breakfast
+  reagents:
+    OilOlive: 5
+  solids:
+    FoodEgg: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMealOmelette
+  name: omelette recipe
+  result: FoodMealOmelette
+  time: 10
+  group: Breakfast
+  reagents:
+    Milk: 5
+  solids:
+    FoodEgg: 2
+
+- type: microwaveMealRecipe
+  id: RecipeMealEggsbenedict
+  name: eggs benedict recipe
+  result: FoodMealEggsbenedict
+  time: 10
+  group: Breakfast
+  solids:
+    FoodMealFriedegg: 1
+    FoodMeatBaconCooked: 1
+    FoodBreadPlainSlice: 1
+
+# === SAVORY MEALS =========================================================
+
+- type: microwaveMealRecipe
+  id: RecipeMealBearsteak
+  name: bearsteak recipe
+  result: FoodMealBearsteak
+  time: 15
+  group: Meat
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodMeatBear: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMealCornedbeef
+  name: corned beef recipe
+  result: FoodMealCornedbeef
+  time: 15
+  group: Meat
+  reagents:
+    TableSalt: 10
+  solids:
+    FoodMeat: 2
+
+- type: microwaveMealRecipe
+  id: RecipeMealEggplantParm
+  name: eggplant parmesan recipe
+  result: FoodMealEggplantParm
+  time: 15
+  group: Savory
+  reagents:
+    TomatoSauce: 10
+  solids:
+    FoodEggplant: 1
+    FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMealPigblanket
+  name: pigs in a blanket recipe
+  result: FoodMealPigblanket
+  time: 10
+  group: Savory
+  solids:
+    FoodDoughSlice: 1
+    FoodMeatBacon: 1
+
+# === SKEWERS / KEBABS =====================================================
+
+- type: microwaveMealRecipe
+  id: RecipeMeatFiestaKebab
+  name: fiesta kebab recipe
+  result: FoodMeatFiestaKebab
+  time: 15
+  group: Meat
+  reagents:
+    BbqSauce: 5
+  solids:
+    FoodKebabSkewer: 1
+    FoodMeat: 1
+    FoodChiliPepper: 1
+    FoodOnionSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMeatRatdoubleKebab
+  name: double rat kebab recipe
+  result: FoodMeatRatdoubleKebab
+  time: 15
+  group: Meat
+  solids:
+    FoodKebabSkewer: 1
+    FoodMeatRat: 2
+
+- type: microwaveMealRecipe
+  id: RecipeMeatSnakeKebab
+  name: snake kebab recipe
+  result: FoodMeatSnakeKebab
+  time: 15
+  group: Meat
+  solids:
+    FoodKebabSkewer: 1
+    FoodMeatSnake: 1
+
+# === MORE SAVORY MEALS ====================================================
+
+- type: microwaveMealRecipe
+  id: RecipeMealMilkape
+  name: milk ape recipe
+  result: FoodMealMilkape
+  time: 10
+  group: Savory
+  reagents:
+    Cream: 10
+    Sugar: 5
+  solids:
+    FoodBanana: 2
+
+- type: microwaveMealRecipe
+  id: RecipeMealPotatoYaki
+  name: yaki imo recipe
+  result: FoodMealPotatoYaki
+  time: 10
+  group: Savory
+  reagents:
+    Sugar: 5
+  solids:
+    FoodPotato: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMealSoftTaco
+  name: soft taco recipe
+  result: FoodMealSoftTaco
+  time: 10
+  group: Savory
+  solids:
+    FoodDoughFlat: 1
+    FoodMeatCutlet: 1
+    FoodCheeseSlice: 1
+
+# === CAKES ================================================================
+
+- type: microwaveMealRecipe
+  id: RecipeCakeVanilla
+  name: vanilla cake recipe
+  result: FoodCakeVanilla
+  time: 5
+  group: Cake
+  reagents:
+    Cream: 10
+    Sugar: 5
+  solids:
+    FoodCakePlain: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCakeChristmas
+  name: christmas cake recipe
+  result: FoodCakeChristmas
+  time: 5
+  group: Cake
+  reagents:
+    JuiceBerry: 5
+    Sugar: 5
+  solids:
+    FoodCakePlain: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCakeSpaceman
+  name: spaceman cake recipe
+  result: FoodCakeSpaceman
+  time: 5
+  group: Cake
+  reagents:
+    Theobromine: 5
+    Cream: 5
+  solids:
+    FoodCakePlain: 1
+
+# === PIES =================================================================
+
+- type: microwaveMealRecipe
+  id: RecipePiePlump
+  name: plump helmet pie recipe
+  result: FoodPiePlump
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodMushroom: 3
+    FoodPlateTin: 1
+
+# === COOKIES / BAKED SWEETS ===============================================
+
+- type: microwaveMealRecipe
+  id: RecipeBakedCookieDivine
+  name: divine cookie recipe
+  result: FoodBakedCookieDivine
+  time: 10
+  group: Sweet
+  reagents:
+    Honey: 5
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCookieFortune
+  name: fortune cookie recipe
+  result: FoodCookieFortune
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBakedBrownie
+  name: brownie recipe
+  result: FoodBakedBrownie
+  time: 10
+  group: Sweet
+  reagents:
+    Theobromine: 5
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBakedWaffleRoffle
+  name: roffle waffle recipe
+  result: FoodBakedWaffleRoffle
+  time: 10
+  group: Sweet
+  reagents:
+    JuiceBerry: 5
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackRicecake
+  name: rice cake recipe
+  result: FoodSnackRicecake
+  time: 5
+  group: Sweet
+  reagents:
+    Sugar: 5
+  solids:
+    FoodRiceBoiled: 1
+
+# === SECOND PASS: deeper audit gaps =======================================
+
+# --- Salads (special / divine variants) ----------------------------------
+
+- type: microwaveMealRecipe
+  id: RecipeSaladAesir
+  name: aesir salad recipe
+  result: FoodSaladAesir
+  time: 15
+  group: Salad
+  reagents:
+    Honey: 5
+  solids:
+    FoodSaladHerb: 1
+    FoodGoldenApple: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSaladEden
+  name: salad of eden recipe
+  result: FoodSaladEden
+  time: 15
+  group: Salad
+  reagents:
+    Honey: 5
+  solids:
+    FoodSaladHerb: 1
+    FoodApple: 1
+    FoodPotato: 1
+    FoodTomato: 1
+
+# --- Noodles / Asian snacks ----------------------------------------------
+
+- type: microwaveMealRecipe
+  id: RecipeNoodlesSpesslaw
+  name: spesslaw recipe
+  result: FoodNoodlesSpesslaw
+  time: 10
+  group: Savory
+  reagents:
+    Vinegar: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatCutlet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackChowMein
+  name: chow mein recipe
+  result: FoodSnackChowMein
+  time: 15
+  group: Savory
+  reagents:
+    OilOlive: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodCabbage: 1
+    FoodCarrot: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackDanDanNoodles
+  name: dan dan noodles recipe
+  result: FoodSnackDanDanNoodles
+  time: 15
+  group: Savory
+  reagents:
+    OilOlive: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatCutlet: 1
+    FoodChiliPepper: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackDango
+  name: dango recipe
+  result: FoodSnackDango
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+  solids:
+    FoodRiceBoiled: 1
+    FoodKebabSkewer: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackMooncake
+  name: mooncake recipe
+  result: FoodSnackMooncake
+  time: 15
+  group: Sweet
+  reagents:
+    Sugar: 5
+    Cream: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackMochicake
+  name: mochi cake recipe
+  result: FoodSnackMochicake
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+  solids:
+    FoodRiceBoiled: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSnackLunacake
+  name: luna cake recipe
+  result: FoodSnackLunacake
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+    Cream: 5
+  solids:
+    FoodCakePlain: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackVenusianhotcakes
+  name: venusian hotcakes recipe
+  result: FoodSnackVenusianhotcakes
+  time: 10
+  group: Sweet
+  reagents:
+    Honey: 5
+    Cream: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackMarsFrouka
+  name: mars frouka recipe
+  result: FoodSnackMarsFrouka
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+    Theobromine: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackPokeysticks
+  name: pokey sticks recipe
+  result: FoodSnackPokeysticks
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+    Theobromine: 5
+  solids:
+    FoodDoughSlice: 1
+    FoodKebabSkewer: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSnackJoveGello
+  name: jove gello recipe
+  result: FoodSnackJoveGello
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 10
+    JuiceBerry: 5
+
+# --- Cooked meats not handled by steak graph ----------------------------
+
+- type: microwaveMealRecipe
+  id: RecipeMeatChickenFried
+  name: fried chicken recipe
+  result: FoodMeatChickenFried
+  time: 15
+  group: Meat
+  reagents:
+    OilOlive: 10
+    Flour: 5
+  solids:
+    FoodMeatChicken: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMeatChickenFriedVox
+  name: vox-style fried chicken recipe
+  result: FoodMeatChickenFriedVox
+  time: 15
+  group: Meat
+  reagents:
+    OilOlive: 10
+    Flour: 5
+  solids:
+    FoodMeatChickenCutlet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMeatSpiderlegCooked
+  name: cooked spider leg recipe
+  result: FoodMeatSpiderlegCooked
+  time: 10
+  group: Meat
+  solids:
+    FoodMeatSpiderLeg: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHivelordRemainsInert
+  name: inert hivelord remains recipe
+  result: FoodHivelordRemainsInert
+  time: 5
+  group: Meat
+  solids:
+    FoodHivelordRemains: 1
+
+# --- Baked goods --------------------------------------------------------
+
+- type: microwaveMealRecipe
+  id: RecipeBakedNugget
+  name: chicken nugget recipe
+  result: FoodBakedNugget
+  time: 10
+  group: Meat
+  reagents:
+    Flour: 5
+    OilOlive: 5
+  solids:
+    FoodMeatChickenCutlet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBakedPretzel
+  name: pretzel recipe
+  result: FoodBakedPretzel
+  time: 10
+  group: Sweet
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBakedMuffinBluecherry
+  name: blueberry muffin recipe
+  result: FoodBakedMuffinBluecherry
+  time: 10
+  group: Sweet
+  reagents:
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+    FoodBerries: 2
+
+- type: microwaveMealRecipe
+  id: RecipeBakedCannoli
+  name: cannoli recipe
+  result: FoodBakedCannoli
+  time: 10
+  group: Sweet
+  reagents:
+    Cream: 10
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+# --- Pizzas not handled elsewhere ---------------------------------------
+
+- type: microwaveMealRecipe
+  id: RecipePizzaArnold
+  name: arnold pizza recipe
+  result: FoodPizzaArnold
+  time: 30
+  group: Pizza
+  reagents:
+    TomatoSauce: 10
+  solids:
+    FoodDoughFlat: 1
+    FoodMeatCutletCooked: 2
+    FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipePizzaSassysage
+  name: sassysage pizza recipe
+  result: FoodPizzaSassysage
+  time: 30
+  group: Pizza
+  reagents:
+    BbqSauce: 10
+  solids:
+    FoodDoughFlat: 1
+    FoodMeatCutletCooked: 1
+    FoodCheeseSlice: 1
+    FoodOnionSlice: 1
+
+# --- Moth portion ------------------------------------------------------
+
+- type: microwaveMealRecipe
+  id: RecipeMothBakedRicePortion
+  name: baked rice portion recipe
+  result: FoodMothBakedRicePortion
+  time: 5
+  group: Moth
+  solids:
+    FoodRiceBoiled: 1
+
+# NOTE: Croissants (FoodCroissantRaw / FoodCroissantRawCotton) are produced via
+# CreateRawCroissant / CreateRawCottonCroissant *reactions* in
+# ../../Reactions/food_extras.yml — they're ingredient-tier raw dough variants and
+# follow the same reaction pattern the upstream uses for FoodDough / FoodDoughCotton.
+#
+# NOTE: Coffee bean roasts (FoodCoffeeBeansRoastedLight / Medium / Dark) are produced
+# by the CoffeeRoast construction graph at progressive minTemperature steps — see
+# ../Construction/Graphs/food/coffee_beans.yml. That's the same heat-driven pattern
+# the steak graph uses for cooked meats.

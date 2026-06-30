@@ -1,0 +1,60 @@
+# Claw Command — extra food reactions for fork-specific ingredients that
+# ship without an upstream reaction to produce them. Follows the established
+# upstream pattern in Resources/Prototypes/Recipes/Reactions/food.yml where
+# basic prepared-ingredient items (Cheese, Chevre, Butter, CakeBatter, Dough)
+# are produced by mixing reagents in a container.
+
+# Frosting — ported from space/_Floof. Butter + Sugar -> a stack of frosting.
+- type: reaction
+  id: CreateFrosting
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    Butter:
+      amount: 5
+    Sugar:
+      amount: 15
+  effects:
+    - !type:SpawnEntity
+      entity: FoodFrosting
+
+# Mozzarella — soft cheese made by acid-coagulating milk. Mirrors the upstream
+# Curdling reaction (Milk + Enzyme -> FoodCheese) but uses vinegar in place of
+# rennet, since rennet isn't a fork reagent.
+- type: reaction
+  id: CreateMozzarella
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    Milk:
+      amount: 30
+    Vinegar:
+      amount: 5
+      catalyst: true
+  effects:
+    - !type:SpawnEntity
+      entity: FoodMozzarella
+
+# Curd cheese — same idea, lower yield / less milk. The two products are
+# distinct ingredients in the fork (mozzarella for melty dishes, curd cheese
+# for crumbly ones), so they each get their own reaction.
+- type: reaction
+  id: CreateCurdCheese
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    Milk:
+      amount: 20
+    Vinegar:
+      amount: 5
+      catalyst: true
+  effects:
+    - !type:SpawnEntity
+      entity: FoodCurdCheese
+
+# NOTE: Croissants (FoodCroissantRaw / FoodCroissantRawCotton) are produced by
+# slicing FoodDoughFlat / FoodDoughCottonFlat (SliceableFood, count: 4). That's
+# how upstream works — no reaction is needed.

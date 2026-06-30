@@ -1,9 +1,17 @@
-# egg explodes when heated!!!
+# egg cooks at moderate heat, then explodes if overheated.
+# Claw Command: added intermediate `boiled` node so chefs can produce
+# FoodEggBoiled by microwaving briefly (ported from space upstream).
 - type: constructionGraph
   id: Egg
   start: start
   graph:
   - node: start
+    edges:
+    - to: boiled
+      steps:
+      - minTemperature: 344 # ~70°C — hard-boiled
+  - node: boiled
+    entity: FoodEggBoiled
     edges:
     - to: explode
       completed:
@@ -12,7 +20,6 @@
           types:
             Blunt: 10
       steps:
-      # egg explodes some time after the water in it boils and increases pressure
-      # high enough so you can still microwave them for 5 seconds safely
-      - minTemperature: 473.15 # 200°C
+      # explodes once internal pressure climbs above ~110°C
+      - minTemperature: 383
   - node: explode

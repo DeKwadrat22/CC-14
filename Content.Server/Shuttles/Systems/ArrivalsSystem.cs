@@ -1,8 +1,10 @@
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration;
 using Content.Server.Antag;
 using Content.Server.Chat.Managers;
+using Content.Server.Chat.Systems;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
@@ -20,9 +22,11 @@ using Content.Shared.Damage.Components;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
+using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Roles.Jobs;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
@@ -63,6 +67,9 @@ public sealed partial class ArrivalsSystem : EntitySystem
     [Dependency] private StationSpawningSystem _stationSpawning = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private SharedJobSystem _jobs = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     [Dependency] private EntityQuery<PendingClockInComponent> _pendingQuery = default!;
     [Dependency] private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery = default!;
@@ -108,6 +115,12 @@ public sealed partial class ArrivalsSystem : EntitySystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
         SubscribeLocalEvent<ArrivalsShuttleComponent, FTLStartedEvent>(OnArrivalsFTL);
         SubscribeLocalEvent<ArrivalsShuttleComponent, FTLCompletedEvent>(OnArrivalsDocked);
+
+        // Claw Command: fire "X has arrived at the station" only when the player's parent grid
+        // becomes a real station grid (i.e. they walked off the shuttle). Event-driven, no polling
+        // — the marker component is removed in the handler, so the subscription only sees each
+        // late-joiner for the brief window between spawn and first arrival.
+        SubscribeLocalEvent<PendingClockInComponent, EntParentChangedMessage>(OnPendingPlayerParentChanged);
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(SendDirections);
 
@@ -296,6 +309,88 @@ public sealed partial class ArrivalsSystem : EntitySystem
                 [ShuttleTimerMasks.Docked] = true
             };
             _deviceNetworkSystem.QueuePacket(uid, null, payload, netComp.TransmitFrequency);
+        }
+    }
+
+    /// <summary>
+    /// Claw Command: when a late-joiner's transform parent changes, check whether they just
+    /// stepped onto a real station grid. If so, fire the arrival announcement (deferred from
+    /// GameTicker.Spawning) and remove the pending marker so we never see this entity again.
+    /// </summary>
+    private void OnPendingPlayerParentChanged(EntityUid uid, PendingClockInComponent component, ref EntParentChangedMessage args)
+    {
+        if (!TryGetArrivals(out var arrivalsUid))
+            return;
+
+        var arrivalsMapUid = Transform(arrivalsUid).MapUid;
+        var xform = args.Transform;
+
+        // Still on the arrivals map (shuttle hasn't dropped them off yet, or this is just the
+        // initial spawn parent assignment). Wait.
+        if (xform.MapUid == arrivalsMapUid)
+            return;
+
+        // Not on any grid — floating in space mid-transit. Wait for them to land somewhere.
+        if (xform.GridUid == null)
+            return;
+
+        // The grid must belong to a real station. Rules out e.g. lavaland or a debris grid.
+        var station = _station.GetOwningStation(uid);
+        if (station == null)
+            return;
+
+        AnnounceArrival(uid, station.Value);
+
+        RemCompDeferred<PendingClockInComponent>(uid);
+        RemCompDeferred<AutoOrientComponent>(uid);
+
+        if (ArrivalsGodmode)
+            RemCompDeferred<GodmodeComponent>(uid);
+
+        // Antag assignment is anchored to actual arrival, not the shuttle FTL undock from earlier.
+        // The OnArrivalsFTL path still runs as a fallback for anyone we somehow miss.
+        if (_actor.TryGetSession(uid, out var session) && session is not null)
+            _antag.TryMakeLateJoinAntag(session);
+    }
+
+    private void AnnounceArrival(EntityUid mob, EntityUid station)
+    {
+        var joinNotifyCrew = false;
+        string jobName;
+
+        if (_mind.TryGetMind(mob, out var mindId, out _) && _jobs.MindTryGetJob(mindId, out var jobProto))
+        {
+            joinNotifyCrew = jobProto.JoinNotifyCrew;
+            jobName = jobProto.LocalizedName;
+        }
+        else
+        {
+            jobName = Loc.GetString("generic-unknown-title");
+        }
+
+        var characterName = MetaData(mob).EntityName;
+        var titleCaseJob = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName);
+
+        if (joinNotifyCrew)
+        {
+            _chatSystem.DispatchStationAnnouncement(station,
+                Loc.GetString("latejoin-arrival-announcement-special",
+                    ("character", characterName),
+                    ("entity", mob),
+                    ("job", titleCaseJob)),
+                Loc.GetString("latejoin-arrival-sender"),
+                playDefaultSound: false,
+                colorOverride: Color.Gold);
+        }
+        else
+        {
+            _chatSystem.DispatchStationAnnouncement(station,
+                Loc.GetString("latejoin-arrival-announcement",
+                    ("character", characterName),
+                    ("entity", mob),
+                    ("job", titleCaseJob)),
+                Loc.GetString("latejoin-arrival-sender"),
+                playDefaultSound: false);
         }
     }
 

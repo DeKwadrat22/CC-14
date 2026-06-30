@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
+using Content.Server.Shuttles.Components;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
@@ -270,7 +271,12 @@ namespace Content.Server.GameTicking
 
             DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName);
 
-            if (lateJoin && !silent)
+            // _ClawCommand: defer the latejoin "has arrived at the station" announcement until
+            // the player actually steps off the arrivals shuttle onto the station grid. When
+            // PendingClockInComponent is present, ArrivalsSystem owns the announcement and fires
+            // it on EntParentChangedMessage. Players who bypass arrivals (direct spawn modes,
+            // wizard, nukeops, etc.) still get the announcement immediately here.
+            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob))
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {
