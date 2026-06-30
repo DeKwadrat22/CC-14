@@ -216,6 +216,7 @@
     - Janitor
     - Instruments
     - Equipment
+    - VisionGoggles # _ClawCommand: night/thermal vision goggles, gated by NightVisionTech / ThermalVisionTech
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
