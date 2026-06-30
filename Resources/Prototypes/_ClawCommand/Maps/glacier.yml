@@ -1,11 +1,11 @@
 # Glacier station — ported from space/ into ClawCommand rotation.
-# Map data: Resources/Maps/_ClawCommand/glacier.yml
+# Map data: Resources/Maps/glacier.yml
 # Adapted job list to match our fork's available jobs (mirrors saltern.yml).
 
 - type: gameMap
   id: Glacier
   mapName: 'Glacier'
-  mapPath: /Maps/_ClawCommand/glacier.yml
+  mapPath: /Maps/glacier.yml
   # Glacier is a planet map (snow surface with atmosphere), not space — same processor as the other stations.
   planets: [Lavaland]
   minPlayers: 7
