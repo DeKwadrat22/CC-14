@@ -17,11 +17,9 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 0,-7
+  position: 1,13
   recipeUnlocks:
   - ProximitySensor
-  technologyPrerequisites:
-  - Science
 
 - type: technology
   id: BasicAnomalousResearch
@@ -32,15 +30,13 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 2,-8
+  position: 0,11
   recipeUnlocks:
   - AnomalyScanner
   - AnomalyLocator
   - AnomalyLocatorWide
   - APECircuitboard
   - AnomalyVesselCircuitboard
-  technologyPrerequisites:
-  - Science
 
 - type: technology
   id: BasicXenoArcheology
@@ -51,13 +47,11 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 4,-8
+  position: 0,12
   recipeUnlocks:
   - NodeScanner
   - AnalysisComputerCircuitboard
   - ArtifactAnalyzerMachineCircuitboard
-  technologyPrerequisites:
-  - Science
 
 - type: technology
   id: AlternativeResearch
@@ -68,13 +62,9 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: -4,-7
+  position: 1,12
   recipeUnlocks:
   - TechDiskComputerCircuitboard
-  technologyPrerequisites:
-  - Science
-  lineConnectSides:
-    Science: Bottom
 
 - type: technology
   id: MagnetsTech
@@ -85,12 +75,10 @@
   discipline: Experimental
   tier: 1
   cost: 7500
-  position: 4,-7
+  position: 0,13
   recipeUnlocks:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
-  technologyPrerequisites:
-  - BasicXenoArcheology
 
 - type: technology
   id: AnomalyCoreHarnessing
@@ -101,13 +89,9 @@
   discipline: Experimental
   tier: 1
   cost: 10000
-  position: 3,-11
+  position: 2,13
   recipeUnlocks:
   - WeaponGauntletGorilla
-  technologyPrerequisites:
-  - BasicAnomalousResearch
-  lineConnectSides:
-    BasicAnomalousResearch: Bottom
 
 # Tier 2
 
@@ -120,11 +104,10 @@
   discipline: Experimental
   tier: 2
   cost: 5000
-  position: 4,-9
+  position: 5,11
   recipeUnlocks:
   - ArtifactCrusherMachineCircuitboard
   technologyPrerequisites:
-  - AdvancedParts
   - BasicXenoArcheology
 
 
@@ -137,13 +120,12 @@
   discipline: Experimental
   tier: 2
   cost: 10000
-  position: 2,-9
+  position: 4,11
   recipeUnlocks:
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
   technologyPrerequisites:
-  - AdvancedParts
   - BasicAnomalousResearch
 
 - type: technology
@@ -155,13 +137,13 @@
   discipline: Experimental
   tier: 2
   cost: 7500
-  position: -4,-9
+  position: 4,13
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
   technologyPrerequisites:
-  - AdvancedParts
   - AlternativeResearch
+
 
 - type: technology
   id: GravityManipulation
@@ -172,7 +154,7 @@
   discipline: Experimental
   tier: 2
   cost: 10000
-  position: 4,-11
+  position: 5,13
   recipeUnlocks:
     - WeaponForceGun
     - WeaponTetherGun
@@ -192,11 +174,10 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  position: 5,-12
+  position: 7,11
   recipeUnlocks:
   - DeviceQuantumSpinInverter
   technologyPrerequisites:
-  - SuperParts
   - GravityManipulation
 
 
@@ -209,11 +190,9 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  position: 4,-13
+  position: 7,12
   recipeUnlocks:
   - DeviceDesynchronizer
   technologyPrerequisites:
-  - SuperParts
   - GravityManipulation
-  lineConnectSides:
-    SuperParts: Right
+

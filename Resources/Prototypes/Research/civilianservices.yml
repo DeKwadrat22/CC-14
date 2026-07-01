@@ -18,15 +18,11 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
-  position: 9,3
+  position: 1,15
   recipeUnlocks:
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
-  technologyPrerequisites:
-  - Civilian
-  lineConnectSides:
-    Civilian: Top
 
 - type: technology
   id: CritterMechs
@@ -37,7 +33,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
-  position: 0,-8
+  position: 0,17
   recipeUnlocks:
   - HamtrHarness
   - HamtrLArm
@@ -48,8 +44,6 @@
   - HamtrPeripheralsElectronics
   - MechEquipmentGrabberSmall
   - VimHarness
-  technologyPrerequisites:
-  - BasicRobotics
 
 - type: technology
   id: AudioVisualCommunication
@@ -60,7 +54,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
-  position: 10,2
+  position: 0,16
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -70,10 +64,6 @@
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
   - HolopadMachineCircuitboard
-  technologyPrerequisites:
-  - Civilian
-  lineConnectSides:
-    Civilian: Top
 
 - type: technology
   id: AdvancedEntertainment
@@ -84,15 +74,13 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
-  position: 10,3
+  position: 1,16
   recipeUnlocks:
-  - ComputerTelevisionCircuitboard
-  - SynthesizerInstrument
-  - DawInstrumentMachineCircuitboard
-  - MassMediaCircuitboard
-  - JukeboxCircuitBoard
-  technologyPrerequisites:
-  - AudioVisualCommunication
+    - ComputerTelevisionCircuitboard
+    - SynthesizerInstrument
+    - DawInstrumentMachineCircuitboard
+    - MassMediaCircuitboard
+    - JukeboxCircuitBoard
 
 - type: technology
   id: MeatManipulation
@@ -103,15 +91,11 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
-  position: 11,1
+  position: 0,15
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
-  technologyPrerequisites:
-  - Civilian
-  lineConnectSides:
-    Civilian: Top
 
 # Tier 2
 
@@ -124,7 +108,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 5000
-  position: 1,-9
+  position: 3,18
   recipeUnlocks:
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
@@ -139,10 +123,7 @@
   - FauxTileAstroIronsand
   - FauxTileAstroIronsandBorderless
   technologyPrerequisites:
-  - Science
-  - AdvancedParts
-  lineConnectSides:
-    Science: Bottom
+  - AudioVisualCommunication
 
 
 - type: technology
@@ -154,17 +135,14 @@
   discipline: CivilianServices
   tier: 2
   cost: 7500
-  position: 10,-2
+  position: 3,15
   recipeUnlocks:
   - StasisBedMachineCircuitboard
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
   technologyPrerequisites:
-  - Medical
-  - AdvancedParts
-  lineConnectSides:
-    Medical: Bottom
+  - MeatManipulation
 
 
 - type: technology # Merge with other T2 medical research if possible!
@@ -176,15 +154,10 @@
   discipline: CivilianServices
   tier: 2
   cost: 5000
-  position: 9,-2
+  position: 4,15
   recipeUnlocks:
   - BorgModuleAdvancedTopical
   - AdvancedJetInjector
-  technologyPrerequisites:
-  - Medical
-  - AdvancedParts
-  lineConnectSides:
-    Medical: Bottom
 
 - type: technology
   id: AdvancedCleaning
@@ -195,16 +168,14 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
-  position: 8,3
+  position: 4,18
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
   technologyPrerequisites:
-  - Civilian
-  - AdvancedParts
-  lineConnectSides:
-    Civilian: Top
+  - AdvancedEntertainment
+  - BasicRobotics
 
 
 - type: technology
@@ -216,7 +187,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 7500
-  position: -1,-10
+  position: 3,17
   recipeUnlocks:
   - HonkerHarness
   - HonkerLArm
@@ -230,8 +201,6 @@
   technologyPrerequisites:
   - PushHorn
   - RipleyAPLU
-  lineConnectSides:
-    RipleyAPLU: Bottom
 
 
 - type: technology
@@ -243,12 +212,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
-  position: 8,4
+  position: 5,18
   recipeUnlocks:
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   technologyPrerequisites:
   - AdvancedCleaning
+
 
 - type: technology
   id: BluespaceCargoTransport
@@ -259,14 +229,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 15000
-  position: 6,8
+  position: 4,16
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
   technologyPrerequisites:
-  - Cargo
-  - AdvancedParts
-  lineConnectSides:
-    Cargo: Top
+  - MeatManipulation
+  - FauxAstroTiles
+
 
 - type: technology
   id: PushHorn
@@ -277,12 +246,11 @@
   discipline: CivilianServices
   tier: 2
   cost: 4000
-  position: 0,-10
+  position: 4,17
   recipeUnlocks:
   - PushHorn
   - BorgModuleAdvancedClowning
   technologyPrerequisites:
-  - AdvancedParts
   - CritterMechs
 
 
@@ -297,12 +265,11 @@
   discipline: CivilianServices
   tier: 3
   cost: 10000
-  position: 4,-5
+  position: 7,18
   recipeUnlocks:
   - ClothingShoesBootsSpeed
   technologyPrerequisites:
-  - MagnetsTech
-  - SuperParts
+  - FauxAstroTiles
 
 
 - type: technology
@@ -314,15 +281,12 @@
   discipline: CivilianServices
   tier: 3
   cost: 10000
-  position: 11,-5
+  position: 7,15
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
   technologyPrerequisites:
   - BiochemicalStasis
-  - SuperParts
-  lineConnectSides:
-    BiochemicalStasis: Bottom
 
 
 - type: technology
@@ -334,11 +298,10 @@
   discipline: CivilianServices
   tier: 3
   cost: 15000
-  position: 9,-5
+  position: 7,16
   recipeUnlocks:
   - LauncherSyringe
   - MiniSyringe
   technologyPrerequisites:
-  - MechanizedTreatment
-  - SuperParts
+  - BiochemicalStasis
 
