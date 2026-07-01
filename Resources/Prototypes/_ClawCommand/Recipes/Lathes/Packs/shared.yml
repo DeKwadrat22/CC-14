@@ -1,0 +1,14 @@
+- type: latheRecipePack
+  id: MicroPartsPack
+  recipes:
+  - MicroManipulatorStockPart
+
+- type: latheRecipePack
+  id: AdvancedPartsPack
+  recipes:
+  - AdvancedManipulatorRecipe
+
+- type: latheRecipePack
+  id: SuperPartsPack
+  recipes:
+  - SuperManipulatorRecipe

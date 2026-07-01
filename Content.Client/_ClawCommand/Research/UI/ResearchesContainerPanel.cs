@@ -10,10 +10,6 @@ namespace Content.Client._ClawCommand.Research.UI;
 /// </summary>
 public sealed partial class ResearchesContainerPanel : LayoutContainer
 {
-    public ResearchesContainerPanel()
-    {
-    }
-
     protected override void Draw(DrawingHandleScreen handle)
     {
         foreach (var child in Children)
@@ -27,17 +23,37 @@ public sealed partial class ResearchesContainerPanel : LayoutContainer
             var list = Children.Where(x => x is FancyResearchConsoleItem second && item.Prototype.TechnologyPrerequisites.Contains(second.Prototype.ID));
             foreach (var second in list)
             {
-                var startCoords = new Vector2(item.PixelPosition.X + item.PixelWidth / 2, item.PixelPosition.Y + item.PixelHeight / 2);
-                var endCoords = new Vector2(second.PixelPosition.X + second.PixelWidth / 2, second.PixelPosition.Y + second.PixelHeight / 2);
+                if (second is not FancyResearchConsoleItem secondItem)
+                    continue;
 
-                if (second.PixelPosition.Y != item.PixelPosition.Y)
+                var endSide = item.Prototype.LineConnectSides.TryGetValue(secondItem.Prototype.ID, out var side)
+                    ? side
+                    : "Center";
+
+                var startCoords = new Vector2(item.PixelPosition.X + item.PixelWidth / 2, item.PixelPosition.Y + item.PixelHeight / 2);
+                var endCoords = new Vector2(secondItem.PixelPosition.X + secondItem.PixelWidth / 2, secondItem.PixelPosition.Y + secondItem.PixelHeight / 2);
+
+                var lineColor = Color.White;
+
+                // If the prerequisite has a custom color, use it.
+                // Otherwise, if the target has a custom color, use that instead.
+                if (secondItem.Prototype.LineColor != Color.White)
+                    lineColor = secondItem.Prototype.LineColor;
+                else if (item.Prototype.LineColor != Color.White)
+                    lineColor = item.Prototype.LineColor;
+
+                // Draw an orthogonal path based on the side.
+                if (endSide == "Bottom" || endSide == "Top")
                 {
-                    handle.DrawLine(startCoords, new(endCoords.X, startCoords.Y), Color.White);
-                    handle.DrawLine(new(endCoords.X, startCoords.Y), endCoords, Color.White);
+                    // Vertical first, then horizontal
+                    handle.DrawLine(startCoords, new(startCoords.X, endCoords.Y), lineColor);
+                    handle.DrawLine(new(startCoords.X, endCoords.Y), endCoords, lineColor);
                 }
                 else
                 {
-                    handle.DrawLine(startCoords, endCoords, Color.White);
+                    // Horizontal first, then vertical
+                    handle.DrawLine(startCoords, new(endCoords.X, startCoords.Y), lineColor);
+                    handle.DrawLine(new(endCoords.X, startCoords.Y), endCoords, lineColor);
                 }
             }
         }

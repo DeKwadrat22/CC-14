@@ -1,0 +1,29 @@
+- type: stack
+  parent: BaseSmallStack
+  id: AdvancedManipulatorStack
+  name: stack-advanced-manipulator
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: nano_mani }
+  spawn: AdvancedManipulatorPart
+
+- type: stack
+  parent: BaseSmallStack
+  id: SuperManipulatorStack
+  name: stack-super-manipulator
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: pico_mani }
+  spawn: SuperManipulatorPart
+
+## !! BELOW IS OBSOLETE !! ##
+
+- type: stack
+  parent: BaseSmallStack
+  id: Capacitor
+  name: stack-capacitor
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: capacitor }
+  spawn: SuperCapacitorStockPart
+
+- type: stack
+  parent: BaseSmallStack
+  id: MatterBin
+  name: stack-matter-bin
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: matter_bin }
+  spawn: SuperMatterBinStockPart

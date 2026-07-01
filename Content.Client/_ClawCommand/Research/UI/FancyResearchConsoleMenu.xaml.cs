@@ -43,7 +43,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
     private Vector2 _position = new Vector2(45, 250);
     private float _zoom = 1f;
-    private const float MinZoom = 0.5f;
+    private const float MinZoom = 0.2f;
     private const float MaxZoom = 2f;
     private const float ZoomSpeed = 0.125f;
 
@@ -107,7 +107,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         TierDisplayContainer.RemoveAllChildren();
         foreach (var disciplineId in database.SupportedDisciplines)
         {
-            if (!_prototype.TryIndex<TechDisciplinePrototype>(disciplineId, out var discipline))
+            if (!_prototype.TryIndex(disciplineId, out var discipline))
                 continue;
 
             var tier = _research.GetTierCompletionPercentage(database, discipline);

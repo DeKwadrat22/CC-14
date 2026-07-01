@@ -34,6 +34,8 @@ public sealed partial class FancyTechnologyInfoPanel : Control
         DisciplineTexture.Texture = sprite.Frame0(_proto.Index(proto.Discipline).Icon);
         TechnologyTexture.Texture = sprite.Frame0(proto.Icon);
 
+        TechnologyTierLabel.Text = Loc.GetString("research-console-tier-label", ("tier", proto.Tier));
+
         InitializePrerequisites(proto, research, sprite);
         InitializeRecipeUnlocks(proto, lathe, sprite);
 

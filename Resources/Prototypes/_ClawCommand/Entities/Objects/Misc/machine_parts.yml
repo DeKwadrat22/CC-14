@@ -4,6 +4,31 @@
 # be used as cargo, stack fuel for crafting, or future-proofing if part tiers are added.
 
 - type: entity
+  id: AdvancedManipulatorPart
+  name: modular machine advanced part
+  parent: BaseStockPart
+  description: An advanced machine part used in the construction of a variety of devices.
+  suffix: Rating 2, Claw Command
+  components:
+  - type: Sprite
+    state: nano_mani
+  - type: Stack
+    stackType: AdvancedManipulatorStack
+
+- type: entity
+  id: SuperManipulatorPart
+  name: modular machine super part
+  parent: BaseStockPart
+  description: A super machine part used in the construction of a variety of devices.
+  suffix: Rating 3, Claw Command
+  components:
+  - type: Sprite
+    state: pico_mani
+  - type: Stack
+    stackType: SuperManipulatorStack
+
+## !! BELOW IS OBSOLETE !! ##
+- type: entity
   id: PicoManipulatorStockPart
   name: pico-manipulator
   parent: BaseStockPart
