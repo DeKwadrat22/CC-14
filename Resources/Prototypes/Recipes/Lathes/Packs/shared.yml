@@ -11,7 +11,7 @@
   recipes:
   - Igniter
   - ModularReceiver
-  #- MicroManipulatorStockPart # _ClawCommand: Replaced with an unlockable pack.
+  - MicroManipulatorStockPart
   - ConveyorBeltAssembly
 
 - type: latheRecipePack
