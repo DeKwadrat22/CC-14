@@ -1,106 +1,20 @@
 # _ClawCommand: Avali name pools.
 # Ported wholesale from space's resomi_male/_female datasets (closest-implemented analog of the
 # Avali species in space — same Starbound-inspired phonemes). Renamed to the fork's NamesXxx convention.
+#
+# Must be `localizedDataset` to match what the SpeciesPrototype name-generator path expects —
+# a plain `dataset` here makes SpeciesAvali crash on first roundstart spawn the same way
+# Shadowkin/Tajaran/IPC would if their datasets weren't localized. The actual name strings
+# live in Resources/Locale/en-US/_ClawCommand/datasets/names/avali.ftl.
 
-- type: dataset
+- type: localizedDataset
   id: NamesAvaliMale
   values:
-  - Tevan
-  - Nialor
-  - Marik
-  - Auaris
-  - Ischat
-  - Laton
-  - Memar
-  - Minax
-  - Aenir
-  - Ceiran
-  - Aitor
-  - Sisan
-  - Tevar
-  - Nialen
-  - Maris
-  - Aurok
-  - Ischar
-  - Latim
-  - Merek
-  - Minar
-  - Aenin
-  - Ceitan
-  - Aisen
-  - Sitar
-  - Tevik
-  - Nialus
-  - Marion
-  - Auric
-  - Ischen
-  - Latir
-  - Menar
-  - Minet
-  - Aenor
-  - Ceilon
-  - Aider
-  - Sisar
-  - Tevon
-  - Nialum
-  - Aurar
-  - Ischam
-  - Menis
-  - Minok
-  - Aenim
-  - Aithar
-  - Sinar
-  - Tevor
-  - Nialom
+    prefix: names-avali-male-dataset-
+    count: 47
 
-- type: dataset
+- type: localizedDataset
   id: NamesAvaliFemale
   values:
-  - Ealia
-  - Shirema
-  - Nathani
-  - Ralise
-  - Leesche
-  - Rianea
-  - Niescha
-  - Elime
-  - Nasira
-  - Taschene
-  - Melira
-  - Relea
-  - Shilima
-  - Niaresa
-  - Lirica
-  - Shirele
-  - Calea
-  - Mesira
-  - Canira
-  - Leshane
-  - Eanira
-  - Taschale
-  - Ralima
-  - Shilera
-  - Nielise
-  - Eshani
-  - Lishaca
-  - Reenira
-  - Shianea
-  - Melise
-  - Tishina
-  - Ralene
-  - Shireta
-  - Nacira
-  - Eashira
-  - Lianese
-  - Melea
-  - Shilase
-  - Nialima
-  - Eshaca
-  - Tashira
-  - Meliana
-  - Shilene
-  - Nacima
-  - Canese
-  - Lishira
-  - Raleca
-  - Nialea
+    prefix: names-avali-female-dataset-
+    count: 48
