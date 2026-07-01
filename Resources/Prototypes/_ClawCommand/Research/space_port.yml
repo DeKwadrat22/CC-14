@@ -24,7 +24,10 @@
   - WeaponEnergyTurretStationControlPanelElectronics
   technologyPrerequisites:
   - ConcentratedLaserWeaponry
-  position: 5,-1
+  - SuperParts
+  position: -1,-5
+  lineConnectSides:
+    ConcentratedLaserWeaponry: Bottom
 
 # Industrial — tier 2
 
@@ -40,9 +43,12 @@
   recipeUnlocks:
   - RipleyMKIIHarness
   - RipleyUpgradeKit
-  position: 0,-7
+  position: -2,-9
   technologyPrerequisites:
+  - AdvancedParts
   - RipleyAPLU
+  lineConnectSides:
+    RipleyAPLU: Bottom
 
 - type: technology
   id: Clarke
@@ -65,7 +71,7 @@
   - ClarkePeripheralsElectronics
   technologyPrerequisites:
   - Ripley2
-  position: 0,-8
+  position: -2,-10
 
 # Experimental — tier 2
 
@@ -80,7 +86,9 @@
   cost: 7500
   recipeUnlocks:
   - RPED
-  position: -3,-6
+  technologyPrerequisites:
+  - MicroParts
+  position: 2,-1
 
 - type: technology
   id: NightVisionTech
@@ -96,7 +104,11 @@
   - ClothingEyesNightVisionSecurityGoggles
   - ClothingEyesNightVisionMedicalGoggles
   - ClothingEyesNightVisionDiagnosticGoggles
-  position: -3,-7
+  technologyPrerequisites:
+  - Science
+  lineConnectSides:
+    Science: Bottom
+  position: -2,-7
 
 - type: technology
   id: ThermalVisionTech
@@ -109,21 +121,8 @@
   cost: 10000
   recipeUnlocks:
   - ClothingEyesThermalVisionGoggles
-  position: -3,-4
-
-# Experimental — tier 3
-
-- type: technology
-  id: SuperParts
-  name: research-technology-super-parts
-  icon:
-    sprite: Objects/Misc/stock_parts.rsi
-    state: super_matter_bin
-  discipline: Experimental
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - SuperCapacitorStockPart
-  - SuperMatterBinStockPart
-  - PicoManipulatorStockPart
-  position: -3,-5
+  technologyPrerequisites:
+  - Science
+  lineConnectSides:
+    Science: Bottom
+  position: -3,-7

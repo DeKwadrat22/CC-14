@@ -35,6 +35,9 @@
             <Label Name="TechnologyNameLabel"
                     StyleClasses="LabelKeyText"
                     HorizontalExpand="True"/>
+            <Label Name="TechnologyTierLabel"
+                   StyleClasses="LabelKeyText"
+                   HorizontalExpand="True"/>
             <RichTextLabel Name="TechnologyCostLabel"
                     HorizontalExpand="True"/>
             <Button Name="ResearchButton"

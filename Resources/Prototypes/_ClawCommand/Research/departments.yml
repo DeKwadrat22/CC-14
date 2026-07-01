@@ -1,0 +1,77 @@
+- type: technology
+  id: Engineering
+  name: research-technology-engineering
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: StationEngineer
+  discipline: Industrial
+  tier: 1
+  cost: 0
+  position: 2,5
+  technologyPrerequisites:
+  - MicroParts
+
+- type: technology
+  id: Medical
+  name: research-technology-medical
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: MedicalDoctor
+  discipline: CivilianServices
+  tier: 1
+  cost: 0
+  position: 9,-1
+  technologyPrerequisites:
+  - MicroParts
+
+- type: technology
+  id: Science
+  name: research-technology-science
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: Scientist
+  discipline: Experimental
+  tier: 1
+  cost: 0
+  position: 3,-6
+  technologyPrerequisites:
+  - MicroParts
+
+- type: technology
+  id: Security
+  name: research-technology-security
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: SecurityOfficer
+  discipline: Arsenal
+  tier: 1
+  cost: 0
+  position: 1,0
+  technologyPrerequisites:
+  - MicroParts
+
+- type: technology
+  id: Civilian
+  name: research-technology-civilian
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: Bartender
+  discipline: CivilianServices
+  tier: 1
+  cost: 0
+  position: 8,1
+  technologyPrerequisites:
+  - MicroParts
+
+- type: technology
+  id: Cargo
+  name: research-technology-cargo
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: CargoTechnician
+  discipline: Industrial
+  tier: 1
+  cost: 0
+  position: 4,4
+  technologyPrerequisites:
+  - MicroParts

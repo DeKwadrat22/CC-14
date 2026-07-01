@@ -1,3 +1,23 @@
+- type: latheRecipe
+  parent: BasePartRecipe
+  id: AdvancedManipulatorRecipe
+  result: AdvancedManipulatorPart
+  completetime: 6
+  materials:
+    Steel: 75
+    Plastic: 75
+
+- type: latheRecipe
+  parent: BasePartRecipe
+  id: SuperManipulatorRecipe
+  result: SuperManipulatorPart
+  completetime: 9
+  materials:
+    Steel: 100
+    Plastic: 100
+
+
+## !! BELOW IS OBSOLETE !! ##
 # Lathe recipes for the SuperParts research unlock.
 
 - type: latheRecipe

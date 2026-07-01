@@ -78,6 +78,22 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public Vector2i Position { get; private set; }
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     What color the line should be in the UI.
+    /// </summary>
+    [DataField]
+    public Color LineColor = Color.White;
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     What side a prerequisite should attempt to connect to.
+    ///     USAGE:
+    ///     <para>AbnormalArtifactManipulation: Left</para>
+    /// </summary>
+    [DataField]
+    public Dictionary<string, string> LineConnectSides = new();
 }
 
 [DataDefinition]

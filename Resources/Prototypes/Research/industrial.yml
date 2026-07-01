@@ -18,13 +18,15 @@
   discipline: Industrial
   tier: 1
   cost: 7500
-  position: 0,2
+  position: 4,6
   recipeUnlocks:
   - MiningDrill
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
+  technologyPrerequisites:
+  - Cargo
 
 - type: technology
   id: SpaceScanning
@@ -35,10 +37,12 @@
   discipline: Industrial
   tier: 1
   cost: 5000
-  position: 1,2
+  position: 4,5
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
+  technologyPrerequisites:
+  - Cargo
 
 - type: technology
   id: AdvancedPowercells
@@ -49,11 +53,13 @@
   discipline: Industrial
   tier: 1
   cost: 7500
-  position: 1,0
+  position: 2,6
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
   - SMESAdvancedMachineCircuitboard
+  technologyPrerequisites:
+  - PowerGeneration
 
 - type: technology
   id: MechanicalCompression
@@ -64,9 +70,13 @@
   discipline: Industrial
   tier: 1
   cost: 10000
-  position: 1,1
+  position: 6,-7
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
+  technologyPrerequisites:
+  - BasicXenoArcheology
+  lineConnectSides:
+    BasicXenoArcheology: Bottom
 
 - type: technology
   id: IndustrialEngineering
@@ -77,12 +87,14 @@
   discipline: Industrial
   tier: 1
   cost: 10000
-  position: 2,1
+  position: 1,5
   recipeUnlocks:
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
+  technologyPrerequisites:
+  - Engineering
 
 - type: technology
   id: PowerGeneration
@@ -93,7 +105,7 @@
   discipline: Industrial
   tier: 1
   cost: 7500
-  position: 2,0
+  position: 1,6
   recipeUnlocks:
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
@@ -101,6 +113,8 @@
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
+  technologyPrerequisites:
+  - IndustrialEngineering
 
 - type: technology
   id: AtmosphericTech
@@ -111,10 +125,12 @@
   discipline: Industrial
   tier: 1
   cost: 7500
-  position: 0,3
+  position: 2,4
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
+  technologyPrerequisites:
+  - Engineering
 
 - type: technology
   id: RipleyAPLU
@@ -125,7 +141,7 @@
   discipline: Industrial
   tier: 1
   cost: 7500
-  position: 2,3
+  position: -1,-8
   recipeUnlocks:
   - RipleyHarness
   - RipleyLArm
@@ -135,6 +151,10 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
+  technologyPrerequisites:
+  - BasicRobotics
+  lineConnectSides:
+    BasicRobotics: Bottom
 
 # Tier 2
 
@@ -147,15 +167,16 @@
   discipline: Industrial
   tier: 2
   cost: 10000
-  position: 5,3
+  position: 5,4
   recipeUnlocks:
   - ShuttleConsoleCircuitboard
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
   technologyPrerequisites:
+  - Cargo
+  - AdvancedParts
   - MechanicalCompression
-
 
 - type: technology
   id: AdvancedAtmospherics
@@ -166,13 +187,16 @@
   discipline: Industrial
   tier: 2
   cost: 7500
-  position: 4,3
+  position: 1,3
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
   technologyPrerequisites:
+  - AdvancedParts
   - AtmosphericTech
+  lineConnectSides:
+    AtmosphericTech: Bottom
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -182,8 +206,8 @@
     state: icon
   discipline: Industrial
   tier: 2
-  cost: 10000
-  position: 5,1
+  cost: 20000
+  position: 6,5
   recipeUnlocks:
     - WelderExperimental
     - PowerDrill
@@ -194,8 +218,11 @@
     - Fulton
     - FultonBeacon
   technologyPrerequisites:
-  - Shuttlecraft
-
+  - SalvageEquipment
+  - AdvancedParts
+  lineConnectSides:
+    SalvageEquipment: Bottom
+    AdvancedParts: Left
 
 - type: technology
   id: MassExcavation
@@ -203,39 +230,21 @@
   icon:
     sprite: Objects/Tools/handdrilldiamond.rsi
     state: handdrill
-  discipline: Industrial
-  tier: 2
+  discipline: Experimental # _ClawCommand: Changed from Industrial
+  tier: 3
   cost: 12500
-  position: 4,2
+  position: 1,-11
   recipeUnlocks:
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
     - BorgModuleAdvancedMining
   technologyPrerequisites:
+  - BluespaceStorage
   - RipleyAPLU
 
 
 # Tier 3
-
-- type: technology
-  id: BluespaceStorage
-  name: research-technology-bluespace-storage
-  icon:
-    sprite: Clothing/Back/Backpacks/holding.rsi
-    state: holding
-  discipline: Industrial
-  tier: 3
-  cost: 15000
-  position: 7,1
-  recipeUnlocks:
-  - ClothingBackpackHolding
-  - ClothingBackpackSatchelHolding
-  - ClothingBackpackDuffelHolding
-  technologyPrerequisites:
-  - OptimizedMicrogalvanism
-
-
 - type: technology
   id: OptimizedMicrogalvanism
   name: research-technology-optimized-microgalvanism
@@ -245,9 +254,30 @@
   discipline: Industrial
   tier: 3
   cost: 10000
-  position: 7,0
+  position: 2,7
   recipeUnlocks:
   - PowerCellMicroreactor
   - PowerCellHyper
   technologyPrerequisites:
+  - SuperParts
   - AdvancedPowercells
+
+
+- type: technology
+  id: BluespaceStorage
+  name: research-technology-bluespace-storage
+  icon:
+    sprite: Clothing/Back/Backpacks/holding.rsi
+    state: holding
+  discipline: Experimental # _ClawCommand: Changed from Industrial
+  tier: 3
+  cost: 15000
+  position: 2,-12
+  recipeUnlocks:
+  - ClothingBackpackHolding
+  - ClothingBackpackSatchelHolding
+  - ClothingBackpackDuffelHolding
+  technologyPrerequisites:
+  - BluespaceTimeManipulation
+  lineConnectSides:
+    BluespaceTimeManipulation: Top

@@ -142,6 +142,10 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    dynamicPacks:
+    - MicroPartsPack # _ClawCommand: micro modular machine parts (vanilla)
+    - AdvancedPartsPack # _ClawCommand: advanced modular machine parts
+    - SuperPartsPack # _ClawCommand: super modular machine parts
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
