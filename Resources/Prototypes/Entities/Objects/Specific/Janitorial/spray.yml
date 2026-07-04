@@ -44,6 +44,10 @@
     - state: cleaner-fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: Spray
+    solution: drink
+    transferAmount: 5 # _ClawCommand: 10 -> 5
+    sprayVelocity: 2
   - type: SolutionContainerVisuals
     fillBaseName: cleaner-fill-
     inHandsMaxFillLevels: 4
@@ -68,7 +72,7 @@
     maxFillLevels: 7
     fillBaseName: cleaner_large-fill-
   - type: Spray
-    transferAmount: 15
+    transferAmount: 10 # _ClawCommand: 15 -> 10
     sprayedPrototype: BigVapor
     sprayVelocity: 3
     sprayDistance: 4.5
