@@ -4,7 +4,7 @@
   parent: LockerClawCommandOfficer
   components:
   - type: StorageFill
-    ancontents:
+    contents:
     - id: Flash
     - id: ClothingEyesGlassesMedSec
     # - id: PinpointerNuclear
