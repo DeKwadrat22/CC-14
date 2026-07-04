@@ -1,16 +1,28 @@
 - type: entity
   id: LockerClawCommandOfficerFilled
-  suffix: Claw Command, Filled
+  suffix: Claw Command Officer, Filled
   parent: LockerClawCommandOfficer
   components:
   - type: StorageFill
-    contents:
+    ancontents:
     - id: Flash
-    #- id: ClothingEyesGlassesMedSec
+    - id: ClothingEyesGlassesMedSec
     # - id: PinpointerNuclear
     - id: ClothingHandsGlovesCombat
     # - id: WeaponLeverChester
     # - id: WeaponEnergyRevolver
+    - id: TrackingImplanter
+
+- type: entity
+  id: LockerClawCommandMaidFilled
+  parent: LockerClawCommandMaid
+  suffix: Claw Command Maid, Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: ClothingEyesGlassesMedSec
+    - id: ClothingHandsTacticalMaidGloves
     - id: TrackingImplanter
 
 # Ported from space/ Resources/Prototypes/Catalog/Fills/Lockers/heads.yml.

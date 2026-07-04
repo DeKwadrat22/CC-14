@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 - type: job
   id: Psychologist
   name: job-name-psychologist
@@ -9,6 +11,7 @@
   access:
   - Medical
   - Maintenance
+  - Psychologist # _ClawCommand: Added.
   extendedAccess:
   - Chemistry
 

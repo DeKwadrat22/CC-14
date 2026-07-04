@@ -1,0 +1,26 @@
+# CARGO #
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconMailroom
+  suffix: Cargo Mailroom
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-mailroom
+
+# MEDICAL #
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconVirology
+  suffix: Virology
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-virology
+
+# SERVICE #
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconBoxing
+  suffix: Boxing
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-boxing

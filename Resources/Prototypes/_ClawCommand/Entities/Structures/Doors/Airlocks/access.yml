@@ -1,0 +1,16 @@
+- type: entity
+  parent: AirlockSecurityLawyerLocked
+  id: AirlockMaintSecurityLawyerLocked
+  suffix: Maintenance, Security/Lawyer, Locked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMedicalLocked
+  id: AirlockPsychologistLocked
+  suffix: Psychology, Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychologist ]

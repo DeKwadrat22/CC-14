@@ -168,6 +168,18 @@
 
 # Security Gloves
 - type: loadoutGroup
+  id: CCMaidGloves
+  name: cc-loadout-group-security-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutSecGlovesBlack
+  - LoadoutSecGlovesMaid
+  - LoadoutSecGlovesFingerless
+  - LoadoutSecGlovesRed
+
+# Security Gloves
+- type: loadoutGroup
   id: CCSecurityGloves
   name: cc-loadout-group-security-gloves
   minLimit: 0
