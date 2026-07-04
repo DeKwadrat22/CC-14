@@ -48,13 +48,3 @@
   category: cargoproduct-category-name-cargo
   group: market
 
-# Claw Command - Material silo crate
-- type: cargoProduct
-  id: CargoMaterialSilo
-  icon:
-    sprite: Structures/Machines/silo.rsi
-    state: silo
-  product: CrateMaterialSilo
-  cost: 2500
-  category: cargoproduct-category-name-cargo
-  group: market

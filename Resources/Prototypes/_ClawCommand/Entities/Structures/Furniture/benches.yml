@@ -4,12 +4,14 @@
 
 # Base bench (port of BenchBaseMiddle)
 - type: entity
-  name: bench
+  parent: SeatBase
   id: BenchBaseMiddle
+  name: bench
+  description: Multiple seats spanning a single object. Truly a marvel of science.
   suffix: Middle
   abstract: true
-  parent: SeatBase
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
