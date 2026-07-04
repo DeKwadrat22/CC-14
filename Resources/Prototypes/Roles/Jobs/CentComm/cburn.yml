@@ -21,7 +21,7 @@
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
     mask: ClothingMaskGasERT
-    eyes: ClothingEyesGlassesSecurity
+    eyes: ClothingEyesGlassesCentcomm
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitCBURN
@@ -29,10 +29,11 @@
     id: CBURNPDA
     pocket1: RadioHandheld
     pocket2: WeaponLaserGun
-    belt: ClothingBeltBandolier
+    belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
-    - WeaponShotgunDoubleBarreled
+    - WeaponShotgunEnforcer
+    - BoxShotgunIncendiary
     - BoxShotgunIncendiary
     - GrenadeFlashBang
     - PillAmbuzolPlus
