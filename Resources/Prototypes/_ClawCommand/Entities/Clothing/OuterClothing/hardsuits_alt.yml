@@ -220,45 +220,6 @@
   - type: StaticPrice
     price: 0
 
-# CBURN Exosuit
-- type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitCBURNAlt
-  name: CBURN exosuit
-  description: A lightweight yet strong exosuit used for special cleanup operations.
-  components:
-  - type: Sprite
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/cburn.rsi
-  - type: Clothing
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/cburn.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.02
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
-  - type: ExplosionResistance
-    damageCoefficient: 0.7
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.6
-        Heat: 0.1
-        Cold: 0.1
-        Shock: 0.1
-        Radiation: 0.1
-        Caustic: 0.1
-  - type: ZombificationResistance
-    zombificationResistanceCoefficient: 0.25
-  - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
-  - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetCBURNAlt
-
 # MISC. HARDSUITS
 
 # Clown Hardsuit
@@ -592,58 +553,6 @@
     color: "#f4ffad"
     radius: 5
     energy: 2
-
-# CBURN Helmet
-# Mirrors vanilla ClothingHeadHelmetCBURN: multi-layer Sprite for the icon's visor unshaded glow
-# plus a light-overlay layer mapped to the toggle, and explicit clothingVisuals so the worn
-# sprite layers the unshaded glow on top of the base. The alt cburn.rsi has no equipped-head-light
-# variants so we don't add a worn-sprite layer for the toggle — only the icon glows, matching
-# the upstream behavior.
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetCBURNAlt
-  name: CBURN exosuit helmet
-  description: A pressure resistant and fireproof hood worn by special cleanup units.
-  components:
-  - type: BreathMask
-  - type: Sprite
-    sprite: _ClawCommand/Clothing/Head/Hardsuits/cburn.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: light-overlay
-      visible: false
-      shader: unshaded
-      map: [ "light" ]
-  - type: Clothing
-    sprite: _ClawCommand/Clothing/Head/Hardsuits/cburn.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-head
-      - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-  - type: PointLight
-    color: orange
-  - type: PressureProtection
-    highPressureMultiplier: 0.08
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    heatingCoefficient: 0.005
-    coolingCoefficient: 0.005
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-  - type: ZombificationResistance
-    zombificationResistanceCoefficient: 0.75
 
 # Clown Hardsuit Helmet (parents security helmet to mirror upstream stat inheritance)
 - type: entity
