@@ -7,6 +7,8 @@
 - type: Tag
   id: TagNutribrick # snacks::FoodSnackNutribrickOpen
 
+# D #
+
 # Dogborg conversion kit tags — one per variant. The cyborg construction graph
 # uses these to branch from `CyborgEndoskeleton` to a specific dogborg chassis
 # based on which kit the roboticist inserts.
@@ -32,3 +34,7 @@
   id: DogborgKitValeServ
 - type: Tag
   id: DogborgKitBlade
+
+# K #
+- type: Tag
+  id: Katana

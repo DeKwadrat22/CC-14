@@ -356,6 +356,11 @@
   equipment:
     gloves: ClothingHandsGlovesColorRed
 
+- type: loadout
+  id: LoadoutSecGlovesMaid
+  equipment:
+    gloves: ClothingHandsTacticalMaidGloves
+
 # === CC Officer Weapon ===
 
 - type: loadout

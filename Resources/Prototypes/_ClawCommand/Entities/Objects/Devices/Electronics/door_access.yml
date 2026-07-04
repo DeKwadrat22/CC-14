@@ -6,3 +6,12 @@
   components:
   - type: AccessReader
     access: [["ClawCommand"], ["Captain"]]
+
+# Medical
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPsychologist
+  suffix: Psychologist, Medical, Locked
+  components:
+  - type: AccessReader
+    access: [["Medical"], ["Psychologist"]]
