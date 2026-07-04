@@ -9,7 +9,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: Katana
+      - id: WeaponMeleeKatana
 
 # --- ClothingBeltKatanaSheathMaid ---
 - type: entity
@@ -69,7 +69,4 @@
           tags:
           - Katana
   - type: Appearance
-  - type: Tag
-    tags:
-      - BeltSlotNotBelt
 
