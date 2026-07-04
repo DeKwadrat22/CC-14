@@ -100,7 +100,7 @@
     sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
   - type: ClothingSpeedModifier
     walkModifier: 1.10
-    sprintModifier: 2.10
+    sprintModifier: 1.55
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHeavySuit
