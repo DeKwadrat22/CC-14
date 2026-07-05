@@ -6,9 +6,9 @@
   suffix: Alt
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+    sprite: _GoobStation/Clothing/Head/Helmets/security.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+    sprite: _GoobStation/Clothing/Head/Helmets/security.rsi
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -20,6 +20,6 @@
   description: An extravagant black dress designed to catch the attention of as many people as possible.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi
+    sprite: _GoobStation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi
+    sprite: _GoobStation/Clothing/Uniforms/Jumpskirt/Civilian/reporter_dress.rsi

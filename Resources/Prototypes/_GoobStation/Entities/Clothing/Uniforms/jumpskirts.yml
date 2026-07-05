@@ -5,6 +5,6 @@
   description: A jumpskirt issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/trainer.rsi
+    sprite: _GoobStation/Clothing/Uniforms/Jumpskirt/trainer.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/trainer.rsi
+    sprite: _GoobStation/Clothing/Uniforms/Jumpskirt/trainer.rsi

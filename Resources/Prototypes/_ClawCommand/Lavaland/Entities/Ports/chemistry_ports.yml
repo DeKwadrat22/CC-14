@@ -43,8 +43,8 @@
   description: A "Tider" grade chemical manipulator.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/portablechemicalmaster.rsi
-    state: icon
+    sprite: Objects/Specific/Chemistry/portable_mixer.rsi
+    state: portable_mixer
   - type: Item
     size: Huge
 

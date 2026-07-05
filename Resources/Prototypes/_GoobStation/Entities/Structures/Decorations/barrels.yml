@@ -12,7 +12,7 @@
   - type: Anchorable
   - type: Sprite
     noRot: true
-    sprite: /Textures/_Goobstation/Structures/Decoration/Barrels/blackbarrel.rsi
+    sprite: _GoobStation/Structures/Decoration/Barrels/blackbarrel.rsi
     state: barrel
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -38,7 +38,7 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: /Textures/_Goobstation/Structures/Decoration/Barrels/blackbarrel.rsi
+    sprite: _GoobStation/Structures/Decoration/Barrels/blackbarrel.rsi
     state: barrel_planks
 
 
@@ -50,7 +50,7 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: /Textures/_Goobstation/Structures/Decoration/Barrels/blackbarrel.rsi
+    sprite: _GoobStation/Structures/Decoration/Barrels/blackbarrel.rsi
     state: barrel_fire
   - type: PointLight
     radius: 5
