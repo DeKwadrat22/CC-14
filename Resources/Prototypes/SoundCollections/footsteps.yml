@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
 - type: soundCollection
   id: FootstepCarpet
   files:
@@ -249,3 +250,11 @@
   - /Audio/Effects/Footsteps/heelsclack3.ogg
   - /Audio/Effects/Footsteps/heelsclack4.ogg
   - /Audio/Effects/Footsteps/heelsclack5.ogg
+
+- type: soundCollection
+  id: FootstepHeavySuit
+  files:
+  - /Audio/_GoobStation/Effects/Footsteps/heavy1.ogg
+  - /Audio/_GoobStation/Effects/Footsteps/heavy2.ogg
+  - /Audio/_GoobStation/Effects/Footsteps/heavy3.ogg
+  - /Audio/_GoobStation/Effects/Footsteps/heavy4.ogg

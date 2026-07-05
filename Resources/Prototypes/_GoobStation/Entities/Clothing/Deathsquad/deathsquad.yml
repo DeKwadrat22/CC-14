@@ -1,0 +1,117 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# DEATHSQUAD HARDSUIT
+
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
+  id: ClothingOuterHardsuitDeathsquad
+  name: PI-52 "Lucifer" hardsuit
+  description: A famous hardsuit used by Central Command's death-squadrons, often shown in movies by Nanotrasen intended to increase recruitment.
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: FireProtection
+    reduction: 0.8
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.1 # Best armor in the game.
+        Slash: 0.1
+        Piercing: 0.1
+        Heat: 0.1
+        Cold: 0.1
+        Cellular: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+# DEATHSQUAD HELMET
+
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
+  id: ClothingHeadHelmetHardsuitDeathsquad
+  name: deathsquad hardsuit helmet
+  description: A robust helmet for special operations.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/deathsquad.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/deathsquad.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.15
+        Slash: 0.15
+        Piercing: 0.15
+        Heat: 0.15
+        Cold: 0.1
+        Cellular: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: PointLight
+    color: "#567fc4"
+    rotation: 30
+    energy: 10
+    radius: 5
+  - type: ThermalVision
+    isEquipment: true
+    color: "#98EEFB"
+    lightRadius: 15
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+# DEATHSQUAD MAGBOOTS
+
+- type: entity
+  parent: ClothingShoesBootsMagBase
+  id: ClothingShoesBootsMagDeathsquad
+  name: deathsquad magboots
+  description: The sound of these boots are iconic; the sound of terror.
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+    state: icon
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+  - type: Item
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.10
+    sprintModifier: 1.55
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 2 minutes of thrust
+      volume: 2
+      temperature: 293.15
+      moles:
+      - 0.153853429 # oxygen
+      - 0.153853429 # nitrogen
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
