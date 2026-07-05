@@ -11,7 +11,7 @@
   components:
   - type: Sprite
     layers:
-    - sprite: /Textures/_Goobstation/Structures/Decoration/deadratvar.rsi
+    - sprite: _Goobstation/Structures/Decoration/deadratvar.rsi
       state: dead_ratvar
       noRot: true
       drawdepth: OverMobs

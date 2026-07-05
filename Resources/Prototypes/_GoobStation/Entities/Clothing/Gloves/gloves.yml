@@ -5,9 +5,9 @@
   description: A pair of gold-trimmed gloves made for Central Command staff. These ones are insulated.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+    sprite: _GoobStation/Clothing/Hands/Gloves/goldtrim.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+    sprite: _GoobStation/Clothing/Hands/Gloves/goldtrim.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-classified
@@ -20,9 +20,9 @@
   description: A pair of gold-trimmed gloves made for Central Command staff. Not insulated.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+    sprite: _GoobStation/Clothing/Hands/Gloves/goldtrim.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+    sprite: _GoobStation/Clothing/Hands/Gloves/goldtrim.rsi
   - type: Fiber
     fiberMaterial: fibers-classified
     fiberColor: fibers-white

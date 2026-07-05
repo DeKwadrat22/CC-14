@@ -5,9 +5,9 @@
   description: A hat issued to Nanotrasen Career Trainers. Makes you feel stylish.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Hats/trainer.rsi
+    sprite: _GoobStation/Clothing/Head/Hats/trainer.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Hats/trainer.rsi
+    sprite: _GoobStation/Clothing/Head/Hats/trainer.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -16,7 +16,7 @@
   description: A beret issued to Nanotrasen Career Trainers. Makes you feel stylish.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
+    sprite: _GoobStation/Clothing/Head/Hats/trainer_beret.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
+    sprite: _GoobStation/Clothing/Head/Hats/trainer_beret.rsi
 
