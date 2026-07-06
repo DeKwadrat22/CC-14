@@ -1,0 +1,154 @@
+# Organ definitions
+- type: entity
+  parent: OrganBase
+  id: OrganShadowkin
+  abstract: true
+  suffix: shadowkin
+
+- type: entity
+  id: OrganShadowkinMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganShadowkin
+  id: OrganShadowkinInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/organs.rsi
+
+- type: entity
+  id: OrganShadowkinVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _ClawCommand/Mobs/Species/Shadowkin/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: MarkingsShadowkin
+
+- type: entity
+  parent: [ OrganShadowkin, OrganShadowkinVisual ]
+  id: OrganShadowkinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/parts.rsi
+
+# External organs (body parts)
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganShadowkinExternal ]
+  id: OrganShadowkinTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganShadowkinExternal ]
+  id: OrganShadowkinHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganShadowkinExternal ]
+  id: OrganShadowkinArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganShadowkinExternal ]
+  id: OrganShadowkinArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganShadowkinExternal ]
+  id: OrganShadowkinHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganShadowkinExternal ]
+  id: OrganShadowkinHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganShadowkinExternal ]
+  id: OrganShadowkinLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganShadowkinExternal ]
+  id: OrganShadowkinLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganShadowkinExternal ]
+  id: OrganShadowkinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganShadowkinExternal ]
+  id: OrganShadowkinFootRight
+
+# Internal organs
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganShadowkinInternal ]
+  id: OrganShadowkinBrain
+
+- type: entity
+  parent: [ OrganShadowkinVisual, OrganBaseEyes, OrganShadowkinInternal ]
+  id: OrganShadowkinEyes
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/organs.rsi
+    layers:
+    - state: eyes
+  - type: VisualOrgan
+    data:
+      sprite: _ClawCommand/Mobs/Species/Shadowkin/parts.rsi
+      state: eyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganShadowkinInternal ]
+  id: OrganShadowkinTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganShadowkinInternal ]
+  id: OrganShadowkinAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganShadowkinInternal ]
+  id: OrganShadowkinEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
+  id: OrganShadowkinLungs
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/organs.rsi
+    layers:
+    - state: lungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
+  id: OrganShadowkinHeart
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/organs.rsi
+    layers:
+    - state: heart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
+  id: OrganShadowkinStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
+  id: OrganShadowkinLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
+  id: OrganShadowkinKidneys
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Species/Shadowkin/organs.rsi
+    layers:
+    - state: kidneys
