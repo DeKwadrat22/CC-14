@@ -9,7 +9,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponMeleeKatana
+    - id: WeaponMeleeKatana
+    - id: WeaponMeleeKatana
 
 # --- ClothingBeltKatanaSheathMaid ---
 - type: entity

@@ -19,7 +19,7 @@
   requirements:
   - !type:DepartmentTimeRequirement # Same as SecurityOfficer
     department: Security
-    time: 14400 # 4h
+    time: 4h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
@@ -34,7 +34,7 @@
   requirements:
   - !type:DepartmentTimeRequirement # Same as MedicalDoctor
     department: Medical
-    time: 9000 # 2.5h
+    time: 2.5h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
@@ -49,7 +49,7 @@
   requirements:
   - !type:DepartmentTimeRequirement # Same as StationEngineer
     department: Engineering
-    time: 9000 # 2.5h
+    time: 2.5h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
@@ -63,7 +63,7 @@
   playTimeTracker: JobDogborgJanitor
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 36000
+    time: 10h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
@@ -77,7 +77,7 @@
   playTimeTracker: JobDogborgService
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 36000
+    time: 10h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
@@ -91,7 +91,7 @@
   playTimeTracker: JobDogborgMining
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 36000
+    time: 10h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

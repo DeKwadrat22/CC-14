@@ -48,9 +48,10 @@
   # Well its fixed now, but I want to share my pain.
   - type: Solution
     solution:
-      maxVol: 1 # Cheap
+      maxVol: 5 # Cheap # _ClawCommand: 1 -> 5
   - type: SolutionTransfer
-    maxTransferAmount: 1
+    minTransferAmount: 1
+    maxTransferAmount: 5
   - type: Sprite
     layers:
       - state: packet-trans-2
@@ -94,7 +95,7 @@
     solution:
       reagents:
       - ReagentId: Astrotame
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Sprite
     layers:
       - state: packet-trans-2
@@ -120,7 +121,7 @@
     solution:
       reagents:
       - ReagentId: BbqSauce
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-bbq
   - type: Appearance
@@ -138,7 +139,7 @@
     solution:
       reagents:
       - ReagentId: Cornoil
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-cornoil
   - type: Appearance
@@ -156,7 +157,7 @@
     solution:
       reagents:
       - ReagentId: Coldsauce
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-frostoil
   - type: Appearance
@@ -174,7 +175,7 @@
     solution:
       reagents:
       - ReagentId: HorseradishSauce
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-greygoo
   - type: Appearance
@@ -192,7 +193,7 @@
     solution:
       reagents:
       - ReagentId: Hotsauce
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-hotsauce
   - type: Appearance
@@ -210,7 +211,7 @@
     solution:
       reagents:
       - ReagentId: Ketchup
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Sprite
   - type: Icon
     state: packet-ketchup
@@ -229,7 +230,7 @@
     solution:
       reagents:
       - ReagentId: Mustard
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-mustard
   - type: Appearance
@@ -247,7 +248,7 @@
     solution:
       reagents:
       - ReagentId: Blackpepper
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-pepper
   - type: Appearance
@@ -265,7 +266,7 @@
     solution:
       reagents:
       - ReagentId: TableSalt
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Sprite
     layers:
       - state: packet-solid-2
@@ -292,7 +293,7 @@
     solution:
       reagents:
       - ReagentId: Soysauce
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-soysauce
   - type: Appearance
@@ -310,7 +311,7 @@
     solution:
       reagents:
       - ReagentId: Sugar
-        Quantity: 1
+        Quantity: 5 # _ClawCommand: 1 -> 5
   - type: Icon
     state: packet-sugar
   - type: Appearance

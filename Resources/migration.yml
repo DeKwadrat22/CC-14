@@ -925,3 +925,6 @@ UniqueLockerNanorepFilled: null
 VendingMachineCourierDrobe: null
 VendingMachineMNKDrobe: null
 GlimmerProber: null
+
+# 2026-07-06
+LockerBartender: LockerBooze # Why was this even made?
