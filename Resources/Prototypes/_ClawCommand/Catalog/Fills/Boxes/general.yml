@@ -19,7 +19,7 @@
       storagebase: !type:AllSelector
         children:
         - id: CandleInfinite
-          amount: 4
+          amount: 2
         - id: CandleBlueInfinite
           amount: 2
         - id: CandleRedInfinite

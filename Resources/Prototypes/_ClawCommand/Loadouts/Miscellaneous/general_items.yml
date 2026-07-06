@@ -389,9 +389,8 @@
 
 - type: loadout
   id: LoadoutCCMaidKatana
-  storage:
-    back:
-    - WeaponMeleeKatana
+  equipment:
+    belt: ClothingBeltKatanaSheathFilledMaid
 
 - type: loadout
   id: LoadoutCCMaidDisabler
@@ -428,6 +427,7 @@
 
 - type: loadout
   id: LoadoutBartenderDoubleBarrelRubber
+  dummyEntity: DummyEntityDoubleBarrelRubber
   storage:
     back:
     - WeaponShotgunDoubleBarreledRubber

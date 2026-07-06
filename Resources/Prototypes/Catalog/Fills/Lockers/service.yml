@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 - type: entity
   id: LockerBoozeFilled
   suffix: Filled
@@ -12,6 +14,7 @@
   id: FillLockerBooze
   table: !type:AllSelector
     children:
+    - id: BookBartendersManual # _ClawCommand: Added.
     - id: ClothingOuterArmorBasicSlim
     - id: WeaponShotgunDoubleBarreledRubber
     - id: DrinkShaker
@@ -49,12 +52,15 @@
   id: FillClosetChef
   table: !type:AllSelector
     children:
+    - id: FoodShakerSalt # _ClawCommand: Added.
+    - id: FoodShakerPepper # _ClawCommand: Added.
     - id: VariantCubeBox
     - id: SprayBottleWater
     - id: FoodBoxCloth
     - id: ReagentContainerSugar
     - id: FoodCondimentBottleEnzyme
     - id: DrinkSoyMilkCarton
+    - id: BookHowToCookForFortySpaceman # _ClawCommand: Added.
     - !type:AllSelector
       rolls: 2
       children:
