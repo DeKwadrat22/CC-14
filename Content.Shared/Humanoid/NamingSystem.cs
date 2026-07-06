@@ -30,6 +30,7 @@ public sealed partial class NamingSystem : EntitySystem
         }
 
         // CC: Added 'FirstDashLast'
+        // CC: Added 'FirstTheLast'
         switch (speciesProto.Naming)
         {
             case SpeciesNaming.First:
@@ -47,6 +48,10 @@ public sealed partial class NamingSystem : EntitySystem
                 return Loc.GetString("namepreset-firstdashlast",
                     ("first", GetFirstName(speciesProto, gender)),
                     ("last", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.FirstTheLast:
+                return Loc.GetString("namepreset-firstthelast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
             case SpeciesNaming.FirstLast:
             default:
                 return Loc.GetString("namepreset-firstlast",

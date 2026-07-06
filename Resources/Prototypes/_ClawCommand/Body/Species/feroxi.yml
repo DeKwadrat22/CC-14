@@ -186,3 +186,4 @@
   # - type: Wagging # TODO - CC14 - Animated tail sprites for Feroxi and Felinids
   - type: Thirst
     baseDecayRate: 1.0
+  - type: Feroxi

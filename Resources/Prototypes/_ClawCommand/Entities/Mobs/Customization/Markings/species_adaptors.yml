@@ -24,7 +24,7 @@
 - type: marking
   id: SpeciesAdaptorVulpkaninTorsoMale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
     state: torso_m
@@ -32,7 +32,7 @@
 - type: marking
   id: SpeciesAdaptorVulpkaninTorsoFemale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
     state: torso_f
@@ -121,7 +121,7 @@
 - type: marking
   id: SpeciesAdaptorRodentiaTorsoMale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
     state: torso_m
@@ -129,7 +129,7 @@
 - type: marking
   id: SpeciesAdaptorRodentiaTorsoFemale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
     state: torso_f
@@ -315,7 +315,7 @@
 - type: marking
   id: SpeciesAdaptorFeroxiTorsoMale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: torso_m
@@ -323,7 +323,7 @@
 - type: marking
   id: SpeciesAdaptorFeroxiTorsoFemale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: torso_f
@@ -412,7 +412,7 @@
 - type: marking
   id: SpeciesAdaptorReptilianTorsoMale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_m
@@ -420,7 +420,7 @@
 - type: marking
   id: SpeciesAdaptorReptilianTorsoFemale
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsFeroxi, MarkingsIPC, Reptilian, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_f

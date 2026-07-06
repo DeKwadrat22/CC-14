@@ -65,3 +65,6 @@ marking-BodyShadekinLines = Lines Marking
 marking-BodyShadekinNeck = Neck Marking
 marking-BodyShadekinShield = Protective Marking
 marking-BodyShadekinVacuum = Open Marking
+
+marking-ShadowkinChest = Chest Fluff
+marking-ShadowkinChest-fluff = Chest Fluff

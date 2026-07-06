@@ -105,7 +105,7 @@
 - type: marking
   id: TattooEyeRight
   bodyPart: Eyes
-  groupWhitelist: [Human, Slime, Reptilian, MarkingsFelinid, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali] # CC14 - Added Felinids, Feroxi, and Kitsunes
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsFelinid, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin] # CC14 - Added Felinids, Feroxi, and Kitsunes
   coloring:
     default:
       type:
@@ -118,7 +118,7 @@
 - type: marking
   id: TattooEyeLeft
   bodyPart: Eyes
-  groupWhitelist: [Human, Slime, Reptilian, MarkingsFelinid, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali] # CC14 - Added Felinids, Feroxi, and Kitsunes
+  groupWhitelist: [Human, Slime, Reptilian, MarkingsFelinid, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin] # CC14 - Added Felinids, Feroxi, and Kitsunes
   coloring:
     default:
       type:

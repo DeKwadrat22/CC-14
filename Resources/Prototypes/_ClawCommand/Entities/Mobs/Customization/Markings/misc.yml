@@ -213,6 +213,7 @@
   bodyPart: Tail
   groupWhitelist: [ Moth ]
   forcedColoring: false
+  requires: MothFirefly
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
     state: mothfirefly1
@@ -222,7 +223,6 @@
   id: MothFirefly
   bodyPart: Tail
   groupWhitelist: [ Moth ]
-  forcedColoring: false
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
     state: mothfirefly2

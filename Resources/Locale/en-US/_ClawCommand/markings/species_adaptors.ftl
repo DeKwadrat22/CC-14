@@ -5,7 +5,7 @@ marking-SpeciesAdaptorVulpkaninHeadFemale-head_f = Head F
 marking-SpeciesAdaptorVulpkaninHeadFemale = Base Sprite - Vulpkanin Head (Female)
 
 marking-SpeciesAdaptorVulpkaninTorsoMale-torso_m = Torso M
-marking-SpeciesAdaptorVulpkaninTorsoMale = Base Sprite - Vulpkanin Chest (Female)
+marking-SpeciesAdaptorVulpkaninTorsoMale = Base Sprite - Vulpkanin Chest (Male)
 
 marking-SpeciesAdaptorVulpkaninTorsoFemale-torso_f = Torso F
 marking-SpeciesAdaptorVulpkaninTorsoFemale = Base Sprite - Vulpkanin Chest (Female)
@@ -41,7 +41,7 @@ marking-SpeciesAdaptorRodentiaHeadFemale-head_f = Head F
 marking-SpeciesAdaptorRodentiaHeadFemale = Base Sprite - Rodentia Head (Female)
 
 marking-SpeciesAdaptorRodentiaTorsoMale-torso_m = Torso M
-marking-SpeciesAdaptorRodentiaTorsoMale = Base Sprite - Rodentia Chest (Female)
+marking-SpeciesAdaptorRodentiaTorsoMale = Base Sprite - Rodentia Chest (Male)
 
 marking-SpeciesAdaptorRodentiaTorsoFemale-torso_f = Torso F
 marking-SpeciesAdaptorRodentiaTorsoFemale = Base Sprite - Rodentia Chest (Female)
@@ -77,7 +77,7 @@ marking-SpeciesAdaptorHumanHeadFemale-head_f = Head F
 marking-SpeciesAdaptorHumanHeadFemale = Base Sprite - Human Head (Female)
 
 marking-SpeciesAdaptorHumanTorsoMale-torso_m = Torso M
-marking-SpeciesAdaptorHumanTorsoMale = Base Sprite - Human Chest (Female)
+marking-SpeciesAdaptorHumanTorsoMale = Base Sprite - Human Chest (Male)
 
 marking-SpeciesAdaptorHumanTorsoFemale-torso_f = Torso F
 marking-SpeciesAdaptorHumanTorsoFemale = Base Sprite - Human Chest (Female)
@@ -113,7 +113,7 @@ marking-SpeciesAdaptorFeroxiHeadFemale-head_f = Head F
 marking-SpeciesAdaptorFeroxiHeadFemale = Base Sprite - Feroxi Head (Female)
 
 marking-SpeciesAdaptorFeroxiTorsoMale-torso_m = Torso M
-marking-SpeciesAdaptorFeroxiTorsoMale = Base Sprite - Feroxi Chest (Female)
+marking-SpeciesAdaptorFeroxiTorsoMale = Base Sprite - Feroxi Chest (Male)
 
 marking-SpeciesAdaptorFeroxiTorsoFemale-torso_f = Torso F
 marking-SpeciesAdaptorFeroxiTorsoFemale = Base Sprite - Feroxi Chest (Female)
@@ -149,7 +149,7 @@ marking-SpeciesAdaptorReptilianHeadFemale-head_f = Head F
 marking-SpeciesAdaptorReptilianHeadFemale = Base Sprite - Reptilian Head (Female)
 
 marking-SpeciesAdaptorReptilianTorsoMale-torso_m = Torso M
-marking-SpeciesAdaptorReptilianTorsoMale = Base Sprite - Reptilian Chest (Female)
+marking-SpeciesAdaptorReptilianTorsoMale = Base Sprite - Reptilian Chest (Male)
 
 marking-SpeciesAdaptorReptilianTorsoFemale-torso_f = Torso F
 marking-SpeciesAdaptorReptilianTorsoFemale = Base Sprite - Reptilian Chest (Female)

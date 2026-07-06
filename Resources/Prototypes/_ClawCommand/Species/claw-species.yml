@@ -30,9 +30,8 @@
   defaultSkinTone: "#FFFFFF"
   dollPrototype: AppearanceShadowkin
   skinColoration: Hues
-  naming: First
-  maleFirstNames: NamesShadowkin
-  femaleFirstNames: NamesShadowkin
+  naming: FirstTheLast # CC: Custom!
+  lastNames: NamesShadowkin
   minAge: 18
   maxAge: 300
   youngAge: 20

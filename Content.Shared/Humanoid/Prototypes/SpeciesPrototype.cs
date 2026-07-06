@@ -109,6 +109,7 @@ public sealed partial class SpeciesPrototype : IPrototype
 
 // !! CLAW COMMAND MODIFIED !! //
 // CC : Added 'FirstDashLast'
+// CC : Added 'FirstTheLast'
 public enum SpeciesNaming : byte
 {
     First,
@@ -116,4 +117,5 @@ public enum SpeciesNaming : byte
     FirstDashFirst,
     TheFirstofLast,
     FirstDashLast,
+    FirstTheLast,
 }
