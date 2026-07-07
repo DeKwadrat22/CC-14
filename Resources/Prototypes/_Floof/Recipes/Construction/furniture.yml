@@ -1,0 +1,12 @@
+- type: construction
+  id: FurnStripPole
+  name: construction-recipe-stripper-pole
+  graph: Lewd
+  startNode: start
+  targetNode: FurnStripPole
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
