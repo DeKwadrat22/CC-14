@@ -1202,6 +1202,13 @@
   - HeadofSecurityWinterCoat
 
 - type: loadoutGroup
+  id: HeadofSecurityShoes
+  name: loadout-group-head-of-security-shoes
+  minLimit: 0
+  loadouts:
+  - HeadofSecurityAdvancedJackboots
+
+- type: loadoutGroup
   id: HeadofSecurityJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
