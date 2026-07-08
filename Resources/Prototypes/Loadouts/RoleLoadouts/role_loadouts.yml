@@ -523,7 +523,7 @@
   - SecurityBelt
   - HeadofSecurityOuterClothing
   - HeadofSecurityShoes
-  - SecurityShoes
+  # SecurityShoes moved - into HeadofSecurityShoes
   - CCSecurityGloves # CC14
   - SurvivalSecurity
   - Trinkets
