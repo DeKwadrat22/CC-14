@@ -63,6 +63,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceKitsunes
+  categories: [ HideSpawnMenu ]
   suffix: Claw Command
   name: kitsune appearance
   components:

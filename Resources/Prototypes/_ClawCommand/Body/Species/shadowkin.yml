@@ -57,6 +57,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceShadowkin
+  categories: [ HideSpawnMenu ]
   suffix: Claw Command
   name: shadekin appearance
   components:
