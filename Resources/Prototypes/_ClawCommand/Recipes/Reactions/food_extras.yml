@@ -55,6 +55,18 @@
     - !type:SpawnEntity
       entity: FoodCurdCheese
 
+- type: reaction
+  id: ReactionTomatoSauce
+  reactants:
+    JuiceTomato:
+      amount: 20
+    TableSalt:
+      amount: 5
+    CapsaicinOil:
+      amount: 5
+  products:
+    TomatoSauce: 3
+
 # NOTE: Croissants (FoodCroissantRaw / FoodCroissantRawCotton) are produced by
 # slicing FoodDoughFlat / FoodDoughCottonFlat (SliceableFood, count: 4). That's
 # how upstream works — no reaction is needed.

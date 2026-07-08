@@ -1,9 +1,9 @@
-# Claw Command — designed microwave recipes for fork foods that ship with no
-# upstream/space recipe. Each recipe gives the chef a route to make a food
-# that previously was vendor/cargo-only. Ingredient choices favour what's
+# Claw Command - designed microwave recipes for fork foods that ship with no
+# upstream/space recipe. Each recipe gives the chef a route to make food
+# that previously was vendor/cargo-only. Ingredient choices favor what's
 # already routine in a fork kitchen (milk, cream, juices, ice, bowls).
 
-# === SOUPS (fork-original / upstream entities lacking recipes) =============
+# === SOUPS (fork-original / upstream entities lacking recipes) === #
 
 - type: microwaveMealRecipe
   id: RecipeSoupBeet
@@ -17,7 +17,7 @@
     FoodBowlBig: 1
     FoodTomato: 1
     FoodCabbage: 1
-    FoodOnion: 1
+    FoodOnionSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeSoupBeetRed
@@ -30,7 +30,7 @@
   solids:
     FoodBowlBig: 1
     FoodTomato: 2
-    FoodOnion: 1
+    FoodOnionSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeSoupElectron
@@ -72,7 +72,7 @@
     FoodCabbage: 1
     FoodCarrot: 1
     FoodTomato: 1
-    FoodOnion: 1
+    FoodOnionSlice: 5
 
 - type: microwaveMealRecipe
   id: RecipeSoupPotato
@@ -106,7 +106,7 @@
 # cheese ingredients (mozzarella, curd) and coffee bean roasting under
 # Construction/Graphs/food/coffee_beans.yml.
 
-# === CANDY ================================================================
+# === CANDY === #
 
 - type: microwaveMealRecipe
   id: RecipeLollipop
@@ -152,7 +152,7 @@
     Sugar: 15
     JuiceCherry: 5
 
-# === COOKED MEATS =========================================================
+# === COOKED MEATS === #
 
 - type: microwaveMealRecipe
   id: RecipeMeatBaconCooked
@@ -163,7 +163,7 @@
   solids:
     FoodMeatBacon: 1
 
-# === BREAKFAST / EGG MEALS ================================================
+# === BREAKFAST / EGG MEALS === #
 
 - type: microwaveMealRecipe
   id: RecipeMealFriedegg
@@ -198,7 +198,7 @@
     FoodMeatBaconCooked: 1
     FoodBreadPlainSlice: 1
 
-# === SAVORY MEALS =========================================================
+# === SAVORY MEALS === #
 
 - type: microwaveMealRecipe
   id: RecipeMealBearsteak
@@ -244,7 +244,7 @@
     FoodDoughSlice: 1
     FoodMeatBacon: 1
 
-# === SKEWERS / KEBABS =====================================================
+# === SKEWERS / KEBABS === #
 
 - type: microwaveMealRecipe
   id: RecipeMeatFiestaKebab
@@ -280,7 +280,7 @@
     FoodKebabSkewer: 1
     FoodMeatSnake: 1
 
-# === MORE SAVORY MEALS ====================================================
+# === MORE SAVORY MEALS === #
 
 - type: microwaveMealRecipe
   id: RecipeMealMilkape
@@ -316,7 +316,7 @@
     FoodMeatCutlet: 1
     FoodCheeseSlice: 1
 
-# === CAKES ================================================================
+# === CAKES === #
 
 - type: microwaveMealRecipe
   id: RecipeCakeVanilla
@@ -354,7 +354,7 @@
   solids:
     FoodCakePlain: 1
 
-# === PIES =================================================================
+# === PIES === #
 
 - type: microwaveMealRecipe
   id: RecipePiePlump
@@ -367,7 +367,7 @@
     FoodMushroom: 3
     FoodPlateTin: 1
 
-# === COOKIES / BAKED SWEETS ===============================================
+# === COOKIES / BAKED SWEETS === #
 
 - type: microwaveMealRecipe
   id: RecipeBakedCookieDivine
@@ -427,9 +427,9 @@
   solids:
     FoodRiceBoiled: 1
 
-# === SECOND PASS: deeper audit gaps =======================================
+# === SECOND PASS: deeper audit gaps === #
 
-# --- Salads (special / divine variants) ----------------------------------
+# --- Salads (special / divine variants) --- #
 
 - type: microwaveMealRecipe
   id: RecipeSaladAesir
@@ -457,7 +457,7 @@
     FoodPotato: 1
     FoodTomato: 1
 
-# --- Noodles / Asian snacks ----------------------------------------------
+# --- Noodles / Asian snacks --- #
 
 - type: microwaveMealRecipe
   id: RecipeNoodlesSpesslaw
@@ -591,7 +591,7 @@
     Sugar: 10
     JuiceBerry: 5
 
-# --- Cooked meats not handled by steak graph ----------------------------
+# --- Cooked meats not handled by steak graph --- #
 
 - type: microwaveMealRecipe
   id: RecipeMeatChickenFried
@@ -635,7 +635,7 @@
   solids:
     FoodHivelordRemains: 1
 
-# --- Baked goods --------------------------------------------------------
+# --- Baked goods --- #
 
 - type: microwaveMealRecipe
   id: RecipeBakedNugget
@@ -684,7 +684,7 @@
   solids:
     FoodDoughSlice: 1
 
-# --- Pizzas not handled elsewhere ---------------------------------------
+# --- Pizzas not handled elsewhere --- #
 
 - type: microwaveMealRecipe
   id: RecipePizzaArnold
@@ -713,7 +713,7 @@
     FoodCheeseSlice: 1
     FoodOnionSlice: 1
 
-# --- Moth portion ------------------------------------------------------
+# --- Moth portion --- #
 
 - type: microwaveMealRecipe
   id: RecipeMothBakedRicePortion
