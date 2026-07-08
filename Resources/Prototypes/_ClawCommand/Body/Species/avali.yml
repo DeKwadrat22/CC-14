@@ -82,6 +82,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceAvali
+  categories: [ HideSpawnMenu ]
   suffix: Claw Command
   name: avali appearance
   components:

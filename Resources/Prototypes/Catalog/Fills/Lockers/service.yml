@@ -69,11 +69,12 @@
       # yes, I'm using this as an excuse to not have to do extra work.
       - id: ReagentContainerFlour
       - id: BoxMousetrap
-    - !type:AllSelector
-      rolls: 3
-      children:
-      - id: FoodCondimentPacketSalt
-      - id: FoodCondimentPacketPepper
+# _ClawCommand: Commented out due to the shakers being added.
+#   - !type:AllSelector
+#     rolls: 3
+#     children:
+#     - id: FoodCondimentPacketSalt
+#     - id: FoodCondimentPacketPepper
     - id: PlushieLizardJobChef
       prob: 0.02
     - id: PlushieLizardJobServiceworker

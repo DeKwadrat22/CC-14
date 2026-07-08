@@ -1,6 +1,7 @@
 - type: markingsGroup
   parent: Undergarments
   id: MarkingsFelinid
+  categories: [ HideSpawnMenu ]
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1
