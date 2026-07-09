@@ -1208,6 +1208,7 @@
   defaultSelected: 1
   loadouts:
   - JackBoots
+  - CombatBoots
   - SecurityWinterBoots
   - HeadofSecurityAdvancedJackboots
 
@@ -1300,6 +1301,7 @@
   defaultSelected: 1 # CC14
   loadouts:
   - JackBoots
+  - CombatBoots
   - SecurityWinterBoots
 
 - type: loadoutGroup
