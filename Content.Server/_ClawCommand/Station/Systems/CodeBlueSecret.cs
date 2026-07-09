@@ -11,38 +11,25 @@ public sealed partial class CodeBlueSecretSystem : EntitySystem
     [Dependency] private AlertLevelSystem _alertLevelSystem = default!;
 
     private TimeSpan _acoDelay = TimeSpan.FromMinutes(5);
-    private bool _ran = false;
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var currentTime = _ticker.RoundDuration(); // Caching to reduce redundant calls
-        if (_ran || currentTime < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
+        if (_ticker.RunLevel != GameRunLevel.InRound)
             return;
-        _ran = true;
-        if (_ticker.IsGameRuleAdded<SecretRuleComponent>())
+
+        if (_ticker.RoundDuration() < _acoDelay)
+            return;
+
+        if (!_ticker.IsGameRuleAdded<SecretRuleComponent>())
+            return;
+
+        var query = EntityQueryEnumerator<CaptainStateComponent>();
+        while (query.MoveNext(out var station, out _))
         {
-
-            var query = EntityQueryEnumerator<CaptainStateComponent>();
-            while (query.MoveNext(out var station, out var _))
-            {
-
-
-                if (_alertLevelSystem.GetLevel(station) == "green")
-                {
-                    _alertLevelSystem.SetLevel(station, "blueAuto", true, true);
-                }
-            }
-
-
+            if (_alertLevelSystem.GetLevel(station) == "green")
+                _alertLevelSystem.SetLevel(station, "blueAuto", true, true);
         }
-
-
     }
-
 }
