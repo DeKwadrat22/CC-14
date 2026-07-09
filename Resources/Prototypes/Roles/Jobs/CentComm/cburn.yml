@@ -24,7 +24,7 @@
     eyes: ClothingEyesGlassesCentcomm
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitCBURN
+    outerClothing: ClothingOuterHardsuitCBURNAlt
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
@@ -44,5 +44,5 @@
   job: CBURN
   hasMindShield: true
   equipment:
-    head: ClothingHeadHelmetCBURN
+    head: ClothingHeadHelmetCBURNAlt
     neck: ClothingNeckScarfStripedBrown

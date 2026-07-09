@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Goob-sprite CBURN alt hardsuit + helmet. Parent their vanilla counterparts so
+# stats mirror upstream exactly; only the Sprite/Clothing paths swap to the
+# _GoobStation art. Helmet clothingVisuals redefined to drop reptilian (the goob
+# RSI has no reptilian variant) and add feroxi/vulpkanin (the goob RSI includes
+# those species-specific sprites).
+
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitCBURNAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/cburn.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/cburn.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCBURNAlt
+
+- type: entity
+  parent: ClothingHeadHelmetCBURN
+  id: ClothingHeadHelmetCBURNAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/cburn.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
