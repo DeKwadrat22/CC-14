@@ -1,4 +1,5 @@
-- type: soundCollection
+#claw
+-type: soundCollection
   id: StepHeavyBoots
   files:
   - /Audio/_GoobStation/Effects/Footsteps/step_heavyboots_1.ogg

@@ -87,6 +87,7 @@
     outerClothing: ClothingOuterWinterHoS
 
 # Shoes
+# claw
 - type: loadout
   id: HeadofSecurityAdvancedJackboots
   equipment:

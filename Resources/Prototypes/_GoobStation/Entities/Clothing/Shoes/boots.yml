@@ -1,4 +1,5 @@
-- type: entity
+#claw
+-type: entity
   parent: [BaseCommandContraband, ClothingShoesBootsJack]
   id: ClothingShoesBootsJackAdvanced
   name: advanced jackboots
