@@ -1,178 +1,131 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# ERT HARDSUITS
-#ERT Leader Hardsuit
+# Goob-sprite ERT hardsuit/helmet alts. Each parents its vanilla counterpart so
+# stats stay identical to upstream; only the Sprite/Clothing paths swap to the
+# _GoobStation art. Handy as chameleon/locker roll variants alongside the vanilla
+# ERT loadout.
+
+# ERT LEADER
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieCommander ]
-  id: ClothingOuterHardsuitERTLeader
-  name: ERT leader's hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
+  parent: ClothingOuterHardsuitERTLeader
+  id: ClothingOuterHardsuitERTLeaderAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
+    clothingPrototype: ClothingHeadHelmetHardsuitERTLeaderAlt
 
-#ERT Chaplain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitJuggernaut ]
-  id: ClothingOuterHardsuitERTChaplain
-  name: ERT chaplain's hardsuit
-  description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
+  parent: ClothingHeadHelmetHardsuitERTLeader
+  id: ClothingHeadHelmetHardsuitERTLeaderAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+
+# ERT CHAPLAIN
+- type: entity
+  parent: ClothingOuterHardsuitERTChaplain
+  id: ClothingOuterHardsuitERTChaplainAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTChaplain
+    clothingPrototype: ClothingHeadHelmetHardsuitERTChaplainAlt
 
-#ERT Engineer Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
-  id: ClothingOuterHardsuitERTEngineer
-  name: ERT engineer's hardsuit
-  description: A protective hardsuit worn by the engineers of an emergency response team.
+  parent: ClothingHeadHelmetHardsuitERTChaplain
+  id: ClothingHeadHelmetHardsuitERTChaplainAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
+
+# ERT ENGINEER
+- type: entity
+  parent: ClothingOuterHardsuitERTEngineer
+  id: ClothingOuterHardsuitERTEngineerAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
-  - type: FireProtection
-    reduction: 0.8
+    clothingPrototype: ClothingHeadHelmetHardsuitERTEngineerAlt
 
-#ERT Medic Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieMedic ]
-  id: ClothingOuterHardsuitERTMedical
-  name: ERT medic's hardsuit
-  description: A protective hardsuit worn by the medics of an emergency response team.
+  parent: ClothingHeadHelmetHardsuitERTEngineer
+  id: ClothingHeadHelmetHardsuitERTEngineerAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
+
+# ERT MEDICAL
+- type: entity
+  parent: ClothingOuterHardsuitERTMedical
+  id: ClothingOuterHardsuitERTMedicalAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
+    clothingPrototype: ClothingHeadHelmetHardsuitERTMedicalAlt
 
-#ERT Security Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndie ]
-  id: ClothingOuterHardsuitERTSecurity
-  name: ERT security's hardsuit
-  description: A protective hardsuit worn by the security officers of an emergency response team.
+  parent: ClothingHeadHelmetHardsuitERTMedical
+  id: ClothingHeadHelmetHardsuitERTMedicalAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
+
+# ERT SECURITY
+- type: entity
+  parent: ClothingOuterHardsuitERTSecurity
+  id: ClothingOuterHardsuitERTSecurityAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTSecurity
-  - type: Tag
-    tags:
-    - Hardsuit
-    - WhitelistChameleon
+    clothingPrototype: ClothingHeadHelmetHardsuitERTSecurityAlt
 
-#ERT Janitor Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
-  id: ClothingOuterHardsuitERTJanitor
-  name: ERT janitor's hardsuit
-  description: A protective hardsuit worn by the janitors of an emergency response team.
+  parent: ClothingHeadHelmetHardsuitERTSecurity
+  id: ClothingHeadHelmetHardsuitERTSecurityAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
+
+# ERT JANITOR
+- type: entity
+  parent: ClothingOuterHardsuitERTJanitor
+  id: ClothingOuterHardsuitERTJanitorAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTJanitor
+    clothingPrototype: ClothingHeadHelmetHardsuitERTJanitorAlt
 
-# ERT HELMETS
-
-#ERT Leader Helmet
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander ]
-  id: ClothingHeadHelmetHardsuitERTLeader
-  name: ERT leader hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
-  - type: Clothing
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
-  - type: PointLight
-    color: "#addbff"
-
-#ERT Chaplain Helmet
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
-  id: ClothingHeadHelmetHardsuitERTChaplain
-  name: ERT chaplain hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
-  - type: Clothing
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
-  - type: PointLight
-    color: "#ffffff"
-
-#ERT Engineer Helmet
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
-  id: ClothingHeadHelmetHardsuitERTEngineer
-  name: ERT engineer hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
-  - type: Clothing
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
-  - type: PointLight
-    color: "#f4ffad"
-  - type: EyeProtection
-
-#ERT Medical Helmet
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
-  id: ClothingHeadHelmetHardsuitERTMedical
-  name: ERT medic hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
-  - type: Clothing
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
-  - type: PointLight
-    color: "#adffec"
-
-#ERT Security Helmet
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
-  id: ClothingHeadHelmetHardsuitERTSecurity
-  name: ERT security hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
-  - type: Clothing
-    sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
-  - type: PointLight
-    color: "#ffadc6"
-
-#ERT Janitor Helmet
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
-  id: ClothingHeadHelmetHardsuitERTJanitor
-  name: ERT janitor hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  parent: ClothingHeadHelmetHardsuitERTJanitor
+  id: ClothingHeadHelmetHardsuitERTJanitorAlt
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
   - type: Clothing
     sprite: _GoobStation/Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
-  - type: PointLight
-    color: "#cbadff"
