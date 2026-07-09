@@ -85,3 +85,10 @@
   id: HeadofSecurityWinterCoat
   equipment:
     outerClothing: ClothingOuterWinterHoS
+
+# Shoes
+# claw
+- type: loadout
+  id: HeadofSecurityAdvancedJackboots
+  equipment:
+    shoes: ClothingShoesBootsJackAdvanced
