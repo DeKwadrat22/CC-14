@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Goob-sprite Deathsquad alts. Hardsuit + helmet parent their vanilla counterparts
-# so stats mirror upstream exactly; only the Sprite/Clothing paths swap to the
-# _GoobStation art. Magboots alt parents ClothingShoesBootsMagAdv (what the vanilla
-# deathsquad loadout uses) and only swaps the sprite.
+# Goob-sprite Deathsquad alts + default magboots. Hardsuit + helmet parent their
+# vanilla counterparts so stats mirror upstream exactly; only the Sprite/Clothing
+# paths swap to the _GoobStation art. Magboots are the default deathsquad boots
+# (used by the DeathSquadGear loadout) and parent ClothingShoesBootsMagAdv.
 
 - type: entity
   parent: ClothingOuterHardsuitDeathsquad
@@ -26,7 +26,7 @@
 
 - type: entity
   parent: ClothingShoesBootsMagAdv
-  id: ClothingShoesBootsMagDeathsquadAlt
+  id: ClothingShoesBootsMagDeathsquad
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
