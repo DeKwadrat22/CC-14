@@ -91,6 +91,7 @@
   speciesBlacklist:
     - Arachnid
     - Diona
+    - Dwarf
     - Human
     - Moth
     - SlimePerson
