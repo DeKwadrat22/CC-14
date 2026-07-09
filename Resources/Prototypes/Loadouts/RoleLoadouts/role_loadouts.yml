@@ -522,7 +522,8 @@
   - SecurityBackpack
   - SecurityBelt
   - HeadofSecurityOuterClothing
-  - SecurityShoes
+  - HeadofSecurityShoes
+  # SecurityShoes moved - into HeadofSecurityShoes
   - CCSecurityGloves # CC14
   - SurvivalSecurity
   - Trinkets
