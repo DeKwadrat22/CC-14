@@ -29,6 +29,10 @@
     - type: Damageable
       damageContainer: Silicon
       damageModifierSet: IPC
+    # Fork's WeldingHealableSystem gates on Injurable.DamageContainer (upstream split it off Damageable).
+    # Without this override, MobIPC inherits Biological from MobDamageable and welder-heal silently no-ops.
+    - type: Injurable
+      damageContainer: Silicon
     - type: InteractionOutline
     - type: MovementSpeedModifier
       baseWalkSpeed: 4

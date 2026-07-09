@@ -28,6 +28,9 @@
   - ResearchDirector
   - ChiefEngineer
   - Quartermaster
+  - ClawCommandOfficer
+  - ClawCommandMaid
+  - AdmiralClaw
 
 # Borgs
 - type: antagSpecifier
@@ -61,6 +64,7 @@
   - Detective
   - SecurityOfficer
   - SecurityCadet
+  - ClawCommandOfficer
 
 - type: antagSpecifier
   abstract: true
