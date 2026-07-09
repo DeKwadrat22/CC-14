@@ -1,0 +1,16 @@
+# Auto-resolving coordinate disks for well-known destinations.
+# CentcommCoordinateDiskSystem sets Destination at MapInit by looking up the current
+# StationCentcomm.MapEntity, so any admin-spawned or map-preplaced copy works out of the box
+# without hardcoding the CentComm map's runtime EntityUid in map YAML.
+
+- type: entity
+  parent: CoordinatesDisk
+  id: CoordinatesDiskCentcomm
+  name: CentComm coordinates disk
+  description: A NanoTrasen-issued coordinates disk pointing to Central Command. Insert into a shuttle console to enable FTL travel back to CentComm.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/cd.rsi
+    state: icon
+    color: "#43ccb5"
+  - type: CentcommCoordinateDisk
