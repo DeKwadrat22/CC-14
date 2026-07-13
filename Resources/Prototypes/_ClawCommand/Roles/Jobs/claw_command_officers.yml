@@ -39,7 +39,7 @@
   id: ClawCommandOfficerGear
   equipment:
     eyes: ClothingEyesGlassesMedSec
-    ears: ClothingHeadsetAltSecurity
+    ears: ClothingHeadsetAltCommand
     id: ClawCommandOfficerPDA
   storage:
     back:

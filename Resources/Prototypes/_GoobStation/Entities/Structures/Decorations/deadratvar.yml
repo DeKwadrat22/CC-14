@@ -11,7 +11,7 @@
   components:
   - type: Sprite
     layers:
-    - sprite: _Goobstation/Structures/Decoration/deadratvar.rsi
+    - sprite: _GoobStation/Structures/Decoration/deadratvar.rsi
       state: dead_ratvar
       noRot: true
       drawdepth: OverMobs
@@ -19,7 +19,7 @@
     volume: 2
     range: 20
     sound:
-      path: /Audio/_Goobstation/Ambience/ominous_pulse.ogg
+      path: /Audio/_GoobStation/Ambience/ominous_pulse.ogg
   - type: Physics
     bodyType: Static
   - type: Fixtures

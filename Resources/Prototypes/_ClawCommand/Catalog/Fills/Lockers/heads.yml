@@ -10,7 +10,7 @@
     # - id: PinpointerNuclear
     - id: ClothingHandsGlovesCombat
     # - id: WeaponLeverChester
-    # - id: WeaponEnergyRevolver
+    - id: WeaponEnergyMagnum
     - id: TrackingImplanter
 
 - type: entity
