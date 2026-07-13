@@ -30,39 +30,39 @@
     # So, the thought is, it can hold katanas, and anything both janibelt and security belt can. However, there's psychological tax of having two melee weapons.
     whitelist:
       tags:
-        - Katana
-        - Wrench
-        - Bottle
-        - Spray
-        - Soap
-        - Flashlight
-        - CigPack
-        - TrashBag
-        - WetFloorSign
-        - HolosignProjector
-        - Plunger
-        - Taser
-        - SecBeltEquip
-        - Radio
-        - Sidearm
-        - MagazinePistol
-        - MagazineMagnum
-        - CombatKnife
-        - Truncheon
+      - Katana
+      - Wrench
+      - Bottle
+      - Spray
+      - Soap
+      - Flashlight
+      - CigPack
+      - TrashBag
+      - WetFloorSign
+      - HolosignProjector
+      - Plunger
+      - Taser
+      - SecBeltEquip
+      - Radio
+      - Sidearm
+      - MagazinePistol
+      - MagazineMagnum
+      - CombatKnife
+      - Truncheon
       components:
-        - LightReplacer
-        - SmokeOnTrigger
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - BallisticAmmoProvider
-        - CartridgeAmmo
-        - DoorRemote
-        - Whistle
-        - HolosignProjector
-        - BalloonPopper
+      - LightReplacer
+      - SmokeOnTrigger
+      - Stunbaton
+      - FlashOnTrigger
+      - SmokeOnTrigger
+      - Flash
+      - Handcuff
+      - BallisticAmmoProvider
+      - CartridgeAmmo
+      - DoorRemote
+      - Whistle
+      - HolosignProjector
+      - BalloonPopper
   - type: ItemMapper
     mapLayers:
       sheath-sabre:

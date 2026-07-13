@@ -61,7 +61,7 @@
     state: full
 
 - type: entity
-  parent: Airlock
+  parent: BaseSecretDoor
   id: DoorCosmicCult
   name: malign door
   description: A door fashioned from un-matter.

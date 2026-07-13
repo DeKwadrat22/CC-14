@@ -18,6 +18,7 @@
   description: A plushie of an Arachne, a half human, half spider creature. Why does it look familiar?
   components:
   - type: Sprite
+    sprite: Objects/Fun/toys.rsi
     state: plushie_arachne
   - type: EmitSoundOnUse
     sound:
