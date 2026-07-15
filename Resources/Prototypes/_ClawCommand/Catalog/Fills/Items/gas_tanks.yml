@@ -116,8 +116,8 @@
 - type: entity
   parent: EmergencyTankExtendedWaterVapor
   id: EmergencyTankDoubleExtendedWaterVapor
-  suffix: Claw Command
-  name: double emergency water vapore tank
+  suffix: Claw Command, Water Vapor
+  name: double emergency water vapor tank
   description: A high-grade dual-tank emergency life support container. It holds a decent amount of water vapor for its small size. It can hold 2.5 L of gas.
   components:
   - type: Sprite

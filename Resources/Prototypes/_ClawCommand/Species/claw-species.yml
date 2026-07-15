@@ -11,8 +11,19 @@
   name: cc-species-name-feroxi
   roundStart: true
   prototype: MobFeroxi
+  defaultSkinTone: "#8DB9D6"
   dollPrototype: AppearanceFeroxi
   skinColoration: Hues
+  maleFirstNames: NamesFeroxiMale
+  femaleFirstNames: NamesFeroxiFemale
+  lastNames: NamesFeroxiLast
+  defaultSoundsBySex:
+  - EmoteSoundsMaleFeroxi
+  - EmoteSoundsFemaleFeroxi
+  - EmoteSoundsMaleFeroxi
+  voices:
+  - EmoteSoundsMaleFeroxi
+  - EmoteSoundsFemaleFeroxi
 
 - type: species
   id: SpeciesKitsunes
