@@ -110,6 +110,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganFeroxiInternal, OrganFeroxiMetabolizer ]
   id: OrganFeroxiGills
+  name: feroxi lungs and gills
 
 - type: entity
   parent: [ OrganBaseHeart, OrganFeroxiInternal, OrganFeroxiMetabolizer ]

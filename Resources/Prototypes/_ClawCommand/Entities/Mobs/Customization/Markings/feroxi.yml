@@ -22,6 +22,16 @@
     state: feroxi-dorsal
 
 - type: marking
+  id: FeroxiTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+
+- type: marking
   id: FeroxiSnout
   bodyPart: Snout
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -107,6 +117,14 @@
     state: feroxi-tail
 
 - type: marking
+  id: FeroxiTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+
+- type: marking
   id: FeroxiStripedTail
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -117,6 +135,16 @@
     state: feroxi-tail-stripes
 
 - type: marking
+  id: FeroxiStripedTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-wagging
+
+- type: marking
   id: FeroxiStripedTailAndDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -125,6 +153,20 @@
     state: feroxi-tail
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail-stripes
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-stripes
+
+- type: marking
+  id: FeroxiStripedTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-dorsal
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
@@ -145,6 +187,20 @@
     state: feroxi-tail-second-dorsal-tip
 
 - type: marking
+  id: FeroxiTipTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-second-dorsal-tip-wagging
+
+- type: marking
   id: FeroxiTipTailAndDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -157,6 +213,24 @@
     state: feroxi-tail-bottom-tip
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail-second-dorsal-tip
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-tip
+
+- type: marking
+  id: FeroxiTipTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-second-dorsal-tip-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-dorsal
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
@@ -183,6 +257,26 @@
     state: feroxi-dorsal-stripes
 
 - type: marking
+  id: FeroxiTailBlitzAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-stripes
+
+- type: marking
   id: FeroxiTailBlitzNoDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -199,6 +293,22 @@
     state: feroxi-tail-under
 
 - type: marking
+  id: FeroxiTailBlitzNoDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-animated
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-animated
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-animated
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-animated
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-animated
+
+- type: marking
   id: FeroxiTwoToneTail
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -209,6 +319,16 @@
     state: feroxi-tail-under
 
 - type: marking
+  id: FeroxiTwoToneTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
+
+- type: marking
   id: FeroxiTwoToneTailAndDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -217,6 +337,18 @@
     state: feroxi-tail
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail-under
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+
+- type: marking
+  id: FeroxiTwoToneTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-dorsal
 
@@ -233,6 +365,18 @@
     state: feroxi-tail-under
 
 - type: marking
+  id: FeroxiStripeTwoToneTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
+
+- type: marking
   id: FeroxiStripeTwoToneTailAndDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -243,6 +387,22 @@
     state: feroxi-tail-stripes
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail-under
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-stripes
+
+- type: marking
+  id: FeroxiStripeTwoToneTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-dorsal
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
@@ -265,6 +425,22 @@
     state: feroxi-tail-under
 
 - type: marking
+  id: FeroxiTipTwoToneTailAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-second-dorsal-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
+
+- type: marking
   id: FeroxiTipTwoToneTailAndDorsal
   bodyPart: Tail
   groupWhitelist: [ MarkingsFeroxi, MarkingsIPC ] # FLOOF CHANGE IPCs get furry parts
@@ -279,6 +455,26 @@
     state: feroxi-tail-second-dorsal-tip
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail-under
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-tip
+
+- type: marking
+  id: FeroxiTipTwoToneTailAndDorsalAnimated
+  bodyPart: Tail
+  groupWhitelist: [ ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-second-dorsal-tip-wagging
+  - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-dorsal
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi

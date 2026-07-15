@@ -118,3 +118,33 @@
   chatTriggers:
     - whirr
     - whirrs
+
+
+- type: emote
+  id: EmoteChomp
+  name: chat-emote-name-chomp
+  category: Hands
+  available: false
+  icon: Interface/Emotes/tailslap.png # TODO: Temporary icon.
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-chomp"]
+  chatTriggers:
+  - chomp
+  - chomps
+  - chomp teeth
+  - chomps teeth
+  - chomps their teeth
+  - chomps her teeth
+  - chomps his teeth
+  - chomps its teeth
+  - chomp maw
+  - chomps maw
+  - chomps their maw
+  - chomps her maw
+  - chomps his maw
+  - chomps its maw

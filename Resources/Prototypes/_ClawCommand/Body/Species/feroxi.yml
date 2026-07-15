@@ -75,7 +75,7 @@
   name: feroxi appearance
   components:
   - type: Inventory
-    speciesId: SpeciesFeroxi
+    speciesId: feroxi
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -136,55 +136,48 @@
   name: Urist McFin
   suffix: Claw Command
   components:
+  - type: SharkVision
+    pulseTime: 5
+    activateSound: null
+    deactivateSound: null
   - type: Puller
     needsHands: false
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatLizard
+    - id: FoodMeat
       amount: 5
   - type: Speech
-    speechSounds: Lizard
-    speechVerb: SpeechFeroxi
-    allowedEmotes: ['Thump']
+    speechSounds: Tenor
+    speechVerb: SpeechVerbFeroxi
+    allowedEmotes: ['Gnash', 'Thump']
   - type: TypingIndicator
-    proto: lizard
+    proto: Feroxi
   - type: Vocal
     sounds:
       Male: MaleFeroxi
       Female: FemaleFeroxi
       Unsexed: MaleFeroxi
   - type: BodyEmotes
-    soundsId: ReptilianBodyEmotes
+    soundsId: EmoteSoundsFeroxi
   - type: Damageable
     damageModifierSet: ModifierSetFeroxi
   - type: MeleeWeapon
-    altDisarm: false
-    angle: 0
+    angle: 30
     animation: WeaponArcBite
     soundHit:
       path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Piercing: 6
+        Piercing: 7
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 38
-  - type: TemperatureDamage
-    heatDamageThreshold: 400
-    coldDamageThreshold: 230
-    coldDamage:
-      types:
-        Cold : 0.05 #per second, scales with temperature & other constants
-    heatDamage:
-      types:
-        Heat : 1.5 #per second, scales with temperature & other constants
-  - type: TemperatureSpeed
-    thresholds:
-      301: 0.9
-      295: 0.8
-      285: 0.7
-  # - type: Wagging # TODO - CC14 - Animated tail sprites for Feroxi and Felinids
+  - type: TemperatureProtection
+    coolingCoefficient: 0.9
+  - type: Wagging # TODO: Need to add the wagging sprites.
   - type: Thirst
-    baseDecayRate: 1.0
-  - type: Feroxi
+    baseDecayRate: 0.2 # Double that of default value.
+  - type: FeroxiDehydrate
+    hydratedMetabolizer: MetabolizerFeroxi
+    dehydratedMetabolizer: MetabolizerFeroxiDehydrated

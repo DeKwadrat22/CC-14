@@ -7,5 +7,9 @@
   name: cc-metabolizer-type-feroxi
 
 - type: metabolizerType
+  id: MetabolizerFeroxiDehydrated
+  name: cc-metabolizer-type-feroxi
+
+- type: metabolizerType
   id: MetabolizerKitsune
   name: cc-metabolizer-type-kitsune

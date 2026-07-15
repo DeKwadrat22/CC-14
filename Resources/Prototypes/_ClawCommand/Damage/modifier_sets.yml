@@ -9,10 +9,9 @@
 - type: damageModifierSet
   id: ModifierSetFeroxi
   coefficients:
-    Blunt: 0.85
-    Piercing: 0.85
-    Shock: 1.5
-    Cold: 0.75
+    Blunt: 0.9
+    Cold: 0.9
+    Slash: 1.1
 
 - type: damageModifierSet
   id: ModifierSetKitsune

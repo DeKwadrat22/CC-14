@@ -203,6 +203,10 @@
         children:
         - id: NitrogenTankFilled
         - id: DoubleEmergencyNitrogenTankFilled
+      - !type:GroupSelector # _ClawCommand: Filled.
+        children:
+        - id: TankWaterVaporFilled
+        - id: EmergencyTankDoubleExtendedWaterVaporFilled
       - id: EmergencyFunnyOxygenTankFilled
         weight: 0.5
       - !type:GroupSelector

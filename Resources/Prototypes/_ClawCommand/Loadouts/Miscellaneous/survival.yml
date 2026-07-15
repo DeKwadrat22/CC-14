@@ -5,6 +5,17 @@
     species:
     - SpeciesFeroxi
 
+# Clown
+- type: loadout
+  id: LoadoutEmergencyClownWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LoadoutGroupWaterBreather
+  storage:
+    back:
+    - BoxHugWaterVapor
+
+
 # Standard
 - type: loadout
   id: LoadoutEmergencyWaterVapor
@@ -35,6 +46,16 @@
     back:
     - BoxSurvivalMedicalWaterVapor
 
+# Mime
+- type: loadout
+  id: LoadoutEmergencySpeciesMimeWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LoadoutGroupWaterBreather
+  storage:
+    back:
+    - BoxSurvivalMimeWaterVapor
+
 # Security
 - type: loadout
   id: LoadoutEmergencySecurityWaterVapor
@@ -44,6 +65,16 @@
   storage:
     back:
     - BoxSurvivalSecurityWaterVapor
+
+# Syndicate
+- type: loadout
+  id: LoadoutEmergencySyndicateWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LoadoutGroupWaterBreather
+  storage:
+    back:
+    - BoxSurvivalSyndicateWaterVapor
 
 # Extended tank for Feroxi
 - type: loadout

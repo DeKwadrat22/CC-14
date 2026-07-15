@@ -1,0 +1,6 @@
+- type: latheRecipe
+  id: LatheRecipeDoubleEmergencyTankWaterVapor
+  result: EmergencyTankDoubleExtendedWaterVapor
+  completetime: 4
+  materials:
+    Steel: 250

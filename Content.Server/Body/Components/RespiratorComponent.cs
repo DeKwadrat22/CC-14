@@ -1,4 +1,3 @@
-using Content.Server._ClawCommand.Feroxi;
 using Content.Server.Body.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Chat.Prototypes;
@@ -8,7 +7,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Access(typeof(RespiratorSystem), typeof(FeroxiSystem)), AutoGenerateComponentPause]
+    [RegisterComponent, Access(typeof(RespiratorSystem)), AutoGenerateComponentPause]
     public sealed partial class RespiratorComponent : Component
     {
         /// <summary>
