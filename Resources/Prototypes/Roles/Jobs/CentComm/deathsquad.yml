@@ -24,7 +24,7 @@
     eyes: ClothingEyesGlassesCentcomm
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitDeathsquad
+    outerClothing: ClothingOuterHardsuitDeathsquadAlt
     shoes: ClothingShoesBootsMagDeathsquad
     id: DeathsquadPDA
     pocket1: EnergySword
@@ -40,7 +40,7 @@
     - ToolDebug # spanish army knife
     - WelderExperimental
     - Hypospray
-    - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
+    - BluespaceLifelineImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
   inhand:
   - WeaponPulseRifle
