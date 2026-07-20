@@ -13,7 +13,7 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, BluespaceLifelineImplant ]
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: DeathSquadGear
@@ -40,7 +40,7 @@
     - ToolDebug # spanish army knife
     - WelderExperimental
     - Hypospray
-    - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
+    - BluespaceLifelineImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
   inhand:
   - WeaponPulseRifle
