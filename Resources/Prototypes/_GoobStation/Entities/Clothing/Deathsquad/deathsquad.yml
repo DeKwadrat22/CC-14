@@ -25,8 +25,10 @@
     sprite: _GoobStation/Clothing/Head/Hardsuits/deathsquad.rsi
 
 - type: entity
-  parent: ClothingShoesBootsMagAdv
+  parent: ClothingShoesBootsMagERT
   id: ClothingShoesBootsMagDeathsquad
+  name: Deathsquad Magboots
+  description: The sound of these boots are iconic; the sound of terror. They have a heavy magnetic pull, servomotors enhancing mobility and integrated thrusters. It can hold 0.75 L of gas.
   components:
   - type: Sprite
     sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
@@ -35,3 +37,9 @@
     sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
   - type: Item
     sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.10
+    sprintModifier: 1.10
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
