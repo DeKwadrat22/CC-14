@@ -42,6 +42,18 @@ public sealed partial class ChasmSystem : EntitySystem
             if (_timing.CurTime < chasm.NextDeletionTime)
                 continue;
 
+            // When porting lavaland this part was forgotten and thats the reason jaunters didnt work
+            // Lavaland Change start: Jaunter
+            var ev = new _ClawCommand.Lavaland.Chasm.BeforeChasmFallingEvent(uid);
+            RaiseLocalEvent(uid, ref ev);
+            if (ev.Cancelled)
+            {
+                RemComp<ChasmFallingComponent>(uid);
+                _blocker.UpdateCanMove(uid);
+                continue;
+            }
+            // Lavaland Change end: Jaunter
+
             QueueDel(uid);
         }
     }
