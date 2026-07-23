@@ -31,8 +31,8 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
-  - BoxSurvivalMedicalWaterVapor # CC14: Added
-  - BoxSurvivalSecurityWaterVapor
+  - LoadoutEmergencyMedicalWaterVapor # CC14: Feroxi medical survival box (was mistakenly the box entity id)
+  - LoadoutTankFeroxi # CC14: Feroxi extended pocket tank
 
 # Chief Medical Officer
 
