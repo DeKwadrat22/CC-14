@@ -1017,7 +1017,7 @@
   description: A plastic yellow crescent blade, decorated with an ornamental eye. You feel like you're being watched...
   components:
   - type: Sprite
-    sprite: _GoobStation/Heretic/Blades/eldrich_blade-toy.rsi
+    sprite: _ClawCommand/Heretic/Blades/eldrich_blade-toy.rsi
     state: icon
   - type: MeleeWeapon
     attackRate: 1.5
@@ -1029,7 +1029,7 @@
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Small
-    sprite: _GoobStation/Heretic/Blades/eldrich_blade-toy-inhands.rsi
+    sprite: _ClawCommand/Heretic/Blades/eldrich_blade-toy-inhands.rsi
 
 
 - type: entity

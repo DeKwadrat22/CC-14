@@ -103,7 +103,7 @@ public sealed partial class FireBlastedComponent : BaseSpriteOverlayComponent
 
     [DataField]
     public override SpriteSpecifier? Sprite { get; set; } =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "blessed");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "blessed");
 }
 
 public enum FireBlastedKey : byte

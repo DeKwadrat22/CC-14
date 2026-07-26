@@ -55,6 +55,9 @@
   name: plasma
   suffix: Full
   components:
+  - type: Tag # _ClawCommand - heretic ritual input (ScorchingShark)
+    tags:
+    - SheetPlasma
   - type: PhysicalComposition
     materialComposition:
       Plasma: 100

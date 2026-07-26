@@ -157,6 +157,9 @@
   - type: Construction
     graph: Table
     node: CounterMetalFrame
+  - type: Tag # _ClawCommand - heretic ritual input (ArmorerRitual); all tables inherit
+    tags:
+    - Table
 
 - type: entity
   id: Table

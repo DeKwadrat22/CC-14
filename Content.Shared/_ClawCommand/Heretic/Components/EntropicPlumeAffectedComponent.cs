@@ -28,7 +28,7 @@ public sealed partial class EntropicPlumeAffectedComponent : BaseSpriteOverlayCo
 
     [DataField, AutoNetworkedField]
     public override SpriteSpecifier? Sprite { get; set; } =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "cloud_swirl");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "cloud_swirl");
 }
 
 public enum EntropicPlumeKey : byte

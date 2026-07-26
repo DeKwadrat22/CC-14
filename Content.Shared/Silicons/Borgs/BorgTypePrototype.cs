@@ -30,6 +30,16 @@ public sealed partial class BorgTypePrototype : IPrototype
     [DataField]
     public required EntProtoId DummyPrototype;
 
+    /// <summary>
+    /// _ClawCommand: whether this type is offered in the borg type-selection menu.
+    /// Set false for types that are only ever pre-assigned to a specific chassis
+    /// (e.g. dogborg variants applied via conversion kits). Their sprite states live
+    /// in a different RSI than the generic chassis, so letting a generic borg select
+    /// one would raise "state not found" sprite errors.
+    /// </summary>
+    [DataField]
+    public bool Selectable { get; set; } = true;
+
     //
     // Functional information
     //

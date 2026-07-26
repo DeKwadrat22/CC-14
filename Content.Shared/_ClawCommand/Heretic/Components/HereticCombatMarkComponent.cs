@@ -36,7 +36,7 @@ public sealed partial class HereticCombatMarkComponent : BaseSpriteOverlayCompon
 
     [DataField]
     public override SpriteSpecifier? Sprite { get; set; } =
-        new SpriteSpecifier.Rsi(new("_Goobstation/Heretic/combat_marks.rsi"), "blade");
+        new SpriteSpecifier.Rsi(new("_ClawCommand/Heretic/combat_marks.rsi"), "blade");
 
     public override Enum Key { get; set; } = HereticCombatMarkKey.Key;
 }

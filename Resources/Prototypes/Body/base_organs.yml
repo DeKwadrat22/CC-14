@@ -289,6 +289,9 @@
     markingData:
       layers:
       - Eyes
+  - type: Tag # _ClawCommand - heretic ritual input (AmberFocus/RawRitual/AshenEyes)
+    tags:
+    - Eyes
 
 - type: entity
   parent: OrganBase
@@ -350,6 +353,9 @@
     - state: lung-r
   - type: Item
     heldPrefix: lungs
+  - type: Tag # _ClawCommand - heretic ritual input (LonelyRitual)
+    tags:
+    - Lungs
 
 - type: entity
   parent: Solution
@@ -377,6 +383,9 @@
   - type: Metabolizer
     maxReagents: 2
     stages: [ Bloodstream ]
+  - type: Tag # _ClawCommand - heretic ritual input (LivingHeart/LonelyRitual)
+    tags:
+    - Heart
 
 - type: entity
   parent: OrganBase
@@ -399,6 +408,9 @@
     - state: stomach
   - type: Item
     heldPrefix: stomach
+  - type: Tag # _ClawCommand - heretic ritual input (RawRitual/LonelyRitual)
+    tags:
+    - Stomach
 
 - type: entity
   parent: Solution
@@ -427,6 +439,9 @@
   - type: Metabolizer
     maxReagents: 1
     stages: [ Metabolites ]
+  - type: Tag # _ClawCommand - heretic ritual input (ScorchingShark)
+    tags:
+    - Liver
 
 - type: entity
   parent: OrganBase

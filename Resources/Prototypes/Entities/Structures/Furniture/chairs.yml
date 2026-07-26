@@ -60,6 +60,9 @@
   components:
   - type: Anchorable
   - type: Rotatable
+  - type: Tag # _ClawCommand - heretic ritual input (Reminiscence); all chairs/stools inherit
+    tags:
+    - Chair
 
 #Start anchored, cannot be rotated while anchored
 - type: entity

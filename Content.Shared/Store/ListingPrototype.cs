@@ -45,7 +45,7 @@ public partial class ListingData : IEquatable<ListingData>
         other.ApplyToMob
     )
     {
-
+        ProductHereticKnowledge = other.ProductHereticKnowledge; // _ClawCommand - preserve heretic knowledge grant across listing copies
     }
 
     public ListingData(
@@ -325,6 +325,7 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
             listingData.ApplyToMob
         )
     {
+        ProductHereticKnowledge = listingData.ProductHereticKnowledge; // _ClawCommand - preserve heretic knowledge grant when store builds cost-modified listings
     }
 
     /// <summary> Marker, if cost of listing item have any modifiers. </summary>

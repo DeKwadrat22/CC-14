@@ -73,6 +73,9 @@
   name: basic lighter
   description: A simple plastic cigarette lighter.
   components:
+  - type: Tag # _ClawCommand - heretic ritual input (MaskOfMadness)
+    tags:
+    - Lighter
   - type: Sprite
     sprite: Objects/Tools/Lighters/lighters.rsi
     layers:

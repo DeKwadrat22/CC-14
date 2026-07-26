@@ -73,7 +73,10 @@ public abstract partial class SharedBorgSwitchableTypeSystem : EntitySystem
         if (ent.Comp.SelectedBorgType != null)
             return;
 
-        if (!Prototypes.HasIndex(args.Prototype))
+        // _ClawCommand: reject non-selectable types (e.g. dogborg variants, whose sprite
+        // states belong to a different RSI) so a desynced or forged client message can't
+        // apply a foreign sprite state to a generic chassis and raise sprite errors.
+        if (!Prototypes.TryIndex(args.Prototype, out var proto) || !proto.Selectable)
             return;
 
         SelectBorgModule(ent, args.Prototype);

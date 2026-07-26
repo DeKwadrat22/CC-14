@@ -36,27 +36,27 @@ public sealed partial class RustRuneComponent : Component
 
     [DataField]
     public SpriteSpecifier DiagonalSprite =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "rust_diagonal");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "rust_diagonal");
 
     [DataField]
     public SpriteSpecifier OverlaySprite =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "rust_default");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "rust_default");
 
     [DataField]
     public List<SpriteSpecifier> RuneSprites = new()
     {
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_1"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_2"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_3"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_4"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_5"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_6"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_7"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_8"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_9"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_10"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_11"),
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "small_rune_12"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_1"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_2"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_3"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_4"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_5"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_6"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_7"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_8"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_9"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_10"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_11"),
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "small_rune_12"),
     };
 
     [DataField, AutoNetworkedField]

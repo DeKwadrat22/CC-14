@@ -9,7 +9,7 @@ public sealed partial class StarMarkComponent : BaseSpriteOverlayComponent
 {
     [DataField]
     public override SpriteSpecifier? Sprite { get; set; } =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "cosmic_ring");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/Effects/effects.rsi"), "cosmic_ring");
 
     public override Enum Key { get; set; } = StarMarkKey.Key;
 }

@@ -25,6 +25,12 @@
   name: steel
   suffix: Full
   components:
+  - type: Tag # _ClawCommand - heretic ritual input (RustedRitual); re-lists inherited SheetMetalBase tags since TagComponent doesn't merge on inheritance
+    tags:
+    - Sheet
+    - Metal
+    - ConstructionMaterial
+    - Steel
   - type: Material
   - type: PhysicalComposition
     materialComposition:

@@ -35,6 +35,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Tag # _ClawCommand - heretic ritual input (AmberFocus/BladeCosmos); all glass variants inherit
+    tags:
+    - SheetGlass
 
 - type: entity
   parent: SheetGlassBase

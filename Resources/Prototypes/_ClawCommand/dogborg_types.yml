@@ -7,6 +7,7 @@
 # ===== Security =====
 - type: borgType
   id: dogborg-k9
+  selectable: false
   dummyPrototype: BorgChassisSecurityK9
   extraModuleCount: 3
   moduleWhitelist:
@@ -29,6 +30,7 @@
 
 - type: borgType
   id: dogborg-k9-dark
+  selectable: false
   dummyPrototype: BorgChassisSecurityK9Dark
   extraModuleCount: 3
   moduleWhitelist:
@@ -51,6 +53,7 @@
 
 - type: borgType
   id: dogborg-vale-sec
+  selectable: false
   dummyPrototype: BorgChassisSecurityVale
   extraModuleCount: 3
   moduleWhitelist:
@@ -74,6 +77,7 @@
 # ===== Medical =====
 - type: borgType
   id: dogborg-medihound
+  selectable: false
   dummyPrototype: BorgChassisMedicalMedihound
   extraModuleCount: 3
   moduleWhitelist:
@@ -111,6 +115,7 @@
 
 - type: borgType
   id: dogborg-medihound-dark
+  selectable: false
   dummyPrototype: BorgChassisMedicalMedihoundDark
   extraModuleCount: 3
   moduleWhitelist:
@@ -140,6 +145,7 @@
 
 - type: borgType
   id: dogborg-vale-med
+  selectable: false
   dummyPrototype: BorgChassisMedicalVale
   extraModuleCount: 3
   moduleWhitelist:
@@ -170,6 +176,7 @@
 # ===== Engineering =====
 - type: borgType
   id: dogborg-pupdozer
+  selectable: false
   dummyPrototype: BorgChassisEngineerPupDozer
   extraModuleCount: 3
   moduleWhitelist:
@@ -200,6 +207,7 @@
 
 - type: borgType
   id: dogborg-vale-eng
+  selectable: false
   dummyPrototype: BorgChassisEngineerVale
   extraModuleCount: 3
   moduleWhitelist:
@@ -231,6 +239,7 @@
 # ===== Janitor =====
 - type: borgType
   id: dogborg-scrubpup
+  selectable: false
   dummyPrototype: BorgChassisJanitorScrubpup
   extraModuleCount: 3
   moduleWhitelist:
@@ -260,6 +269,7 @@
 # ===== Service =====
 - type: borgType
   id: dogborg-vale-serv
+  selectable: false
   dummyPrototype: BorgChassisServiceVale
   extraModuleCount: 3
   moduleWhitelist:
@@ -285,6 +295,7 @@
 # ===== Mining =====
 - type: borgType
   id: dogborg-blade
+  selectable: false
   dummyPrototype: BorgChassisMiningBlade
   extraModuleCount: 3
   moduleWhitelist:

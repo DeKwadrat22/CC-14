@@ -49,7 +49,7 @@ public sealed partial class VoidCurseComponent : BaseSpriteOverlayComponent
 
     [DataField]
     public override SpriteSpecifier? Sprite { get; set; } =
-        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/void_overlay.rsi"), "void_chill_partial");
+        new SpriteSpecifier.Rsi(new ResPath("_ClawCommand/Heretic/void_overlay.rsi"), "void_chill_partial");
 }
 
 public enum VoidCurseKey : byte
