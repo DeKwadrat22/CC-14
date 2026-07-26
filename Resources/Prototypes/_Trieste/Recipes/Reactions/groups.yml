@@ -1,0 +1,84 @@
+# Doughs
+- type: reactionGroup
+  id: TP14ReactionGroupDough
+  reaction: CreateDough
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupCornmealDough
+  reaction: CreateCornmealDough
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupCottonDough
+  reaction: CreateDoughCotton
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupTortillaDough
+  reaction: CreateTortillaDough
+  group: TP14GuideEntryReactions
+
+# Batters
+- type: reactionGroup
+  id: TP14ReactionGroupCakeBatter
+  reaction: CreateCakeBatter
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupCakeBatterVegan
+  reaction: CreateVeganCakeBatter
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupPieDough
+  reaction: CreatePieDough
+  group: TP14GuideEntryReactions
+
+# Curdling
+- type: reactionGroup
+  id: TP14ReactionGroupCheese
+  reaction: Curdling
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupChevre
+  reaction: ChevreCurdling
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionMozzarella
+  reaction: CreateMozzarella
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionCheeseCurdlingCurdling
+  reaction: CreateCurdCheese
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupButter
+  reaction: CreateButter
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionTofu
+  reaction: CreateTofu
+  group: TP14GuideEntryReactions
+
+# Meat
+- type: reactionGroup
+  id: TP14ReactionGroupMeatball
+  reaction: CreateMeatball
+  group: TP14GuideEntryReactions
+
+# Misc
+- type: reactionGroup
+  id: TP14ReactionGroupChocolate
+  reaction: CreateChocolate
+  group: TP14GuideEntryReactions
+
+- type: reactionGroup
+  id: TP14ReactionGroupFrosting
+  reaction: CreateFrosting
+  group: TP14GuideEntryReactions

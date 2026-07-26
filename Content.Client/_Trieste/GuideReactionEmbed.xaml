@@ -1,0 +1,26 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                Margin="5 5 5 5">
+    <PanelContainer.PanelOverride>
+        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+    </PanelContainer.PanelOverride>
+
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer HorizontalExpand="True">
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                <BoxContainer Name="HeaderIconContainer" Orientation="Horizontal" Margin="0 0 4 0"/>
+                <RichTextLabel Name="ResultName"/>
+            </BoxContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+
+        <GridContainer Columns="2" Margin="10">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" HorizontalAlignment="Center">
+                <Label Text="{Loc 'guidebook-reaction-reactants-header'}"/>
+                <GridContainer Columns="2" Name="ReactantsGrid" HorizontalAlignment="Center"/>
+            </BoxContainer>
+        </GridContainer>
+    </BoxContainer>
+</PanelContainer>

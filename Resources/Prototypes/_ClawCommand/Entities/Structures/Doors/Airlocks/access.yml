@@ -14,3 +14,14 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsPsychologist ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockKitchenHydroponicsGlassLocked
+  suffix: Kitchen/Hydroponics, Locked
+  components:
+  - type: AccessReader
+    access: [ [ "Kitchen" ], [ "Hydroponics" ] ]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchenHydroponics ]

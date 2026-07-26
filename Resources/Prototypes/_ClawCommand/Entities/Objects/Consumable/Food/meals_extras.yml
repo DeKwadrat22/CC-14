@@ -18,6 +18,10 @@
           Quantity: 13
         - ReagentId: Protein
           Quantity: 7
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
 
 - type: entity
   name: grilled cheese

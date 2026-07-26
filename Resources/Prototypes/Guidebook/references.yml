@@ -22,6 +22,8 @@
   text: "/ServerInfo/Guidebook/Service/FoodRecipes.xml"
   filterEnabled: True
   children:
+  - TP14GuideEntryReactions # Trieste: Added.
+  - TP14GuideEntryUtensils # Trieste: Added.
   - PizzaRecipes
   - SavoryRecipes
   - BreadRecipes

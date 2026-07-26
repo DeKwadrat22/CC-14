@@ -1,0 +1,13 @@
+# COOKING #
+
+- type: guideEntry
+  id: TP14GuideEntryReactions
+  name: guide-entry-tp14-reactions
+  text: "/ServerInfo/_Trieste/Guidebook/Service/Reactions.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TP14GuideEntryUtensils
+  name: guide-entry-tp14-utensils
+  text: "/ServerInfo/_Trieste/Guidebook/Service/Utensils.xml"
+  filterEnabled: True
