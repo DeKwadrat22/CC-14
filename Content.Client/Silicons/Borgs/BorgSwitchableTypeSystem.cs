@@ -1,4 +1,5 @@
-﻿using Content.Shared.Movement.Components;
+﻿using Content.Shared._ClawCommand.Silicons.Borgs;
+using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Silicons.Borgs;
@@ -93,5 +94,18 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         }
 
         base.UpdateEntityAppearance(entity, prototype);
+
+        // _ClawCommand: the base just (re)populated SpriteMovementComponent's layer maps
+        // (keyed "movement", which aliases the Body layer) to drive the Body's "_moving"
+        // swap. For baked dogborgs the Body layer is owned entirely by
+        // BorgSystem.UpdateBorgAppearance (static base / pose / wreck), so empty those maps
+        // — otherwise ClientSpriteMovementSystem ALSO writes the Body layer and an
+        // unoccupied chassis visibly "trots", and the two writers race. The IsMoving flag
+        // is kept: GetMotionState reads it to animate the Light layer instead.
+        if (HasComp<BorgBakedBodyComponent>(entity) && TryComp<SpriteMovementComponent>(entity, out var move))
+        {
+            move.MovementLayers.Clear();
+            move.NoMovementLayers.Clear();
+        }
     }
 }

@@ -20,6 +20,7 @@
     layers:
     - state: medihound
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: medihound_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -60,6 +61,7 @@
     layers:
     - state: medihounddark
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: medihounddark_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -101,6 +103,7 @@
     layers:
     - state: valemed
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: valemed_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -146,6 +149,7 @@
     layers:
     - state: k9
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: k9_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -190,6 +194,7 @@
     layers:
     - state: k9dark
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: k9dark
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -231,6 +236,7 @@
     layers:
     - state: valesec
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: valesec_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -273,6 +279,7 @@
     layers:
     - state: pupdozer
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: pupdozer_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -314,6 +321,7 @@
     layers:
     - state: valeeng
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: valeeng_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -356,6 +364,7 @@
     layers:
     - state: scrubpup
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: scrubpup_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -398,6 +407,7 @@
     layers:
     - state: valeserv
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: valeserv_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -440,6 +450,7 @@
     layers:
     - state: blade
       map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
     - state: blade_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
