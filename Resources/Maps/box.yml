@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 21:23:16
-  entityCount: 28848
+  time: 07/26/2026 21:37:02
+  entityCount: 28850
 maps:
 - 780
 grids:
@@ -153952,6 +153952,20 @@ entities:
     components:
     - type: Transform
       pos: 36.5,-41.5
+      parent: 8364
+- proto: SpawnPointClawCommandMaid
+  entities:
+  - uid: 28849
+    components:
+    - type: Transform
+      pos: 10.5,-12.5
+      parent: 8364
+- proto: SpawnPointClawCommandOfficer
+  entities:
+  - uid: 28850
+    components:
+    - type: Transform
+      pos: 8.5,-12.5
       parent: 8364
 - proto: SpawnPointClown
   entities:
