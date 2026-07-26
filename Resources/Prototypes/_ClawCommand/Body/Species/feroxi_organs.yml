@@ -127,6 +127,7 @@
       - Pill
       - TagNutribrick
       - Crayon
+      - TagIceCream
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganFeroxiInternal, OrganFeroxiMetabolizer ]

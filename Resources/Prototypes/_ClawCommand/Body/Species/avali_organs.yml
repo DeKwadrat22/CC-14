@@ -133,6 +133,7 @@
       - Vegetable
       - Pill
       - TagNutribrick
+      - TagIceCream
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAvaliInternal, OrganAvaliMetabolizer ]

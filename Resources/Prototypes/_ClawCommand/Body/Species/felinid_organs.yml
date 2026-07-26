@@ -122,6 +122,7 @@
       - Vegetable
       - Pill
       - TagNutribrick
+      - TagIceCream
 
 - type: entity
   parent: [ OrganBaseLiver, OrganFelinidInternal, OrganFelinidMetabolizer ]
