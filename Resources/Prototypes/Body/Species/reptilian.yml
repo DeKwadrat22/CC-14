@@ -311,6 +311,7 @@
       - Pill
       - Crayon
       - Paper
+      - TagIceCream
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]

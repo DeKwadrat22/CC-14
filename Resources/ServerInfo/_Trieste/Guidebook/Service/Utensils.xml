@@ -1,0 +1,70 @@
+<Document>
+  ## Cutting & Utensils
+
+  # Doughs
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough" Caption="Dough"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughFlat" Caption="Flat Dough"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughFlat" Caption="Flat Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodCroissantRaw" Caption="Raw Croissant (4)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough" Caption="Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodDoughSlice" Caption="Dough Slice (8)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughSlice" Caption="Dough Slice"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughRope" Caption="Dough Rope"/>
+  </Box>
+
+
+  # Cotton Doughs
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCotton" Caption="Cotton Dough"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonFlat" Caption="Flat Cotton Dough"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCottonFlat" Caption="Flat Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodCroissantRawCotton" Caption="Raw Cotton Croissant (4)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCotton" Caption="Cotton Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonSlice" Caption="Cotton Dough Slice (8)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCottonSlice" Caption="Cotton Dough Slice"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonRope" Caption="Cotton Dough Rope"/>
+  </Box>
+
+  # Tortilla Doughs
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughTortilla" Caption="Tortilla Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodDoughTortillaSlice" Caption="Tortilla Dough Slice (8)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughTortillaSlice" Caption="Tortilla Dough Slice"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughTortillaFlat" Caption="Flattened Tortilla Dough"/>
+  </Box>
+
+</Document>

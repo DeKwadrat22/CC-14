@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseItem
+  id: TP14CuttingBoard
+  name: cutting board
+  description: A wooden surface meant to cut objects on.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: PlaceableSurface
+  - type: Sprite
+    sprite: _Trieste/Objects/Tools/kitchen.rsi
+    state: cutting-board
+    drawdepth: SmallObjects
+

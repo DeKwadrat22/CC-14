@@ -35,6 +35,10 @@
 - type: Tag
   id: DogborgKitBlade
 
+# I #
+- type: Tag
+  id: TagIceCream # Used for digestion of ice-cream bowls for different species.
+
 # K #
 - type: Tag
   id: Katana
