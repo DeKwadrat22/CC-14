@@ -53,12 +53,13 @@
             #supply (3 - 5)
             SalvageSpecialist: [ 1, 3 ]
             CargoTechnician: [ 2, 2 ]
-            #civilian (3+)
+            #civilian (4+)
             Passenger: [ -1, -1 ] #infinite, not counted
             Prisoner: [ 5, 5 ] #claw command
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Lawyer: [ 1, 1 ]
             #silicon (2)
             Borg: [ 2, 2 ]
             DogborgSecurity: [ 3, 3 ]

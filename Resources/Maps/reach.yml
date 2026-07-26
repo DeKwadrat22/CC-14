@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/29/2026 01:39:06
-  entityCount: 2964
+  time: 07/26/2026 18:41:20
+  entityCount: 2965
 maps:
 - 1
 grids:
@@ -1679,7 +1679,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -3430.0137
+      secondsUntilStateChange: -3480.681
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -16454,6 +16454,13 @@ entities:
     components:
     - type: Transform
       pos: 6.5,13.5
+      parent: 2
+- proto: SpawnPointLawyer
+  entities:
+  - uid: 2965
+    components:
+    - type: Transform
+      pos: 6.5,9.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:

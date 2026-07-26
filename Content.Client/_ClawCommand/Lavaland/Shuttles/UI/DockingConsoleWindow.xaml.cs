@@ -50,6 +50,7 @@ public sealed partial class DockingConsoleWindow : FancyWindow
     private FTLState _state;
     private int? _selected;
     private StartEndTime _ftlTime;
+    private bool _hasShuttle;
 
     public DockingConsoleWindow(EntityUid owner)
     {
@@ -70,22 +71,12 @@ public sealed partial class DockingConsoleWindow : FancyWindow
 
         Title = Loc.GetString(comp.WindowTitle);
 
-        if (!comp.HasShuttle)
-        {
-            MapFTLState.Text = Loc.GetString("docking-console-no-shuttle");
-            _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
-
-            FTLButton.Disabled = true;
-            ShuttleCallButton.Disabled = false;
-
-            ShuttleCallButton.OnPressed += _ =>
-            {
-                OnShuttleCall?.Invoke(true);
-            };
-
-            return;
-        }
-
+        // _ClawCommand: wire ALL handlers up-front so the window can flip between
+        // "call shuttle" and "select destination + FTL" modes reactively. Previously the
+        // mode was locked in here from comp.HasShuttle at construction and never revisited,
+        // so a console opened before its shuttle finished binding (the server binds lazily
+        // in OnOpened) stayed stuck showing "call shuttle" with a permanently-greyed FTL
+        // button even after the shuttle appeared. SetHasShuttle() is re-run from UpdateState().
         Destinations.OnItemSelected += args =>
         {
             _selected = args.ItemIndex;
@@ -103,10 +94,45 @@ public sealed partial class DockingConsoleWindow : FancyWindow
             if (_selected is {} index)
                 OnFTL?.Invoke(index);
         };
+
+        ShuttleCallButton.OnPressed += _ =>
+        {
+            OnShuttleCall?.Invoke(true);
+        };
+
+        SetHasShuttle(comp.HasShuttle);
+    }
+
+    /// <summary>
+    /// _ClawCommand: switch the window between "no shuttle / call shuttle" and
+    /// "shuttle bound / pick a destination" presentation. Safe to call repeatedly.
+    /// </summary>
+    private void SetHasShuttle(bool hasShuttle)
+    {
+        _hasShuttle = hasShuttle;
+
+        // The call button is only usable when there is no shuttle to control.
+        ShuttleCallButton.Disabled = hasShuttle;
+
+        if (!hasShuttle)
+        {
+            MapFTLState.Text = Loc.GetString("docking-console-no-shuttle");
+            _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
+            FTLButton.Disabled = true;
+        }
+
+        UpdateButton();
     }
 
     public void UpdateState(DockingConsoleState state)
     {
+        // _ClawCommand: the server only pushes a DockingConsoleState once the console is
+        // bound to its shuttle. So if we receive one while still in "call shuttle" mode
+        // (the window can open before the server's lazy bind completes), flip to shuttle
+        // mode so the destination list + FTL button become usable — no close/reopen needed.
+        if (!_hasShuttle)
+            SetHasShuttle(true);
+
         _state = state.FTLState;
         _ftlTime = state.FTLTime;
 

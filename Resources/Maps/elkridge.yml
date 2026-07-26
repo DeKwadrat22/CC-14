@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 272.0.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/07/2026 23:14:21
-  entityCount: 18815
+  time: 07/26/2026 19:31:25
+  entityCount: 18817
 maps:
 - 1
 grids:
@@ -284,7 +284,7 @@ entities:
           version: 7
         1,3:
           ind: 1,3
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAIIAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAggAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACCAAAAAAAAggAAAAAAAIIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAggAAAAAAAIIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIIAAAAAAACCAAAAAAAAggAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAIIAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAggAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAIIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACCAAAAAAAAggAAAAAAAIIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAggAAAAAAAIIAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIIAAAAAAACCAAAAAAAAggAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
           version: 7
         3,0:
           ind: 3,0
@@ -10783,8 +10783,8 @@ entities:
     - type: Transform
       parent: 2102
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 2102
+      originalIconColor: '#FFFFFFFF'
   - uid: 15056
     mapInit: true
     paused: true
@@ -10792,8 +10792,8 @@ entities:
     - type: Transform
       parent: 6149
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 6149
+      originalIconColor: '#FFFFFFFF'
   - uid: 15092
     mapInit: true
     paused: true
@@ -10801,8 +10801,8 @@ entities:
     - type: Transform
       parent: 6152
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 6152
+      originalIconColor: '#FFFFFFFF'
   - uid: 15172
     mapInit: true
     paused: true
@@ -10810,8 +10810,8 @@ entities:
     - type: Transform
       parent: 15171
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 15171
+      originalIconColor: '#FFFFFFFF'
   - uid: 15233
     mapInit: true
     paused: true
@@ -10819,8 +10819,8 @@ entities:
     - type: Transform
       parent: 6187
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 6187
+      originalIconColor: '#FFFFFFFF'
   - uid: 18034
     mapInit: true
     paused: true
@@ -10828,8 +10828,8 @@ entities:
     - type: Transform
       parent: 16950
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 16950
+      originalIconColor: '#FFFFFFFF'
 - proto: ActionToggleLight
   entities:
   - uid: 4689
@@ -10839,8 +10839,8 @@ entities:
     - type: Transform
       parent: 5084
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 5084
+      originalIconColor: '#FFFFFFFF'
   - uid: 4690
     mapInit: true
     paused: true
@@ -10848,8 +10848,8 @@ entities:
     - type: Transform
       parent: 10913
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 10913
+      originalIconColor: '#FFFFFFFF'
   - uid: 18263
     mapInit: true
     paused: true
@@ -10857,8 +10857,8 @@ entities:
     - type: Transform
       parent: 18262
     - type: Action
-      originalIconColor: '#FFFFFFFF'
       container: 18262
+      originalIconColor: '#FFFFFFFF'
 - proto: AirAlarm
   entities:
   - uid: 488
@@ -14090,6 +14090,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -52.5,-8.5
+      parent: 2
+- proto: AirlockExternalGlassShuttleMiningFilled
+  entities:
+  - uid: 18817
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,50.5
       parent: 2
 - proto: AirlockExternalLocked
   entities:
@@ -54082,6 +54090,14 @@ entities:
     - type: Transform
       pos: 0.5,40.5
       parent: 2
+- proto: ComputerShuttleMiningLavaland
+  entities:
+  - uid: 18816
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 21.5,49.5
+      parent: 2
 - proto: ComputerSolarControl
   entities:
   - uid: 2003
@@ -63243,6 +63259,7 @@ entities:
       deviceLists:
       - 818
       - 811
+    - type: AirlockAtmosBlockOpen
   - uid: 1628
     components:
     - type: Transform
@@ -63254,30 +63271,35 @@ entities:
       - 811
       - 14641
       - 16327
+    - type: AirlockAtmosBlockOpen
   - uid: 2595
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -20.5,5.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 2654
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -41.5,-18.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 3169
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,31.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 10390
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -40.5,-42.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 10888
     components:
     - type: Transform
@@ -63290,6 +63312,7 @@ entities:
       - 13863
       - 2200
       - 14678
+    - type: AirlockAtmosBlockOpen
   - uid: 10889
     components:
     - type: Transform
@@ -63302,6 +63325,7 @@ entities:
       - 13863
       - 2200
       - 14678
+    - type: AirlockAtmosBlockOpen
   - uid: 10890
     components:
     - type: Transform
@@ -63313,6 +63337,7 @@ entities:
       - 16827
       - 16808
       - 14677
+    - type: AirlockAtmosBlockOpen
   - uid: 10891
     components:
     - type: Transform
@@ -63324,6 +63349,7 @@ entities:
       - 16827
       - 16808
       - 14677
+    - type: AirlockAtmosBlockOpen
   - uid: 10892
     components:
     - type: Transform
@@ -63335,6 +63361,7 @@ entities:
       - 13863
       - 14677
       - 14678
+    - type: AirlockAtmosBlockOpen
   - uid: 10893
     components:
     - type: Transform
@@ -63346,11 +63373,13 @@ entities:
       - 13863
       - 14677
       - 14678
+    - type: AirlockAtmosBlockOpen
   - uid: 11799
     components:
     - type: Transform
       pos: -1.5,-41.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 13804
     components:
     - type: Transform
@@ -63360,6 +63389,7 @@ entities:
       deviceLists:
       - 12732
       - 14665
+    - type: AirlockAtmosBlockOpen
   - uid: 13805
     components:
     - type: Transform
@@ -63369,83 +63399,97 @@ entities:
       deviceLists:
       - 12732
       - 14665
+    - type: AirlockAtmosBlockOpen
   - uid: 15905
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,-20.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15907
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -13.5,-41.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15909
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -32.5,-13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15910
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,-9.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15911
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -18.5,28.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15912
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,52.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15913
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15914
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 18.5,29.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15915
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 34.5,27.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15916
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 37.5,29.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15917
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 34.5,1.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 15918
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 45.5,13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 16100
     components:
     - type: Transform
       pos: -18.5,55.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 16468
     components:
     - type: Transform
@@ -63460,6 +63504,7 @@ entities:
       - 13870
       - 17019
       - 17020
+    - type: AirlockAtmosBlockOpen
   - uid: 16469
     components:
     - type: Transform
@@ -63474,11 +63519,13 @@ entities:
       - 13870
       - 17019
       - 17020
+    - type: AirlockAtmosBlockOpen
   - uid: 17297
     components:
     - type: Transform
       pos: -31.5,8.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18031
     components:
     - type: Transform
@@ -63489,6 +63536,7 @@ entities:
       - 14605
       - 14526
       - 14483
+    - type: AirlockAtmosBlockOpen
   - uid: 18032
     components:
     - type: Transform
@@ -63499,6 +63547,7 @@ entities:
       - 14605
       - 14526
       - 14483
+    - type: AirlockAtmosBlockOpen
 - proto: FirelockEdge
   entities:
   - uid: 197
@@ -63513,6 +63562,7 @@ entities:
       - 811
       - 14652
       - 14641
+    - type: AirlockAtmosBlockOpen
   - uid: 243
     components:
     - type: Transform
@@ -63525,6 +63575,7 @@ entities:
       - 811
       - 14652
       - 14641
+    - type: AirlockAtmosBlockOpen
   - uid: 263
     components:
     - type: Transform
@@ -63537,6 +63588,7 @@ entities:
       - 811
       - 14641
       - 14651
+    - type: AirlockAtmosBlockOpen
   - uid: 264
     components:
     - type: Transform
@@ -63549,6 +63601,7 @@ entities:
       - 811
       - 14641
       - 14651
+    - type: AirlockAtmosBlockOpen
   - uid: 265
     components:
     - type: Transform
@@ -63561,6 +63614,7 @@ entities:
       - 811
       - 14641
       - 14651
+    - type: AirlockAtmosBlockOpen
   - uid: 266
     components:
     - type: Transform
@@ -63573,6 +63627,7 @@ entities:
       - 811
       - 14641
       - 14651
+    - type: AirlockAtmosBlockOpen
   - uid: 963
     components:
     - type: Transform
@@ -63584,6 +63639,7 @@ entities:
       - 149
       - 14651
       - 17609
+    - type: AirlockAtmosBlockOpen
   - uid: 1437
     components:
     - type: Transform
@@ -63595,6 +63651,7 @@ entities:
       - 12625
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 4973
     components:
     - type: Transform
@@ -63606,12 +63663,14 @@ entities:
       - 14859
       - 15060
       - 15067
+    - type: AirlockAtmosBlockOpen
   - uid: 5993
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 47.5,-0.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 10873
     components:
     - type: Transform
@@ -63623,6 +63682,7 @@ entities:
       - 11399
       - 14128
       - 14656
+    - type: AirlockAtmosBlockOpen
   - uid: 10883
     components:
     - type: Transform
@@ -63634,6 +63694,7 @@ entities:
       - 13933
       - 13935
       - 12225
+    - type: AirlockAtmosBlockOpen
   - uid: 10887
     components:
     - type: Transform
@@ -63646,6 +63707,7 @@ entities:
       - 13862
       - 14677
       - 13936
+    - type: AirlockAtmosBlockOpen
   - uid: 10895
     components:
     - type: Transform
@@ -63658,6 +63720,7 @@ entities:
       - 3340
       - 14678
       - 14679
+    - type: AirlockAtmosBlockOpen
   - uid: 10905
     components:
     - type: Transform
@@ -63670,6 +63733,7 @@ entities:
       - 13817
       - 14673
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 11143
     components:
     - type: Transform
@@ -63682,6 +63746,7 @@ entities:
       - 13862
       - 2200
       - 13936
+    - type: AirlockAtmosBlockOpen
   - uid: 11224
     components:
     - type: Transform
@@ -63695,6 +63760,7 @@ entities:
       - 13870
       - 17019
       - 17020
+    - type: AirlockAtmosBlockOpen
   - uid: 13803
     components:
     - type: Transform
@@ -63705,6 +63771,7 @@ entities:
       deviceLists:
       - 12553
       - 18230
+    - type: AirlockAtmosBlockOpen
   - uid: 13810
     components:
     - type: Transform
@@ -63717,6 +63784,7 @@ entities:
       - 13812
       - 14668
       - 14683
+    - type: AirlockAtmosBlockOpen
   - uid: 13850
     components:
     - type: Transform
@@ -63729,6 +63797,7 @@ entities:
       - 14667
       - 14665
       - 14552
+    - type: AirlockAtmosBlockOpen
   - uid: 13853
     components:
     - type: Transform
@@ -63740,6 +63809,7 @@ entities:
       - 2200
       - 13862
       - 13936
+    - type: AirlockAtmosBlockOpen
   - uid: 14670
     components:
     - type: Transform
@@ -63750,6 +63820,7 @@ entities:
       deviceLists:
       - 14671
       - 14673
+    - type: AirlockAtmosBlockOpen
   - uid: 14946
     components:
     - type: Transform
@@ -63761,6 +63832,7 @@ entities:
       - 149
       - 14651
       - 17609
+    - type: AirlockAtmosBlockOpen
   - uid: 14970
     components:
     - type: Transform
@@ -63773,6 +63845,7 @@ entities:
       - 15059
       - 11576
       - 13795
+    - type: AirlockAtmosBlockOpen
   - uid: 14997
     components:
     - type: Transform
@@ -63785,6 +63858,7 @@ entities:
       - 15059
       - 11576
       - 13795
+    - type: AirlockAtmosBlockOpen
   - uid: 15890
     components:
     - type: Transform
@@ -63797,6 +63871,7 @@ entities:
       - 149
       - 13456
       - 958
+    - type: AirlockAtmosBlockOpen
   - uid: 16478
     components:
     - type: Transform
@@ -63810,6 +63885,7 @@ entities:
       - 13870
       - 17019
       - 17020
+    - type: AirlockAtmosBlockOpen
   - uid: 16479
     components:
     - type: Transform
@@ -63823,6 +63899,7 @@ entities:
       - 13870
       - 17019
       - 17020
+    - type: AirlockAtmosBlockOpen
   - uid: 16806
     components:
     - type: Transform
@@ -63835,6 +63912,7 @@ entities:
       - 16827
       - 2200
       - 13936
+    - type: AirlockAtmosBlockOpen
   - uid: 18628
     components:
     - type: Transform
@@ -63847,6 +63925,7 @@ entities:
       - 488
       - 14641
       - 16327
+    - type: AirlockAtmosBlockOpen
   - uid: 18629
     components:
     - type: Transform
@@ -63859,6 +63938,7 @@ entities:
       - 488
       - 14641
       - 16327
+    - type: AirlockAtmosBlockOpen
 - proto: FirelockElectronics
   entities:
   - uid: 2286
@@ -63879,6 +63959,7 @@ entities:
       - 11357
       - 13789
       - 14119
+    - type: AirlockAtmosBlockOpen
   - uid: 1029
     components:
     - type: Transform
@@ -63889,6 +63970,7 @@ entities:
       deviceLists:
       - 5980
       - 12724
+    - type: AirlockAtmosBlockOpen
   - uid: 1620
     components:
     - type: Transform
@@ -63901,6 +63983,7 @@ entities:
       - 14641
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 1621
     components:
     - type: Transform
@@ -63913,6 +63996,7 @@ entities:
       - 14641
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 1622
     components:
     - type: Transform
@@ -63925,6 +64009,7 @@ entities:
       - 14641
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 1629
     components:
     - type: Transform
@@ -63936,6 +64021,7 @@ entities:
       - 811
       - 14641
       - 14651
+    - type: AirlockAtmosBlockOpen
   - uid: 1630
     components:
     - type: Transform
@@ -63944,6 +64030,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 1878
     components:
     - type: Transform
@@ -63955,6 +64042,7 @@ entities:
       - 15065
       - 15328
       - 11575
+    - type: AirlockAtmosBlockOpen
   - uid: 1879
     components:
     - type: Transform
@@ -63966,6 +64054,7 @@ entities:
       - 15065
       - 15328
       - 11575
+    - type: AirlockAtmosBlockOpen
   - uid: 1938
     components:
     - type: Transform
@@ -63977,6 +64066,7 @@ entities:
       - 11575
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 4114
     components:
     - type: Transform
@@ -63988,6 +64078,7 @@ entities:
       - 13933
       - 12224
       - 12225
+    - type: AirlockAtmosBlockOpen
   - uid: 4374
     components:
     - type: Transform
@@ -63998,22 +64089,26 @@ entities:
       deviceLists:
       - 13817
       - 14673
+    - type: AirlockAtmosBlockOpen
   - uid: 4736
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 13.5,-12.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6278
     components:
     - type: Transform
       pos: -34.5,-16.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6280
     components:
     - type: Transform
       pos: -36.5,-17.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 6856
     components:
     - type: Transform
@@ -64025,6 +64120,7 @@ entities:
       - 16473
       - 11199
       - 16474
+    - type: AirlockAtmosBlockOpen
   - uid: 8647
     components:
     - type: Transform
@@ -64035,6 +64131,7 @@ entities:
       - 18230
       - 13800
       - 8138
+    - type: AirlockAtmosBlockOpen
   - uid: 8973
     components:
     - type: Transform
@@ -64045,6 +64142,7 @@ entities:
       - 18230
       - 13800
       - 8138
+    - type: AirlockAtmosBlockOpen
   - uid: 9755
     components:
     - type: Transform
@@ -64055,6 +64153,7 @@ entities:
       deviceLists:
       - 5980
       - 14552
+    - type: AirlockAtmosBlockOpen
   - uid: 10077
     components:
     - type: Transform
@@ -64065,12 +64164,14 @@ entities:
       - 18230
       - 13800
       - 8138
+    - type: AirlockAtmosBlockOpen
   - uid: 10718
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 13.5,-14.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 10803
     components:
     - type: Transform
@@ -64082,6 +64183,7 @@ entities:
       - 12224
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10804
     components:
     - type: Transform
@@ -64093,6 +64195,7 @@ entities:
       - 14654
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10805
     components:
     - type: Transform
@@ -64104,6 +64207,7 @@ entities:
       - 12224
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10806
     components:
     - type: Transform
@@ -64115,6 +64219,7 @@ entities:
       - 12224
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10809
     components:
     - type: Transform
@@ -64126,6 +64231,7 @@ entities:
       - 13795
       - 11575
       - 11576
+    - type: AirlockAtmosBlockOpen
   - uid: 10810
     components:
     - type: Transform
@@ -64137,6 +64243,7 @@ entities:
       - 14654
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10811
     components:
     - type: Transform
@@ -64148,6 +64255,7 @@ entities:
       - 14654
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10812
     components:
     - type: Transform
@@ -64159,6 +64267,7 @@ entities:
       - 13793
       - 14128
       - 14126
+    - type: AirlockAtmosBlockOpen
   - uid: 10813
     components:
     - type: Transform
@@ -64170,6 +64279,7 @@ entities:
       - 13794
       - 14126
       - 11574
+    - type: AirlockAtmosBlockOpen
   - uid: 10814
     components:
     - type: Transform
@@ -64181,6 +64291,7 @@ entities:
       - 13793
       - 14128
       - 14126
+    - type: AirlockAtmosBlockOpen
   - uid: 10815
     components:
     - type: Transform
@@ -64192,6 +64303,7 @@ entities:
       - 13794
       - 14129
       - 11574
+    - type: AirlockAtmosBlockOpen
   - uid: 10816
     components:
     - type: Transform
@@ -64203,6 +64315,7 @@ entities:
       - 13794
       - 14129
       - 11574
+    - type: AirlockAtmosBlockOpen
   - uid: 10817
     components:
     - type: Transform
@@ -64214,6 +64327,7 @@ entities:
       - 13794
       - 14126
       - 11574
+    - type: AirlockAtmosBlockOpen
   - uid: 10819
     components:
     - type: Transform
@@ -64225,6 +64339,7 @@ entities:
       - 13794
       - 14129
       - 11574
+    - type: AirlockAtmosBlockOpen
   - uid: 10820
     components:
     - type: Transform
@@ -64236,6 +64351,7 @@ entities:
       - 13791
       - 14129
       - 14119
+    - type: AirlockAtmosBlockOpen
   - uid: 10822
     components:
     - type: Transform
@@ -64247,6 +64363,7 @@ entities:
       - 13792
       - 14128
       - 11390
+    - type: AirlockAtmosBlockOpen
   - uid: 10823
     components:
     - type: Transform
@@ -64258,6 +64375,7 @@ entities:
       - 13792
       - 14128
       - 11390
+    - type: AirlockAtmosBlockOpen
   - uid: 10824
     components:
     - type: Transform
@@ -64269,6 +64387,7 @@ entities:
       - 13792
       - 14128
       - 11390
+    - type: AirlockAtmosBlockOpen
   - uid: 10825
     components:
     - type: Transform
@@ -64280,6 +64399,7 @@ entities:
       - 13790
       - 14119
       - 14128
+    - type: AirlockAtmosBlockOpen
   - uid: 10826
     components:
     - type: Transform
@@ -64291,6 +64411,7 @@ entities:
       - 13791
       - 14129
       - 14119
+    - type: AirlockAtmosBlockOpen
   - uid: 10827
     components:
     - type: Transform
@@ -64302,6 +64423,7 @@ entities:
       - 13790
       - 14119
       - 14128
+    - type: AirlockAtmosBlockOpen
   - uid: 10828
     components:
     - type: Transform
@@ -64313,6 +64435,7 @@ entities:
       - 13795
       - 11575
       - 11576
+    - type: AirlockAtmosBlockOpen
   - uid: 10829
     components:
     - type: Transform
@@ -64324,6 +64447,7 @@ entities:
       - 13795
       - 11575
       - 11576
+    - type: AirlockAtmosBlockOpen
   - uid: 10832
     components:
     - type: Transform
@@ -64335,6 +64459,7 @@ entities:
       - 13794
       - 11574
       - 11575
+    - type: AirlockAtmosBlockOpen
   - uid: 10833
     components:
     - type: Transform
@@ -64346,6 +64471,7 @@ entities:
       - 13794
       - 11574
       - 11575
+    - type: AirlockAtmosBlockOpen
   - uid: 10834
     components:
     - type: Transform
@@ -64357,6 +64483,7 @@ entities:
       - 11575
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10835
     components:
     - type: Transform
@@ -64368,6 +64495,7 @@ entities:
       - 13870
       - 12224
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10836
     components:
     - type: Transform
@@ -64379,6 +64507,7 @@ entities:
       - 13870
       - 12224
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10837
     components:
     - type: Transform
@@ -64390,6 +64519,7 @@ entities:
       - 13933
       - 12224
       - 12225
+    - type: AirlockAtmosBlockOpen
   - uid: 10838
     components:
     - type: Transform
@@ -64401,6 +64531,7 @@ entities:
       - 13933
       - 12224
       - 12225
+    - type: AirlockAtmosBlockOpen
   - uid: 10839
     components:
     - type: Transform
@@ -64412,6 +64543,7 @@ entities:
       - 11575
       - 11391
       - 18303
+    - type: AirlockAtmosBlockOpen
   - uid: 10840
     components:
     - type: Transform
@@ -64423,6 +64555,7 @@ entities:
       - 13962
       - 12225
       - 12226
+    - type: AirlockAtmosBlockOpen
   - uid: 10841
     components:
     - type: Transform
@@ -64434,6 +64567,7 @@ entities:
       - 13962
       - 12225
       - 12226
+    - type: AirlockAtmosBlockOpen
   - uid: 10844
     components:
     - type: Transform
@@ -64445,6 +64579,7 @@ entities:
       - 13936
       - 2200
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10845
     components:
     - type: Transform
@@ -64456,6 +64591,7 @@ entities:
       - 13936
       - 2200
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10846
     components:
     - type: Transform
@@ -64467,6 +64603,7 @@ entities:
       - 958
       - 13457
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10847
     components:
     - type: Transform
@@ -64478,6 +64615,7 @@ entities:
       - 958
       - 13457
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10848
     components:
     - type: Transform
@@ -64489,6 +64627,7 @@ entities:
       - 958
       - 13457
       - 13456
+    - type: AirlockAtmosBlockOpen
   - uid: 10849
     components:
     - type: Transform
@@ -64500,6 +64639,7 @@ entities:
       - 15456
       - 8138
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10850
     components:
     - type: Transform
@@ -64511,6 +64651,7 @@ entities:
       - 15456
       - 8138
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10851
     components:
     - type: Transform
@@ -64522,6 +64663,7 @@ entities:
       - 15456
       - 8138
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10852
     components:
     - type: Transform
@@ -64533,6 +64675,7 @@ entities:
       - 13811
       - 14668
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10853
     components:
     - type: Transform
@@ -64544,6 +64687,7 @@ entities:
       - 13811
       - 14668
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10854
     components:
     - type: Transform
@@ -64555,6 +64699,7 @@ entities:
       - 13811
       - 14668
       - 13457
+    - type: AirlockAtmosBlockOpen
   - uid: 10874
     components:
     - type: Transform
@@ -64567,6 +64712,7 @@ entities:
       - 11082
       - 14279
       - 14655
+    - type: AirlockAtmosBlockOpen
   - uid: 10875
     components:
     - type: Transform
@@ -64579,6 +64725,7 @@ entities:
       - 11082
       - 14279
       - 14655
+    - type: AirlockAtmosBlockOpen
   - uid: 10876
     components:
     - type: Transform
@@ -64591,6 +64738,7 @@ entities:
       - 11079
       - 14654
       - 14279
+    - type: AirlockAtmosBlockOpen
   - uid: 10877
     components:
     - type: Transform
@@ -64603,6 +64751,7 @@ entities:
       - 11079
       - 14654
       - 14279
+    - type: AirlockAtmosBlockOpen
   - uid: 10878
     components:
     - type: Transform
@@ -64614,6 +64763,7 @@ entities:
       - 11020
       - 11574
       - 14654
+    - type: AirlockAtmosBlockOpen
   - uid: 10879
     components:
     - type: Transform
@@ -64625,6 +64775,7 @@ entities:
       - 11020
       - 11574
       - 14654
+    - type: AirlockAtmosBlockOpen
   - uid: 10894
     components:
     - type: Transform
@@ -64636,6 +64787,7 @@ entities:
       - 3340
       - 14678
       - 14679
+    - type: AirlockAtmosBlockOpen
   - uid: 10898
     components:
     - type: Transform
@@ -64648,6 +64800,7 @@ entities:
       - 13813
       - 14668
       - 14669
+    - type: AirlockAtmosBlockOpen
   - uid: 10899
     components:
     - type: Transform
@@ -64660,6 +64813,7 @@ entities:
       - 13813
       - 14668
       - 14669
+    - type: AirlockAtmosBlockOpen
   - uid: 10900
     components:
     - type: Transform
@@ -64672,6 +64826,7 @@ entities:
       - 13816
       - 14669
       - 14671
+    - type: AirlockAtmosBlockOpen
   - uid: 10901
     components:
     - type: Transform
@@ -64684,6 +64839,7 @@ entities:
       - 13816
       - 14669
       - 14671
+    - type: AirlockAtmosBlockOpen
   - uid: 10902
     components:
     - type: Transform
@@ -64696,6 +64852,7 @@ entities:
       - 13816
       - 14671
       - 14675
+    - type: AirlockAtmosBlockOpen
   - uid: 10907
     components:
     - type: Transform
@@ -64707,6 +64864,7 @@ entities:
       - 13852
       - 13456
       - 14684
+    - type: AirlockAtmosBlockOpen
   - uid: 12011
     components:
     - type: Transform
@@ -64719,6 +64877,7 @@ entities:
       - 11574
       - 11575
       - 15328
+    - type: AirlockAtmosBlockOpen
   - uid: 13834
     components:
     - type: Transform
@@ -64730,6 +64889,7 @@ entities:
       - 14665
       - 14667
       - 14552
+    - type: AirlockAtmosBlockOpen
   - uid: 13835
     components:
     - type: Transform
@@ -64741,6 +64901,7 @@ entities:
       - 14665
       - 14667
       - 14552
+    - type: AirlockAtmosBlockOpen
   - uid: 14136
     components:
     - type: Transform
@@ -64752,6 +64913,7 @@ entities:
       - 13791
       - 14129
       - 15794
+    - type: AirlockAtmosBlockOpen
   - uid: 14212
     components:
     - type: Transform
@@ -64763,6 +64925,7 @@ entities:
       - 13791
       - 14129
       - 15794
+    - type: AirlockAtmosBlockOpen
   - uid: 14672
     components:
     - type: Transform
@@ -64772,21 +64935,25 @@ entities:
       deviceLists:
       - 14671
       - 14673
+    - type: AirlockAtmosBlockOpen
   - uid: 14775
     components:
     - type: Transform
       pos: -40.5,-22.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 14861
     components:
     - type: Transform
       pos: -4.5,-15.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 14862
     components:
     - type: Transform
       pos: -3.5,-15.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 14998
     components:
     - type: Transform
@@ -64798,6 +64965,7 @@ entities:
       - 15232
       - 14859
       - 15069
+    - type: AirlockAtmosBlockOpen
   - uid: 14999
     components:
     - type: Transform
@@ -64809,6 +64977,7 @@ entities:
       - 15232
       - 14859
       - 15069
+    - type: AirlockAtmosBlockOpen
   - uid: 16194
     components:
     - type: Transform
@@ -64819,6 +64988,7 @@ entities:
       deviceLists:
       - 14552
       - 5980
+    - type: AirlockAtmosBlockOpen
   - uid: 16465
     components:
     - type: Transform
@@ -64830,6 +65000,7 @@ entities:
       - 16473
       - 11199
       - 16474
+    - type: AirlockAtmosBlockOpen
   - uid: 16467
     components:
     - type: Transform
@@ -64841,6 +65012,7 @@ entities:
       - 11211
       - 16472
       - 16473
+    - type: AirlockAtmosBlockOpen
   - uid: 16470
     components:
     - type: Transform
@@ -64852,6 +65024,7 @@ entities:
       - 11211
       - 16472
       - 16473
+    - type: AirlockAtmosBlockOpen
   - uid: 16471
     components:
     - type: Transform
@@ -64863,12 +65036,14 @@ entities:
       - 16473
       - 16475
       - 11212
+    - type: AirlockAtmosBlockOpen
   - uid: 16750
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 13.5,-13.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 16807
     components:
     - type: Transform
@@ -64880,6 +65055,7 @@ entities:
       - 16827
       - 2200
       - 13936
+    - type: AirlockAtmosBlockOpen
   - uid: 18028
     components:
     - type: Transform
@@ -64891,6 +65067,7 @@ entities:
       - 14525
       - 13791
       - 14129
+    - type: AirlockAtmosBlockOpen
   - uid: 18029
     components:
     - type: Transform
@@ -64902,6 +65079,7 @@ entities:
       - 14526
       - 14484
       - 14525
+    - type: AirlockAtmosBlockOpen
   - uid: 18030
     components:
     - type: Transform
@@ -64913,6 +65091,7 @@ entities:
       - 14526
       - 14484
       - 14525
+    - type: AirlockAtmosBlockOpen
   - uid: 18033
     components:
     - type: Transform
@@ -64923,36 +65102,43 @@ entities:
       - 14486
       - 15328
       - 11575
+    - type: AirlockAtmosBlockOpen
   - uid: 18750
     components:
     - type: Transform
       pos: -28.5,-40.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18756
     components:
     - type: Transform
       pos: -27.5,-40.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18757
     components:
     - type: Transform
       pos: -28.5,-55.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18758
     components:
     - type: Transform
       pos: -27.5,-55.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18759
     components:
     - type: Transform
       pos: -22.5,-50.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
   - uid: 18760
     components:
     - type: Transform
       pos: -21.5,-50.5
       parent: 2
+    - type: AirlockAtmosBlockOpen
 - proto: Fireplace
   entities:
   - uid: 4697
@@ -90018,6 +90204,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 44.5,-28.5
       parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: IntercomCommand
   entities:
   - uid: 4470

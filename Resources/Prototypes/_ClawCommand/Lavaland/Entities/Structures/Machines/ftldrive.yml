@@ -1,0 +1,80 @@
+# _ClawCommand: ported from Goob-Station's _Mono FTL drive (Monolith lineage).
+# Only MachineFTLDriveAutomated is needed here — it is placed on the Lavaland mining
+# shuttle grid (Maps/_ClawCommand/Lavaland/mining.yml). Without this prototype the
+# shuttle grid fails to deserialize ("Missing prototype MachineFTLDriveAutomated"),
+# so the mining shuttle never spawns and the docking console reports "No Shuttle Detected".
+#
+# The Monolith `FTLDriveGenerator` component/system does NOT exist in this fork, and the
+# mining shuttle's FTL is driven by the DockingConsole (upstream FTLToDock), not by this
+# machine. It is therefore stripped below; the drive remains a fully-powered machine
+# fixture on the shuttle. Every other component here already exists in the fork.
+#
+# Sprite art: CC-BY-SA-3.0, "Made by _starch_ (discord) for Monolith." (see the copied
+# drive.rsi meta.json).
+
+- type: entity
+  id: FTLDriveBase
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: PointLight
+    enabled: false
+    color: "#349BEB" # beb color
+    radius: 2.0
+    energy: 1.5
+  - type: LitOnPowered
+  - type: ExtensionCableReceiver
+  - type: Appearance
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/anomaly_generator.ogg
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.PowerChargeUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.PowerChargeUiKey.Key:
+        type: PowerChargeBoundUserInterface
+  - type: WiresPanel
+  - type: StaticPrice
+    price: 2000
+
+# Automated fixed-route drive — the variant used by the mining shuttle.
+- type: entity
+  id: MachineFTLDriveAutomated
+  parent: FTLDriveBase
+  name: CTLA-2048 bluespace drive
+  description: FTL Drive for Fixed Route Transport, has short cooldown at the cost of only working for Nanotrasen's preengineered transport routes.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Lavaland/Structures/ShuttleComponents/drive.rsi
+    snapCardinals: true
+    layers:
+    - state: control
+    - state: control_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      visible: false
+      shader: unshaded
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: PowerCharge
+    windowTitle: ftl-drive-window-title
+    idlePower: 20
+    activePower: 1000
+  # _ClawCommand: Monolith `FTLDriveGenerator` intentionally omitted — the fork has no
+  # such component/system; mining-shuttle FTL runs through the DockingConsole instead.
