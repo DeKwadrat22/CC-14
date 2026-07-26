@@ -4,6 +4,7 @@ using Content.Server.Medical.CrewMonitoring;
 using Content.Server.Station.Systems;
 using Content.Shared.Power;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared._ClawCommand.SyndieOutpost; // Claw Command
 
 namespace Content.Server.DeviceNetwork.Systems;
 
@@ -52,6 +53,14 @@ public sealed partial class SingletonDeviceNetServerSystem : EntitySystem
 
         while (servers.MoveNext(out var uid, out var server, out var device, out _))
         {
+            // Claw Command: never select a syndicate outpost hack server as the station's
+            // active singleton server. Its grid is registered onto the station
+            // (SyndieOutpostSpawnRule.AddGridToStation), so without this suit sensors could
+            // bind to the outpost's leftover crew-monitor server and the real station console
+            // would go blank. Outpost hardware taps station data via SyndieOutpostHackSystem.
+            if (HasComp<SyndieOutpostHackComponent>(uid))
+                continue;
+
             if (!_stationSystem.GetOwningStation(uid)?.Equals(stationId) ?? true)
                 continue;
 
