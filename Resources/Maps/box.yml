@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 21:18:32
-  entityCount: 28847
+  time: 07/26/2026 21:23:16
+  entityCount: 28848
 maps:
 - 780
 grids:
@@ -10936,8 +10936,8 @@ entities:
           id: docking46345
           localAnchorB: -0.5,-1
           localAnchorA: -66.5,22
-          damping: 42.401035
-          stiffness: 380.59082
+          damping: 42.40105
+          stiffness: 380.59094
     - type: OccluderTree
     - type: Shuttle
       dampingModifier: 0.25
@@ -76128,6 +76128,13 @@ entities:
     components:
     - type: Transform
       pos: 55.5,18.5
+      parent: 8364
+- proto: DebugGenerator
+  entities:
+  - uid: 28848
+    components:
+    - type: Transform
+      pos: -24.5,-68.5
       parent: 8364
 - proto: DecalSpawnerBurns
   entities:
