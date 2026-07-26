@@ -12,7 +12,61 @@
     Glass: 200
     Plastic: 100
 
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: BorgModuleInvestigation
+  result: BorgModuleInvestigation
+  completetime: 2
+  materials:
+    Steel: 300
+    Glass: 500
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: BorgModuleKill
+  result: BorgModuleKill
+  completetime: 4
+  materials:
+    Steel: 500
+    Glass: 900
+    Plastic: 200
+    Gold: 200
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: BorgModuleAdvancedMeasures
+  result: BorgModuleAdvancedMeasures
+  completetime: 5
+  materials:
+    Steel: 700
+    Glass: 1200
+    Plastic: 300
+    Gold: 300
+    Uranium: 100
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: BorgModuleGorillaGauntlet
+  result: BorgModuleGorillaGauntlet
+  completetime: 4
+  materials:
+    Steel: 600
+    Glass: 200
+    Plastic: 200
+
+# Always available at the Exosuit Fabricator — low-lethal patrol + detective toolkit.
 - type: latheRecipePack
   id: DogborgModulesStatic
   recipes:
   - BorgModuleSecurity
+  - BorgModuleInvestigation
+
+# Research-gated — unlocked by Arsenal technologies (see Research/arsenal.yml). Wired into the
+# Exosuit Fabricator's dynamicPacks in Entities/Structures/Machines/lathe.yml.
+- type: latheRecipePack
+  id: DogborgModulesDynamic
+  recipes:
+  - BorgModuleKill
+  - BorgModuleAdvancedMeasures
+  - BorgModuleGorillaGauntlet

@@ -29,3 +29,33 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 40
+
+# Claw Command: borg-only reusable zipties. Unlike normal zipties these are NOT consumed on use
+# (removeOnUse: false) — the module keeps its set and a fresh pair of normal Zipties is applied to
+# the target instead. That, plus being module-locked (unremovable), gives the security dogborg an
+# endless supply of restraints and sidesteps the "cannot drop cuffs" failure that plain module
+# zipties hit (an unremovable item can't be dropped onto a target, so cuffing never started).
+- type: entity
+  parent: Zipties
+  suffix: Robot
+  id: BorgZipties
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Handcuff
+    removeOnUse: false
+    spawnedOnUse: Zipties
+
+# Claw Command: borg-only flash for the security modules. Inherits the base Flash (correct sprite,
+# visualizer and its 5 charges) and auto-recharges those charges so the sec dogborg keeps a steady
+# supply — matching the disabler/stunbaton auto-recharge philosophy. HideSpawnMenu: only ever
+# provided via a borg module's hands.
+- type: entity
+  name: borg flash
+  parent: Flash
+  id: BorgFlash
+  suffix: Robot
+  categories: [ HideSpawnMenu ]
+  description: An ultrabright flashbulb wired into the chassis, dazing and blinding its target. Its capacitor recharges on its own.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 20

@@ -242,6 +242,7 @@
   - type: Tag
     tags:
     - Wooden
+    - Chair # _ClawCommand - re-listed from UnanchoredChairBase (Reminiscence ritual); tags don't merge on inheritance
   - type: StaticPrice
     price: 75
 

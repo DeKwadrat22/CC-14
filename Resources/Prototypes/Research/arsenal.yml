@@ -114,6 +114,7 @@
   - TelescopicShield
   - HoloprojectorSecurity
   - WeaponDisablerSMG
+  - BorgModuleGorillaGauntlet # _ClawCommand: riot melee cyborg module
 
 - type: technology
   id: ExplosiveTechnology
@@ -163,6 +164,7 @@
   position: 4,5
   recipeUnlocks:
   - WeaponLaserCannon
+  - BorgModuleKill # _ClawCommand: lethal combat cyborg module
   technologyPrerequisites:
   - WeaponizedLaserManipulation
 
@@ -255,6 +257,7 @@
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
+  - BorgModuleAdvancedMeasures # _ClawCommand: top-tier combat cyborg module
   technologyPrerequisites:
   - ConcentratedLaserWeaponry
 

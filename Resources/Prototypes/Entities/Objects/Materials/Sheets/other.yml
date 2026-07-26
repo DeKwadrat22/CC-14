@@ -57,6 +57,11 @@
   components:
   - type: Tag # _ClawCommand - heretic ritual input (ScorchingShark)
     tags:
+    # Sheet + ConstructionMaterial are inherited from BaseSheet and MUST be re-listed:
+    # TagComponent.Tags is a plain DataField, so a child's list replaces the parent's
+    # instead of merging. Dropping Sheet breaks anomaly generator / lathe insertion.
+    - Sheet
+    - ConstructionMaterial
     - SheetPlasma
   - type: PhysicalComposition
     materialComposition:

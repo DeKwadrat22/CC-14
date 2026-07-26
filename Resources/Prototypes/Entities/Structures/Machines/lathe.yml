@@ -327,6 +327,7 @@
     - BorgModules
     - MechParts
     - MechEquipment
+    - DogborgModulesDynamic # _ClawCommand: research-gated security cyborg modules
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
