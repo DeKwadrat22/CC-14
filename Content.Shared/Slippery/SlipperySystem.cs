@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -28,6 +29,7 @@ public sealed partial class SlipperySystem : EntitySystem
     [Dependency] private StatusEffectsSystem _status = default!;
     [Dependency] private SharedStaminaSystem _stamina = default!;
     [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SpeedModifierContactsSystem _speedModifier = default!;
 
@@ -151,6 +153,8 @@ public sealed partial class SlipperySystem : EntitySystem
 
         // Slippery is so tied to knockdown that we really just need to force it here.
         _stun.TryKnockdown(other, component.SlipData.KnockdownTime, force: true);
+
+        _mood.AddMoodlet(other, "MobSlipped"); // Claw Command
 
         _adminLogger.Add(LogType.Slip, LogImpact.Low, $"{ToPrettyString(other):mob} slipped on collision with {ToPrettyString(uid):entity}");
     }

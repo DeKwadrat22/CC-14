@@ -107,6 +107,7 @@
   - type: Dna
   - type: MindContainer
   - type: MindExaminable
+  - type: Mood # Claw Command
   - type: CanEnterCryostorage
   - type: InteractionPopup
     successChance: 1

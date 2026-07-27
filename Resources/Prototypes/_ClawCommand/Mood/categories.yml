@@ -1,0 +1,32 @@
+# Claw Command - Mood categories. Only one moodlet per category may be active at a time.
+# Alphabetically ordered.
+
+- type: moodCategory
+  id: AmphetamineAddiction
+
+- type: moodCategory
+  id: Health
+
+- type: moodCategory
+  id: HappinessAddiction
+
+- type: moodCategory
+  id: Heirloom
+
+- type: moodCategory
+  id: Hunger
+
+- type: moodCategory
+  id: ImpedrezeneAddiction
+
+- type: moodCategory
+  id: LotophagoiAddiction
+
+- type: moodCategory
+  id: NicotineAddiction
+
+- type: moodCategory
+  id: PositiveInteraction
+
+- type: moodCategory
+  id: Thirst

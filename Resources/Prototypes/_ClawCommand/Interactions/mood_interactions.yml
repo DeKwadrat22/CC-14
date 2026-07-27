@@ -12,7 +12,8 @@
     inverted: true
   action:
     # TODO: this should pull the target closer or sumth, but I need to code that action first
-    !type:NoOpAction {}
+    !type:MoodAction
+    effect: BeingHugged
   effectFailure: null
 
 # Petting someone (people) - improves the mood of the target
@@ -33,7 +34,8 @@
       whitelist:
         components: [Mind]
   action:
-    !type:NoOpAction {}
+    !type:MoodAction
+    effect: BeingPet
   effectFailure: null
 
 # Petting someone (animals) - improves the mood of the user and the target
@@ -49,5 +51,13 @@
       blacklist:
         components: [Mind]
   action:
-    !type:NoOpAction {}
+    # Petting an animal cheers up both parties.
+    !type:ComplexAction
+    actions:
+    - !type:MoodAction
+      effect: BeingPet
+    - !type:OnUserAction
+      action:
+        !type:MoodAction
+        effect: PetAnimal
   effectFailure: null

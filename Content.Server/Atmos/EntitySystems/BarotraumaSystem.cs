@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
@@ -20,6 +21,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private AlertsSystem _alertsSystem = default!;
         [Dependency] private IAdminLogManager _adminLogger= default!;
         [Dependency] private InventorySystem _inventorySystem = default!;
+        [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
         private const float UpdateTimer = 1f;
         private float _timer;
@@ -248,6 +250,7 @@ namespace Content.Server.Atmos.EntitySystems
                     }
 
                     _alertsSystem.ShowAlert(uid, barotrauma.LowPressureAlert, 2);
+                    _mood.AddMoodlet(uid, "MobLowPressure"); // Claw Command
                 }
                 else if (pressure >= Atmospherics.HazardHighPressure)
                 {
@@ -263,6 +266,7 @@ namespace Content.Server.Atmos.EntitySystems
                     }
 
                     _alertsSystem.ShowAlert(uid, barotrauma.HighPressureAlert, 2);
+                    _mood.AddMoodlet(uid, "MobHighPressure"); // Claw Command
                 }
                 else
                 {

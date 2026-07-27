@@ -1,6 +1,8 @@
 using Content.Shared.Bed.Sleep;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared._ClawCommand.Shadekin;
 using Content.Shared.Rejuvenate;
+using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 using Content.Shared.Rounding;
 using Content.Shared.Actions;
@@ -39,6 +41,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private GhostSystem _ghost = default!;
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public const string ShadekinPhaseActionId = "ShadekinActionPhase";
     public const string ShadekinSleepActionId = "ShadekinActionSleep";
@@ -308,6 +311,42 @@ public sealed partial class ShadekinSystem : EntitySystem
         return angle;
     }
 
+    /// <summary>
+    ///     Claw Command - Shadekin are at home in the dark and increasingly miserable in the light.
+    ///     Indexed by the moodlet that a given light exposure level maps to.
+    /// </summary>
+    private static readonly ProtoId<MoodEffectPrototype>[] LightMoodlets =
+    {
+        "ShadekinDarkness",
+        "ShadekinLightAnnoyed",
+        "ShadekinLightHigh",
+        "ShadekinLightExtreme",
+    };
+
+    /// <summary>
+    ///     Claw Command - Applies the one light moodlet that matches the current exposure and clears the rest.
+    ///     Exposure level 1 (dim light, or phased out into the Dark) is neutral: no moodlet either way.
+    /// </summary>
+    private void UpdateLightMood(EntityUid uid, int lightExposure)
+    {
+        var index = lightExposure switch
+        {
+            0 => 0,
+            2 => 1,
+            3 => 2,
+            4 => 3,
+            _ => -1,
+        };
+
+        for (var i = 0; i < LightMoodlets.Length; i++)
+        {
+            if (i == index)
+                _mood.AddMoodlet(uid, LightMoodlets[i]);
+            else
+                _mood.RemoveMoodlet(uid, LightMoodlets[i]);
+        }
+    }
+
     public float GetLightExposure(EntityUid uid)
     {
         var illumination = 0f;
@@ -403,6 +442,7 @@ public sealed partial class ShadekinSystem : EntitySystem
                 component.LightExposure = 0;
 
             UpdateAlert(uid, component);
+            UpdateLightMood(uid, ethereal ? 1 : (int) component.LightExposure); // Claw Command
 
             if (component.Blackeye
                 || HasComp<ShadekinCuffComponent>(uid))

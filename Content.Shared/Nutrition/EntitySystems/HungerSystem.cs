@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
@@ -22,6 +23,7 @@ public sealed partial class HungerSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private SharedJetpackSystem _jetpack = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     private static readonly ProtoId<SatiationIconPrototype> HungerIconOverfedId = "HungerIconOverfed";
     private static readonly ProtoId<SatiationIconPrototype> HungerIconPeckishId = "HungerIconPeckish";
@@ -145,6 +147,9 @@ public sealed partial class HungerSystem : EntitySystem
         {
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
         }
+
+        // Claw Command - how full you are feeds into mood.
+        _mood.AddMoodlet(uid, "Hunger" + component.CurrentThreshold);
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
         {

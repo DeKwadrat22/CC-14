@@ -17,6 +17,7 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
         - type: StationJobs
           availableJobs: # 63 jobs total w/o latejoins & interns, 82 jobs total w/ latejoins & interns
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #Command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

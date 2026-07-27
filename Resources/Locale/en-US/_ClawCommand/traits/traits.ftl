@@ -111,3 +111,13 @@ trait-animalfriend-desc = You have a way with animals. You will never be attacke
 # Claw Command - trait restriction UI hints
 trait-restricted-dept-hint = [Unavailable: conflicts with {$department} job preference]
 trait-excluded-hint = [Unavailable: conflicts with {$trait}]
+
+# Claw Command - Mood traits
+trait-sanguine-name = Sanguine
+trait-sanguine-desc = Nothing much gets you down. You have a permanent, large bonus to your mood, which usually keeps you moving quickly and rarely leaves you in a net negative mood.
+
+trait-saturnine-name = Saturnine
+trait-saturnine-desc = Nothing much cheers you up. You have a permanent, large penalty to your mood, which usually slows you down and makes a net positive mood hard to reach.
+
+trait-addiction-nicotine-name = Nicotine Addiction
+trait-addiction-nicotine-desc = You started your shift already craving a smoke. You will suffer a mood penalty until you find some nicotine, and again whenever you go too long without it.

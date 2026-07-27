@@ -18,6 +18,7 @@
           path: /Maps/Shuttles/cargo_syndicate.yml
         - type: StationJobs
           availableJobs: 
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

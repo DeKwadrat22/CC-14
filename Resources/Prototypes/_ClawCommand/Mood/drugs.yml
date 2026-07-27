@@ -1,0 +1,123 @@
+# Claw Command - Drug moodlets.
+#
+# Addictive drugs come in trios of "Benefit, Neutral, Withdrawal" sharing one category:
+#   Benefit    - applied by chance while metabolising. Becomes Withdrawal when it times out.
+#   Neutral    - applied while metabolising if you are already in Withdrawal. Suppresses the penalty
+#                without granting the high, and re-arms the Withdrawal timer. This is the addiction.
+#   Withdrawal - the penalty. Times out on its own eventually, if you can stay clean that long.
+
+# Lotophagoi Oil: overwhelming, short-lived, and brutal to come down from.
+- type: moodEffect
+  id: LotoTranscendence
+  moodChange: 30
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: LotoEnthrallment
+  category: LotophagoiAddiction
+
+- type: moodEffect
+  id: LotoEnthrallment
+  moodChange: -30
+  timeout: 600 # 10 minutes
+  category: LotophagoiAddiction
+
+# Nicotine: mild benefit, permanent withdrawal. The classic.
+- type: moodEffect
+  id: NicotineBenefit
+  moodChange: 5
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: NicotineWithdrawal
+  category: NicotineAddiction
+
+- type: moodEffect
+  id: NicotineWithdrawal
+  moodChange: -7 # No timeout
+  category: NicotineAddiction
+
+# Desoxyephedrine: powerful addiction.
+- type: moodEffect
+  id: AmphetamineBenefit
+  moodChange: 5
+  timeout: 420 # 7 minutes
+  moodletOnEnd: AmphetamineWithdrawal
+  category: AmphetamineAddiction
+
+- type: moodEffect
+  id: AmphetamineNeutral
+  moodChange: 0
+  timeout: 420 # 7 minutes
+  moodletOnEnd: AmphetamineWithdrawal
+  category: AmphetamineAddiction
+
+- type: moodEffect
+  id: AmphetamineWithdrawal
+  moodChange: -7
+  timeout: 1980 # 33 minutes
+  category: AmphetamineAddiction
+
+# Happiness: moderate addiction.
+- type: moodEffect
+  id: HappinessBenefit
+  moodChange: 5
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: HappinessWithdrawal
+  category: HappinessAddiction
+
+- type: moodEffect
+  id: HappinessNeutral
+  moodChange: 0
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: HappinessWithdrawal
+  category: HappinessAddiction
+
+- type: moodEffect
+  id: HappinessWithdrawal
+  moodChange: -5
+  timeout: 1020 # 17 minutes
+  category: HappinessAddiction
+
+# Impedrezene: moderate addiction.
+- type: moodEffect
+  id: ImpedrezeneBenefit
+  moodChange: 5
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: ImpedrezeneWithdrawal
+  category: ImpedrezeneAddiction
+
+- type: moodEffect
+  id: ImpedrezeneNeutral
+  moodChange: 0
+  timeout: 1020 # 17 minutes
+  moodletOnEnd: ImpedrezeneWithdrawal
+  category: ImpedrezeneAddiction
+
+- type: moodEffect
+  id: ImpedrezeneWithdrawal
+  moodChange: -5
+  timeout: 1020 # 17 minutes
+  category: ImpedrezeneAddiction
+
+# Non-addictive drugs and treats
+- type: moodEffect
+  id: EthanolBenefit
+  moodChange: 7
+  timeout: 300 # 5 minutes
+
+- type: moodEffect
+  id: SpaceDrugsBenefit
+  moodChange: 7
+  timeout: 300 # 5 minutes
+
+- type: moodEffect
+  id: PsicodineBenefit
+  moodChange: 5
+  timeout: 300 # 5 minutes
+
+- type: moodEffect
+  id: IceCreamBenefit
+  moodChange: 2
+  timeout: 180 # 3 minutes
+
+- type: moodEffect
+  id: IceCreamBrainFreeze
+  moodChange: -15
+  timeout: 30

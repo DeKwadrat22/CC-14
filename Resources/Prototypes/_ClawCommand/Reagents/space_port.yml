@@ -96,6 +96,14 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
+      # Claw Command - the most extreme high in the game, and the worst comedown.
+      - !type:AddMoodlet
+        moodlet: LotoTranscendence
+        guidebookShowEffectName: true
+        conditions:
+        - !type:ReagentCondition
+          reagent: LotophagoiOil
+          min: 5
 
 # === Fun ===
 

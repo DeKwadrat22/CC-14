@@ -3,6 +3,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared.Body.Systems;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body;
@@ -41,6 +42,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     [Dependency] private LungSystem _lungSystem = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
     private static readonly ProtoId<MetabolismStagePrototype> RespirationStage = new("Respiration");
@@ -335,6 +337,8 @@ public sealed partial class RespiratorSystem : EntitySystem
 
         var ev = new SuffocationEvent();
         RaiseLocalEvent(ent, ref ev);
+
+        _mood.AddMoodlet(ent.Owner, "Suffocating"); // Claw Command
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)

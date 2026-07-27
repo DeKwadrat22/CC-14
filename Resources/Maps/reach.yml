@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/27/2026 18:18:35
-  entityCount: 2969
+  time: 07/27/2026 21:11:32
+  entityCount: 2970
 maps:
 - 1
 grids:
@@ -1690,7 +1690,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -3662.245
+      secondsUntilStateChange: -3758.0813
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14289,6 +14289,17 @@ entities:
     - type: Transform
       pos: 4.5,-14.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 2970
+    components:
+    - type: Transform
+      pos: 5.5,-7.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 1957

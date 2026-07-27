@@ -17,6 +17,7 @@
       collection: MetalThud
   - type: CombatMode
   - type: NoSlip
+  - type: Mood # Claw Command
   - type: StaticPrice
     price: 1250
   - type: Fixtures

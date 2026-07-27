@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Logs;
@@ -54,6 +55,7 @@ namespace Content.Shared.Cuffs
         [Dependency] private SharedInteractionSystem _interaction = default!;
         [Dependency] private SharedPopupSystem _popup = default!;
         [Dependency] private SharedTransformSystem _transform = default!;
+        [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
         [Dependency] private UseDelaySystem _delay = default!;
         [Dependency] private SharedCombatModeSystem _combatMode = default!;
 
@@ -183,9 +185,15 @@ namespace Content.Shared.Cuffs
             _actionBlocker.UpdateCanMove(uid);
 
             if (component.CanStillInteract)
+            {
                 _alerts.ClearAlert(uid, component.CuffedAlert);
+                _mood.RemoveMoodlet(uid, "Handcuffed"); // Claw Command
+            }
             else
+            {
                 _alerts.ShowAlert(uid, component.CuffedAlert);
+                _mood.AddMoodlet(uid, "Handcuffed"); // Claw Command
+            }
 
             var ev = new CuffedStateChangeEvent();
             RaiseLocalEvent(uid, ref ev);

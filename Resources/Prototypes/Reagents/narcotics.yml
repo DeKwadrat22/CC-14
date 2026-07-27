@@ -65,6 +65,26 @@
           reagent: Desoxyephedrine
           min: 5
 
+      # Claw Command - powerful addiction. 90% addictive at 10u, 64% at 5u.
+      - !type:AddMoodlet
+        moodlet: AmphetamineBenefit
+        guidebookShowEffectName: true
+        probability: 0.12
+        conditions:
+        - !type:ReagentCondition
+          reagent: Desoxyephedrine
+          min: 1.5
+      # Taking more suppresses the withdrawal without granting the high. This is the trap.
+      - !type:AddMoodlet
+        moodlet: AmphetamineNeutral
+        guidebookShowEffectName: true
+        conditions:
+        - !type:MoodletCondition
+          moodlet: AmphetamineWithdrawal
+        - !type:ReagentCondition
+          reagent: Desoxyephedrine
+          min: 1.5
+
 - type: reagent
   id: Ephedrine
   name: reagent-name-ephedrine
@@ -242,6 +262,14 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
+  # Claw Command - nicotine is the archetypal mood-system addiction: a small, pleasant hit that
+  # decays into a permanent craving once you stop feeding it.
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:AddMoodlet
+        moodlet: NicotineBenefit
+        guidebookShowEffectName: true
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -271,6 +299,25 @@
         probability: 0.05
       - !type:Drunk # Headaches and slurring are major symptoms of brain damage, this is close enough
         boozePower: 5
+      # Claw Command - moderate addiction. 28% addictive at 10u, 3% at 5u.
+      - !type:AddMoodlet
+        moodlet: ImpedrezeneBenefit
+        guidebookShowEffectName: true
+        probability: 0.03
+        conditions:
+        - !type:ReagentCondition
+          reagent: Impedrezene
+          min: 5
+      # Taking more suppresses the withdrawal without granting the high. This is the trap.
+      - !type:AddMoodlet
+        moodlet: ImpedrezeneNeutral
+        guidebookShowEffectName: true
+        conditions:
+        - !type:MoodletCondition
+          moodlet: ImpedrezeneWithdrawal
+        - !type:ReagentCondition
+          reagent: Impedrezene
+          min: 5
 
 - type: reagent
   id: SpaceDrugs
@@ -287,6 +334,9 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
+      # Claw Command - fun, but not habit-forming.
+      - !type:AddMoodlet
+        moodlet: SpaceDrugsBenefit
 
 - type: reagent
   id: Bananadine
@@ -492,7 +542,7 @@
         - !type:ReagentCondition
           reagent: Happiness
           min: 20
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
+      - !type:PopupMessage
         type: Local
         visualType: Medium
         messages:
@@ -508,3 +558,23 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
+
+      # Claw Command - moderate addiction. Bottled joy has a price.
+      - !type:AddMoodlet
+        moodlet: HappinessBenefit
+        guidebookShowEffectName: true
+        probability: 0.05
+        conditions:
+        - !type:ReagentCondition
+          reagent: Happiness
+          min: 1.5
+      # Taking more suppresses the withdrawal without granting the high. This is the trap.
+      - !type:AddMoodlet
+        moodlet: HappinessNeutral
+        guidebookShowEffectName: true
+        conditions:
+        - !type:MoodletCondition
+          moodlet: HappinessWithdrawal
+        - !type:ReagentCondition
+          reagent: Happiness
+          min: 1.5

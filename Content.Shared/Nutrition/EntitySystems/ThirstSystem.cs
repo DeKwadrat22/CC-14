@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -22,6 +23,7 @@ public sealed partial class ThirstSystem : EntitySystem
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
     [Dependency] private SharedJetpackSystem _jetpack = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconOverhydratedId = "ThirstIconOverhydrated";
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconThirstyId = "ThirstIconThirsty";
@@ -165,6 +167,9 @@ public sealed partial class ThirstSystem : EntitySystem
 
         DirtyField(uid, component, nameof(ThirstComponent.LastThirstThreshold));
         DirtyField(uid, component, nameof(ThirstComponent.ActualDecayRate));
+
+        // Claw Command - how hydrated you are feeds into mood.
+        _mood.AddMoodlet(uid, "Thirst" + component.CurrentThirstThreshold);
 
         switch (component.CurrentThirstThreshold)
         {

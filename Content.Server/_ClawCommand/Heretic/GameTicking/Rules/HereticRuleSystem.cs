@@ -17,6 +17,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Roles;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Heretic;
 using Content.Shared.Roles;
 using Content.Shared.Store;
@@ -44,6 +45,7 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private ObjectivesSystem _objective = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private IRobustRandom _rand = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public static readonly SoundSpecifier BriefingSound =
         new SoundPathSpecifier("/Audio/_ClawCommand/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
@@ -116,6 +118,9 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
 
         _ui.SetUi(mindId, StoreUiKey.Key, new InterfaceData("StoreBoundUserInterface", -1));
         _ui.SetUi(mindId, HereticLivingHeartKey.Key, new InterfaceData("LivingHeartMenuBoundUserInterface", -1));
+
+        // Claw Command - walking the Path gives a heretic something to believe in.
+        _mood.AddMoodlet(target, "HereticFocused");
 
         return true;
     }

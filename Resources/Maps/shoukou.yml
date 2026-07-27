@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 19:02:10
-  entityCount: 13981
+  time: 07/27/2026 21:18:30
+  entityCount: 13982
 maps:
 - 1
 grids:
@@ -37917,7 +37917,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -101494.875
+      secondsUntilStateChange: -101613.984
     - type: AirlockAtmosBlockOpen
   - uid: 6042
     components:
@@ -65961,6 +65961,17 @@ entities:
     - type: Transform
       pos: 21.5,3.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 13982
+    components:
+    - type: Transform
+      pos: -56.5,8.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PositronicBrain
   entities:
   - uid: 9963

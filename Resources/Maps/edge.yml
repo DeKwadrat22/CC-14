@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 18:59:12
-  entityCount: 17465
+  time: 07/27/2026 21:20:17
+  entityCount: 17466
 maps:
 - 1
 grids:
@@ -8839,7 +8839,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -2042.395
+      secondsUntilStateChange: -2134.5457
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -81955,6 +81955,17 @@ entities:
     - type: Transform
       pos: -18.5,13.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 17466
+    components:
+    - type: Transform
+      pos: -52.5,45.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PositronicBrain
   entities:
   - uid: 12258

@@ -188,6 +188,13 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+      # Claw Command - a drink takes the edge off.
+      - !type:AddMoodlet
+        moodlet: EthanolBenefit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 5
 
 - type: reagent
   id: Gin

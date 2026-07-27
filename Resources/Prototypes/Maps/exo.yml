@@ -20,6 +20,7 @@
           path: /Maps/Shuttles/cargo_exo.yml
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

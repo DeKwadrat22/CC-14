@@ -1,0 +1,38 @@
+# Claw Command - Mood traits.
+
+- type: trait
+  id: Sanguine
+  name: trait-sanguine-name
+  description: trait-sanguine-desc
+  category: Psychological
+  cost: 6
+  excludes:
+    - Saturnine
+  components:
+    - type: PermanentMoodlets
+      moodlets:
+        - TraitSanguine
+
+- type: trait
+  id: Saturnine
+  name: trait-saturnine-name
+  description: trait-saturnine-desc
+  category: Psychological
+  cost: -6
+  excludes:
+    - Sanguine
+  components:
+    - type: PermanentMoodlets
+      moodlets:
+        - TraitSaturnine
+
+- type: trait
+  id: AddictionNicotine
+  name: trait-addiction-nicotine-name
+  description: trait-addiction-nicotine-desc
+  category: Psychological
+  cost: -1
+  components:
+    - type: PermanentMoodlets
+      moodlets:
+        - NicotineWithdrawal

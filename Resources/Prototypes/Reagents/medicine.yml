@@ -1423,7 +1423,7 @@
         effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
+      - !type:PopupMessage
         type: Local
         visualType: Medium
         messages:
@@ -1431,6 +1431,9 @@
         - "psicodine-effect-anxieties-wash-away"
         - "psicodine-effect-at-peace"
         probability: 0.2
+      # Claw Command - it is literally an anti-anxiety medication, so it should lift your mood.
+      - !type:AddMoodlet
+        moodlet: PsicodineBenefit
 
 - type: reagent
   id: PotassiumIodide

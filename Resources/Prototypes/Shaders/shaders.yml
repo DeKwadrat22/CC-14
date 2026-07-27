@@ -125,3 +125,9 @@
   id: HeatBlur
   kind: source
   path: "/Textures/Shaders/heatBlur.swsl"
+
+# Claw Command - desaturates the world, used by the mood system
+- type: shader
+  id: SaturationScale
+  kind: source
+  path: "/Textures/Shaders/saturationscale.swsl"

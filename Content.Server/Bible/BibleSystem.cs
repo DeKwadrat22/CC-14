@@ -1,6 +1,7 @@
 using Content.Server.Bible.Components;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Popups;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Bible;
@@ -33,6 +34,7 @@ namespace Content.Server.Bible
         [Dependency] private SharedAudioSystem _audio = default!;
         [Dependency] private UseDelaySystem _delay = default!;
         [Dependency] private SharedTransformSystem _transform = default!;
+        [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
         public override void Initialize()
         {
@@ -158,6 +160,8 @@ namespace Content.Server.Bible
 
             _popupSystem.PopupEntity(othersMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.Medium);
             _popupSystem.PopupEntity(selfMessage, args.User, args.User, PopupType.Large);
+
+            _mood.AddMoodlet(args.Target.Value, "GotBlessed"); // Claw Command
         }
 
         private void AddSummonVerb(EntityUid uid, SummonableComponent component, GetVerbsEvent<AlternativeVerb> args)

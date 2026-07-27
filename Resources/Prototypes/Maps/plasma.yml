@@ -20,6 +20,7 @@
           path: /Maps/Shuttles/cargo_plasma.yml
         - type: StationJobs
           availableJobs: # 66 jobs total w/o latejoins & interns, 91 jobs total w/ latejoins & interns
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

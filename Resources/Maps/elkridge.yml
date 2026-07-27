@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/27/2026 18:31:31
+  time: 07/27/2026 21:16:23
   entityCount: 18821
 maps:
 - 1
@@ -21862,12 +21862,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 51.5,32.5
-      parent: 2
-  - uid: 15845
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 42.5,31.5
       parent: 2
   - uid: 16118
     components:
@@ -93788,6 +93782,17 @@ entities:
     - type: Transform
       pos: 35.5,-27.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 15845
+    components:
+    - type: Transform
+      pos: 42.5,31.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 18793

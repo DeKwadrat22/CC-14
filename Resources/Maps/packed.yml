@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/27/2026 18:15:12
-  entityCount: 17012
+  time: 07/27/2026 21:14:14
+  entityCount: 17013
 maps:
 - 1
 grids:
@@ -9674,7 +9674,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8849.1875
+      secondsUntilStateChange: -8949.855
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -9686,7 +9686,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8853.82
+      secondsUntilStateChange: -8954.488
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -45502,7 +45502,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -45024.438
+      secondsUntilStateChange: -45125.105
 - proto: CurtainsWhiteOpen
   entities:
   - uid: 6877
@@ -51885,7 +51885,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -92318.22
+      secondsUntilStateChange: -92418.88
     - type: AirlockAtmosBlockOpen
   - uid: 7786
     components:
@@ -76533,7 +76533,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -30490.176
+      secondsUntilStateChange: -30590.844
   - uid: 11326
     components:
     - type: Transform
@@ -79754,6 +79754,17 @@ entities:
     - type: Transform
       pos: 24.5,-23.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 17013
+    components:
+    - type: Transform
+      pos: 89.5,-19.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 2961

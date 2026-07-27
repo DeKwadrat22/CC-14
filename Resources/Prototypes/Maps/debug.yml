@@ -11,6 +11,7 @@
           mapNameTemplate: "Empty"
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             Passenger: [ -1, -1 ]
             Prisoner: [ 5, 5 ] #claw command
 
@@ -27,6 +28,7 @@
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             Captain: [ -1, -1 ]
 
 - type: gameMap
@@ -42,4 +44,5 @@
           mapNameTemplate: "TEG"
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             ChiefEngineer: [ -1, -1 ]
