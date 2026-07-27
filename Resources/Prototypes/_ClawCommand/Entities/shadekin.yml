@@ -199,13 +199,22 @@
     - type: EdgeSpreader
       id: Kudzu
 
-# Parents the fork's standard ID card (correct sprite/visualizer); just sets the Anomaly's access.
+# A "fake passenger ID" (as in the Floof port): looks and reads like an ordinary passenger card
+# so the Anomaly can blend in, but carries Maintenance access. DoorBumpOpener / WhitelistChameleon
+# tags are inherited from IDCardStandard.
 - type: entity
   parent: IDCardStandard
   id: AnomalyIDCard
-  name: anomaly ID card
+  suffix: Anomaly, fake passenger
+  name: passenger ID card
   description: A card necessary to access various areas aboard the station.
   components:
+  - type: Sprite
+    layers:
+    - state: default
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: Passenger
   - type: Access
     tags:
     - Maintenance
