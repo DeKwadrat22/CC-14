@@ -1,0 +1,10 @@
+# The Dark (Shadekin hideout) parallax, ported from Floofstation.
+- type: parallax
+  id: Dark
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ClawCommand/Parallaxes/dark.png"
+      slowness: 0
+      scale: "1, 1"
+      shader: ""

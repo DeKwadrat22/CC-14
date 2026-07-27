@@ -1317,9 +1317,9 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
         ReloadPreview();
     }
     // Claw Command station char heights
-    public float MaxCharWidth = 1.1f;
+    public float MaxCharWidth = 1.2f;
     public float MinCharWidth = 0.85f;
-    public float MaxCharHeight = 1.1f;
+    public float MaxCharHeight = 1.2f;
     public float MinCharHeight = 0.9f;
     public float SizeRatio = 1.2f;
     public float AverageHeight = 176.1f;

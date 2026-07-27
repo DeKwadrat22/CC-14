@@ -12,3 +12,14 @@
   path: "/Textures/_ClawCommand/Shaders/thermal.swsl"
   params:
     pixelSize: 32.0
+
+# Shadekin dark-vision + ethereal-phase shaders ported from Floofstation.
+- type: shader
+  id: ColorTint
+  kind: source
+  path: "/Textures/_ClawCommand/Shaders/color_tint.swsl"
+
+- type: shader
+  id: Ethereal
+  kind: source
+  path: "/Textures/_ClawCommand/Shaders/ethereal.swsl"

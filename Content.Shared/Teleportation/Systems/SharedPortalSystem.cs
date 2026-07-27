@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Shared._ClawCommand.Shadekin; // CLAW COMMAND
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -87,6 +88,10 @@ public abstract partial class SharedPortalSystem : EntitySystem
 
     private void OnCollide(Entity<PortalComponent> ent, ref StartCollideEvent args)
     {
+        // CLAW COMMAND - ethereal (phased) entities pass through portals harmlessly
+        if (HasComp<EtherealComponent>(ent) || HasComp<EtherealComponent>(args.OtherEntity))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 
@@ -95,6 +100,39 @@ public abstract partial class SharedPortalSystem : EntitySystem
         // best not.
         if (Transform(subject).Anchored)
             return;
+
+        // CLAW COMMAND - dark hub blocks a rejuvenating shadekin from leaving until fully recovered
+        if (HasComp<DarkHubComponent>(ent))
+        {
+            if (TryComp<ShadekinComponent>(subject, out var hubShadekin)
+                && !hubShadekin.Blackeye && hubShadekin.Rejuvenating)
+            {
+                _popup.PopupEntity(Loc.GetString("hubportal-rejuvenate"), subject, subject, PopupType.LargeCaution);
+                return;
+            }
+        }
+
+        // CLAW COMMAND - dark portal only teleports shadekin, those pulled by a shadekin, or phase-granted entities
+        if (HasComp<DarkPortalComponent>(ent))
+        {
+            var passed = false;
+
+            if (TryComp<PullableComponent>(subject, out var darkPullable)
+                && darkPullable.BeingPulled
+                && TryComp<ShadekinComponent>(darkPullable.Puller, out var pullerKin)
+                && !pullerKin.Blackeye)
+                passed = true;
+
+            if (TryComp<ShadekinComponent>(subject, out var darkShadekin)
+                && !darkShadekin.Blackeye)
+                passed = true;
+
+            if (HasComp<EtherealPhaseComponent>(subject))
+                passed = true;
+
+            if (!passed)
+                return;
+        }
 
         // break pulls before portal enter so we don't break shit
         if (TryComp<PullableComponent>(subject, out var pullable) && pullable.BeingPulled)
@@ -151,6 +189,10 @@ public abstract partial class SharedPortalSystem : EntitySystem
 
     private void OnEndCollide(Entity<PortalComponent> ent, ref EndCollideEvent args)
     {
+        // CLAW COMMAND - ethereal (phased) entities pass through portals harmlessly
+        if (HasComp<EtherealComponent>(ent) || HasComp<EtherealComponent>(args.OtherEntity))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 

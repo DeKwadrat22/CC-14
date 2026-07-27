@@ -3,6 +3,8 @@
   abstract: true
   components:
     - type: StationData
+    # CLAW COMMAND - generates the Shadekin dark "hideout" map at round start (ported from Floofstation).
+    - type: HideoutGenerator
 
 - type: entity
   id: BaseStationCargo

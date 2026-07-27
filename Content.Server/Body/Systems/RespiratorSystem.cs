@@ -88,6 +88,10 @@ public sealed partial class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
+            // CLAW COMMAND - ethereal (phased) shadekin do not respire and cannot suffocate
+            if (HasComp<Content.Server._ClawCommand.Shadekin.RespiratorImmuneComponent>(uid))
+                continue;
+
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
             if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.

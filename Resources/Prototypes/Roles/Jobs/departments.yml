@@ -149,4 +149,5 @@
   roles:
   - Reporter
   - Psychologist
+  - Anomaly # CLAW COMMAND - Shadekin awakened role
   primary: false
