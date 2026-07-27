@@ -54,7 +54,6 @@
   category: Disabilities
   cost: -6
   restrictedDepts:
-    - Security
     - Command
   components:
     - type: Unrevivable
@@ -128,6 +127,5 @@
   cost: -4
   restrictedDepts:
     - Security
-    - Command
   components:
     - type: ImpairedMobility

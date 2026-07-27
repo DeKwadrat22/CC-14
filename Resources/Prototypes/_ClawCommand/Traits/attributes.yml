@@ -150,8 +150,6 @@
   cost: -3
   excludes:
     - SnailPaced
-  restrictedDepts:
-    - Security
   components:
     - type: GaitSpeedAdjust
       sprintFactor: 0.84
@@ -165,9 +163,6 @@
   cost: -5
   excludes:
     - Sluggish
-  restrictedDepts:
-    - Security
-    - Command
   components:
     - type: GaitSpeedAdjust
       sprintFactor: 0.68
@@ -206,7 +201,6 @@
     - Tenacity
   restrictedDepts:
     - Security
-    - Command
   components:
     - type: HealthCritAdjust
       offset: -50
@@ -221,7 +215,6 @@
     - WillToLive
   restrictedDepts:
     - Security
-    - Command
   components:
     - type: HealthDeadAdjust
       offset: -100
