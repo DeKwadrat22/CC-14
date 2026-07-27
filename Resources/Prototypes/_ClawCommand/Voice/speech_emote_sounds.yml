@@ -511,6 +511,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command: generic blink emote sound (was only on the base body sets)
+      collection: Blinks
+      params:
+        volume: -4
 
 - type: emoteSounds
   id: EmoteSoundsMaleFeroxi

@@ -16,23 +16,5 @@ nsfw-disclaimer-text =
     This game server is subject to EU General Data Protection Regulation. General data like game logs and user identifiable information (IP addresses) are kept on a secure game server in a secure datacenter as required by regulations.
     For more information visit the official EU Commission website. Logs are only utilized for server administration and game moderation purposes only and are not shared with third parties.
 
-    Legal Disclaimer:
-
-    By accessing and participating in this community, you agree to abide by the Terms of Service outlined herein. This community and all content provided are offered "as is" without any representations or warranties of any kind, either express or implied, including but not limited to the implied warranties of merchantability or fitness for a particular purpose.
-
-    No Warranty:
-    Except for our data policy, we make no representations or warranties regarding the accuracy, reliability, or completeness of the content provided within this server. Participation in this community is at your own risk.
-
-    Limitation of Liability:
-    Except for our data policy, in no event shall the community, its administrators, or any affiliated parties be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of this server or participation in any community activities, even if advised of the possibility of such damages.
-
-    Indemnification:
-    Except for our data policy, you agree to indemnify, defend, and hold harmless the community, its administrators, and any affiliated parties from and against any and all claims, liabilities, damages, losses, or expenses arising from your actions within this server.
-
-    By remaining in this server, you acknowledge that you have read, understood, and agree to the full Terms of Service. If you do not agree to these terms, you should immediately cease participation in this community.
-
-    Legal disclaimer last edited: 21st of June 2026
-
-
 nsfw-disclaimer-decline = Decline & exit
 nsfw-disclaimer-accept = Accept & continue

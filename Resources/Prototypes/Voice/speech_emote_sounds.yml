@@ -694,6 +694,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
 
 # mobs
 - type: emoteSounds
@@ -784,6 +788,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
     Laugh:
       collection: WawaLaugh
     Sneeze:

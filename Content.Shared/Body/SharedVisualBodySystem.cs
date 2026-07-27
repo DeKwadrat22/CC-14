@@ -140,6 +140,23 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
             ent.Comp.Data.State = state;
             SetOrganAppearance(ent, ent.Comp.Data);
         }
+
+        // CLAW COMMAND: re-resolve this organ's currently-applied markings against the new skin/eye
+        // color. The marking-apply path (OnMarkingsOrganApplyMarkings) only runs for categories that
+        // are present in the character profile, so species DEFAULT markings — which live on the organ
+        // and aren't stored in the profile (e.g. a Vulpkanin's default ears/tail) — would otherwise
+        // keep their creation-time color when the skin changed: the body recolored but the default
+        // markings did not. ResolveMarkings only re-derives skin-following (forcedColoring / MatchSkin)
+        // markings; user-picked colors on customizable markings are preserved.
+        if (TryComp<VisualOrganMarkingsComponent>(ent, out var markingsComp)
+            && markingsComp.Markings.Count > 0
+            && _prototype.TryIndex(markingsComp.MarkingData.Group, out var groupProto))
+        {
+            var resolved = markingsComp.Markings.ToDictionary(
+                kvp => kvp.Key,
+                kvp => ResolveMarkings(kvp.Value, ent.Comp.Profile.SkinColor, ent.Comp.Profile.EyeColor, groupProto.Appearances));
+            SetOrganMarkings((ent.Owner, markingsComp), resolved);
+        }
     }
 
     private void OnMarkingsOrganApplyMarkings(Entity<VisualOrganMarkingsComponent> ent, ref BodyRelayedEvent<ApplyOrganMarkingsEvent> args)
