@@ -13,18 +13,6 @@
     - id: WeaponEnergyMagnum
     - id: TrackingImplanter
 
-- type: entity
-  id: LockerClawCommandMaidFilled
-  parent: LockerClawCommandMaid
-  suffix: Claw Command Maid, Filled
-  components:
-  - type: StorageFill
-    contents:
-    - id: Flash
-    - id: ClothingEyesGlassesMedSec
-    - id: ClothingHandsTacticalMaidGloves
-    - id: TrackingImplanter
-
 # Ported from space/ Resources/Prototypes/Catalog/Fills/Lockers/heads.yml.
 # Referenced by Resources/Maps/centcomm.yml — without this prototype the centcomm grid
 # fails to load and the emergency shuttle never gets attached to stations.

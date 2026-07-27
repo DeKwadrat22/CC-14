@@ -132114,15 +132114,13 @@ entities:
     - type: Transform
       pos: 34.5,-43.5
       parent: 8364
-- proto: LockerClawCommandMaidFilled
+- proto: LockerClawCommandOfficerFilled
   entities:
   - uid: 28842
     components:
     - type: Transform
       pos: 10.5,-11.5
       parent: 8364
-- proto: LockerClawCommandOfficerFilled
-  entities:
   - uid: 28843
     components:
     - type: Transform
