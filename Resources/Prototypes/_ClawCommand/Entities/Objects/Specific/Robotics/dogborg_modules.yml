@@ -18,11 +18,13 @@
   name: security cyborg module
   description: A low-lethal security module — a disabler, a stunbaton, a flash, and zipties for apprehending suspects without killing them.
   components:
+  # Base RSI stays upstream's borgmodule.rsi — BaseBorgModule's inhandVisuals resolve their
+  # base-*-inhand-* states against it. Only the icon layer points at the _ClawCommand RSI.
   - type: Sprite
-    sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-stun
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-stun
   - type: ItemBorgModule
     hands:
     # Claw Command: borg-only variants auto-recharge / are reusable (see
@@ -42,10 +44,10 @@
   description: A detective's toolkit — a forensic scanner, an integrated detective PDA, and a security whistle.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-investigation
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-investigation
   - type: ItemBorgModule
     hands:
     - item: ForensicScanner
@@ -61,10 +63,10 @@
   description: A lethal response module — a self-recharging advanced laser and Mk-58 sidearm, a combat knife, and gauze for field repairs.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-kill
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-kill
   - type: ItemBorgModule
     hands:
     - item: BorgWeaponAdvancedLaser
@@ -81,10 +83,10 @@
   description: A top-tier armament — a self-recharging advanced laser, Mk-58 sidearm and xray cannon, plus a combat knife and gauze.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-Advmeasures
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-Advmeasures
   - type: ItemBorgModule
     hands:
     - item: BorgWeaponAdvancedLaser
@@ -95,6 +97,8 @@
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-Advmeasures }
 
+# Uses icon-capture rather than sharing icon-Advmeasures with the module above — otherwise the two
+# are indistinguishable in the borg's module-swap action bar.
 - type: entity
   id: BorgModuleGorillaGauntlet
   parent: [BaseBorgModule, BaseProviderBorgModule]
@@ -102,12 +106,12 @@
   description: A single, brutally effective gorilla gauntlet for sending rioters flying.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-Advmeasures
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-capture
   - type: ItemBorgModule
     hands:
     - item: WeaponGauntletGorilla
   - type: BorgModuleIcon
-    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-Advmeasures }
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-capture }

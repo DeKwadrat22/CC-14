@@ -54,6 +54,13 @@
   timeout: 1980 # 33 minutes
   category: AmphetamineAddiction
 
+# Trait version: no timeout, so an addict starts the shift hooked. Taking the drug replaces it with the
+# benefit, after which the addiction follows the normal timeouts and can be quit.
+- type: moodEffect
+  id: TraitAmphetamineWithdrawal
+  moodChange: -7
+  category: AmphetamineAddiction
+
 # Happiness: moderate addiction.
 - type: moodEffect
   id: HappinessBenefit
@@ -73,6 +80,11 @@
   id: HappinessWithdrawal
   moodChange: -5
   timeout: 1020 # 17 minutes
+  category: HappinessAddiction
+
+- type: moodEffect
+  id: TraitHappinessWithdrawal
+  moodChange: -5
   category: HappinessAddiction
 
 # Impedrezene: moderate addiction.

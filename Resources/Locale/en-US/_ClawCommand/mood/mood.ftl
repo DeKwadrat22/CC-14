@@ -85,6 +85,9 @@ mood-effect-AmphetamineNeutral = My cravings are satisfied. For now.
 mood-effect-name-AmphetamineWithdrawal = amphetamine withdrawal
 mood-effect-AmphetamineWithdrawal = That perfect focus has escaped me. I need more...
 
+mood-effect-name-TraitAmphetamineWithdrawal = amphetamine withdrawal
+mood-effect-TraitAmphetamineWithdrawal = That perfect focus has escaped me. I need more...
+
 mood-effect-name-HappinessBenefit = happiness addiction
 mood-effect-HappinessBenefit = The world is joy and laughter. There is nothing that does not bring a smile.
 
@@ -93,6 +96,9 @@ mood-effect-HappinessNeutral = My cravings are satisfied. For now.
 
 mood-effect-name-HappinessWithdrawal = happiness withdrawal
 mood-effect-HappinessWithdrawal = Joy has fled me, and only darkness and despair remains.
+
+mood-effect-name-TraitHappinessWithdrawal = happiness withdrawal
+mood-effect-TraitHappinessWithdrawal = Joy has fled me, and only darkness and despair remains.
 
 mood-effect-name-ImpedrezeneBenefit = impedrezene addiction
 mood-effect-ImpedrezeneBenefit = I am detached and light-headed. Nothing seems very important.

@@ -121,3 +121,42 @@ trait-saturnine-desc = Nothing much cheers you up. You have a permanent, large p
 
 trait-addiction-nicotine-name = Nicotine Addiction
 trait-addiction-nicotine-desc = You started your shift already craving a smoke. You will suffer a mood penalty until you find some nicotine, and again whenever you go too long without it.
+
+trait-addiction-stimulants-name = Stimulant Addiction
+trait-addiction-stimulants-desc = You started your shift chasing the focus that desoxyephedrine gives you. You will suffer a mood penalty until you get a dose, after which the addiction fades like any other, if you can stay clean.
+
+trait-addiction-happiness-name = Happiness Addiction
+trait-addiction-happiness-desc = You started your shift already missing the chemical joy of happiness. You will suffer a mood penalty until you get a dose, after which the addiction fades like any other, if you can stay clean.
+
+trait-optimist-name = Optimist
+trait-optimist-desc = You look on the bright side. Everything that lifts your mood lifts it noticeably more than it would anyone else.
+
+trait-pessimist-name = Pessimist
+trait-pessimist-desc = You have learned not to get your hopes up. Everything that would lift your mood lifts it noticeably less than it would anyone else.
+
+trait-steel-nerves-name = Steel Nerves
+trait-steel-nerves-desc = Very little rattles you. Everything that sours your mood sours it noticeably less than it would anyone else.
+
+trait-neurotic-name = Neurotic
+trait-neurotic-desc = You take setbacks hard, and dwell on them. Everything that sours your mood sours it noticeably more than it would anyone else.
+
+trait-even-tempered-name = Even-Tempered
+trait-even-tempered-desc = Good shift, bad shift, all the same to you. Everything moves your mood much less than it would anyone else, in both directions.
+
+trait-mercurial-name = Mercurial
+trait-mercurial-desc = You feel everything at full volume. Everything moves your mood much more than it would anyone else, in both directions.
+
+trait-pain-tolerance-name = Pain Tolerance
+trait-pain-tolerance-desc = You have been hurt often enough that injury barely registers. Wounds sour your mood far less than they would anyone else. This does not make you any harder to kill.
+
+trait-squeamish-name = Squeamish
+trait-squeamish-desc = The sight of your own blood turns your stomach. Wounds sour your mood considerably more than they would anyone else.
+
+trait-masochist-name = Masochist
+trait-masochist-desc = Pain reads as a thrill to you. Instead of souring your mood, your injuries lift it a little. This does not make you any harder to kill.
+
+trait-gourmand-name = Gourmand
+trait-gourmand-desc = You live to eat and drink. A full stomach cheers you up far more than it would anyone else, but hunger and thirst gnaw at you just as much harder.
+
+trait-ascetic-name = Ascetic
+trait-ascetic-desc = Food and drink are fuel, nothing more. Neither a fine meal nor an empty stomach moves your mood much either way.

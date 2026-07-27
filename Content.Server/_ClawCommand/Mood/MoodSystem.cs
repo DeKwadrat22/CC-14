@@ -63,6 +63,7 @@ public sealed partial class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, ShowMoodEffectsAlertEvent>(OnShowMoodEffects);
 
         SubscribeLocalEvent<PermanentMoodletsComponent, ComponentStartup>(OnPermanentMoodlets);
+        SubscribeLocalEvent<MoodModifierComponent, ComponentStartup>(OnMoodModifier);
     }
 
     public override void Update(float frameTime)
@@ -149,6 +150,12 @@ public sealed partial class MoodSystem : EntitySystem
 
         foreach (var moodlet in ent.Comp.Moodlets)
             RaiseLocalEvent(ent.Owner, new MoodEffectEvent(moodlet));
+    }
+
+    private void OnMoodModifier(Entity<MoodModifierComponent> ent, ref ComponentStartup args)
+    {
+        // Moodlets that were already applied need to be re-tallied through the new multipliers.
+        RefreshMood(ent.Owner);
     }
 
     #region Applying and removing moodlets
@@ -280,22 +287,58 @@ public sealed partial class MoodSystem : EntitySystem
     /// <summary>
     ///     Recalculate the mood level of an entity by summing up all moodlets.
     /// </summary>
+    /// <remarks>
+    ///     Call this after changing anything that feeds into mood math without going through a moodlet,
+    ///     such as an entity's <see cref="MoodModifierComponent"/>.
+    /// </remarks>
+    public void RefreshMood(EntityUid uid)
+    {
+        if (TryComp<MoodComponent>(uid, out var component))
+            RefreshMood(uid, component);
+    }
+
+    /// <summary>
+    ///     Recalculate the mood level of an entity by summing up all moodlets.
+    /// </summary>
     private void RefreshMood(EntityUid uid, MoodComponent component)
     {
         var amount = 0f;
+        TryComp<MoodModifierComponent>(uid, out var modifier);
 
         foreach (var (_, protoId) in component.CategorisedEffects)
         {
             if (!_proto.TryIndex(protoId, out var prototype))
                 continue;
 
-            amount += prototype.MoodChange;
+            amount += ApplyMoodModifier(protoId, prototype.Category, prototype.MoodChange, modifier);
         }
 
-        foreach (var (_, value) in component.UncategorisedEffects)
-            amount += value;
+        foreach (var (protoId, value) in component.UncategorisedEffects)
+            amount += ApplyMoodModifier(protoId, null, value, modifier);
 
         SetMood(uid, amount, component, refresh: true);
+    }
+
+    /// <summary>
+    ///     Scales one moodlet's contribution by the entity's mood modifiers, if it has any. The most specific
+    ///     multiplier wins; they don't stack with each other.
+    /// </summary>
+    private static float ApplyMoodModifier(
+        ProtoId<MoodEffectPrototype> protoId,
+        ProtoId<MoodCategoryPrototype>? category,
+        float moodChange,
+        MoodModifierComponent? modifier)
+    {
+        if (modifier is null || moodChange == 0f)
+            return moodChange;
+
+        if (modifier.EffectMultipliers.TryGetValue(protoId, out var effectMultiplier))
+            return moodChange * effectMultiplier;
+
+        if (category is { } moodCategory && modifier.CategoryMultipliers.TryGetValue(moodCategory, out var categoryMultiplier))
+            return moodChange * categoryMultiplier;
+
+        return moodChange * (moodChange > 0f ? modifier.PositiveMultiplier : modifier.NegativeMultiplier);
     }
 
     private void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
