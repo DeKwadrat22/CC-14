@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 19:28:55
-  entityCount: 12204
+  time: 07/27/2026 18:20:24
+  entityCount: 12206
 maps:
 - 1
 grids:
@@ -4483,7 +4483,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -3400.5527
+      secondsUntilStateChange: -3495.3564
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -27386,6 +27386,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: CloningPod
+  entities:
+  - uid: 9728
+    components:
+    - type: Transform
+      pos: 27.5,-27.5
+      parent: 2
 - proto: CloningPodMachineCircuitboard
   entities:
   - uid: 4327
@@ -34310,6 +34317,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -51.5,-2.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9729
+    components:
+    - type: Transform
+      pos: 29.5,-25.5
       parent: 2
     - type: Fixtures
       fixtures: {}

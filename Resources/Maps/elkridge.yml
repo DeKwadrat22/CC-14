@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 19:31:25
-  entityCount: 18817
+  time: 07/27/2026 18:31:31
+  entityCount: 18821
 maps:
 - 1
 grids:
@@ -52049,6 +52049,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: CloningPod
+  entities:
+  - uid: 18819
+    components:
+    - type: Transform
+      pos: 30.5,6.5
+      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 5817
@@ -53833,6 +53840,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 7.5,5.5
+      parent: 2
+- proto: ComputerCloningConsole
+  entities:
+  - uid: 18818
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 30.5,4.5
       parent: 2
 - proto: ComputerComms
   entities:
@@ -92450,6 +92465,14 @@ entities:
     - type: Transform
       pos: -33.679775,-20.57547
       parent: 2
+- proto: MaterialBiomass
+  entities:
+  - uid: 18820
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 37.29002,7.6503315
+      parent: 2
 - proto: MaterialCloth
   entities:
   - uid: 14051
@@ -92536,6 +92559,13 @@ entities:
     components:
     - type: Transform
       pos: 25.5,26.5
+      parent: 2
+- proto: MedicalScanner
+  entities:
+  - uid: 13484
+    components:
+    - type: Transform
+      pos: 32.5,3.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -92768,6 +92798,11 @@ entities:
     components:
     - type: Transform
       pos: 36.18178,-9.866242
+      parent: 2
+  - uid: 18821
+    components:
+    - type: Transform
+      pos: 37.04002,7.7440815
       parent: 2
 - proto: NitrogenCanister
   entities:
@@ -93916,11 +93951,6 @@ entities:
     components:
     - type: Transform
       pos: 26.5,8.5
-      parent: 2
-  - uid: 13484
-    components:
-    - type: Transform
-      pos: 32.5,3.5
       parent: 2
   - uid: 13487
     components:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 18:41:20
-  entityCount: 2965
+  time: 07/27/2026 18:18:35
+  entityCount: 2969
 maps:
 - 1
 grids:
@@ -1405,6 +1405,17 @@ entities:
     - type: ExplosionAirtightGrid
     - type: TileHistory
       chunkHistory: {}
+- proto: ActionStethoscope
+  entities:
+  - uid: 2010
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 1036
+    - type: Action
+      container: 1036
+      originalIconColor: '#FFFFFFFF'
 - proto: AdvMopItem
   entities:
   - uid: 118
@@ -1679,7 +1690,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -3480.681
+      secondsUntilStateChange: -3662.245
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -6993,6 +7004,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: CloningPod
+  entities:
+  - uid: 2445
+    components:
+    - type: Transform
+      pos: 8.5,-4.5
+      parent: 2
 - proto: ClosetChefFilled
   entities:
   - uid: 1007
@@ -7194,8 +7212,19 @@ entities:
   - uid: 1036
     components:
     - type: Transform
-      pos: 6.4035683,-4.3785286
+      pos: 4.8436947,-3.408197
       parent: 2
+    - type: Stethoscope
+      actionEntity: 2010
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 2010
 - proto: ClothingOuterHardsuitERTJanitor
   entities:
   - uid: 1019
@@ -7432,6 +7461,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,-2.5
+      parent: 2
+- proto: ComputerCloningConsole
+  entities:
+  - uid: 2437
+    components:
+    - type: Transform
+      pos: 7.5,-2.5
       parent: 2
 - proto: ComputerComms
   entities:
@@ -13991,6 +14027,13 @@ entities:
     - type: Transform
       pos: 8.5,-8.5
       parent: 2
+- proto: MaterialBiomass
+  entities:
+  - uid: 2969
+    components:
+    - type: Transform
+      pos: 10.869372,-4.783197
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 1920
@@ -14007,6 +14050,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-4.5
+      parent: 2
+- proto: MedicalScanner
+  entities:
+  - uid: 2966
+    components:
+    - type: Transform
+      pos: 6.5,-4.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -14064,6 +14114,11 @@ entities:
     components:
     - type: Transform
       pos: -16.322409,-2.5030437
+      parent: 2
+  - uid: 2968
+    components:
+    - type: Transform
+      pos: 10.869372,-4.408197
       parent: 2
 - proto: NitrogenCanister
   entities:
@@ -14586,10 +14641,10 @@ entities:
     - type: Transform
       pos: 2.5,6.5
       parent: 2
-  - uid: 2010
+  - uid: 2967
     components:
     - type: Transform
-      pos: 8.5,-4.5
+      pos: 10.5,-4.5
       parent: 2
 - proto: PoweredDimSmallLight
   entities:
@@ -17089,11 +17144,6 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 2
-  - uid: 2437
-    components:
-    - type: Transform
-      pos: 6.5,-4.5
-      parent: 2
   - uid: 2438
     components:
     - type: Transform
@@ -17128,11 +17178,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,1.5
-      parent: 2
-  - uid: 2445
-    components:
-    - type: Transform
-      pos: 8.5,-4.5
       parent: 2
 - proto: TableReinforced
   entities:

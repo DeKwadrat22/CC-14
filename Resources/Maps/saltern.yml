@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 19:05:46
-  entityCount: 24594
+  time: 07/27/2026 18:23:37
+  entityCount: 24596
 maps:
 - 5
 grids:
@@ -10676,7 +10676,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8906.577
+      secondsUntilStateChange: -9062.702
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11192,7 +11192,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -220144.44
+      secondsUntilStateChange: -220300.56
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11851,7 +11851,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8892.577
+      secondsUntilStateChange: -9048.702
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11982,7 +11982,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -168662.81
+      secondsUntilStateChange: -168818.94
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12013,7 +12013,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -163063.06
+      secondsUntilStateChange: -163219.19
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12238,7 +12238,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -140891.72
+      secondsUntilStateChange: -141047.84
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12519,7 +12519,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -211004.39
+      secondsUntilStateChange: -211160.52
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12827,7 +12827,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -232448.67
+      secondsUntilStateChange: -232604.8
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -57997,6 +57997,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: CloningPod
+  entities:
+  - uid: 4531
+    components:
+    - type: Transform
+      pos: 10.5,-17.5
+      parent: 2
 - proto: ClosetChefFilled
   entities:
   - uid: 4375
@@ -62030,7 +62037,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -197858.81
+      secondsUntilStateChange: -198014.94
   - uid: 16936
     components:
     - type: Transform
@@ -62039,7 +62046,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -197858.58
+      secondsUntilStateChange: -198014.7
 - proto: CurtainsBlueOpen
   entities:
   - uid: 16825
@@ -72079,7 +72086,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -103869.44
+      secondsUntilStateChange: -104025.56
     - type: DeviceNetwork
       deviceLists:
       - 8286
@@ -73221,7 +73228,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -230520.8
+      secondsUntilStateChange: -230676.92
     - type: DeviceNetwork
       deviceLists:
       - 5384
@@ -73932,7 +73939,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -258055.94
+      secondsUntilStateChange: -258212.06
     - type: DeviceNetwork
       deviceLists:
       - 30
@@ -74925,6 +74932,13 @@ entities:
     components:
     - type: Transform
       pos: -37.5,52.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 4626
+    components:
+    - type: Transform
+      pos: 9.5,-15.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -157133,7 +157147,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -224183.38
+      secondsUntilStateChange: -224339.5
   - uid: 11944
     components:
     - type: Transform
@@ -157596,7 +157610,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -162786.17
+      secondsUntilStateChange: -162942.3
   - uid: 7834
     components:
     - type: Transform
@@ -157664,7 +157678,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -97293.48
+      secondsUntilStateChange: -97449.6
   - uid: 11313
     components:
     - type: Transform
@@ -157676,7 +157690,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -162783.83
+      secondsUntilStateChange: -162939.95
   - uid: 13547
     components:
     - type: Transform

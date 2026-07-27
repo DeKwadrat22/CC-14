@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 19:29:19
-  entityCount: 17010
+  time: 07/27/2026 18:15:12
+  entityCount: 17012
 maps:
 - 1
 grids:
@@ -9674,7 +9674,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8402.858
+      secondsUntilStateChange: -8849.1875
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -9686,7 +9686,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8407.491
+      secondsUntilStateChange: -8853.82
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -42664,6 +42664,13 @@ entities:
     - type: Transform
       pos: 47.573128,51.68856
       parent: 2
+- proto: CloningPod
+  entities:
+  - uid: 14001
+    components:
+    - type: Transform
+      pos: 65.5,-11.5
+      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 6460
@@ -44268,12 +44275,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 54.5,8.5
       parent: 2
-  - uid: 6705
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 66.5,-11.5
-      parent: 2
 - proto: ComputerBroken
   entities:
   - uid: 6706
@@ -44338,6 +44339,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 32.5,-7.5
+      parent: 2
+- proto: ComputerCloningConsole
+  entities:
+  - uid: 14002
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 65.5,-10.5
       parent: 2
 - proto: ComputerComms
   entities:
@@ -45493,7 +45502,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -44578.11
+      secondsUntilStateChange: -45024.438
 - proto: CurtainsWhiteOpen
   entities:
   - uid: 6877
@@ -51876,7 +51885,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -91871.89
+      secondsUntilStateChange: -92318.22
     - type: AirlockAtmosBlockOpen
   - uid: 7786
     components:
@@ -53568,6 +53577,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 51.5,15.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 11623
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 66.5,-8.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -76516,7 +76533,7 @@ entities:
       parent: 2
     - type: Door
       state: Closing
-      secondsUntilStateChange: -30043.848
+      secondsUntilStateChange: -30490.176
   - uid: 11326
     components:
     - type: Transform
@@ -77743,11 +77760,6 @@ entities:
     - type: Transform
       pos: 61.5,4.5
       parent: 2
-  - uid: 11467
-    components:
-    - type: Transform
-      pos: 67.5,-11.5
-      parent: 2
   - uid: 11468
     components:
     - type: Transform
@@ -78176,6 +78188,13 @@ entities:
     - type: Transform
       pos: 86.5,1.5
       parent: 2
+- proto: MaterialBiomass
+  entities:
+  - uid: 17012
+    components:
+    - type: Transform
+      pos: 67.34946,-10.66138
+      parent: 2
 - proto: MaterialCloth
   entities:
   - uid: 11532
@@ -78289,6 +78308,13 @@ entities:
     components:
     - type: Transform
       pos: 44.5,27.5
+      parent: 2
+- proto: MedicalScanner
+  entities:
+  - uid: 14000
+    components:
+    - type: Transform
+      pos: 67.5,-11.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -78555,6 +78581,11 @@ entities:
       parent: 2
 - proto: Multitool
   entities:
+  - uid: 11467
+    components:
+    - type: Transform
+      pos: 67.59946,-10.53638
+      parent: 2
   - uid: 11592
     components:
     - type: Transform
@@ -78739,11 +78770,6 @@ entities:
     components:
     - type: Transform
       pos: 53.5,8.5
-      parent: 2
-  - uid: 11623
-    components:
-    - type: Transform
-      pos: 66.5,-10.5
       parent: 2
 - proto: OreProcessor
   entities:
@@ -83346,6 +83372,12 @@ entities:
       parent: 2
 - proto: Rack
   entities:
+  - uid: 6705
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 67.5,-10.5
+      parent: 2
   - uid: 12284
     components:
     - type: Transform
@@ -88955,6 +88987,15 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignCloning
+  entities:
+  - uid: 17011
+    components:
+    - type: Transform
+      pos: 63.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignConference
   entities:
   - uid: 13223
@@ -94437,21 +94478,6 @@ entities:
     components:
     - type: Transform
       pos: 63.5,-10.5
-      parent: 2
-  - uid: 14000
-    components:
-    - type: Transform
-      pos: 65.5,-11.5
-      parent: 2
-  - uid: 14001
-    components:
-    - type: Transform
-      pos: 65.5,-10.5
-      parent: 2
-  - uid: 14002
-    components:
-    - type: Transform
-      pos: 65.5,-9.5
       parent: 2
   - uid: 14003
     components:
