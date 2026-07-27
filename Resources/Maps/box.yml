@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 21:37:02
-  entityCount: 28850
+  time: 07/27/2026 18:36:02
+  entityCount: 28854
 maps:
 - 780
 grids:
@@ -23080,8 +23080,11 @@ entities:
   - uid: 2271
     components:
     - type: Transform
-      pos: 45.65884,-47.633858
+      pos: 46.624104,-47.398567
       parent: 8364
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 3686
     components:
     - type: Transform
@@ -70391,6 +70394,13 @@ entities:
       parent: 8364
     - type: Fixtures
       fixtures: {}
+- proto: CloningPod
+  entities:
+  - uid: 28852
+    components:
+    - type: Transform
+      pos: 46.5,-44.5
+      parent: 8364
 - proto: ClosetBombFilled
   entities:
   - uid: 2611
@@ -74307,6 +74317,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 31.5,-10.5
       parent: 8364
+- proto: ComputerCloningConsole
+  entities:
+  - uid: 28851
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 45.5,-47.5
+      parent: 8364
 - proto: ComputerComms
   entities:
   - uid: 1073
@@ -74418,14 +74436,6 @@ entities:
     components:
     - type: Transform
       pos: -8.5,-6.5
-      parent: 8364
-- proto: ComputerFrame
-  entities:
-  - uid: 19878
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 45.5,-44.5
       parent: 8364
 - proto: ComputerFundingAllocation
   entities:
@@ -91091,6 +91101,14 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-34.5
+      parent: 8364
+    - type: Fixtures
+      fixtures: {}
+  - uid: 28854
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 45.5,-45.5
       parent: 8364
     - type: Fixtures
       fixtures: {}
@@ -133017,11 +133035,6 @@ entities:
       parent: 8364
 - proto: MachineFrame
   entities:
-  - uid: 2350
-    components:
-    - type: Transform
-      pos: 45.5,-46.5
-      parent: 8364
   - uid: 14215
     components:
     - type: Transform
@@ -133529,6 +133542,13 @@ entities:
     - type: Transform
       pos: -52.5,7.5
       parent: 8364
+- proto: MaterialBiomass
+  entities:
+  - uid: 2350
+    components:
+    - type: Transform
+      pos: 44.725983,-47.601692
+      parent: 8364
 - proto: MaterialCloth
   entities:
   - uid: 6390
@@ -133633,6 +133653,13 @@ entities:
     components:
     - type: Transform
       pos: 30.5,-27.5
+      parent: 8364
+- proto: MedicalScanner
+  entities:
+  - uid: 28853
+    components:
+    - type: Transform
+      pos: 46.5,-45.5
       parent: 8364
 - proto: MedicalTechFab
   entities:
@@ -134261,6 +134288,11 @@ entities:
     components:
     - type: Transform
       pos: -5.398419,-57.63227
+      parent: 8364
+  - uid: 19878
+    components:
+    - type: Transform
+      pos: 44.429108,-47.476692
       parent: 8364
   - uid: 21442
     components:
@@ -141165,6 +141197,11 @@ entities:
     components:
     - type: Transform
       pos: 78.5,-56.5
+      parent: 8364
+  - uid: 6252
+    components:
+    - type: Transform
+      pos: 44.5,-47.5
       parent: 8364
   - uid: 6288
     components:
@@ -161908,13 +161945,6 @@ entities:
     components:
     - type: Transform
       pos: 58.5,-20.5
-      parent: 8364
-- proto: UnfinishedMachineFrame
-  entities:
-  - uid: 6252
-    components:
-    - type: Transform
-      pos: 46.5,-44.5
       parent: 8364
 - proto: UniformPrinter
   entities:
