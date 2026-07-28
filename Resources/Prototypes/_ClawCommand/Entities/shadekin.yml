@@ -218,6 +218,3 @@
   - type: Access
     tags:
     - Maintenance
-  - type: Sprite
-    layers:
-    - state: default
