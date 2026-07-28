@@ -159,10 +159,7 @@
   - type: DamageForceSay
     forceSayStringDataset: ForceSayStringDatasetShadowkin # Custom dataset, see 'Datasets/damage_force_say.yml'
   # CLAW COMMAND - Shadekin dark powers (ported from Floofstation). Blackeye by default (powerless);
-  # the Anomaly job awakens them. Dark-vision toggle via NightVision + the ShadekinDarkVision action.
-  - type: NightVision
-    drawOverlay: false
-    toggleAction: ShadekinDarkVision
-    activateSound: null
-    deactivateSound: null
+  # the Anomaly job awakens them. Darkvision is *not* listed here on purpose: it's a power of the Dark,
+  # so ShadekinSystem grants/strips the NightVision component (and its ShadekinDarkVision toggle) with
+  # the awakened state. An ordinary blackeye shadekin sees like anyone else.
   - type: Shadekin

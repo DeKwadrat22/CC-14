@@ -17,4 +17,5 @@ guide-entry-securitySOP = Security SOP
 guide-entry-briggingSOP = Brigging SOP
 guide-entry-anomSOP = Anomaly SOP
 guide-entry-ccoSOP = Claw Command Officer SOP
+guide-entry-ccmSOP = Claw Command Maid SOP
 guide-entry-loadout-info-security-weapons = Security Weapons

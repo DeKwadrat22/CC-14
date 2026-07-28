@@ -109,3 +109,9 @@
   name: guide-entry-ccoSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandOfficerStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideClawCommandMaidSOP
+  name: guide-entry-ccmSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandMaidStandardOperatingProcedure.xml"
+  filterEnabled: True
