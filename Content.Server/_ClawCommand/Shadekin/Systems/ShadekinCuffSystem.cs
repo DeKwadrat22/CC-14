@@ -1,7 +1,7 @@
-using Content.Shared.Inventory.Events;
 using Content.Shared.Clothing.Components;
+using Content.Shared.Inventory.Events;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class ShadekinCuffSystem : EntitySystem
 {

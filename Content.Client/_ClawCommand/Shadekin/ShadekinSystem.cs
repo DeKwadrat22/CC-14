@@ -24,7 +24,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ShadekinComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ShadekinComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<ShadekinComponent, ComponentShutdown>(Onhutdown);
         SubscribeLocalEvent<ShadekinComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ShadekinComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
@@ -34,7 +34,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         _overlay = new();
     }
 
-    private void OnInit(EntityUid uid, ShadekinComponent component, ComponentInit args)
+    private void OnInit(EntityUid uid, ShadekinComponent component, MapInitEvent args)
     {
         if (uid != _playerMan.LocalEntity
             || _cfg.GetCVar(CCVars.NoVisionFilters))

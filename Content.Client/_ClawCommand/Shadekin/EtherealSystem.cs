@@ -1,7 +1,7 @@
-using Content.Shared._ClawCommand.Shadekin;
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
 using Content.Client.Overlays;
+using Content.Shared._ClawCommand.Shadekin.Components;
 using Robust.Shared.Physics.Events;
 
 namespace Content.Client._ClawCommand.Shadekin;
@@ -17,8 +17,8 @@ public sealed partial class EtherealSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EtherealComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<EtherealComponent, ComponentShutdown>(Onhutdown);
+        SubscribeLocalEvent<EtherealComponent, MapInitEvent>(OnInit);
+        SubscribeLocalEvent<EtherealComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<EtherealComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<EtherealComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<EtherealComponent, PreventCollideEvent>(PreventCollision);
@@ -26,7 +26,7 @@ public sealed partial class EtherealSystem : EntitySystem
         _overlay = new();
     }
 
-    private void OnInit(EntityUid uid, EtherealComponent component, ComponentInit args)
+    private void OnInit(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
         if (uid != _playerMan.LocalEntity)
             return;
@@ -34,7 +34,7 @@ public sealed partial class EtherealSystem : EntitySystem
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void Onhutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
+    private void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
     {
         if (uid != _playerMan.LocalEntity)
             return;

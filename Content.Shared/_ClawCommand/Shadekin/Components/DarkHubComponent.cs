@@ -1,4 +1,4 @@
-namespace Content.Shared._ClawCommand.Shadekin;
+namespace Content.Shared._ClawCommand.Shadekin.Components;
 
 [RegisterComponent]
-public sealed partial class DarkHubComponent : Component { }
+public sealed partial class DarkHubComponent : Component;
