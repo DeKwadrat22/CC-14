@@ -8,10 +8,9 @@
     - id: Flash
     - id: ClothingEyesGlassesMedSec
     # - id: PinpointerNuclear
-    - id: ClothingHandsGlovesCombat
     # - id: WeaponLeverChester
     # - id: WeaponEnergyMagnum
-    - id: WeaponPistolMk58 # CLAW COMMAND - same pistol security starts with (reverted DaCookieCakes' energy magnum)
+    # - id: WeaponPistolMk58 # CLAW COMMAND - removed from locker
     - id: TrackingImplanter
 
 # Ported from space/ Resources/Prototypes/Catalog/Fills/Lockers/heads.yml.
