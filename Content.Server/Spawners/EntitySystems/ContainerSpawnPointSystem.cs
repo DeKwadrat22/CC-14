@@ -4,7 +4,6 @@ using Content.Server.Station.Systems;
 using Content.Shared.Preferences;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Spawners.EntitySystems;
@@ -13,7 +12,6 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
 {
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private GameTicker _gameTicker = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private StationSpawningSystem _stationSpawning = default!;
@@ -29,12 +27,16 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
         if (args.SpawnResult != null)
             return;
 
+
         // Claw Command: the Cryosleep SpawnPriorityPreference is intentionally ignored — the lobby
         // UI still shows/saves it (preference round-trips), but here we only handle JobEntity jobs
         // (AI, Borg) that need to be inserted into a specific container. Humanoid players fall
         // through to ArrivalsSystem, which is now subscribed before us so it always wins anyway.
-        if (!_proto.Resolve(args.Job, out var jobProto) || jobProto.JobEntity == null)
+        if (args.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Cryosleep &&
+            (!ProtoMan.Resolve(args.Job, out var jobProto) || jobProto.JobEntity == null))
+        {
             return;
+        }
 
         var query = EntityQueryEnumerator<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>();
         var possibleContainers = new List<Entity<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>>();

@@ -9,7 +9,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Shared.Nutrition.EntitySystems;
@@ -18,7 +17,6 @@ namespace Content.Shared.Nutrition.EntitySystems;
 public sealed partial class ThirstSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
@@ -58,7 +56,7 @@ public sealed partial class ThirstSystem : EntitySystem
         DirtyFields(uid, component, null, nameof(ThirstComponent.NextUpdateTime), nameof(ThirstComponent.CurrentThirstThreshold), nameof(ThirstComponent.LastThirstThreshold));
 
         TryComp(uid, out MovementSpeedModifierComponent? moveMod);
-            _movement.RefreshMovementSpeedModifiers(uid, moveMod);
+            _movement.RefreshMovementSpeedModifiers((uid, moveMod));
     }
 
     private void OnRefreshMovespeed(EntityUid uid, ThirstComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -128,15 +126,15 @@ public sealed partial class ThirstSystem : EntitySystem
         switch (component.CurrentThirstThreshold)
         {
             case ThirstThreshold.OverHydrated:
-                _prototype.Resolve(ThirstIconOverhydratedId, out prototype);
+                ProtoMan.Resolve(ThirstIconOverhydratedId, out prototype);
                 break;
 
             case ThirstThreshold.Thirsty:
-                _prototype.Resolve(ThirstIconThirstyId, out prototype);
+                ProtoMan.Resolve(ThirstIconThirstyId, out prototype);
                 break;
 
             case ThirstThreshold.Parched:
-                _prototype.Resolve(ThirstIconParchedId, out prototype);
+                ProtoMan.Resolve(ThirstIconParchedId, out prototype);
                 break;
 
             default:
@@ -152,7 +150,7 @@ public sealed partial class ThirstSystem : EntitySystem
         if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
                 TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
-            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
+            _movement.RefreshMovementSpeedModifiers((uid, movementSlowdownComponent));
         }
 
         // Update UI

@@ -117,6 +117,18 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         _net.SendSystemNetworkMessage(msg);
     }
 
+    private void OnWarpToRandomFollowedClicked()
+    {
+        var msg = new WarpToRandomFollowedRequestEvent();
+        _net.SendSystemNetworkMessage(msg);
+    }
+
+    private void OnWarpToRandomClicked()
+    {
+        var msg = new WarpToRandomRequestEvent();
+        _net.SendSystemNetworkMessage(msg);
+    }
+
     public void LoadGui()
     {
         if (Gui == null)
@@ -127,7 +139,9 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
-        Gui.ReturnToRoundPressed += ReturnToRound;
+        Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
+        Gui.TargetWindow.OnWarpToRandomClicked += OnWarpToRandomClicked;
+        Gui.ReturnToRoundPressed += ReturnToRound; // CLAW COMMAND: Added.
 
         UpdateGui();
     }
@@ -141,7 +155,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
-        Gui.ReturnToRoundPressed -= ReturnToRound;
+        Gui.ReturnToRoundPressed -= ReturnToRound; // CLAW COMMAND: Added.
 
         Gui.Hide();
     }
@@ -150,11 +164,13 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     {
         _system?.ReturnToBody();
     }
-    // Claw Command
+
+    // CLAW COMMAND: Added.
     private void ReturnToRound()
     {
         _system?.ReturnToRound();
     }
+
     private void RequestWarps()
     {
         _system?.RequestWarps();

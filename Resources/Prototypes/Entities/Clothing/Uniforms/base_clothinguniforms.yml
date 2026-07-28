@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [SolutionFood, SolutionToolNormal, Clothing]
+  parent: [SolutionFood, SolutionToolNormal, Clothing, BaseSlicingRefinable]
   id: UnsensoredClothingUniformBase
   components:
   - type: Sprite
@@ -9,6 +9,8 @@
     slots: [innerclothing]
     equipSound:
       path: /Audio/Items/jumpsuit_equip.ogg
+  - type: ToolRefinable
+    refineResult:
   - type: HideLayerClothing # Claw Command - hide genital layers when wearing a uniform
     layers:
       Genital: INNERCLOTHING

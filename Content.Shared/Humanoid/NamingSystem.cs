@@ -5,29 +5,26 @@ using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Enums;
 
-namespace Content.Shared.Humanoid;
-
-// !! CLAW COMMAND MODIFIED !! //
-
-/// <summary>
-/// Figure out how to name a humanoid with these extensions.
-/// </summary>
-public sealed partial class NamingSystem : EntitySystem
+namespace Content.Shared.Humanoid
 {
-    private static readonly ProtoId<SpeciesPrototype> FallbackSpecies = "Human";
-
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-
-    public string GetName(string species, Gender? gender = null)
+    /// <summary>
+    /// Figure out how to name a humanoid with these extensions.
+    /// </summary>
+    public sealed partial class NamingSystem : EntitySystem
     {
-        // if they have an old species or whatever just fall back to human I guess?
-        // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
-        if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
+        private static readonly ProtoId<SpeciesPrototype> FallbackSpecies = "Human";
+
+        [Dependency] private IRobustRandom _random = default!;
+
+        public string GetName(string species, Gender? gender = null)
         {
-            speciesProto = _prototypeManager.Index(FallbackSpecies);
-            Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
-        }
+            // if they have an old species or whatever just fall back to human I guess?
+            // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
+            if (!ProtoMan.TryIndex(species, out SpeciesPrototype? speciesProto))
+            {
+                speciesProto = ProtoMan.Index(FallbackSpecies);
+                Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
+            }
 
         // CC: Added 'FirstDashLast'
         // CC: Added 'FirstTheLast'
@@ -60,24 +57,25 @@ public sealed partial class NamingSystem : EntitySystem
         }
     }
 
-    public string GetFirstName(SpeciesPrototype speciesProto, Gender? gender = null)
-    {
-        switch (gender)
+        public string GetFirstName(SpeciesPrototype speciesProto, Gender? gender = null)
         {
-            case Gender.Male:
-                return _random.Pick(_prototypeManager.Index(speciesProto.MaleFirstNames));
-            case Gender.Female:
-                return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
-            default:
-                if (_random.Prob(0.5f))
-                    return _random.Pick(_prototypeManager.Index(speciesProto.MaleFirstNames));
-                else
-                    return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
+            switch (gender)
+            {
+                case Gender.Male:
+                    return _random.Pick(ProtoMan.Index(speciesProto.MaleFirstNames));
+                case Gender.Female:
+                    return _random.Pick(ProtoMan.Index(speciesProto.FemaleFirstNames));
+                default:
+                    if (_random.Prob(0.5f))
+                        return _random.Pick(ProtoMan.Index(speciesProto.MaleFirstNames));
+                    else
+                        return _random.Pick(ProtoMan.Index(speciesProto.FemaleFirstNames));
+            }
         }
-    }
 
-    public string GetLastName(SpeciesPrototype speciesProto)
-    {
-        return _random.Pick(_prototypeManager.Index(speciesProto.LastNames));
+        public string GetLastName(SpeciesPrototype speciesProto)
+        {
+            return _random.Pick(ProtoMan.Index(speciesProto.LastNames));
+        }
     }
 }

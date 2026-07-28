@@ -49,11 +49,6 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
         var query = EntityQueryEnumerator<ActiveSurveillanceCameraMonitorComponent, SurveillanceCameraMonitorComponent>();
         while (query.MoveNext(out var uid, out _, out var monitor))
         {
-            if (Paused(uid))
-            {
-                continue;
-            }
-
             monitor.LastHeartbeatSent += frameTime;
             SendHeartbeat(uid, monitor);
             monitor.LastHeartbeat += frameTime;
@@ -252,6 +247,7 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
         };
 
         _deviceNetworkSystem.QueuePacket(uid, subnetAddress, payload);
+        monitor.LastHeartbeatSent = 0;
     }
 
     private void DisconnectCamera(EntityUid uid, bool removeViewers, SurveillanceCameraMonitorComponent? monitor = null)

@@ -173,6 +173,7 @@
   - AdvMopItem
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
+  - TrashBagHolding
   technologyPrerequisites:
   - AdvancedEntertainment
   - BasicRobotics

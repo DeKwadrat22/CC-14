@@ -14,8 +14,7 @@
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
-    - id: MothroachSpawn # Claw Command
+    - id: MothroachSpawn # CLAW COMMAND: Added.
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -195,6 +194,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
+    occursDuringRoundEnd: false
     minimumPlayers: 10
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
@@ -209,6 +209,7 @@
     reoccurrenceDelay: 20
     minimumPlayers: 20
     duration: null
+    occursDuringRoundEnd: false
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -233,6 +234,7 @@
   - type: StationEvent
     weight: 6
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
@@ -261,6 +263,7 @@
   - type: StationEvent
     weight: 5
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
@@ -288,6 +291,7 @@
   - type: StationEvent
     weight: 7.5
     duration: 1
+    occursDuringRoundEnd: false
     earliestStart: 45
     minimumPlayers: 20
   - type: RandomSpawnRule
@@ -300,6 +304,7 @@
   - type: StationEvent
     weight: 1 # rare
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
@@ -507,6 +512,7 @@
     weight: 3 # Claw Command from 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+    occursDuringRoundEnd: false
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -569,17 +575,6 @@
   - type: IonStormRule
 
 - type: entity
-  id: MimicVendorRule
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    minimumPlayers: 20
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    weight: 5
-  - type: MobReplacementRule
-
-- type: entity
   id: GreytideVirus
   parent: BaseStationEventShortDelay
   components:
@@ -624,6 +619,7 @@
     reoccurrenceDelay: 20
     minimumPlayers: 4
     duration: null
+    occursDuringRoundEnd: false
   - type: SpaceSpawnRule
     spawnDistance: 0
 

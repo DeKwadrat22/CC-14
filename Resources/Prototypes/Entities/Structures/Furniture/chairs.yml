@@ -35,12 +35,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 50
       behaviors:
       - !type:DoActsBehavior
@@ -216,15 +210,6 @@
     damageModifierSet: Wood
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 25
@@ -283,15 +268,6 @@
       collection: MaleScreams
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Voice/Human/womanlaugh.ogg
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -328,15 +304,6 @@
     damageModifierSet: Web
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -372,7 +339,6 @@
       visible: false
   - type: Item
     size: Huge
-  - type: Appearance
   - type: MeleeWeapon
     damage:
       types:
@@ -425,12 +391,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 40
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 10
       behaviors:
       - !type:SpawnEntitiesBehavior
@@ -454,15 +414,6 @@
     node: chairWoodBench
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50

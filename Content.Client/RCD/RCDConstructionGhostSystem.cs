@@ -21,8 +21,8 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IPlacementManager _placementManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
 
     private Direction _placementDirection = default;
     private bool _useMirrorPrototype = false;
@@ -108,7 +108,7 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
             return;
         }
-        var prototype = _protoManager.Index(rcd.ProtoId);
+        var prototype = ProtoMan.Index(rcd.ProtoId);
 
         // Update the direction the RCD prototype based on the placer direction
         if (_placementDirection != _placementManager.Direction)

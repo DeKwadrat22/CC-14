@@ -21,7 +21,8 @@
   - type: CollideOnAnchor
   - type: Anchorable
   - type: Rotatable
-  - type: RCDDeconstructable
+    increment: 90
+  - type: RCDDeconstructable # CLAW COMMAND: Added.
     cost: 1
     delay: 2
     fx: EffectRCDDeconstruct2

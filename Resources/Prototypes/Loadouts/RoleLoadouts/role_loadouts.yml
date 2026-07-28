@@ -7,6 +7,7 @@
   - CaptainJumpsuit
   - CaptainBackpack
   - CaptainOuterClothing
+  - AssistiveItems
   - LoadoutGroupCaptainShoes # CC14
   - CCCaptainSidearm # CC14
   - Survival
@@ -31,6 +32,7 @@
   - HoPOuterClothing
   - LoadoutGroupHoPShoes # CC14
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -66,6 +68,7 @@
   - PassengerOuterClothing
   - PassengerShoes
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -86,6 +89,7 @@
   - CommonBackpack
   - BartenderOuterClothing
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -105,6 +109,7 @@
   - BartenderJumpsuit
   - CommonBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -126,6 +131,7 @@
   - CommonBackpack
   - ChefOuterClothing
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -144,6 +150,7 @@
   - LibrarianJumpsuit
   - CommonBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -163,6 +170,7 @@
   - LawyerJumpsuit
   - CommonBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -187,6 +195,7 @@
   - ChaplainOuterClothing
   - ChaplainBible
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -208,6 +217,7 @@
   - CommonBackpack
   - JanitorOuterClothing
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -228,6 +238,7 @@
   - BotanistBackpack
   - BotanistOuterClothing
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -250,6 +261,7 @@
   - ClownOuterClothing
   - ClownShoes
   - Glasses
+  - AssistiveItems
   - SurvivalClown
   - Trinkets
   - Instruments # CC14
@@ -272,7 +284,8 @@
   - MimeOuterClothing
   - MimeBelt
   - Glasses
-  - SurvivalMime
+  - AssistiveItems
+  - Survival
   - Trinkets
   - Instruments # CC14
   - CCEmergencyGear # CC14
@@ -290,7 +303,9 @@
   - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
+  - Instruments
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -300,7 +315,6 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   #- MusicianJobTrinkets
-  - Instruments
   - GroupSpeciesBreathTool
 
 # Cargo
@@ -315,6 +329,7 @@
   - QuartermasterOuterClothing
   - QuartermasterShoes
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -337,6 +352,7 @@
   - CargoTechnicianShoes
   - CargoTechnicianID
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -356,6 +372,7 @@
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -378,6 +395,7 @@
   - ChiefEngineerNeck
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
+  - AssistiveItems
   - SurvivalExtended
   - Trinkets
   - Instruments # CC14
@@ -395,6 +413,7 @@
   - GroupTankHarness
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
+  - AssistiveItems
   - SurvivalExtended
   - Trinkets
   - Instruments # CC14
@@ -416,6 +435,7 @@
   - StationEngineerOuterClothing
   - StationEngineerShoes
   - StationEngineerID
+  - AssistiveItems
   - SurvivalExtended
   - Trinkets
   - Instruments # CC14
@@ -435,6 +455,7 @@
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
+  - AssistiveItems
   - SurvivalExtended
   - Trinkets
   - Instruments # CC14
@@ -459,6 +480,7 @@
   - ScientistGloves
   - ResearchDirectorShoes
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -483,6 +505,7 @@
   - ScientistShoes
   - ScientistPDA
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -501,6 +524,7 @@
   - ResearchAssistantJumpsuit
   - ScientistBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -522,9 +546,9 @@
   - SecurityBackpack
   - SecurityBelt
   - HeadofSecurityOuterClothing
-  - HeadofSecurityShoes
-  # SecurityShoes moved - into HeadofSecurityShoes
+  - HeadofSecurityShoes # CLAW COMMAND: 'SecurityShoes'
   - CCSecurityGloves # CC14
+  - AssistiveItems
   - SurvivalSecurity
   - Trinkets
   - Instruments # CC14
@@ -545,6 +569,7 @@
   - SecurityBelt
   - WardenOuterClothing
   - SecurityShoes
+  - AssistiveItems
   - CCSecurityGloves # CC14
   - SurvivalSecurity
   - Trinkets
@@ -567,6 +592,7 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - AssistiveItems
   - CCSecurityGloves # CC14
   - SurvivalSecurity
   - Trinkets
@@ -588,6 +614,7 @@
   - SecurityBackpack
   - DetectiveOuterClothing
   - SecurityShoes
+  - AssistiveItems
   - CCSecurityGloves # CC14
   - SurvivalSecurity
   - Trinkets
@@ -605,6 +632,7 @@
   groups:
   - SecurityCadetJumpsuit
   - SecurityBackpack
+  - AssistiveItems
   - SurvivalSecurity
   - Trinkets
   - Instruments # CC14
@@ -626,6 +654,7 @@
   - ReporterOuterClothing
   - CommonBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -644,6 +673,7 @@
   - PsychologistJumpsuit
   - MedicalBackpack
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   - Instruments # CC14
@@ -694,6 +724,13 @@
   - GroupTankHarness
 
 - type: roleLoadout
+  id: RoleSurvivalExtendedAntag # Used by antagonists that spawn off-station (e.g wizards)
+  groups:
+  - SurvivalExtendedAntag
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
   id: RoleSurvivalMedical
   groups:
   - SurvivalMedical
@@ -731,6 +768,12 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+- type: roleLoadout
+  id: RoleSurvivalEVAAntag # Used by antagonists that spawn off-station AND in space (e.g ninjas)
+  groups:
+  - GroupEVATank
+  - SurvivalExtendedAntag
 
 - type: roleLoadout
   id: RoleSurvivalSpaceNinja
