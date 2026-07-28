@@ -331,6 +331,8 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    Gnash: # Claw Command: Feroxi *gnashes* vocal emote sound (ported from DeltaV)
+      collection: FeroxiGnashes
 
 - type: emoteSounds
   id: FemaleFeroxi
@@ -365,6 +367,8 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    Gnash: # Claw Command: Feroxi *gnashes* vocal emote sound (ported from DeltaV)
+      collection: FeroxiGnashes
 
 - type: emoteSounds
   id: UnisexIPC
