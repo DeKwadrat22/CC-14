@@ -1,0 +1,85 @@
+# Tile
+- type: decal
+  id: BrickTileDarkBottomLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_left_bottom
+
+- type: decal
+  id: BrickTileDarkBottomRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_right_bottom
+
+- type: decal
+  id: BrickTileDarkTopLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_left_top
+
+- type: decal
+  id: BrickTileDarkTopRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_right_top
+
+# Lines
+- type: decal
+  id: BrickTileDarkLineEBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_e_bottom
+
+- type: decal
+  id: BrickTileDarkLineETop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_e_top
+
+- type: decal
+  id: BrickTileDarkLineNLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_n_left
+
+- type: decal
+  id: BrickTileDarkLineNRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_n_right
+
+- type: decal
+  id: BrickTileDarkLineSLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_s_left
+
+- type: decal
+  id: BrickTileDarkLineSRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_s_right
+
+- type: decal
+  id: BrickTileDarkLineWBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_w_bottom
+
+- type: decal
+  id: BrickTileDarkLineWTop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: dark_line_w_top

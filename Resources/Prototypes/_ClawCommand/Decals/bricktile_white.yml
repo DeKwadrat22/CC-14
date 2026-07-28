@@ -1,0 +1,85 @@
+# Tile
+- type: decal
+  id: BrickTileWhiteBottomLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_left_bottom
+
+- type: decal
+  id: BrickTileWhiteBottomRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_right_bottom
+
+- type: decal
+  id: BrickTileWhiteTopLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_left_top
+
+- type: decal
+  id: BrickTileWhiteTopRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_right_top
+
+# Lines
+- type: decal
+  id: BrickTileWhiteLineEBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_e_bottom
+
+- type: decal
+  id: BrickTileWhiteLineETop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_e_top
+
+- type: decal
+  id: BrickTileWhiteLineNLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_n_left
+
+- type: decal
+  id: BrickTileWhiteLineNRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_n_right
+
+- type: decal
+  id: BrickTileWhiteLineSLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_s_left
+
+- type: decal
+  id: BrickTileWhiteLineSRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_s_right
+
+- type: decal
+  id: BrickTileWhiteLineWBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_w_bottom
+
+- type: decal
+  id: BrickTileWhiteLineWTop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: white_line_w_top

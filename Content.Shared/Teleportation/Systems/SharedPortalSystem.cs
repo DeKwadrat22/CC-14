@@ -1,5 +1,6 @@
 ﻿using System.Linq;
-using Content.Shared._ClawCommand.Shadekin; // CLAW COMMAND
+using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components; // CLAW COMMAND
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -102,7 +103,7 @@ public abstract partial class SharedPortalSystem : EntitySystem
             return;
 
         // CLAW COMMAND - dark hub blocks a rejuvenating shadekin from leaving until fully recovered
-        if (HasComp<DarkHubComponent>(ent))
+        if (HasComp<_ClawCommand.Shadekin.Components.DarkHubComponent>(ent))
         {
             if (TryComp<ShadekinComponent>(subject, out var hubShadekin)
                 && !hubShadekin.Blackeye && hubShadekin.Rejuvenating)
@@ -127,7 +128,7 @@ public abstract partial class SharedPortalSystem : EntitySystem
                 && !darkShadekin.Blackeye)
                 passed = true;
 
-            if (HasComp<EtherealPhaseComponent>(subject))
+            if (HasComp<_ClawCommand.Shadekin.Components.EtherealPhaseComponent>(subject))
                 passed = true;
 
             if (!passed)

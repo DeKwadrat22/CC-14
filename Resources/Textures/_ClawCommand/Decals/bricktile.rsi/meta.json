@@ -1,0 +1,119 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Edited by Flareguy, originally created by github user @moonheart08. Modified by Cookie for Claw Command.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "dark_left_bottom"
+        },
+        {
+            "name": "dark_left_top"
+        },
+        {
+            "name": "dark_line_e_bottom"
+        },
+        {
+            "name": "dark_line_e_top"
+        },
+        {
+            "name": "dark_line_n_left"
+        },
+        {
+            "name": "dark_line_n_right"
+        },
+        {
+            "name": "dark_line_s_left"
+        },
+        {
+            "name": "dark_line_s_right"
+        },
+        {
+            "name": "dark_line_w_bottom"
+        },
+        {
+            "name": "dark_line_w_top"
+        },
+        {
+            "name": "dark_right_bottom"
+        },
+        {
+            "name": "dark_right_top"
+        },
+        {
+            "name": "steel_left_bottom"
+        },
+        {
+            "name": "steel_left_top"
+        },
+        {
+            "name": "steel_line_e_bottom"
+        },
+        {
+            "name": "steel_line_e_top"
+        },
+        {
+            "name": "steel_line_n_left"
+        },
+        {
+            "name": "steel_line_n_right"
+        },
+        {
+            "name": "steel_line_s_left"
+        },
+        {
+            "name": "steel_line_s_right"
+        },
+        {
+            "name": "steel_line_w_bottom"
+        },
+        {
+            "name": "steel_line_w_top"
+        },
+        {
+            "name": "steel_right_bottom"
+        },
+        {
+            "name": "steel_right_top"
+        },
+        {
+            "name": "white_left_bottom"
+        },
+        {
+            "name": "white_left_top"
+        },
+        {
+            "name": "white_line_e_bottom"
+        },
+        {
+            "name": "white_line_e_top"
+        },
+        {
+            "name": "white_line_n_left"
+        },
+        {
+            "name": "white_line_n_right"
+        },
+        {
+            "name": "white_line_s_left"
+        },
+        {
+            "name": "white_line_s_right"
+        },
+        {
+            "name": "white_line_w_bottom"
+        },
+        {
+            "name": "white_line_w_top"
+        },
+        {
+            "name": "white_right_bottom"
+        },
+        {
+            "name": "white_right_top"
+        }
+    ]
+}

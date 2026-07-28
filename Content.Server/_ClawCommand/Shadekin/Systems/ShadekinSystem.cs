@@ -1,29 +1,30 @@
-using Content.Shared.Bed.Sleep;
+using System.Linq;
+using Content.Server.Ghost;
 using Content.Shared._ClawCommand.Mood;
 using Content.Shared._ClawCommand.Shadekin;
-using Content.Shared.Rejuvenate;
-using Robust.Shared.Prototypes;
-using Content.Shared.Alert;
-using Content.Shared.Rounding;
+using Content.Shared._ClawCommand.Shadekin.Components;
 using Content.Shared.Actions;
-using Content.Shared.Mobs;
+using Content.Shared.Alert;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Examine;
 using Content.Shared.Inventory;
-using Robust.Shared.Physics.Systems;
-using Robust.Shared.Random;
-using System.Linq;
+using Content.Shared.Light.Components;
+using Content.Shared.Maps;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
-using Content.Shared.Maps;
-using Robust.Server.GameObjects;
-using Content.Shared.Examine;
-using Content.Server.Ghost;
-using Content.Shared.Light.Components;
+using Content.Shared.Rejuvenate;
+using Content.Shared.Rounding;
 using Robust.Server.Containers;
-using Content.Shared.Mobs.Components;
+using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
-
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class ShadekinSystem : EntitySystem
 {
@@ -42,6 +43,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private TurfSystem _turf = default!;
     [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
+    [Dependency] private IGameTiming _timing = default!; // Claw Command
 
     public const string ShadekinPhaseActionId = "ShadekinActionPhase";
     public const string ShadekinSleepActionId = "ShadekinActionSleep";
@@ -52,7 +54,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         public float InnerWidth { get; set; }
         public float OuterWidth { get; set; }
     }
-    private readonly Dictionary<string, List<LightCone>> lightMasks = new()
+    private readonly Dictionary<string, List<LightCone>> _lightMasks = new()
     {
         ["/Textures/Effects/LightMasks/cone.png"] = new List<LightCone>
     {
@@ -68,14 +70,14 @@ public sealed partial class ShadekinSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ShadekinComponent, ComponentStartup>(OnInit);
+        SubscribeLocalEvent<ShadekinComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<ShadekinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadekinComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<ShadekinComponent, ShadekinPhaseActionEvent>(OnPhaseAction);
         SubscribeLocalEvent<ShadekinComponent, CritShadekinEvent>(OnCritShadekinAction);
     }
 
-    private void OnInit(EntityUid uid, ShadekinComponent component, ComponentStartup args)
+    private void OnInit(EntityUid uid, ShadekinComponent component, MapInitEvent args)
     {
         if (component.Blackeye)
             ApplyBlackEye(uid, component);
@@ -166,12 +168,18 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
 
         var price = 0;
-        if (component.LightExposure == 3)
-            price += 50;
-        else if (component.LightExposure == 2)
-            price += 30;
-        else if (component.LightExposure == 1)
-            price += 15;
+        switch (component.LightExposure)
+        {
+            case 3:
+                price += 50;
+                break;
+            case 2:
+                price += 30;
+                break;
+            case 1:
+                price += 15;
+                break;
+        }
 
         if (HasComp<EtherealComponent>(uid))
         {
@@ -213,7 +221,9 @@ public sealed partial class ShadekinSystem : EntitySystem
                 var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
                     .Where(x => HasComp<PoweredLightComponent>(x));
                 foreach (var light in lightQuery)
+                {
                     _ghost.DoGhostBooEvent(light);
+                }
 
                 var effect = SpawnAtPosition("ShadekinPhaseInEffect", Transform(uid).Coordinates);
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
@@ -231,17 +241,20 @@ public sealed partial class ShadekinSystem : EntitySystem
                 return false;
             }
 
-            EnsureComp<EtherealComponent>(uid);
-
+            var newEthereal = EnsureComp<EtherealComponent>(uid);
             if (HasComp<ShadekinComponent>(uid))
             {
                 var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
                     .Where(x => HasComp<PoweredLightComponent>(x));
                 foreach (var light in lightQuery)
+                {
                     _ghost.DoGhostBooEvent(light);
+                }
 
                 var effect = SpawnAtPosition("ShadekinPhaseOutEffect", Transform(uid).Coordinates);
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
+
+                newEthereal.LastEtherealTime = _timing.CurTime;
             }
             else
                 SpawnAtPosition("ShadekinShadow", Transform(uid).Coordinates);
@@ -262,8 +275,12 @@ public sealed partial class ShadekinSystem : EntitySystem
             return;
 
         if (TryComp<InventoryComponent>(uid, out var inventoryComponent) && _inventorySystem.TryGetSlots(uid, out var slots))
+        {
             foreach (var slot in slots)
+            {
                 _inventorySystem.TryUnequip(uid, slot.Name, true, true, false, inventoryComponent);
+            }
+        }
 
         SpawnAtPosition("ShadekinShadow", Transform(uid).Coordinates);
 
@@ -382,7 +399,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             if (pointLight.MaskPath is not null)
             {
                 var angleToTarget = GetAngle(light, pointLight, uid);
-                foreach (var cone in lightMasks[pointLight.MaskPath])
+                foreach (var cone in _lightMasks[pointLight.MaskPath])
                 {
                     var coneLight = 0f;
                     var angleAttenuation = (float) Math.Min((float) Math.Max(cone.OuterWidth - angleToTarget, 0f), cone.InnerWidth) / cone.OuterWidth;
@@ -483,7 +500,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             if (component.Rejuvenating && component.Energy >= component.MaxEnergy)
             {
                 component.Rejuvenating = false;
-                _popup.PopupEntity(Loc.GetString("shadekin-rejuvenate-compleated"), uid, uid, PopupType.Large);
+                _popup.PopupEntity(Loc.GetString("shadekin-rejuvenate-completed"), uid, uid, PopupType.Large);
             }
         }
     }

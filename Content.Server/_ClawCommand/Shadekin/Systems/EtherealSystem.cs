@@ -1,16 +1,18 @@
-using Content.Shared.Eye;
-using Content.Shared._ClawCommand.Shadekin;
-using Robust.Server.GameObjects;
-using Content.Server.Atmos.Components;
-using Content.Shared.Temperature.Components;
-using Content.Shared.Movement.Components;
-using Content.Shared.Stealth;
-using Content.Shared.Stealth.Components;
 using System.Linq;
+using Content.Server.Atmos.Components;
+using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components;
+using Content.Shared.Eye;
+using Content.Shared.Movement.Components;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Stealth;
+using Content.Shared.Stealth.Components;
+using Content.Shared.Temperature.Components;
+using Robust.Server.GameObjects;
+using Robust.Shared.Timing;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class EtherealSystem : SharedEtherealSystem
 {
@@ -18,6 +20,8 @@ public sealed partial class EtherealSystem : SharedEtherealSystem
     [Dependency] private SharedStealthSystem _stealth = default!;
     [Dependency] private EyeSystem _eye = default!;
     [Dependency] private NpcFactionSystem _factions = default!;
+    [Dependency] private IGameTiming _timing = default!; // Claw Command
+    [Dependency] private ShadekinSystem _shadekin = default!;
 
     public override void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
@@ -79,14 +83,33 @@ public sealed partial class EtherealSystem : SharedEtherealSystem
             component.SuppressedFactions = factions.Factions.ToList();
 
             foreach (var faction in factions.Factions)
+            {
                 _factions.RemoveFaction(uid, faction);
+            }
         }
         else
         {
             foreach (var faction in component.SuppressedFactions)
+            {
                 _factions.AddFaction(uid, faction);
+            }
 
             component.SuppressedFactions.Clear();
+        }
+    }
+
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<EtherealComponent>();
+        while (query.MoveNext(out var uid, out var ethereal))
+        {
+            if (_timing.CurTime < ethereal.LastEtherealTime + TimeSpan.FromSeconds(5))
+                continue;
+
+            _shadekin.Phase(uid);
         }
     }
 }

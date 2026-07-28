@@ -2,8 +2,7 @@ using Content.Shared.NPC.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-
-namespace Content.Shared._ClawCommand.Shadekin;
+namespace Content.Shared._ClawCommand.Shadekin.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class EtherealComponent : Component
@@ -18,4 +17,7 @@ public sealed partial class EtherealComponent : Component
 
     public List<ProtoId<NpcFactionPrototype>> SuppressedFactions = new();
     public bool HasDoorBumpTag;
+
+    [DataField]
+    public TimeSpan LastEtherealTime = TimeSpan.Zero;
 }

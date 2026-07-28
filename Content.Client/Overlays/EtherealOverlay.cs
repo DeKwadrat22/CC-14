@@ -4,6 +4,7 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components;
 
 namespace Content.Client.Overlays;
 
