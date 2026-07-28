@@ -19,31 +19,32 @@ public sealed partial class LeechingWalkComponent : Component
     public override bool SessionSpecific => true;
 
     [DataField]
-    public FixedPoint2 BoneHeal = -5;
+    public FixedPoint2 BoneHeal = -2.5; // Claw Command: halved rust-tile healing rate
 
     [DataField]
     public DamageSpecifier ToHeal = new()
     {
+        // Claw Command: halved rust-tile healing rate (was -1 each).
         DamageDict =
         {
-            {"Blunt", -1},
-            {"Slash", -1},
-            {"Piercing", -1},
-            {"Heat", -1},
-            {"Cold", -1},
-            {"Shock", -1},
-            {"Asphyxiation", -1},
-            {"Bloodloss", -1},
-            {"Caustic", -1},
-            {"Poison", -1},
-            {"Radiation", -1},
-            {"Cellular", -1},
-            {"Holy", -1},
+            {"Blunt", -0.5},
+            {"Slash", -0.5},
+            {"Piercing", -0.5},
+            {"Heat", -0.5},
+            {"Cold", -0.5},
+            {"Shock", -0.5},
+            {"Asphyxiation", -0.5},
+            {"Bloodloss", -0.5},
+            {"Caustic", -0.5},
+            {"Poison", -0.5},
+            {"Radiation", -0.5},
+            {"Cellular", -0.5},
+            {"Holy", -0.5},
         },
     };
 
     [DataField]
-    public float StaminaHeal = 5f;
+    public float StaminaHeal = 2.5f; // Claw Command: halved rust-tile healing rate
 
     [DataField]
     public float ChemPurgeRate = 3f;
@@ -52,7 +53,7 @@ public sealed partial class LeechingWalkComponent : Component
     public ProtoId<ReagentPrototype> ExcludedReagent = "EldritchEssence";
 
     [DataField]
-    public FixedPoint2 BloodHeal = 5f;
+    public FixedPoint2 BloodHeal = 2.5f; // Claw Command: halved rust-tile healing rate
 
     [DataField]
     public TimeSpan StunReduction = TimeSpan.FromSeconds(0.5f);

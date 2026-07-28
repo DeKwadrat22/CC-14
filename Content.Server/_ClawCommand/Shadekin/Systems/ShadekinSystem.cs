@@ -111,6 +111,11 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         component.Energy = 0;
 
+        // CLAW COMMAND: a blackeye is cut off from the Dark, so light stops mattering to them entirely.
+        // Drop the light exposure and its moodlets rather than leaving whatever was last applied stuck on.
+        component.LightExposure = 0;
+        ClearLightMood(uid);
+
         UpdateAlert(uid, component);
     }
 
@@ -359,6 +364,15 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    ///     Claw Command - Drops every light moodlet, for shadekin that light no longer applies to.
+    /// </summary>
+    private void ClearLightMood(EntityUid uid)
+    {
+        foreach (var moodlet in LightMoodlets)
+            _mood.RemoveMoodlet(uid, moodlet);
+    }
+
     public float GetLightExposure(EntityUid uid)
     {
         var illumination = 0f;
@@ -435,6 +449,14 @@ public sealed partial class ShadekinSystem : EntitySystem
                 continue;
 
             component.Accumulator = 0;
+
+            // CLAW COMMAND: light exposure is part of being connected to the Dark, so it only applies to awakened
+            // shadekin. An ordinary blackeye member of the species is severed from it and shouldn't be miserable
+            // in a lit room - previously the moodlets sat above the blackeye guard below and hit everyone.
+            // Skipping here also spares every ordinary shadekin a 20-tile light scan once a second.
+            if (component.Blackeye)
+                continue;
+
             var ethereal = HasComp<EtherealComponent>(uid);
 
             var lightExposure = 0f;
@@ -456,8 +478,8 @@ public sealed partial class ShadekinSystem : EntitySystem
             UpdateAlert(uid, component);
             UpdateLightMood(uid, ethereal ? 1 : (int) component.LightExposure); // Claw Command
 
-            if (component.Blackeye
-                || HasComp<ShadekinCuffComponent>(uid))
+            // Blackeyes already bailed above; cuffs only suppress the energy side, light still applies.
+            if (HasComp<ShadekinCuffComponent>(uid))
                 continue;
 
             if (component.Energy > component.MaxEnergy)
