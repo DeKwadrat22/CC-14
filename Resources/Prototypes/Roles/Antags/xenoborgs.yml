@@ -5,8 +5,18 @@
   setPreference: true
   objective: roles-antag-mothership-core-objective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobBorg
+  # _ClawCommand: any silicon time (Borg, Station AI, or any dogborg variant)
+  # counts toward the 5h gate, so the overlapping silicon roles unlock each other.
+  - !type:AnyRoleTimeRequirement
+    roles:
+    - JobBorg
+    - JobStationAi
+    - JobDogborgSecurity
+    - JobDogborgMedical
+    - JobDogborgEngineering
+    - JobDogborgJanitor
+    - JobDogborgService
+    - JobDogborgMining
     time: 18000  # 5 hrs
   guides: [ Xenoborgs ]
 
@@ -23,8 +33,18 @@
   setPreference: true
   objective: roles-antag-xenoborg-objective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobBorg
+  # _ClawCommand: any silicon time (Borg, Station AI, or any dogborg variant)
+  # counts toward the 5h gate, so the overlapping silicon roles unlock each other.
+  - !type:AnyRoleTimeRequirement
+    roles:
+    - JobBorg
+    - JobStationAi
+    - JobDogborgSecurity
+    - JobDogborgMedical
+    - JobDogborgEngineering
+    - JobDogborgJanitor
+    - JobDogborgService
+    - JobDogborgMining
     time: 18000  # 5 hrs
   guides: [ Xenoborgs ]
 

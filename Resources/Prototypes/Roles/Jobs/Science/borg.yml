@@ -12,6 +12,7 @@
   - !type:AnyRoleTimeRequirement
     roles:
     - JobBorg
+    - JobStationAi
     - JobDogborgSecurity
     - JobDogborgMedical
     - JobDogborgEngineering
