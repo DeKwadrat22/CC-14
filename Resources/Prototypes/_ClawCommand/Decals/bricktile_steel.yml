@@ -1,0 +1,85 @@
+# Tile
+- type: decal
+  id: BrickTileSteelBottomLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_left_bottom
+
+- type: decal
+  id: BrickTileSteelBottomRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_right_bottom
+
+- type: decal
+  id: BrickTileSteelTopLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_left_top
+
+- type: decal
+  id: BrickTileSteelTopRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_right_top
+
+# Lines
+- type: decal
+  id: BrickTileSteelLineEBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_e_bottom
+
+- type: decal
+  id: BrickTileSteelLineETop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_e_top
+
+- type: decal
+  id: BrickTileSteelLineNLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_n_left
+
+- type: decal
+  id: BrickTileSteelLineNRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_n_right
+
+- type: decal
+  id: BrickTileSteelLineSLeft
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_s_left
+
+- type: decal
+  id: BrickTileSteelLineSRight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_s_right
+
+- type: decal
+  id: BrickTileSteelLineWBottom
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_w_bottom
+
+- type: decal
+  id: BrickTileSteelLineWTop
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _ClawCommand/Decals/bricktile.rsi
+    state: steel_line_w_top

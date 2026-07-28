@@ -1,10 +1,11 @@
 using Content.Shared._ClawCommand.Shadekin;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Clothing.Components;
+using Content.Shared._ClawCommand.Shadekin.Components;
 using Content.Shared.Actions;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class EtherealPhaseSystem : EntitySystem
 {
@@ -67,7 +68,7 @@ public sealed partial class EtherealPhaseSystem : EntitySystem
     private void Toggle(EntityUid uid, EtherealPhaseComponent component, bool toggle)
     {
         if (toggle)
-            _actionsSystem.AddAction(uid, ref component.ShadekinPhaseAction, ShadekinSystem.ShadekinPhaseActionId, uid);
+            _actionsSystem.AddAction(uid, ref component.ShadekinPhaseAction, Systems.ShadekinSystem.ShadekinPhaseActionId, uid);
         else
             _actionsSystem.RemoveAction(uid, component.ShadekinPhaseAction);
     }

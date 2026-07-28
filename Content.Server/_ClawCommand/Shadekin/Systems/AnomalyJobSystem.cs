@@ -1,9 +1,9 @@
-using Content.Shared.Rejuvenate;
 using Content.Shared._ClawCommand.Shadekin;
-using Robust.Shared.Random;
+using Content.Shared.Rejuvenate;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Random;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class AnomalyJobSystem : EntitySystem
 {

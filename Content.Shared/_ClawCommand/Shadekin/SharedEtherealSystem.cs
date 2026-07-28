@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Shadekin.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Ranged.Events;

@@ -1,11 +1,12 @@
 using Content.Shared._ClawCommand.Shadekin;
-using Content.Shared.Eye;
-using Robust.Server.GameObjects;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Interaction.Events;
+using Content.Shared._ClawCommand.Shadekin.Components;
 using Content.Shared.Clothing.Components;
+using Content.Shared.Eye;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Inventory.Events;
+using Robust.Server.GameObjects;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class ShowEtherealSystem : EntitySystem
 {
@@ -55,7 +56,8 @@ public sealed partial class ShowEtherealSystem : EntitySystem
             _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
             return;
         }
-        else if (HasComp<EtherealComponent>(uid))
+
+        if (HasComp<EtherealComponent>(uid))
             return;
 
         _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);

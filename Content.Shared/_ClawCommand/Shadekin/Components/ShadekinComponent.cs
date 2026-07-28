@@ -32,7 +32,7 @@ public sealed partial class ShadekinComponent : Component
     public float Energymultiplier = 1;
 
     [DataField]
-    public float LightExposure = 0;
+    public float LightExposure;
 
     /// <summary>
     ///     If true, the shadekin is a Blackeye (This also affect spawning).
@@ -41,5 +41,5 @@ public sealed partial class ShadekinComponent : Component
     public bool Blackeye = true;
 
     [DataField]
-    public bool Rejuvenating = false;
+    public bool Rejuvenating;
 }

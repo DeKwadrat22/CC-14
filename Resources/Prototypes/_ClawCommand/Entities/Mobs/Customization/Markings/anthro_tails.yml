@@ -133,7 +133,7 @@
   # colorLinks:
   #   m_tail_bee_BEHIND_primary: m_tail_bee_FRONT_primary
   #   m_tail_bee_BEHIND_secondary: m_tail_bee_FRONT_secondary
-  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali]
+  groupWhitelist: [Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali, MarkingsShadowkin]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/skyrattails.rsi
     state: m_tail_bee_FRONT_primary

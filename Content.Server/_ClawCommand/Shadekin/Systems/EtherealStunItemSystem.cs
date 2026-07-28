@@ -1,14 +1,14 @@
-using Content.Shared.Interaction.Events;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
-using Content.Shared._ClawCommand.Shadekin;
 using System.Linq;
-using Content.Shared.Stacks;
 using Content.Server.Damage.Systems;
 using Content.Server.Ghost;
+using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components;
+using Content.Shared.Damage.Components;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Light.Components;
+using Content.Shared.Stacks;
 
-namespace Content.Server._ClawCommand.Shadekin;
+namespace Content.Server._ClawCommand.Shadekin.Systems;
 
 public sealed partial class EtherealStunItemSystem : EntitySystem
 {
@@ -43,7 +43,9 @@ public sealed partial class EtherealStunItemSystem : EntitySystem
                 var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
                     .Where(x => HasComp<PoweredLightComponent>(x));
                 foreach (var light in lightQuery)
+                {
                     _ghost.DoGhostBooEvent(light);
+                }
 
                 var effect = SpawnAtPosition("ShadekinPhaseIn2Effect", Transform(uid).Coordinates);
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
