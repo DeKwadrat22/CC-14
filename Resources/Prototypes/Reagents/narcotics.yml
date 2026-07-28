@@ -84,6 +84,19 @@
         - !type:ReagentCondition
           reagent: Desoxyephedrine
           min: 1.5
+      # Trait addicts carry the permanent TraitAmphetamineWithdrawal instead of the reagent-cycle
+      # AmphetamineWithdrawal, so the neutral-suppression path above never fired for them and only a
+      # lucky AmphetamineBenefit roll could break their craving. Recognise it too, converting them onto
+      # the normal (quittable) cycle the moment they take the drug.
+      - !type:AddMoodlet
+        moodlet: AmphetamineNeutral
+        guidebookShowEffectName: true
+        conditions:
+        - !type:MoodletCondition
+          moodlet: TraitAmphetamineWithdrawal
+        - !type:ReagentCondition
+          reagent: Desoxyephedrine
+          min: 1.5
 
 - type: reagent
   id: Ephedrine
@@ -575,6 +588,19 @@
         conditions:
         - !type:MoodletCondition
           moodlet: HappinessWithdrawal
+        - !type:ReagentCondition
+          reagent: Happiness
+          min: 1.5
+      # Trait addicts carry the permanent TraitHappinessWithdrawal instead of the reagent-cycle
+      # HappinessWithdrawal, so the neutral-suppression path above never fired for them and only a
+      # lucky HappinessBenefit roll could break their craving. Recognise it too, converting them onto
+      # the normal (quittable) cycle the moment they take the drug.
+      - !type:AddMoodlet
+        moodlet: HappinessNeutral
+        guidebookShowEffectName: true
+        conditions:
+        - !type:MoodletCondition
+          moodlet: TraitHappinessWithdrawal
         - !type:ReagentCondition
           reagent: Happiness
           min: 1.5

@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/27/2026 18:36:02
-  entityCount: 28854
+  time: 07/28/2026 17:44:15
+  entityCount: 28855
 maps:
 - 780
 grids:
@@ -135930,6 +135930,16 @@ entities:
     - type: Transform
       pos: 14.5,-40.5
       parent: 8364
+- proto: PortalShadowkin
+  entities:
+  - uid: 28855
+    components:
+    - type: Transform
+      pos: 66.5,18.5
+      parent: 8364
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 28844
