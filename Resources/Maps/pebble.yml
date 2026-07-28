@@ -61584,7 +61584,7 @@ entities:
     - type: Transform
       pos: 13.5,-18.5
       parent: 2
-- proto: LockerSteel
+- proto: ClosetJanitorFilled
   entities:
   - uid: 9110
     components:
