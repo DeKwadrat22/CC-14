@@ -172,20 +172,6 @@ public sealed partial class ShadekinSystem : EntitySystem
             return;
         }
 
-        var price = 0;
-        switch (component.LightExposure)
-        {
-            case 3:
-                price += 50;
-                break;
-            case 2:
-                price += 30;
-                break;
-            case 1:
-                price += 15;
-                break;
-        }
-
         if (HasComp<EtherealComponent>(uid))
         {
             Phase(uid);
@@ -193,7 +179,9 @@ public sealed partial class ShadekinSystem : EntitySystem
             return;
         }
 
-        price += 100;
+        // CLAW COMMAND: phasing costs a flat amount. Ambient light no longer surcharges the cost, so
+        // phase-skipping through a lit area doesn't drain extra energy from the presence of lights.
+        var price = 100;
 
         if (component.Energy >= price)
         {

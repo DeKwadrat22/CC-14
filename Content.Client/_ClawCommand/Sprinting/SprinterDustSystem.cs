@@ -11,6 +11,7 @@
 // Goob's SprinterComponent.SprintStartupSound.
 
 using Content.Shared._ClawCommand.Sprinting;
+using Content.Shared._ClawCommand.Stealth;
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
 using Robust.Shared.Audio.Systems;
@@ -23,6 +24,7 @@ public sealed partial class SprinterDustSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private StealthModeSystem _stealth = default!;
 
     public override void Update(float frameTime)
     {
@@ -41,6 +43,15 @@ public sealed partial class SprinterDustSystem : EntitySystem
             // Player must be sprinting (default movement, NOT holding Walk) and actively pressing
             // a direction. Sprinting-but-stationary doesn't kick up dust either.
             var sprintingNow = grounded && mover.Sprinting && mover.HasDirectionalMovement;
+
+            // Anyone hiding (phased shadekin, cloaked ninja, whatever gets added later) has to stay quiet.
+            // WasSprinting is still tracked so that dropping stealth mid-sprint doesn't read as a fresh
+            // rising edge and fire the puff sound the moment they become visible again.
+            if (_stealth.IsStealthed(uid))
+            {
+                dust.WasSprinting = sprintingNow;
+                continue;
+            }
 
             // Rising edge — play the puff sound exactly once when sprint begins.
             if (sprintingNow && !dust.WasSprinting)

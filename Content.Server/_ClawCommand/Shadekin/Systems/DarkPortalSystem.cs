@@ -17,36 +17,55 @@ public sealed partial class DarkPortalSystem : EntitySystem
     }
 
     private void OnPortalStartup(EntityUid uid, DarkPortalComponent component, ComponentStartup args)
-    {
-        ClearSerializedLinks(uid);
+        => RelinkAll();
 
-        var query = EntityQueryEnumerator<DarkHubComponent>();
-        while (query.MoveNext(out var hub, out _))
-            _link.TryLink(uid, hub);
-    }
-
-    /// <summary>
-    ///     The Dark is generated off the station entity's MapInit, which can land after the station grid's own
-    ///     entities have started up. Linking from the portal side alone would leave a portal that came up first
-    ///     without a destination forever, so the hub links backwards as well.
-    /// </summary>
     private void OnHubStartup(EntityUid uid, DarkHubComponent component, ComponentStartup args)
-    {
-        ClearSerializedLinks(uid);
-
-        var query = EntityQueryEnumerator<DarkPortalComponent>();
-        while (query.MoveNext(out var portal, out _))
-            _link.TryLink(portal, uid);
-    }
+        => RelinkAll();
 
     /// <summary>
-    ///     Station maps ship these portals with a saved LinkedEntity component whose entries deserialise to
-    ///     EntityUid.Invalid. A dead link still counts towards LinkedEntities, so SharedPortalSystem rolls it as a
-    ///     teleport destination (throwing on Transform()) and CanPredictTeleport bails on the count being != 1.
-    ///     Links are rebuilt from scratch below, so drop whatever the map brought with it.
+    ///     Rebuilds every dark portal ↔ hub link from scratch so the pairing is always symmetric.
+    ///
+    ///     The Dark is generated off the station entity's MapInit, which can land before or after the station grid's
+    ///     own mapped portals have started up. Mapped station portals also ship a stale serialized LinkedEntity whose
+    ///     entries deserialise to EntityUid.Invalid. The old approach used LinkedEntitySystem.TryLink, but TryLink
+    ///     short-circuits ("firstLink.Add(x) &amp;&amp; secondLink.Add(y)") — if the portal already contained the hub (stale
+    ///     link, or linked earlier in the ordering), the reverse (hub → portal) add was skipped, leaving the hub with no
+    ///     back-link, so travelling Dark → station silently did nothing until the portal was re-placed.
+    ///
+    ///     Here every portal/hub's link set is wiped and then relinked in BOTH directions explicitly via two OneWayLink
+    ///     calls, so the result is deterministic and always symmetric regardless of start-up order or what the map saved.
     /// </summary>
-    private void ClearSerializedLinks(EntityUid uid)
+    private void RelinkAll()
     {
-        RemComp<LinkedEntityComponent>(uid);
+        var portals = new List<EntityUid>();
+        var portalQuery = EntityQueryEnumerator<DarkPortalComponent>();
+        while (portalQuery.MoveNext(out var portal, out _))
+            portals.Add(portal);
+
+        var hubs = new List<EntityUid>();
+        var hubQuery = EntityQueryEnumerator<DarkHubComponent>();
+        while (hubQuery.MoveNext(out var hub, out _))
+            hubs.Add(hub);
+
+        // Nothing to pair yet (e.g. a station portal came up before the Dark was generated).
+        if (portals.Count == 0 || hubs.Count == 0)
+            return;
+
+        // Drop any stale/serialized links so we start from a clean slate.
+        foreach (var portal in portals)
+            RemComp<LinkedEntityComponent>(portal);
+        foreach (var hub in hubs)
+            RemComp<LinkedEntityComponent>(hub);
+
+        // Link every portal to every hub in both directions. Two OneWayLink calls guarantee the symmetric
+        // pairing that TryLink's short-circuit could drop.
+        foreach (var portal in portals)
+        {
+            foreach (var hub in hubs)
+            {
+                _link.OneWayLink(portal, hub);
+                _link.OneWayLink(hub, portal);
+            }
+        }
     }
 }

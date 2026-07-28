@@ -1,4 +1,7 @@
 # Shadekin ability actions ported from Floofstation.
+# NOTE: in this fork's action system the icon/useDelay/priority/etc. live on the base `Action`
+# component; `InstantAction` only carries the event. Putting icon on InstantAction leaves the
+# action-bar icon blank, so keep display fields on `Action`.
 - type: entity
   parent: BaseAction
   id: ShadekinActionPhase
@@ -6,7 +9,7 @@
   description: Shift yourself out of alignment with realspace to travel quickly to different areas.
   categories: [HideSpawnMenu]
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     checkCanInteract: false
     useDelay: 6
@@ -14,6 +17,7 @@
     icon:
       sprite: _ClawCommand/Interface/Actions/shadowkin_icons.rsi
       state: darkswap
+  - type: InstantAction
     event: !type:ShadekinPhaseActionEvent
 
 - type: entity
@@ -23,13 +27,14 @@
   description: Switches dark vision.
   categories: [HideSpawnMenu]
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     checkCanInteract: false
     priority: 5
     icon:
       sprite: _ClawCommand/Interface/Actions/shadowkin_icons.rsi
       state: shadeskip
+  - type: InstantAction
     event: !type:ToggleNightVisionEvent
 
 - type: entity
@@ -39,13 +44,14 @@
   description: Rest and recover energy faster while you sleep.
   categories: [HideSpawnMenu]
   components:
-  - type: InstantAction
+  - type: Action
     checkCanInteract: false
     checkConsciousness: false
     priority: 6
     icon:
       sprite: _ClawCommand/Interface/Actions/shadowkin_icons.rsi
       state: rest
+  - type: InstantAction
     event: !type:SleepActionEvent
 
 - type: entity
@@ -55,11 +61,12 @@
   description: rejuvenate yourself... hopefully.
   categories: [HideSpawnMenu]
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: NoItem
     checkCanInteract: false
     checkConsciousness: false
     icon:
       sprite: _ClawCommand/Interface/Actions/shadekin_extra.rsi
       state: revivify
+  - type: InstantAction
     event: !type:CritShadekinEvent
