@@ -36,6 +36,11 @@
     - item: BorgZipties
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-stun }
+  # Claw Command: security-only tag (replaces the inherited BorgModuleGeneric) so this module
+  # only fits security borg types (see dogborg_types.yml moduleWhitelist).
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
 
 - type: entity
   id: BorgModuleInvestigation
@@ -55,6 +60,9 @@
     - item: SecurityWhistle
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-investigation }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
 
 - type: entity
   id: BorgModuleKill
@@ -75,6 +83,9 @@
     - item: Gauze
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-kill }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
 
 - type: entity
   id: BorgModuleAdvancedMeasures
@@ -96,6 +107,9 @@
     - item: BorgWeaponXrayCannon
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-Advmeasures }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
 
 # Uses icon-capture rather than sharing icon-Advmeasures with the module above — otherwise the two
 # are indistinguishable in the borg's module-swap action bar.
@@ -115,3 +129,6 @@
     - item: WeaponGauntletGorilla
   - type: BorgModuleIcon
     icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-capture }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity

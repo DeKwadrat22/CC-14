@@ -9,10 +9,11 @@
   id: dogborg-k9
   selectable: false
   dummyPrototype: BorgChassisSecurityK9
-  extraModuleCount: 3
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
   radioChannels:
   - Security
   inventoryTemplateId: borgShort
@@ -32,10 +33,11 @@
   id: dogborg-k9-dark
   selectable: false
   dummyPrototype: BorgChassisSecurityK9Dark
-  extraModuleCount: 3
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
   radioChannels:
   - Security
   inventoryTemplateId: borgShort
@@ -55,10 +57,11 @@
   id: dogborg-vale-sec
   selectable: false
   dummyPrototype: BorgChassisSecurityVale
-  extraModuleCount: 3
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
   radioChannels:
   - Security
   inventoryTemplateId: borgShort
@@ -271,7 +274,7 @@
   id: dogborg-vale-serv
   selectable: false
   dummyPrototype: BorgChassisServiceVale
-  extraModuleCount: 3
+  extraModuleCount: 6 # Claw Command: service dogborg gets 6 module slots
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
