@@ -55,7 +55,7 @@
     Glass: 200
     Plastic: 200
 
-# Always available at the Exosuit Fabricator — low-lethal patrol + detective toolkit.
+# Always available at the Security TechFab only — low-lethal patrol + detective toolkit.
 - type: latheRecipePack
   id: DogborgModulesStatic
   recipes:
@@ -63,7 +63,7 @@
   - BorgModuleInvestigation
 
 # Research-gated — unlocked by Arsenal technologies (see Research/arsenal.yml). Wired into the
-# Exosuit Fabricator's dynamicPacks in Entities/Structures/Machines/lathe.yml.
+# Security TechFab's dynamicPacks in Entities/Structures/Machines/lathe.yml (security-only).
 - type: latheRecipePack
   id: DogborgModulesDynamic
   recipes:

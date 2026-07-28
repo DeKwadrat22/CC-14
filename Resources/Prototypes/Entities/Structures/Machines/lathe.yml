@@ -321,13 +321,11 @@
     - BorgModulesStatic
     - BorgLimbsStatic
     - DogborgKitsStatic # _ClawCommand: dogborg conversion kits
-    - DogborgModulesStatic # _ClawCommand: BorgModuleSecurity
     dynamicPacks:
     - Robotics
     - BorgModules
     - MechParts
     - MechEquipment
-    - DogborgModulesDynamic # _ClawCommand: research-gated security cyborg modules
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
@@ -405,6 +403,7 @@
     - SecurityPracticeStatic
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - DogborgModulesStatic # _ClawCommand: security cyborg modules (disabler/investigation) print here only
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -414,6 +413,7 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    - DogborgModulesDynamic # _ClawCommand: research-gated security cyborg modules (combat/riot)
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
