@@ -9,6 +9,7 @@
   - GuidePermits #claw command
   - GuideAlertProcedure #claw command
   - GuideAnomalySOP #claw command
+  - GuidePrisonerSOP #claw command
   - Service
   - Cargo
   - Medical
