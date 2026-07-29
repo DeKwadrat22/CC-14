@@ -33,6 +33,12 @@ Raising or lowering the alert level is a command decision and [bold]must[/bold] 
 
 Only the Captain, acting Commanding Officer, or Head of Security may set Code Red. Lowering from Red back to Blue or Green requires the same authority. The full table of what each level permits is in [textlink="Alert Procedure" link="GuideAlertProcedure"].
 
+Escalation policy differs by shift type.
+
+[bold]Secret[/bold]: Code Blue is raised automatically and may be false. Treat it as unconfirmed until a threat is established.
+
+[bold]Extended Irregular[/bold]: Code Blue requires an active threat. Intercepted hostile communications alone do not justify it unless they are specific and credibly lethal.
+
 ## Announcements and Communication
 
 Station-wide announcements are a command tool, not a personal channel. They [italic]should[/italic] be used for alert changes, evacuations, appointments, arrivals of off-station personnel, and matters affecting the whole crew.
