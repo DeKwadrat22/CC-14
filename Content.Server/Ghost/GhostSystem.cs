@@ -30,6 +30,7 @@ using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Warps;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -345,12 +346,33 @@ namespace Content.Server.Ghost
 
         private IEnumerable<GhostWarp> GetLocationWarps()
         {
-            var allQuery = AllEntityQuery<WarpPointComponent>();
+            // CLAW COMMAND - CentComm is a far-off end-game station; keep its warp points out of the ghost
+            // warp menu so it only lists real-station locations (players on CentComm still show via GetPlayerWarps).
+            var centcommMaps = GetCentcommMapUids();
+            var allQuery = AllEntityQuery<WarpPointComponent, TransformComponent>();
 
-            while (allQuery.MoveNext(out var uid, out var warp))
+            while (allQuery.MoveNext(out var uid, out var warp, out var xform))
             {
+                if (xform.MapUid is { } map && centcommMaps.Contains(map))
+                    continue;
+
                 yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
             }
+        }
+
+        // CLAW COMMAND - map entity of every station's CentComm, gathered from StationCentcommComponent, so
+        // warp points sitting on a CentComm map can be filtered out of the ghost warp list.
+        private HashSet<EntityUid> GetCentcommMapUids()
+        {
+            var maps = new HashSet<EntityUid>();
+            var query = AllEntityQuery<StationCentcommComponent>();
+            while (query.MoveNext(out var cc))
+            {
+                if (cc.MapEntity is { } map)
+                    maps.Add(map);
+            }
+
+            return maps;
         }
 
         private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)

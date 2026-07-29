@@ -46,6 +46,8 @@
     - Flash
     - Zipties
     - Zipties
+    - MagazinePistol
+    - MagazinePistol
 
 - type: job
   id: ClawCommandMaid
