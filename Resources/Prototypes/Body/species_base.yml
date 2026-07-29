@@ -28,6 +28,7 @@
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus
+  - type: Carriable #claw command - fireman carry
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
