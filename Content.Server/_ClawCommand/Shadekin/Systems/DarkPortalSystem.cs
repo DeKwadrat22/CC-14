@@ -9,6 +9,16 @@ public sealed partial class DarkPortalSystem : EntitySystem
 {
     [Dependency] private LinkedEntitySystem _link = default!;
 
+    // A portal or hub (re)started, so a relink is owed. We deliberately do NOT relink straight from
+    // ComponentStartup: mapped station portals start up in the MIDDLE of the map-load batch, and running
+    // the relink then raced the loader still deserialising each portal's own (stale) LinkedEntity data,
+    // which clobbered the fresh link and left the mapped portal dead until it was deleted and re-placed by
+    // hand. Instead we just flag it here and do the relink on the next Update tick — i.e. once the whole
+    // load batch (the station grid plus the hideout that TheDarkSystem loads via TryLoadMap) has finished
+    // and every entity's serialized components are fully applied. Re-placing a portal "worked" precisely
+    // because that startup happened after load; deferring makes every startup behave that way.
+    private bool _relinkQueued;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -17,10 +27,21 @@ public sealed partial class DarkPortalSystem : EntitySystem
     }
 
     private void OnPortalStartup(EntityUid uid, DarkPortalComponent component, ComponentStartup args)
-        => RelinkAll();
+        => _relinkQueued = true;
 
     private void OnHubStartup(EntityUid uid, DarkHubComponent component, ComponentStartup args)
-        => RelinkAll();
+        => _relinkQueued = true;
+
+    public override void Update(float frameTime)
+    {
+        if (!_relinkQueued)
+            return;
+
+        // Cleared before RelinkAll: if a portal exists but the hub hasn't spawned yet (or vice versa)
+        // RelinkAll no-ops, and the still-missing side's own startup will re-flag us next time.
+        _relinkQueued = false;
+        RelinkAll();
+    }
 
     /// <summary>
     ///     Rebuilds every dark portal ↔ hub link from scratch so the pairing is always symmetric.
