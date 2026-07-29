@@ -63104,10 +63104,6 @@ entities:
     - type: Transform
       pos: 33.5,26.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PosterBroken
   entities:
   - uid: 9358

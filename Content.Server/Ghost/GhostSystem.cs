@@ -344,19 +344,26 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
+        // CLAW COMMAND - the single CentComm warp kept in the ghost menu (its top-level entry). Granular
+        // CentComm sub-markers (e.g. "Central Command - Docking Area") are filtered out instead.
+        private const string CentcommGhostWarpName = "Central Command";
+
         private IEnumerable<GhostWarp> GetLocationWarps()
         {
-            // CLAW COMMAND - CentComm is a far-off end-game station; keep its warp points out of the ghost
-            // warp menu so it only lists real-station locations (players on CentComm still show via GetPlayerWarps).
+            // CLAW COMMAND - CentComm is a far-off end-game station. Keep its granular sub-markers out of the
+            // ghost warp menu, but still expose the top-level "Central Command" entry so ghosts can reach it
+            // (players on CentComm remain reachable via GetPlayerWarps).
             var centcommMaps = GetCentcommMapUids();
             var allQuery = AllEntityQuery<WarpPointComponent, TransformComponent>();
 
             while (allQuery.MoveNext(out var uid, out var warp, out var xform))
             {
-                if (xform.MapUid is { } map && centcommMaps.Contains(map))
+                var location = warp.Location ?? Name(uid);
+
+                if (xform.MapUid is { } map && centcommMaps.Contains(map) && location != CentcommGhostWarpName)
                     continue;
 
-                yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
+                yield return new GhostWarp(GetNetEntity(uid), location, true);
             }
         }
 

@@ -276,7 +276,7 @@ namespace Content.Server.GameTicking
             // PendingClockInComponent is present, ArrivalsSystem owns the announcement and fires
             // it on EntParentChangedMessage. Players who bypass arrivals (direct spawn modes,
             // wizard, nukeops, etc.) still get the announcement immediately here.
-            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob))
+            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob) && jobPrototype.AnnounceArrival)
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {

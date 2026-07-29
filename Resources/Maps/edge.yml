@@ -81962,10 +81962,6 @@ entities:
     - type: Transform
       pos: -52.5,45.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PositronicBrain
   entities:
   - uid: 12258

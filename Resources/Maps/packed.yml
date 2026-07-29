@@ -79761,10 +79761,6 @@ entities:
     - type: Transform
       pos: 89.5,-19.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 2961

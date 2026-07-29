@@ -57,6 +57,14 @@ namespace Content.Shared.Roles
         public bool JoinNotifyCrew { get; private set; } = false;
 
         /// <summary>
+        ///     claw command - When false, no arrival announcement is made for this job at all,
+        ///     neither on spawn nor when they first set foot on the station. Used by roles that
+        ///     are not crew and should not show up in the arrivals feed, e.g. Anomaly (Shadekin).
+        /// </summary>
+        [DataField]
+        public bool AnnounceArrival { get; private set; } = true;
+
+        /// <summary>
         ///     When true - the player will recieve a message about importancy of their job.
         /// </summary>
         [DataField]

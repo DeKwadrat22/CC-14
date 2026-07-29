@@ -14296,10 +14296,6 @@ entities:
     - type: Transform
       pos: 5.5,-7.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 1957

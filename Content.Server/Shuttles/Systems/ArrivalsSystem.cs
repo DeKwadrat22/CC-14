@@ -360,6 +360,10 @@ public sealed partial class ArrivalsSystem : EntitySystem
 
         if (_mind.TryGetMind(mob, out var mindId, out _) && _jobs.MindTryGetJob(mindId, out var jobProto))
         {
+            // claw command - roles flagged as non-announcing (e.g. Anomaly/Shadekin) never hit the arrivals feed.
+            if (!jobProto.AnnounceArrival)
+                return;
+
             joinNotifyCrew = jobProto.JoinNotifyCrew;
             jobName = jobProto.LocalizedName;
         }
