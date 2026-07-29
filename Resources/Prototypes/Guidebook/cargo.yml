@@ -3,6 +3,7 @@
   name: guide-entry-cargo
   text: "/ServerInfo/Guidebook/Cargo/Cargo.xml"
   children:
+  - GuideCargoSOP #claw command
   - CargoBounties
   - Salvage
 

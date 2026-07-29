@@ -115,3 +115,27 @@
   name: guide-entry-ccmSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandMaidStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideCommandSOP
+  name: guide-entry-commandSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CommandStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideMedicalSOP
+  name: guide-entry-medicalSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/MedicalStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideServiceSOP
+  name: guide-entry-serviceSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ServiceStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCargoSOP
+  name: guide-entry-cargoSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CargoStandardOperatingProcedure.xml"
+  filterEnabled: True
