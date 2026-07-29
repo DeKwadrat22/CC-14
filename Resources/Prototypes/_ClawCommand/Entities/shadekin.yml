@@ -207,7 +207,7 @@
   parent: Clothing
   id: AnomalyIDCard
   name: anomaly ID card
-  description: A card necessary to access various areas aboard the station. This one's clearly drawn on paper - act natural.
+  description: A card necessary to access various areas aboard the station. This one's clearly drawn on paper, huh?
   components:
   - type: Sprite
     sprite: Objects/Misc/id_cards.rsi

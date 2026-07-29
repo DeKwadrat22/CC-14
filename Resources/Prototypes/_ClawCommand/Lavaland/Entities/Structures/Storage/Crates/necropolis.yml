@@ -47,6 +47,8 @@
     children:
     - id: LavalandCursedHeart
     - id: ClothingOuterArmorCult
+    - id: BorgModuleSalvageArmor # CLAW COMMAND - salvage-only armour plating module (lavaland loot)
+      weight: 0.6
     # - id: LavalandVampirismCrystal # Phase 6: PKA upgrade not yet ported
     # TODO add more interesting obtain methods for crusher upgrades (from megafauna, ruins, etc.)
     # - id: CrusherUpgradeMainRudeBuster # Phase 6: crusher upgrade not yet ported

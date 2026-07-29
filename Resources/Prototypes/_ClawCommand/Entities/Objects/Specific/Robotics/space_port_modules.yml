@@ -71,6 +71,35 @@
     - item: WeaponGrapplingGun
     - item: HandheldGPSBasic
 
+# _ClawCommand - salvage-only armour plating module. Loot-only (space + lavaland). Parented to
+# BaseBorgModuleCargo so only salvage cyborgs (vanilla 'mining' + dogborg-blade) can install it.
+# Passive: ComponentBorgModule grants a DamageProtectionBuff (self-applied on the chassis via
+# DamageModifyEvent) plus ExplosionResistance while installed, both removed cleanly on uninstall.
+# Matches the security-borg armour values: blunt/slash 50%, piercing 45%, heat 40%, explosion 35%.
+- type: entity
+  id: BorgModuleSalvageArmor
+  parent: BaseBorgModuleCargo
+  name: salvage plating cyborg module
+  description: A slab of ruggedised armour plating salvaged from the deep. Bolts onto a salvage cyborg to shrug off blows, blades, punctures, heat and blasts.
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-mining-adv
+  - type: ComponentBorgModule
+    components:
+    - type: DamageProtectionBuff
+      modifiers:
+        salvagePlating:
+          id: ModifierSetSalvageBorgPlating
+          coefficients:
+            Blunt: 0.5
+            Slash: 0.5
+            Piercing: 0.55
+            Heat: 0.6
+    - type: ExplosionResistance
+      damageCoefficient: 0.65
+
 # === Janitor ===
 
 - type: entity
