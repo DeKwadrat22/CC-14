@@ -41,6 +41,34 @@ public sealed partial class PullableComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> PulledAlert = "Pulled";
+
+    #region Grab intent - claw command
+
+    /// <summary>
+    /// Alert severity shown on the victim for each grab stage.
+    /// </summary>
+    [DataField]
+    public Dictionary<Systems.GrabStage, short> PulledAlertSeverity = new()
+    {
+        { Systems.GrabStage.No, 0 },
+        { Systems.GrabStage.Soft, 1 },
+        { Systems.GrabStage.Hard, 2 },
+        { Systems.GrabStage.Suffocate, 3 },
+    };
+
+    [AutoNetworkedField, DataField]
+    public Systems.GrabStage GrabStage = Systems.GrabStage.No;
+
+    /// <summary>
+    /// Resolved chance of breaking free on any one attempt, after mass is factored in.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public float GrabEscapeChance = 1f;
+
+    [AutoNetworkedField]
+    public TimeSpan NextEscapeAttempt = TimeSpan.Zero;
+
+    #endregion
 }
 
 public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;
