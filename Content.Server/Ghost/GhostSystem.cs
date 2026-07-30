@@ -475,7 +475,7 @@ namespace Content.Server.Ghost
         }
 
         public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
-            bool canReturn = false)
+            bool canReturn = false, ICommonSession? session = null)
         {
             if (!Resolve(mind, ref mind.Comp))
                 return null;
@@ -498,12 +498,15 @@ namespace Content.Server.Ghost
 
             var ghostPrototype = GameTicker.ObserverPrototypeName;
 
-            if (mind.Comp.CurrentEntity is not null)
+            // Claw Command - VIP ghosts. The entity check only works when the mind is still in a body, which it
+            // isn't when observing straight from the lobby, so fall back to the player's session.
+            if (session == null && mind.Comp.UserId is { } vipUserId)
+                _player.TryGetSessionById(vipUserId, out session);
+
+            if (mind.Comp.CurrentEntity is { } vipBody && _adminManager.HasAdminFlag(vipBody, AdminFlags.VIP)
+                || session != null && _adminManager.HasAdminFlag(session, AdminFlags.VIP))
             {
-                if (_adminManager.HasAdminFlag(mind.Comp.CurrentEntity.Value, AdminFlags.VIP))
-                {
-                    ghostPrototype = "MobObserverVip";
-                }
+                ghostPrototype = "MobObserverVip";
             }
 
             var ghost = SpawnAtPosition(ghostPrototype, spawnPosition.Value);
@@ -519,7 +522,7 @@ namespace Content.Server.Ghost
             // However, that should rarely happen.
             if (!string.IsNullOrWhiteSpace(mind.Comp.CharacterName))
                 _metaData.SetEntityName(ghost, mind.Comp.CharacterName);
-            else if (mind.Comp.UserId is { } userId && _player.TryGetSessionById(userId, out var session))
+            else if (session != null)
                 _metaData.SetEntityName(ghost, session.Name);
 
             if (mind.Comp.TimeOfDeath.HasValue)

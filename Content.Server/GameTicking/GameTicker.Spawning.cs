@@ -446,7 +446,7 @@ namespace Content.Server.GameTicking
                 makeObserver = true;
             }
 
-            var ghost = _ghost.SpawnGhost(mind.Value);
+            var ghost = _ghost.SpawnGhost(mind.Value, session: player); // Claw Command - pass the session so VIP ghosts work from the lobby
             if (makeObserver)
                 _roles.MindAddRole(mind.Value, "MindRoleObserver");
 
