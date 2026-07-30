@@ -27,4 +27,5 @@ guide-entry-antagonistSOP = Antagonist SOP
 guide-entry-detectiveSOP = Detective SOP
 guide-entry-lawyerSOP = Lawyer SOP
 guide-entry-legalSOP = Legal SOP
+guide-entry-engagementSOP = Engagement SOP
 guide-entry-loadout-info-security-weapons = Security Weapons
