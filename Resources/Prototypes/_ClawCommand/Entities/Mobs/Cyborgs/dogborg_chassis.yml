@@ -49,6 +49,12 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-medihound
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by
+  # BorgChassisMedicalMedihoundDark and PlayerDogborgMedical.
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
 
 - type: entity
   parent: BorgChassisMedicalMedihound
@@ -132,6 +138,11 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-vale-med
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9).
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
 
 # ===== Security: K9 =====
 # Our fork's borgType prototypes don't include a `security` variant (only generic,
@@ -184,6 +195,12 @@
     damageModifierSet: ModifierSetSecurityBorg
   - type: ExplosionResistance
     damageCoefficient: 0.65
+  # _ClawCommand - restrict this borg's Lock/unlock (and thus its wiring + module UI, gated by
+  # UIRequiresLock) to SECURITY access only, overriding the default Command+Research from
+  # BaseBorgChassisNT. Only security can lock/unlock the security K9. Inherited by BorgChassisSecurityK9Dark,
+  # BorgChassisSecurityVale and PlayerDogborgSecurity.
+  - type: AccessReader
+    access: [["Security"]]
 
 - type: entity
   parent: BorgChassisSecurityK9
@@ -485,3 +502,8 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-blade
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to SALVAGE + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by PlayerDogborgMining.
+  - type: AccessReader
+    access: [["Salvage"], ["Research"], ["Security"]]
