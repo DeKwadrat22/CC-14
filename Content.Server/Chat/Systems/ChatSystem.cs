@@ -113,8 +113,11 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case GameRunLevel.PostRound:
             case GameRunLevel.PreRoundLobby:
-                if (!_configurationManager.GetCVar(CCVars.OocEnableDuringRound))
-                    _configurationManager.SetCVar(CCVars.OocEnabled, true);
+                // CLAW COMMAND - always re-enable OOC once the round ends / players return to the lobby,
+                // even when OOC is allowed during the round (OocEnableDuringRound). Otherwise a manual
+                // mid-round `setooc`-off (e.g. an admin silencing OOC drama, then going offline and
+                // forgetting) would persist as a permanent OOC blackout into every following round.
+                _configurationManager.SetCVar(CCVars.OocEnabled, true);
                 break;
         }
     }
