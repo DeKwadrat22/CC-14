@@ -102,14 +102,25 @@ public abstract partial class SharedPortalSystem : EntitySystem
         if (Transform(subject).Anchored)
             return;
 
-        // CLAW COMMAND - dark hub blocks a rejuvenating shadekin from leaving until fully recovered
+        // CLAW COMMAND - dark hub gating for shadekin.
         if (HasComp<_ClawCommand.Shadekin.Components.DarkHubComponent>(ent))
         {
-            if (TryComp<ShadekinComponent>(subject, out var hubShadekin)
-                && !hubShadekin.Blackeye && hubShadekin.Rejuvenating)
+            if (TryComp<ShadekinComponent>(subject, out var hubShadekin))
             {
-                _popup.PopupEntity(Loc.GetString("hubportal-rejuvenate"), subject, subject, PopupType.LargeCaution);
-                return;
+                // A shadekin severed from the Dark (blackeye - e.g. bound by shadekin restraints) can no
+                // longer travel through its hubs, the same way the dark portal already refuses them below.
+                if (hubShadekin.Blackeye)
+                {
+                    _popup.PopupEntity(Loc.GetString("shadekin-restraint-portal-fail"), subject, subject, PopupType.LargeCaution);
+                    return;
+                }
+
+                // A rejuvenating shadekin is held here until fully recovered.
+                if (hubShadekin.Rejuvenating)
+                {
+                    _popup.PopupEntity(Loc.GetString("hubportal-rejuvenate"), subject, subject, PopupType.LargeCaution);
+                    return;
+                }
             }
         }
 

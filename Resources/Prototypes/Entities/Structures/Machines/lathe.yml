@@ -206,6 +206,7 @@
     staticPacks:
     - ChemistryStatic
     - SurgeryStatic
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the security techfab)
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
@@ -404,6 +405,7 @@
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
     - DogborgModulesStatic # _ClawCommand: security cyborg modules (disabler/investigation) print here only
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the science protolathe)
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons

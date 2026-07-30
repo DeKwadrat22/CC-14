@@ -163,3 +163,9 @@
   name: guide-entry-lawyerSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/LawyerStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideLegalSOP
+  name: guide-entry-legalSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/LegalStandardOperatingProcedure.xml"
+  filterEnabled: True

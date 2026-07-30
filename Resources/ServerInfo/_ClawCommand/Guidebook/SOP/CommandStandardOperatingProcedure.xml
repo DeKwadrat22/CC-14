@@ -31,13 +31,33 @@ Restricted and contraband equipment held by command requires the same paperwork 
 
 Raising or lowering the alert level is a command decision and [bold]must[/bold] be justified to the crew over the announcement system. Alert levels are not to be raised to grant Security broader search powers without an underlying threat.
 
-Only the Captain, acting Commanding Officer, or Head of Security may set Code Red. Lowering from Red back to Blue or Green requires the same authority. The full table of what each level permits is in [textlink="Alert Procedure" link="GuideAlertProcedure"].
+Code Blue and Code Red are set by the Captain, acting Commanding Officer, or Head of Security. Lowering either requires the same authority. The full table of what each level permits is in [textlink="Alert Procedure" link="GuideAlertProcedure"].
 
 Escalation policy differs by shift type.
 
 [bold]Secret[/bold]: Code Blue is raised automatically and may be false. Treat it as unconfirmed until a threat is established.
 
-[bold]Extended Irregular[/bold]: Code Blue requires an active threat. Intercepted hostile communications alone do not justify it unless they are specific and credibly lethal.
+[bold]Extended Irregular[/bold]: Code Blue requires a threat still at large - the perpetrator free, unidentified, or otherwise uncaught. Any of the following qualifies:
+
+- A crew member murdered and the killer still loose
+- An abduction or kidnapping in progress
+- Mass acts of violence
+- Major sabotage with the perpetrator still unidentified
+- A prisoner escaped from custody or permanent confinement and still on the loose
+- High-value items missing from the Captain's, Head of Security's, or Warden's locker
+- A stash or stockpile of major dangerous contraband found with no owner
+- Two or more confirmed, ongoing lethal threats
+
+Intercepted hostile communications alone do not justify it unless they are specific and credibly lethal.
+
+[bold]Code Red[/bold] requires a confirmed, identified threat the station cannot contain at Blue. Any of the following qualifies:
+
+- A heavily armed or extremely dangerous hostile force aboard
+- A forced breach of the station hull, or a confirmed hostile boarding
+- An active mass-casualty event in progress
+- Station-wide destruction underway, or the nuclear authentication disk compromised
+- A threat that has already defeated a Blue-level response
+- Multiple simultaneous major emergencies
 
 ## Announcements and Communication
 

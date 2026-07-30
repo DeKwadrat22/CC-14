@@ -146,10 +146,6 @@
         - map: ["head"]
         - map: ["pocket1"]
         - map: ["pocket2"]
-        - map: ["clownedon"]
-          sprite: "Effects/creampie.rsi"
-          state: "creampie_human"
-          visible: false
     - type: Flammable
       fireSpread: true
       canResistFire: true
@@ -174,16 +170,13 @@
       templateId: human
     - type: InventorySlots
     - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.CreamPiedVisuals.Creamed:
-          clownedon:
-            True: { visible: true }
-            False: { visible: false }
     - type: Cuffable
     - type: AnimationPlayer
     - type: Buckle
     - type: CreamPied
+      sprite:
+        sprite: Effects/creampie.rsi
+        state: creampie_human
     - type: Stripping
     - type: Strippable
     - type: ComplexInteraction

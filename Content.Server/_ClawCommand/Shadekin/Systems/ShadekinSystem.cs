@@ -125,6 +125,35 @@ public sealed partial class ShadekinSystem : EntitySystem
         UpdateAlert(uid, component);
     }
 
+    /// <summary>
+    ///     CLAW COMMAND - permanently restrains a shadekin (the shadekin restraints item). This severs them
+    ///     from the Dark: they drop into the ordinary "blackeye" state, so phase-skip is gone, their energy
+    ///     is burned, light stops mattering to them, the death-to-hideout respawn is disabled (they are now
+    ///     truly mortal) and their crit menu reverts to the normal one - i.e. they become a normal, mortal
+    ///     member of the species again. Darkvision is the single power the restraints leave intact. The
+    ///     <see cref="ShadekinCuffComponent"/> marker is also stamped on so the phase / energy-regen /
+    ///     respawn gates stay shut even if anything were to try re-awakening them.
+    /// </summary>
+    public void RestrainShadekin(EntityUid uid, ShadekinComponent component)
+    {
+        // The canonical "powers suppressed" marker every ability path already gates on (HasComp).
+        EnsureComp<ShadekinCuffComponent>(uid);
+
+        var wasAwakened = !component.Blackeye;
+
+        // Blackeye IS "a normal shadekin": ApplyBlackEye removes the phase action, drains energy, clears
+        // light exposure/moodlets and restores the ordinary crit actions. Blackeye also fails the dark
+        // portal's !Blackeye gate, so an "aether door" no longer takes them.
+        component.Blackeye = true;
+        ApplyBlackEye(uid, component);
+
+        // ...but the restraints bind their connection to the Dark, not their eyes. A shadekin who was
+        // awakened keeps the darkvision ApplyBlackEye just stripped; a never-awakened one had none and so
+        // gains nothing from being bound.
+        if (wasAwakened)
+            SetDarkVision(uid, true);
+    }
+
     public void UpdateAlert(EntityUid uid, ShadekinComponent component)
     {
         var lightseverity = component.LightExposure;

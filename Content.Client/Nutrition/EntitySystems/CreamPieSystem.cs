@@ -26,7 +26,8 @@ public sealed partial class CreamPieSystem : SharedCreamPieSystem
 
     private void OnComponentShutdown(Entity<CreamPiedComponent> ent, ref ComponentShutdown args)
     {
-        _sprite.RemoveLayer(ent.Owner, CreamPiedVisualLayer.Key);
+        // The layer only exists if a sprite was set, so don't log when it's missing.
+        _sprite.RemoveLayer(ent.Owner, CreamPiedVisualLayer.Key, logMissing: false);
     }
 
     private void OnAppearanceChange(Entity<CreamPiedComponent> ent, ref AppearanceChangeEvent args)
@@ -53,7 +54,7 @@ public sealed partial class CreamPieSystem : SharedCreamPieSystem
         int index;
         if (creamPied.Sprite == null)
         {
-            _sprite.RemoveLayer((ent.Owner, sprite), CreamPiedVisualLayer.Key);
+            _sprite.RemoveLayer((ent.Owner, sprite), CreamPiedVisualLayer.Key, logMissing: false);
             return;
         }
 
