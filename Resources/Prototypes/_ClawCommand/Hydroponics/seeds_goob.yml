@@ -7,7 +7,7 @@
   name: seeds-strange-berries-name
   noun: seeds-noun-seeds
   displayName: seeds-strange-berries-display-name
-  plantRsi: _Goobstation/Objects/Specific/Hydroponics/strange_berries.rsi
+  plantRsi: _GoobStation/Objects/Specific/Hydroponics/strange_berries.rsi
   packetPrototype: StrangeBerrySeeds
   productPrototypes:
     - FoodStrangeBerries
@@ -33,7 +33,7 @@
   name: seeds-bluespace-tomato-name
   noun: seeds-noun-seeds
   displayName: seeds-bluespace-tomato-display-name
-  plantRsi: _Goobstation/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+  plantRsi: _GoobStation/Objects/Specific/Hydroponics/bluespace_tomato.rsi
   packetPrototype: BlueTomatoSeeds
   productPrototypes:
   - FoodBluespaceTomato
