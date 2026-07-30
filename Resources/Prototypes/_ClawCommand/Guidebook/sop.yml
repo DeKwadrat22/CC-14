@@ -151,3 +151,15 @@
   name: guide-entry-antagonistSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AntagonistStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideDetectiveSOP
+  name: guide-entry-detectiveSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/DetectiveStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideLawyerSOP
+  name: guide-entry-lawyerSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/LawyerStandardOperatingProcedure.xml"
+  filterEnabled: True

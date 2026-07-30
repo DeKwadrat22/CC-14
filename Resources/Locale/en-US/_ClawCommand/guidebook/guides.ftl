@@ -24,4 +24,6 @@ guide-entry-serviceSOP = Service SOP
 guide-entry-cargoSOP = Cargo SOP
 guide-entry-prisonerSOP = Prisoner SOP
 guide-entry-antagonistSOP = Antagonist SOP
+guide-entry-detectiveSOP = Detective SOP
+guide-entry-lawyerSOP = Lawyer SOP
 guide-entry-loadout-info-security-weapons = Security Weapons

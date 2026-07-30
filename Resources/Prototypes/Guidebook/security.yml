@@ -5,6 +5,8 @@
   children:
   - GuideSecuritySOP #claw command
   - GuideBriggingSOP #claw command
+  - GuideDetectiveSOP #claw command
+  - GuideLawyerSOP #claw command
   - Forensics
   - Defusal
   - CriminalRecords
