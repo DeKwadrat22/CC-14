@@ -145,3 +145,9 @@
   name: guide-entry-prisonerSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/PrisonerStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideAntagonistSOP
+  name: guide-entry-antagonistSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AntagonistStandardOperatingProcedure.xml"
+  filterEnabled: True
