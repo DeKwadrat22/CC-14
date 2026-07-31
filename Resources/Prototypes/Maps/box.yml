@@ -3,7 +3,7 @@
   mapName: 'Box Station'
   mapPath: /Maps/box.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 14 # Claw Command
+  minPlayers: 20 # Claw Command
   stations:
     Boxstation:
       stationProto: StandardNanotrasenStation
