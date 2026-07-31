@@ -1,3 +1,4 @@
+using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -18,6 +19,18 @@ public sealed partial class BorgLawBoardComponent : Component
     /// </summary>
     [DataField]
     public string SlotId = "borg_lawboard";
+
+    /// <summary>
+    /// The slot itself, registered with <c>ItemSlotsSystem</c> on init rather than declared in an
+    /// <c>ItemSlots</c> component.
+    /// </summary>
+    /// <remarks>
+    /// It has to live here: prototype inheritance replaces a dictionary datafield wholesale instead of
+    /// merging it, so every chassis that redeclares <c>ItemSlots</c> for its own power cell - which is most
+    /// of them, dogborgs included - would silently drop a law board slot declared alongside it.
+    /// </remarks>
+    [DataField]
+    public ItemSlot LawBoardSlot = new();
 
     /// <summary>
     /// The board this chassis is assembled with, slotted in at map init if the slot is empty. This is what

@@ -38,6 +38,8 @@ public sealed partial class BorgLawBoardSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<BorgLawBoardComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<BorgLawBoardComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<BorgLawBoardComponent, AfterInteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<BorgLawBoardComponent, BorgLawBoardInstallDoAfterEvent>(OnInstallDoAfter);
         SubscribeLocalEvent<BorgLawBoardComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
@@ -47,6 +49,16 @@ public sealed partial class BorgLawBoardSystem : EntitySystem
         SubscribeLocalEvent<BorgLawBoardComponent, BorgActivateAttemptEvent>(OnActivateAttempt);
         SubscribeLocalEvent<BorgLawBoardComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<BorgLawBoardComponent, GibbedBeforeDeletionEvent>(OnBeingGibbed);
+    }
+
+    private void OnInit(Entity<BorgLawBoardComponent> ent, ref ComponentInit args)
+    {
+        _itemSlots.AddItemSlot(ent.Owner, ent.Comp.SlotId, ent.Comp.LawBoardSlot);
+    }
+
+    private void OnRemove(Entity<BorgLawBoardComponent> ent, ref ComponentRemove args)
+    {
+        _itemSlots.RemoveItemSlot(ent.Owner, ent.Comp.LawBoardSlot);
     }
 
     // Drop the board with the rest of the borg's parts instead of deleting it along with the chassis.

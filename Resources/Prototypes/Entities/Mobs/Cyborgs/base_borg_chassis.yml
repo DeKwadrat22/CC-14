@@ -137,20 +137,22 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-      # _ClawCommand - the borg's lawset lives on a board in here, not on the chassis prototype.
-      # Insertion is handled by BorgLawBoardSystem's do-after, so no insert-on-interact.
-      borg_lawboard:
-        name: clawcommand-borg-lawboard-slot
-        whitelist:
-          requireAll: true
-          components:
-          - SiliconLawProvider
-          - Item
-        insertOnInteract: false
-        swap: false
-        ejectOnBreak: true
-        ejectVerbText: clawcommand-borg-lawboard-eject-verb
-  - type: BorgLawBoard # _ClawCommand
+  # _ClawCommand - the borg's lawset lives on a board in this slot, not on the chassis prototype. The slot
+  # is registered by BorgLawBoardSystem instead of being declared in ItemSlots above, because a child
+  # prototype redeclaring ItemSlots for its own cell would replace the whole slot dictionary and drop it.
+  # Insertion is handled by that system's do-after, hence no insert-on-interact.
+  - type: BorgLawBoard
+    lawBoardSlot:
+      name: clawcommand-borg-lawboard-slot
+      whitelist:
+        requireAll: true
+        components:
+        - SiliconLawProvider
+        - Item
+      insertOnInteract: false
+      swap: false
+      ejectOnBreak: true
+      ejectVerbText: clawcommand-borg-lawboard-eject-verb
   - type: Body
   - type: StatusEffects
     allowed:
