@@ -1,4 +1,5 @@
-﻿using Content.Server.Inventory;
+﻿using Content.Server._ClawCommand.Silicons.Borgs; // _ClawCommand - law boards
+using Content.Server.Inventory;
 using Content.Shared.Inventory;
 using Content.Shared.Radio.Components;
 using Content.Shared.Silicons.Borgs;
@@ -15,6 +16,7 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
 {
     [Dependency] private BorgSystem _borgSystem = default!;
     [Dependency] private ServerInventorySystem _inventorySystem = default!;
+    [Dependency] private BorgLawBoardLawSystem _lawBoard = default!; // _ClawCommand
 
     protected override void SelectBorgModule(Entity<BorgSwitchableTypeComponent> ent, ProtoId<BorgTypePrototype> borgType)
     {
@@ -76,6 +78,10 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         {
             _inventorySystem.SetTemplateId((ent.Owner, inventory), prototype.InventoryTemplateId);
         }
+
+        // _ClawCommand - issue the type's department lawset, replacing the chassis' factory board.
+        if (prototype.LawBoard is { } lawBoard)
+            _lawBoard.TrySetTypeLawBoard(ent.Owner, lawBoard);
 
         base.SelectBorgModule(ent, borgType);
     }

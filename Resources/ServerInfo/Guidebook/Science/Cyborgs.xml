@@ -24,7 +24,7 @@
     <GuideEntityEmbed Entity="NTDefaultCircuitBoard" Caption="NT Default"/>
     <GuideEntityEmbed Entity="MedicalCircuitBoard" Caption="Medical"/>
   </Box>
-  A cyborg does not carry its laws in its head - they come off a [color=#a4885c]law board[/color] slotted into its chassis, the same boards used at the AI upload console. Every chassis is assembled with a [color=cyan]Crewsimov[/color] board already installed. See the [textlink="silicon lawsets" link="Lawsets"] reference for what each board makes a silicon believe.
+  A cyborg does not carry its laws in its head - they come off a [color=#a4885c]law board[/color] slotted into its chassis, the same boards used at the AI upload console. A fresh chassis is assembled with a [color=cyan]Crewsimov[/color] board, and picking a cyborg type swaps it for that department's lawset - a medical cyborg comes up running Medical, a K9 running Silicon Police. See the [textlink="silicon lawsets" link="Lawsets"] reference for what each board makes a silicon believe.
 
   To change a cyborg's laws, [color=#a4885c]unlock[/color] the chassis with a valid ID, [color=#a4885c]unscrew[/color] its maintenance panel, then click on it with the new board in hand. Fitting the board takes a few seconds of work and immediately rewrites the cyborg's laws - it will know. Ejecting the old board first is done from the same panel, through the right-click menu.
 

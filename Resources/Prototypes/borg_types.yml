@@ -36,6 +36,7 @@
 # Engineering borg
 - type: borgType
   id: engineering
+  lawBoard: EngineerCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisEngineer
@@ -74,6 +75,7 @@
 # Salvage borg
 - type: borgType
   id: mining
+  lawBoard: CorporateCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisMining
@@ -112,6 +114,7 @@
 # Janitor borg
 - type: borgType
   id: janitor
+  lawBoard: JanitorCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisJanitor
@@ -148,6 +151,7 @@
 # Medical borg
 - type: borgType
   id: medical
+  lawBoard: MedicalCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisMedical
@@ -198,6 +202,7 @@
 # Service borg
 - type: borgType
   id: service
+  lawBoard: StationEfficiencyCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisService

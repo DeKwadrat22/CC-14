@@ -42,7 +42,7 @@
           state: rock_asteroid_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_asteroid_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -65,7 +65,7 @@
           state: ironrock_north
         - map: [ "enum.EdgeLayer.West" ]
           state: ironrock_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -88,7 +88,7 @@
           state: rock_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -111,7 +111,7 @@
           state: rock_wall_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -134,7 +134,7 @@
           state: rock_snow_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_snow_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -157,7 +157,7 @@
           state: rock_sand_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_sand_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -180,7 +180,7 @@
           state: rock_chromite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_chromite_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change
 
@@ -203,6 +203,6 @@
           state: rock_andesite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_andesite_west
-        - state: rock_bluespace_crystal
+        - state: rock_void_opal # _ClawCommand - Goob's rock_bluespace_crystal state never came with the port; void opal is the only unused crystal overlay in rock.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
           visible: false # Lavaland Change

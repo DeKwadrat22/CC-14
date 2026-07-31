@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._ClawCommand.Silicons.Borgs;
 
@@ -17,6 +18,15 @@ public sealed partial class BorgLawBoardComponent : Component
     /// </summary>
     [DataField]
     public string SlotId = "borg_lawboard";
+
+    /// <summary>
+    /// The board this chassis is assembled with, slotted in at map init if the slot is empty. This is what
+    /// gives each chassis its department lawset - override it per chassis rather than touching
+    /// <c>SiliconLawProvider</c>, which the board rewrites anyway. Null leaves the borg lawless, and so
+    /// inert, until someone fits a board by hand.
+    /// </summary>
+    [DataField]
+    public EntProtoId? DefaultBoard = "AsimovCircuitBoard";
 
     /// <summary>
     /// How long installing a law board takes.
