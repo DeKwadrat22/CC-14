@@ -27,10 +27,16 @@
   impact: Low
   quantized: true
   conserveEnergy: false
+  # _ClawCommand: set with lemon juice and enriched with cream rather than vinegar. Curd cheese below
+  # needs less milk for the same milk+vinegar pair, so it always curdled first and mozzarella could
+  # never reach its own threshold - the two have to differ by reagent, not just by amount.
+  # Cream is renewable: heat milk past 320K and shake it (ReduceMilk).
   reactants:
     Milk:
       amount: 30
-    Vinegar:
+    Cream:
+      amount: 10
+    JuiceLemon:
       amount: 5
       catalyst: true
   effects:
