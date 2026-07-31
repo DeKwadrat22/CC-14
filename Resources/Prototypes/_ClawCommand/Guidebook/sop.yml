@@ -123,6 +123,12 @@
   filterEnabled: True
 
 - type: guideEntry
+  id: GuideCaptainSOP
+  name: guide-entry-captainSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CaptainStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
   id: GuideMedicalSOP
   name: guide-entry-medicalSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/MedicalStandardOperatingProcedure.xml"

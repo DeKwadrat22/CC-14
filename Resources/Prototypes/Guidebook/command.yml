@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Command.xml"
   children: #claw command
   - GuideCommandSOP
+  - GuideCaptainSOP
   - GuideCommandHierarchy
   - GuideClawCommandOfficerSOP
   - GuideClawCommandMaidSOP

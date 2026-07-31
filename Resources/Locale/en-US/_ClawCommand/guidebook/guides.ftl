@@ -19,6 +19,7 @@ guide-entry-anomSOP = Anomaly SOP
 guide-entry-ccoSOP = Claw Command Officer SOP
 guide-entry-ccmSOP = Claw Command Maid SOP
 guide-entry-commandSOP = Command SOP
+guide-entry-captainSOP = Captain SOP
 guide-entry-medicalSOP = Medical SOP
 guide-entry-serviceSOP = Service SOP
 guide-entry-cargoSOP = Cargo SOP
