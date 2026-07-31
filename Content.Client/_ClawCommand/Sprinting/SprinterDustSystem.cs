@@ -12,7 +12,9 @@
 
 using Content.Shared._ClawCommand.Sprinting;
 using Content.Shared._ClawCommand.Stealth;
+using Content.Shared.Examine;
 using Content.Shared.Gravity;
+using Robust.Client.Player;
 using Content.Shared.Movement.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
@@ -22,8 +24,10 @@ namespace Content.Client._ClawCommand.Sprinting;
 public sealed partial class SprinterDustSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPlayerManager _player = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
     [Dependency] private StealthModeSystem _stealth = default!;
 
     public override void Update(float frameTime)
@@ -54,7 +58,7 @@ public sealed partial class SprinterDustSystem : EntitySystem
             }
 
             // Rising edge — play the puff sound exactly once when sprint begins.
-            if (sprintingNow && !dust.WasSprinting)
+            if (sprintingNow && !dust.WasSprinting && CanHear(uid, dust))
                 _audio.PlayPredicted(dust.StartSound, uid, uid);
 
             dust.WasSprinting = sprintingNow;
@@ -68,5 +72,23 @@ public sealed partial class SprinterDustSystem : EntitySystem
             dust.LastStep = now;
             Spawn(dust.StepAnimation, xform.Coordinates);
         }
+    }
+
+    /// <summary>
+    /// Claw Command: the puff is played locally on every client that has the sprinter in PVS, which meant
+    /// hearing people bolt around through walls and out of sight. This system already runs per listener, so
+    /// each client can just decide for itself: no line of sight to the sprinter, no sound.
+    /// </summary>
+    /// <remarks>
+    /// Robust has no audio occlusion, so this is the check to make - SS14's FOV is 360 degrees bounded by
+    /// occluders, meaning "unoccluded and in range" is the same thing as "on screen and visible".
+    /// The sprinter always hears their own puff: the check trivially passes at zero distance.
+    /// </remarks>
+    private bool CanHear(EntityUid sprinter, SprinterDustComponent dust)
+    {
+        if (_player.LocalEntity is not { } listener)
+            return false;
+
+        return _examine.InRangeUnOccluded(listener, sprinter, dust.SoundRange);
     }
 }
