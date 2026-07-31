@@ -28,4 +28,5 @@ guide-entry-detectiveSOP = Detective SOP
 guide-entry-lawyerSOP = Lawyer SOP
 guide-entry-legalSOP = Legal SOP
 guide-entry-engagementSOP = Engagement SOP
+guide-entry-siliconSOP = Silicon SOP
 guide-entry-loadout-info-security-weapons = Security Weapons

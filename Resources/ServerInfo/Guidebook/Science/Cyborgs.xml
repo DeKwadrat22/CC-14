@@ -18,6 +18,20 @@
   </Box>
   Both brains can be fabricated without requiring any additional research.
 
+  ## Law boards
+  <Box>
+    <GuideEntityEmbed Entity="AsimovCircuitBoard" Caption="Crewsimov"/>
+    <GuideEntityEmbed Entity="NTDefaultCircuitBoard" Caption="NT Default"/>
+    <GuideEntityEmbed Entity="MedicalCircuitBoard" Caption="Medical"/>
+  </Box>
+  A cyborg does not carry its laws in its head - they come off a [color=#a4885c]law board[/color] slotted into its chassis, the same boards used at the AI upload console. Every chassis is assembled with a [color=cyan]Crewsimov[/color] board already installed. See the [textlink="silicon lawsets" link="Lawsets"] reference for what each board makes a silicon believe.
+
+  To change a cyborg's laws, [color=#a4885c]unlock[/color] the chassis with a valid ID, [color=#a4885c]unscrew[/color] its maintenance panel, then click on it with the new board in hand. Fitting the board takes a few seconds of work and immediately rewrites the cyborg's laws - it will know. Ejecting the old board first is done from the same panel, through the right-click menu.
+
+  [bold]A cyborg with no law board installed will not run at all[/bold] - no modules, no sprinting, exactly as if its power cell were dead. Pulling a rogue cyborg's law board is a valid way to stop it, if you can get the panel open.
+
+  Law boards are printed at the [color=#a4885c]circuit imprinter[/color] in science, except for departmental lawsets, which come out of that department's own techfab. For who is allowed to authorise a law change, and what to do about a subverted silicon, see [textlink="Silicon SOP" link="GuideSiliconSOP"].
+
   ## Cyborg types
   Once created, a cyborg needs to specialize its chassis to a duty on the station. This determines what modules it starts with, which additional modules can be installed, and what [color=#a4885c]departmental radio channel[/color] it has access to. All cyborgs have access to the [color=#D381C9]Science[/color] and [color=green]station-wide[/color] radio channels. All cyborg types have [color=#a4885c]all-access[/color].
   <Box>

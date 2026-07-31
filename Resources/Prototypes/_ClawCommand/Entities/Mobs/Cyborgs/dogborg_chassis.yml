@@ -196,11 +196,16 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   # _ClawCommand - restrict this borg's Lock/unlock (and thus its wiring + module UI, gated by
-  # UIRequiresLock) to SECURITY access only, overriding the default Command+Research from
-  # BaseBorgChassisNT. Only security can lock/unlock the security K9. Inherited by BorgChassisSecurityK9Dark,
-  # BorgChassisSecurityVale and PlayerDogborgSecurity.
+  # UIRequiresLock) to SECURITY + Command access, overriding the default Command+Research from
+  # BaseBorgChassisNT. Only security or command can lock/unlock the security K9. Inherited by
+  # BorgChassisSecurityK9Dark, BorgChassisSecurityVale and PlayerDogborgSecurity.
   - type: AccessReader
-    access: [["Security"]]
+    access: [["Security"], ["Command"]]
+  # _ClawCommand - security dogborgs have hardened optics: flashes and flashbangs
+  # don't blind them. Only on this chassis line, so K9-Dark, Vale-sec and
+  # PlayerDogborgSecurity inherit it while the medical/engi/jani/service/mining
+  # dogborgs stay flashable.
+  - type: FlashImmunity
 
 - type: entity
   parent: BorgChassisSecurityK9

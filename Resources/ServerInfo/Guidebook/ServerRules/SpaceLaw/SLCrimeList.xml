@@ -234,6 +234,33 @@
         06
       </Box>
     </ColorBox>
+      <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e4d4d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Contraband (C)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e4d4d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Major Contraband (C)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        07
+      </Box>
+    </ColorBox>
   </Table>
 
   ## Minor Crimes
@@ -539,6 +566,26 @@
         2-05
       </Box>
     </ColorBox>
+    <ColorBox Color="#2e4d4d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Contraband (C)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To hold or carry restricted items without a permit or departmental authorisation.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Covers engineering tools outside Engineering, syndicate items, and non-lethal weapons. Confiscate the items; a permit or a department head's approval defeats the charge.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-07
+      </Box>
+    </ColorBox>
   </Table>
 
   ## Major Crimes
@@ -644,6 +691,26 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         3-06
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e4d4d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Major Contraband (C)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To hold or carry items that are lethal, explosive, or built for sabotage.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Covers lethal weaponry, dangerous chemicals, bombs, and syndicate hacking or sabotage devices. Seize on sight and secure in the armoury; no permit covers these outside Security.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-07
       </Box>
     </ColorBox>
   </Table>

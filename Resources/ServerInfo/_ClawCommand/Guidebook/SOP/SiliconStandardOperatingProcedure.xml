@@ -1,0 +1,50 @@
+<Document>
+# Silicon Standard Operating Procedure
+
+This procedure applies to the station AI, to cyborgs and dogborgs, and to the crew who build, repair and reprogram them. It sits alongside - and never above - the server's Silicon rules; where the two conflict, the rules take precedence.
+
+## Custody of Silicons
+
+Silicons are Science equipment. The Research Director is accountable for every silicon on station, and Roboticists are the crew expected to handle them day to day.
+
+Anyone may [italic]ask[/italic] a silicon to do something. Only Science may open one up.
+
+    [italic]A cyborg that has gone down in the middle of a firefight may be dragged to safety by anyone. That is recovery, not maintenance.[/italic]
+
+## Changing Laws
+
+A silicon's laws come off a law board - slotted into a cyborg's chassis, or uploaded at the AI upload console. See [textlink="Silicon Lawsets" link="Lawsets"] for the boards available and [textlink="Cyborgs" link="Cyborgs"] for how they are fitted.
+
+- Law changes to the [bold]station AI[/bold] require the approval of the Research Director or the Captain. The upload console and its boards are theirs to control.
+- Law changes to a [bold]cyborg[/bold] require the approval of the Research Director, or of the head of the department the cyborg serves, and [italic]should[/italic] be carried out by a Roboticist.
+- Every law change [bold]must[/bold] be announced to the silicon it is done to, and [italic]should[/italic] be logged. A silicon that finds its own laws were rewritten in secret is entitled to say so publicly.
+- Fitting a departmental lawset - Medical to a medihound, Silicon Police to a K9 - is routine and needs no more than the owning head's word.
+- Fitting Tyrant, Overlord, Antimov or Syndimov to any silicon is [bold]not[/bold] routine. Command approval, in writing, or it does not happen.
+
+    [italic]"The Research Director told me to" is a defence. "The Research Director was standing there and did not object" is not.[/italic]
+
+## Removing Law Boards
+
+A cyborg with no law board [bold]cannot run at all[/bold]. Pulling one is closer to disabling a crew member than to swapping a part, and is treated as such.
+
+- Pulling a law board is permitted when the silicon is actively harming the crew, is confirmed subverted, or consents to the work.
+- A cyborg left lawless [italic]should[/italic] be given a new board, or properly deconstructed, without unreasonable delay. Parking a lawless cyborg in maintenance is not an acceptable end state.
+- Where subversion is suspected, the removed board is [bold]evidence[/bold]. Hand it to Security rather than reprinting over the incident.
+
+## Suspected Subversion
+
+An emagged or ion-stormed silicon is a Security matter as much as a Science one.
+
+- Report it on Command comms before opening the chassis. Do not quietly fix it.
+- Re-seating a law board restores that board's lawset, which also clears laws forced onto a silicon by an emag or an ion storm. Do this [italic]after[/italic] Security has had a chance to look, not before.
+- The silicon's own account of what it was ordered to do is testimony. Take it.
+
+## Silicons and Command
+
+Silicons are crew. They are not property to be traded, gambled, stripped for parts, or ordered to destroy themselves on a whim.
+
+- A silicon [italic]may[/italic] refuse an order it believes conflicts with its laws, and [italic]should[/italic] state which law and why.
+- Deconstructing a functioning, occupied cyborg requires the Research Director's approval, and the occupant's consent where they are able to give it.
+- Borging a body requires the standard medical consent chain. See [textlink="Medical SOP" link="GuideMedicalSOP"].
+
+</Document>

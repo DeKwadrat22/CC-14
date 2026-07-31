@@ -577,6 +577,10 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
         // Claw Command - pre-calculate shared budget pool totals across all categories
         Dictionary<string, int> poolTotals = new();
         Dictionary<string, int?> poolLimits = new();
+        // Claw Command - per pool, the total points REFUNDED by point-giving (negative-cost) traits.
+        // These raise the displayed max budget (base 10 -> 11 when a +1 downside is taken), while the
+        // "available" counter on the left is base-max minus the net spent. See the counter labels below.
+        Dictionary<string, int> poolGives = new();
 
         foreach (var (categoryId, categoryTraits) in traitGroups)
         {
@@ -598,6 +602,10 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
                 if (Profile?.TraitPreferences.Contains(trait.ID) == true)
                 {
                     poolTotals[poolKey] = poolTotals.GetValueOrDefault(poolKey) + trait.Cost;
+                    // A negative Cost is a point-giving trait; accumulate the points it hands back so the
+                    // displayed max budget can grow by that amount.
+                    if (trait.Cost < 0)
+                        poolGives[poolKey] = poolGives.GetValueOrDefault(poolKey) - trait.Cost;
                 }
             }
         }
@@ -607,11 +615,15 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
         if (poolLimits.TryGetValue(sharedPoolKey, out var sharedLimit) && sharedLimit is >= 0)
         {
             var sharedSpent = poolTotals.GetValueOrDefault(sharedPoolKey);
+            var sharedGives = poolGives.GetValueOrDefault(sharedPoolKey);
             TraitsList.AddChild(new Label
             {
+                // Claw Command - left = points remaining (base max minus net spent); right = base max grown
+                // by whatever point-giving traits handed back. So spending lowers the left number, and
+                // taking a downside raises both the right (max) and the left (available) together.
                 Text = Loc.GetString("humanoid-profile-editor-trait-count-hint",
-                    ("current", sharedSpent),
-                    ("max", sharedLimit)),
+                    ("current", sharedLimit.Value - sharedSpent),
+                    ("max", sharedLimit.Value + sharedGives)),
                 StyleClasses = { StyleClass.LabelHeading },
                 Margin = new Thickness(0, 0, 0, 5),
             });
@@ -627,6 +639,7 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
             string? poolKey = null;
             int? poolLimit = null;
             var spent = 0;
+            var gives = 0; // Claw Command - points refunded by point-giving traits in this pool.
 
             if (categoryId != TraitCategoryPrototype.Default)
             {
@@ -634,6 +647,7 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
                 poolKey = category.BudgetPool ?? category.ID;
                 poolLimit = poolLimits.GetValueOrDefault(poolKey);
                 spent = poolTotals.GetValueOrDefault(poolKey);
+                gives = poolGives.GetValueOrDefault(poolKey);
 
                 // Label
                 TraitsList.AddChild(new Label
@@ -675,9 +689,11 @@ public sealed partial class HumanoidProfileEditor : BoxContainer
             {
                 TraitsList.AddChild(new Label
                 {
+                    // Claw Command - left = points remaining (base max minus net spent), right = base max
+                    // grown by point-giving traits. Spending lowers the left; a downside raises both.
                     Text = Loc.GetString("humanoid-profile-editor-trait-count-hint",
-                        ("current", spent),
-                        ("max", poolLimit)),
+                        ("current", poolLimit.Value - spent),
+                        ("max", poolLimit.Value + gives)),
                     FontColorOverride = Color.Gray
                 });
             }

@@ -171,6 +171,12 @@
   filterEnabled: True
 
 - type: guideEntry
+  id: GuideSiliconSOP
+  name: guide-entry-siliconSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/SiliconStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
   id: GuideEngagementSOP
   name: guide-entry-engagementSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/EngagementStandardOperatingProcedure.xml"

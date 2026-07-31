@@ -34,7 +34,7 @@
   name: trait-singer-name
   description: trait-singer-desc
   category: Quirks
-  cost: -2
+  cost: 2
   components:
     - type: Singer
       proto: NormalSinger

@@ -124,6 +124,7 @@
       cell_slot: !type:ContainerSlot { }
       borg_module: !type:Container { }
       part-container: !type:Container
+      borg_lawboard: !type:ContainerSlot { } # _ClawCommand - law board slot
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -136,6 +137,21 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+      # _ClawCommand - the borg's lawset lives on a board in here, not on the chassis prototype.
+      # Insertion is handled by BorgLawBoardSystem's do-after, so no insert-on-interact.
+      borg_lawboard:
+        name: clawcommand-borg-lawboard-slot
+        whitelist:
+          requireAll: true
+          components:
+          - SiliconLawProvider
+          - Item
+        startingItem: AsimovCircuitBoard
+        insertOnInteract: false
+        swap: false
+        ejectOnBreak: true
+        ejectVerbText: clawcommand-borg-lawboard-eject-verb
+  - type: BorgLawBoard # _ClawCommand
   - type: Body
   - type: StatusEffects
     allowed:
@@ -193,6 +209,7 @@
         - borg_brain
         - borg_module
         - cell_slot
+        - borg_lawboard # _ClawCommand
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: HandheldLight
@@ -361,6 +378,20 @@
   - type: SiliconLawProvider
     laws: SyndicateStatic
     subverted: true
+  - type: ItemSlots # _ClawCommand - syndieborgs boot with a Syndimov board instead of Crewsimov
+    slots:
+      borg_lawboard:
+        name: clawcommand-borg-lawboard-slot
+        whitelist:
+          requireAll: true
+          components:
+          - SiliconLawProvider
+          - Item
+        startingItem: SyndimovCircuitBoard
+        insertOnInteract: false
+        swap: false
+        ejectOnBreak: true
+        ejectVerbText: clawcommand-borg-lawboard-eject-verb
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
@@ -410,6 +441,20 @@
   components:
   - type: SiliconLawProvider
     laws: SyndicateStatic #Non-subverted version so they can still be changed
+  - type: ItemSlots # _ClawCommand - matches the chassis lawset above
+    slots:
+      borg_lawboard:
+        name: clawcommand-borg-lawboard-slot
+        whitelist:
+          requireAll: true
+          components:
+          - SiliconLawProvider
+          - Item
+        startingItem: SyndimovCircuitBoard
+        insertOnInteract: false
+        swap: false
+        ejectOnBreak: true
+        ejectVerbText: clawcommand-borg-lawboard-eject-verb
   - type: StartIonStormed
     ionStormAmount: 3
   - type: IonStormTarget
@@ -468,6 +513,20 @@
     stunTime: 5
   - type: SiliconLawProvider
     laws: XenoborgLawset # custom laws here
+  - type: ItemSlots # _ClawCommand - xenoborgs carry their own lawset board
+    slots:
+      borg_lawboard:
+        name: clawcommand-borg-lawboard-slot
+        whitelist:
+          requireAll: true
+          components:
+          - SiliconLawProvider
+          - Item
+        startingItem: XenoborgCircuitBoard
+        insertOnInteract: false
+        swap: false
+        ejectOnBreak: true
+        ejectVerbText: clawcommand-borg-lawboard-eject-verb
   - type: IntrinsicRadioTransmitter # can only use binary and xenoborg channel
     channels:
     - Xenoborg
@@ -540,6 +599,7 @@
         - borg_brain
         - borg_module
         - cell_slot
+        - borg_lawboard # _ClawCommand
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: PointLight

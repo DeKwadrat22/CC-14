@@ -14,27 +14,74 @@ namespace Content.Client.Guidebook.Controls;
 /// <summary>
 /// Control for iterating and embedding every SiliconLawsetPrototype into the guidebook.
 /// </summary>
+/// <remarks>
+/// _ClawCommand: takes two optional arguments so a page can be split into sections instead of being one
+/// alphabetical blob.
+/// <c>Lawsets="Medical,Research"</c> embeds exactly those, in the order given.
+/// <c>Exclude="Medical,Research"</c> embeds everything else, alphabetically.
+/// With neither, it embeds every lawset alphabetically as before.
+/// </remarks>
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideLawsetListEmbed : Control, IDocumentTag
 {
     [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private ILogManager _logManager = default!;
+
+    private readonly ISawmill _sawmill;
 
     public GuideLawsetListEmbed()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         MouseFilter = MouseFilterMode.Stop;
+
+        _sawmill = _logManager.GetSawmill("guidebook.lawsets");
     }
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
-        foreach (var lawset in _prototype.EnumeratePrototypes<SiliconLawsetPrototype>().OrderBy(x => x.ID))
+        foreach (var lawset in GetLawsets(args))
         {
             GuideLawsetEmbed embed = new(lawset);
             GroupContainer.AddChild(embed);
         }
 
         control = this;
+        return true;
+    }
+
+    private IEnumerable<SiliconLawsetPrototype> GetLawsets(Dictionary<string, string> args)
+    {
+        // An explicit list is authored in the order it should be read in, so don't sort it.
+        if (TryParseIds(args, "Lawsets", out var listed))
+            return listed;
+
+        var lawsets = _prototype.EnumeratePrototypes<SiliconLawsetPrototype>().OrderBy(x => x.ID);
+
+        if (TryParseIds(args, "Exclude", out var excluded))
+        {
+            var ids = excluded.Select(x => x.ID).ToHashSet();
+            return lawsets.Where(x => !ids.Contains(x.ID));
+        }
+
+        return lawsets;
+    }
+
+    private bool TryParseIds(Dictionary<string, string> args, string key, out List<SiliconLawsetPrototype> lawsets)
+    {
+        lawsets = new List<SiliconLawsetPrototype>();
+
+        if (!args.TryGetValue(key, out var raw))
+            return false;
+
+        foreach (var id in raw.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+        {
+            if (_prototype.TryIndex<SiliconLawsetPrototype>(id, out var lawset))
+                lawsets.Add(lawset);
+            else
+                _sawmill.Error($"Lawset list embed argument \"{key}\" contains unknown lawset \"{id}\"");
+        }
+
         return true;
     }
 }
