@@ -4,14 +4,11 @@ using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Prototypes;
 using Content.Shared.Zombies;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
 public abstract partial class SharedSingerSystem : EntitySystem
 {
-    [Dependency] protected IPrototypeManager ProtoMan = default!;
-
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedInstrumentSystem _instrument = default!;
 

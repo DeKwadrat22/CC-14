@@ -22,7 +22,7 @@ public sealed partial class SiliconLawSystem
         provider.Lawset = lawset;
         provider.LawUploadSound = board.Comp.LawUploadSound;
 
-        NotifyLawsChanged(target, board.Comp.LawUploadSound);
+        NotifyLawsChanged((target, provider), board.Comp.LawUploadSound);
     }
 
     /// <summary>
@@ -36,6 +36,6 @@ public sealed partial class SiliconLawSystem
 
         provider.Lawset = new SiliconLawset();
 
-        NotifyLawsChanged(target);
+        NotifyLawsChanged((target, provider));
     }
 }

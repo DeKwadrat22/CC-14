@@ -1,9 +1,7 @@
 using Content.Server.Instruments;
 using Content.Server.Speech.Components;
-using Content.Server.UserInterface;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Bed.Sleep;
-using Content.Shared.Damage;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
@@ -20,7 +18,6 @@ using Content.Shared.Traits.Assorted.Systems;
 using Content.Shared.UserInterface;
 using Content.Shared.Zombies;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Traits.Assorted;
 
@@ -64,9 +61,7 @@ public sealed partial class SingerSystem : SharedSingerSystem
     {
         // Check if an item that makes the singer mumble is equipped to their face
         // (not their pockets!). As of writing, this should just be the muzzle.
-        if (TryComp<AddAccentClothingComponent>(args.Equipment, out var accent) &&
-            accent.ReplacementPrototype == "mumble" &&
-            args.Slot == "mask")
+        if (TryComp<MumbleAccentComponent>(args.Equipment, out _))
             CloseMidiUi(args.EquipTarget);
     }
 
@@ -138,8 +133,7 @@ public sealed partial class SingerSystem : SharedSingerSystem
         var canNotSpeak = !_actionBlocker.CanSpeak(uid);
         var zombified = TryComp<ZombieComponent>(uid, out var _);
         var muzzled = _inventory.TryGetSlotEntity(uid, "mask", out var maskUid) &&
-                      TryComp<AddAccentClothingComponent>(maskUid, out var accent) &&
-                      accent.ReplacementPrototype == "mumble";
+                      TryComp<MumbleAccentComponent>(maskUid, out _);
 
         // Set this event as handled when the singer should be incapable of singing in order
         // to stop the ActivatableUISystem event from opening the MIDI UI.

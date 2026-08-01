@@ -194,17 +194,17 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         if (!enabled)
         {
-            RemComp<NightVisionComponent>(uid);
+            RemComp<NightVisionOverlayComponent>(uid);
             return;
         }
 
-        if (HasComp<NightVisionComponent>(uid))
+        if (HasComp<NightVisionOverlayComponent>(uid))
             return;
 
         // Configure before adding: adding a component to a map-initialised entity fires its MapInit right
         // away, and that's where SwitchableOverlaySystem reads ToggleAction to grant the action.
         AddComp(uid,
-            new NightVisionComponent
+            new NightVisionOverlayComponent
             {
                 DrawOverlay = false,
                 ToggleAction = ShadekinDarkVisionActionId,
