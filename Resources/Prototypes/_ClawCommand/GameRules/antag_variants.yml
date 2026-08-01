@@ -1,0 +1,114 @@
+# Claw Command - antag rules repackaged for the Secret / Extended Irregular difficulty rollers.
+#
+# Two things live here:
+#   1. Extra sleeper agent waves, so a shift can be infiltrated more than once.
+#   2. `Sub*` copies of the roundstart antag rules with cancelPresetOnTooFewPlayers disabled.
+#
+# (2) matters because these are picked by a SubGamemodes roll rather than being the preset
+# itself. Upstream cancels the whole preset when a rule's minPlayers isn't met, which is right
+# when the player voted for Nukeops, and very wrong when a difficulty roll happened to land on
+# it at 12 players. These variants just quietly don't run instead.
+
+# ---------------------------------------------------------------------------
+# Sleeper agent waves
+#
+# SleeperAgents runs for the whole round (duration: null), and the scheduler will never pick a
+# rule that is already active. So repeat waves have to be distinct prototypes. Each wave starts
+# later, is weighted lower and needs more players than the last.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: SleeperAgents
+  id: SleeperAgentsSecondWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 55
+    weight: 6
+    minimumPlayers: 20
+
+- type: entity
+  parent: SleeperAgents
+  id: SleeperAgentsThirdWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 85
+    weight: 4
+    minimumPlayers: 25
+
+# ---------------------------------------------------------------------------
+# Roundstart antags, sub-rollable
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: Traitor
+  id: SubTraitor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 5
+    cancelPresetOnTooFewPlayers: false
+    delay:
+      min: 240
+      max: 420
+
+- type: entity
+  parent: Nukeops
+  id: SubNukeops
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: Revolutionary
+  id: SubRevolutionary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 15
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: Zombie
+  id: SubZombie
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+    cancelPresetOnTooFewPlayers: false
+    delay:
+      min: 600
+      max: 900
+
+- type: entity
+  parent: Heretic
+  id: SubHeretic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 15
+    cancelPresetOnTooFewPlayers: false
+
+# Metagame protection is never worth cancelling a preset over. Upstream's DummyNonAntag
+# would abort the round setup below 5 players, which Extended Irregular should survive.
+- type: entity
+  parent: DummyNonAntag
+  id: SubDummyNonAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 5
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: BaseGameRule
+  id: SubDummyNonAntagChance
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubDummyNonAntag
+      prob: 0.3

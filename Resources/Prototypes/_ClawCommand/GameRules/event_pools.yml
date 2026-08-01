@@ -1,0 +1,409 @@
+# Claw Command - event pools for the Secret and Extended Irregular schedulers.
+#
+# Events are grouped into small category tables here. The per-gamemode, per-difficulty
+# tables further down pull those categories in with a `prob:`, which is the chance the
+# whole category is even eligible on a given event roll. Once eligible, the individual
+# event is picked from the combined pool by its own StationEvent `weight:`.
+#
+# So: `prob` = how often this KIND of thing happens in this gamemode.
+#     `weight` (on the event itself) = which one of them you get. Do not edit weights
+#     here to retune a gamemode, edit the probs.
+
+# ---------------------------------------------------------------------------
+# Categories
+# ---------------------------------------------------------------------------
+
+# Ambient station problems. The backbone of every round, always eligible.
+- type: entityTable
+  id: CCAmbientEventsTable
+  table: !type:AllSelector
+    children:
+    - id: BluespaceArtifact
+    - id: BluespaceLocker
+    - id: BreakerFlip
+    - id: BureaucraticError
+    - id: ClericalError
+    - id: GasLeak
+    - id: GreytideVirus
+    - id: KudzuGrowth
+    - id: MassHallucinations
+    - id: MimicVendorRule
+    - id: PowerGridCheck
+    - id: RandomSentience
+    - id: SolarFlare
+    - id: VentClog
+
+# Split out so Extended Irregular can require a staffed science department.
+- type: entityTable
+  id: CCAnomalyEventsTable
+  table: !type:AllSelector
+    children:
+    - id: AnomalySpawn
+
+# "Psion storm". Split out so Extended Irregular can make it rarer, since a hostile
+# lawset silicon is a whole antag's worth of round for a mode that isn't about that.
+- type: entityTable
+  id: CCIonStormEventsTable
+  table: !type:AllSelector
+    children:
+    - id: IonStorm
+
+# Harmless critters. Flavour, not a threat - always eligible in both modes.
+- type: entityTable
+  id: CCVerminEventsTable
+  table: !type:AllSelector
+    children:
+    - id: CockroachMigration
+    - id: MothroachSpawn
+    - id: MouseMigration
+    - id: RandomCritterHorde
+    - id: SnailMigrationLowPop
+
+# Hostile mob spawns - light. A nuisance, handled by any armed crewmember.
+- type: entityTable
+  id: CCHostileMobLightTable
+  table: !type:AllSelector
+    children:
+    - id: ClosetSkeleton
+    - id: SlimesSpawn
+    - id: SpiderSpawn
+    - id: SpiderClownSpawn
+    - id: XenoVentsWeak
+
+# Hostile mob spawns - heavy. Needs an organised security response.
+- type: entityTable
+  id: CCHostileMobHeavyTable
+  table: !type:AllSelector
+    children:
+    - id: KingRatMigration
+    - id: RevenantSpawn
+    - id: SlimesSpawnHorde
+    - id: SnailMigration
+    - id: SnakeSpawnHorde
+    - id: SpiderSpawnHorde
+    - id: SpiderClownSpawnHorde
+    - id: XenoVents
+
+# Hostile mob spawns - boss. Round-defining.
+- type: entityTable
+  id: CCHostileMobBossTable
+  table: !type:AllSelector
+    children:
+    - id: DragonSpawn
+
+# Syndicate infiltration. The house style for Extended Irregular: a person with an
+# agenda, not a mob with a hitbox.
+- type: entityTable
+  id: CCSyndicateInfiltrationTable
+  table: !type:AllSelector
+    children:
+    - id: NinjaSpawn
+    - id: SyndieOutpostSpawn
+
+# Sleeper agents, single wave.
+- type: entityTable
+  id: CCSleeperAgentsTable
+  table: !type:AllSelector
+    children:
+    - id: SleeperAgents
+
+# Sleeper agents, repeatable. Each wave is a separate prototype because the rule runs for
+# the whole round, and an active rule can never be re-picked by the scheduler.
+- type: entityTable
+  id: CCSleeperAgentsRepeatTable
+  table: !type:AllSelector
+    children:
+    - id: SleeperAgents
+    - id: SleeperAgentsSecondWave
+    - id: SleeperAgentsThirdWave
+
+# Other single-target infiltrators.
+- type: entityTable
+  id: CCInfiltratorEventsTable
+  table: !type:AllSelector
+    children:
+    - id: ParadoxCloneSpawn
+
+# High-impact, low-roleplay antag events. Secret only.
+- type: entityTable
+  id: CCLrpAntagEventsTable
+  table: !type:AllSelector
+    children:
+    - id: LoneOpsSpawn
+    - id: WizardSpawn
+    - id: ZombieOutbreak
+
+# ---------------------------------------------------------------------------
+# Extended Irregular pools
+#
+# Roleplay-first. Syndicate infiltration is the common threat, random mob spawns are
+# rare (less rare on Hard), and heretic / lone op / zombie outbreak never appear.
+# ---------------------------------------------------------------------------
+
+- type: entityTable
+  id: CCIrregularEasyEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector # needs scientists to actually contain it
+      tableId: CCAnomalyEventsTable
+      conditions:
+      - !type:DepartmentCrewCondition
+        departments: [ Science ]
+        min: 2
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+      prob: 0.3
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.5
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.8
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsRepeatTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.5
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.1
+
+- type: entityTable
+  id: CCIrregularMediumEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CCAnomalyEventsTable
+      conditions:
+      - !type:DepartmentCrewCondition
+        departments: [ Science ]
+        min: 2
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+      prob: 0.3
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.85
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsRepeatTable
+      prob: 0.8
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.2
+    - !type:NestedSelector
+      tableId: CCHostileMobHeavyTable
+      prob: 0.08
+
+- type: entityTable
+  id: CCIrregularHardEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CCAnomalyEventsTable
+      conditions:
+      - !type:DepartmentCrewCondition
+        departments: [ Science ]
+        min: 2
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+      prob: 0.35
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.9
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsRepeatTable
+      prob: 0.85
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.35
+    - !type:NestedSelector
+      tableId: CCHostileMobHeavyTable
+      prob: 0.2
+    - !type:NestedSelector
+      tableId: CCHostileMobBossTable
+      prob: 0.08
+
+# ---------------------------------------------------------------------------
+# Secret pools
+#
+# Everything is on the table, including the stuff Extended Irregular refuses. No
+# department staffing gates - Secret is meant to be able to hurt.
+# ---------------------------------------------------------------------------
+
+- type: entityTable
+  id: CCSecretEasyEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCAnomalyEventsTable
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.5
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.5
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.5
+    - !type:NestedSelector
+      tableId: CCHostileMobHeavyTable
+      prob: 0.2
+    - !type:NestedSelector
+      tableId: CCHostileMobBossTable
+      prob: 0.05
+    - !type:NestedSelector
+      tableId: CCLrpAntagEventsTable
+      prob: 0.1
+
+- type: entityTable
+  id: CCSecretMediumEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCAnomalyEventsTable
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsRepeatTable
+      prob: 0.75
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.6
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCHostileMobHeavyTable
+      prob: 0.45
+    - !type:NestedSelector
+      tableId: CCHostileMobBossTable
+      prob: 0.15
+    - !type:NestedSelector
+      tableId: CCLrpAntagEventsTable
+      prob: 0.3
+
+- type: entityTable
+  id: CCSecretHardEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: CCAmbientEventsTable
+    - !type:NestedSelector
+      tableId: CCAnomalyEventsTable
+    - !type:NestedSelector
+      tableId: CCIonStormEventsTable
+    - !type:NestedSelector
+      tableId: CCVerminEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+      prob: 0.8
+    - !type:NestedSelector
+      tableId: CCSyndicateInfiltrationTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCSleeperAgentsRepeatTable
+      prob: 0.85
+    - !type:NestedSelector
+      tableId: CCInfiltratorEventsTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCHostileMobLightTable
+      prob: 0.85
+    - !type:NestedSelector
+      tableId: CCHostileMobHeavyTable
+      prob: 0.7
+    - !type:NestedSelector
+      tableId: CCHostileMobBossTable
+      prob: 0.3
+    - !type:NestedSelector
+      tableId: CCLrpAntagEventsTable
+      prob: 0.5
+
+# ---------------------------------------------------------------------------
+# Meteors
+#
+# Secret gets them straight. Extended Irregular only gets them when engineering is
+# actually staffed, because nobody else is repairing a hulled department.
+# ---------------------------------------------------------------------------
+
+- type: entityTable
+  id: CCIrregularMeteorSwarmTable
+  table: !type:NestedSelector
+    tableId: BasicMeteorSwarmEventsTable
+    conditions:
+    - !type:DepartmentCrewCondition
+      departments: [ Engineering ]
+      min: 2
+
+# ---------------------------------------------------------------------------
+# Unknown shuttles
+#
+# Extended Irregular drops the lone op from the hostile shuttle pool.
+# ---------------------------------------------------------------------------
+
+- type: entityTable
+  id: CCIrregularUnknownShuttlesTable
+  table: !type:AllSelector
+    children:
+    - id: UnknownShuttleManOWar
+    - id: UnknownShuttleInstigator
+    - id: UnknownShuttleSyndieEvacPod

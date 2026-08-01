@@ -54,6 +54,9 @@
   - type: HereticRule
   - type: GameRule
     minPlayers: 15
+    # Claw Command - CalmHeretic is only ever rolled as a sub-gamemode, so falling under
+    # minPlayers must not cancel the preset that rolled it.
+    cancelPresetOnTooFewPlayers: false
   - type: AntagObjectives
     objectives:
     - HereticKnowledgeObjective
