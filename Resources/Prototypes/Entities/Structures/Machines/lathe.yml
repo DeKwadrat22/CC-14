@@ -206,6 +206,7 @@
     staticPacks:
     - ChemistryStatic
     - SurgeryStatic
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the security techfab)
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
@@ -268,6 +269,7 @@
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
+    - LawBoardsStatic # _ClawCommand: silicon law boards, minus the ones the departments print themselves
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -404,6 +406,8 @@
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
     - DogborgModulesStatic # _ClawCommand: security cyborg modules (disabler/investigation) print here only
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the science protolathe)
+    - SecurityLawBoardsStatic # _ClawCommand: Silicon Police law board
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -490,6 +494,7 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - MedicalLawBoardsStatic # _ClawCommand: Medical law board
     dynamicPacks:
     - Chemistry
   - type: Machine

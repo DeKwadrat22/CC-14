@@ -37,6 +37,14 @@ You [bold]must[/bold] have all the evidence necessary to sentence someone to the
 
 [italic]See Space Law for a comprehensive list of crimes, modifiers, and conditions with definitions.[/italic]
 
+## Arresting the Captain or Acting Commanding Officer
+
+An arrest of the Captain, or of the acting Commanding Officer, [bold]must[/bold] be approved by another command member if one is present on station. If no other command member is present, Security [italic]may[/italic] proceed without approval.
+
+The approving command member [bold]must[/bold] take over as acting Commanding Officer for as long as the arrested officer is held, and [bold]must[/bold] hand the position back on their release. The station is never left without a commanding officer because its commanding officer is in a cell.
+
+The arrest itself follows the same evidence standard as any other. Rank does not raise or lower it. See [textlink="Legal SOP" link="GuideLegalSOP"] and [textlink="Command Hierarchy" link="GuideCommandHierarchy"].
+
 ## Contraband & Search & Seizure
 
 You [bold]must[/bold] search and seize any object that is believed to be used in the commission of the crime. However, one should not [italic]seize[/italic] non-NT-aligned objects, such as non-standard branded clothing and paraphernalia, that pose little risk. It should be removed from the person, placed in an evidence locker, and returned to them. Any [italic]contraband[/italic] defined under the Contraband List, [italic]shall[/italic] be seized from the individual.
@@ -52,7 +60,7 @@ They [bold]must[/bold] be given medical treatment before serving their sentence 
 
 They [bold]must[/bold] be given what they ask for, so long as their request is reasonable. They [italic]must not[/italic] be mistreated or ignored; they [italic]must[/italic] be removed from Permanent Confinement when there are exigent circumstances, i.e., immediate danger to the persons like station-wide disruption or dangerous creatures.
 
-[italic]See [textlink="Brigging Standard Operating Procedure" link="Brigging SOP"] for more clarification on the treatment and handling of prisoners.[/italic]
+[italic]See [textlink="Brigging Standard Operating Procedure" link="GuideBriggingSOP"] for more clarification on the treatment and handling of prisoners.[/italic]
 
 ## Warrents
 
@@ -63,18 +71,18 @@ On code blue shifts warrants are not needed as stated in the alert level procedu
 
 Warrent: [bold]Implant Search[/bold]
 
-- Warrent signed or stamped by: [italic]Commanding Officer, Head of Security or Warden; and Chief Medical Officer[/italic]
+- Warrent signed or stamped by: [italic]The suspect's department head, or the highest-ranking command staff; and Chief Medical Officer[/italic]
 
 Warrent: [bold]Departmental Search[/bold]
-- Warrent signed or stamped by: [italic]Commanding Officer, Head of Security, Warden[/italic]
+- Warrent signed or stamped by: [italic]The department head being searched, or the highest-ranking command staff[/italic]
 
 Warrent: [bold]Individual, Full Search[/bold]
-- Warrent signed or stamped by: [italic]Commanding Officer, Head of Security, Warden[/italic]
+- Warrent signed or stamped by: [italic]The suspect's department head, or the highest-ranking command staff[/italic]
 
 [head=3]Implants[/head]
 
 For any situation requiring an implant search, you [bold]must[/bold] have a warrant with [bold]evidence[/bold] such as the Implanter with the suspect's DNA; other evidence are admissible, articulating that being unable to find the object on the person and line of sight was not lost on the suspect.
-- [italic]The Captain is presented with an implant search warrant, they see that it is lacking some details in relation to the articulation of the probable cause; meaning what evidence or line of thinking on Security's part, denying the warrant; expressing to them to write it better.[/italic]
+- [italic]The Captain is presented with an implant search warrant, they see that it is lacking some details in relation to the articulation of the sufficient evidence; meaning what evidence or line of thinking on Security's part, denying the warrant; expressing to them to write it better.[/italic]
 
 Then bring in trained medical personnel under supervision of the Head of Security or Chief Medical Officer; or, the Chief Medical Officer will perform the implant search themselves [italic]after[/italic] being shown the warrant— present the warrant to the suspect.
 - [italic]Medical Intern Fluffs Stargazer is observed by the Head of Security Teeg Dougland to use the Implanter device on suspect Slab Bulkhead, they soon discover that a device is pulled into the implanter, thereby completing the implant search.[/italic]
@@ -84,16 +92,16 @@ Additionally, an individual may consent to the implant search, thereby waiving t
 
 [head=3]Departments[/head]
 
-For any situation that requires a departmental search, provide Probable Cause for the warrant.
+For any situation that requires a departmental search, provide Sufficient Evidence for the warrant.
 
 - [italic]For example, two individuals broke into the Head of Personnel's room and stole some personal effects and ID cards.[/italic]
-- [italic]Probable Cause: John Security and Jane Warden witnessed two individuals run into Engineering, detaining them followed by a search, nothing was found on them in relation to the stolen goods; the stolen items were not on them and it is reasonable to believe they have stowed the items in the department.[/italic]
+- [italic]Sufficient Evidence: John Security and Jane Warden witnessed two individuals run into Engineering, detaining them followed by a search, nothing was found on them in relation to the stolen goods; the stolen items were not on them and it is reasonable to believe they have stowed the items in the department.[/italic]
 
-You [bold]must[/bold] get it stamped or signed by the Captain, or Head of Security, or Warden. Present the warrant to the Departmental Head, who's department is getting searched— you may also present this to any of the workers they have.
+You [bold]must[/bold] get it stamped or signed by the department head being searched, or the highest-ranking command staff. Present the warrant to the Departmental Head, who's department is getting searched— you may also present this to any of the workers they have.
 
 [head=3]Individuals[/head]
 
-For a stringent search of a persons' effects [bold]write-up[/bold] a search warrant that can be signed off by the Head of Security, Warden, or Captain. Present the warrant to the suspect. This must be done when it is under Green Alert.
+For a stringent search of a persons' effects [bold]write-up[/bold] a search warrant that can be signed off by the suspect's department head, or the highest-ranking command staff. Present the warrant to the suspect. This must be done when it is under Green Alert.
 
 [head=3]Consented Search[/head]
 
@@ -122,36 +130,23 @@ The distribution of weapons and munitions [italic]must[/italic] follow [bold]For
 
 This does not mean that as Head of Security or the Warden, you can wander around the halls fully armed to the teeth for all circumstances.
 
-For example, the Warden and Head of Security may carry one (1) long rifle such as a Laser Rifle or Lecter or Drozd, or Antique weaponry, then wear their assigned Hard Suit, and common apprehension tools.
+For example, the Warden and Head of Security may openly carry the one (1) long rifle assigned to them - a Laser Rifle, Lecter, Drozd, or Antique weaponry - at any alert level including green, then wear their assigned Hard Suit, and common apprehension tools.
 
 However, security officers and cadets should only be assigned similar kits when applicable to the alert level.
 
 ## Alert Levels
 Code green requires you to obtain warrants for many things.
-Code green also has a strict policy on which weapons you can and cannot openly carry.
+On code green only non-lethal armament may be openly carried; lethal longarms of any kind stay in the armoury.
+Security may carry a sidearm concealed.
+The Head of Security and Warden may openly carry the longarm assigned to them.
 Code blue and red change the policies.
 For more information check [textlink="Alert Procedure" link="GuideAlertProcedure"] page in the guidebook for a detailed overview.
-
-## Reasonable Suspicion
-
-A security officer can justify searching someone and detaining someone if and when they encounter someone that they reasonably believe to be committing, involved in committing or conspiring to commit a crime. This is referred to as Reasonable Suspicion. Three example scenarios of Reasonable Suspicion would be, but not limited to:
-
--[italic]The security officer receives reasonable reports of someone with a lethal weapon.[/italic]
--[italic]The security officer spots someone with an otherwise unusual or suspicious item: (chief examples of this not covered above would be makeshift cuffs & unpermitted clothing, such as command uniforms)[/italic]
--[italic]The security officer observes someone acting out-of-ordinary or obscuring their identifiable features around restricted areas or scenes of crime, fleeing unusually from the crime scene, or fitting the description presented at the scene of a crime set by fellow officers or witnesses[/italic]
-
-## Probable Cause
-
-Probable Cause is an escalation of Reasonable Suspicion, wherein the security officer obtains sufficient and near-irrefutable evidence to support that someone is involved in or going to be involved in committing a criminal act. Often, this requires the officer's direct view. Three example scenarios of Probable Cause would be, but not limited to:
-
--[italic]The security officer undeniably spots someone quickly pull out a lethal, non-permitted weapon.[/italic]
--[italic]The security officer watches someone flee from an area with stolen items.[/italic]
--[italic]The security officer sees someone breaking open an area in which they are restricted from accessing.[/italic]
+The evidence standards themselves - Reasonable Suspicion and Sufficient Evidence - are in [textlink="Legal SOP" link="GuideLegalSOP"].
 
 ## Fleeing Individual
 
 When Security is enacting a detainment to possibly arrest a wanted person, and the individual begins to [bold]flee[/bold], Security can utilize ranged non-lethal apprehension methods.
 
-There [bold]must[/bold] be probable cause to utilize Lethal Force if the officer can articulates that the fleeing individual will cause serious harm to the officers or the station and crew at large or continually slipped out of cuffs or readily escaped their Brig cell.
+There [bold]must[/bold] be sufficient evidence to utilize Lethal Force if the officer can articulates that the fleeing individual will cause serious harm to the officers or the station and crew at large or continually slipped out of cuffs or readily escaped their Brig cell.
 
 </Document>

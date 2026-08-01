@@ -1,0 +1,99 @@
+<Document>
+# Command Standard Operating Procedure
+
+This procedure applies to the Captain, all Heads of Staff, and any crew member acting in a command capacity. It sits above departmental procedure; where a departmental SOP conflicts with this document, this document takes precedence unless the Captain rules otherwise.
+
+## Authority and Responsibility
+
+Command staff are accountable for their department, its equipment, and the conduct of its workers. Authority may be delegated downward, responsibility [bold]may not[/bold] — a Head of Staff remains answerable for what their department does in their absence.
+
+Command members [bold]shall not[/bold] issue orders inside another Head of Staff's department without first consulting that Head, except where there is an immediate threat to life or to the station.
+
+    [italic]For example, the Chief Engineer may not order Medical personnel to abandon a patient. They [bold]may[/bold] order an evacuation of Medical if atmospherics in that section have failed.[/italic]
+
+The Captain, or the acting Commanding Officer, holds final say on all matters not otherwise reserved by NanoTrasen. See [textlink="Command Hierarchy" link="GuideCommandHierarchy"] for succession and acting-captain rules.
+
+## Duties of the Captain
+
+The Captain, and whoever holds the position as acting Commanding Officer, carries a set of hard requirements beyond this document - keeping the station running, overseeing day-to-day operations, and commanding from the bridge. These are listed in [textlink="Captain SOP" link="GuideCaptainSOP"].
+
+## Delegation and Acting Positions
+
+When a department has no Head of Staff on station, the Captain [italic]may[/italic] appoint a competent worker from that department as an acting Head. This appointment [bold]must[/bold] be announced and [bold]must[/bold] be handed over the moment the actual Head of Staff arrives.
+
+An acting Head receives only the access and authority their role requires. Handing out full command access, the spare Captain's ID, or all-access to an acting Head is [bold]not[/bold] standard operation.
+
+## Access and Equipment
+
+Command [italic]should not[/italic] grant access beyond what a crew member's job requires. Requests for elevated access go through the Head of Personnel or the Captain, and [italic]should[/italic] be recorded.
+
+Command staff [bold]shall not[/bold] arm themselves beyond what the current alert level justifies, and [bold]shall not[/bold] draw from the armoury without the Warden or Head of Security being informed. See [textlink="Alert Procedure" link="GuideAlertProcedure"] and [textlink="Security Standard Operating Procedure" link="GuideSecuritySOP"].
+
+Restricted and contraband equipment held by command requires the same paperwork as anyone else. See [textlink="Permits" link="GuidePermits"].
+
+## Alert Levels
+
+Raising or lowering the alert level is a command decision and [bold]must[/bold] be justified to the crew over the announcement system. Alert levels are not to be raised to grant Security broader search powers without an underlying threat.
+
+Code Blue and Code Red are set by the Captain, acting Commanding Officer, or Head of Security. Lowering either requires the same authority. The full table of what each level permits is in [textlink="Alert Procedure" link="GuideAlertProcedure"].
+
+Escalation policy differs by shift type.
+
+[bold]Secret[/bold]: Code Blue is raised automatically and may be false. Treat it as unconfirmed until a threat is established.
+
+[bold]Extended Irregular[/bold]: Code Blue requires a threat still at large - the perpetrator free, unidentified, or otherwise uncaught. Any of the following qualifies:
+
+- A crew member murdered and the killer still loose
+- An abduction or kidnapping in progress
+- Mass acts of violence
+- Large-scale rioting
+- Major sabotage with the perpetrator still unidentified
+- A prisoner escaped from custody or permanent confinement and still on the loose
+- High-value items missing from the Captain's, Head of Security's, or Warden's locker
+- A stash or stockpile of major dangerous contraband found with no owner
+- Two or more confirmed, ongoing lethal threats
+
+Intercepted hostile communications alone do not justify it unless they are specific and credibly lethal.
+
+[bold]Code Red[/bold] requires a confirmed, identified threat the station cannot contain at Blue. Any of the following qualifies:
+
+- A heavily armed or extremely dangerous hostile force aboard
+- A recent forced breach of the station hull by hostile combatants
+- An active mass-casualty event in progress
+- Station-wide destruction underway, or the nuclear authentication disk compromised
+- A threat that has already defeated a Blue-level response
+- Multiple simultaneous major emergencies
+
+## Announcements and Communication
+
+Station-wide announcements are a command tool, not a personal channel. They [italic]should[/italic] be used for alert changes, evacuations, appointments, arrivals of off-station personnel, and matters affecting the whole crew.
+
+Command [bold]should not[/bold] broadcast the location or identity of suspected antagonists over general comms where a targeted response would serve. Doing so tends to produce mob behaviour among the crew.
+
+## Evacuation and Shuttle Calls
+
+An evacuation shuttle call requires a genuine threat to the station or crew: hull loss, an uncontained delamination, mass casualty, or a hostile force command cannot contain.
+
+The Captain, acting Commanding Officer, or a majority of Heads of Staff [italic]may[/italic] call the shuttle. A call [italic]should[/italic] be accompanied by an announcement stating why. Recalling the shuttle requires the same authority as calling it.
+
+    [italic]Calling the shuttle to end a shift early, out of boredom, or because a single department is having a bad time is [bold]not[/bold] grounds for evacuation.[/italic]
+
+Launching the shuttle early, before its docking timer has run out, is [bold]only[/bold] permitted under a real and imminent emergency - the kind of threat that would itself justify Code Red. Cutting the timer strands whoever is still en route to the shuttle, so it requires a danger that makes waiting worse than leaving them behind.
+
+    [italic]An uncontained delamination about to consume the station is grounds to launch early. Wanting the round to end sooner is not.[/italic]
+
+## Non-Crew and Anomalous Lifeforms
+
+Claw Command seeks to live in peace with all lifeforms. Non-crew entities are not covered by Space Law's protections, but command [bold]shall not[/bold] treat that as licence to remove them at will.
+
+Extermination or detention orders against a non-crew lifeform require an actual Space Law infraction by that entity, and may be issued by a command member or the Warden at their discretion. The Captain may veto any such order. See [textlink="Anomaly SOP" link="GuideAnomalySOP"].
+
+## Conduct and Accountability
+
+Command staff are held to the standards in [textlink="NanoTrasen Company Policy" link="GuideCompanyPolicy"] and [textlink="General Regulations" link="GuideGeneralRegulations"] more strictly than the general crew, not less.
+
+A command member who abuses their position may be demoted by the Captain, or removed by the process described in [textlink="Mutiny Guidelines" link="GuideMutinyGuidelines"]. Demotions [italic]should[/italic] be recorded and the affected crew member's access adjusted to match.
+
+Command members are not exempt from Security. A Head of Staff suspected of a crime is processed like any other crew member, with the Captain or Head of Security supervising where possible.
+
+</Document>

@@ -44,7 +44,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: HoSPDA
-    gloves: ClothingHandsGlovesCombat
+    # CLAW COMMAND - gloves removed; picked via the CCSecurityGloves loadout instead (avoids double gloves)
     ears: ClothingHeadsetAltSecurity
     pocket1: WeaponPistolMk58
   storage:

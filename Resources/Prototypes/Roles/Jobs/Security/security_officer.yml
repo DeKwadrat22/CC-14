@@ -39,4 +39,4 @@
     head: ClothingHeadHatBeretSecurity
     mask: ClothingMaskGasSecurity
     neck: Dinkystar
-    gloves: ClothingHandsGlovesColorBlack
+    # CLAW COMMAND - gloves removed; picked via the CCSecurityGloves loadout instead (avoids double gloves)

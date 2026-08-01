@@ -1,0 +1,307 @@
+<Document>
+# Legal Standard Operating Procedure
+
+## Reasonable Suspicion
+
+A security officer can justify detaining someone if and when they encounter someone that they reasonably believe to be committing, involved in committing or conspiring to commit a crime. This is referred to as Reasonable Suspicion. Three example scenarios of Reasonable Suspicion would be, but not limited to:
+
+-[italic]The security officer receives reasonable reports of someone with a lethal weapon.[/italic]
+-[italic]The security officer spots someone with an otherwise unusual or suspicious item: (chief examples of this not covered above would be makeshift cuffs & unpermitted clothing, such as command uniforms)[/italic]
+-[italic]The security officer observes someone acting out-of-ordinary or obscuring their identifiable features around restricted areas or scenes of crime, fleeing unusually from the crime scene, or fitting the description presented at the scene of a crime set by fellow officers or witnesses[/italic]
+
+## Sufficient Evidence
+
+Sufficient Evidence is an escalation of Reasonable Suspicion, reached when what you have gathered is strong enough to place someone at the commission of a crime rather than merely near it. It is met either by direct observation, or by forensic findings that reach the score below.
+
+Direct observation means the act was witnessed by a security officer or by any command member. Three examples, but not limited to:
+
+-[italic]The security officer undeniably spots someone quickly pull out a lethal, non-permitted weapon.[/italic]
+-[italic]The security officer watches someone flee from an area with stolen items.[/italic]
+-[italic]The security officer sees someone breaking open an area in which they are restricted from accessing.[/italic]
+
+[head=3]Forensic Findings[/head]
+
+Findings are scored. The score you need depends on the severity of the crime charged - the first digit of the crime code, plus one. See [textlink="Crime Listing" link="SpaceLawCrimeList"].
+
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Crime severity
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Score required
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1-XX  Minor
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2-XX  Moderate
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        3-XX  Major
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        4
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        4-XX  Extreme
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        5
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        5-XX  Capital
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        6
+      </Box>
+    </ColorBox>
+  </Table>
+
+Identity evidence scores [bold]once[/bold] - a DNA match and a fingerprint match on the same suspect are one finding, not two.
+
+A finding scores only if it is matched to the suspect and the scan was printed and secured.
+
+Placement decides weight. A [bold]key element[/bold] is the body, the weapon, the point of entry, or the object stolen or tampered with.
+
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Finding
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Points on a key element
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Points elsewhere
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        DNA or fingerprint match
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Glove fiber match
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Residue match
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Door logs placing them there
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+  </Table>
+
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Supporting finding
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Points
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Wound type matching a weapon tied to them
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Traces on a murder weapon, or shell casings
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Blood trail to or from them
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        The nature of the activity performed at the scene
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        A prior conviction for the same crime
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+  </Table>
+
+[head=3]Witnesses[/head]
+
+Testimony scores. Witnesses must be independent - if they were seen grouped together, or share an obvious interest in the accusation, count them as one.
+
+Testimony is worth more on a thin shift, where there are fewer people to see anything and less forensic support to fall back on. Use the crew count from the manifest.
+
+Two limits apply at every severity: indirect testimony may supply no more than [bold]2[/bold] points in total, and on a shift of 20 or more crew at least [bold]1[/bold] point must come from a physical finding. Below 20, testimony alone may carry a case.
+
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Witness
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Points
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Direct - saw the act itself
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Direct, on a shift of under 20 crew
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Indirect - saw the circumstances, not the act
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        1
+      </Box>
+    </ColorBox>
+  </Table>
+
+    [italic]Indirect covers seeing two crew fighting shortly before one of them turns up dead, or seeing someone leave the area at the time. It places them in the story, not at the act.[/italic]
+
+A station AI, a borg, or anyone watching cameras or a crew monitoring console counts as [bold]one[/bold] witness, direct or indirect according to what they saw. Several cameras do not make several witnesses.
+
+    [italic]Suit sensor coordinates are only evidence if somebody was watching the console at the time. Coordinates place a suspect at a location, not at an act, so that is indirect.[/italic]
+
+An [bold]Anomaly[/bold] scores as a witness on the same terms, but only while their own record is clean - one who has broken space law this shift does not score at all. This is separate from a Shadekin working as crew, who is an ordinary crew witness.
+
+Presence at a scene is not a case.
+
+[head=3]What It Authorises[/head]
+
+Sufficient Evidence is the threshold for [bold]charging[/bold], not merely for searching. Once it is met, command and Security may charge, arrest and sentence on it. Detention needs only Reasonable Suspicion.
+
+On [bold]Code Green, Yellow, Violet and White[/bold] a search additionally requires a signed warrant - see [textlink="Security SOP" link="GuideSecuritySOP"] for who signs which. No warrant is needed where an officer or command member witnessed the act directly.
+
+On [bold]Code Blue[/bold] no warrant is required, and Reasonable Suspicion alone is enough to search. Command and Security judge whether the threshold for a charge is met.
+
+[italic]For the standard required at each alert level, see [textlink="Alert Procedure" link="GuideAlertProcedure"].[/italic]
+
+</Document>

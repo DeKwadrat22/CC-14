@@ -8,6 +8,9 @@
   - GuideMutinyGuidelines #claw command
   - GuidePermits #claw command
   - GuideAlertProcedure #claw command
+  - GuideAnomalySOP #claw command
+  - GuidePrisonerSOP #claw command
+  - GuideSiliconSOP #claw command
   - Service
   - Cargo
   - Medical

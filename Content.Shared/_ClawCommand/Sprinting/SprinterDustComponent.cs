@@ -29,8 +29,22 @@ public sealed partial class SprinterDustComponent : Component
     /// One-shot puff sound played when the entity transitions from not-sprinting to sprinting.
     /// Ported from Goob's SprinterComponent.SprintStartupSound.
     /// </summary>
+    /// <remarks>
+    /// Volume is in decibels, so -6 dB is half the amplitude of the stock sample - the puff fires every
+    /// time anyone stops holding Walk, so it gets grating fast at full volume.
+    /// </remarks>
     [DataField]
-    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/_ClawCommand/Effects/Sprinting/sprint_puff.ogg");
+    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/_ClawCommand/Effects/Sprinting/sprint_puff.ogg")
+    {
+        Params = AudioParams.Default.WithVolume(-6f),
+    };
+
+    /// <summary>
+    /// How far away the puff can be heard, in tiles. Beyond this - or through a wall - a listener hears
+    /// nothing, so the sound only carries as far as they can actually see the sprinter.
+    /// </summary>
+    [DataField]
+    public float SoundRange = 10f;
 
     /// <summary>
     /// Tracks the last step time. Client-only state — not networked.

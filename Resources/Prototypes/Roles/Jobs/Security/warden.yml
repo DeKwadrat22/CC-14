@@ -51,5 +51,5 @@
     jumpsuit: ClothingUniformJumpsuitWarden
     neck: Dinkystar
     belt: ClothingBeltSecurity
-    gloves: ClothingHandsGlovesCombat
+    # CLAW COMMAND - gloves removed; picked via the CCSecurityGloves loadout instead (avoids double gloves)
     shoes: ClothingShoesBootsJack

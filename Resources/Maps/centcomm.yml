@@ -99531,10 +99531,8 @@ entities:
           - 1318
           - 1316
           - 1319
-          - invalid
           - 1323
           - 1324
-          - invalid
           - 1321
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -99601,9 +99599,7 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - invalid
           - 14395
-          - invalid
           - 14380
           - 14385
           - 14384
@@ -99646,8 +99642,6 @@ entities:
           ents:
           - 17805
           - 17804
-          - invalid
-          - invalid
           - 17789
         paper_label: !type:ContainerSlot
           showEnts: False

@@ -23,7 +23,11 @@ public sealed partial class TraitPreferenceSelector : Control
     {
         RobustXamlLoader.Load(this);
 
-        var text = trait.Cost != 0 ? $"[{trait.Cost}] " : "";
+        // Claw Command - the label sign is INVERTED from the raw budget Cost so it reads the way a player
+        // expects: a trait that refunds budget (negative Cost) shows as a "+N" gain, and one that spends
+        // budget (positive Cost) shows as a "-N" cost. Previously the raw Cost was shown, so a +2-giving
+        // downside read as "-2" and a 4-point cost read as a bare "4", which players found backwards.
+        var text = trait.Cost != 0 ? $"[{-trait.Cost:+0;-0}] " : "";
         text += Loc.GetString(trait.Name);
 
         Cost = trait.Cost;

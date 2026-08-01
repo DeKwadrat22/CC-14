@@ -1,4 +1,5 @@
 using Content.Server.Chat.Systems;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Chat;
 using Content.Shared.Teleportation;
 using Content.Shared.Teleportation.Components;
@@ -57,22 +58,42 @@ public sealed partial class TeleportLocationsSystem : SharedTeleportLocationsSys
     {
         ent.Comp.AvailableWarps.Clear();
 
-        var allEnts = AllEntityQuery<WarpPointComponent>();
+        // CLAW COMMAND - CentComm is a far-off end-game station; its warp points must never be offered as
+        // teleport-scroll destinations (e.g. the wizard scroll should land you on the real station, not CC).
+        var centcommMaps = GetCentcommMapUids();
 
-        // Selecting suitable entities with the warpPoint component using whitelist
-        while (allEnts.MoveNext(out var warpEnt, out var warpPointComp))
+        var allEnts = AllEntityQuery<WarpPointComponent, TransformComponent>();
+
+        while (allEnts.MoveNext(out var warpEnt, out var warpPointComp, out var xform))
         {
 
             if (string.IsNullOrWhiteSpace(warpPointComp.Location))
                 continue;
 
             if (!_whitelist.CheckBoth(warpEnt, ent.Comp.Blacklist, ent.Comp.Whitelist))
-
                 continue;
 
-            ent.Comp.AvailableWarps.Add(new TeleportPoint(Loc.GetString(warpPointComp.Location), GetNetEntity(warpEnt)));
+            if (xform.MapUid is { } map && centcommMaps.Contains(map))
+                continue;
+
+            ent.Comp.AvailableWarps.Add(new TeleportPoint(warpPointComp.Location, GetNetEntity(warpEnt)));
         }
 
         Dirty(ent);
+    }
+
+    // CLAW COMMAND - map entity of every station's CentComm, gathered from StationCentcommComponent, so
+    // warp points sitting on a CentComm map can be filtered out of teleport/warp destination lists.
+    private HashSet<EntityUid> GetCentcommMapUids()
+    {
+        var maps = new HashSet<EntityUid>();
+        var query = AllEntityQuery<StationCentcommComponent>();
+        while (query.MoveNext(out var cc))
+        {
+            if (cc.MapEntity is { } map)
+                maps.Add(map);
+        }
+
+        return maps;
     }
 }

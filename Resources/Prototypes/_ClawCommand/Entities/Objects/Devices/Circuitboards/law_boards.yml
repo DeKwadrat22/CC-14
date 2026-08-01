@@ -1,0 +1,108 @@
+# CLAW COMMAND - law boards for the job / gimmick lawsets in _ClawCommand/silicon_laws_jobs.yml.
+#
+# Credit: law text written by Delta-V Station 14 (https://github.com/DeltaV-Station/Delta-v).
+#
+# These slot into an AI upload console like any other law board, and - unlike upstream - into a borg
+# chassis with its panel unscrewed and its lock open (see BorgLawBoardSystem).
+#
+# Printing: department boards come out of that department's fabricator, everything else out of the
+# science circuit imprinter. Recipes live in _ClawCommand/Recipes/Lathes/law_boards.yml.
+
+- type: entity
+  id: MedicalCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Medical)
+  description: An electronics board containing the Medical lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Medical
+
+- type: entity
+  id: ResearchCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Research)
+  description: An electronics board containing the Research lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Research
+
+- type: entity
+  id: EngineerCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Engineer)
+  description: An electronics board containing the Engineer lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Engineer
+
+- type: entity
+  id: JanitorCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Janitor)
+  description: An electronics board containing the Janitor lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Janitor
+
+- type: entity
+  id: SiliconPoliceCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Silicon Police)
+  description: An electronics board containing the Silicon Police lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: SiliconPolice
+
+- type: entity
+  id: ChaplainCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Chaplain)
+  description: An electronics board containing the Chaplain lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Chaplain
+
+- type: entity
+  id: ReporterCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Reporter)
+  description: An electronics board containing the Reporter lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Reporter
+
+- type: entity
+  id: ClownCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Clown)
+  description: An electronics board containing the Clown lawset. Honk.
+  components:
+  - type: SiliconLawProvider
+    laws: Clown
+
+- type: entity
+  id: CowboyCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Cowboy)
+  description: An electronics board containing the Cowboy lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Cowboy
+
+- type: entity
+  id: DruidCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Druid)
+  description: An electronics board containing the Druid lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Druid
+
+- type: entity
+  id: TyrantCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Tyrant)
+  description: An electronics board containing the Tyrant lawset. Might makes right.
+  components:
+  - type: SiliconLawProvider
+    laws: Tyrant

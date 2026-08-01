@@ -28,6 +28,7 @@
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus
+  - type: Carriable #claw command - fireman carry
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
@@ -131,6 +132,11 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      # CLAW COMMAND - dormant instrument UI so the Singer trait's "Play MIDI" action has something to open.
+      # Harmless for non-singers: they have no InstrumentComponent and no action/verb to reach it; the
+      # SingerSystem EnsureComps the Instrument and grants the action only when the Singer trait is present.
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto

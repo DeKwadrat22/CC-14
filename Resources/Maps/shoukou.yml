@@ -65968,10 +65968,6 @@ entities:
     - type: Transform
       pos: -56.5,8.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PositronicBrain
   entities:
   - uid: 9963

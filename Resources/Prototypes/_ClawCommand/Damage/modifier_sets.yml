@@ -1,3 +1,14 @@
+# Security cyborg (K9 / dogborg) plating. Layered armour totals: blunt 50%, slash 50%,
+# piercing 45%, heat 40% (explosion 35% is handled separately via ExplosionResistance).
+# Coefficient = 1 - reduction, so lower = tougher.
+- type: damageModifierSet
+  id: ModifierSetSecurityBorg
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.55
+    Heat: 0.6
+
 - type: damageModifierSet
   id: ModifierSetFelinid
   coefficients:

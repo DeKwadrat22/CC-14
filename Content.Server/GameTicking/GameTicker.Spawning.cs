@@ -19,6 +19,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -281,7 +282,7 @@ namespace Content.Server.GameTicking
             // PendingClockInComponent is present, ArrivalsSystem owns the announcement and fires
             // it on EntParentChangedMessage. Players who bypass arrivals (direct spawn modes,
             // wizard, nukeops, etc.) still get the announcement immediately here.
-            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob))
+            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob) && jobPrototype.AnnounceArrival)
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {
@@ -446,7 +447,7 @@ namespace Content.Server.GameTicking
                 makeObserver = true;
             }
 
-            var ghost = _ghost.SpawnGhost(mind.Value);
+            var ghost = _ghost.SpawnGhost(mind.Value, session: player); // Claw Command - pass the session so VIP ghosts work from the lobby
             if (makeObserver)
                 _roles.MindAddRole(mind.Value, "MindRoleObserver");
 
@@ -544,11 +545,18 @@ namespace Content.Server.GameTicking
         {
             checkAvoid = false;
 
-            var allPlayerMinds = EntityQuery<MindComponent>()
-                .Where(mind => mind.OriginalOwnerUserId == player.UserId);
-
-            foreach (var mind in allPlayerMinds)
+            var query = EntityQueryEnumerator<MindComponent>();
+            while (query.MoveNext(out var mindId, out var mind))
             {
+                if (mind.OriginalOwnerUserId != player.UserId)
+                    continue;
+
+                // Claw Command - an observer's mind is created named after whatever character was selected
+                // when they clicked "observe", even though that character never entered the round. Counting
+                // it here meant merely spectating burned the character for the rest of the shift.
+                if (IsSpectatorOnlyMind(mindId))
+                    continue;
+
                 if (mind.CharacterName == character.Name)
                     return false;
 
@@ -575,6 +583,21 @@ namespace Content.Server.GameTicking
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Claw Command - true if this mind only ever spectated: it was made by
+        /// <see cref="SpawnObserver"/> (which names it after the player's selected profile) and never got a
+        /// job, so no character actually went into the round under that name.
+        /// </summary>
+        /// <remarks>
+        /// Playing a character always makes a fresh mind with a job role in <see cref="DoSpawn"/>, so a mind
+        /// that carries a job role is a real playthrough and still blocks a return, ghost or not.
+        /// </remarks>
+        private bool IsSpectatorOnlyMind(EntityUid mindId)
+        {
+            return _roles.MindHasRole<ObserverRoleComponent>(mindId)
+                   && !_roles.MindHasRole<JobRoleComponent>(mindId);
         }
 
         private float CalculateStringSimilarity(string str1, string str2)

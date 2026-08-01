@@ -44,6 +44,11 @@
   storage:
     back:
     - Flash
+    - Zipties
+    - Zipties
+    - WeaponPistolMk58 # CLAW COMMAND - sidearm for the two spare mags below
+    - MagazinePistol
+    - MagazinePistol
 
 - type: job
   id: ClawCommandMaid
@@ -94,6 +99,8 @@
   storage:
     back:
     - Flash
+    - Zipties
+    - Zipties
 
 
 - type: job

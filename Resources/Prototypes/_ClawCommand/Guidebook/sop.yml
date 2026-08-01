@@ -109,3 +109,81 @@
   name: guide-entry-ccoSOP
   text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandOfficerStandardOperatingProcedure.xml"
   filterEnabled: True
+
+- type: guideEntry
+  id: GuideClawCommandMaidSOP
+  name: guide-entry-ccmSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ClawCommandMaidStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCommandSOP
+  name: guide-entry-commandSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CommandStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCaptainSOP
+  name: guide-entry-captainSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CaptainStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideMedicalSOP
+  name: guide-entry-medicalSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/MedicalStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideServiceSOP
+  name: guide-entry-serviceSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/ServiceStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideCargoSOP
+  name: guide-entry-cargoSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CargoStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuidePrisonerSOP
+  name: guide-entry-prisonerSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/PrisonerStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideAntagonistSOP
+  name: guide-entry-antagonistSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/AntagonistStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideDetectiveSOP
+  name: guide-entry-detectiveSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/DetectiveStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideLawyerSOP
+  name: guide-entry-lawyerSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/LawyerStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideLegalSOP
+  name: guide-entry-legalSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/LegalStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideSiliconSOP
+  name: guide-entry-siliconSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/SiliconStandardOperatingProcedure.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: GuideEngagementSOP
+  name: guide-entry-engagementSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/EngagementStandardOperatingProcedure.xml"
+  filterEnabled: True

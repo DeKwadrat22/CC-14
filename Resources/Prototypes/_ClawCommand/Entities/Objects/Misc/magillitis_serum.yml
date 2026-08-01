@@ -1,0 +1,180 @@
+# CLAW COMMAND - "Rampaging Gorilla", ported from Floof/space (the Magillitis Serum uplink implant).
+# A Syndicate uplink item for science traitors: activating the implant polymorphs the user into a single
+# buffed, player-controlled rampaging gorilla. Ported onto this fork's existing MobGorilla base and adapted
+# to the fork's modern trigger-effect implant architecture (TriggerOnActivateImplant + PolymorphOnTrigger +
+# DeleteOnTrigger), so it needs no C#. The Gorilla npcFaction is defined in ai_factions.yml.
+
+# --- Damage modifier set for the rampaging variant (from space _Floof/Damage/modifier_sets.yml) ---
+- type: damageModifierSet
+  id: GorillaRampaging
+  coefficients:
+    Blunt: 1.25
+    Cellular: 0
+    Poison: 1.5
+
+# --- Gorilla speech sounds (uses Audio/Animals/gorilla.ogg) ---
+- type: speechSounds
+  id: Gorilla
+  saySound:
+    path: /Audio/Animals/gorilla.ogg
+  askSound:
+    path: /Audio/Animals/gorilla.ogg
+  exclaimSound:
+    path: /Audio/Animals/gorilla.ogg
+
+# --- The buffed, player-controlled rampaging gorilla (polymorph target).
+#     Parents this fork's existing MobGorilla; only the rampage-specific overrides/additions live here. ---
+- type: entity
+  name: Rampaging Gorilla
+  parent: MobGorilla
+  id: MobGorillaRampaging
+  description: A gorilla that has gone wild. Run!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: crawling
+      sprite: Mobs/Animals/gorilla.rsi
+      color: "#FF0000"
+  - type: NpcFactionMember
+    factions:
+    - Gorilla
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 35
+        Structural: 20
+    animation: WeaponArcFist
+  # Signature gorilla move: every hit throws the target back a few tiles (this fork's MeleeThrowOnHit is
+  # distance-based, unlike the source's time-based 'lifetime').
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  # Only swap the modifier set; damageContainer is inherited from the base gorilla.
+  - type: Damageable
+    damageModifierSet: GorillaRampaging
+  - type: Hands
+  - type: Speech
+    speechSounds: Gorilla
+    speechVerb: LargeMob
+  - type: MeleeSpeech
+    Battlecry: Gorilla punch!
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface
+  # Deliberately CC-able so security has counterplay (ForcedSleep/TemporaryBlindness from the source don't
+  # exist in this fork's status system, so the closest fork-valid set is used instead).
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - Flashed
+    - Pacified
+  - type: NoSlip
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - NoPaint
+  - type: LanguageKnowledge
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+
+# --- Polymorph config: implantee -> rampaging gorilla; reverts to the original body on death ---
+- type: polymorph
+  id: RampagingGorilla
+  configuration:
+    entity: MobGorillaRampaging
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: Drop
+    transferDamage: true
+    revertOnDeath: true
+    revertOnCrit: false
+
+# --- The implant activation action (BaseImplantAction supplies the InstantAction + ActivateImplantEvent) ---
+- type: entity
+  parent: BaseImplantAction
+  id: ActionActivateMagillitisSerumImplant
+  name: Magillitis Serum
+  description: An experimental biochip which causes irreversable rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: Action
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Actions/Implants/implants.rsi
+      state: gorilla_rampage
+
+# --- The subdermal implant. Fork trigger-effect flow: activate action -> ActivateImplantEvent ->
+#     TriggerOnActivateImplant raises a trigger (user = implantee) -> PolymorphOnTrigger polymorphs the
+#     user, PopupOnTrigger shows the flavor text, DeleteOnTrigger consumes the implant. No C# required. ---
+- type: entity
+  parent: BaseSubdermalImplant
+  id: MagillitisSerumImplant
+  name: magillitis serum implant
+  description: An experimental biochip which causes irreversable rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateMagillitisSerumImplant
+    whitelist:
+      components:
+      - Hands # syndies can't turn a handless critter into a gorilla
+  - type: TriggerOnActivateImplant
+  - type: PolymorphOnTrigger
+    targetUser: true
+    polymorph: RampagingGorilla
+  - type: PopupOnTrigger
+    targetUser: true
+    userIsRecipient: true
+    popupType: Medium
+    text: magillitisserum-implant-activated-user
+    otherText: magillitisserum-implant-activated-others
+  - type: DeleteOnTrigger
+
+# --- Syndicate implanter (the uplink product) ---
+- type: entity
+  parent: BaseImplantOnlyImplanterSyndi
+  id: MagillitisSerumImplanter
+  name: magillitis serum implanter
+  components:
+  - type: Implanter
+    implant: MagillitisSerumImplant
+
+# --- Uplink listing: science jobs only, 5 TC (mirrors the source) ---
+- type: listing
+  id: UplinkMagillitisSerumImplant
+  name: uplink-magillitis-serum-implanter-name
+  description: uplink-magillitis-serum-implanter-desc
+  icon: { sprite: Actions/Implants/implants.rsi, state: gorilla_rampage }
+  productEntity: MagillitisSerumImplanter
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ResearchAssistant
+    - ResearchDirector
+    - Scientist

@@ -116584,10 +116584,6 @@ entities:
     - type: Transform
       pos: 36.5,-37.5
       parent: 2
-    - type: LinkedEntity
-      linkedEntities:
-      - invalid
-      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 19038

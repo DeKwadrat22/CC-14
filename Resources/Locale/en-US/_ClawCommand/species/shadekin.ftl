@@ -32,3 +32,18 @@ shadekinenergy-alert-4 = [font size=12][color=green]Light Exposure:[/color] [col
 
 shadekinenergy-alert-blackeye = [font size=12][color=green]Energy:[/color] [color=red]BURNED[/color][/font]
 shadekinenergy-alert-energy = [font size=12][color=green]Energy: {$energy}/{$energyMax}[/color][/font]
+
+# Shadekin restraints (CLAW COMMAND)
+shadekin-restraint-too-far = You can't reach them.
+shadekin-restraint-not-shadekin = The restraints only mean something to a shadekin.
+shadekin-restraint-already = { CAPITALIZE($target) } is already bound by restraints.
+shadekin-restraint-begin = You press the restraints against { $target }...
+shadekin-restraint-equip-fail = You can't get the restraints onto { $target } - the sever took hold, but they're not wearing them.
+shadekin-restraint-portal-fail = The Dark recoils from you. The way is shut.
+
+# eerie "the Dark is being torn away, and it hurts" messages shown when the restraints are locked on
+shadekin-restraint-applied-others = { CAPITALIZE($target) } shudders, their eyes going dim and hollow.
+shadekin-restraint-applied-self-1 = The Dark pulls away from you like a tide going out — and this time it does not turn back.
+shadekin-restraint-applied-self-2 = You reach for the aether out of habit. Your hand closes on cold, silent nothing.
+shadekin-restraint-applied-self-3 = Something deep inside you tears loose, and the ache of it floods everything. It hurts.
+shadekin-restraint-applied-self-pain = The aether is gone. It HURTS.

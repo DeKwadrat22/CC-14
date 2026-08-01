@@ -62,6 +62,14 @@ public sealed partial class BorgTypePrototype : IPrototype
     public EntityWhitelist? ModuleWhitelist { get; set; }
 
     /// <summary>
+    /// _ClawCommand - the law board this type is issued with, fitted when the type is applied so a borg
+    /// runs its department's lawset. Only replaces the chassis' factory board, so a lawset a roboticist
+    /// deliberately installed is left alone. Null keeps whatever board the chassis came with.
+    /// </summary>
+    [DataField]
+    public EntProtoId? LawBoard { get; set; }
+
+    /// <summary>
     /// Inventory template used by this borg.
     /// </summary>
     /// <remarks>

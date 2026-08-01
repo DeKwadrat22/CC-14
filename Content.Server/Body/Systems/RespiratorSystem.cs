@@ -15,6 +15,8 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
+using Content.Shared.Movement.Pulling.Components; // CLAW COMMAND - grab intent
+using Content.Shared.Movement.Pulling.Systems; // CLAW COMMAND - grab intent
 using Content.Shared.EntityConditions;
 using Content.Shared.EntityConditions.Conditions.Body;
 using Content.Shared.EntityEffects;
@@ -95,7 +97,11 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            // CLAW COMMAND - grab intent: being choked stops you drawing breath entirely.
+            var choked = TryComp<PullableComponent>(uid, out var chokedPullable)
+                         && chokedPullable.GrabStage == GrabStage.Suffocate;
+
+            if (!_mobState.IsIncapacitated(uid) && !choked) // cannot breathe in crit.
             {
                 switch (respirator.Status)
                 {

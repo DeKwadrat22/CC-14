@@ -22,7 +22,7 @@
     time: 4h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-hos # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgSecurity
   applyTraits: false
 
@@ -37,7 +37,7 @@
     time: 2.5h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-cmo # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgMedical
   applyTraits: false
 
@@ -52,7 +52,7 @@
     time: 2.5h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-ce # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgEngineering
   applyTraits: false
 
@@ -66,7 +66,7 @@
     time: 10h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-hop # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgJanitor
   applyTraits: false
 
@@ -80,7 +80,7 @@
     time: 10h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-hop # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgService
   applyTraits: false
 
@@ -94,6 +94,6 @@
     time: 10h
   canBeAntag: false
   icon: JobIconBorg
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-qm # _ClawCommand - dogborgs answer to their own department head
   jobEntity: PlayerDogborgMining
   applyTraits: false

@@ -8,6 +8,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
   friendly:
@@ -23,6 +24,7 @@
   - Revolutionary
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
   - Lavafauna # Claw Command - Lavaland
@@ -32,6 +34,7 @@
   hostile:
   - PetsNT
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
 
 - type: npcFaction
@@ -47,6 +50,7 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Dragon
   - Lavafauna # Claw Command - Lavaland
 
@@ -64,6 +68,7 @@
   - Dragon
   - Xeno
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
   - Lavafauna # Claw Command - Lavaland
@@ -81,6 +86,7 @@
   - Zombie
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
   - Lavafauna # Claw Command - Lavaland
@@ -95,6 +101,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Dragon
   - Xenoborg
@@ -111,6 +118,7 @@
   - PetsNT
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Dragon
   - Xenoborg
@@ -124,6 +132,7 @@
   - SimpleHostile
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
   - Lavafauna # Claw Command - Lavaland
@@ -161,6 +170,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Xenoborg
 
 - type: npcFaction # Claw Command
@@ -181,6 +191,7 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
 
 # Claw Command - Lavaland mob faction
 - type: npcFaction
@@ -199,5 +210,26 @@
   - Wizard
   - Xenoborg
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   friendly:
   - Dragon
+
+# Claw Command - Rampaging Gorilla (Magillitis Serum). A rampaging beast hostile to crew and other
+# threats; friendly only to fellow animals. Reverse hostility is wired above (next to each - AllHostile).
+- type: npcFaction
+  id: Gorilla
+  friendly:
+  - AnimalFriend
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - SimpleHostile
+  - PetsNT
+  - Zombie
+  - Xeno
+  - Dragon
+  - Revolutionary
+  - Wizard
+  - Xenoborg
+  - Lavafauna
+  - AllHostile

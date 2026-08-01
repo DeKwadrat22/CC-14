@@ -164,7 +164,6 @@
   maxLimit: 1
   loadouts:
   - LoadoutCCMaidKatana
-  - LoadoutCCMaidDisabler
 
 # Security Gloves
 - type: loadoutGroup
@@ -174,7 +173,6 @@
   maxLimit: 1
   loadouts:
   - LoadoutSecGlovesBlack
-  - LoadoutSecGlovesMaid
   - LoadoutSecGlovesFingerless
   - LoadoutSecGlovesRed
 

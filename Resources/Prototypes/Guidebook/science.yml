@@ -4,7 +4,6 @@
   text: "/ServerInfo/Guidebook/Science/Science.xml"
   children:
   - GuideEpistemicsSOP #claw command
-  - GuideAnomalySOP #claw command
   - Technologies
   - AnomalousResearch
   - Xenoarchaeology

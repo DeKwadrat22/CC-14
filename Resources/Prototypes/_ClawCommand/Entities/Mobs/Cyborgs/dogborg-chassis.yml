@@ -49,6 +49,12 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-medihound
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by
+  # BorgChassisMedicalMedihoundDark and PlayerDogborgMedical.
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
 
 - type: entity
   parent: BorgChassisMedicalMedihound
@@ -132,6 +138,11 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-vale-med
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9).
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
 
 # ===== Security: K9 =====
 # Our fork's borgType prototypes don't include a `security` variant (only generic,
@@ -178,6 +189,23 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-k9
+  # _ClawCommand - security-borg plating (inherited by K9-Dark, Vale-sec and PlayerDogborgSecurity):
+  # blunt/slash 50%, piercing 45%, heat 40% damage reduction, plus 35% explosion resistance.
+  - type: Damageable
+    damageModifierSet: ModifierSetSecurityBorg
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  # _ClawCommand - restrict this borg's Lock/unlock (and thus its wiring + module UI, gated by
+  # UIRequiresLock) to SECURITY + Command access, overriding the default Command+Research from
+  # BaseBorgChassisNT. Only security or command can lock/unlock the security K9. Inherited by
+  # BorgChassisSecurityK9Dark, BorgChassisSecurityVale and PlayerDogborgSecurity.
+  - type: AccessReader
+    access: [["Security"], ["Command"]]
+  # _ClawCommand - security dogborgs have hardened optics: flashes and flashbangs
+  # don't blind them. Only on this chassis line, so K9-Dark, Vale-sec and
+  # PlayerDogborgSecurity inherit it while the medical/engi/jani/service/mining
+  # dogborgs stay flashable.
+  - type: FlashImmunity
 
 - type: entity
   parent: BorgChassisSecurityK9
@@ -479,3 +507,8 @@
     - ActionDogborgBellyUp
   - type: BorgSwitchableType
     selectedBorgType: dogborg-blade
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to SALVAGE + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by PlayerDogborgMining.
+  - type: AccessReader
+    access: [["Salvage"], ["Research"], ["Security"]]

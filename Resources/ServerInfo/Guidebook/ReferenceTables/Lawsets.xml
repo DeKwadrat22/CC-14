@@ -1,6 +1,16 @@
 <Document>
-# Common Silicon Lawsets
+# Silicon Lawsets
 
-<GuideLawsetListEmbed/>
+## Job Lawsets
+
+Lawsets written around a specific job or role, rather than the crew as a whole. Each one has a law board printed at that department's fabricator - or at the science circuit imprinter, for departments without one - and can be slotted into a cyborg's law socket or uploaded to the station AI.
+
+<GuideLawsetListEmbed Lawsets="Medical,Research,Engineer,Janitor,SiliconPolice,Chaplain,Reporter,Clown,Cowboy,Druid,Tyrant"/>
+
+## General Lawsets
+
+The classics, plus everything a silicon might end up running after an ion storm.
+
+<GuideLawsetListEmbed Exclude="Medical,Research,Engineer,Janitor,SiliconPolice,Chaplain,Reporter,Clown,Cowboy,Druid,Tyrant"/>
 
 </Document>
