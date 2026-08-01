@@ -6376,11 +6376,6 @@ entities:
       parent: 2
 - proto: AirlockServiceLocked
   entities:
-  - uid: 318
-    components:
-    - type: Transform
-      pos: 3.5,-26.5
-      parent: 2
   - uid: 326
     components:
     - type: Transform
@@ -6388,6 +6383,11 @@ entities:
       parent: 2
 - proto: AirlockTheatreLocked
   entities:
+  - uid: 318
+    components:
+    - type: Transform
+      pos: 3.5,-26.5
+      parent: 2
   - uid: 387
     components:
     - type: Transform
