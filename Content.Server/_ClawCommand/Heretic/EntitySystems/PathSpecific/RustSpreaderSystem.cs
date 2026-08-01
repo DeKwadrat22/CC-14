@@ -12,7 +12,6 @@ namespace Content.Server._Shitcode.Heretic.EntitySystems.PathSpecific;
 
 public sealed partial class RustSpreaderSystem : EntitySystem
 {
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
 
     [Dependency] private HereticAbilitySystem _ability = default!;
@@ -42,7 +41,7 @@ public sealed partial class RustSpreaderSystem : EntitySystem
     private void OnInit(Entity<RustSpreaderComponent> ent, ref MapInitEvent args)
     {
         var coords = _xform.GetMapCoordinates(ent.Owner);
-        if (!_mapManager.TryFindGridAt(coords, out var gridUid, out var grid))
+        if (!_map.TryFindGridAt(coords, out var gridUid, out var grid))
         {
             QueueDel(ent);
             return;

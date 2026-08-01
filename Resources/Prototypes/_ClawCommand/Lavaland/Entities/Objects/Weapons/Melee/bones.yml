@@ -37,7 +37,7 @@
     qualities:
     - Prying
     - Axing
-  - type: Sharp
+    - Slicing
   - type: Execution
     doAfterDuration: 5.0
     decapitation: true

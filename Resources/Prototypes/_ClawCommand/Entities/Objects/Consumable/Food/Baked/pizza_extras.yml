@@ -1,6 +1,6 @@
 - type: entity
   name: corncob crust pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaCorncob
   description: Cobbled together as a sick joke. Best served with liquid butter.
   components:
@@ -10,8 +10,10 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/pizza.rsi
     state: corncob
-  - type: SliceableFood
-    slice: FoodPizzaCorncobSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaCorncobSlice
+      amount: 10
   - type: SolutionContainerManager
     solutions:
       food:

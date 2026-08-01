@@ -96,7 +96,7 @@
 - type: marking
   id: WingsBackstabbed
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadekin.
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/moth.rsi
     state: wings_backstabbed

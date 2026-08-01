@@ -1,0 +1,11 @@
+- type: marking
+  id: MothBee
+  bodyPart: Tail
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadekin.
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+    state: bee1
+  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+    state: bee2
+  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+    state: bee3

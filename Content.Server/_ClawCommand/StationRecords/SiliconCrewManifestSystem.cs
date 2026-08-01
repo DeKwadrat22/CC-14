@@ -1,11 +1,9 @@
 using Content.Server.Station.Systems;
-using Content.Server.StationRecords;
-using Content.Server.StationRecords.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs.Components;
-using Content.Shared.Station.Components;
-using Content.Shared.StationRecords;
+using Content.Shared.StationRecords.Components;
+using Content.Shared.StationRecords.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._ClawCommand.StationRecords;
@@ -38,6 +36,7 @@ public sealed partial class SiliconCrewManifestSystem : EntitySystem
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private StationSystem _station = default!;
+    [Dependency] private IEntityManager _entMan = default!;
 
     public override void Initialize()
     {
@@ -64,7 +63,7 @@ public sealed partial class SiliconCrewManifestSystem : EntitySystem
             name = Name(args.Mob);
 
         _records.CreateGeneralRecord(
-            args.Station,
+            (args.Station, records),
             idUid: null,
             name,
             args.Profile.Age,
@@ -73,7 +72,6 @@ public sealed partial class SiliconCrewManifestSystem : EntitySystem
             args.JobId,
             mobFingerprint: null,
             dna: null,
-            args.Profile,
-            records);
+            args.Profile);
     }
 }

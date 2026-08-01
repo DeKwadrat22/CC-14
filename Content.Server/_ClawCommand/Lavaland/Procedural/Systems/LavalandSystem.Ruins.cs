@@ -455,8 +455,7 @@ public sealed partial class LavalandSystem
                     _map.SetTile(grid,
                         grid,
                         tilePos,
-                        _tile.GetVariantTile((ContentTileDefinition) _tiledef[DungeonSystem.FallbackTileId],
-                            _random.GetRandom()));
+                        _tile.GetVariantTile((ContentTileDefinition) _tiledef[DungeonSystem.FallbackTileId], _random));
                 }
 
                 _decals.TryAddDecal(

@@ -1,7 +1,7 @@
 # HEAD
 - type: marking
   id: LizardHeadVirtuasaur
-  bodyPart: Eyes
+  bodyPart: Head
   groupWhitelist: [Reptilian, Vulpkanin, Slime, Human, MarkingsIPC, MarkingsFelinid, MarkingsTajaran, MarkingsKitsune, MarkingsAvali] # Floof - M3739 - #1084
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/snouts.rsi

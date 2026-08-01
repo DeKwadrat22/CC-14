@@ -34,7 +34,7 @@ public sealed partial class LavalandTriggerSystem : EntitySystem
             return;
 
         var xform = Transform(target.Value);
-        var spawns = _entityTable.GetSpawns(ent.Comp.Table, _random.GetRandom()).ToList();
+        var spawns = _entityTable.GetSpawns(ent.Comp.Table, _random).ToList();
 
         if (ent.Comp.UseMapCoords)
         {

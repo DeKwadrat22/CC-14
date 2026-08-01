@@ -27,7 +27,9 @@
   components:
   - type: UnholyItem
   - type: HereticBlade
-  - type: Sharp
+  - type: Tool
+    qualities:
+    - Slicing
   - type: Sprite
     sprite: _ClawCommand/Heretic/Blades/eldritch_blade.rsi
     state: icon

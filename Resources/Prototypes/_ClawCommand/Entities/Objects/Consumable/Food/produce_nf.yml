@@ -58,7 +58,7 @@
 
 - type: entity
   name: avocado
-  parent: FoodProduceBase
+  parent: [FoodProduceBase, BaseSlicingRefinableFood]
   id: FoodAvocado
   description: Like delicious buttery grass.
   components:
@@ -78,9 +78,10 @@
     sprite: _NF/Objects/Specific/Hydroponics/avocado.rsi
   - type: Produce
     seedId: avocado
-  - type: SliceableFood
-    count: 2
-    slice: FoodAvocadoSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodAvocadoSlice
+      amount: 2
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
@@ -124,7 +125,7 @@
 
 - type: entity
   name: cucumber
-  parent: FoodProduceBase
+  parent: [FoodProduceBase, BaseSlicingRefinableFood]
   id: FoodCucumber
   description: Like fresh crispy water.
   components:
@@ -144,9 +145,10 @@
     sprite: _NF/Objects/Specific/Hydroponics/cucumber.rsi
   - type: Produce
     seedId: cucumber
-  - type: SliceableFood
-    count: 4
-    slice: FoodCucumberSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodCucumberSlice
+      amount: 4
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
@@ -190,7 +192,7 @@
 
 - type: entity
   name: pickle
-  parent: FoodProduceBase
+  parent: [FoodProduceBase, BaseSlicingRefinableFood]
   id: FoodPickle
   description: Like tangy crispy water.
   components:
@@ -211,9 +213,10 @@
   - type: Sprite
     sprite: _NF/Objects/Specific/Hydroponics/cucumber.rsi
     state: pickle
-  - type: SliceableFood
-    count: 4
-    slice: FoodPickleSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPickleSlice
+      amount: 4
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:

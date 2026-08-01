@@ -1,6 +1,6 @@
 - type: entity
   name: honey challah
-  parent: FoodBreadBase
+  parent: [ FoodBreadBase, BaseSlicingRefinableFood ]
   id: FoodBreadChallah
   description: Twisted bread sprinkled with poppy seeds.
   components:
@@ -11,8 +11,10 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/bread.rsi
     state: challah
-  - type: SliceableFood
-    slice: FoodBreadChallahSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodBreadChallahSlice
+      amount: 1
   - type: SolutionContainerManager
     solutions:
       food:

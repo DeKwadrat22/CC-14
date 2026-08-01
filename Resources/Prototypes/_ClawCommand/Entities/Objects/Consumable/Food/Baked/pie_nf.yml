@@ -21,7 +21,7 @@
 
 - type: entity
   name: applecrisp pie
-  parent: FoodPieBase
+  parent: [FoodPieBase, BaseSlicingRefinableFood]
   id: FoodPieAppleHoney
   description: A pie full of honey-laced apples baked under a crumbly oat streusel topping.
   components:
@@ -46,8 +46,10 @@
           Quantity: 4
         - ReagentId: Flavorol
           Quantity: 3
-  - type: SliceableFood
-    slice: FoodPieAppleHoneySlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPieAppleHoneySlice
+      amount: 8
   - type: Tag
     tags:
     - Fruit

@@ -1,6 +1,6 @@
 - type: entity
   name: avocado sushi
-  parent: FoodMealBase
+  parent: [FoodMealBase, BaseSlicingRefinableFood]
   id: FoodMealAvocadoSushi
   description: Where did the seaweed come from?
   components:
@@ -22,9 +22,10 @@
           Quantity: 10
         - ReagentId: CucumberWater
           Quantity: 2
-  - type: SliceableFood
-    count: 5
-    slice: FoodMealAvocadoSushiSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMealAvocadoSushiSlice
+      amount: 5
 
 - type: entity
   name: avocado sushi
@@ -53,7 +54,7 @@
 
 - type: entity
   name: carp sushi
-  parent: FoodMealBase
+  parent: [FoodMealBase, BaseSlicingRefinableFood]
   id: FoodMealCarpSushi
   description: Certainly worth the risk.
   components:
@@ -77,9 +78,10 @@
           Quantity: 5
         - ReagentId: CucumberWater
           Quantity: 2
-  - type: SliceableFood
-    count: 5
-    slice: FoodMealCarpSushiSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMealCarpSushiSlice
+      amount: 5
 
 - type: entity
   name: carp sushi

@@ -33,7 +33,7 @@ public abstract partial class SharedResearchSystem : EntitySystem
         if (currentTier >= highestPrereqTier)
             return 100;
 
-        var allTierTech = PrototypeManager.EnumeratePrototypes<TechnologyPrototype>()
+        var allTierTech = ProtoMan.EnumeratePrototypes<TechnologyPrototype>()
             .Where(p => p.Discipline == techDiscipline.ID && p.Tier == currentTier && !p.Hidden)
             .ToList();
 
@@ -41,7 +41,7 @@ public abstract partial class SharedResearchSystem : EntitySystem
             return 100;
 
         var unlockedTierCount = component.UnlockedTechnologies
-            .Count(x => PrototypeManager.TryIndex<TechnologyPrototype>(x, out var proto)
+            .Count(x => ProtoMan.TryIndex<TechnologyPrototype>(x, out var proto)
                         && proto.Discipline == techDiscipline.ID
                         && proto.Tier == currentTier);
 

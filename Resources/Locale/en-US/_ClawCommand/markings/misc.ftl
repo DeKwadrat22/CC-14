@@ -58,11 +58,6 @@ marking-MothGlasswing-glasswing2 = Inner
 marking-MothGlasswing-glasswing3 = Stripe
 marking-MothGlasswing = Glasswing
 
-marking-MothBee-bee1 = Outer stripes
-marking-MothBee-bee2 = Wings
-marking-MothBee-bee3 = Inner stripe
-marking-MothBee = Bumblebee
-
 marking-MothGlowAntenna-mothglowantenna = Glowing Antenna
 marking-MothGlowAntenna = Glowing Antenna
 

@@ -157,7 +157,7 @@
 - type: marking
   id: MothWingsDefault
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: default
@@ -165,7 +165,7 @@
 - type: marking
   id: MothWingsCharred
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: charred
@@ -173,7 +173,7 @@
 - type: marking
   id: MothWingsDbushy
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: dbushy_primary
@@ -183,7 +183,7 @@
 - type: marking
   id: MothWingsDeathhead
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: deathhead_primary
@@ -193,7 +193,7 @@
 - type: marking
   id: MothWingsFan
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: fan
@@ -201,7 +201,7 @@
 - type: marking
   id: MothWingsDfan
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: dfan
@@ -209,7 +209,7 @@
 - type: marking
   id: MothWingsFeathery
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: feathery
@@ -217,7 +217,7 @@
 - type: marking
   id: MothWingsFirewatch
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: firewatch_primary
@@ -227,7 +227,7 @@
 - type: marking
   id: MothWingsGothic
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: gothic
@@ -235,7 +235,7 @@
 - type: marking
   id: MothWingsJungle
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: jungle
@@ -243,7 +243,7 @@
 - type: marking
   id: MothWingsLadybug
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: ladybug
@@ -251,7 +251,7 @@
 - type: marking
   id: MothWingsMaple
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: maple_primary
@@ -261,7 +261,7 @@
 - type: marking
   id: MothWingsMoffra
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: moffra_primary
@@ -271,7 +271,7 @@
 - type: marking
   id: MothWingsOakworm
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: oakworm
@@ -279,7 +279,7 @@
 - type: marking
   id: MothWingsPlasmafire
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: plasmafire_primary
@@ -289,7 +289,7 @@
 - type: marking
   id: MothWingsPointy
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: pointy
@@ -297,7 +297,7 @@
 - type: marking
   id: MothWingsRoyal
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: royal_primary
@@ -307,7 +307,7 @@
 - type: marking
   id: MothWingsStellar
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: stellar
@@ -315,7 +315,7 @@
 - type: marking
   id: MothWingsStriped
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: striped
@@ -323,7 +323,7 @@
 - type: marking
   id: MothWingsSwirly
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: swirly
@@ -331,7 +331,7 @@
 - type: marking
   id: MothWingsWhitefly
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: whitefly
@@ -339,7 +339,7 @@
 - type: marking
   id: MothWingsWitchwing
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: witchwing
@@ -347,7 +347,7 @@
 - type: marking
   id: MothWingsUnderwing
   bodyPart: Tail
-  groupWhitelist: [Moth]
+  groupWhitelist: [Moth, MarkingsShadowkin] # CLAW COMMAND: Added Shadeskin
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: underwing_primary

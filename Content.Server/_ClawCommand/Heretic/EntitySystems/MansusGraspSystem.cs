@@ -57,7 +57,6 @@ public sealed partial class MansusGraspSystem : SharedMansusGraspSystem
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
 
     [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private SharedStaminaSystem _stamina = default!;
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -144,7 +143,7 @@ public sealed partial class MansusGraspSystem : SharedMansusGraspSystem
             if (!args.ClickLocation.IsValid(EntityManager))
                 return;
 
-            if (!_mapManager.TryFindGridAt(_transform.ToMapCoordinates(args.ClickLocation), out var gridUid, out var mapGrid))
+            if (!_mapSystem.TryFindGridAt(_transform.ToMapCoordinates(args.ClickLocation), out var gridUid, out var mapGrid))
                 return;
 
             var tileRef = _mapSystem.GetTileRef(gridUid, mapGrid, args.ClickLocation);
@@ -207,7 +206,7 @@ public sealed partial class MansusGraspSystem : SharedMansusGraspSystem
         {
             _stun.KnockdownOrStun(target, grasp.Comp.KnockdownTime, true);
             _stamina.TakeStaminaDamage(target, grasp.Comp.StaminaDamage);
-            _language.DoRatvarian(target, grasp.Comp.SpeechTime, true, status);
+            _language.DoRatvarian(target, grasp.Comp.SpeechTime, true);
             _statusEffect.TryAddStatusEffect<MansusGraspAffectedComponent>(target,
                 "MansusGraspAffected",
                 grasp.Comp.AffectedTime,

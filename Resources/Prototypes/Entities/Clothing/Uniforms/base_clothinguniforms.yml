@@ -9,16 +9,13 @@
     slots: [innerclothing]
     equipSound:
       path: /Audio/Items/jumpsuit_equip.ogg
-  - type: ToolRefinable
-    refineResult:
   - type: HideLayerClothing # Claw Command - hide genital layers when wearing a uniform
     layers:
       Genital: INNERCLOTHING
       Penis: INNERCLOTHING
       Breasts: INNERCLOTHING
-  - type: Butcherable
-    butcheringType: Knife
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: MaterialCloth1
       amount: 3
   - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
@@ -36,17 +33,6 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-        density: 35
-        mask:
-        - ItemMask
-        restitution: 0.3
-        friction: 0.2
 
 - type: entity
   abstract: true

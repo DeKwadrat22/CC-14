@@ -273,6 +273,7 @@ namespace Content.Shared.Preferences
         }
 
         /// <summary>
+        /// CLAW: Remove markings due to issues.
         /// A randomize config that covers all possible values (including appearance).
         /// </summary>
         public const RandomizeCfg RandomizeConfigAll =
@@ -282,8 +283,7 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Sex
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
-            | RandomizeCfg.Skin
-            | RandomizeCfg.Markings;
+            | RandomizeCfg.Skin;
 
         /// <summary>
         /// Picks a random species from roundstart species.
@@ -443,6 +443,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
         public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
         public HumanoidCharacterProfile WithWidthHeight(float width, float height) => new(this) { Width = width, Height = height };
+
         // Claw Command custom species name
         public HumanoidCharacterProfile WithCustomSpeciesName(string customSpeciesName)
         {

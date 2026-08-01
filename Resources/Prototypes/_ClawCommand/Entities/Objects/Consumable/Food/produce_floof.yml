@@ -58,7 +58,7 @@
 
 - type: entity # Floofstation
   name: pomegranate
-  parent: FoodProduceBase
+  parent: [FoodProduceBase, BaseSlicingRefinableFood]
   id: FoodPomegranate
   description: A delicious, sweet fruit, believed to have special properties.
   components:
@@ -84,9 +84,10 @@
       reagents:
       - ReagentId: JuicePomegranate
         Quantity: 20
-  - type: SliceableFood
-    count: 2
-    slice: FoodPomegranateSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPomegranateSlice
+      amount: 2
   - type: Tag
     tags:
     - Fruit

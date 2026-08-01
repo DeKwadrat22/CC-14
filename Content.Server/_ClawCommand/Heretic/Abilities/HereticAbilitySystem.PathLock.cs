@@ -62,7 +62,7 @@ public sealed partial class HereticAbilitySystem
             if (TryComp<LockComponent>(locker, out var lockComp) && lockComp.Locked)
                 _lock.Unlock(locker, null, lockComp);
 
-            _storage.OpenStorage(locker, locker.Comp);
+            _storage.OpenStorage((locker.Owner, locker), locker);
             Popup.PopupEntity(Loc.GetString("heretic-burglar-finesse-success"), performer, performer);
             args.Handled = true;
             return;
@@ -90,10 +90,10 @@ public sealed partial class HereticAbilitySystem
                 _lock.Unlock(locker, null, lockComp);
 
             // Pop the locker, jump in, slam it shut behind us.
-            _storage.OpenStorage(locker, locker.Comp);
+            _storage.OpenStorage((locker.Owner, locker), locker);
             _transform.SetCoordinates(performer, Transform(locker).Coordinates);
             _storage.Insert(performer, locker, locker.Comp);
-            _storage.CloseStorage(locker, locker.Comp);
+            _storage.CloseStorage((locker.Owner, locker), locker);
 
             // Re-lock if it was locked when we arrived — extra concealment.
             if (lockComp is { Locked: false } && TryComp<LockComponent>(locker, out var lockCompAfter))

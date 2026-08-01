@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Random.Helpers;
+using Robust.Shared.Random;
 
 namespace Content.Shared._ClawCommand.Lavaland.Megafauna.Selectors;
 
@@ -25,7 +26,7 @@ public sealed partial class GroupMegafaunaSelector : MegafaunaSelector
         if (children.Count == 0)
             return FailDelay;
 
-        var pick = SharedRandomExtensions.Pick(children, args.Random);
+        var pick = SharedRandomExtensions.Pick(children, new RobustRandom());
         return pick.Invoke(args);
     }
 }

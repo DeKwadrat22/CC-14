@@ -72,7 +72,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref component, ref clientComponent, false))
             return;
 
-        var allTechs = PrototypeManager.EnumeratePrototypes<TechnologyPrototype>().Where(p => !p.Hidden).ToList();
+        var allTechs = ProtoMan.EnumeratePrototypes<TechnologyPrototype>().Where(p => !p.Hidden).ToList();
         var techList = new Dictionary<string, ResearchAvailability>(allTechs.Count);
         var points = 0;
 

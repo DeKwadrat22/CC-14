@@ -32,12 +32,14 @@
   suffix: "ClawCmd stub"
   name: energy cautery
   description: Stub placeholder.
+
 - type: entity
   parent: BaseItem
   id: EnergyScalpel
   suffix: "ClawCmd stub"
   name: energy scalpel
   description: Stub placeholder.
+
 - type: entity
   parent: BaseItem
   id: MedicalBiofabricator

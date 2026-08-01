@@ -75,13 +75,3 @@
   sprites:
     - sprite: _ClawCommand/Mobs/Customization/Shadowkin/tails32x32.rsi
       state: shadowkin_medium
-
-# Chest fluff
-
-- type: marking
-  id: ShadowkinChest
-  bodyPart: HeadSide
-  groupWhitelist: [MarkingsShadowkin]
-  sprites:
-  - sprite: _ClawCommand/Mobs/Customization/Shadowkin/shadekin_fluff.rsi
-    state: fluff

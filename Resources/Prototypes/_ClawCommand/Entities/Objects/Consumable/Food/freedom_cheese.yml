@@ -7,7 +7,7 @@
 
 - type: entity
   name: freedom cheese block
-  parent: FoodBakingBase
+  parent: [FoodBakingBase, BaseSlicingRefinableFood]
   id: FoodFreedomCheeseBlock
   description: A solid block of artery-clogging cheese based on a questionable old world recipe. Slice it for your buddies… or just eat the entire block for yourself, you weirdo.
   components:
@@ -30,9 +30,10 @@
           Quantity: 16
         - ReagentId: GastroToxin
           Quantity: 4
-  - type: SliceableFood
-    count: 4
-    slice: FoodFreedomCheeseSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodFreedomCheeseSlice
+      amount: 4
 
 - type: entity
   name: freedom cheese slice

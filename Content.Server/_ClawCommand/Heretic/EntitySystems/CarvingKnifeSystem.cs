@@ -45,7 +45,7 @@ public sealed partial class CarvingKnifeSystem : EntitySystem
     [Dependency] private DoAfterSystem _doAfter = default!;
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private TransformSystem _transform = default!;
-    [Dependency] private MapSystem _map = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private GravitySystem _gravity = default!;
     [Dependency] private TagSystem _tag = default!;
     [Dependency] private NavMapSystem _navMap = default!;
@@ -58,7 +58,6 @@ public sealed partial class CarvingKnifeSystem : EntitySystem
     [Dependency] private PullingSystem _pulling = default!;
     [Dependency] private HereticSystem _heretic = default!;
 
-    [Dependency] private IMapManager _mapMan = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IChatManager _chatManager = default!;
 
@@ -270,7 +269,7 @@ public sealed partial class CarvingKnifeSystem : EntitySystem
 
     private bool CanDrawRune(EntityUid user, MapCoordinates mapCoords)
     {
-        if (!_mapMan.TryFindGridAt(mapCoords, out var gridUid, out var gridComp))
+        if (!_map.TryFindGridAt(mapCoords, out var gridUid, out var gridComp))
             return !_gravity.IsWeightless(user);
 
         if (!_map.TryGetTileDef(gridComp, _map.TileIndicesFor(gridUid, gridComp, mapCoords), out var tile))

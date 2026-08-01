@@ -2,6 +2,7 @@
 using System.Numerics;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._ClawCommand.Lavaland.EntityShapes.Shapes;
 
@@ -24,7 +25,7 @@ public sealed partial class GroupEntityShape : EntityShape
         if (children.Count == 0)
             return Enumerable.Empty<Vector2>().ToList();
 
-        var pick = SharedRandomExtensions.Pick(children, rand);
+        var pick = SharedRandomExtensions.Pick(children, new RobustRandom());
         return pick.GetShape(rand, proto, Offset, Size, StepSize);
     }
 }

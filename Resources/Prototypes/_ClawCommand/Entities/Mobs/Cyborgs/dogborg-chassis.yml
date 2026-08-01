@@ -34,7 +34,7 @@
     noMindState: medihound
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -75,7 +75,7 @@
     noMindState: medihounddark
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -117,7 +117,7 @@
     noMindState: valemed
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -163,7 +163,7 @@
     noMindState: k9
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -208,7 +208,7 @@
     noMindState: k9dark
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -250,7 +250,7 @@
     noMindState: valesec
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -293,7 +293,7 @@
     noMindState: pupdozer
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -335,7 +335,7 @@
     noMindState: valeeng
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -378,7 +378,7 @@
     noMindState: scrubpup
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -421,7 +421,7 @@
     noMindState: valeserv
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement
@@ -464,7 +464,7 @@
     noMindState: blade
   - type: BorgBakedBody
   # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
-  # MovementLayers/NoMovementLayers are left empty on purpose — layer state
+  # MovementLayers/NoMovementLayers are left empty on purpose ï¿½ layer state
   # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
   # eye-glow and light-strip layers all flip in lockstep.
   - type: SpriteMovement

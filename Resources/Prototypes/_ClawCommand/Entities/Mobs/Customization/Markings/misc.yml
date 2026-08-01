@@ -149,7 +149,7 @@
 - type: marking
   id: MothTrueButterfly
   bodyPart: Tail
-  groupWhitelist: [ Moth ]
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
   forcedColoring: false
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
@@ -175,7 +175,7 @@
 - type: marking
   id: MothGlasswing
   bodyPart: Tail
-  groupWhitelist: [ Moth ]
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
   forcedColoring: false
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
@@ -184,19 +184,6 @@
     state: glasswing2
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
     state: glasswing3
-
-- type: marking
-  id: MothBee
-  bodyPart: Tail
-  groupWhitelist: [ Moth ]
-  forcedColoring: false
-  sprites:
-  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
-    state: bee1
-  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
-    state: bee2
-  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
-    state: bee3
 
 - type: marking
   id: MothGlowAntenna
@@ -211,7 +198,7 @@
 - type: marking
   id: MothFireflyOverlay
   bodyPart: Tail
-  groupWhitelist: [ Moth ]
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
   forcedColoring: false
   requires: MothFirefly
   sprites:
@@ -222,7 +209,7 @@
 - type: marking
   id: MothFirefly
   bodyPart: Tail
-  groupWhitelist: [ Moth ]
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
     state: mothfirefly2
@@ -281,7 +268,7 @@
 - type: marking
   id: MothSnoth
   bodyPart: Tail
-  groupWhitelist: [ Moth ]
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
   forcedColoring: false
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi

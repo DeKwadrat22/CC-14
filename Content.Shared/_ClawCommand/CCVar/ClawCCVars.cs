@@ -1,6 +1,6 @@
+using Robust.Shared.Configuration;
+
 namespace Content.Shared._ClawCommand.CCVar;
 
-public sealed class ClawCCVars
-{
-    
-}
+[CVarDefs]
+public sealed partial class ClawCCVars;

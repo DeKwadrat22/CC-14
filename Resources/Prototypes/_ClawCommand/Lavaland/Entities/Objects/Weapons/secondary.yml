@@ -31,7 +31,6 @@
   - type: PressureDamageChange
     lowerBound: 0
     appliedModifier: 1.25
-  - type: Sharp
   - type: Prying
   - type: UseDelay
     delay: 1
@@ -59,7 +58,6 @@
   - type: UseDelay
     delay: 1
   - type: Appearance
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: DisarmMalus

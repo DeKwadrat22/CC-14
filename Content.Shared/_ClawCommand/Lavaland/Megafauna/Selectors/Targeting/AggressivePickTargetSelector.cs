@@ -2,6 +2,7 @@
 using Content.Shared._ClawCommand.Lavaland.Megafauna.Components;
 using Content.Shared._ClawCommand.Lavaland.Megafauna.Conditions.Targeting;
 using Content.Shared.Random.Helpers;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 // ReSharper disable once CheckNamespace
@@ -59,7 +60,7 @@ public sealed partial class AggressivePickTargetSelector : MegafaunaSelector
 
         EntityUid? picked = null;
         if (WeightedRandom)
-            picked = SharedRandomExtensions.Pick(results, args.Random);
+            picked = SharedRandomExtensions.Pick(results, new RobustRandom());
         else
         {
             var maxWeight = float.MinValue;

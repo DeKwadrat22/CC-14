@@ -11,7 +11,7 @@
     sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Eyes/Goggles/nightvision.rsi
-  - type: NightVision
+  - type: NightVisionOverlay
     isEquipment: true
   - type: Tag
     tags:
@@ -27,7 +27,7 @@
     sprite: _ClawCommand/Clothing/Eyes/Goggles/security_nightvision.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Eyes/Goggles/security_nightvision.rsi
-  - type: NightVision
+  - type: NightVisionOverlay
     isEquipment: true
   - type: Tag
     tags:
@@ -43,7 +43,7 @@
     sprite: _ClawCommand/Clothing/Eyes/Goggles/medical_nightvision.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Eyes/Goggles/medical_nightvision.rsi
-  - type: NightVision
+  - type: NightVisionOverlay
     isEquipment: true
   - type: Tag
     tags:
@@ -59,7 +59,7 @@
     sprite: _ClawCommand/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
   - type: Clothing
     sprite: _ClawCommand/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
-  - type: NightVision
+  - type: NightVisionOverlay
     isEquipment: true
   - type: Tag
     tags:

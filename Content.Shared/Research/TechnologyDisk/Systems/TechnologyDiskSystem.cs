@@ -75,7 +75,7 @@ public sealed partial class TechnologyDiskSystem : EntitySystem
             {
                 // Skip recipes whose LatheRecipePrototype hasn't been ported. Otherwise the disk
                 // picks a dangling id and the name-modifier event crashes round-start.
-                if (!_protoMan.HasIndex(recipe))
+                if (!ProtoMan.HasIndex(recipe))
                     continue;
                 bundles.Add((recipe, tech.Discipline));
             }

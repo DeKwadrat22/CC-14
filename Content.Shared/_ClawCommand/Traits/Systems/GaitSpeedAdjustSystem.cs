@@ -23,7 +23,7 @@ public sealed partial class GaitSpeedAdjustSystem : EntitySystem
         if (!TryComp<MovementSpeedModifierComponent>(uid, out var move))
             return;
 
-        _movement.RefreshMovementSpeedModifiers(uid, move);
+        _movement.RefreshMovementSpeedModifiers((uid, move));
     }
 
     private void OnRefresh(EntityUid uid, GaitSpeedAdjustComponent comp, RefreshMovementSpeedModifiersEvent args)

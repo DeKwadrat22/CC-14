@@ -2,7 +2,7 @@
 
 - type: entity
   name: firecracker pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodMothPizzaFirecracker
   description: They're not kidding when they call this a hot pizza pie.
   components:
@@ -12,8 +12,10 @@
       - spicy
       - corn
       - cheesy
-  - type: SliceableFood
-    slice: FoodMothPizzaFirecrackerSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothPizzaFirecrackerSlice
+      amount: 10
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/pizza.rsi
     state: firecracker
@@ -71,7 +73,7 @@
 
 - type: entity
   name: quattro formaggi pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodMothPizzaFiveCheese
   description: For centuries, scholars have asked; how much cheese is too much cheese?
   components:
@@ -80,8 +82,10 @@
       - bread
       - oily
       - cheesy
-  - type: SliceableFood
-    slice: FoodMothPizzaFiveCheeseSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothPizzaFiveCheeseSlice
+      amount: 10
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/pizza.rsi
     state: fivecheese
@@ -112,7 +116,7 @@
 
 - type: entity
   name: pesto pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodMothPizzaPesto
   description: Pesto is a popular pizza topping for moths, quite possibly because it exemplifies their favourite flavours; cheese, herbs, and veggies.
   components:
@@ -122,8 +126,10 @@
       - garlic
       - nutty
       - cheesy
-  - type: SliceableFood
-    slice: FoodMothPizzaPestoSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothPizzaPestoSlice
+      amount: 10
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/pizza.rsi
     state: pesto
@@ -178,7 +184,7 @@
 
 - type: entity
   name: cotton pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodMothPizzaCotton
   description: A crime to some, a delicious pizza to others. Cotton and cheese.
   components:
@@ -187,8 +193,10 @@
       - bread
       - cotton
       - cheesy
-  - type: SliceableFood
-    slice: FoodMothPizzaCottonSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothPizzaCottonSlice
+      amount: 10
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/pizza.rsi
     state: cotton

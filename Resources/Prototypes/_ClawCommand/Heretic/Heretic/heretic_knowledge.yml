@@ -543,7 +543,7 @@
     - type: SpecialLowTempImmunity
     - type: SpecialHighTempImmunity
     - type: SpecialPressureImmunity
-    - type: NightVision
+    - type: NightVisionOverlay
       color: white
       activateSound: null
       deactivateSound: null

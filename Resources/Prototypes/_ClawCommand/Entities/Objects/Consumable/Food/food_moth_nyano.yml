@@ -220,7 +220,7 @@
 
 - type: entity
   name: green lasagne
-  parent: FoodMealBase
+  parent: [FoodMealBase, BaseSlicingRefinableFood]
   id: FoodMothGreenLasagne
   description: A fine lasagne made with pesto and a herby white sauce. Good for multiple servings.
   components:
@@ -228,9 +228,10 @@
     flavors:
       - cheesy
       - pasta
-  - type: SliceableFood
-    count: 6
-    slice: FoodMothGreenLasagneSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothGreenLasagneSlice
+      amount: 6
   - type: Edible
     trash:
     - FoodPlate
@@ -287,7 +288,7 @@
 
 - type: entity
   name: mothmallow tray
-  parent: FoodBakedBase
+  parent: [FoodBakedBase, BaseSlicingRefinableFood]
   id: FoodMothMothmallow
   description: A light and fluffy vegan marshmallow flavoured with vanilla and rum. These are known to the moths as cloud squares.
   components:
@@ -296,9 +297,10 @@
       - vanilla
       - sweet
       - sublime
-  - type: SliceableFood
-    count: 5
-    slice: FoodMothMothmallowSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothMothmallowSlice
+      amount: 5
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Baked/misc.rsi
     state: mothmallow

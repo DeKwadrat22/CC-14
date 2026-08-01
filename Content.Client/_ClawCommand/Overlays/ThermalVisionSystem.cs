@@ -117,6 +117,6 @@ public sealed partial class ThermalVisionSystem : EquipmentHudSystem<ThermalVisi
                 break;
         }
 
-        _overlay.IsActive = !_overlayMan.HasOverlay<BaseSwitchableOverlay<NightVisionComponent>>();
+        _overlay.IsActive = !_overlayMan.HasOverlay<BaseSwitchableOverlay<NightVisionOverlayComponent>>();
     }
 }

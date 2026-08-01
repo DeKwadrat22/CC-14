@@ -35,7 +35,7 @@ public sealed partial class VoidfoxSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private SharedMapSystem _mapManager = default!;
 
     /// <summary>Pipe node id used for the fuel-fill port on the voidfox prototype.</summary>
     public const string FuelPortName = "fuelPort";

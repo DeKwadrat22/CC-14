@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Bible.Components;
@@ -39,6 +40,10 @@ public sealed partial class BibleSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private UseDelaySystem _delay = default!;
+
+    // CLAW COMMAND: Added.
+    [Dependency] private SharedMoodSystem _mood = default!;
+
 
     /// <summary>
     /// This handles familiar respawning.
@@ -146,6 +151,9 @@ public sealed partial class BibleSystem : EntitySystem
 
         _popup.PopupEntity(othersMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.Medium);
         _popup.PopupEntity(selfMessage, args.User, args.User, PopupType.Large);
+
+        // CLAW COMMAND: Added.
+        _mood.AddMoodlet(args.Target.Value, "GotBlessed");
     }
 
     [SubscribeLocalEvent]

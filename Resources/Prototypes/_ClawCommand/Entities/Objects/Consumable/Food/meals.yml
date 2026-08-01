@@ -1,6 +1,6 @@
 - type: entity
   name: big baked rice
-  parent: FoodBakingBase
+  parent: [FoodBakingBase, BaseSlicingRefinableFood]
   id: FoodMothBakedRice
   description: A mothic favourite, baked rice can be filled with a variety of vegetable fillings to make a delicious meal to share.
   components:
@@ -9,9 +9,10 @@
       - potatoes
       - cabbage
       - rice
-  - type: SliceableFood
-    count: 6
-    slice: FoodMothBakedRicePortion
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMothBakedRicePortion
+      amount: 6
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/meal.rsi
     state: bakedrice

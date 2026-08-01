@@ -8,6 +8,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Speech.Components;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Enums;
+using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Lobby.UI;
@@ -20,6 +21,10 @@ public sealed partial class HumanoidProfileEditor
     private List<SpeciesPrototype> _species = new();
     private List<EmoteSoundsPrototype> _voices = new();
     private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
+
+    // CLAW COMMAND //
+    // Throttle timer for slider updates
+    private bool _sliderUpdatePending;
 
     public void UpdateSpeciesGuidebookIcon()
     {
@@ -175,6 +180,108 @@ public sealed partial class HumanoidProfileEditor
         SpawnPriorityButton.SelectId((int)Profile.SpawnPriority);
     }
 
+        private void UpdateHeightWidthSliders()
+    {
+        if (Profile is null)
+            return;
+
+        var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+        var width1 = Profile?.Width ?? DefaultHeight;
+        var height1 = Profile?.Height ?? DefaultHeight;
+
+        WidthSlider.MinValue = MinCharWidth;
+        WidthSlider.MaxValue = MaxCharWidth;
+        WidthSlider.SetValueWithoutEvent(width1);
+
+        HeightSlider.MinValue = MinCharHeight;
+        HeightSlider.MaxValue = MaxCharHeight;
+        HeightSlider.SetValueWithoutEvent(height1);
+
+        var height = MathF.Round(AverageHeight * HeightSlider.Value);
+        HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int)height));
+
+        var width = MathF.Round(AverageWidth * WidthSlider.Value);
+        WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int)width));
+
+        UpdateDimensions(SliderUpdate.Both);
+    }
+    private enum SliderUpdate
+    {
+        Height,
+        Width,
+        Both
+    }
+    private void UpdateDimensions(SliderUpdate updateType)
+    {
+        if (Profile == null)
+            return;
+
+        var heightValue = Math.Clamp(HeightSlider.Value, MinCharHeight, MaxCharHeight);
+        var widthValue = Math.Clamp(WidthSlider.Value, MinCharWidth, MaxCharWidth);
+        var sizeRatio = SizeRatio;
+        var ratio = heightValue / widthValue;
+
+        if (updateType == SliderUpdate.Height || updateType == SliderUpdate.Both)
+        {
+            if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                widthValue = heightValue / (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+        }
+
+        if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
+        {
+            if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                heightValue = widthValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+        }
+
+        heightValue = Math.Clamp(heightValue, MinCharHeight, MaxCharHeight);
+        widthValue = Math.Clamp(widthValue, MinCharWidth, MaxCharWidth);
+
+        HeightSlider.Value = heightValue;
+        WidthSlider.Value = widthValue;
+
+        // Update profile directly to avoid infinite recursion through SetCharacterHeight/SetCharacterWidth → UpdateHeightWidthSliders → UpdateDimensions.
+        Profile = Profile?.WithWidthHeight(widthValue, heightValue);
+        if (!_sliderUpdatePending)
+        {
+            _sliderUpdatePending = true;
+            UserInterfaceManager.DeferAction(() =>
+            {
+                _sliderUpdatePending = false;
+                ReloadProfilePreview(); // Claw Command - use slim reload for smoother slider dragging
+            });
+        }
+
+        var height = MathF.Round(AverageHeight * HeightSlider.Value);
+        HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int)height));
+
+        var width = MathF.Round(AverageWidth * WidthSlider.Value);
+        WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int)width));
+
+        UpdateWeight();
+    }
+
+    private void UpdateWeight()
+    {
+        if (Profile == null)
+            return;
+
+        var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
+        _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
+
+        if (fixture != null)
+        {
+            var radius = fixture.Fixtures["fix1"].Shape.Radius;
+            var density = fixture.Fixtures["fix1"].Density;
+            var avg = (Profile.Width + Profile.Height) / 2;
+            var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
+            WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int)weight));
+        }
+        else // Whelp, the fixture doesn't exist, guesstimate it instead
+            WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", 71));
+
+        SpriteView.InvalidateMeasure();
+    }
+
     /// <summary>
     /// Refreshes the species selector.
     /// </summary>
@@ -227,6 +334,56 @@ public sealed partial class HumanoidProfileEditor
     private void SetAge(int newAge)
     {
         Profile = Profile?.WithAge(newAge);
+        ReloadPreview();
+    }
+
+    // CLAW COMMAND: Added.
+    private void SetCustomSpeciesName(string name)
+    {
+        Profile = Profile?.WithCustomSpeciesName(name);
+        ReloadPreview();
+    }
+
+    // Claw Command station char heights
+    public float MaxCharWidth = 1.2f;
+    public float MinCharWidth = 0.85f;
+    public float MaxCharHeight = 1.2f;
+    public float MinCharHeight = 0.9f;
+    public float SizeRatio = 1.2f;
+    public float AverageHeight = 176.1f;
+    public float AverageWidth = 40f;
+    public float DefaultHeight = 1f;
+    public float DefaultWidth = 1f;
+
+    /// <summary>
+    ///     Set the height of a humanoid mob
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID</param>
+    /// <param name="height">The height to set the mob to</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetCharacterHeight(float height)
+    {
+        var clamped = Math.Clamp(height, MinCharHeight, MaxCharHeight);
+        Profile = Profile?.WithHeight(clamped);
+
+        UpdateHeightWidthSliders();
+        ReloadPreview();
+    }
+
+    /// <summary>
+    ///     Set the width of a humanoid mob
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID</param>
+    /// <param name="width">The width to set the mob to</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetCharacterWidth(float width)
+    {
+        var clamped = Math.Clamp(width, MinCharWidth, MaxCharWidth);
+        Profile = Profile?.WithWidth(clamped);
+
+        UpdateHeightWidthSliders();
         ReloadPreview();
     }
 

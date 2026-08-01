@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Server.Clothing.Systems;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Ghost.Roles.Events;
 using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
 using Content.Shared.Ghost;
@@ -64,7 +63,7 @@ namespace Content.Server.Ghost.Roles
             _transform.AttachToGridOrMap(mob);
 
             var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob);
-            RaiseLocalEvent(mob, spawnedEvent);
+            RaiseLocalEvent(mob, ref spawnedEvent);
 
             EnsureComp<MindContainerComponent>(mob);
 

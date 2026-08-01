@@ -65,7 +65,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         var ev = new PlayerSpawningEvent(job, profile, station);
 
         //claw command - force job spawner for AlwaysUseSpawner jobs (e.g. Prisoner)
-        if (job != null && _prototypeManager.TryIndex<JobPrototype>(job, out var jobProto) && jobProto.AlwaysUseSpawner)
+        if (job != null && ProtoMan.TryIndex(job, out var jobProto) && jobProto.AlwaysUseSpawner)
             ev.DesiredSpawnPointType = SpawnPointType.Job;
 
         RaiseLocalEvent(ev);

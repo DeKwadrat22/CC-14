@@ -6,53 +6,36 @@ public sealed partial class CCVars
 {
     /// <summary>
     ///     Whether gas differences will move entities.
+    ///     CLAW: Changed to true.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWind =
         CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
     /// <summary>
-    ///     A direct multiplier on how violent space wind is.
+    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
+        CVarDef.Create("atmos.space_wind_pressure_force_divisor_throw", 15f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
+    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
+    /// </summary>
+    public static readonly CVarDef<float> SpaceWindPressureForceDivisorPush =
+        CVarDef.Create("atmos.space_wind_pressure_force_divisor_push", 2500f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
     ///     Useful to prevent clipping through objects.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxForce =
-        CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxVelocity =
+        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
+    ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
+    ///     A "throwing" atmospheric pressure difference ignores this limit, but not the max. velocity limit.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxAngularVelocity =
-        CVarDef.Create("atmos.space_wind_max_angular_velocity", 3f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     The amount of time (in seconds) for space wind to knock down a player character if they are subjected to space wind.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindKnockdownTime =
-        CVarDef.Create("atmos.space_wind_knockdown_time", 0.75f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     A multiplier on the amount of force applied to Humanoid entities, as tracked by HumanoidAppearanceComponent.
-    ///     Applied after all other checks, and applies to both throwing force and how easy it is for an entity to be thrown.
-    /// </summary>
-    public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Whether Space Wind is allowed to attempt to knock down player characters.
-    /// </summary>
-    public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
-        CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Whether Space Wind will create subtle visual indicators for the presence of air currents.
-    /// </summary>
-    public static readonly CVarDef<bool> SpaceWindVisuals =
-        CVarDef.Create("atmos.space_wind_visuals", true, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxPushForce =
+        CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos tile equalization is enabled.
@@ -76,14 +59,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> MonstermosRipTiles =
         CVarDef.Create("atmos.monstermos_rip_tiles", false, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Taken as the cube of a tile's mass, this acts as a minimum threshold of mass for which air pressure
-    ///     calculates whether or not to rip a tile from the floor. This should be set by default to the cube of the
-    ///     game's lowest-mass tile as defined in their prototypes, but can be increased for server performance reasons.
-    /// </summary>
-    public static readonly CVarDef<float> MonstermosRipTilesMinimumPressure =
-        CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 20f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether explosive depressurization will cause the grid to gain an impulse.

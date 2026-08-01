@@ -2,7 +2,7 @@
 # Used by NightVisionSystem/ThermalVisionSystem in Content.Goobstation.Client.Overlays.
 
 - type: shader
-  id: NightVision
+  id: NightVisionOverlay
   kind: source
   path: "/Textures/_ClawCommand/Shaders/nightvision.swsl"
 

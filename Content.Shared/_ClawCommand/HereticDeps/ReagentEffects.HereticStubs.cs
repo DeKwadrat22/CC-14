@@ -27,7 +27,7 @@ namespace Content.Shared._Goobstation.Wizard.Chemistry
         [DataField] public bool Invert;
         [DataField] public bool CheckMind;
 
-        public override bool RaiseEvent(EntityUid target, IEntityConditionRaiser raiser) => true;
+        public override bool RaiseEvent(EntityUid target, IEntityConditionRaiser raiser, EntityUid? sourceEnt) => true;
 
         public override string EntityConditionGuidebookText(IPrototypeManager prototype) => string.Empty;
     }

@@ -1,6 +1,6 @@
 - type: entity
   name: honey glazed ham
-  parent: FoodMeatBase
+  parent: [FoodMeatBase, BaseSlicingRefinableFood]
   id: FoodMeatGlazedHam
   description: A slow-cooked ham, glazed in caramelized honey and cured with salt.
   components:
@@ -12,9 +12,10 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     state: honeyglazedham
-  - type: SliceableFood
-    count: 4
-    slice: FoodMeatGlazedHamSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatGlazedHamSlice
+      amount: 4
   - type: SolutionContainerManager
     solutions:
       food:

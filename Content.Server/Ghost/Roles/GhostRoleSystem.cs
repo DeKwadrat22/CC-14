@@ -688,7 +688,7 @@ public sealed partial class GhostRoleSystem : EntitySystem // Claw Command - par
                     playTimes,
                     out FormattedMessage? reason,
                     EntityManager,
-                    _prototype,
+                    ProtoMan,
                     null);
 
                 if (!meetsRequirements && reason != null)
@@ -729,7 +729,7 @@ public sealed partial class GhostRoleSystem : EntitySystem // Claw Command - par
             (IReadOnlyDictionary<string, TimeSpan>) playTimes, // cast to IReadOnly
             out _,
             EntityManager,
-            _prototype,
+            ProtoMan,
             null);
     }
 

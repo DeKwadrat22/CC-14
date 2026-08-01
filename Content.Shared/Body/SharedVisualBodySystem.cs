@@ -149,7 +149,7 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
         // markings; user-picked colors on customizable markings are preserved.
         if (TryComp<VisualOrganMarkingsComponent>(ent, out var markingsComp)
             && markingsComp.Markings.Count > 0
-            && _prototype.TryIndex(markingsComp.MarkingData.Group, out var groupProto))
+            && ProtoMan.TryIndex(markingsComp.MarkingData.Group, out var groupProto))
         {
             var resolved = markingsComp.Markings.ToDictionary(
                 kvp => kvp.Key,

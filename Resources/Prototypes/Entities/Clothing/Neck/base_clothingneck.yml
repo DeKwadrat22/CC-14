@@ -36,9 +36,6 @@
   parent: ClothingNeckBase
   id: ClothingScarfBase
   components:
-  - type: TemperatureProtection # _ClawCommand: Added. These are the Winter Boot values.
-    heatingCoefficient: 1.025
-    coolingCoefficient: 0.5
   - type: Tag
     tags:
     - Scarf

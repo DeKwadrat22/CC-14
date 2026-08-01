@@ -38,7 +38,7 @@ public sealed partial class TraitSystem : EntitySystem
         var playerDepts = new HashSet<string>();
         if (args.JobId != null)
         {
-            foreach (var dept in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
+            foreach (var dept in ProtoMan.EnumeratePrototypes<DepartmentPrototype>())
             {
                 foreach (var role in dept.Roles)
                 {

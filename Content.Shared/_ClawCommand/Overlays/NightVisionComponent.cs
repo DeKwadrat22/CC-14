@@ -8,11 +8,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Goobstation.Shared.Overlays;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class NightVisionComponent : SwitchableVisionOverlayComponent
+public sealed partial class NightVisionOverlayComponent : SwitchableVisionOverlayComponent
 {
     public override EntProtoId? ToggleAction { get; set; } = "ToggleNightVision";
-
-    public override Color Color { get; set; } = Color.FromHex("#98FB98");
+   public override Color Color { get; set; } = Color.FromHex("#98FB98");
 }
 
 public sealed partial class ToggleNightVisionEvent : InstantActionEvent;

@@ -441,7 +441,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
         // Claw Command: skip arrivals for JobEntity jobs (AI, Borg). Those need to be inserted into
         // their specific container/pod by ContainerSpawnPointSystem or routed to a Job spawn point,
         // not dumped at arrivals as a stray AI brain.
-        if (_protoManager.Resolve(ev.Job, out var jobProto) && jobProto.JobEntity != null)
+        if (ProtoMan.Resolve(ev.Job, out var jobProto) && jobProto.JobEntity != null)
             return;
 
         // We use arrivals as the default spawn so don't check for job prio (Cryosleep/Arrivals
