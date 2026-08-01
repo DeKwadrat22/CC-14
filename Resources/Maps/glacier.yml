@@ -25556,11 +25556,6 @@ entities:
       parent: 2
 - proto: BedsheetCentcom
   entities:
-  - uid: 705
-    components:
-    - type: Transform
-      pos: 62.5,-20.5
-      parent: 2
   - uid: 706
     components:
     - type: Transform
@@ -58669,13 +58664,6 @@ entities:
     - type: Transform
       pos: -25.498596,13.68724
       parent: 2
-- proto: ClothingHeadHatCentcomcap
-  entities:
-  - uid: 7039
-    components:
-    - type: Transform
-      pos: 60.563904,-20.274887
-      parent: 2
 - proto: ClothingHeadHatCone
   entities:
   - uid: 7040
@@ -59209,13 +59197,6 @@ entities:
     components:
     - type: Transform
       pos: 36.74322,44.429073
-      parent: 2
-- proto: ClothingOuterWinterCentcom
-  entities:
-  - uid: 7133
-    components:
-    - type: Transform
-      pos: 60.407654,-20.446762
       parent: 2
 - proto: ClothingOuterWinterChem
   entities:
