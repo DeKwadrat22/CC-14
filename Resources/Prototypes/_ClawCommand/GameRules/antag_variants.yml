@@ -38,6 +38,49 @@
     minimumPlayers: 25
 
 # ---------------------------------------------------------------------------
+# Extended Irregular syndicate variants
+#
+# Same antags, different contract. These swap the objective set for CCTraitorObjectiveGroupsIrregular,
+# whose kill objectives are settled by the death itself instead of demanding the target never reach
+# CentComm. Secret keeps the round-removal versions, which is why these have to be separate
+# prototypes rather than an edit to the rules above - both modes share those.
+#
+# The wave tuning below is duplicated from SleeperAgentsSecondWave / ThirdWave on purpose: an
+# entity can only inherit one of "is the second wave" and "uses Irregular objectives" cleanly.
+# If you retune the waves above, retune them here too.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: SleeperAgents
+  id: CCIrregularSleeperAgents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AntagRandomObjectives
+    sets:
+    - groups: CCTraitorObjectiveGroupsIrregular
+    maxDifficulty: 5
+
+- type: entity
+  parent: CCIrregularSleeperAgents
+  id: CCIrregularSleeperAgentsSecondWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 55
+    weight: 6
+    minimumPlayers: 20
+
+- type: entity
+  parent: CCIrregularSleeperAgents
+  id: CCIrregularSleeperAgentsThirdWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 85
+    weight: 4
+    minimumPlayers: 25
+
+# ---------------------------------------------------------------------------
 # Roundstart antags, sub-rollable
 # ---------------------------------------------------------------------------
 
@@ -52,6 +95,17 @@
     delay:
       min: 240
       max: 420
+
+# Extended Irregular's roundstart traitors. Same rule, "kill once" contracts. See the note above.
+- type: entity
+  parent: SubTraitor
+  id: CCIrregularSubTraitor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AntagRandomObjectives
+    sets:
+    - groups: CCTraitorObjectiveGroupsIrregular
+    maxDifficulty: 5
 
 - type: entity
   parent: Nukeops

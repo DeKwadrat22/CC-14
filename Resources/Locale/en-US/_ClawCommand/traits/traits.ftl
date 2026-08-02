@@ -160,3 +160,6 @@ trait-gourmand-desc = You live to eat and drink. A full stomach cheers you up fa
 
 trait-ascetic-name = Ascetic
 trait-ascetic-desc = Food and drink are fuel, nothing more. Neither a fine meal nor an empty stomach moves your mood much either way.
+
+trait-marked-target-name = Marked Target
+trait-marked-target-desc = Someone, somewhere, has your name on a list. Syndicate agents given a kill order will be pointed at you before anyone else. You get no warning, no protection, and no say in who comes collecting.

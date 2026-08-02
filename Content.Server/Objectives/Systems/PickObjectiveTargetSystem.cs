@@ -1,4 +1,5 @@
 using Content.Server.Objectives.Components;
+using Content.Shared.EntityConditions; // Claw Command
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Server.GameTicking.Rules;
@@ -16,6 +17,10 @@ public sealed partial class PickObjectiveTargetSystem : EntitySystem
 {
     [Dependency] private TargetObjectiveSystem _target = default!;
     [Dependency] private SharedMindSystem _mind = default!;
+    // Claw Command - needed to run a preferred-target pass before the normal random pick.
+    [Dependency] private SharedEntityConditionsSystem _conditions = default!;
+    [Dependency] private IDependencyCollection _dependency = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -68,12 +73,35 @@ public sealed partial class PickObjectiveTargetSystem : EntitySystem
             return;
 
         // couldn't find a target :(
-        if (_mind.PickFromPool(ent.Comp.Pool, args.MindId, ent.Comp.Conditions) is not {} picked)
+        if (PickTarget(ent.Comp, args.MindId) is not {} picked)
         {
             args.Cancelled = true;
             return;
         }
 
         _target.SetTarget(ent, picked, target);
+    }
+
+    /// <summary>
+    /// Claw Command - Picks a mind from the objective's pool, giving priority to minds that also pass
+    /// <see cref="PickRandomPersonComponent.PreferredConditions"/>. Used by the "Marked Target" trait so
+    /// Syndicate kill objectives home in on volunteers first. Falls back to a plain random pick from the
+    /// whole valid pool when nobody is preferred, so behaviour is unchanged for objectives that don't set it.
+    /// </summary>
+    private Entity<MindComponent>? PickTarget(PickRandomPersonComponent comp, EntityUid? exclude)
+    {
+        if (comp.PreferredConditions.Length == 0)
+            return _mind.PickFromPool(comp.Pool, exclude, comp.Conditions);
+
+        var minds = new HashSet<Entity<MindComponent>>();
+        comp.Pool.FindMinds(minds, _dependency, exclude, comp.Conditions);
+
+        if (minds.Count == 0)
+            return null;
+
+        // Pass the picking mind as the source entity, same as the pool's own condition checks do.
+        var preferred = minds.Where(mind => _conditions.TryConditions(mind, comp.PreferredConditions, exclude)).ToList();
+
+        return preferred.Count > 0 ? _random.Pick(preferred) : _random.Pick(minds);
     }
 }

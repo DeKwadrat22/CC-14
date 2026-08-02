@@ -15,6 +15,7 @@
   - SelfAware # Claw Command
   - AnimalFriend # Claw Command
   - DogSpeech # Claw Command
+  - MarkedTarget # Claw Command - the contract follows the character, not the body.
 
 # Traits that root in physical things in your body.
 - type: cloningSettings
