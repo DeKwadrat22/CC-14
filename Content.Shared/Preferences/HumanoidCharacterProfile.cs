@@ -996,7 +996,7 @@ namespace Content.Shared.Preferences
         ///     Claw Command - Resolves the MaxTraitPoints for a shared BudgetPool by finding the first
         ///     category in the pool that defines it.
         /// </summary>
-        private static int? GetBudgetPoolLimit(string pool, IPrototypeManager protoManager)
+        public static int? GetBudgetPoolLimit(string pool, IPrototypeManager protoManager)
         {
             foreach (var cat in protoManager.EnumeratePrototypes<TraitCategoryPrototype>())
             {

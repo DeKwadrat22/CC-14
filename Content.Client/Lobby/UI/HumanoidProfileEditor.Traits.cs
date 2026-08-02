@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Client.Lobby.UI.Roles;
 using Content.Client.Stylesheets;
+using Content.Shared.Preferences;
 using Content.Shared.Traits;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
@@ -17,7 +18,13 @@ public sealed partial class HumanoidProfileEditor
     {
         TraitsList.RemoveAllChildren();
 
-        var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
+        // Claw Command - sorted by point value rather than name: the traits that hand you points
+        // (negative Cost) first, then free ones, then the ones you spend those points on. Ties fall
+        // back to name so the order is stable within a price bracket.
+        var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>()
+            .OrderBy(t => t.Cost)
+            .ThenBy(t => Loc.GetString(t.Name))
+            .ToList();
         TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
 
         if (traits.Count < 1)
@@ -50,6 +57,24 @@ public sealed partial class HumanoidProfileEditor
             group.Add(trait.ID);
         }
 
+        // Claw Command - budget is tracked per BudgetPool, not per category. Physical, Psychological,
+        // Disabilities and Quirks all share SharedTraitBudget, so points spent in one of them have to
+        // be visible from the others. This mirrors what HumanoidCharacterProfile actually enforces;
+        // before this the UI counted each category on its own and the three categories without their
+        // own MaxTraitPoints showed no budget at all.
+        var poolSpend = new Dictionary<string, int>();
+        foreach (var (categoryId, categoryTraits) in traitGroups)
+        {
+            var poolKey = GetTraitPoolKey(categoryId);
+
+            foreach (var traitId in categoryTraits)
+            {
+                var trait = _prototypeManager.Index<TraitPrototype>(traitId);
+                if (Profile?.TraitPreferences.Contains(trait.ID) == true)
+                    poolSpend[poolKey] = poolSpend.GetValueOrDefault(poolKey) + trait.Cost;
+            }
+        }
+
         // Create UI view from model
         foreach (var (categoryId, categoryTraits) in traitGroups)
         {
@@ -67,8 +92,13 @@ public sealed partial class HumanoidProfileEditor
                 });
             }
 
+            // Claw Command - spend and limit both come from the shared pool this category belongs to.
+            var poolKey = GetTraitPoolKey(categoryId);
+            var selectionCount = poolSpend.GetValueOrDefault(poolKey);
+            var poolLimit = HumanoidCharacterProfile.GetBudgetPoolLimit(poolKey, _prototypeManager)
+                            ?? category?.MaxTraitPoints;
+
             List<TraitPreferenceSelector?> selectors = new();
-            var selectionCount = 0;
 
             foreach (var traitProto in categoryTraits)
             {
@@ -76,8 +106,6 @@ public sealed partial class HumanoidProfileEditor
                 var selector = new TraitPreferenceSelector(trait);
 
                 selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
-                if (selector.Preference)
-                    selectionCount += trait.Cost;
 
                 selector.PreferenceChanged += preference =>
                 {
@@ -97,11 +125,11 @@ public sealed partial class HumanoidProfileEditor
             }
 
             // Selection counter
-            if (category is { MaxTraitPoints: >= 0 })
+            if (poolLimit is >= 0)
             {
                 TraitsList.AddChild(new Label
                 {
-                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", category.MaxTraitPoints)),
+                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", poolLimit.Value)),
                     FontColorOverride = Color.Gray
                 });
             }
@@ -111,8 +139,7 @@ public sealed partial class HumanoidProfileEditor
                 if (selector == null)
                     continue;
 
-                if (category is { MaxTraitPoints: >= 0 } &&
-                    selector.Cost + selectionCount > category.MaxTraitPoints)
+                if (poolLimit is >= 0 && selector.Cost + selectionCount > poolLimit.Value)
                 {
                     selector.Checkbox.Label.FontColorOverride = Color.Red;
                 }
@@ -120,5 +147,19 @@ public sealed partial class HumanoidProfileEditor
                 TraitsList.AddChild(selector);
             }
         }
+    }
+
+    /// <summary>
+    /// Claw Command - the key a category's trait points are counted against. Categories that declare a
+    /// BudgetPool all count against that one key; anything else is its own budget, keyed by category ID.
+    /// </summary>
+    private string GetTraitPoolKey(string categoryId)
+    {
+        if (categoryId == TraitCategoryPrototype.Default)
+            return categoryId;
+
+        return _prototypeManager.TryIndex<TraitCategoryPrototype>(categoryId, out var category)
+            ? category.BudgetPool ?? categoryId
+            : categoryId;
     }
 }
