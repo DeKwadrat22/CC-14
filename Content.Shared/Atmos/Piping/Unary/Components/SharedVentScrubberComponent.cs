@@ -28,12 +28,23 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
 
         // Presets for 'dumb' air alarm modes
 
+        // Claw Command - the routine scrubbing modes are scaled to match the space wind nerf on
+        // GasVentPumpComponent.TargetPressureChange (0.20x of one atmosphere). A vent and a scrubber
+        // share nearly every room, so nerfing only the vent left the scrubber with far more authority
+        // over room pressure than vanilla intends.
+        //
+        // Vanilla, per 2500 L tile at 1 atm: vent adds ~101 kPa/s, scrubber removes ~8.1 kPa/s -> 12.5:1
+        // in the vent's favour. With the vent at 0.20x and the scrubber untouched that ratio collapsed
+        // to 2.5:1. Scaling the scrubber by the same 0.20x (200 -> 40 L/s) restores vanilla's 12.5:1.
+        //
+        // Panic and Replace below are deliberately left at 200f: those are the plasma flood / fire
+        // response modes, and they have nothing to do with routine pressure displacement.
         public static GasVentScrubberData FilterModePreset = new GasVentScrubberData
         {
             Enabled = true,
             FilterGases = new(GasVentScrubberData.DefaultFilterGases),
             PumpDirection = ScrubberPumpDirection.Scrubbing,
-            VolumeRate = 200f,
+            VolumeRate = 40f,
             WideNet = false
         };
 
@@ -42,7 +53,7 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Enabled = true,
             FilterGases = new(GasVentScrubberData.DefaultFilterGases),
             PumpDirection = ScrubberPumpDirection.Scrubbing,
-            VolumeRate = 200f,
+            VolumeRate = 40f,
             WideNet = true
         };
 

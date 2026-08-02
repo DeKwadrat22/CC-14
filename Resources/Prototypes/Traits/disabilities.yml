@@ -74,8 +74,11 @@
   description: trait-muted-desc
   category: Disabilities
   cost: -4
+  # Claw Command - both departments depend on being able to talk to do the job: command for comms
+  # and announcements, security for warnings, arrests and calling for backup.
   restrictedDepts:
     - Command
+    - Security
   blacklist:
     components:
       - BorgChassis
