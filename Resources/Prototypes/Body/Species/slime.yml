@@ -115,7 +115,10 @@
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
-    allowedEmotes: ['Squish']
+    # Claw Command - CatMeow/Purr/Yap added, matching the other emote-rich species.
+    # Their sounds are mapped in the MaleSlime/FemaleSlime emoteSounds prototypes;
+    # this gate is needed too, since all three emotes are available: false.
+    allowedEmotes: ['Squish', 'CatMeow', 'Purr', 'Yap']
   - type: TypingIndicator
     proto: slime
   - type: Vocal

@@ -159,6 +159,10 @@
       collection: MaleCoughs
     CatMeow:
       collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    Purr:
+      collection: FelinidPurrs # Claw Command - *purrs emote
+    Yap:
+      collection: VulpkaninYaps # Claw Command - *yaps emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -204,6 +208,10 @@
       collection: FemaleCoughs
     CatMeow:
       collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    Purr:
+      collection: FelinidPurrs # Claw Command - *purrs emote
+    Yap:
+      collection: VulpkaninYaps # Claw Command - *yaps emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
