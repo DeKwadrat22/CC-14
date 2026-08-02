@@ -1,0 +1,23 @@
+# Claw Command - recipe categories that exist in the cookbook data but had no guidebook page.
+#
+# meal_recipes_designed.yml introduced the Meat, Sweet and Candy groups, but nothing ever
+# embedded them, so those recipes rendered nowhere at all. These pages are wired into
+# FoodRecipes' children in Guidebook/references.yml.
+
+- type: guideEntry
+  id: MeatRecipes
+  name: guide-entry-meat-recipes
+  text: "/ServerInfo/_ClawCommand/Guidebook/Service/MeatRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: SweetRecipes
+  name: guide-entry-sweet-recipes
+  text: "/ServerInfo/_ClawCommand/Guidebook/Service/SweetRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: CandyRecipes
+  name: guide-entry-candy-recipes
+  text: "/ServerInfo/_ClawCommand/Guidebook/Service/CandyRecipes.xml"
+  filterEnabled: True

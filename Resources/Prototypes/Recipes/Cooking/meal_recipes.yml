@@ -733,6 +733,7 @@
   name: world peazza recipe
   result: FoodPizzaWorldpeas
   time: 30
+  group: Pizza
   solids:
     FoodDoughFlat: 1
     FoodWorldPeas: 3
@@ -1843,6 +1844,7 @@
   name: warm moth-pocket recipe
   result: FoodDonkpocketMothWarm
   time: 5
+  group: Moth
   solids:
     FoodDonkpocketMoth: 1
 
@@ -2167,6 +2169,7 @@
   name: suppermatter recipe
   result: FoodCakeSuppermatter
   time: 30
+  group: Cake
   solids:
     FoodCakeBatter: 2
   reagents:

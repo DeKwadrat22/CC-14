@@ -26,16 +26,19 @@
   - TP14GuideEntryUtensils # Trieste: Added.
   - PizzaRecipes
   - SavoryRecipes
+  - MeatRecipes #claw command
   - BreadRecipes
   - BreakfastRecipes
   - MothRecipes
   - PastaRecipes
-  - DessertRecipes
   - SoupRecipes
-  - PieRecipes
-  - BarsAndCookiesRecipes
-  - CakeRecipes
   - SaladRecipes
+  - PieRecipes
+  - CakeRecipes
+  - DessertRecipes
+  - SweetRecipes #claw command
+  - BarsAndCookiesRecipes
+  - CandyRecipes #claw command
   - OtherRecipes
   - MedicinalRecipes
   - SecretRecipes

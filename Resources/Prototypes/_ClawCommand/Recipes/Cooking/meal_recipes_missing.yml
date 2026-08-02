@@ -7,6 +7,7 @@
   name: honey bun recipe
   result: FoodBakedBunHoney
   time: 5
+  group: Breads
   solids:
     FoodBreadBun: 1
   reagents:
@@ -17,6 +18,7 @@
   name: cooked spaceshroom recipe
   result: FoodSpaceshroomCooked
   time: 5
+  group: Savory
   solids:
     FoodSpaceshroom: 1
 
@@ -26,6 +28,7 @@
   result: FoodBakedBunHotX
   resultCount: 2
   time: 10
+  group: Breads
   reagents:
     Sugar: 5
   solids:
@@ -37,6 +40,7 @@
   result: FoodBakedBunMeat
   resultCount: 2
   time: 10
+  group: Breads
   solids:
     FoodDoughSlice: 1
     FoodMeatCutlet: 1
@@ -46,6 +50,7 @@
   name: rice pudding recipe
   result: FoodRicePudding
   time: 15
+  group: Dessert
   reagents:
     Rice: 15
     Cream: 15

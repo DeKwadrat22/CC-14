@@ -31,3 +31,8 @@ guide-entry-legalSOP = Legal SOP
 guide-entry-combatSOP = Combat SOP
 guide-entry-siliconSOP = Silicon SOP
 guide-entry-loadout-info-security-weapons = Security Weapons
+
+# Claw Command - cookbook categories that had recipes but no page.
+guide-entry-meat-recipes = Meat Dishes
+guide-entry-sweet-recipes = Sweet Snacks
+guide-entry-candy-recipes = Candy
