@@ -183,7 +183,7 @@
   filterEnabled: True
 
 - type: guideEntry
-  id: GuideEngagementSOP
-  name: guide-entry-engagementSOP
-  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/EngagementStandardOperatingProcedure.xml"
+  id: GuideCombatSOP
+  name: guide-entry-combatSOP
+  text: "/ServerInfo/_ClawCommand/Guidebook/SOP/CombatStandardOperatingProcedure.xml"
   filterEnabled: True

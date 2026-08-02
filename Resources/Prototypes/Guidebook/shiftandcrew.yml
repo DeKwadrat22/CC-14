@@ -5,6 +5,7 @@
   children:
   - GuideCompanyPolicy #claw command
   - GuideGeneralRegulations #claw command
+  - GuideCombatSOP #claw command
   - GuideMutinyGuidelines #claw command
   - GuidePermits #claw command
   - GuideAlertProcedure #claw command

@@ -5,7 +5,6 @@
   children:
   - GuideSecuritySOP #claw command
   - GuideLegalSOP #claw command
-  - GuideEngagementSOP #claw command
   - GuideBriggingSOP #claw command
   - GuideDetectiveSOP #claw command
   - GuideLawyerSOP #claw command
