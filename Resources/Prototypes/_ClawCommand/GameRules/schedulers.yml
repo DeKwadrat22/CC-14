@@ -11,16 +11,21 @@
 #   initialChaos vs averageChaos -> how steep the ramp is (how much worse hour two is)
 #   minEventTime / maxEventTime  -> the pacing band the ramp is applied to
 #
-# Extended Irregular uses a wide, slow band. Secret uses a tighter, faster one, so Secret
-# is always shorter between events than Extended Irregular at the same point in the shift.
+# Both modes share initialChaos per difficulty (0.55 / 0.75 / 0.9), so the two open at the
+# same relative calm. The difference is the band: Extended Irregular applies the ramp to a
+# wide, slow 10-25 min window, Secret to a tighter 7-16.7 min one. That keeps Secret shorter
+# between events than Extended Irregular at every point of the shift without Secret's opening
+# hour feeling frantic.
 #
-# Roughly, minutes between events at round start / 60 min in / 120 min in:
-#   Irregular Easy    18-45  /  9-23  /  6-15
-#   Irregular Medium  13-33  /  7-17  /  4-11
-#   Irregular Hard    11-28  /  5-13  /  3-9
-#   Secret Easy        6-16  /  3-8   /  2-6
-#   Secret Medium      4-12  /  2-6   /  1.5-4
-#   Secret Hard        3-8   /  1.5-4 /  1-3
+# Roughly, minutes between events at round start / 60 min in / plateau. The plateau is the
+# permanent floor once the ramp tops out, so it is the number that decides how a long round
+# feels - rounds here regularly run past averageEndTime.
+#   Irregular Easy    18-45  /  9-23   /  6.1-15.2
+#   Irregular Medium  13-33  /  7-17   /  4.4-11.1
+#   Irregular Hard    11-28  /  5-13   /  3.4-8.6
+#   Secret Easy       13-30  /  6.6-16 /  4.7-11.1
+#   Secret Medium      9-22  /  4.6-11 /  3.3-7.9
+#   Secret Hard        8-19  /  3.4-8  /  2.5-5.8
 
 # ---------------------------------------------------------------------------
 # Extended Irregular
@@ -78,11 +83,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    minEventTime: 300
-    maxEventTime: 800
-    initialChaos: 0.85
-    averageChaos: 1.5
-    averageEndTime: 100
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.55
+    averageChaos: 0.95
+    averageEndTime: 110
     scheduledGameRules: !type:NestedSelector
       tableId: CCSecretEasyEventsTable
 
@@ -92,11 +97,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    minEventTime: 300
-    maxEventTime: 800
-    initialChaos: 1.15
-    averageChaos: 2.2
-    averageEndTime: 100
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.75
+    averageChaos: 1.35
+    averageEndTime: 105
     scheduledGameRules: !type:NestedSelector
       tableId: CCSecretMediumEventsTable
 
@@ -106,11 +111,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    minEventTime: 300
-    maxEventTime: 800
-    initialChaos: 1.6
-    averageChaos: 3.0
-    averageEndTime: 90
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.9
+    averageChaos: 1.95
+    averageEndTime: 100
     scheduledGameRules: !type:NestedSelector
       tableId: CCSecretHardEventsTable
 
