@@ -154,13 +154,13 @@
   - type: SubGamemodes
     rules:
     - id: CCIrregularEasyBundle
-      prob: 0.40
+      prob: 0.45
       orGroup: difficulty
     - id: CCIrregularMediumBundle
-      prob: 0.40
+      prob: 0.45
       orGroup: difficulty
     - id: CCIrregularHardBundle
-      prob: 0.20
+      prob: 0.10
       orGroup: difficulty
 
 # ===========================================================================
