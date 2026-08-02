@@ -1,0 +1,226 @@
+# Claw Command - event schedulers for Secret and Extended Irregular.
+#
+# All of these ramp: the gap between events shrinks as the shift goes on. The gap is
+#   random(minEventTime / chaos, maxEventTime / chaos)
+# where chaos climbs linearly from `initialChaos` at round start to roughly `averageChaos`
+# plus `initialChaos` at `averageEndTime` minutes in, then holds.
+#
+# Two knobs shape a preset:
+#   initialChaos vs averageChaos -> how steep the ramp is (how much worse hour two is)
+#   minEventTime / maxEventTime  -> the pacing band the ramp is applied to
+#
+# Extended Irregular uses a wide, slow band. Secret uses a tighter, faster one, so Secret
+# is always shorter between events than Extended Irregular at the same point in the shift.
+#
+# Roughly, minutes between events at round start / 60 min in / 120 min in:
+#   Irregular Easy    18-45  /  9-23  /  6-15
+#   Irregular Medium  13-33  /  7-17  /  4-11
+#   Irregular Hard    11-28  /  5-13  /  3-9
+#   Secret Easy        6-16  /  3-8   /  2-6
+#   Secret Medium      4-12  /  2-6   /  1.5-4
+#   Secret Hard        3-8   /  1.5-4 /  1-3
+
+# ---------------------------------------------------------------------------
+# Extended Irregular
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularEasyScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.55
+    averageChaos: 1.1
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularEasyEventsTable
+
+- type: entity
+  id: CCIrregularMediumScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.75
+    averageChaos: 1.5
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMediumEventsTable
+
+- type: entity
+  id: CCIrregularHardScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.9
+    averageChaos: 2.0
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularHardEventsTable
+
+# ---------------------------------------------------------------------------
+# Secret
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCSecretEasyScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 300
+    maxEventTime: 800
+    initialChaos: 0.85
+    averageChaos: 1.5
+    averageEndTime: 100
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretEasyEventsTable
+
+- type: entity
+  id: CCSecretMediumScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 300
+    maxEventTime: 800
+    initialChaos: 1.15
+    averageChaos: 2.2
+    averageEndTime: 100
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretMediumEventsTable
+
+- type: entity
+  id: CCSecretHardScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 300
+    maxEventTime: 800
+    initialChaos: 1.6
+    averageChaos: 3.0
+    averageEndTime: 90
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretHardEventsTable
+
+# ---------------------------------------------------------------------------
+# Meteor schedulers
+#
+# Extended Irregular keeps roughly the old cadence and only fires when engineering is
+# staffed (the crew requirement lives on CCIrregularMeteorSwarmTable). Secret is markedly
+# more frequent, and gets more frequent again with difficulty.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularEasyMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1500
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1800
+      max: 7200
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCIrregularMediumMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1500
+      max: 5400
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCIrregularHardMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200
+    maximumSpanUntilFirstEvent: 600
+    minMaxEventTiming:
+      min: 1200
+      max: 4200
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCSecretEasyMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 900
+    maximumSpanUntilFirstEvent: 600
+    minMaxEventTiming:
+      min: 1200
+      max: 3600
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+- type: entity
+  id: CCSecretMediumMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 720
+    maximumSpanUntilFirstEvent: 480
+    minMaxEventTiming:
+      min: 900
+      max: 2700
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+- type: entity
+  id: CCSecretHardMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 600
+    maximumSpanUntilFirstEvent: 360
+    minMaxEventTiming:
+      min: 700
+      max: 2100
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+# ---------------------------------------------------------------------------
+# Space traffic control
+#
+# Extended Irregular uses a pool with the lone op stripped out.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularSpaceTrafficControlScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 2700
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1200
+      max: 7200
+    scheduledGameRules: !type:NestedSelector
+      prob: 0.05
+      tableId: CCIrregularUnknownShuttlesTable

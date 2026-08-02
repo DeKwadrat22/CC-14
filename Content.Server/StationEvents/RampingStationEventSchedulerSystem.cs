@@ -33,7 +33,8 @@ public sealed partial class RampingStationEventSchedulerSystem : GameRuleSystem<
         component.MaxChaos = _random.NextFloat(component.AverageChaos - component.AverageChaos / 4, component.AverageChaos + component.AverageChaos / 4);
         // This is in minutes, so *60 for seconds (for the chaos calc)
         component.EndTime = _random.NextFloat(component.AverageEndTime - component.AverageEndTime / 4, component.AverageEndTime + component.AverageEndTime / 4) * 60f;
-        component.StartingChaos = component.MaxChaos / 10;
+        // Claw Command - allow presets to decouple the opening event rate from the closing one.
+        component.StartingChaos = component.InitialChaos ?? component.MaxChaos / 10;
 
         PickNextEventTime(uid, component);
     }
@@ -69,7 +70,8 @@ public sealed partial class RampingStationEventSchedulerSystem : GameRuleSystem<
     {
         var mod = GetChaosModifier(uid, component);
 
-        // 4-12 minutes baseline. Will get faster over time as the chaos mod increases.
-        component.TimeUntilNextEvent = _random.NextFloat(240f / mod, 720f / mod);
+        // 4-12 minutes baseline by default. Will get faster over time as the chaos mod increases.
+        // Claw Command - the baseline band is configurable so presets can set their own pacing.
+        component.TimeUntilNextEvent = _random.NextFloat(component.MinEventTime / mod, component.MaxEventTime / mod);
     }
 }
