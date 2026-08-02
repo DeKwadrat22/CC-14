@@ -80,10 +80,10 @@
   components:
   - type: SubGamemodes
     rules:
-    - prob: 0.42 # nothing
+    - prob: 0.48 # nothing
       orGroup: major
     - id: SubNukeops
-      prob: 0.32
+      prob: 0.26
       orGroup: major
     - id: SubRevolutionary
       prob: 0.26

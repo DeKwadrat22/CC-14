@@ -3,7 +3,9 @@
 # All of these ramp: the gap between events shrinks as the shift goes on. The gap is
 #   random(minEventTime / chaos, maxEventTime / chaos)
 # where chaos climbs linearly from `initialChaos` at round start to roughly `averageChaos`
-# plus `initialChaos` at `averageEndTime` minutes in, then holds.
+# plus `initialChaos` at `averageEndTime` minutes in, then holds flat there for the rest of
+# the round however long it runs. `averageEndTime` is only "when the ramp stops climbing" -
+# it is not a round length, and overrunning it never calms the round back down.
 #
 # Two knobs shape a preset:
 #   initialChaos vs averageChaos -> how steep the ramp is (how much worse hour two is)

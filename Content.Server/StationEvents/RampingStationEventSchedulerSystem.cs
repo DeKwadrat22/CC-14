@@ -13,13 +13,17 @@ public sealed partial class RampingStationEventSchedulerSystem : GameRuleSystem<
     [Dependency] private GameTicker _gameTicker = default!;
 
     /// <summary>
-    /// Returns the ChaosModifier which increases as round time increases to a point.
+    /// Returns the ChaosModifier which increases as round time increases, then plateaus.
     /// </summary>
     public float GetChaosModifier(EntityUid uid, RampingStationEventSchedulerComponent component)
     {
         var roundTime = (float) _gameTicker.RoundDuration().TotalSeconds;
+
+        // Claw Command - past the end time the ramp holds at the value it climbed to, rather
+        // than dropping back by StartingChaos. Vanilla returned MaxChaos here, which made the
+        // curve discontinuous and quietly calmed a round back down the moment it peaked.
         if (roundTime > component.EndTime)
-            return component.MaxChaos;
+            return component.MaxChaos + component.StartingChaos;
 
         return component.MaxChaos / component.EndTime * roundTime + component.StartingChaos;
     }
