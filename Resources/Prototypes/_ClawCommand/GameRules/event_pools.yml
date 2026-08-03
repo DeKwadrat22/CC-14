@@ -27,7 +27,7 @@
     - id: GreytideVirus
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
+    - id: MimicVendorRule # Claw Command - we restored this rule; see GameRules/events.yml
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SolarFlare

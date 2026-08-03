@@ -159,13 +159,18 @@ public sealed partial class BodyWeightSystem : EntitySystem
 
     /// <summary>
     ///     Heavier characters take a little more punishment before dropping.
+    ///
+    ///     One-directional on purpose: this only ever raises the thresholds. A slight character is
+    ///     already paying for their build by being easier to shove, carry and blow down a corridor,
+    ///     and stacking a health penalty on top of that would make small characters strictly worse
+    ///     rather than a trade-off. Below the species default the factor floors at 1.
     /// </summary>
     private void ApplyHealth(EntityUid uid, BodyWeightComponent weight)
     {
         if (!TryComp<MobThresholdsComponent>(uid, out var thresholds))
             return;
 
-        var factor = Influence(weight.Scale, weight.HealthInfluence);
+        var factor = MathF.Max(1f, Influence(weight.Scale, weight.HealthInfluence));
 
         foreach (var (state, baseDamage) in weight.BaseThresholds)
         {

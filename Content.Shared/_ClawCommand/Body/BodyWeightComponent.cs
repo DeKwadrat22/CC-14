@@ -61,12 +61,15 @@ public sealed partial class BodyWeightComponent : Component
     #endregion
 
     /// <summary>
-    ///     How much of the weight difference carries into maximum health. Full strength would let a
-    ///     heavyset character shrug off a third again as much damage as a slight one, which is far
-    ///     too strong for a cosmetic slider, so only a fraction of it is passed through.
+    ///     How much of the weight difference carries into maximum health, and one-directional: it
+    ///     only ever raises thresholds, never lowers them.
+    ///
+    ///     Tuned so the very heaviest build lands on +15% and no further. The largest scale the
+    ///     sliders allow is 1.2 * 1.2^2 = 1.728, so the influence needed is 0.15 / 0.728 = 0.206.
+    ///     Re-derive this if a species ever widens MaxHeight or MaxWidth, or the ceiling drifts up.
     /// </summary>
     [DataField]
-    public float HealthInfluence = 0.35f;
+    public float HealthInfluence = 0.206f;
 
     /// <summary>
     ///     How much of the weight difference carries into hunger and thirst burn rate. Bigger bodies

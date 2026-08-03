@@ -63,6 +63,13 @@ namespace Content.Server._ClawCommand.Carrying
         /// </summary>
         private const float MassContestMaxPercentage = 0.25f;
 
+        /// <summary>
+        ///     Claw Command - Heaviest thing you may pick up, as a multiple of your own body weight.
+        ///     Upstream used 2x, which no humanoid could realistically hit; with weight now driven by
+        ///     the character sliders the heaviest build is 2.66x the lightest, so this is reachable.
+        /// </summary>
+        private const float MaxCarryMassRatio = 1.75f;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -233,7 +240,10 @@ namespace Content.Server._ClawCommand.Carrying
         {
             if (!TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
                 || !TryComp<PhysicsComponent>(carried, out var carriedPhysics)
-                || carriedPhysics.Mass > carrierPhysics.Mass * 2f)
+                // Claw Command - 1.75x, down from upstream's 2x. Now that body weight tracks the
+                // character sliders this gate is reachable in ordinary play rather than a formality,
+                // so it is tightened to make the difference actually bite.
+                || carriedPhysics.Mass > carrierPhysics.Mass * MaxCarryMassRatio)
             {
                 _popupSystem.PopupEntity(Loc.GetString("carry-too-heavy"), carried, carrier, PopupType.SmallCaution);
                 return;
@@ -307,7 +317,7 @@ namespace Content.Server._ClawCommand.Carrying
                 || HasComp<ItemComponent>(carrier)
                 || TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
                 && TryComp<PhysicsComponent>(toCarry, out var toCarryPhysics)
-                && carrierPhysics.Mass * 2f < toCarryPhysics.Mass)
+                && carrierPhysics.Mass * MaxCarryMassRatio < toCarryPhysics.Mass) // Claw Command - see MaxCarryMassRatio
                 return false;
 
             Carry(carrier, toCarry);
