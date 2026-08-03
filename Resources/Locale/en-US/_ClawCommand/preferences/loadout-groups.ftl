@@ -23,3 +23,4 @@ loadout-group-prisoner-shoes = Prisoner shoes
 cc-loadout-group-captain-shoes = Captain shoes
 cc-loadout-group-hop-shoes = Head of Personnel shoes
 cc-loadout-group-cmo-glasses = Chief Medical Officer glasses
+loadout-group-rations = Rations

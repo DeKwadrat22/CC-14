@@ -1,0 +1,21 @@
+# Claw Command - standard-issue rations handed to every crewmember at spawn.
+# Deliberately NOT inside BoxSurvival: the survival box is the emergency EVA kit and is meant to
+# stay sealed, while these are meant to be eaten. They go loose in the backpack alongside it.
+#
+# This is a hidden group with minLimit/maxLimit 1, so it is applied automatically and cannot be
+# deselected or duplicated in the character editor.
+- type: loadout
+  id: LoadoutRations
+  storage:
+    back:
+    - FoodTinMRE
+    - DrinkWaterBottleFull
+
+- type: loadoutGroup
+  id: Rations
+  name: loadout-group-rations
+  hidden: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LoadoutRations
