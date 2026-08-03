@@ -158,6 +158,11 @@
   abstract: true
   components:
   - type: CombatMode
+  # Claw Command - dangerous hostile mobs can be pulled, but never combat-grabbed. Capping at Soft
+  # leaves the vanilla pull (which they break out of on their own) and removes hard/suffocate grabs,
+  # which were never meant as a way to neuter a hostile mob.
+  - type: Pullable
+    maxGrabStage: Soft
   - type: MeleeWeapon
     hidden: true
     soundHit:

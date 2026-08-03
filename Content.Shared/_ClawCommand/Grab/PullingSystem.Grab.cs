@@ -129,6 +129,18 @@ public sealed partial class PullingSystem
 
         var newStage = puller.Comp.GrabStage + step;
 
+        // Claw Command - dangerous hostile mobs cap at Soft, so combat grabs never escalate on them.
+        // Swallow the input instead of returning false: false falls through to "let go", which would
+        // make trying to combat-grab a carp drop the pull entirely.
+        if (step > 0 && newStage > pullable.Comp.MaxGrabStage)
+        {
+            _popup.PopupClient(Loc.GetString("popup-grab-too-dangerous", ("target", pullable.Owner)),
+                pullable.Owner,
+                puller.Owner,
+                PopupType.SmallCaution);
+            return true;
+        }
+
         if (!TrySetGrabStages((puller.Owner, puller.Comp), (pullable.Owner, pullable.Comp), newStage))
             return false;
 

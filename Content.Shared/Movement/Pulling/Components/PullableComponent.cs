@@ -60,6 +60,14 @@ public sealed partial class PullableComponent : Component
     public Systems.GrabStage GrabStage = Systems.GrabStage.No;
 
     /// <summary>
+    /// Claw Command - highest grab stage anyone can escalate this entity to. Dangerous hostile mobs
+    /// cap at Soft: you can drag a space carp out of the way, but you cannot combat-grab or choke one
+    /// into submission the way you would a person. Defaults to Suffocate, i.e. no restriction.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public Systems.GrabStage MaxGrabStage = Systems.GrabStage.Suffocate;
+
+    /// <summary>
     /// Resolved chance of breaking free on any one attempt, after mass is factored in.
     /// </summary>
     [AutoNetworkedField, DataField]
