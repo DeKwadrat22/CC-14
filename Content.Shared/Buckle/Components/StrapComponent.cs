@@ -96,6 +96,12 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     public bool ModifyBuckleDrawDepth = true;
+
+    /// <summary>
+    /// Claw Command - The strap's own drawdepth before it was raised over its occupants.
+    /// Used for client rendering only, see BuckleSystem.
+    /// </summary>
+    [ViewVariables] public int? OriginalDrawDepth;
 }
 
 public enum StrapPosition

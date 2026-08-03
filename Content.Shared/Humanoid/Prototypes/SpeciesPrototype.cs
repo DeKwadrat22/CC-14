@@ -118,6 +118,34 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    #region Claw Command - character dimensions
+
+    /// <summary>
+    ///     Claw Command - Smallest sprite height scale a character of this species may have.
+    ///     Enforced server-side in <see cref="Content.Shared.Preferences.HumanoidCharacterProfile.EnsureValid"/>,
+    ///     so a modified client cannot submit an arbitrary scale.
+    /// </summary>
+    [DataField]
+    public float MinHeight = 0.9f;
+
+    /// <summary>
+    ///     Claw Command - Largest sprite height scale a character of this species may have.
+    ///     Keep this modest: sprite height is applied as a raw scale, and every 0.1 above 1.0 pushes
+    ///     the sprite roughly 1.6px past its tile in each direction even with bottom pinning on.
+    /// </summary>
+    [DataField]
+    public float MaxHeight = 1.2f;
+
+    /// <inheritdoc cref="MinHeight"/>
+    [DataField]
+    public float MinWidth = 0.85f;
+
+    /// <inheritdoc cref="MaxHeight"/>
+    [DataField]
+    public float MaxWidth = 1.2f;
+
+    #endregion
 }
 
 // !! CLAW COMMAND MODIFIED !! //

@@ -344,11 +344,19 @@ public sealed partial class HumanoidProfileEditor
         ReloadPreview();
     }
 
-    // Claw Command station char heights
-    public float MaxCharWidth = 1.2f;
-    public float MinCharWidth = 0.85f;
-    public float MaxCharHeight = 1.2f;
-    public float MinCharHeight = 0.9f;
+    // Claw Command station char heights.
+    //
+    // These now resolve from the current profile's species rather than being fixed, so the editor
+    // can never offer a value that HumanoidCharacterProfile.EnsureValid will clamp away on the
+    // server. The literals below are only a fallback for when no species is resolved yet, and
+    // match SpeciesPrototype's own defaults.
+    private SpeciesPrototype? CurrentSpecies =>
+        Profile is null ? null : _species.Find(x => x.ID == Profile.Species);
+
+    public float MaxCharWidth => CurrentSpecies?.MaxWidth ?? 1.2f;
+    public float MinCharWidth => CurrentSpecies?.MinWidth ?? 0.85f;
+    public float MaxCharHeight => CurrentSpecies?.MaxHeight ?? 1.2f;
+    public float MinCharHeight => CurrentSpecies?.MinHeight ?? 0.9f;
     public float SizeRatio = 1.2f;
     public float AverageHeight = 176.1f;
     public float AverageWidth = 40f;

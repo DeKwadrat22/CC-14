@@ -755,6 +755,17 @@ namespace Content.Shared.Preferences
 
             var age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
 
+            // Claw Command - height and width are applied straight to the sprite scale, so an
+            // unclamped value from a modified client both distorts the mob and skews sprite
+            // y-sorting (the sort key is the bottom of the scaled bounding box). Clamp them here,
+            // where every profile that reaches the server has to pass through.
+            var height = float.IsFinite(Height)
+                ? Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight)
+                : 1f;
+            var width = float.IsFinite(Width)
+                ? Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth)
+                : 1f;
+
             var gender = Gender switch
             {
                 Gender.Epicene => Gender.Epicene,
@@ -860,6 +871,8 @@ namespace Content.Shared.Preferences
             Sex = sex;
             Voice = voice;
             Gender = gender;
+            Height = height; // Claw Command
+            Width = width; // Claw Command
             Appearance = appearance;
             SpawnPriority = spawnPriority;
 

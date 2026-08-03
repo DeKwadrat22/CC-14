@@ -55,7 +55,10 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 
     public void ApplyScale(EntityUid uid, float width, float height)
     {
-        _scaleVisuals.SetSpriteScale(uid, new Vector2(width, height));
+        // Claw Command - pinBottom: humanoids stand on the floor, so extra height belongs above
+        // their feet. Without it the sprite sinks into the tile to the south and sorts in front of
+        // things it is standing behind.
+        _scaleVisuals.SetSpriteScale(uid, new Vector2(width, height), pinBottom: true);
     }
 
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
