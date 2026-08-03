@@ -107,6 +107,15 @@
       walkAdjust: -10
 
 - type: trait
+  id: Wrestler
+  name: trait-wrestler-name
+  description: trait-wrestler-desc
+  category: Physical
+  cost: 4
+  components:
+    - type: Wrestler
+
+- type: trait
   id: GlassJaw
   name: trait-glass-jaw-name
   description: trait-glass-jaw-desc

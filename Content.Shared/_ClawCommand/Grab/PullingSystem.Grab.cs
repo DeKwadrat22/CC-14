@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Traits.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Systems;
@@ -132,7 +133,10 @@ public sealed partial class PullingSystem
         // Claw Command - dangerous hostile mobs cap at Soft, so combat grabs never escalate on them.
         // Swallow the input instead of returning false: false falls through to "let go", which would
         // make trying to combat-grab a carp drop the pull entirely.
-        if (step > 0 && newStage > pullable.Comp.MaxGrabStage)
+        // The Wrestler trait lifts the cap entirely - see WrestlerComponent. It is checked on the
+        // puller, so the exemption travels with the person rather than being baked into each mob,
+        // and any hostile mob added later is covered without touching this code again.
+        if (step > 0 && newStage > pullable.Comp.MaxGrabStage && !HasComp<WrestlerComponent>(puller.Owner))
         {
             _popup.PopupClient(Loc.GetString("popup-grab-too-dangerous", ("target", pullable.Owner)),
                 pullable.Owner,

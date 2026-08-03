@@ -163,3 +163,6 @@ trait-ascetic-desc = Food and drink are fuel, nothing more. Neither a fine meal 
 
 trait-marked-target-name = Marked Target
 trait-marked-target-desc = Someone, somewhere, has your name on a list. Syndicate agents given a kill order will be pointed at you before anyone else. You get no warning, no protection, and no say in who comes collecting.
+
+trait-wrestler-name = Wrestler
+trait-wrestler-desc = You know how to get a hold on something that does not want to be held. Where anyone else can only drag a dangerous creature along, you can take it all the way to a hard grab or a chokehold. The creature fights back just as hard, and this makes you no tougher when it does.
