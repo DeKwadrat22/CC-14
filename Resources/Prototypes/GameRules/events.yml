@@ -539,7 +539,10 @@
       path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
-  - type: AlertLevelInterceptionRule
+  # Claw Command - AlertLevelInterceptionRule removed. Upstream flips the station to code blue the
+  # moment sleeper agents roll, which hands the crew a free "there are antags now" the announcement
+  # already implies, and does it without any human deciding it. Alert level is Command's call. This
+  # is the base every sleeper wave inherits from, so removing it here covers all of them.
   - type: AntagSelection
     antags:
     - !type:LinearAntagCount

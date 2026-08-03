@@ -5,7 +5,7 @@
   delay: 0.4
   cooldown: 5
   globalCooldown: true
-  range: {max: 0.666} # Very close-range
+  range: {max: 1} # Very close-range, but Claw Command +50% reach
   hideByRequirement: true
   requirement:
     !type:EntityWhitelistRequirement
