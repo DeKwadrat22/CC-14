@@ -1,12 +1,13 @@
 // Ported from space/ — _ClawCommand Pirate Punk accent.
 
 using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server.Speech.Components;
 
 [RegisterComponent]
 [Access(typeof(PunkAccentSystem))]
-public sealed partial class PunkAccentComponent : Component
+public sealed partial class PunkAccentComponent : BaseAccentComponent
 {
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("yarrChance")]

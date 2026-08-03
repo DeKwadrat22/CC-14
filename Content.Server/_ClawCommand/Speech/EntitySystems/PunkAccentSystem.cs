@@ -2,48 +2,43 @@
 
 using System.Linq;
 using Content.Server.Speech.Components;
-using Content.Shared.Speech;
 using Robust.Shared.Random;
 using System.Text.RegularExpressions;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed partial class PunkAccentSystem : EntitySystem
+/// <summary>
+/// Claw Command - inherits RelayAccentSystem like every other accent since upstream #43008.
+/// Subscribing to AccentGetEvent directly no longer works: it is a [ByRefEvent] record struct
+/// now, so a by-value handler mutates a copy and the accent silently does nothing.
+/// </summary>
+public sealed partial class PunkAccentSystem : RelayAccentSystem<PunkAccentComponent>
 {
     private static readonly Regex FirstWordAllCapsRegex = new(@"^(\S+)");
 
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ReplacementAccentSystem _replacement = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PunkAccentComponent, AccentGetEvent>(OnAccentGet);
-    }
-
-    public string Accentuate(string message, PunkAccentComponent component)
+    public override string Accentuate(string message, Entity<PunkAccentComponent>? ent = null)
     {
         var msg = _replacement.ApplyReplacements(message, "punk");
 
-        if (!_random.Prob(component.YarrChance))
+        if (!_random.Prob(ent.HasValue ? ent.Value.Comp.YarrChance : 0.1f))
+            return msg;
+
+        if (!ent.HasValue)
             return msg;
 
         var firstWordAllCaps = !FirstWordAllCapsRegex.Match(msg).Value.Any(char.IsLower);
 
-        var pick = _random.Pick(component.PunkWords);
-        var pirateWord = Loc.GetString(pick);
+        var pick = _random.Pick(ent.Value.Comp.PunkWords);
+        var punkWord = Loc.GetString(pick);
         if (!firstWordAllCaps)
             msg = msg[0].ToString().ToLower() + msg.Remove(0, 1);
         else
-            pirateWord = pirateWord.ToUpper();
-        msg = pirateWord + " " + msg;
+            punkWord = punkWord.ToUpper();
 
-        return msg;
-    }
-
-    private void OnAccentGet(EntityUid uid, PunkAccentComponent component, AccentGetEvent args)
-    {
-        args.Message = Accentuate(args.Message, component);
+        return punkWord + " " + msg;
     }
 }

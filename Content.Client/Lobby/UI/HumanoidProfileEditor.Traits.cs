@@ -62,10 +62,10 @@ public sealed partial class HumanoidProfileEditor
         // be visible from the others. This mirrors what HumanoidCharacterProfile actually enforces;
         // before this the UI counted each category on its own and the three categories without their
         // own MaxTraitPoints showed no budget at all.
-        // Claw Command - the counter reads [spent / available], not [net cost / cap]. A trait with a
-        // negative Cost hands you points, so it raises the right-hand number instead of lowering the
-        // left one - picking up Blindness should read as "you now have 10 more points to play with",
-        // not as "you have spent -10 points". Traits with a positive Cost are what fill the left side.
+        // Claw Command - the counter reads [remaining / total]. A trait with a negative Cost hands you
+        // points, so it raises BOTH numbers: the cap goes up and those points are immediately yours to
+        // spend. A trait with a positive Cost only pulls the left number down. Taking Blindness on a
+        // cap of 10 should read [20/20], not [-10/10].
         //
         // This is display only: spent <= cap + granted is the same inequality as sum(cost) <= cap,
         // which is what HumanoidCharacterProfile enforces. Nothing about validity changes here.
@@ -146,7 +146,10 @@ public sealed partial class HumanoidProfileEditor
             {
                 TraitsList.AddChild(new Label
                 {
-                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", spent), ("max", poolLimit.Value)),
+                    // The string is "Points available: [{current}/{max}]", so current is what is LEFT,
+                    // not what has been used. Granting traits push both numbers up together; spending
+                    // traits only pull the left one down.
+                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", poolLimit.Value - spent), ("max", poolLimit.Value)),
                     FontColorOverride = Color.Gray
                 });
             }

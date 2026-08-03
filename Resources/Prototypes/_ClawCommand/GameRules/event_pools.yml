@@ -70,6 +70,30 @@
     - id: SpiderClownSpawn
     - id: XenoVentsWeak
 
+# Split out so Extended Irregular can gate it on a staffed Security department.
+- type: entityTable
+  id: CCClownSpiderTable
+  table: !type:AllSelector
+    children:
+    - id: SpiderClownSpawn
+
+# As CCHostileMobLightTable, but the clown spiders only show up if somebody in Security is
+# alive to deal with them. Identical otherwise, so the weighting is unchanged when they are.
+- type: entityTable
+  id: CCIrregularHostileMobLightTable
+  table: !type:AllSelector
+    children:
+    - id: ClosetSkeleton
+    - id: SlimesSpawn
+    - id: SpiderSpawn
+    - id: XenoVentsWeak
+    - !type:NestedSelector
+      tableId: CCClownSpiderTable
+      conditions:
+      - !type:DepartmentCrewCondition
+        departments: [ Security ]
+        min: 1
+
 # Hostile mob spawns - heavy. Needs an organised security response.
 - type: entityTable
   id: CCHostileMobHeavyTable
@@ -182,7 +206,7 @@
       tableId: CCInfiltratorEventsTable
       prob: 0.5
     - !type:NestedSelector
-      tableId: CCHostileMobLightTable
+      tableId: CCIrregularHostileMobLightTable
       prob: 0.1
 
 - type: entityTable
@@ -217,7 +241,7 @@
       tableId: CCInfiltratorEventsTable
       prob: 0.6
     - !type:NestedSelector
-      tableId: CCHostileMobLightTable
+      tableId: CCIrregularHostileMobLightTable
       prob: 0.2
     - !type:NestedSelector
       tableId: CCHostileMobHeavyTable
@@ -255,7 +279,7 @@
       tableId: CCInfiltratorEventsTable
       prob: 0.7
     - !type:NestedSelector
-      tableId: CCHostileMobLightTable
+      tableId: CCIrregularHostileMobLightTable
       prob: 0.35
     - !type:NestedSelector
       tableId: CCHostileMobHeavyTable

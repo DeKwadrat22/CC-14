@@ -354,22 +354,28 @@ public sealed partial class ArrivalsSystem : EntitySystem
 
     private void AnnounceArrival(EntityUid mob, EntityUid station)
     {
-        var joinNotifyCrew = false;
-        string jobName;
+        // Claw Command - only announce someone who is actually a crewmember clocking in right now.
+        //
+        // This fires from EntParentChangedMessage on anything still holding PendingClockInComponent,
+        // and that component outlives the player: if they ghost off to take a ghost role, or
+        // disconnect, the abandoned body keeps it. Any later reparenting of that body (FTL dumps,
+        // being dragged off the shuttle, gibbing) re-enters this method. The old code answered that
+        // by announcing "Unknown has arrived", which is the spurious announcement.
+        //
+        // So: no attached player, no mind, or no job means no announcement. There is no legitimate
+        // arrival that lacks all three, and every illegitimate one lacks at least one.
+        if (!_actor.TryGetSession(mob, out var arrivalSession) || arrivalSession == null)
+            return;
 
-        if (_mind.TryGetMind(mob, out var mindId, out _) && _jobs.MindTryGetJob(mindId, out var jobProto))
-        {
-            // claw command - roles flagged as non-announcing (e.g. Anomaly/Shadekin) never hit the arrivals feed.
-            if (!jobProto.AnnounceArrival)
-                return;
+        if (!_mind.TryGetMind(mob, out var mindId, out _) || !_jobs.MindTryGetJob(mindId, out var jobProto))
+            return;
 
-            joinNotifyCrew = jobProto.JoinNotifyCrew;
-            jobName = jobProto.LocalizedName;
-        }
-        else
-        {
-            jobName = Loc.GetString("generic-unknown-title");
-        }
+        // claw command - roles flagged as non-announcing (e.g. Anomaly/Shadekin) never hit the arrivals feed.
+        if (!jobProto.AnnounceArrival)
+            return;
+
+        var joinNotifyCrew = jobProto.JoinNotifyCrew;
+        var jobName = jobProto.LocalizedName;
 
         var characterName = MetaData(mob).EntityName;
         var titleCaseJob = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName);
