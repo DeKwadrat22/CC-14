@@ -266,6 +266,20 @@ namespace Content.Server._ClawCommand.Carrying
             ApplyCarrySlowdown(carrier, carried);
             var carriedComp = EnsureComp<BeingCarriedComponent>(carried);
 
+            // Claw Command - being carried has to be escapable. OnMoveInput routes the struggle through
+            // EscapeInventorySystem, which requires CanEscapeInventoryComponent, and that component only
+            // exists on small critters that get stuffed into bags - never on humanoids. Without this a
+            // carried player has no way out at all and the carry is effectively permanent.
+            //
+            // Granted here rather than on the mob prototypes on purpose: putting it on humanoids
+            // permanently would also let them struggle out of bags, lockers and body bags, which is a
+            // separate balance question. We track whether we added it so the drop can undo exactly that.
+            if (!HasComp<CanEscapeInventoryComponent>(carried))
+            {
+                EnsureComp<CanEscapeInventoryComponent>(carried);
+                carriedComp.GrantedEscape = true;
+            }
+
             carryingComp.Carried = carried;
             carriedComp.Carrier = carrier;
 
@@ -292,6 +306,11 @@ namespace Content.Server._ClawCommand.Carrying
         {
             RemComp<CarryingComponent>(carrier); // Get rid of this first so we don't recursively fire that event.
             RemComp<CarryingSlowdownComponent>(carrier);
+
+            // Claw Command - only strip the escape component if the carry is what granted it.
+            if (TryComp<BeingCarriedComponent>(carried, out var beingCarried) && beingCarried.GrantedEscape)
+                RemComp<CanEscapeInventoryComponent>(carried);
+
             RemComp<BeingCarriedComponent>(carried);
             RemComp<KnockedDownComponent>(carried);
             _actionBlockerSystem.UpdateCanMove(carried);
