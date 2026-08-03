@@ -145,6 +145,24 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField]
     public float MaxWidth = 1.2f;
 
+    /// <summary>
+    ///     Claw Command - What a member of this species weighs, in kilograms, at height 1.0 and
+    ///     width 1.0. The default matches what the physics fixture on BaseSpeciesMob already produced
+    ///     (density 185 over a 0.35 radius circle is 71.2kg), so a default-built human weighs exactly
+    ///     what they weighed before weight was ever tied to the sliders.
+    /// </summary>
+    [DataField]
+    public float BaseWeight = 71f;
+
+    /// <summary>
+    ///     Claw Command - How tall a member of this species stands, in centimetres, at height 1.0.
+    ///     Only used to present a believable figure next to the weight readout in the character
+    ///     editor; nothing mechanical reads it. Matches the figure the editor's height slider was
+    ///     already displaying, so the centimetres shown do not change.
+    /// </summary>
+    [DataField]
+    public float BaseHeightCm = 176.1f;
+
     #endregion
 }
 

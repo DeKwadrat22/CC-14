@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._ClawCommand.Body;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
@@ -260,24 +261,28 @@ public sealed partial class HumanoidProfileEditor
         UpdateWeight();
     }
 
+    /// <summary>
+    ///     Claw Command - Shows what this build actually weighs, live as the sliders move.
+    ///
+    ///     This deliberately calls the same <see cref="BodyWeight"/> helper the server uses to set
+    ///     the mob's physics mass, rather than doing its own sum off the fixture. The number on this
+    ///     label is now load-bearing - it is what the character will shove, drag, drink and eat like
+    ///     - so the lobby and the round have to agree on it exactly.
+    ///
+    ///     The old calculation averaged width and height and squared the result, which is not how
+    ///     either a body or the fixture works: it read 30kg at the bottom of the slider range, and
+    ///     nothing in the game ever used the figure anyway.
+    /// </summary>
     private void UpdateWeight()
     {
         if (Profile == null)
             return;
 
         var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
-        _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
+        var weight = BodyWeight.GetWeight(species.BaseWeight, Profile.Height, Profile.Width);
 
-        if (fixture != null)
-        {
-            var radius = fixture.Fixtures["fix1"].Shape.Radius;
-            var density = fixture.Fixtures["fix1"].Density;
-            var avg = (Profile.Width + Profile.Height) / 2;
-            var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
-            WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int)weight));
-        }
-        else // Whelp, the fixture doesn't exist, guesstimate it instead
-            WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", 71));
+        WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label",
+            ("weight", (int)MathF.Round(weight)));
 
         SpriteView.InvalidateMeasure();
     }

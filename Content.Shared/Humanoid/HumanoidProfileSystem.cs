@@ -13,6 +13,7 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private GrammarSystem _grammar = default!;
     [Dependency] private SharedScaleVisualsSystem _scaleVisuals = default!; // Claw Command
+    [Dependency] private _ClawCommand.Body.BodyWeightSystem _bodyWeight = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -25,6 +26,9 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
     private void OnMapInit(Entity<HumanoidProfileComponent> ent, ref MapInitEvent args)
     {
         ApplyScale(ent, ent.Comp.Width, ent.Comp.Height);
+        // Claw Command - driven from here rather than a second MapInit subscription in
+        // BodyWeightSystem, which Robust rejects as a duplicate on the same component/event pair.
+        _bodyWeight.RefreshWeight(new Entity<HumanoidProfileComponent?>(ent.Owner, ent.Comp));
     }
 
     public void ApplyProfileTo(Entity<HumanoidProfileComponent?> ent, HumanoidCharacterProfile profile)
@@ -43,6 +47,7 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         Dirty(ent);
 
         ApplyScale(ent, profile.Width, profile.Height);
+        _bodyWeight.RefreshWeight((ent, ent.Comp)); // Claw Command - build now decides body weight
 
         var voiceChanged = new VoiceChangedEvent(ent.Comp.Voice, profile.Voice);
         RaiseLocalEvent(ent, ref voiceChanged);
