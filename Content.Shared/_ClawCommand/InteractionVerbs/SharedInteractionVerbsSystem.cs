@@ -4,6 +4,8 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Humanoid; // Claw Command
+using Content.Shared.Interaction; // Claw Command
 using Content.Shared._ClawCommand.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
@@ -31,6 +33,8 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popupSys = default!;
     [Dependency] private IPrototypeManager _protoMgr = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!; // Claw Command
+    [Dependency] private HumanoidProfileSystem _humanoid = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -273,7 +277,26 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
             return false;
         }
 
-        if (proto.RequiresCanInteract && !ctx.CanInteract || proto.RequiresCanAccess && !ctx.CanAccess || !proto.Range.IsInRange(dist))
+        // Claw Command - resolve this verb's reach for this particular user, then check against it.
+        var range = proto.Range;
+        var accessRange = proto.AccessRange;
+
+        if (proto.MinHeightRange is { } minHeightRange)
+        {
+            // Taller characters reach further. Interpolate between the short and tall reach, and use
+            // the result for the accessibility check too so it never caps the scaled value.
+            range.Max = float.Lerp(minHeightRange, range.Max, _humanoid.GetHeightFraction(ctx.User));
+            accessRange = range.Max;
+        }
+
+        // A verb with its own access range re-runs the accessibility check at that range instead of
+        // using ctx.CanAccess, which is fixed at the global interaction range and would otherwise cap
+        // Range at 1.5 no matter what the prototype asks for.
+        var canAccess = accessRange is { } ar
+            ? _interaction.InRangeAndAccessible(ctx.User, ctx.Target, ar)
+            : ctx.CanAccess;
+
+        if (proto.RequiresCanInteract && !ctx.CanInteract || proto.RequiresCanAccess && !canAccess || !range.IsInRange(dist))
         {
             errLocale = "interaction-verb-cannot-reach";
             return false;

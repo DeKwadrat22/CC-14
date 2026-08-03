@@ -53,6 +53,29 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    ///     Claw Command - Where this entity sits between the shortest and tallest height its species
+    ///     allows, as 0 to 1. Used to scale how far a character can reach for social interactions.
+    /// </summary>
+    /// <remarks>
+    ///     Returns 0 for anything without a humanoid profile - animals, silicons, and so on. Those get
+    ///     the shortest reach, which is the range they had before reach was ever tied to height.
+    /// </remarks>
+    public float GetHeightFraction(Entity<HumanoidProfileComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, logMissing: false)
+            || !ProtoMan.TryIndex(ent.Comp.Species, out var species))
+        {
+            return 0f;
+        }
+
+        var span = species.MaxHeight - species.MinHeight;
+        if (span <= 0f)
+            return 0f;
+
+        return Math.Clamp((ent.Comp.Height - species.MinHeight) / span, 0f, 1f);
+    }
+
     public void ApplyScale(EntityUid uid, float width, float height)
     {
         // Claw Command - pinBottom: humanoids stand on the floor, so extra height belongs above

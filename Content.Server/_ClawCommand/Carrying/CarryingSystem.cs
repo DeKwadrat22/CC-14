@@ -12,6 +12,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid; // Claw Command
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
@@ -55,6 +56,7 @@ namespace Content.Server._ClawCommand.Carrying
         [Dependency] private SharedHandsSystem _hands = default!;
         [Dependency] private TransformSystem _transform = default!;
         [Dependency] private SharedInteractionSystem _interaction = default!; // Claw Command
+        [Dependency] private HumanoidProfileSystem _humanoid = default!; // Claw Command
 
         /// <summary>
         ///     Mirrors contests.max_percentage from the fork this was ported from.
@@ -82,9 +84,14 @@ namespace Content.Server._ClawCommand.Carrying
         private void AddCarryVerb(EntityUid uid, CarriableComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
             // Claw Command - use our own range instead of args.CanAccess, which is locked to the global
-            // 1.5 tile interaction range. Still unobstructed-checked, so no reaching through walls.
+            // 1.5 tile interaction range. Same check args.CanAccess would have run, just scaled by how
+            // tall the carrier is, so line-of-sight and container rules still apply.
+            var carryRange = float.Lerp(component.MinHeightCarryRange,
+                component.CarryRange,
+                _humanoid.GetHeightFraction(args.User));
+
             if (!args.CanInteract
-                || !_interaction.InRangeUnobstructed(args.User, args.Target, component.CarryRange)
+                || !_interaction.InRangeAndAccessible(args.User, args.Target, carryRange)
                 || !_mobStateSystem.IsAlive(args.User)
                 || !CanCarry(args.User, uid, component)
                 || HasComp<CarryingComponent>(args.User)

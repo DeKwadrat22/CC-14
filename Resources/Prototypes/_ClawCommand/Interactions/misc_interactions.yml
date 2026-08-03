@@ -5,7 +5,9 @@
   delay: 0.4
   cooldown: 5
   globalCooldown: true
-  range: {max: 1} # Very close-range, but Claw Command +50% reach
+  # Very close-range. Claw Command - scales 0.666 (shortest) to 1 (tallest).
+  range: {max: 1}
+  minHeightRange: 0.666
   hideByRequirement: true
   requirement:
     !type:EntityWhitelistRequirement

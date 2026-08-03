@@ -157,6 +157,38 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public RangeSpecifier Range = new();
 
     /// <summary>
+    ///     Claw Command - Overrides the range used for this verb's accessibility check.
+    /// </summary>
+    /// <remarks>
+    ///     <see cref="RequiresCanAccess"/> normally relies on the verb system's generic accessibility flag,
+    ///     which is computed once at SharedInteractionSystem.InteractionRange (1.5 tiles) and shared by
+    ///     every interaction in the game. That silently caps <see cref="Range"/>: setting a max above 1.5
+    ///     does nothing, because the generic check has already failed by then.
+    ///
+    ///     Setting this makes the verb run its own accessibility check at the given range instead. It is
+    ///     the same check with the same container and line-of-sight rules, just further, so this cannot be
+    ///     used to reach through a wall or into a closed locker. Only needed for verbs whose
+    ///     <see cref="Range"/> exceeds 1.5.
+    ///
+    ///     Ignored when <see cref="MinHeightRange"/> is set, since the reach is then derived per-user.
+    /// </remarks>
+    [DataField]
+    public float? AccessRange;
+
+    /// <summary>
+    ///     Claw Command - If set, this verb's reach scales with how tall the user is. This is the reach
+    ///     at the shortest height their species allows; <see cref="Range"/>'s max is the reach at the
+    ///     tallest. Anything in between interpolates, and anything without a humanoid profile gets this.
+    /// </summary>
+    /// <remarks>
+    ///     Tall characters have longer arms, so they can lick, bite, hug, pet and shove people from
+    ///     further away; short ones have to close the distance. The accessibility check follows the
+    ///     scaled value automatically, so <see cref="AccessRange"/> is not needed alongside this.
+    /// </remarks>
+    [DataField]
+    public float? MinHeightRange;
+
+    /// <summary>
     ///     Range of contest advantages that the user can gain while using this verb.
     ///     The user's advantage will never exceed this range. This is applied after <see cref="ContestAdvantageRange"/> is checked.
     /// </summary>

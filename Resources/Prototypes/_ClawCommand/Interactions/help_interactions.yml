@@ -42,6 +42,10 @@
 - type: Interaction
   id: ForceDown
   parent: [BaseHelp, BaseGlobal]
+  # Claw Command - reach scales with height: BaseHelp's 1.2 at the shortest, 1.8 at the tallest.
+  # The accessibility check follows the scaled value, so no accessRange is needed.
+  range: {max: 1.8}
+  minHeightRange: 1.2
   delay: 4.5
   hideByRequirement: true
   requirement:
@@ -73,6 +77,9 @@
 - type: Interaction
   id: ShakeOther
   parent: [BaseHelp, BaseGlobal]
+  # Claw Command - reach scales with height: BaseHelp's 1.2 at the shortest, 1.8 at the tallest.
+  range: {max: 1.8}
+  minHeightRange: 1.2
   priority: -5
   delay: 0.8
   cooldown: 3
