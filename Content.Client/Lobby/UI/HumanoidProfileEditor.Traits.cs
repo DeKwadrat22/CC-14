@@ -62,7 +62,15 @@ public sealed partial class HumanoidProfileEditor
         // be visible from the others. This mirrors what HumanoidCharacterProfile actually enforces;
         // before this the UI counted each category on its own and the three categories without their
         // own MaxTraitPoints showed no budget at all.
-        var poolSpend = new Dictionary<string, int>();
+        // Claw Command - the counter reads [spent / available], not [net cost / cap]. A trait with a
+        // negative Cost hands you points, so it raises the right-hand number instead of lowering the
+        // left one - picking up Blindness should read as "you now have 10 more points to play with",
+        // not as "you have spent -10 points". Traits with a positive Cost are what fill the left side.
+        //
+        // This is display only: spent <= cap + granted is the same inequality as sum(cost) <= cap,
+        // which is what HumanoidCharacterProfile enforces. Nothing about validity changes here.
+        var poolSpent = new Dictionary<string, int>();
+        var poolGranted = new Dictionary<string, int>();
         foreach (var (categoryId, categoryTraits) in traitGroups)
         {
             var poolKey = GetTraitPoolKey(categoryId);
@@ -70,8 +78,13 @@ public sealed partial class HumanoidProfileEditor
             foreach (var traitId in categoryTraits)
             {
                 var trait = _prototypeManager.Index<TraitPrototype>(traitId);
-                if (Profile?.TraitPreferences.Contains(trait.ID) == true)
-                    poolSpend[poolKey] = poolSpend.GetValueOrDefault(poolKey) + trait.Cost;
+                if (Profile?.TraitPreferences.Contains(trait.ID) != true)
+                    continue;
+
+                if (trait.Cost >= 0)
+                    poolSpent[poolKey] = poolSpent.GetValueOrDefault(poolKey) + trait.Cost;
+                else
+                    poolGranted[poolKey] = poolGranted.GetValueOrDefault(poolKey) - trait.Cost;
             }
         }
 
@@ -94,9 +107,13 @@ public sealed partial class HumanoidProfileEditor
 
             // Claw Command - spend and limit both come from the shared pool this category belongs to.
             var poolKey = GetTraitPoolKey(categoryId);
-            var selectionCount = poolSpend.GetValueOrDefault(poolKey);
-            var poolLimit = HumanoidCharacterProfile.GetBudgetPoolLimit(poolKey, _prototypeManager)
+            var spent = poolSpent.GetValueOrDefault(poolKey);
+            var granted = poolGranted.GetValueOrDefault(poolKey);
+            var baseLimit = HumanoidCharacterProfile.GetBudgetPoolLimit(poolKey, _prototypeManager)
                             ?? category?.MaxTraitPoints;
+
+            // Points handed to you by negative-cost traits raise the ceiling rather than lowering the spend.
+            var poolLimit = baseLimit + granted;
 
             List<TraitPreferenceSelector?> selectors = new();
 
@@ -129,7 +146,7 @@ public sealed partial class HumanoidProfileEditor
             {
                 TraitsList.AddChild(new Label
                 {
-                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", poolLimit.Value)),
+                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", spent), ("max", poolLimit.Value)),
                     FontColorOverride = Color.Gray
                 });
             }
@@ -139,7 +156,8 @@ public sealed partial class HumanoidProfileEditor
                 if (selector == null)
                     continue;
 
-                if (poolLimit is >= 0 && selector.Cost + selectionCount > poolLimit.Value)
+                // A negative-cost trait only ever raises the ceiling, so it can never be unaffordable.
+                if (poolLimit is >= 0 && selector.Cost > 0 && spent + selector.Cost > poolLimit.Value)
                 {
                     selector.Checkbox.Label.FontColorOverride = Color.Red;
                 }
