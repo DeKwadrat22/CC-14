@@ -497,20 +497,24 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             // The default lying angle is the one pose guaranteed to read correctly, because it is the
             // same one the lie-down key produces. It also matches what the landing knockdown settles
             // on, so the dive flows into the prone landing with no snap.
-            // Every heading looks right at the default lying angle except one: diving right comes
-            // out feet-first, so that single case gets turned around.
-            //
-            // Keyed on the cardinal the heading rounds to, using the same GetCardinalDir the sprite
-            // itself uses to choose which of its four artworks to draw. That is what makes this hold
-            // on a rotated grid - pressing right on a grid turned 31.6 degrees produces a world
-            // vector nowhere near (1,0), so testing the raw X component would pick the wrong
-            // heading, which is exactly how earlier attempts kept breaking other directions.
-            var cardinal = direction.ToWorldAngle().GetCardinalDir();
-
-            lieAngle = cardinal == Direction.East
-                ? leaper.PoseOffset + Angle.FromDegrees(180)
-                : leaper.PoseOffset;
+            lieAngle = leaper.PoseOffset;
         }
+
+        // TEMPORARY diagnostic - remove once right-facing is identified.
+        //
+        // Dumps every way of naming this heading side by side, so the one that actually corresponds
+        // to screen-right can be read off the log instead of guessed. GetCardinalDir turned out to
+        // report East for an upward dive, so the mapping is not what it looks like from the name.
+        var world = direction.ToWorldAngle();
+        var entityRot = _transform.GetWorldRotation(uid);
+
+        Log.Warning($"[pose] dir=({direction.X:0.00},{direction.Y:0.00}) " +
+                    $"worldAng={world.Degrees:0.0} " +
+                    $"cardinal={world.GetCardinalDir()} " +
+                    $"dirEnum={world.GetDir()} " +
+                    $"entityRot={entityRot.Degrees:0.0} " +
+                    $"entityCardinal={entityRot.GetCardinalDir()} " +
+                    $"lieAngle={lieAngle.Degrees:0.0}");
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal);
