@@ -458,9 +458,25 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             if (cross < 0f)
                 lieAngle = Angle.FromDegrees(-90);
         }
-        else if (direction != Vector2.Zero)
+        else
         {
-            lieAngle = direction.ToWorldAngle() - Angle.FromDegrees(90);
+            // A fixed offset, because the sprite is already showing the character facing the way
+            // they are running - the rotation only has to tip them over, not aim them.
+            //
+            // -90 gives head-first when running north, south or west. East is the one exception and
+            // needs the opposite sign: the east-facing sprite is the mirror of the west-facing one,
+            // and mirroring reverses which way a rotation visually turns, so the same angle drops
+            // the head on the opposite end. Flipping the sign for eastward travel cancels that out.
+            //
+            // Derived from observation rather than theory: -90 was reported correct for left, up and
+            // down, and wrong only for right.
+            // Southward travel also takes +90. The landing knockdown always settles on the default
+            // lying angle (+90), so a dive that flew at -90 snaps a full 180 the moment it lands.
+            // Diving down is where that snap is most obvious, so it lies on the matching side and
+            // the pose carries straight through into the prone landing with no flip.
+            lieAngle = direction.X > 0f || direction.Y < 0f
+                ? Angle.FromDegrees(90)
+                : Angle.FromDegrees(-90);
         }
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
