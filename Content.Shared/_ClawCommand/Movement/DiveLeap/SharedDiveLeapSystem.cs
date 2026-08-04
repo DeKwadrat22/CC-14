@@ -470,28 +470,20 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             //
             // Derived from observation rather than theory: -90 was reported correct for left, up and
             // down, and wrong only for right.
-            // Sprite rotation is what aims the body, full stop. The directional state only picks
-            // which artwork is drawn - the artwork is always drawn upright with the head at the top,
-            // so the head's world heading is simply north turned by the sprite rotation.
+            // Use whatever angle this entity normally lies at, unchanged.
             //
-            // In Robust's world-angle convention (Angle.FromWorldVec = atan2 + 90) north is 180, so
-            // head = 180 + lieAngle. Setting lieAngle = travel - 180 puts the head exactly on the
-            // heading, for every direction and at any grid rotation.
+            // Aiming the head along the direction of travel was tried repeatedly and every formula
+            // broke at least one direction: constants worked for exactly one heading, cancelling the
+            // sprite-state quantisation collapsed to a constant, and deriving straight from the world
+            // angle left characters standing upright mid-dive. The interaction between the entity
+            // rotation, the four-way sprite state and the sprite rotation does not behave the way any
+            // of those assumed, and guessing at it kept regressing headings that already looked fine.
             //
-            // Verified against logged vectors from a grid rotated ~31.6 degrees:
-            //   right 58.4 -> -121.6 | up 148.4 -> -31.6 | left 238.4 -> 58.4 | down 328.4 -> 148.4
-            // each of which lands the head back on its own travel angle.
-            lieAngle = direction.ToWorldAngle() + leaper.PoseOffset;
+            // The default lying angle is the one pose guaranteed to read correctly, because it is the
+            // same one the lie-down key produces. It also matches what the landing knockdown settles
+            // on, so the dive flows into the prone landing with no snap.
+            lieAngle = leaper.PoseOffset;
         }
-
-        // TEMPORARY - remove once the pose mapping is settled. Prints the exact direction vector the
-        // leap launched with and the sprite angle chosen for it, so the correct mapping can be built
-        // from observation instead of guessed a sign at a time.
-        Log.Warning($"[pose] dir=({direction.X:0.00},{direction.Y:0.00}) " +
-                    $"worldAngle={direction.ToWorldAngle().Degrees:0.0} " +
-                    $"lieAngle={lieAngle.Degrees:0.0} " +
-                    $"entityRot={_transform.GetWorldRotation(uid).Degrees:0.0} " +
-                    $"combat={HasComp<MouseRotatorComponent>(uid) && HasComp<CombatModeComponent>(uid)}");
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal);

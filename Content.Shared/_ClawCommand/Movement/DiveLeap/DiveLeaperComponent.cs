@@ -41,14 +41,14 @@ public sealed partial class DiveLeaperComponent : Component
     public Angle MaxSteerAngle = Angle.FromDegrees(35);
 
     /// <summary>
-    ///     Which way the body lies during the dive, as an offset applied to the travel heading.
+    ///     The angle the body lies at during the dive.
     ///
-    ///     The pose is (travel + this). North sits at 180 in Robust's world-angle convention and the
-    ///     sprite's head is drawn at the top, so -180 puts the head exactly on the heading: head
-    ///     first. Add 180 to it (i.e. 0) for feet first.
+    ///     Defaults to 90, the same value <see cref="Content.Shared.Rotation.RotationVisualsComponent"/>
+    ///     uses for an ordinary lie-down, so a dive is posed exactly like lying down and flows into
+    ///     the prone landing without a flip. Set it to -90 to lie on the opposite shoulder.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Angle PoseOffset = Angle.FromDegrees(-180);
+    public Angle PoseOffset = Angle.FromDegrees(90);
 
     /// <summary>
     ///     Peak height of the visual arc, in tiles. Client-side sprite offset only - the entity's
