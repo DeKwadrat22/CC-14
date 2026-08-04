@@ -418,6 +418,12 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
     {
         RestoreFixtures(ent);
 
+        // Catch-all for leaps that end without landing - gibbed, deleted, admin-yanked. Land() has
+        // usually stopped the throw already and this is a no-op, but if it has not then the throwing
+        // fixture would otherwise stay attached forever and keep corrupting networked fixture state.
+        if (TryComp<Shared.Throwing.ThrownItemComponent>(ent, out var thrown) && !TerminatingOrDeleted(ent))
+            _thrownItem.StopThrow(ent, thrown);
+
         if (ent.Comp.AppliedHorizontal)
             ClearHorizontalPose(ent);
     }
