@@ -470,19 +470,18 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             //
             // Derived from observation rather than theory: -90 was reported correct for left, up and
             // down, and wrong only for right.
-            // The sprite is noRot: it does not turn with the entity, it picks one of four cardinal
-            // states from the entity's rotation. So the head starts out pointing at the *quantized*
-            // heading, not the real one. On a rotated grid - measured here at ~31.6 degrees - the
-            // gap between real and quantized heading is different for every direction, which is why
-            // no constant angle and no single formula ever worked for all four at once.
+            // Sprite rotation is what aims the body, full stop. The directional state only picks
+            // which artwork is drawn - the artwork is always drawn upright with the head at the top,
+            // so the head's world heading is simply north turned by the sprite rotation.
             //
-            // Cancel the quantization: add back whatever rounding threw away, then apply one shared
-            // offset. Every direction then ends up at exactly (travel + offset), so they all agree
-            // and a single number controls head-first for the whole set.
-            var world = direction.ToWorldAngle();
-            var quantized = Angle.FromDegrees(Math.Round(world.Degrees / 90.0) * 90.0);
-
-            lieAngle = world - quantized + leaper.PoseOffset;
+            // In Robust's world-angle convention (Angle.FromWorldVec = atan2 + 90) north is 180, so
+            // head = 180 + lieAngle. Setting lieAngle = travel - 180 puts the head exactly on the
+            // heading, for every direction and at any grid rotation.
+            //
+            // Verified against logged vectors from a grid rotated ~31.6 degrees:
+            //   right 58.4 -> -121.6 | up 148.4 -> -31.6 | left 238.4 -> 58.4 | down 328.4 -> 148.4
+            // each of which lands the head back on its own travel angle.
+            lieAngle = direction.ToWorldAngle() + leaper.PoseOffset;
         }
 
         // TEMPORARY - remove once the pose mapping is settled. Prints the exact direction vector the
