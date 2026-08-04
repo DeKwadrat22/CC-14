@@ -56,6 +56,7 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedMoverController _mover = default!;
     [Dependency] private Shared.Throwing.ThrowingSystem _throwing = default!;
+    [Dependency] private Shared.Throwing.ThrownItemSystem _thrownItem = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private Shared.Gravity.SharedGravitySystem _gravity = default!;
@@ -381,10 +382,18 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
         var uid = ent.Owner;
 
 
-        // Cancel the throw before restoring ground state, or ThrownItemSystem will land the entity
-        // again on its own schedule and fight our timing.
-        RemComp<Shared.Throwing.ThrownItemComponent>(uid);
-        _physics.SetBodyStatus(uid, physics, BodyStatus.OnGround);
+        // End the throw through ThrownItemSystem, never by tearing the component off ourselves.
+        //
+        // TryThrow adds a throwing fixture as well as the component, and StopThrow is what destroys
+        // it, regenerates contacts and restores ground status. Removing the component by hand left
+        // that fixture attached to the player after every single leap, quietly mutating their
+        // networked FixturesComponent - which is what was corrupting the game state PVS serialises
+        // for the player entity and tripping the engine's state assert mid-dive.
+        if (TryComp<Shared.Throwing.ThrownItemComponent>(uid, out var thrown))
+            _thrownItem.StopThrow(uid, thrown);
+        else
+            _physics.SetBodyStatus(uid, physics, BodyStatus.OnGround);
+
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
 
         // RemComp fires ComponentShutdown, which restores the fixtures and clears our cosmetic pose.
@@ -482,7 +491,19 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             // The default lying angle is the one pose guaranteed to read correctly, because it is the
             // same one the lie-down key produces. It also matches what the landing knockdown settles
             // on, so the dive flows into the prone landing with no snap.
-            lieAngle = leaper.PoseOffset;
+            // Every heading looks right at the default lying angle except one: diving right comes
+            // out feet-first, so that single case gets turned around.
+            //
+            // Keyed on the cardinal the heading rounds to, using the same GetCardinalDir the sprite
+            // itself uses to choose which of its four artworks to draw. That is what makes this hold
+            // on a rotated grid - pressing right on a grid turned 31.6 degrees produces a world
+            // vector nowhere near (1,0), so testing the raw X component would pick the wrong
+            // heading, which is exactly how earlier attempts kept breaking other directions.
+            var cardinal = direction.ToWorldAngle().GetCardinalDir();
+
+            lieAngle = cardinal == Direction.East
+                ? leaper.PoseOffset + Angle.FromDegrees(180)
+                : leaper.PoseOffset;
         }
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
