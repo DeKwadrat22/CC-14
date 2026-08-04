@@ -49,6 +49,7 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private ThrownItemSystem _thrown = default!;
     [Dependency] private SharedStunSystem _sharedStunSystem = default!;
     [Dependency] private StandingStateSystem _standingSystem = default!;
+    [Dependency] private Shared._ClawCommand.Body.BodyWeightSystem _bodyWeight = default!; // Claw Command
 
     [Dependency] private EntityQuery<GridAtmosphereComponent> _gridAtmosQuery = default!;
     [Dependency] private EntityQuery<MapAtmosphereComponent> _mapAtmosQuery = default!;

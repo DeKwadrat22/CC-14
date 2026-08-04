@@ -548,6 +548,15 @@ binds:
 - function: ToggleKnockdown
   type: State
   key: R # Claw Command changed from C
+# Claw Command - explicit Shift+R binding, required for the sprinting dive-leap.
+# Without an exact match for the combination, pressing R while Shift is held makes the input system
+# treat Shift as a modifier for the plain R bind and stop delivering it as the Walk key. Measured:
+# the Walk flag drops on that press and never returns while Shift stays held, silently dropping the
+# player out of sprint - so every later Shift+R is genuinely a walking press and gets refused.
+- function: ToggleKnockdown
+  type: State
+  key: R
+  mod1: Shift
 - function: OpenAbilitiesMenu
   type: State
   key: K

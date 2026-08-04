@@ -5,8 +5,8 @@
   delay: 0.4
   cooldown: 5
   globalCooldown: true
-  # Very close-range. Claw Command - scales 0.666 (shortest) to 1 (tallest).
-  range: {max: 1}
+  # Very close-range. Claw Command - scales 0.666 (shortest) to 0.888 (tallest).
+  range: {max: 0.888}
   minHeightRange: 0.666
   hideByRequirement: true
   requirement:

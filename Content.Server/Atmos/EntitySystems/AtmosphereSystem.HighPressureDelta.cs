@@ -200,7 +200,10 @@ public sealed partial class AtmosphereSystem
         var alwaysThrow = partialFrictionComposition == 0 || physics.BodyStatus == BodyStatus.InAir;
 
         // Coefficient of static friction in Newtons (kg * m/s^2). Tripled while prone.
-        var coefficientOfFriction = partialFrictionComposition * physics.Mass;
+        // Claw Command - body weight is derived from the character sliders, so the raw mass would
+        // swing footing 0.65x-1.73x purely on build. GetWindResistMass damps that to 1x-1.33x: heavy
+        // characters still brace better, light ones are never worse off than default.
+        var coefficientOfFriction = partialFrictionComposition * _bodyWeight.GetWindResistMass(uid, physics.Mass);
         if (_standingSystem.IsDown(uid))
             coefficientOfFriction *= 3;
 

@@ -35,7 +35,7 @@ namespace Content.Server._ClawCommand.Carrying
         ///     This gives carrying its own range, still line-of-sight and container checked.
         /// </remarks>
         [DataField]
-        public float CarryRange = 2.25f;
+        public float CarryRange = 2f;
 
         /// <summary>
         ///     Claw Command - Carry range for the shortest carrier, and for anything without a humanoid

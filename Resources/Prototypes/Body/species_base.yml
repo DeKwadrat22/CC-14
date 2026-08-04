@@ -104,6 +104,7 @@
   - type: SSDIndicator
   - type: StandingState
   - type: Crawler
+  - type: DiveLeaper # Claw Command - lie-down key while sprinting becomes a dive
   - type: Dna
   - type: MindContainer
   - type: MindExaminable

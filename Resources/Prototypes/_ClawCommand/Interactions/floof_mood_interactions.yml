@@ -3,7 +3,9 @@
   parent: [BaseGlobal, BaseMouth]
   priority: -1
   delay: 0.4
-  range: {max: 1}
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
+  minHeightRange: 1
   hideByRequirement: true
   requirement:
     !type:EntityWhitelistRequirement
@@ -22,8 +24,8 @@
   parent: [BaseGlobal, BaseMouth]
   priority: -2
   delay: 0.7
-  # Claw Command - reach scales with height: 1.0 at the shortest, 1.5 at the tallest.
-  range: {max: 1.5}
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
   minHeightRange: 1
   hideByRequirement: true
   requirement:

@@ -470,7 +470,9 @@ public abstract partial class SharedMoverController : VirtualController
     /// <summary>
     /// Used for weightlessness to determine if we are near a wall.
     /// </summary>
-    private bool IsAroundCollider(Entity<PhysicsComponent, MobMoverComponent, TransformComponent> entity)
+    // Claw Command - made public so the dive-leap can apply the same "can I push off something"
+    // rule that weightless movement uses, instead of duplicating it and letting the two drift.
+    public bool IsAroundCollider(Entity<PhysicsComponent, MobMoverComponent, TransformComponent> entity)
     {
         var (uid, collider, mover, transform) = entity;
         var enlargedAABB = _lookup.GetWorldAABB(entity.Owner, transform).Enlarged(mover.GrabRange);

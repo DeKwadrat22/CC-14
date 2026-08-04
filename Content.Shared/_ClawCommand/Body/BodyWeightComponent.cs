@@ -74,9 +74,14 @@ public sealed partial class BodyWeightComponent : Component
     /// <summary>
     ///     How much of the weight difference carries into hunger and thirst burn rate. Bigger bodies
     ///     need more fuel, but a heavy character should not be tied to the kitchen.
+    ///
+    ///     Tuned so the very heaviest build burns +25% and no further, same derivation as
+    ///     <see cref="HealthInfluence"/>: the largest scale the sliders allow is 1.2 * 1.2^2 = 1.728,
+    ///     so the influence needed is 0.25 / 0.728 = 0.343. Re-derive this if a species ever widens
+    ///     MaxHeight or MaxWidth. The lightest build lands at about -12% off the same figure.
     /// </summary>
     [DataField]
-    public float MetabolismInfluence = 0.5f;
+    public float MetabolismInfluence = 0.343f;
 
     /// <summary>
     ///     How much of the weight difference carries into stomach capacity.
@@ -90,6 +95,19 @@ public sealed partial class BodyWeightComponent : Component
     /// </summary>
     [DataField]
     public float AlcoholInfluence = 0.9f;
+
+    /// <summary>
+    ///     How much of the weight difference carries into keeping your footing in spacewind, and
+    ///     one-directional: it only ever helps, never hurts.
+    ///
+    ///     Raw mass would give the heaviest build 1.73x the footing of a default one and leave the
+    ///     lightest on 0.65x, which punishes a slight character for a cosmetic slider in a situation
+    ///     they cannot do anything about. Floored at 1, so a light build is simply never worse than
+    ///     default, and tuned so the very heaviest lands on 1.33x: the largest scale the sliders
+    ///     allow is 1.2 * 1.2^2 = 1.728, so 0.33 / 0.728 = 0.453.
+    /// </summary>
+    [DataField]
+    public float SpacewindInfluence = 0.453f;
 
     /// <summary>
     ///     How much of the width difference carries into physical size. Deliberately small: a mob

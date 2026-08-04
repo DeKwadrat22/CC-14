@@ -102,6 +102,30 @@ public sealed partial class BodyWeightSystem : EntitySystem
         return 1f + (scale - 1f) * influence;
     }
 
+    /// <summary>
+    ///     The mass spacewind should use when working out whether this entity keeps its footing.
+    ///
+    ///     Not the real mass. Wind resistance is linear in mass, so passing the true figure would
+    ///     hand the heaviest build 1.73x the footing of a default one and leave the lightest on
+    ///     0.65x. Being harder to blow away is a fair perk of being heavy; being *easier* to blow
+    ///     away is a punishment a light character cannot play around, so the result is floored at
+    ///     the default and the upside is damped to 1.33x at maximum weight.
+    ///
+    ///     Everything else - carrying, grabs, shoving, throwing - still uses real mass. This only
+    ///     changes the spacewind footing check.
+    /// </summary>
+    public float GetWindResistMass(EntityUid uid, float actualMass)
+    {
+        if (!TryComp<BodyWeightComponent>(uid, out var weight) || weight.Scale <= 0f)
+            return actualMass;
+
+        // Undo the weight scaling baked into the physics mass, then re-apply a damped, floored one.
+        var baseMass = actualMass / weight.Scale;
+        var factor = MathF.Max(1f, Influence(weight.Scale, weight.SpacewindInfluence));
+
+        return baseMass * factor;
+    }
+
     private void CaptureBaselines(EntityUid uid, BodyWeightComponent weight)
     {
         if (weight.CapturedBaselines)
@@ -230,13 +254,15 @@ public sealed partial class BodyWeightSystem : EntitySystem
 
     /// <summary>
     ///     Mass is most of what real alcohol tolerance is, so a heavy character sobers up sooner off
-    ///     the same drink and a slight one goes down faster.
+    ///     the same drink.
+    ///
+    ///     One-directional, like health and spacewind footing: it only ever grants tolerance, never
+    ///     takes it away. A light character getting drunk faster is a penalty they cannot play
+    ///     around, attached to a slider chosen for looks, so the factor is floored at 1.
     /// </summary>
     private void OnDrunk(Entity<BodyWeightComponent> ent, ref SharedDrunkSystem.DrunkEvent args)
     {
-        var resistance = Influence(ent.Comp.Scale, ent.Comp.AlcoholInfluence);
-        if (resistance <= 0f)
-            return;
+        var resistance = MathF.Max(1f, Influence(ent.Comp.Scale, ent.Comp.AlcoholInfluence));
 
         args.Duration /= resistance;
     }

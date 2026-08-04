@@ -5,8 +5,8 @@
   priority: 2
   #icon: /Textures/Interface/Actions/hug.png
   delay: 0.7
-  # Claw Command - reach scales with height: 1.0 at the shortest, 1.5 at the tallest.
-  range: {max: 1.5}
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
   minHeightRange: 1
   hideByRequirement: true
   requirement:
@@ -25,8 +25,8 @@
   priority: 1
   #icon: /Textures/Interface/Actions/hug.png
   delay: 0.4
-  # Claw Command - reach scales with height: 1.0 at the shortest, 1.5 at the tallest.
-  range: {max: 1.5}
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
   minHeightRange: 1
   hideByRequirement: true
   requirement:
