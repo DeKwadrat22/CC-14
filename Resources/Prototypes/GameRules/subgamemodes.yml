@@ -43,5 +43,5 @@
   id: SubXenoborgs
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 12
     cancelPresetOnTooFewPlayers: false

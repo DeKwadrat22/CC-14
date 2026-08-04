@@ -470,14 +470,19 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             //
             // Derived from observation rather than theory: -90 was reported correct for left, up and
             // down, and wrong only for right.
-            // Southward travel also takes +90. The landing knockdown always settles on the default
-            // lying angle (+90), so a dive that flew at -90 snaps a full 180 the moment it lands.
-            // Diving down is where that snap is most obvious, so it lies on the matching side and
-            // the pose carries straight through into the prone landing with no flip.
-            lieAngle = direction.X > 0f || direction.Y < 0f
+            lieAngle = direction.X > 0f
                 ? Angle.FromDegrees(90)
                 : Angle.FromDegrees(-90);
         }
+
+        // TEMPORARY - remove once the pose mapping is settled. Prints the exact direction vector the
+        // leap launched with and the sprite angle chosen for it, so the correct mapping can be built
+        // from observation instead of guessed a sign at a time.
+        Log.Warning($"[pose] dir=({direction.X:0.00},{direction.Y:0.00}) " +
+                    $"worldAngle={direction.ToWorldAngle().Degrees:0.0} " +
+                    $"lieAngle={lieAngle.Degrees:0.0} " +
+                    $"entityRot={_transform.GetWorldRotation(uid).Degrees:0.0} " +
+                    $"combat={HasComp<MouseRotatorComponent>(uid) && HasComp<CombatModeComponent>(uid)}");
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal);
