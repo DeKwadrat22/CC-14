@@ -224,6 +224,22 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
     ///     mover so grid rotation and the diagonal-movement setting are handled exactly the way
     ///     ordinary movement handles them.
     /// </summary>
+    /// <summary>
+    ///     The movement keys as the player sees them, before the grid's rotation is folded in.
+    ///
+    ///     <see cref="GetWishDirection"/> returns a world-space heading, which is the right thing for
+    ///     moving but the wrong thing for deciding what "right" means on screen: on a rotated grid
+    ///     the same keypress produces a completely different world vector. Anything that has to
+    ///     match the player's idea of a direction needs this instead.
+    /// </summary>
+    private Vector2 GetScreenDirection(InputMoverComponent mover)
+    {
+        var (walk, sprint) = _mover.GetVelocityInput(mover);
+        var total = walk + sprint;
+
+        return total.LengthSquared() < 0.001f ? Vector2.Zero : total.Normalized();
+    }
+
     private Vector2 GetWishDirection(InputMoverComponent mover)
     {
         var (walk, sprint) = _mover.GetVelocityInput(mover);
@@ -497,24 +513,24 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             // The default lying angle is the one pose guaranteed to read correctly, because it is the
             // same one the lie-down key produces. It also matches what the landing knockdown settles
             // on, so the dive flows into the prone landing with no snap.
-            lieAngle = leaper.PoseOffset;
+            // Every screen direction poses correctly at the default lying angle except right, which
+            // comes out feet-first, so that one case is turned around.
+            //
+            // Keyed on the *screen* direction - the raw movement keys before the grid rotation is
+            // applied - because that is what "right" means to the player. The world-space heading
+            // for right is different on every grid: it measured 58 degrees on one station and -4 on
+            // another, so world angle, GetCardinalDir and a raw X test each picked out a different
+            // screen direction depending on where you were standing. That is why earlier attempts
+            // kept fixing one heading and breaking another.
+            var screen = TryComp<InputMoverComponent>(uid, out var poseMover)
+                ? GetScreenDirection(poseMover)
+                : Vector2.Zero;
+
+            if (screen.X > 0f && MathF.Abs(screen.X) >= MathF.Abs(screen.Y))
+                lieAngle = leaper.PoseOffset + Angle.FromDegrees(180);
+            else
+                lieAngle = leaper.PoseOffset;
         }
-
-        // TEMPORARY diagnostic - remove once right-facing is identified.
-        //
-        // Dumps every way of naming this heading side by side, so the one that actually corresponds
-        // to screen-right can be read off the log instead of guessed. GetCardinalDir turned out to
-        // report East for an upward dive, so the mapping is not what it looks like from the name.
-        var world = direction.ToWorldAngle();
-        var entityRot = _transform.GetWorldRotation(uid);
-
-        Log.Warning($"[pose] dir=({direction.X:0.00},{direction.Y:0.00}) " +
-                    $"worldAng={world.Degrees:0.0} " +
-                    $"cardinal={world.GetCardinalDir()} " +
-                    $"dirEnum={world.GetDir()} " +
-                    $"entityRot={entityRot.Degrees:0.0} " +
-                    $"entityCardinal={entityRot.GetCardinalDir()} " +
-                    $"lieAngle={lieAngle.Degrees:0.0}");
 
         _rotationVisuals.SetHorizontalAngle(uid, lieAngle);
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal);
