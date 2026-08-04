@@ -41,6 +41,16 @@ public sealed partial class DiveLeaperComponent : Component
     public Angle MaxSteerAngle = Angle.FromDegrees(35);
 
     /// <summary>
+    ///     Which way the body lies during the dive, as an offset from the direction of travel.
+    ///
+    ///     The pose is computed as (travel - quantized travel + this), so every direction resolves
+    ///     to the same angle relative to where you are going and one number controls the lot.
+    ///     Flip the sign to swap which end leads.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Angle PoseOffset = Angle.FromDegrees(-90);
+
+    /// <summary>
     ///     Peak height of the visual arc, in tiles. Client-side sprite offset only - the entity's
     ///     actual position is flat, because the game is top-down and there is no Z axis to move on.
     /// </summary>

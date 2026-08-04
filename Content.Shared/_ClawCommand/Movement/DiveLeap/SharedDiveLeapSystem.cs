@@ -258,7 +258,7 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
         leaping.ChangedFixtures.Clear();
         leaping.AppliedHorizontal = true;
 
-        SetHorizontalPose(uid, direction);
+        SetHorizontalPose(uid, direction, leaper);
 
         // Clear tables and railings on the way over.
         if (TryComp<FixturesComponent>(uid, out var fixtures))
@@ -447,7 +447,7 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
     ///     the cursor in front of the character's head - dive left while aiming right and they flip
     ///     over in the air to keep facing the cursor.
     /// </summary>
-    private void SetHorizontalPose(EntityUid uid, Vector2 direction)
+    private void SetHorizontalPose(EntityUid uid, Vector2 direction, DiveLeaperComponent leaper)
     {
         var lieAngle = Angle.FromDegrees(90);
 
@@ -470,9 +470,19 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             //
             // Derived from observation rather than theory: -90 was reported correct for left, up and
             // down, and wrong only for right.
-            lieAngle = direction.X > 0f
-                ? Angle.FromDegrees(90)
-                : Angle.FromDegrees(-90);
+            // The sprite is noRot: it does not turn with the entity, it picks one of four cardinal
+            // states from the entity's rotation. So the head starts out pointing at the *quantized*
+            // heading, not the real one. On a rotated grid - measured here at ~31.6 degrees - the
+            // gap between real and quantized heading is different for every direction, which is why
+            // no constant angle and no single formula ever worked for all four at once.
+            //
+            // Cancel the quantization: add back whatever rounding threw away, then apply one shared
+            // offset. Every direction then ends up at exactly (travel + offset), so they all agree
+            // and a single number controls head-first for the whole set.
+            var world = direction.ToWorldAngle();
+            var quantized = Angle.FromDegrees(Math.Round(world.Degrees / 90.0) * 90.0);
+
+            lieAngle = world - quantized + leaper.PoseOffset;
         }
 
         // TEMPORARY - remove once the pose mapping is settled. Prints the exact direction vector the
