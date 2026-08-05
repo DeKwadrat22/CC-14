@@ -41,16 +41,15 @@
 
 - type: startingGear
   id: HoSGear
+  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: HoSPDA
     # CLAW COMMAND - gloves removed; picked via the CCSecurityGloves loadout instead (avoids double gloves)
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
-    - MagazinePistol
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit

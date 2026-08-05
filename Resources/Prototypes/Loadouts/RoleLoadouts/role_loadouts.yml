@@ -21,6 +21,12 @@
   - CCPets # CC14
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -105,6 +111,7 @@
   - CCBartenderWeapon # CC14
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
+  - BarkeepWeapon # Claw Command - bar defence
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -584,6 +591,12 @@
   - CCPets # CC14
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobWarden
@@ -607,6 +620,12 @@
   - CCPets # CC14
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -631,6 +650,12 @@
   - CCPets # CC14
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobDetective
@@ -654,6 +679,12 @@
   - CCPets # CC14
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -674,6 +705,13 @@
   - GroupSpeciesBreathToolSecurity
 
 # Wildcards
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
+
 - type: roleLoadout
   id: JobReporter
   groups:

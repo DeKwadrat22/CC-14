@@ -9,9 +9,23 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Client.Overlays;
 
+/// <summary>
+///     Claw Command - the shader id lives out here rather than on the overlay itself.
+///
+///     RobustToolbox's prototype-id scanner walks static fields looking for ProtoId values and
+///     throws on any it finds inside a generic class, because there is no concrete type argument to
+///     resolve them against: "cannot be a static field inside a generic class". That took out the
+///     YAML linter and the integration harness entirely - nothing to do with night vision, it just
+///     happened to be the one static ProtoId sitting on a generic type. A non-generic holder keeps
+///     the field static without tripping the scanner.
+/// </summary>
+internal static class SwitchableOverlayShaders
+{
+    public static readonly ProtoId<ShaderPrototype> NightVision = "NightVision";
+}
+
 public sealed partial class BaseSwitchableOverlay<TComp> : Overlay where TComp : SwitchableVisionOverlayComponent
 {
-    private static readonly ProtoId<ShaderPrototype> NightVisionShaderId = "NightVision";
 
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
@@ -30,7 +44,7 @@ public sealed partial class BaseSwitchableOverlay<TComp> : Overlay where TComp :
     public BaseSwitchableOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototype.Index(NightVisionShaderId).InstanceUnique();
+        _shader = _prototype.Index(SwitchableOverlayShaders.NightVision).InstanceUnique();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

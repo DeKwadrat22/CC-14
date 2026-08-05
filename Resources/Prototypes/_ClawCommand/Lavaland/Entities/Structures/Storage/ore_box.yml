@@ -12,8 +12,9 @@
       map: [ top ]
       visible: true
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Ashwood
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

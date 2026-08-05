@@ -9,6 +9,7 @@
     sprite: _ClawCommand/Structures/Walls/woodwhite.rsi
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

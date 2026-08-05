@@ -15,8 +15,9 @@
     sprite: _GoobStation/Structures/Decoration/Barrels/blackbarrel.rsi
     state: barrel
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Pullable
   - type: Destructible
     thresholds:

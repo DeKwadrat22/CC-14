@@ -63,9 +63,12 @@
     glimmerToLightEnergyFactor: 2.0
     glimmerToLightRadiusFactor: 1.3
   - type: PowerSwitch
-  - type: Damageable
+  # Claw Command - damageContainer is on Injurable, damageModifierSet stays on Damageable.
+  # Upstream's ShockAbsorber modifier set does not exist here; Metallic is the nearest equivalent.
+  - type: Injurable
     damageContainer: Inorganic
-    damageModifierSet: ShockAbsorber
+  - type: Damageable
+    damageModifierSet: Metallic
   - type: CargoSellBlacklist
   - type: AmbientSound
     range: 6
@@ -155,8 +158,10 @@
     - type: Construction #Files are in place, but commented out
       graph: GlimmerDevices
       node: frame
-    - type: Damageable
+    # Claw Command - damageContainer is on Injurable, damageModifierSet stays on Damageable.
+    - type: Injurable
       damageContainer: Inorganic
+    - type: Damageable
       damageModifierSet: Metallic
     - type: Destructible
       thresholds:

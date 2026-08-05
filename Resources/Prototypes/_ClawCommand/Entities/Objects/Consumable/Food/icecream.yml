@@ -99,6 +99,7 @@
       types:
         Blunt: 0
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   # IceCream Tag isn't defined in this fork; dropped.
   - type: Destructible

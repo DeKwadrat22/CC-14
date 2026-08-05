@@ -474,6 +474,7 @@
     soundHit:
       path: /Audio/_DV/Voice/Vulpkanin/dog_whine.ogg
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -787,6 +788,7 @@
     sprite: Objects/Fun/Balls/beach_ball.rsi
   - type: Anchorable
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

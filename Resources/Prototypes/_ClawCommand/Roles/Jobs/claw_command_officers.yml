@@ -37,6 +37,7 @@
 
 - type: startingGear
   id: ClawCommandOfficerGear
+  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
   equipment:
     eyes: ClothingEyesGlassesMedSec
     ears: ClothingHeadsetAltCommand
@@ -47,8 +48,6 @@
     - Zipties
     - Zipties
     - WeaponPistolMk58 # CLAW COMMAND - sidearm for the two spare mags below
-    - MagazinePistol
-    - MagazinePistol
 
 - type: job
   id: ClawCommandMaid

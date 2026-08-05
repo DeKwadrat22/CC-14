@@ -23,7 +23,8 @@
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
-  canBeAntag: false
+  # Claw Command - upstream had `canBeAntag: false` here; JobPrototype has no such field in this codebase
+  # (several pre-existing fork jobs carry the same dead line), so it is dropped rather than silently ignored.
   access:
   - Research
   - Maintenance
@@ -49,7 +50,7 @@
   id: ForensicMantisGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
-    back: ClothingBackpackScienceFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesBootsMantis
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
@@ -58,9 +59,9 @@
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
-  innerClothingSkirt: ClothingUniformSkirtMantis
-  satchel: ClothingBackpackSatchelScienceFilled
-  duffelbag: ClothingBackpackDuffelScienceFilled
+  # Claw Command - StartingGearPrototype only has equipment/inhand/storage in this codebase. Upstream's
+  # innerClothingSkirt / satchel / duffelbag fields no longer exist; the jumpskirt and bag variants are
+  # offered through the loadout system instead, so those lines are dropped rather than silently ignored.
 
 - type: playTimeTracker
   id: JobForensicMantis
@@ -121,9 +122,13 @@
        pda-science
   - type: Icon
     state: pda-science
-  - type: CartridgeLoader
-    preinstalled:
-     - CrewManifestCartridge
-     - NotekeeperCartridge
-     - NewsReaderCartridge
-     - GlimmerMonitorCartridge
+  # Claw Command - CartridgeLoader no longer takes a `preinstalled` list; programs are inserted into the
+  # preinstalled-program-container via EntityTableContainerFill, which is how every other PDA does it now.
+  - type: EntityTableContainerFill
+    containers:
+      preinstalled-program-container: !type:AllSelector
+        children:
+        - id: CrewManifestCartridge
+        - id: NotekeeperCartridge
+        - id: NewsReaderCartridge
+        - id: GlimmerMonitorCartridge

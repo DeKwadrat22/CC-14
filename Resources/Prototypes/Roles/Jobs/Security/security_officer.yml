@@ -22,14 +22,13 @@
 
 - type: startingGear
   id: SecurityOfficerGear
+  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
-    - MagazinePistol
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit

@@ -15,7 +15,6 @@
         Base: mite
       Dead:
         Base: mite_dead
-    baseDecayRate: 0.25
   - type: SolutionContainerManager
     solutions:
       food:
@@ -45,7 +44,7 @@
   components:
   # appearance
   - type: Sprite
-    drawDepth: Ghosts
+    drawdepth: Ghosts
     sprite: Mobs/Demons/glimmer_wisp.rsi
     layers:
     - state: willowisp
@@ -117,9 +116,13 @@
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Damageable
+  # Claw Command - damageContainer now lives on Injurable while damageModifierSet stays on Damageable, so the
+  # old single block splits in two. The CorporealSpirit modifier set does not exist here; ManifestedSpirit is
+  # its replacement, exactly as the container comment describes.
+  - type: Injurable
     damageContainer: ManifestedSpirit # Floof - M3739 - #937 - CorporealSpirit container superseded by ManifestedSpirit
-    damageModifierSet: CorporealSpirit
+  - type: Damageable
+    damageModifierSet: ManifestedSpirit
   - type: DamageOnDispel
     damage:
       types:
@@ -157,7 +160,6 @@
     maxCharge: 1000
     startingCharge: 1000
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 100
   # AI
   - type: HTN

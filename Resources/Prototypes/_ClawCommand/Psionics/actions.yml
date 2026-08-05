@@ -1,15 +1,27 @@
-﻿- type: entity
+# Claw Command - psionics port.
+#
+# The action system was split since the fork this came from. Fields that used to live on
+# EntityTargetAction / WorldTargetAction / InstantAction now belong to:
+#   - type: Action        -> icon, iconOn, useDelay, itemIconStyle, checkCanInteract, priority
+#   - type: TargetAction  -> range, checkCanAccess
+#   - the specific action -> event, whitelist/blacklist, canTargetSelf
+# Leaving them on the old component silently dropped them (the serializer ignores unknown fields), which
+# would have meant no icons, no cooldowns and default range on every psionic power.
+
+- type: entity
   id: ActionDispel
   name: action-name-dispel
   description: action-description-dispel
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: Interface/VerbIcons/dispel.png
       useDelay: 45
+      itemIconStyle: BigAction
+    - type: TargetAction
       checkCanAccess: false
       range: 6
-      itemIconStyle: BigAction
+    - type: EntityTargetAction
       canTargetSelf: false
       blacklist:
         components:
@@ -23,12 +35,14 @@
   description: action-description-mass-sleep
   categories: [ HideSpawnMenu ]
   components:
-    - type: WorldTargetAction
+    - type: Action
       icon: Interface/VerbIcons/mass_sleep.png
       useDelay: 60
+      itemIconStyle: BigAction
+    - type: TargetAction
       checkCanAccess: false
       range: 8
-      itemIconStyle: BigAction
+    - type: WorldTargetAction
       event: !type:MassSleepPowerActionEvent
 
 - type: entity
@@ -38,12 +52,14 @@
   description: action-description-mind-swap
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: Interface/VerbIcons/mind_swap.png
       useDelay: 30
+      itemIconStyle: BigAction
+    - type: TargetAction
       checkCanAccess: false
       range: 10
-      itemIconStyle: BigAction
+    - type: EntityTargetAction
       blacklist:
         components:
           - PsionicInsulation
@@ -57,10 +73,11 @@
   description: action-description-mind-swap-return
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/mind_swap_return.png
       useDelay: 20
       checkCanInteract: false
+    - type: InstantAction
       event: !type:MindSwapPowerReturnActionEvent
 
 - type: entity
@@ -69,11 +86,13 @@
   description: action-description-noospheric-zap
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: Interface/VerbIcons/noospheric_zap.png
       useDelay: 100
-      range: 5
       itemIconStyle: BigAction
+    - type: TargetAction
+      range: 5
+    - type: EntityTargetAction
       blacklist:
         components:
           - PsionicInsulation
@@ -86,12 +105,14 @@
   description: action-description-pyrokinesis
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: Interface/VerbIcons/pyrokinesis.png
       useDelay: 50
+      itemIconStyle: BigAction
+    - type: TargetAction
       range: 6
       checkCanAccess: false
-      itemIconStyle: BigAction
+    - type: EntityTargetAction
       event: !type:PyrokinesisPowerActionEvent
 
 - type: entity
@@ -100,9 +121,10 @@
   description: action-description-metapsionic
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/metapsionic.png
       useDelay: 45
+    - type: InstantAction
       event: !type:MetapsionicPowerActionEvent
 
 - type: entity
@@ -111,9 +133,10 @@
   description: action-description-psionic-regeneration
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/psionic_regeneration.png
       useDelay: 120
+    - type: InstantAction
       event: !type:PsionicRegenerationPowerActionEvent
 
 - type: entity
@@ -122,9 +145,10 @@
   description: action-description-telegnosis
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/telegnosis.png
       useDelay: 150
+    - type: InstantAction
       event: !type:TelegnosisPowerActionEvent
 
 - type: entity
@@ -133,9 +157,10 @@
   description: action-description-psionic-invisibility
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/psionic_invisibility.png
       useDelay: 120
+    - type: InstantAction
       event: !type:PsionicInvisibilityPowerActionEvent
 
 - type: entity
@@ -144,8 +169,9 @@
   description: action-description-psionic-invisibility-off
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: Interface/VerbIcons/psionic_invisibility_off.png
+    - type: InstantAction
       event: !type:RemovePsionicInvisibilityOffPowerActionEvent
 
 - type: entity
@@ -154,12 +180,14 @@
   description: action-description-healing-word
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
       useDelay: 10
+      itemIconStyle: BigAction
+    - type: TargetAction
       checkCanAccess: false
       range: 6
-      itemIconStyle: BigAction
+    - type: EntityTargetAction
       canTargetSelf: true
       blacklist:
         components:
@@ -167,12 +195,17 @@
           - Mindbroken
       event: !type:PsionicHealOtherPowerActionEvent
         healingAmount:
-          groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
-            Genetic: -2.5
-            Toxin: -5
-            Airloss: -5
-            Brute: -7.5
-            Burn: -10
+          # Claw Command - DamageSpecifier no longer takes a `groups:` wrapper; these are the same values
+          # the group form expanded to, written per damage type.
+          types:
+            Cellular: -2.5
+            Poison: -5
+            Asphyxiation: -5
+            Blunt: -2.5
+            Slash: -2.5
+            Piercing: -2.5
+            Heat: -5
+            Shock: -5
         rotReduction: 10
         useDelay: 1
         doRevive: true
@@ -191,12 +224,14 @@
   description: action-description-revivify
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
       useDelay: 120
+      itemIconStyle: BigAction
+    - type: TargetAction
       checkCanAccess: false
       range: 2
-      itemIconStyle: BigAction
+    - type: EntityTargetAction
       canTargetSelf: false
       blacklist:
         components:
@@ -204,15 +239,17 @@
           - Mindbroken
       event: !type:PsionicHealOtherPowerActionEvent
         healingAmount:
-          # These all get divided by the number of damage types in the group. So they're all -15
-          # Additionally, they're multiplied by the caster's Amplification, which,
-          #   assuming this is the only power they have, the multiplier is between 2.9-3.9
-          groups:
-            Genetic: -15
-            Toxin: -30
-            Airloss: -60 # Except airloss, which heals 30 per type
-            Brute: -45
-            Burn: -60
+          # Claw Command - as above, the group values written out per damage type.
+          # Multiplied by the caster's Amplification on use.
+          types:
+            Cellular: -15
+            Poison: -30
+            Asphyxiation: -60
+            Blunt: -15
+            Slash: -15
+            Piercing: -15
+            Heat: -30
+            Shock: -30
         rotReduction: 60
         doRevive: true
         powerName: Revivify
@@ -225,118 +262,25 @@
         glimmerDoAfterVisibilityThreshold: 35
 
 - type: entity
-  id: ActionShadeskip
-  name: action-name-shadeskip
-  description: action-description-shadeskip
+  id: ActionAssay
+  name: action-name-assay
+  description: action-description-assay
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
-    icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
-    useDelay: 45
-    checkCanInteract: false
-    event: !type:AnomalyPowerActionEvent
-            settings:
-              powerName: "Shadeskip"
-              minGlimmer: 6
-              maxGlimmer: 8
-              glimmerSoundThreshold: 50
-              doSupercritical: false
-            entitySpawnEntries:
-              - settings:
-                  spawnOnPulse: true
-                  spawnOnSuperCritical: true
-                  minAmount: 5
-                  maxAmount: 8
-                  maxRange: 1.5
-                spawns:
-                - ShadowKudzuWeak
-              - settings:
-                  spawnOnPulse: true
-                  spawnOnSuperCritical: true
-                  minAmount: 1
-                  maxAmount: 1
-                  maxRange: 0.5
-                spawns:
-                - EffectFlashShadeskip
-
-- type: entity
-  id: ActionTelekineticPulse
-  name: action-name-telekinetic-pulse
-  description: action-description-telekinetic-pulse
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: InstantAction
-      icon: { sprite: Interface/Actions/psionics.rsi, state: telekinetic_pulse }
+    - type: Action
+      icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
       useDelay: 45
-      checkCanInteract: false
-      event: !type:AnomalyPowerActionEvent
-        settings:
-          powerName: "Telekinetic Pulse"
-          overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
-          overchargeCooldown: 120
-          overchargeRecoil:
-            groups:
-              Burn: -100 #This will be divided by the caster's Dampening.
-          minGlimmer: 6
-          maxGlimmer: 8
-          doSupercritical: false
-        entitySpawnEntries:
-          - settings:
-              spawnOnPulse: true
-              minAmount: 1
-              maxAmount: 1
-              maxRange: 0.5
-            spawns:
-              - EffectFlashTelekineticPulse
-        gravity:
-          maxThrowRange: 3
-          maxThrowStrength: 5
-          spaceRange: 3
-
-- type: entity
-  id: ActionPyrokineticFlare
-  name: action-name-pyrokinetic-flare
-  description: action-description-pyrokinetic-flare
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: InstantAction
-      icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
-      useDelay: 25
-      checkCanInteract: false
-      event: !type:AnomalyPowerActionEvent
-        settings:
-          powerName: "Pyrokinetic Flare"
-          minGlimmer: 3
-          maxGlimmer: 5
-          doSupercritical: false
-        entitySpawnEntries:
-          - settings:
-              spawnOnPulse: true
-              spawnOnSuperCritical: true
-              minAmount: 1
-              maxAmount: 3
-              maxRange: 1
-            spawns:
-              - EffectPyrokineticFlare
-
-- type: entity
-  id: ActionSummonImp
-  name: action-name-summon-imp
-  description: action-description-summon-imp
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: InstantAction
-      icon: { sprite: Interface/Actions/psionics.rsi, state: summon_imp }
-      useDelay: 120
-      checkCanInteract: false
-      event: !type:SummonPsionicFamiliarActionEvent
-        familiarProto: MobPsionicFamiliarImp
-        powerName: "Summon Imp"
-        checkInsulation: true
-        doGlimmerEffects: true
-        followMaster: true
-        minGlimmer: 10
-        maxGlimmer: 20
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 2
+    - type: EntityTargetAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:AssayPowerActionEvent
 
 - type: entity
   id: ActionSummonRemilia
@@ -344,10 +288,11 @@
   description: action-description-summon-remilia
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       icon: { sprite: Interface/Actions/psionics.rsi, state: summon_remilia }
       useDelay: 120
       checkCanInteract: false
+    - type: InstantAction
       event: !type:SummonPsionicFamiliarActionEvent
         familiarProto: MobBatRemilia
         powerName: "Summon Remilia"
@@ -357,21 +302,12 @@
         minGlimmer: 5
         maxGlimmer: 10
 
-- type: entity
-  id: ActionAssay
-  name: action-name-assay
-  description: action-description-assay
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: EntityTargetAction
-      icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
-      useDelay: 45
-      checkCanAccess: false
-      range: 2
-      itemIconStyle: BigAction
-      canTargetSelf: true
-      blacklist:
-        components:
-          - PsionicInsulation
-          - Mindbroken
-      event: !type:AssayPowerActionEvent
+# Claw Command - ActionShadeskip, ActionTelekineticPulse, ActionPyrokineticFlare and ActionSummonImp are NOT
+# ported. Each depends on an entity this fork does not have and that is not psionics content in itself:
+#   ActionShadeskip        -> ShadowKudzuWeak + EffectFlashShadeskip
+#   ActionTelekineticPulse -> EffectFlashTelekineticPulse
+#   ActionPyrokineticFlare -> EffectPyrokineticFlare
+#   ActionSummonImp        -> MobPsionicFamiliarImp
+# Their powers are likewise commented out of psionic_power_pool.yml, so nothing references them.
+# The AnomalyPowerSystem that drives the first three IS ported, so re-adding them later is only a matter of
+# bringing over those effect/mob prototypes.

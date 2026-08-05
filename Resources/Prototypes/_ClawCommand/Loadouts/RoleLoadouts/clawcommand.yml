@@ -19,6 +19,12 @@
   - CCPets # CC14
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobPrisoner

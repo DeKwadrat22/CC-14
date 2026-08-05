@@ -31,8 +31,9 @@
     sprite: _Floof/Structures/pole.rsi
     state: icon
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -93,8 +94,9 @@
     sprite: _Floof/Structures/pole.rsi
     state: icon
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -156,8 +158,9 @@
     graph: Lewd
     node: FurnStripPoleInit
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

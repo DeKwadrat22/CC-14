@@ -53,6 +53,7 @@
             #science (3 - 4)
             Scientist: [ 3, 4 ]
             SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
+            ForensicMantis: [ 1, 1 ] # Claw Command - psionics port
             ResearchAssistant: [ 2, 2 ] #intern, not counted
             #security (6 - 7)
             Warden: [ 1, 1 ]

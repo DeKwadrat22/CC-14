@@ -1,0 +1,69 @@
+# Claw Command - psionics port: psionic insulation gear and its recipes.
+#
+# ClothingHeadTinfoil and ClothingHeadHelmetInsulated already exist in the fork
+# (_ClawCommand/Entities/Clothing/Head/glacier_head.yml) with their psionic components stripped; those have
+# been restored in place rather than redefined here. Only the head cage was missing entirely.
+
+- type: entity
+  parent: ClothingHeadTinfoil
+  id: ClothingHeadCage
+  name: insulative headcage
+  description: Psionically insulates whoevers head is inside it. It takes time to resist out of.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
+    equipDelay: 0.5
+    unequipDelay: 6
+  - type: HeadCage
+  - type: Tag
+    tags:
+      - ForensicBeltEquip
+
+# --- Lathe recipes unlocked by the PsionicCountermeasures technology ---
+
+- type: latheRecipe
+  id: ClothingHeadHelmetInsulated
+  result: ClothingHeadHelmetInsulated
+  completetime: 4
+  materials:
+    Steel: 400
+    Bluespace: 20
+
+- type: latheRecipe
+  id: ClothingHeadCage
+  icon:
+    sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
+    state: icon
+  result: ClothingHeadCage
+  completetime: 4
+  materials:
+    Steel: 400
+    Bluespace: 20
+
+# --- Improvised tinfoil hat, the poor man's insulation ---
+
+- type: constructionGraph
+  id: TinfoilHat
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: tinfoilhat
+        steps:
+        - material: Steel
+          amount: 1
+          doAfter: 10
+    - node: tinfoilhat
+      entity: ClothingHeadTinfoil
+
+# Claw Command - ConstructionPrototype takes no `icon` in this codebase, and its name/description are LocIds
+# rather than literal text. Modern recipes simply inherit all three from the target entity, so they are omitted.
+- type: construction
+  id: tinfoilhat
+  graph: TinfoilHat
+  startNode: start
+  targetNode: tinfoilhat
+  category: construction-category-misc
+  objectType: Item

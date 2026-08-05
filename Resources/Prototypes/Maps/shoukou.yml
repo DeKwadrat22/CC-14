@@ -62,6 +62,7 @@
           ResearchDirector: [ 1, 1 ]
           Scientist: [ 3, 3 ]
           SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
+          ForensicMantis: [ 1, 1 ] # Claw Command - psionics port
           ResearchAssistant: [ 3, 3 ]
           Chaplain: [ 1, 1 ]
           Borg: [ 2, 4 ]

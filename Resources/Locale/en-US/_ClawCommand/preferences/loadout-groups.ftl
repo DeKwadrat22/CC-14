@@ -38,3 +38,12 @@ loadout-group-senior-researcher-jumpsuit = Senior researcher jumpsuit
 loadout-group-senior-researcher-outerclothing = Senior researcher outer clothing
 loadout-group-senior-researcher-id = Senior researcher ID
 loadout-group-senior-courier-id = Senior courier ID
+
+# Service weapons
+loadout-group-cc-service-weapon = Duty weapon
+loadout-group-cc-service-equipment = Duty equipment and ammunition
+loadout-group-barkeep-weapon = Bar defence
+
+# Claw Command - PointsCostLoadoutEffect has no message shipped upstream; the service weapons are
+# this fork's first use of the points system, so without this the UI shows the raw key.
+loadout-group-points-insufficient = Not enough points left for this.

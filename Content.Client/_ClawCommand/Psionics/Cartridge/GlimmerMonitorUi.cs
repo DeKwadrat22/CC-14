@@ -1,9 +1,11 @@
-﻿using Robust.Client.UserInterface;
+using Robust.Client.UserInterface;
 using Content.Client.UserInterface.Fragments;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader;
 
-namespace Content.Client.CartridgeLoader.Cartridges;
+// Claw Command - XamlIL derives the expected class from the FILE PATH, so a XAML file under
+// _ClawCommand must carry a matching namespace. This is why it differs from the upstream one.
+namespace Content.Client._ClawCommand.Psionics.Cartridge;
 
 public sealed partial class GlimmerMonitorUi : UIFragment
 {

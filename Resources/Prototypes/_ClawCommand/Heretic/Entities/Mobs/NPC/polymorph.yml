@@ -118,6 +118,7 @@
     speedModifierThresholds:
       0: 1.0 # it's an unstoppable flesh abomination
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: StatusEffects
     allowed:

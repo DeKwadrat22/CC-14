@@ -46,3 +46,24 @@
 # K #
 - type: Tag
   id: Katana
+
+# Service weapons - tags the ported guns and ammunition whitelist against.
+# See _ClawCommand/Entities/Objects/Weapons/service_weapons.yml.
+- type: Tag
+  id: CartridgeSpecial
+
+- type: Tag
+  id: SpeedLoaderSpecial
+
+- type: Tag
+  id: SpeedLoaderRifleHeavy
+
+- type: Tag
+  id: BulletRubber
+
+- type: Tag
+  id: BrassKnuckles
+
+# Used as a crafting step by the Svalinn PDW graph.
+- type: Tag
+  id: WeaponLaserSvalinn

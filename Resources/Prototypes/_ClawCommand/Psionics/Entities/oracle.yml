@@ -63,7 +63,6 @@
     - OracleRewardDisks
     - OracleRewardCrystals
   - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

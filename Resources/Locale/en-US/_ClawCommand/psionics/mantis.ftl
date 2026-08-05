@@ -11,3 +11,9 @@ id-card-access-level-mantis = Mantis
 guide-entry-psionics = Psionics
 guide-entry-glimmer-creatures = Glimmer Creatures
 
+
+## Materials + objectives (psionics port)
+
+materials-bluespace = bluespace
+materials-normality = normality
+steal-target-groups-anti-psychic-knife = anti-psychic knife

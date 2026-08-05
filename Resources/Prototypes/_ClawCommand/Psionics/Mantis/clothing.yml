@@ -22,7 +22,8 @@
         Piercing: 0.8
         Heat: 0.8
   - type: TemperatureProtection
-    coefficient: 0.3
+    heatingCoefficient: 0.3
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -40,6 +41,8 @@
         - Document
         - Flashlight
         - ForensicBeltEquip
+      # Claw Command - HandLabeler is an entity/component here, not a tag, so it is matched by component.
+      components:
         - HandLabeler
 
 - type: entity

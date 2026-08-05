@@ -59,8 +59,9 @@
       0: Alive
       300: Dead
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
   - type: CombatPower # Goobstation
     factor: 4 # times more dangerous than a crew-member
 
@@ -142,8 +143,9 @@
       0: Alive
       300: Dead
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
   - type: CombatPower # Goobstation
     factor: 4 # times more dangerous than a crew-member
 
@@ -208,7 +210,8 @@
             sound:
               path: /Audio/Effects/gib1.ogg
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
   - type: CombatPower # Goobstation
     factor: 4 # times more dangerous than a crew-member

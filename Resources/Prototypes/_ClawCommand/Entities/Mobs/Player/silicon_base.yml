@@ -27,8 +27,9 @@
       soundHit:
         path: /Audio/Effects/hit_kick.ogg
     - type: Damageable
-      damageContainer: Silicon
       damageModifierSet: IPC
+    - type: Injurable
+      damageContainer: Silicon
     # Fork's WeldingHealableSystem gates on Injurable.DamageContainer (upstream split it off Damageable).
     # Without this override, MobIPC inherits Biological from MobDamageable and welder-heal silently no-ops.
     - type: Injurable

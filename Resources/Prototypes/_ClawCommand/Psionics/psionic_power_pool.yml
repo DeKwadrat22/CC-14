@@ -12,6 +12,10 @@
 #    MindSwapPower: 0.15
     TelepathyPower: 1
     HealingWordPower: 0.85
-    ShadeskipPower: 0.15
-    TelekineticPulsePower: 0.15
-    PyrokineticFlare: 0.3
+# Claw Command - Shadeskip / Telekinetic Pulse / Pyrokinetic Flare are commented out here and in
+# psionic_powers.yml: each needs an effect or mob prototype this fork does not have
+# (ShadowKudzuWeak, EffectFlashShadeskip, EffectFlashTelekineticPulse, EffectPyrokineticFlare).
+# The AnomalyPowerSystem behind them IS ported, so they only need those prototypes to come back.
+#    ShadeskipPower: 0.15
+#    TelekineticPulsePower: 0.15
+#    PyrokineticFlare: 0.3

@@ -30,15 +30,14 @@
 
 - type: startingGear
   id: WardenGear
+  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
-    - MagazinePistol
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

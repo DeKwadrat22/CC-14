@@ -12,8 +12,9 @@
   - type: InteractionOutline
   - type: Repairable
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

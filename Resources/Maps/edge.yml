@@ -80975,6 +80975,13 @@ entities:
     - type: Transform
       pos: -27.5,-1.5
       parent: 2
+- proto: OracleSpawner
+  entities:
+  - uid: 17469
+    components:
+    - type: Transform
+      pos: -28.5,32.5
+      parent: 2
 - proto: OreBox
   entities:
   - uid: 12104
@@ -92570,6 +92577,13 @@ entities:
     - type: Transform
       pos: -42.5,68.5
       parent: 2
+- proto: SophicScribeSpawner
+  entities:
+  - uid: 17470
+    components:
+    - type: Transform
+      pos: -30.5,32.5
+      parent: 2
 - proto: SpaceCash1000
   entities:
   - uid: 773
@@ -93654,20 +93668,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: StatueVenusBlue
-  entities:
-  - uid: 14146
-    components:
-    - type: Transform
-      pos: -28.5,32.5
-      parent: 2
-- proto: StatueVenusRed
-  entities:
-  - uid: 14147
-    components:
-    - type: Transform
-      pos: -30.5,32.5
-      parent: 2
 - proto: SteelBench
   entities:
   - uid: 14148

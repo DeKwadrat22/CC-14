@@ -51,10 +51,15 @@
     sprite: Nyanotrasen/Clothing/Head/Hats/tinfoil.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Hats/tinfoil.rsi
-  # Stripped: TinfoilHat (Nyanotrasen psionic component not in this fork)
+  # Claw Command - restored by the psionics port; the component exists now.
+  - type: TinfoilHat
   - type: Armor
     modifiers:
       coefficients:
         Radiation: 0.95
-  # Stripped: Construction (TinfoilHat graph relies on the missing component)
+  # Claw Command - restored by the psionics port; the TinfoilHat graph lives in
+  # _ClawCommand/Psionics/Entities/insulation.yml.
+  - type: Construction
+    graph: TinfoilHat
+    node: tinfoilhat
 

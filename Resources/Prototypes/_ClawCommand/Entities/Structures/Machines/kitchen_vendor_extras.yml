@@ -141,8 +141,9 @@
     delay: 0.5
   - type: Repairable
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -193,8 +194,9 @@
       canCollide: false
     - type: InteractionOutline
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Injurable
+      damageContainer: Inorganic
     - type: Destructible
       thresholds:
       - trigger:

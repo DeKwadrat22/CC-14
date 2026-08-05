@@ -71,8 +71,9 @@
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/bees.rsi
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Glass
+    - type: Injurable
+      damageContainer: Inorganic
     # "it's a jar of bees, it should break into bees"
     - type: Destructible
       thresholds:

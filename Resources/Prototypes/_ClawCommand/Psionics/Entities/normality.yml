@@ -14,11 +14,10 @@
 
 - type: stack
   id: Normality
-  name: normality
+  name: materials-normality
   icon: { sprite: Objects/Materials/materials.rsi, state: normality }
   spawn: MaterialNormality1
   maxCount: 5
-  itemSize: 1
 
 - type: Tag
   id: NormalityCrystal

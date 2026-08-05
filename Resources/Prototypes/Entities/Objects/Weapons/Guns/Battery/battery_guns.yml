@@ -164,6 +164,7 @@
     tags:
     - Sidearm
     - LaserWeapon
+    - WeaponLaserSvalinn # Claw Command - crafting step for the Svalinn PDW upgrade
 
 - type: entity
   name: retro laser blaster

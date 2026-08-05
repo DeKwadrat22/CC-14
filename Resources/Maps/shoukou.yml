@@ -64231,6 +64231,13 @@ entities:
     - type: Transform
       pos: 39.5,-7.5
       parent: 2
+- proto: LockerForensicMantisFilled
+  entities:
+  - uid: 13987
+    components:
+    - type: Transform
+      pos: -29.5,1.5
+      parent: 2
 - proto: LockerFreezer
   entities:
   - uid: 9679

@@ -5,6 +5,10 @@
 # means porting a whole ammunition family, which is a firearms port rather than a psionics one. The mantis
 # still gets the anti-psychic knife, which is the actual signature tool.
 
+# Claw Command - the tag the mantis belt accepts. It does not exist in this fork, so the port defines it.
+- type: Tag
+  id: ForensicBeltEquip
+
 - type: entity
   name: Oracle Spawner
   id: OracleSpawner
@@ -79,7 +83,7 @@
 
 - type: stealTargetGroup
   id: AntiPsychicKnife
-  name: anti-psychic knife
+  name: steal-target-groups-anti-psychic-knife
   sprite:
     sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
     state: icon
@@ -91,8 +95,10 @@
   name: mantis' cabinet
   description: You'll never know what's inside until you collapse the quantum superposition of all possible mysteries.
   components:
-  - type: Damageable
+  # Claw Command - damageContainer is on Injurable, damageModifierSet stays on Damageable.
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: StrongMetallic
   - type: AccessReader
     access: [["Mantis"]]

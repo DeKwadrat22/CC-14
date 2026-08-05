@@ -1,4 +1,4 @@
-﻿# :TODO: Add the destroyed versions of these as a destruction spawn.
+# :TODO: Add the destroyed versions of these as a destruction spawn.
 
 - type: entity
   parent: BaseStructure
@@ -12,8 +12,9 @@
   - type: InteractionOutline
   - type: Physics
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
