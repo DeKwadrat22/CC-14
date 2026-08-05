@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/03/2026 17:42:19
-  entityCount: 19502
+  entityCount: 19507
 maps:
 - 1
 grids:
@@ -85978,6 +85978,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 39.5,45.5
+- proto: GlimmerProber
+  entities:
+  - uid: 19505
+    components:
+    - type: Transform
+      parent: 2
+      pos: 42.5,-21.5
 - proto: GlowstickBlue
   entities:
   - uid: 10919
@@ -90243,6 +90250,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -11.5,19.5
+- proto: LockerForensicMantisFilled
+  entities:
+  - uid: 19506
+    components:
+    - type: Transform
+      parent: 2
+      pos: 39.5,-21.5
 - proto: LockerFreezer
   entities:
   - uid: 11690
@@ -91770,6 +91784,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -7.5,-5.5
+- proto: OracleSpawner
+  entities:
+  - uid: 19507
+    components:
+    - type: Transform
+      parent: 2
+      pos: 30.5,-15.5
 - proto: OreBox
   entities:
   - uid: 13770
@@ -105200,6 +105221,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 26.5,-58.5
+- proto: SophicScribeSpawner
+  entities:
+  - uid: 19508
+    components:
+    - type: Transform
+      parent: 2
+      pos: 32.5,-15.5
 - proto: SpaceCash
   entities:
   - uid: 16040
@@ -105664,6 +105692,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -24.5,42.5
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 19509
+    components:
+    - type: Transform
+      parent: 2
+      pos: 39.5,-22.5
 - proto: SpawnPointHeadOfPersonnel
   entities:
   - uid: 16127

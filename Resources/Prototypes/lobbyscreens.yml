@@ -109,5 +109,5 @@
 - type: lobbyBackground
   id: enlist-lavaland
   background: /Textures/LobbyScreens/enlist.webp
-  title: Nanotrasen wants YOU.
-  artist: thebiggestbruh
+  title: lobby-title-enlist-lavaland
+  artist: lobby-artist-thebiggestbruh

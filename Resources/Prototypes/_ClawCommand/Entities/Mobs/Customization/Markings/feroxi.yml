@@ -298,16 +298,15 @@
   groupWhitelist: [ ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
-    state: feroxi-tail-animated
+    state: feroxi-tail-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
-    state: feroxi-tail-stripes-animated
+    state: feroxi-tail-stripes-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
-    state: feroxi-tail-top-tip-animated
+    state: feroxi-tail-top-tip-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
-    state: feroxi-tail-bottom-tip-animated
+    state: feroxi-tail-bottom-tip-wagging
   - sprite: _ClawCommand/Mobs/Customization/Feroxi/tail_markings.rsi
-    state: feroxi-tail-under-animated
-
+    state: feroxi-tail-under-wagging
 - type: marking
   id: FeroxiTwoToneTail
   bodyPart: Tail

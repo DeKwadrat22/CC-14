@@ -18,8 +18,11 @@ public sealed partial class MeleeDashComponent : Component
     [DataField]
     public string? EmoteOnDash { get; set; } = "Flip";
 
+    // Claw Command - throwhard.ogg never came across with the port and does not exist in the `space`
+    // or Goob-Station trees either, so the default pointed at a missing file. thudswoosh is the
+    // fork's own heavy-swing whoosh and is the closest thing it ships.
     [DataField]
-    public SoundSpecifier? DashSound { get; set; } = new SoundPathSpecifier("/Audio/_ClawCommand/Lavaland/Weapons/Effects/throwhard.ogg");
+    public SoundSpecifier? DashSound { get; set; } = new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg");
 
     [DataField("force")]
     public float DashForce { get; set; } = 15f;

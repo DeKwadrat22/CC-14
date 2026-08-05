@@ -110,7 +110,7 @@
   - type: StarGazer
   - type: WarpPoint
     follow: true
-    location: star gazer
+    location: location-star-gazer
   - type: NightVisionOverlay
     color: white
     activateSound: null

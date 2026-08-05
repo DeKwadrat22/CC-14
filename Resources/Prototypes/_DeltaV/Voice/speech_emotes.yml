@@ -3,7 +3,6 @@
 - type: emote
   id: Gnash
   name: delta-chat-emote-name-gnash
-  icon: _DV/Interface/Emotes/gnash.png
   category: Vocal
   available: false
   whitelist:

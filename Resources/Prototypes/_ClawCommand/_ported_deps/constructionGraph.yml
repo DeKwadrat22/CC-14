@@ -423,7 +423,7 @@
     - to: electronics
       steps:
       - component: PowerCell
-        name: power cell
+        name: construction-step-power-cell
         store: battery-container
         icon:
           sprite: Objects/Power/power_cells.rsi
@@ -529,7 +529,7 @@
     - to: electronics
       steps:
       - component: PowerCell
-        name: power cell
+        name: construction-step-power-cell
         store: battery-container
         icon:
           sprite: Objects/Power/power_cells.rsi
