@@ -68,7 +68,8 @@ ghost-role-information-slimes-description = An ordinary slime with no special ne
 ghost-role-information-bar-slime-description = A reagent slime with exactly one special interest, serving people at the bar. You are friendly to others.
 
 ghost-role-information-angry-slimes-name = Slime
-ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
+# Claw Command - toned down from "destroy them!"
+ghost-role-information-angry-slimes-description = Something about the creatures around you sets your instincts off. Claim a space of your own and drive out anyone who crowds it.
 ghost-role-information-angry-slimes-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other angry slimes.
 
 ghost-role-information-smile-name = Smile the Slime
@@ -78,7 +79,8 @@ ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
 
 ghost-role-information-xeno-name = Xeno
-ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
+# Claw Command - toned down from "kill all crewmembers!"
+ghost-role-information-xeno-description = You are a xeno. Work with your hive to claim territory aboard the station, take hosts, and grow your numbers.
 ghost-role-information-xeno-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other xenos.
 
 ghost-role-information-revenant-name = Revenant
@@ -141,7 +143,8 @@ ghost-role-information-ifrit-name = Ifrit
 ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
 
 ghost-role-information-space-dragon-name = Space Dragon
-ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
+# Claw Command - toned down from "take over this quadrant!"
+ghost-role-information-space-dragon-description = Call in 3 carp rifts to claim this sector as your hunting ground. You have only 5 minutes in between each rift before you will disappear.
 ghost-role-information-space-dragon-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all your summoned carp.
 ghost-role-information-space-dragon-summoned-carp-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with your dragon and its allies.
 
@@ -220,7 +223,8 @@ ghost-role-information-space-ninja-name = Space Ninja
 ghost-role-information-space-ninja-description = Use stealth and deception to sabotage the station.
 
 ghost-role-information-paradox-clone-name = Paradox Clone
-ghost-role-information-paradox-clone-description = A freak space-time anomaly has teleported you into another reality! Now you have to find your counterpart and kill and replace them.
+# Claw Command - the clone may kill and replace their counterpart or befriend them instead.
+ghost-role-information-paradox-clone-description = A freak space-time anomaly has teleported you into another reality! Find the crewmember you were copied from, then decide - kill and replace them, or befriend them and share their life.
 
 ghost-role-information-syndicate-reinforcement-name = Syndicate Agent
 ghost-role-information-syndicate-reinforcement-description = Someone needs reinforcements. You, the first person the syndicate could find, will help them.

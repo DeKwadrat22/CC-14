@@ -9,8 +9,8 @@
 - type: entity
   parent: BaseVoidfoxAction
   id: ActionVoidfoxIgnite
-  name: action-voidfox-ignite-name
-  description: action-voidfox-ignite-desc
+  name: Ignite Engine
+  description: Light the twin reactors. Requires the cockpit sealed and a fuel mixture of at least 95% plasma purity.
   components:
   - type: Action
     useDelay: 1
@@ -23,8 +23,8 @@
 - type: entity
   parent: BaseVoidfoxAction
   id: ActionVoidfoxMassScan
-  name: action-voidfox-massscan-name
-  description: action-voidfox-massscan-desc
+  name: Mass Scanner
+  description: Sweep the local volume for grids and notable contacts.
   components:
   - type: Action
     useDelay: 5

@@ -1,11 +1,18 @@
 ## Regular station events
+# Claw Command - space declares `startAnnouncement: true` because its StationEventComponent field is a
+# bool, and its AnnouncerSystem derived both the message and the per-announcer voice line from the rule id.
+# This fork tracks upstream, where StartAnnouncement is a LocId string and the sound is a separate
+# StartAudio field. Carrying `true` across verbatim made the announcement resolve the literal message id
+# "true" and play nothing at all, so both are spelled out here. The audio is space's NEIL announcer clip.
 - type: entity
   id: NoosphericStorm
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      startAnnouncement: true
+      startAnnouncement: station-event-noospheric-storm-announcement
+      startAudio:
+        path: /Audio/_ClawCommand/Announcements/noospheric_storm.ogg
       weight: 5
       earliestStart: 15
       reoccurrenceDelay: 5

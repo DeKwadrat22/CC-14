@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseAction
   id: ToggleNightVision
-  name: action-name-toggle-night-vision
-  description: action-description-toggle-night-vision
+  name: Toggle Night Vision
+  description: Toggle the night-vision overlay on your goggles.
   components:
   - type: Action
     icon:
@@ -17,8 +17,8 @@
 - type: entity
   parent: BaseAction
   id: ToggleThermalVision
-  name: action-name-toggle-thermal-vision
-  description: action-description-toggle-thermal-vision
+  name: Toggle Thermal Vision
+  description: Toggle the thermal-vision overlay on your goggles.
   components:
   - type: Action
     icon:

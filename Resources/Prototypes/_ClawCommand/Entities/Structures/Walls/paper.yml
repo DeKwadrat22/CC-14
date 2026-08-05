@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseWall
   id: WallPaper
-  name: recipes-paper-wall-name
-  description: recipes-paper-wall-desc
+  name: paper wall
+  description: Helps to contain the repeated screams of martial artists.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Structures/Walls/paper.rsi

@@ -10,8 +10,8 @@
 
 - type: entity
   id: ActionDispel
-  name: action-name-dispel
-  description: action-description-dispel
+  name: Dispel
+  description: Dispel summoned entities such as familiars or forcewalls.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -31,8 +31,8 @@
 
 - type: entity
   id: ActionMassSleep
-  name: action-name-mass-sleep
-  description: action-description-mass-sleep
+  name: Mass Sleep
+  description: Put targets in a small area to sleep.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -48,8 +48,8 @@
 - type: entity
   # Claw Command - renamed from ActionMindSwap: the fork's Magic/mindswap_spell.yml already owns that ID.
   id: ActionPsionicMindSwap
-  name: action-name-mind-swap
-  description: action-description-mind-swap
+  name: Mind Swap
+  description: Swap minds with the target. Either can change back after 20 seconds.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -69,8 +69,8 @@
 
 - type: entity
   id: ActionMindSwapReturn
-  name: action-name-mind-swap-return
-  description: action-description-mind-swap-return
+  name: Reverse Mind Swap
+  description: Return to your original body.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -82,8 +82,8 @@
 
 - type: entity
   id: ActionNoosphericZap
-  name: action-name-noospheric-zap
-  description: action-description-noospheric-zap
+  name: Noospheric Zap
+  description: Shocks the conciousness of the target and leaves them stunned and stuttering.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -101,8 +101,8 @@
 
 - type: entity
   id: ActionPyrokinesis
-  name: action-name-pyrokinesis
-  description: action-description-pyrokinesis
+  name: Pyrokinesis
+  description: Light a flammable target on fire.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -117,8 +117,8 @@
 
 - type: entity
   id: ActionMetapsionic
-  name: action-name-metapsionic
-  description: action-description-metapsionic
+  name: Metapsionic Pulse
+  description: Send a mental pulse through the area to see if there are any psychics nearby.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -129,8 +129,8 @@
 
 - type: entity
   id: ActionPsionicRegeneration
-  name: action-name-psionic-regeneration
-  description: action-description-psionic-regeneration
+  name: Psionic Regeneration
+  description: Push your natural metabolism to the limit to power your body's regenerative capability.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -141,8 +141,8 @@
 
 - type: entity
   id: ActionTelegnosis
-  name: action-name-telegnosis
-  description: action-description-telegnosis
+  name: Telegnosis
+  description: Create a telegnostic projection to remotely observe things.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -153,8 +153,8 @@
 
 - type: entity
   id: ActionPsionicInvisibility
-  name: action-name-psionic-invisibility
-  description: action-description-psionic-invisibility
+  name: Psionic Invisibility
+  description: Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -165,8 +165,8 @@
 
 - type: entity
   id: ActionPsionicInvisibilityUsed
-  name: action-name-psionic-invisibility-off
-  description: action-description-psionic-invisibility-off
+  name: Turn Off Psionic Invisibility
+  description: Return to visibility, and receive a stun.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -176,8 +176,8 @@
 
 - type: entity
   id: ActionHealingWord
-  name: action-name-healing-word
-  description: action-description-healing-word
+  name: Healing Word
+  description: Speak the Lesser Secret Of Life, and restore health to another.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -220,8 +220,8 @@
 
 - type: entity
   id: ActionRevivify
-  name: action-name-revivify
-  description: action-description-revivify
+  name: Breath of Life
+  description: Speak the Greater Secret of Life, and restore another to life.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -263,8 +263,8 @@
 
 - type: entity
   id: ActionAssay
-  name: action-name-assay
-  description: action-description-assay
+  name: Assay
+  description: Probe an entity at close range to glean metaphorical information about any powers they may have
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
@@ -284,8 +284,8 @@
 
 - type: entity
   id: ActionSummonRemilia
-  name: action-name-summon-remilia
-  description: action-description-summon-remilia
+  name: Summon Remilia
+  description: Call forth your ever-loyal familiar Remilia.
   categories: [ HideSpawnMenu ]
   components:
     - type: Action
