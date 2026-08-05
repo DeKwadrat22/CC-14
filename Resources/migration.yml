@@ -878,7 +878,6 @@ LeftHandHuman: OrganHumanHandLeft
 OrganSlimeLungs: OrganSlimePersonLungs
 LockerChiefJusticeFilled: ClosetLegalFilled
 LockerClerkFilled: LockerScienceFilled
-LockerForensicMantisFilled: LockerScienceFilled
 MailTeleporter: CargoMailTeleporter
 MaterialSilo: MachineMaterialSilo
 RightHandHuman: OrganHumanHandRight
@@ -914,16 +913,13 @@ GavelBlock: null
 JermovCircuitBoard: null
 MedicalBiofabMachineBoard: null
 MetempsychoticMachine: null
-OracleSpawner: null
 PillCryptobiolin: null
 PortalShadowkinSpawner: null
 ReverseEngineeringMachine: null
-SophicScribeSpawner: null
 SpawnPointAdminAssistant: null
 SpawnPointBrigmedic: null
 SpawnPointChiefJustice: null
 SpawnPointClerk: null
-SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointNanotrasenRepresentative: null
 SpawnPointProsecutor: null
@@ -932,7 +928,13 @@ TrialTimer: null
 UniqueLockerNanorepFilled: null
 VendingMachineCourierDrobe: null
 VendingMachineMNKDrobe: null
-GlimmerProber: null
+# Claw Command - the psionics port removed five entries that used to live in this block:
+#   GlimmerProber, OracleSpawner, SophicScribeSpawner, SpawnPointForensicMantis -> null
+#   LockerForensicMantisFilled -> LockerScienceFilled
+# They were added when this content was stripped from the fork. The prototypes exist again, so the
+# migration was silently deleting (or downgrading) every one of them at map load, on every station.
+# AirlockMantisLocked / DefaultStationBeaconMantis / DefaultStationBeaconProber above are deliberately
+# left in place: those prototypes were NOT part of the port and still do not exist.
 
 # 2026-07-06
 LockerBartender: LockerBooze # Why was this even made?
