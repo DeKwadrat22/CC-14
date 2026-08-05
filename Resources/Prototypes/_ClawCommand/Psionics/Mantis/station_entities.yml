@@ -1,0 +1,112 @@
+# Claw Command - psionics port: the entities that sit on station maps.
+#
+# The psi-breaker pistol is deliberately NOT ported. It fires .38 special mindbreaker rounds, and this fork
+# has no .38 special calibre at all (no BaseMagazinePistolSpecial / BaseCartridgeSpecial). Bringing it over
+# means porting a whole ammunition family, which is a firearms port rather than a psionics one. The mantis
+# still gets the anti-psychic knife, which is the actual signature tool.
+
+- type: entity
+  name: Oracle Spawner
+  id: OracleSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: ConditionalSpawner
+    prototypes:
+      - Oracle
+
+- type: entity
+  name: Sophia Spawner
+  id: SophicScribeSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: ConditionalSpawner
+    prototypes:
+      - SophicScribe
+
+- type: entity
+  id: SpawnPointForensicMantis
+  parent: SpawnPointJobBase
+  name: mantis
+  components:
+  - type: SpawnPoint
+    job_id: ForensicMantis
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: DeltaV/Markers/jobs.rsi
+        state: nyanomantis
+
+- type: entity
+  parent: CombatKnife
+  id: AntiPsychicKnife
+  name: anti-psychic knife
+  description: A special knife designed for killing psychics.
+  components:
+  - type: MeleeWeapon
+    attackRate: .6666
+    damage:
+      types:
+        Slash: 10
+        Holy: 5
+  - type: StaminaDamageOnHit
+    damage: 0
+  - type: AntiPsionicWeapon
+    modifiers:
+      coefficients:
+        Blunt: 1.2
+        Slash: 1.2
+        Piercing: 1.2
+        Holy: 1.2
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
+    state: icon
+  - type: Item
+    sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
+  - type: Tag
+    tags:
+    - ForensicBeltEquip
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: AntiPsychicKnife
+
+- type: stealTargetGroup
+  id: AntiPsychicKnife
+  name: anti-psychic knife
+  sprite:
+    sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
+    state: icon
+
+- type: entity
+  id: LockerForensicMantis
+  parent: LockerDetective
+  suffix: Empty
+  name: mantis' cabinet
+  description: You'll never know what's inside until you collapse the quantum superposition of all possible mysteries.
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  id: LockerForensicMantisFilled
+  suffix: Filled
+  parent: LockerForensicMantis
+  components:
+  - type: StorageFill
+    contents:
+      - id: AntiPsychicKnife
+      - id: FlashlightLantern
+      - id: BoxZiptie
+      - id: ClothingHeadHatFezMantis
+      - id: ClothingOuterWinterCoatMantis
+      - id: ClothingHeadTinfoil

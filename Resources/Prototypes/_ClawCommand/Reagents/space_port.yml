@@ -5,9 +5,11 @@
 # them again would duplicate IDs. This file only carries the genuinely-absent ones.
 #
 # System-availability adaptations:
-#   - SoulbreakerToxin: drops ChemRemovePsionic (fork lacks the psionic system) — keeps toxin damage + plant adjust.
-#   - LotophagoiOil: drops ChemRerollPsionic + ChemAddMoodlet (no psionic/mood systems) — keeps SeeingRainbows + ScrambledAccent.
 #   - PsionicRegenerationEssence: pure healing reagent, no psionic-only effects in source so no stripping needed.
+#
+# UPDATE (psionics port): the psionic system now exists, so the effects that were stripped here have been
+# restored — SoulbreakerToxin mindbreaks again (that is what Mindbreaker Toxin is for), and LotophagoiOil
+# grants its bonus psionic power roll. The mood system also exists, so AddMoodlet stays as-is.
 
 # === Drinks ===
 
@@ -72,6 +74,12 @@
         damage:
           groups:
             Toxin: 2
+      # Claw Command - restored by the psionics port. A sufficient dose permanently strips psionic powers.
+      - !type:ChemRemovePsionic
+        conditions:
+        - !type:ReagentCondition
+          reagent: SoulbreakerToxin
+          min: 5
 
 # === Narcotics ===
 
@@ -96,6 +104,18 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
+      # Claw Command - restored by the psionics port. A big enough dose buys one extra roll at psionic
+      # powers, at four times the usual odds. This is the intended non-antag route into psionics.
+      - !type:ChemRerollPsionic
+        bonusMultiplier: 4
+        conditions:
+        - !type:ReagentCondition
+          reagent: LotophagoiOil
+          min: 20
+      # Claw Command - restored by the psionics port. Makes the drinker echo telepathic chatter aloud.
+      - !type:GenericStatusEffect
+        key: SlurredSpeech
+        component: TelepathicRepeater
       # Claw Command - the most extreme high in the game, and the worst comedown.
       - !type:AddMoodlet
         moodlet: LotoTranscendence

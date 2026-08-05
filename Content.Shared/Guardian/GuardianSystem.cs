@@ -165,7 +165,13 @@ public sealed partial class GuardianSystem : EntitySystem
         args.Args.Cancelled = true;
     }
 
-    private void ToggleGuardian(Entity<GuardianHostComponent> ent)
+    /// <remarks>
+    ///     Claw Command - widened from private to public so the Dispel psionic power can forcibly recall a loose
+    ///     guardian. Routing through GuardianToggleActionEvent instead would add the in-container check and popup
+    ///     from OnPerformAction, which do not apply when the recall is forced by an outside effect.
+    ///     Behaviour is otherwise unchanged.
+    /// </remarks>
+    public void ToggleGuardian(Entity<GuardianHostComponent> ent)
     {
         if (!TryComp<GuardianComponent>(ent.Comp.HostedGuardian, out var guardianComponent))
             return;

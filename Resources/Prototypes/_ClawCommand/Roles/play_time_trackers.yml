@@ -12,3 +12,19 @@
 
 - type: playTimeTracker
   id: JobAnomaly
+
+# Senior job variants - see _ClawCommand/Roles/Jobs/seniors.yml
+- type: playTimeTracker
+  id: JobSeniorOfficer
+
+- type: playTimeTracker
+  id: JobSeniorEngineer
+
+- type: playTimeTracker
+  id: JobSeniorPhysician
+
+- type: playTimeTracker
+  id: JobSeniorResearcher
+
+- type: playTimeTracker
+  id: JobSeniorCourier

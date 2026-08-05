@@ -25,6 +25,7 @@
     - CentralCommand
     #- ClawCommandOfficer
     - Command
+    - Atmospherics # Claw Command
   - type: Tag
     tags:
     - DoorBumpOpener

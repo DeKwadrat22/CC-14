@@ -35,22 +35,26 @@
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 4, 4 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
             TechnicalAssistant: [ 3, 3 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 4 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
             MedicalIntern: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
             ResearchAssistant: [ 3, 3 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
             Detective: [ 1, 1 ]
             SecurityCadet: [ 3, 3 ]
             Lawyer: [ 2, 2 ]
@@ -58,6 +62,7 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
+            SeniorCourier: [ 1, 1 ] # Claw Command - senior variant
             #civilian
             Passenger: [ -1, -1 ]
             Prisoner: [ 5, 5 ] #claw command

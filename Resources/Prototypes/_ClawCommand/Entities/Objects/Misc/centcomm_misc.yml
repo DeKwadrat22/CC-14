@@ -14,7 +14,10 @@
     state: sheetblack
   - type: Clothing
     sprite: Clothing/Neck/Bedsheets/black.rsi
-  # ClothingGrantPsionicPower / Psionic dropped — systems not present.
+  # Claw Command - restored by the psionics port; the grant was dropped when the system was absent.
+  - type: ClothingGrantPsionicPower
+    power: PsionicInvisibilityPower
+  - type: Psionic
 
 # --- Bluespace Cigar ---
 - type: entity

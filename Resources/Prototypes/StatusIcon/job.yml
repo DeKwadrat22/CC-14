@@ -588,6 +588,14 @@
     sprite: *icon-rsi
     state: SeniorResearcher
 
+# Claw Command - the SeniorCourier state already shipped in the RSI but had no icon prototype
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSeniorCourier
+  icon:
+    sprite: *icon-rsi
+    state: SeniorCourier
+
 # Other
 
 - type: jobIcon

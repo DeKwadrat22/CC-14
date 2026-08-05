@@ -59,21 +59,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtRoboticist
 
-- type: loadout
-  id: SeniorResearcherJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
-
-- type: loadout
-  id: SeniorResearcherJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorResearcher
+# Claw Command - SeniorResearcherJumpsuit/Jumpskirt moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorResearcher job only). ScientificBeret stays here - it's the plain RND beret, not
+# senior-branded gear.
 
 # Back
 - type: loadout
@@ -117,13 +105,7 @@
   equipment:
     outerClothing: ClothingOuterWinterRobo
 
-- type: loadout
-  id: SeniorResearcherLabCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-  equipment:
-    outerClothing: ClothingOuterCoatLabSeniorResearcher
+# Claw Command - SeniorResearcherLabCoat moved to _ClawCommand/Loadouts/Jobs/seniors.yml
 
 # Gloves
 - type: loadout
@@ -148,10 +130,5 @@
   equipment:
     id: SciencePDA
 
-- type: loadout
-  id: SeniorResearcherPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-  equipment:
-    id: SeniorResearcherPDA
+# Claw Command - SeniorResearcherPDA moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorResearcher job only)

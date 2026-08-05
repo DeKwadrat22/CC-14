@@ -207,6 +207,19 @@ binds:
   key: MouseLeft
   canFocus: true
   mod1: Shift
+  # Claw Command - required so you can shoot/swing while sprinting.
+  #
+  # walk_by_default is on in this fork, so Shift is the sprint key and is held down the whole time
+  # a player runs. Without this flag the engine force-releases every binding that is a strict
+  # subset of a matched combo (InputManager.KeyDown), so Shift+click kills plain Use on MouseLeft
+  # and the gun - which only fires while Use reads Down - never receives the click. Most obvious
+  # mid dive-leap, since a leap can only start while sprinting.
+  #
+  # With this set, Use stays in the running bind list instead of being killed, and reaches its turn
+  # only if nothing above it handled the click. Out of combat ExamineSystem still handles it and
+  # Use is never reached; in combat mode ExamineSystem declines, so the attack goes out instead.
+  # This also stops Shift+click from dropping the Walk bind, so clicking no longer breaks a sprint.
+  allowSubCombs: true
 - function: ActivateItemInWorld
   type: State
   key: E

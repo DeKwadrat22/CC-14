@@ -80036,6 +80036,13 @@ entities:
     - type: Transform
       pos: -40.751842,-13.516771
       parent: 2
+- proto: LockerForensicMantisFilled
+  entities:
+  - uid: 17467
+    components:
+    - type: Transform
+      pos: -36.5,31.5
+      parent: 2
 - proto: LockerFreezer
   entities:
   - uid: 11953
@@ -92934,6 +92941,13 @@ entities:
     components:
     - type: Transform
       pos: 26.5,6.5
+      parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 17468
+    components:
+    - type: Transform
+      pos: -36.5,33.5
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:

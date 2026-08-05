@@ -59413,6 +59413,13 @@ entities:
     - type: Transform
       pos: 40.5,-30.5
       parent: 2
+- proto: GlimmerProber
+  entities:
+  - uid: 13983
+    components:
+    - type: Transform
+      pos: -33.5,-8.5
+      parent: 2
 - proto: GravityGenerator
   entities:
   - uid: 8791
@@ -65255,6 +65262,13 @@ entities:
     components:
     - type: Transform
       pos: -51.5,-17.5
+      parent: 2
+- proto: OracleSpawner
+  entities:
+  - uid: 13984
+    components:
+    - type: Transform
+      pos: -25.5,-13.5
       parent: 2
 - proto: OreBox
   entities:
@@ -75072,6 +75086,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 48.5,-43.5
       parent: 2
+- proto: SophicScribeSpawner
+  entities:
+  - uid: 13985
+    components:
+    - type: Transform
+      pos: -27.5,-13.5
+      parent: 2
 - proto: SpaceCash
   entities:
   - uid: 11416
@@ -75492,6 +75513,13 @@ entities:
     components:
     - type: Transform
       pos: -10.5,2.5
+      parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 13986
+    components:
+    - type: Transform
+      pos: -31.5,2.5
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:

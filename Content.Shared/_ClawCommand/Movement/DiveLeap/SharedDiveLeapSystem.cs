@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
@@ -52,6 +53,7 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
     [Dependency] private SharedRotationVisualsSystem _rotationVisuals = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -106,14 +108,8 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
         if (HasComp<NoDiveLeapComponent>(uid))
             return false;
 
-        // Winded characters do not dive. A disabler or baton hit takes the move away well before it
-        // puts you in stamina crit, so being tagged is enough to stop someone diving out of a fight.
-        if (leaper.BlockedByStamina
-            && TryComp<StaminaComponent>(uid, out var stamina)
-            && stamina.StaminaDamage > leaper.MaxStaminaDamage)
-        {
-            return false;
-        }
+        // No stamina gate here on purpose - the dive costs stamina instead, charged on landing.
+        // See DiveLeaperComponent.StaminaCost and Land().
 
         // Already on the floor, stunned, cuffed to something - none of those get to launch.
         if (_standing.IsDown(uid) || HasComp<KnockedDownComponent>(uid))
@@ -431,6 +427,21 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
         // locker - runs identical cleanup.
         RemComp<DiveLeapingComponent>(uid);
 
+        // Pay for the dive, and pay for it *here* rather than at launch.
+        //
+        // Half a stamina pool is enough to drop an already-winded diver straight into stamina crit,
+        // and crit paralyses, which runs StandingStateSystem.Down -> ChangeLayers. That strips
+        // StandingCollisionLayer, which is the very same MidImpassable bit the leap strips for the
+        // flight. Charging at launch would therefore have both systems owning that bit at once:
+        // ChangeLayers would find it already gone, record nothing, and landing would hand it back
+        // while the player was still lying there paralysed - a mob that body-blocks while prone.
+        // The class summary flags this exact overlap as the reason the leap never calls Down().
+        //
+        // By the time we get here the component is gone and RestoreFixtures has already run, so the
+        // fixtures are whole and stamina crit can do its normal thing. The knockdown below then
+        // simply refreshes what crit already applied.
+        ApplyStaminaCost(uid);
+
         // Now actually go down. This plays the body-fall sound for us and applies the real prone
         // state, including its own fixture handling, which by now has ours fully out of the way.
         //
@@ -442,6 +453,26 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             : TimeSpan.FromSeconds(0.5);
 
         _stun.TryKnockdown(uid, knockdownTime, refresh: true, autoStand: false, drop: false);
+    }
+
+    /// <summary>
+    ///     Charge the diver <see cref="DiveLeaperComponent.StaminaCost"/> of their stamina pool.
+    ///
+    ///     Scaled off CritThreshold rather than being a flat number so the dive costs the same
+    ///     proportion of everyone's stamina, whatever traits and gear have done to the size of it.
+    ///
+    ///     visual: false because the aqua flash is the "you got hit" tell and this is self-inflicted
+    ///     exertion; the launch sound and the landing thud already carry the move.
+    /// </summary>
+    private void ApplyStaminaCost(EntityUid uid)
+    {
+        if (!TryComp<DiveLeaperComponent>(uid, out var leaper) || leaper.StaminaCost <= 0f)
+            return;
+
+        if (!TryComp<StaminaComponent>(uid, out var stamina))
+            return;
+
+        _stamina.TakeStaminaDamage(uid, stamina.CritThreshold * leaper.StaminaCost, stamina, visual: false);
     }
 
     private void OnShutdown(Entity<DiveLeapingComponent> ent, ref ComponentShutdown args)

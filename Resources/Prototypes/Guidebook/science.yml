@@ -4,10 +4,24 @@
   text: "/ServerInfo/Guidebook/Science/Science.xml"
   children:
   - GuideEpistemicsSOP #claw command
+  - GuidePsionics #claw command - psionics port
   - Technologies
   - AnomalousResearch
   - Xenoarchaeology
   - Robotics
+
+# Claw Command - psionics port
+- type: guideEntry
+  id: GuidePsionics
+  name: guide-entry-psionics
+  text: "/ServerInfo/_ClawCommand/Guidebook/Psionics/Psionics.xml"
+  children:
+  - GuideGlimmerCreatures
+
+- type: guideEntry
+  id: GuideGlimmerCreatures
+  name: guide-entry-glimmer-creatures
+  text: "/ServerInfo/_ClawCommand/Guidebook/Psionics/GlimmerCreatures.xml"
 
 - type: guideEntry
   id: Technologies

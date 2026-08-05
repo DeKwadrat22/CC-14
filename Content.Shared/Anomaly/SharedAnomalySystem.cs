@@ -385,7 +385,13 @@ public abstract partial class SharedAnomalySystem : EntitySystem
     /// <summary>
     /// Gets random points around the anomaly based on the given parameters.
     /// </summary>
-    public List<TileRef>? GetSpawningPoints(EntityUid uid, float stability, float severity, AnomalySpawnSettings settings, float powerModifier = 1f)
+    /// <param name="minAmountOffset">
+    ///     Claw Command - shifts the lower end of the spawn count. Added for the Anomalist psionic powers, which
+    ///     emulate anomaly effects using the caster's Amplification/Dampening in place of severity/stability and
+    ///     need to scale the floor of the spawn range with the caster. Defaults to 0, so existing callers are unaffected.
+    /// </param>
+    /// <param name="maxAmountOffset">Claw Command - as above, for the upper end of the spawn count.</param>
+    public List<TileRef>? GetSpawningPoints(EntityUid uid, float stability, float severity, AnomalySpawnSettings settings, float powerModifier = 1f, float minAmountOffset = 0f, float maxAmountOffset = 0f)
     {
         var xform = Transform(uid);
 
@@ -393,7 +399,7 @@ public abstract partial class SharedAnomalySystem : EntitySystem
             return null;
 
         // How many spawn points we will be aiming to return
-        var amount = (int) (MathHelper.Lerp(settings.MinAmount, settings.MaxAmount, severity * stability * powerModifier) + 0.5f);
+        var amount = (int) (MathHelper.Lerp(settings.MinAmount + minAmountOffset, settings.MaxAmount + maxAmountOffset, severity * stability * powerModifier) + 0.5f);
 
         // When the entity is in a container or buckled (such as a hosted anomaly), local coordinates will not be comparable
         // to tile coordinates.

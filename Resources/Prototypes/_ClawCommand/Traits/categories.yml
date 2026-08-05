@@ -14,3 +14,11 @@
   id: Psychological
   name: trait-category-psychological
   budgetPool: SharedTraitBudget
+
+# Claw Command - psionics port. On SharedTraitBudget to match the fork this came from, where the Mental
+# category had no budget of its own and psionic traits competed for the same global pool as everything else.
+# Points spent on psionics therefore come out of the same allowance as Physical and Psychological picks.
+- type: traitCategory
+  id: Psionic
+  name: trait-category-psionic
+  budgetPool: SharedTraitBudget

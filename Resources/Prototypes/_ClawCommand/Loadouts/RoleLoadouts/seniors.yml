@@ -1,0 +1,123 @@
+# _ClawCommand: role loadouts for the senior job variants.
+#
+# Each mirrors its base job's group list, swapping in the Senior* groups for the slots that have
+# senior-branded gear. Everything else (backpacks, belts, shoes, survival kits, CC14 extras) is
+# the same group the base job uses, so seniors keep every ordinary department option.
+
+- type: roleLoadout
+  id: JobSeniorOfficer
+  groups:
+  - SecurityHead
+  - SeniorOfficerJumpsuit
+  - SecurityBackpack
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SeniorOfficerID
+  - SecurityBelt
+  - AssistiveItems
+  - CCSecurityGloves # CC14
+  - SurvivalSecurity
+  - Rations # Claw Command
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - SecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobSeniorEngineer
+  groups:
+  - GroupTankHarness
+  - StationEngineerHead
+  - SeniorEngineerJumpsuit
+  - StationEngineerBackpack
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
+  - SeniorEngineerID
+  - AssistiveItems
+  - SurvivalExtended
+  - Rations # Claw Command
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSeniorPhysician
+  groups:
+  - GroupTankHarness
+  - SeniorPhysicianHead
+  - MedicalMask
+  - SeniorPhysicianJumpsuit
+  - MedicalBackpack
+  - SeniorPhysicianOuterClothing
+  - MedicalShoes
+  - SeniorPhysicianID
+  - Glasses
+  - AssistiveItems
+  - SurvivalMedical
+  - Rations # Claw Command
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobSeniorResearcher
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - SeniorResearcherJumpsuit
+  - ScientistBackpack
+  - SeniorResearcherOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - SeniorResearcherID
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Rations # Claw Command
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSeniorCourier
+  groups:
+  - GroupTankHarness
+  - CargoTechnicianHead
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianBackpack
+  - CargoTechnicianOuterClothing
+  - CargoTechnicianShoes
+  - SeniorCourierID
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Rations # Claw Command
+  - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - GroupSpeciesBreathTool

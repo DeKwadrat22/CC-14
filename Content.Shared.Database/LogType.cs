@@ -488,4 +488,9 @@ public enum LogType
     /// Silicon law changes.
     /// </summary>
     SiliconLaw = 105,
+
+    /// <summary>
+    /// Claw Command - A psionic power was used.
+    /// </summary>
+    Psionics = 106,
 }

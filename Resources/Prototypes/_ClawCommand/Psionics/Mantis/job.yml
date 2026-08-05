@@ -1,0 +1,129 @@
+# Claw Command - psionics port: the Forensic Mantis.
+#
+# Scoping notes:
+#   - The source fork put this in an "Epistemics" department. Science keeps its name here, so the Mantis is a
+#     Science role reporting to the Research Director.
+#   - Its playtime requirements are rewritten for this codebase's requirement types (RoleTimeRequirement /
+#     DepartmentTimeRequirement with `time:`, not `min:`).
+#   - `AddImplantSpecial [MindShieldImplant, GetUpImplant]` from the source is trimmed to MindShieldImplant;
+#     GetUpImplant is not a thing here.
+#   - Upstream also barred IPCs unless they had Anomalous Positronics. There is no species requirement type on
+#     jobs in this codebase, so that gate is not reproduced; an IPC Mantis will simply have their psionics
+#     suppressed by their own PsionicInsulation until they take the Anomalous Positronics trait.
+
+- type: job
+  id: ForensicMantis
+  name: job-name-mantis
+  description: job-description-mantis
+  playTimeTracker: JobForensicMantis
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 1h
+  startingGear: ForensicMantisGear
+  icon: "JobIconForensicMantis"
+  supervisors: job-supervisors-rd
+  canBeAntag: false
+  access:
+  - Research
+  - Maintenance
+  - Mantis
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Psionic
+      powerSlots: 2
+  - !type:AddPsionicPowersSpecial
+    powerSlots: 2
+    psionicPowers:
+    - MetapsionicPower
+    - TelepathyPower
+    - AssayPower
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: ForensicMantisGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMantis
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesBootsMantis
+    head: ClothingHeadHatFezMantis
+    id: ForensicMantisPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetMantis
+    gloves: ClothingHandsGlovesColorWhite
+    outerClothing: ClothingOuterCoatMantis
+    belt: ClothingBeltMantis
+  innerClothingSkirt: ClothingUniformSkirtMantis
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled
+
+- type: playTimeTracker
+  id: JobForensicMantis
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconForensicMantis
+  icon:
+    sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
+    state: nyanoMantis
+
+# Custom access level so the Mantis can have their own locker and doors.
+- type: accessLevel
+  id: Mantis
+  name: id-card-access-level-mantis
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMantis
+  name: mantis headset
+  description: A sciency headset used by the Mantis.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScience
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+
+- type: entity
+  parent: IDCardStandard
+  id: ForensicMantisIDCard
+  name: mantis ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    # Claw Command - the mantis icon lives in the DeltaV sheet as `nyanoMantis`; the base sheet has no
+    # ForensicMantis state, which is what upstream referenced.
+    - sprite: DeltaV/Interface/Misc/job_icons.rsi
+      state: nyanoMantis
+
+- type: entity
+  parent: BasePDA
+  id: ForensicMantisPDA
+  name: mantis PDA
+  description: Smells like illegal substances.
+  components:
+  - type: Pda
+    id: ForensicMantisIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-science
+  - type: Icon
+    state: pda-science
+  - type: CartridgeLoader
+    preinstalled:
+     - CrewManifestCartridge
+     - NotekeeperCartridge
+     - NewsReaderCartridge
+     - GlimmerMonitorCartridge

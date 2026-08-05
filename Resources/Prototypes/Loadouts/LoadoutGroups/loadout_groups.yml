@@ -810,7 +810,6 @@
   name: loadout-group-cargo-technician-id
   loadouts:
   - CargoTechnicianPDA
-  - SeniorCourierPDA
 
 #- type: loadoutGroup
 #  id: CargoTechnicianJobTrinkets
@@ -927,8 +926,6 @@
   - StationEngineerJumpsuit
   - StationEngineerJumpskirt
   - StationEngineerHazardsuit
-  - SeniorEngineerJumpsuit
-  - SeniorEngineerJumpskirt
   - EngiMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
@@ -961,7 +958,6 @@
   name: loadout-group-station-engineer-id
   loadouts:
   - StationEngineerPDA
-  - SeniorEngineerPDA
 
 #- type: loadoutGroup
 #  id: StationEngineerJobTrinkets
@@ -1091,8 +1087,6 @@
   - ScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
-  - SeniorResearcherJumpsuit
-  - SeniorResearcherJumpskirt
   - ResearchMJ  # Claw Command - Goob _NF MJ port
 
 - type: loadoutGroup
@@ -1113,7 +1107,6 @@
   - ScienceWintercoat
   - RoboticistLabCoat
   - RoboticistWintercoat
-  - SeniorResearcherLabCoat
 
 - type: loadoutGroup
   id: ScientistShoes
@@ -1139,7 +1132,6 @@
   name: loadout-group-scientist-id
   loadouts:
   - ScientistPDA
-  - SeniorResearcherPDA
 
 #- type: loadoutGroup
 #  id: ScientistJobTrinkets
@@ -1261,8 +1253,6 @@
   - SecurityJumpskirt
   - SecurityJumpsuitGrey
   - SecurityJumpskirtGrey
-  - SeniorOfficerJumpsuit
-  - SeniorOfficerJumpskirt
   - TrooperUniform
 
 - type: loadoutGroup
@@ -1303,7 +1293,6 @@
   name: loadout-group-security-id
   loadouts:
   - SecurityPDA
-  - SeniorOfficerPDA
 
 - type: loadoutGroup
   id: SecurityJobTrinkets

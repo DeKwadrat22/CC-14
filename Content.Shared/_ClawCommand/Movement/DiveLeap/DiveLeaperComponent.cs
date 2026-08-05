@@ -58,22 +58,20 @@ public sealed partial class DiveLeaperComponent : Component
     public float ArcHeight = 0.55f;
 
     /// <summary>
-    ///     Whether being winded stops you leaping. On by default.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool BlockedByStamina = true;
-
-    /// <summary>
-    ///     How much stamina damage you may be carrying and still leap.
+    ///     What a dive costs, as a fraction of the entity's stamina pool.
     ///
-    ///     Not zero on purpose. Sprinting and melee both accrue small amounts that decay a few
-    ///     seconds later, so a hard zero would silently disable the move during ordinary scuffling
-    ///     with nothing on screen to explain why. Ten sits above that background noise and well below
-    ///     anything a weapon does - a disabler bolt is 33, a baton more - so getting tagged takes the
-    ///     dive away immediately, exactly as intended, while brushing past someone does not.
+    ///     A fraction rather than a flat number so the cost tracks
+    ///     <see cref="Content.Shared.Damage.Components.StaminaComponent.CritThreshold"/>, which traits
+    ///     and gear move around - half a pool means the same thing to everyone regardless of how big
+    ///     theirs is.
+    ///
+    ///     There is deliberately no stamina gate on starting a leap. The cost is the limit: at half a
+    ///     pool you get about two dives before the third drops you into stamina crit, and diving while
+    ///     already winded knocks you out on landing. That reads better than a refusal with nothing on
+    ///     screen to explain it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MaxStaminaDamage = 10f;
+    public float StaminaCost = 0.5f;
 
     /// <summary>
     ///     Minimum gap between leaps, measured from landing.

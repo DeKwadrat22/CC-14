@@ -24,3 +24,17 @@ cc-loadout-group-captain-shoes = Captain shoes
 cc-loadout-group-hop-shoes = Head of Personnel shoes
 cc-loadout-group-cmo-glasses = Chief Medical Officer glasses
 loadout-group-rations = Rations
+
+# Senior job variants
+loadout-group-senior-officer-jumpsuit = Senior officer jumpsuit
+loadout-group-senior-officer-id = Senior officer ID
+loadout-group-senior-engineer-jumpsuit = Senior engineer jumpsuit
+loadout-group-senior-engineer-id = Senior engineer ID
+loadout-group-senior-physician-head = Senior physician head
+loadout-group-senior-physician-jumpsuit = Senior physician jumpsuit
+loadout-group-senior-physician-outerclothing = Senior physician outer clothing
+loadout-group-senior-physician-id = Senior physician ID
+loadout-group-senior-researcher-jumpsuit = Senior researcher jumpsuit
+loadout-group-senior-researcher-outerclothing = Senior researcher outer clothing
+loadout-group-senior-researcher-id = Senior researcher ID
+loadout-group-senior-courier-id = Senior courier ID

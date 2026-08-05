@@ -91,4 +91,42 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<SpeciesPrototype>> RestrictedSpecies { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - Species IDs that are forbidden from taking this trait.
+    ///     Unlike <see cref="RestrictedSpecies"/> this is a blacklist, and it can be waived by
+    ///     <see cref="SpeciesExemptTraits"/>. Added for the psionics port, where IPCs are shut out of psionic
+    ///     traits unless they have taken Anomalous Positronics.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<SpeciesPrototype>> ForbiddenSpecies { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - taking any one of these traits waives <see cref="ForbiddenSpecies"/>.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<TraitPrototype>> SpeciesExemptTraits { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - the character must have at least one of these traits, or at least one job from
+    ///     <see cref="RequiresAnyJob"/>, before this trait may be taken. Leaving both lists empty means no gate.
+    ///     Used by the psionics port so that psionic powers are only offered to Latent Psychics and to the
+    ///     handful of jobs that are psionic by default.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<TraitPrototype>> RequiresAnyTrait { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - see <see cref="RequiresAnyTrait"/>. A job counts when the character has it set to any
+    ///     priority above Never.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<JobPrototype>> RequiresAnyJob { get; private set; } = new();
+
+    /// <summary>
+    ///     Claw Command - jobs that may not take this trait, typically because the job already grants the same
+    ///     thing for free. Finer-grained than <see cref="RestrictedDepts"/>, which blocks a whole department.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<JobPrototype>> ForbiddenJobs { get; private set; } = new();
 }

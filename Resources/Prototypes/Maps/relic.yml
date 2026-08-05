@@ -43,18 +43,22 @@
             #engineering (4)
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 2, 2 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
             TechnicalAssistant: [ 2, 2 ] #intern, not counted
             #medical (4)
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
             #science (1 - 2)
             Scientist: [ 1, 2 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
             ResearchAssistant: [ 2, 2 ] #intern, not counted
             #security (4 - 5)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 1, 2 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ] #intern, not counted
             Lawyer: [ 1, 1 ]

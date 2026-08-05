@@ -69,6 +69,10 @@
   components:
   - type: SpawnPoint
     job_id: CargoTechnician
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorCourier
   - type: Sprite
     layers:
       - state: green
@@ -351,6 +355,10 @@
   components:
   - type: SpawnPoint
     job_id: StationEngineer
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorEngineer
   - type: Sprite
     layers:
       - state: green
@@ -389,6 +397,10 @@
   components:
   - type: SpawnPoint
     job_id: MedicalDoctor
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorPhysician
   - type: Sprite
     layers:
       - state: green
@@ -439,6 +451,10 @@
   components:
   - type: SpawnPoint
     job_id: Scientist
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorResearcher
   - type: Sprite
     layers:
       - state: green
@@ -477,6 +493,10 @@
   components:
   - type: SpawnPoint
     job_id: SecurityOfficer
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorOfficer
   - type: Sprite
     layers:
       - state: green

@@ -51208,6 +51208,13 @@ entities:
     - type: Transform
       pos: 44.5,-2.5
       parent: 2
+- proto: GlimmerProber
+  entities:
+  - uid: 12273
+    components:
+    - type: Transform
+      pos: -28.5,-27.5
+      parent: 2
 - proto: GravityGenerator
   entities:
   - uid: 7636
@@ -54449,6 +54456,13 @@ entities:
     components:
     - type: Transform
       pos: -31.5,10.5
+      parent: 2
+- proto: LockerForensicMantisFilled
+  entities:
+  - uid: 12274
+    components:
+    - type: Transform
+      pos: -35.5,-19.5
       parent: 2
 - proto: LockerFreezerVaultFilled
   entities:
@@ -63348,6 +63362,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,8.5
+      parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 12275
+    components:
+    - type: Transform
+      pos: -33.5,-18.5
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:

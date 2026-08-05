@@ -41,25 +41,30 @@
             #engineering (8)
             AtmosphericTechnician: [ 4, 4 ]
             StationEngineer: [ 4, 4 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
             TechnicalAssistant: [ 4, 4 ] #intern, not counted
             #medical (9)
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 4 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
             Psychologist: [ 1, 1 ]
             #science (4)
             Scientist: [ 4, 4 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
             ResearchAssistant: [ 4, 4 ] #intern, not counted
             #security (9 - 11)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 6, 8 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
             Detective: [ 1, 2 ] #good cop, bad cop
             SecurityCadet: [ 4, 4 ] #intern, not counted
             Lawyer: [ 1, 2 ]
             #supply (8 - 10)
             SalvageSpecialist: [ 4, 4 ] #the salvagers yearn for the mines
             CargoTechnician: [ 4, 6 ]
+            SeniorCourier: [ 1, 1 ] # Claw Command - senior variant
             #civilian (3 - 4+)
             Passenger: [ -1, -1 ]  #infinite, the tiders yearn for the mines
             Prisoner: [ 5, 5 ] #claw command

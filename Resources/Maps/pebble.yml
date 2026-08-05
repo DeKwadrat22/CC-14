@@ -62327,6 +62327,13 @@ entities:
     - type: Transform
       pos: 4.5,20.5
       parent: 2
+- proto: OracleSpawner
+  entities:
+  - uid: 12961
+    components:
+    - type: Transform
+      pos: -4.5,16.5
+      parent: 2
 - proto: OreBag
   entities:
   - uid: 9227
@@ -69898,6 +69905,13 @@ entities:
     - type: Transform
       pos: -20.5,65.5
       parent: 2
+- proto: SophicScribeSpawner
+  entities:
+  - uid: 12962
+    components:
+    - type: Transform
+      pos: -9.5,16.5
+      parent: 2
 - proto: SpaceCash10
   entities:
   - uid: 10461
@@ -70342,6 +70356,13 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-19.5
+      parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 12963
+    components:
+    - type: Transform
+      pos: -10.5,28.5
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:

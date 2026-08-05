@@ -1,0 +1,148 @@
+# _ClawCommand: Senior job variants, ported from the Floofstation-based `space` fork
+# (Resources/Prototypes/Roles/Jobs/{Security,Engineering,Medical,Science}/senior_*.yml).
+#
+# Adapted to this fork:
+#   - Science department, not DeltaV's Epistemics.
+#   - Clothing/PDA live in loadout groups (see _ClawCommand/Loadouts/), so startingGear only
+#     carries the same accessories the base job's startingGear does.
+#   - Dropped content that doesn't exist here: ClothingOuterArmorPlateCarrier and GetUpImplant
+#     (DeltaV/Floof), plus the _Shitmed CPRTraining / SurgerySpeedModifier specials.
+#   - Access mirrors the base job (including its extendedAccess) plus the extras the space fork
+#     grants seniors, so a senior is never more restricted than the job it supervises.
+#   - SeniorCourier has no equivalent in the space fork; SeniorCourierPDA and the SeniorCourier
+#     job icon already shipped here unused.
+#
+# Senior variants deliberately have no spawn points of their own - they reuse the base job's
+# markers via SpawnPoint.additionalJobs in Entities/Markers/Spawners/jobs.yml.
+
+# Security
+- type: job
+  id: SeniorOfficer
+  name: job-name-senior-officer
+  description: job-description-senior-officer
+  playTimeTracker: JobSeniorOfficer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 40h
+  startingGear: SeniorOfficerGear
+  icon: "JobIconSeniorOfficer"
+  supervisors: job-supervisors-hos
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SeniorOfficerGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetSecurity
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+
+# Engineering
+- type: job
+  id: SeniorEngineer
+  name: job-name-senior-engineer
+  description: job-description-senior-engineer
+  playTimeTracker: JobSeniorEngineer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 40h
+  startingGear: SeniorEngineerGear
+  icon: "JobIconSeniorEngineer"
+  supervisors: job-supervisors-ce
+  access:
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: SeniorEngineerGear
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetEngineering
+
+# Medical
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 40h
+  startingGear: SeniorPhysicianGear
+  icon: "JobIconSeniorPhysician"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  - Chemistry
+  - Paramedic
+  - External
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    ears: ClothingHeadsetMedical
+
+# Science
+- type: job
+  id: SeniorResearcher
+  name: job-name-senior-researcher
+  description: job-description-senior-researcher
+  playTimeTracker: JobSeniorResearcher
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 40h
+  startingGear: SeniorResearcherGear
+  icon: "JobIconSeniorResearcher"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: SeniorResearcherGear
+  equipment:
+    ears: ClothingHeadsetScience
+
+# Cargo
+- type: job
+  id: SeniorCourier
+  name: job-name-senior-courier
+  description: job-description-senior-courier
+  playTimeTracker: JobSeniorCourier
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 40h
+  startingGear: SeniorCourierGear
+  icon: "JobIconSeniorCourier"
+  supervisors: job-supervisors-qm
+  access:
+  - Cargo
+  - Maintenance
+  - Salvage
+
+- type: startingGear
+  id: SeniorCourierGear
+  equipment:
+    ears: ClothingHeadsetCargo
+    pocket1: AppraisalTool

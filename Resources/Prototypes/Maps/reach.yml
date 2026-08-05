@@ -30,15 +30,20 @@
             #engineering (2 - 3)
             AtmosphericTechnician: [ 1, 1 ]
             StationEngineer: [ 1, 2 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
             #medical (2 - 3)
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 1, 2 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
             #science (1)
             Scientist: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
             #security (1 - 3)
             SecurityOfficer: [ 1, 3 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
             #supply (2)
             CargoTechnician: [ 1, 1 ]
+            SeniorCourier: [ 1, 1 ] # Claw Command - senior variant
             SalvageSpecialist: [ 1, 1 ]
             #civilian (3+)
             Passenger: [ -1, -1 ] #infinite, not counted

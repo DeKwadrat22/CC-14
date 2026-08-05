@@ -1,0 +1,368 @@
+# Claw Command - psionic traits, ported from the space fork's Einstein-Engines trait system.
+#
+# Conversion notes:
+#   - That system used `points:` where a NEGATIVE number meant the trait costs points. This fork uses `cost:`
+#     where a POSITIVE number costs points, so every value here is the upstream number with its sign flipped.
+#   - `functions: !type:TraitAddPsionics` became `specials: !type:AddPsionicPowersSpecial`.
+#   - Upstream's rich `requirements:` (CharacterLogicOrRequirement etc.) do not exist here. The three patterns
+#     it actually used are expressed with the fields added to TraitPrototype for this port:
+#       "LatentPsychic OR one of these jobs"  -> requiresAnyTrait + requiresAnyJob
+#       "not an IPC, unless Anomalous Positronics" -> forbiddenSpecies + speciesExemptTraits
+#       "not one of these jobs" (they get it free) -> forbiddenJobs
+
+# ---------------------------------------------------------------------------------------------------------
+# Gateway traits
+# ---------------------------------------------------------------------------------------------------------
+
+- type: trait
+  id: LatentPsychic
+  name: trait-latent-psychic-name
+  description: trait-latent-psychic-desc
+  category: Psionic
+  cost: 4
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  # The Mantis, RD, Chaplain and Librarian are psionic by default, so buying it again would be wasted points.
+  forbiddenJobs:
+    - ForensicMantis
+    - ResearchDirector
+    - Chaplain
+    - Librarian
+    - Borg
+  specials:
+    - !type:MakeLatentPsychicSpecial
+
+- type: trait
+  id: AnomalousPositronics
+  name: trait-anomalous-positronics-name
+  description: trait-anomalous-positronics-desc
+  category: Psionic
+  cost: 4
+  # Only an IPC has psionic insulation to remove in the first place.
+  restrictedSpecies:
+    - SpeciesIPC
+  specials:
+    - !type:RemovePsionicInsulationSpecial
+
+# ---------------------------------------------------------------------------------------------------------
+# Potentia - how readily new powers are rolled over the round
+# ---------------------------------------------------------------------------------------------------------
+
+- type: trait
+  id: HighPotential
+  name: trait-high-potential-name
+  description: trait-high-potential-desc
+  category: Psionic
+  cost: 5
+  excludes:
+    - LowPotential
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  # Kitsune already have an equivalent.
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:MakeLatentPsychicSpecial
+      potentiaMultiplier: 1.5
+
+- type: trait
+  id: LowPotential
+  name: trait-low-potential-name
+  description: trait-low-potential-desc
+  category: Psionic
+  cost: -5
+  excludes:
+    - HighPotential
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:MakeLatentPsychicSpecial
+      potentiaMultiplier: 0.5
+
+# ---------------------------------------------------------------------------------------------------------
+# Amplification and Dampening - raw power versus control
+# ---------------------------------------------------------------------------------------------------------
+
+- type: trait
+  id: HighAmplification
+  name: trait-high-amplification-name
+  description: trait-high-amplification-desc
+  category: Psionic
+  cost: 3
+  excludes:
+    - LowAmplification
+    - PowerOverwhelming
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - HighAmplification
+
+- type: trait
+  id: LowAmplification
+  name: trait-low-amplification-name
+  description: trait-low-amplification-desc
+  category: Psionic
+  cost: -3
+  excludes:
+    - HighAmplification
+    - PowerOverwhelming
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - LowAmplification
+
+- type: trait
+  id: PowerOverwhelming
+  name: trait-power-overwhelming-name
+  description: trait-power-overwhelming-desc
+  category: Psionic
+  cost: 10
+  excludes:
+    - HighAmplification
+    - LowAmplification
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - PowerOverwhelming
+
+- type: trait
+  id: HighDampening
+  name: trait-high-dampening-name
+  description: trait-high-dampening-desc
+  category: Psionic
+  cost: 3
+  excludes:
+    - LowDampening
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - HighDampening
+
+- type: trait
+  id: LowDampening
+  name: trait-low-dampening-name
+  description: trait-low-dampening-desc
+  category: Psionic
+  cost: -3
+  excludes:
+    - HighDampening
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - LowDampening
+
+# ---------------------------------------------------------------------------------------------------------
+# Specific powers
+# ---------------------------------------------------------------------------------------------------------
+
+- type: trait
+  id: NaturalTelepath
+  name: trait-natural-telepath-name
+  description: trait-natural-telepath-desc
+  category: Psionic
+  cost: 1
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  # The RD and the Mantis get telepathy with the job.
+  forbiddenJobs:
+    - ResearchDirector
+    - ForensicMantis
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - TelepathyPower
+
+- type: trait
+  id: DispelPower
+  name: trait-dispel-power-name
+  description: trait-dispel-power-desc
+  category: Psionic
+  cost: 1
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  forbiddenJobs:
+    - ResearchDirector
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - DispelPower
+
+- type: trait
+  id: MetapsionicPower
+  name: trait-metapsionic-power-name
+  description: trait-metapsionic-power-desc
+  category: Psionic
+  cost: 0
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  forbiddenJobs:
+    - ResearchDirector
+    - ForensicMantis
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - MetapsionicPower
+
+- type: trait
+  id: PsychognomyPower
+  name: trait-psychognomy-power-name
+  description: trait-psychognomy-power-desc
+  category: Psionic
+  cost: 1
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  requiresAnyTrait:
+    - LatentPsychic
+    - NaturalTelepath
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+    - ResearchDirector
+    - ForensicMantis
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - PsychognomyPower
+
+- type: trait
+  id: HealingWordPower
+  name: trait-healing-word-power-name
+  description: trait-healing-word-power-desc
+  category: Psionic
+  cost: 3
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  forbiddenJobs:
+    - ResearchDirector
+    - ForensicMantis
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - HealingWordPower
+
+- type: trait
+  id: PsionicRegenerationPower
+  name: trait-psionic-regeneration-power-name
+  description: trait-psionic-regeneration-power-desc
+  category: Psionic
+  cost: 1
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  forbiddenJobs:
+    - ResearchDirector
+    - ForensicMantis
+  requiresAnyTrait:
+    - LatentPsychic
+  requiresAnyJob:
+    - Chaplain
+    - Librarian
+  specials:
+    - !type:AddPsionicPowersSpecial
+      psionicPowers:
+        - PsionicRegenerationPower

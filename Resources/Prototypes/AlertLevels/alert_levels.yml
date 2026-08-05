@@ -21,6 +21,14 @@
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
+    # Claw Command - psionics port. The Alert Procedure guidebook page already documented Code White
+    # (minimum Ψ450) but the level itself did not exist, so it could never actually be called.
+    white:
+      announcement: alert-level-white-announcement
+      sound: /Audio/Announcements/Alerts/code_white.ogg
+      color: White
+      emergencyLightColor: "#F6CCF6"
+      shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
       sound: /Audio/Misc/notice1.ogg

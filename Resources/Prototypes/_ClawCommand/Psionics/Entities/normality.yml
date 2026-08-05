@@ -1,0 +1,74 @@
+# Claw Command - psionics port: normality crystals.
+#
+# The product of the CreateNormalityCrystal reaction and the material glimmer drains are built from.
+# The sprite states already exist in Objects/Materials/materials.rsi.
+
+- type: material
+  id: Normality
+  stackEntity: MaterialNormality1
+  name: materials-normality
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/materials.rsi, state: normality }
+  color: "#53a9ff"
+  price: 7.5
+
+- type: stack
+  id: Normality
+  name: normality
+  icon: { sprite: Objects/Materials/materials.rsi, state: normality }
+  spawn: MaterialNormality1
+  maxCount: 5
+  itemSize: 1
+
+- type: Tag
+  id: NormalityCrystal
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialNormality
+  suffix: Full
+  name: normality crystal
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    layers:
+    - state: normality_3
+      map: ["base"]
+  - type: Appearance
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Normality: 100
+  - type: Tag
+    tags:
+    - NormalityCrystal
+    - RawMaterial
+  - type: Stack
+    stackType: Normality
+    baseLayer: base
+
+- type: entity
+  parent: MaterialNormality
+  id: MaterialNormality1
+  suffix: 1
+  components:
+  - type: Sprite
+    state: normality
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MaterialNormality1
+  id: MaterialNormality3
+  suffix: 3
+  components:
+  - type: Stack
+    count: 3
+
+- type: entity
+  parent: MaterialNormality1
+  id: MaterialNormality5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5

@@ -30,6 +30,7 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem : SharedChatSystem
 {
+    [Dependency] private TelepathicChatSystem _telepath = default!; // claw command - psionics port
     [Dependency] private IReplayRecordingManager _replay = default!;
     [Dependency] private IConfigurationManager _configurationManager = default!;
     [Dependency] private IChatManager _chatManager = default!;
@@ -235,6 +236,10 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case InGameICChatType.Subtle: // CLAW COMMAND: Added.
                 SendEntitySubtle(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
+                break;
+            case InGameICChatType.Telepathic: // CLAW COMMAND: psionics port.
+                // Telepathic chat has no in-world component to hide, so hideLog is the only relevant flag here.
+                _telepath.SendTelepathicChat(source, message, hideLog);
                 break;
         }
     }

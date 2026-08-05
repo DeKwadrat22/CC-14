@@ -637,6 +637,10 @@ namespace Content.Shared.Preferences
                 }
             }
 
+            // Claw Command - species blacklist, forbidden jobs, and the trait/job OR-gate.
+            if (!PassesTraitGates(traitProto, _traitPreferences))
+                return new(this);
+
             if (traitCategory == null)
             {
                 return new(this)
@@ -695,6 +699,62 @@ namespace Content.Shared.Preferences
             {
                 _traitPreferences = list,
             };
+        }
+
+        /// <summary>
+        ///     Claw Command - evaluates the trait gates added for the psionics port: the species blacklist,
+        ///     the forbidden-jobs list, and the "must have one of these traits OR one of these jobs" gate.
+        ///     Species whitelist, mutual exclusions and department restrictions are handled by their own blocks
+        ///     at each call site, because those predate this and are checked against different state.
+        /// </summary>
+        /// <param name="traitProto">The trait being considered.</param>
+        /// <param name="selectedTraits">
+        ///     The traits to test membership against. Callers validating a whole profile pass the set accepted so
+        ///     far; the single-trait path passes the current preferences.
+        /// </param>
+        private bool PassesTraitGates(TraitPrototype traitProto, ICollection<ProtoId<TraitPrototype>> selectedTraits)
+        {
+            // Species blacklist, waivable by an exempting trait.
+            if (traitProto.ForbiddenSpecies.Contains(Species))
+            {
+                var exempt = false;
+                foreach (var waiver in traitProto.SpeciesExemptTraits)
+                {
+                    if (!selectedTraits.Contains(waiver))
+                        continue;
+
+                    exempt = true;
+                    break;
+                }
+
+                if (!exempt)
+                    return false;
+            }
+
+            // Jobs that already get this for free, or for which it makes no sense.
+            foreach (var job in traitProto.ForbiddenJobs)
+            {
+                if (_jobPriorities.TryGetValue(job, out var forbiddenPri) && forbiddenPri > JobPriority.Never)
+                    return false;
+            }
+
+            // "At least one of" gate. Absent when both lists are empty.
+            if (traitProto.RequiresAnyTrait.Count == 0 && traitProto.RequiresAnyJob.Count == 0)
+                return true;
+
+            foreach (var required in traitProto.RequiresAnyTrait)
+            {
+                if (selectedTraits.Contains(required))
+                    return true;
+            }
+
+            foreach (var job in traitProto.RequiresAnyJob)
+            {
+                if (_jobPriorities.TryGetValue(job, out var pri) && pri > JobPriority.Never)
+                    return true;
+            }
+
+            return false;
         }
 
         public string Summary =>
@@ -975,6 +1035,11 @@ namespace Content.Shared.Preferences
                     if (deptBlocked)
                         continue;
                 }
+
+                // Claw Command - species blacklist, forbidden jobs, and the trait/job OR-gate.
+                // Evaluated against the traits accepted so far, matching how Excludes is handled just above.
+                if (!PassesTraitGates(traitProto, result))
+                    continue;
 
                 // Always valid.
                 if (traitProto.Category == null)

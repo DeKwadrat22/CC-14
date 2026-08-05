@@ -8,6 +8,7 @@
   - Quartermaster
   - SalvageSpecialist
   - DogborgMining # _ClawCommand
+  - SeniorCourier # _ClawCommand
 
 - type: department
   id: Civilian
@@ -92,6 +93,7 @@
   - StationEngineer
   - TechnicalAssistant
   - DogborgEngineering # _ClawCommand
+  - SeniorEngineer # _ClawCommand
 
 - type: department
   id: Medical
@@ -106,6 +108,7 @@
   - Psychologist
   - Paramedic
   - DogborgMedical # _ClawCommand
+  - SeniorPhysician # _ClawCommand
 
 - type: department
   id: Security
@@ -120,6 +123,7 @@
   - Detective
   - Warden
   - DogborgSecurity # _ClawCommand
+  - SeniorOfficer # _ClawCommand
 
 - type: department
   id: Science
@@ -130,6 +134,8 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+  - SeniorResearcher # _ClawCommand
+  - ForensicMantis # _ClawCommand - psionics port
 
 - type: department
   id: Silicon

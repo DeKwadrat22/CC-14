@@ -5,9 +5,10 @@
     /// </summary>
     /// <remarks>
     ///     Maps to <see cref="ChatChannel"/>, giving better names.
+    ///     Claw Command - widened to uint alongside ChatChannel, since every member is defined from it.
     /// </remarks>
     [Flags]
-    public enum ChatSelectChannel : ushort
+    public enum ChatSelectChannel : uint
     {
         None = 0,
 
@@ -57,5 +58,10 @@
         ///     Subtle chat heard only right next to each other
         /// </summary>
         Subtle = ChatChannel.Subtle, // claw command
+
+        /// <summary>
+        ///     Claw Command - telepathic chat, available to psions.
+        /// </summary>
+        Telepathic = ChatChannel.Telepathic,
     }
 }

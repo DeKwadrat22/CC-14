@@ -37,5 +37,8 @@
     fiberMaterial: fibers-insulative
     fiberColor: fibers-yellow
   - type: FingerprintMask
-  # Stripped: ClothingGrantPsionicPower + Psionic (Nyanotrasen psionic system not ported)
+  # Claw Command - restored by the psionics port; the grant was stripped when the system was absent.
+  - type: ClothingGrantPsionicPower
+    power: NoosphericZapPower
+  - type: Psionic
 

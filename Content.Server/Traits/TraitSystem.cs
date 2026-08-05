@@ -92,6 +92,49 @@ public sealed partial class TraitSystem : EntitySystem
                     continue;
             }
 
+            // Claw Command - skip if this job is explicitly forbidden from taking the trait.
+            if (traitPrototype.ForbiddenJobs.Count > 0 && args.JobId != null
+                && traitPrototype.ForbiddenJobs.Contains(args.JobId))
+                continue;
+
+            // Claw Command - skip if the species is blacklisted and nothing waives it.
+            if (traitPrototype.ForbiddenSpecies.Contains(args.Profile.Species))
+            {
+                var exempt = false;
+                foreach (var waiver in traitPrototype.SpeciesExemptTraits)
+                {
+                    if (!args.Profile.TraitPreferences.Contains(waiver))
+                        continue;
+
+                    exempt = true;
+                    break;
+                }
+
+                if (!exempt)
+                    continue;
+            }
+
+            // Claw Command - skip unless the "at least one of these traits or jobs" gate is satisfied.
+            if (traitPrototype.RequiresAnyTrait.Count > 0 || traitPrototype.RequiresAnyJob.Count > 0)
+            {
+                var satisfied = false;
+
+                foreach (var required in traitPrototype.RequiresAnyTrait)
+                {
+                    if (!args.Profile.TraitPreferences.Contains(required))
+                        continue;
+
+                    satisfied = true;
+                    break;
+                }
+
+                if (!satisfied && args.JobId != null)
+                    satisfied = traitPrototype.RequiresAnyJob.Contains(args.JobId);
+
+                if (!satisfied)
+                    continue;
+            }
+
             // Claw Command - mark trait as applied for exclusion tracking.
             appliedTraits.Add(traitId);
 

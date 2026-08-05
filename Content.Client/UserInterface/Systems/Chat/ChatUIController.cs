@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Content.Client.Administration.Managers;
@@ -18,6 +18,7 @@ using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Shared.Abilities.Psionics; // claw command - TelepathyComponent
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Decals;
 using Content.Shared.Input;
@@ -86,6 +87,7 @@ public sealed partial class ChatUIController : UIController
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
         {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead},
         {SharedChatSystem.SubtlePrefix, ChatSelectChannel.Subtle}, // claw command
+        {SharedChatSystem.TelepathicPrefix, ChatSelectChannel.Telepathic}, // claw command
     };
 
     public static readonly Dictionary<ChatSelectChannel, char> ChannelPrefixes = new()
@@ -100,6 +102,7 @@ public sealed partial class ChatUIController : UIController
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
         {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix},
         {ChatSelectChannel.Subtle, SharedChatSystem.SubtlePrefix}, // claw command
+        {ChatSelectChannel.Telepathic, SharedChatSystem.TelepathicPrefix}, // claw command
     };
 
     /// <summary>
@@ -516,7 +519,9 @@ public sealed partial class ChatUIController : UIController
         }
     }
 
-    private void UpdateChannelPermissions()
+    // claw command - made public so PsionicChatUpdateSystem can refresh the telepathy channel when the
+    // player gains or loses TelepathyComponent mid-round.
+    public void UpdateChannelPermissions()
     {
         CanSendChannels = default;
         FilterableChannels = default;
@@ -569,6 +574,14 @@ public sealed partial class ChatUIController : UIController
             FilterableChannels |= ChatChannel.AdminAlert;
             FilterableChannels |= ChatChannel.AdminChat;
             CanSendChannels |= ChatSelectChannel.Admin;
+            FilterableChannels |= ChatChannel.Telepathic; // claw command - admins can read psionic chatter
+        }
+
+        // claw command - telepathy is only offered to entities that actually have the power.
+        if (_player.LocalEntity is { } localPlayer && _ent.HasComponent<TelepathyComponent>(localPlayer))
+        {
+            FilterableChannels |= ChatChannel.Telepathic;
+            CanSendChannels |= ChatSelectChannel.Telepathic;
         }
 
         SelectableChannels = CanSendChannels;
