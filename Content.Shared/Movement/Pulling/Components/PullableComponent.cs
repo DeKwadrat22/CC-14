@@ -77,6 +77,51 @@ public sealed partial class PullableComponent : Component
     public TimeSpan NextEscapeAttempt = TimeSpan.Zero;
 
     #endregion
+
+    #region Slamming - claw command
+
+    /// <summary>
+    /// Set while this entity is mid-flight from a slam. The next solid thing they touch is what they
+    /// get hurt on; cleared there.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public bool BeingSlammed;
+
+    /// <summary>
+    /// Whether the in-flight slam is into something solid (wall, locker, window) rather than onto a
+    /// table. Decides which damage figure below gets used on landing.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public bool SlamHardSurface;
+
+    /// <summary>
+    /// How hard they get thrown at the thing.
+    /// </summary>
+    [DataField]
+    public float SlamThrowSpeed = 5f;
+
+    [DataField]
+    public float SlamStaminaDamage = 40f;
+
+    /// <summary>
+    /// Blunt taken from being put through a table, which at least gives way a little.
+    /// </summary>
+    [DataField]
+    public float SlamTableDamage = 5f;
+
+    /// <summary>
+    /// Blunt taken from being driven into a wall, locker or machine, which does not.
+    /// </summary>
+    [DataField]
+    public float SlamObjectDamage = 10f;
+
+    /// <summary>
+    /// How long they stay down afterwards. Doubled when the surface was a glass table.
+    /// </summary>
+    [DataField]
+    public TimeSpan SlamKnockdownDuration = TimeSpan.FromSeconds(3);
+
+    #endregion
 }
 
 public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;

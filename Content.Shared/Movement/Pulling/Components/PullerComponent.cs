@@ -122,6 +122,29 @@ public sealed partial class PullerComponent : Component
     public float ChokeGrabSpeedModifier = 0.4f;
 
     #endregion
+
+    #region Slamming - claw command
+
+    /// <summary>
+    /// Lowest grab stage that lets you slam your victim into things. Soft grabs are just a hold.
+    /// </summary>
+    [DataField]
+    public GrabStage SlamRequiredStage = GrabStage.Hard;
+
+    /// <summary>
+    /// How long after a slam - successful or not - before this puller can escalate or slam again.
+    /// Shares <see cref="NextStageChange"/> with the grab ladder, so a slam locks both out.
+    /// </summary>
+    [DataField]
+    public TimeSpan SlamCooldown = TimeSpan.FromSeconds(3);
+
+    /// <summary>
+    /// How far the victim may be from the thing you are slamming them into.
+    /// </summary>
+    [DataField]
+    public float SlamRange = 2f;
+
+    #endregion
 }
 
 public sealed partial class StopPullingAlertEvent : BaseAlertEvent;

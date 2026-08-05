@@ -26,9 +26,10 @@ namespace Content.Shared.Movement.Pulling.Systems;
 ///     harder to break free, and choking additionally costs a second hand, mutes the victim and stops them
 ///     breathing. Pressing it with combat mode off lets go.
 ///
-///     Adapted for this fork: Goobstation's martial-arts grab overrides, combo events and table slam are not
-///     ported (none of those systems exist here), throwing a grabbed victim is not included, and ContestsSystem
-///     is replaced by the local mass helper at the bottom of this file.
+///     Adapted for this fork: Goobstation's martial-arts grab overrides and combo events are not ported
+///     (none of those systems exist here), throwing a grabbed victim is not included, and ContestsSystem
+///     is replaced by the local mass helper at the bottom of this file. Goobstation's table slam IS ported,
+///     and widened past tables - see PullingSystem.Slam.cs.
 /// </summary>
 public sealed partial class PullingSystem
 {
@@ -56,6 +57,8 @@ public sealed partial class PullingSystem
     {
         SubscribeLocalEvent<PullableComponent, UpdateCanMoveEvent>(OnGrabbedMoveAttempt);
         SubscribeLocalEvent<PullableComponent, SpeakAttemptEvent>(OnGrabbedSpeakAttempt);
+
+        InitializeSlam(); // claw command - table/object slams, see PullingSystem.Slam.cs
     }
 
     /// <summary>
@@ -360,7 +363,11 @@ public sealed partial class PullingSystem
     ///     This fork has no ContestsSystem, so the one contest grabbing uses is reimplemented here with the
     ///     upstream defaults (contests.max_percentage 0.25, clamp override on).
     /// </summary>
-    private float MassContest(EntityUid performer, EntityUid target)
+    /// <param name="bypassClamp">
+    ///     Skip the max_percentage clamp and return the raw mass ratio. Slamming wants this: the clamped
+    ///     ratio never drops below 0.75, so used as a probability it would practically always succeed.
+    /// </param>
+    private float MassContest(EntityUid performer, EntityUid target, bool bypassClamp = false)
     {
         if (!TryComp<PhysicsComponent>(performer, out var performerPhysics)
             || !TryComp<PhysicsComponent>(target, out var targetPhysics)
@@ -368,9 +375,11 @@ public sealed partial class PullingSystem
             || targetPhysics.InvMass == 0)
             return 1f;
 
-        var ratio = Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
-            1 - MassContestMaxPercentage,
-            1 + MassContestMaxPercentage);
+        var raw = performerPhysics.Mass * targetPhysics.InvMass;
+
+        var ratio = bypassClamp
+            ? raw
+            : Math.Clamp(raw, 1 - MassContestMaxPercentage, 1 + MassContestMaxPercentage);
 
         return Math.Clamp(ratio, float.Epsilon, float.MaxValue);
     }
