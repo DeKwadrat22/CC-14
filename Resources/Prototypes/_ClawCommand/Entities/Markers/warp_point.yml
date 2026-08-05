@@ -5,7 +5,7 @@
   suffix: Evac Shuttle
   components:
   - type: WarpPoint
-    location: Evac Shuttle
+    location: location-evac-shuttle
 
 - type: entity
   id: WarpPointShuttle
@@ -13,7 +13,7 @@
   suffix: Shuttle
   components:
   - type: WarpPoint
-    location: Shuttle
+    location: location-shuttle
 
 - type: entity
   id: WarpPointDebris
@@ -21,7 +21,7 @@
   suffix: Space Debris
   components:
   - type: WarpPoint
-    location: Space Debris
+    location: location-space-debris
 
 - type: entity
   id: WarpPointRuin
@@ -29,7 +29,7 @@
   suffix: Space Ruin
   components:
   - type: WarpPoint
-    location: Space Ruin
+    location: location-space-ruin
 
 # Command
 - type: entity
@@ -38,7 +38,7 @@
   suffix: Bridge
   components:
   - type: WarpPoint
-    location: Bridge
+    location: location-bridge
 
 - type: entity
   id: WarpPointVault
@@ -46,7 +46,7 @@
   suffix: Vault
   components:
   - type: WarpPoint
-    location: Vault
+    location: location-vault
 
 # Security
 - type: entity
@@ -55,7 +55,7 @@
   suffix: Security
   components:
   - type: WarpPoint
-    location: Security
+    location: location-security
 
 - type: entity
   id: WarpPointPerma
@@ -63,7 +63,7 @@
   suffix: Perma
   components:
   - type: WarpPoint
-    location: Perma
+    location: location-perma
 
 - type: entity
   id: WarpPointDetective
@@ -71,7 +71,7 @@
   suffix: Detective
   components:
   - type: WarpPoint
-    location: Detective
+    location: location-detective
 
 - type: entity
   id: WarpPointCourt
@@ -79,7 +79,7 @@
   suffix: Courtroom
   components:
   - type: WarpPoint
-    location: Courtroom
+    location: location-courtroom
 
 #Medical
 - type: entity
@@ -88,7 +88,7 @@
   suffix: Medical
   components:
   - type: WarpPoint
-    location: Medical
+    location: location-medical
 
 - type: entity
   id: WarpPointMorgue
@@ -96,7 +96,7 @@
   suffix: Morgue
   components:
   - type: WarpPoint
-    location: Morgue
+    location: location-morgue
 
 #Epistemics
 - type: entity
@@ -105,7 +105,7 @@
   suffix: Science
   components:
   - type: WarpPoint
-    location: Science
+    location: location-science
 
 #Logistics
 - type: entity
@@ -114,7 +114,7 @@
   suffix: Cargo
   components:
   - type: WarpPoint
-    location: Cargo
+    location: location-cargo
 
 - type: entity
   id: WarpPointSalvage
@@ -122,7 +122,7 @@
   suffix: Salvage
   components:
   - type: WarpPoint
-    location: Salvage
+    location: location-salvage
 
 #Engineering
 - type: entity
@@ -131,7 +131,7 @@
   suffix: Engineering
   components:
   - type: WarpPoint
-    location: Engineering
+    location: location-engineering
 
 - type: entity
   id: WarpPointSingulo
@@ -139,7 +139,7 @@
   suffix: Singularity
   components:
   - type: WarpPoint
-    location: Singularity
+    location: location-singularity
 
 - type: entity
   id: WarpPointAtmos
@@ -147,7 +147,7 @@
   suffix: Atmos
   components:
   - type: WarpPoint
-    location: Atmos
+    location: location-atmos
 
 #Service
 - type: entity
@@ -156,7 +156,7 @@
   suffix: HoP
   components:
   - type: WarpPoint
-    location: HoP
+    location: location-hop
 
 - type: entity
   id: WarpPointKitchen
@@ -164,7 +164,7 @@
   suffix: Kitchen
   components:
   - type: WarpPoint
-    location: Kitchen
+    location: location-kitchen
 
 - type: entity
   id: WarpPointBar
@@ -172,7 +172,7 @@
   suffix: Bar
   components:
   - type: WarpPoint
-    location: Bar
+    location: location-bar
 
 - type: entity
   id: WarpPointBotany
@@ -180,7 +180,7 @@
   suffix: Botany
   components:
   - type: WarpPoint
-    location: Botany
+    location: location-botany
 
 - type: entity
   id: WarpPointJanitor
@@ -188,7 +188,7 @@
   suffix: Janitor
   components:
   - type: WarpPoint
-    location: Janitor
+    location: location-janitor
 
 - type: entity
   id: WarpPointReporter
@@ -196,7 +196,7 @@
   suffix: Reporter
   components:
   - type: WarpPoint
-    location: Reporter
+    location: location-reporter
 
 - type: entity
   id: WarpPointLawyer
@@ -204,7 +204,7 @@
   suffix: Lawyer
   components:
   - type: WarpPoint
-    location: Lawyer
+    location: location-lawyer
 
 #Misc
 - type: entity
@@ -213,7 +213,7 @@
   suffix: AI
   components:
   - type: WarpPoint
-    location: AI
+    location: location-ai
 
 - type: entity
   id: WarpPointArrivals
@@ -221,7 +221,7 @@
   suffix: Arrivals
   components:
   - type: WarpPoint
-    location: Arrivals
+    location: location-arrivals
 
 - type: entity
   id: WarpPointEvac
@@ -229,7 +229,7 @@
   suffix: Evac
   components:
   - type: WarpPoint
-    location: Evac
+    location: location-evac
 
 - type: entity
   id: WarpPointCryo
@@ -237,7 +237,7 @@
   suffix: Cryo
   components:
   - type: WarpPoint
-    location: Cryo
+    location: location-cryo
 
 - type: entity
   id: WarpPointChapel
@@ -245,7 +245,7 @@
   suffix: Chapel
   components:
   - type: WarpPoint
-    location: Chapel
+    location: location-chapel
 
 - type: entity
   id: WarpPointLibrary
@@ -253,7 +253,7 @@
   suffix: Library
   components:
   - type: WarpPoint
-    location: Library
+    location: location-library
 
 - type: entity
   id: WarpPointDorms
@@ -261,7 +261,7 @@
   suffix: Dorms
   components:
   - type: WarpPoint
-    location: Dorms
+    location: location-dorms
 
 - type: entity
   id: WarpPointDisposals
@@ -269,4 +269,4 @@
   suffix: Disposals
   components:
   - type: WarpPoint
-    location: Disposals
+    location: location-disposals

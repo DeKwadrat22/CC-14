@@ -7,7 +7,6 @@
   startingGear: PrisonerGear
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
-  canBeAntag: false
   setPreference: true
   alwaysUseSpawner: true
   weight: 0

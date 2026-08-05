@@ -55,7 +55,6 @@
   cost: 10000
   recipeUnlocks:
   - BorgModulePka
-  - BorgModuleJetpack
   - ClarkeHarness
   - ClarkeHead
   - ClarkeLArm

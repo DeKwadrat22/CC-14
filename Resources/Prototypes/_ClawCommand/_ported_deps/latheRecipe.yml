@@ -1,0 +1,58 @@
+# Claw Command - latheRecipe prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/Recipes/Lathes/robotics.yml
+- type: latheRecipe
+  id: BorgModulePka
+  result: BorgModulePka
+  category: Robotics
+  completetime: 3
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500
+    Silver: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretAIControlPanelElectronics
+  result: WeaponEnergyTurretAIControlPanelElectronics
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretAIMachineCircuitboard
+  result: WeaponEnergyTurretAIMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretStationControlPanelElectronics
+  result: WeaponEnergyTurretStationControlPanelElectronics
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretStationMachineCircuitboard
+  result: WeaponEnergyTurretStationMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100

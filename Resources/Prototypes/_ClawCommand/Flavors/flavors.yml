@@ -1,14 +1,12 @@
+# Claw Command - flavour prototypes referenced by ported food, drink and reagents but never
+# defined in this fork. Real definitions come from the `space` / Goob-Station trees where
+# they exist; the rest are generated in the fork's own flavour format.
+
 - type: flavor
   id: FlavorClawtail
   flavorType: Complex
-  description: flavor-complex-clawtail
+  description: flavor-complex-flavorclawtail
 
-- type: flavor
-  id: alienblood
-  flavorType: Base
-  description: flavor-base-alienblood
-
-# Ported from _Floof
 - type: flavor
   id: ablustine
   flavorType: Complex
@@ -20,9 +18,69 @@
   description: flavor-complex-anisette
 
 - type: flavor
+  id: arsonistsbrew
+  flavorType: Complex
+  description: flavor-complex-arsonistsbrew
+
+- type: flavor
+  id: atomicpunch
+  flavorType: Complex
+  description: flavor-complex-atomicpunch
+
+- type: flavor
+  id: avocado
+  flavorType: Complex
+  description: flavor-complex-avocado
+
+- type: flavor
+  id: blooddrop
+  flavorType: Complex
+  description: flavor-complex-blooddrop
+
+- type: flavor
   id: blueballer
   flavorType: Complex
   description: flavor-complex-blueballer
+
+- type: flavor
+  id: brainbomb
+  flavorType: Complex
+  description: flavor-complex-brainbomb
+
+- type: flavor
+  id: bubbletea
+  flavorType: Complex
+  description: flavor-complex-bubbletea
+
+- type: flavor
+  id: caramel
+  flavorType: Complex
+  description: flavor-complex-caramel
+
+- type: flavor
+  id: chuddy
+  flavorType: Base
+  description: flavor-base-chuddy
+
+- type: flavor
+  id: circusjuice
+  flavorType: Complex
+  description: flavor-complex-circusjuice
+
+- type: flavor
+  id: coconut
+  flavorType: Complex
+  description: flavor-complex-coconut
+
+- type: flavor
+  id: cucumber
+  flavorType: Complex
+  description: flavor-complex-cucumber
+
+- type: flavor
+  id: despair
+  flavorType: Complex
+  description: flavor-complex-despair
 
 - type: flavor
   id: dragonsblood
@@ -45,6 +103,26 @@
   description: flavor-complex-eminence
 
 - type: flavor
+  id: emptiness
+  flavorType: Complex
+  description: flavor-complex-emptiness
+
+- type: flavor
+  id: enthralling
+  flavorType: Complex
+  description: flavor-complex-enthralling
+
+- type: flavor
+  id: ginandpussy
+  flavorType: Complex
+  description: flavor-complex-ginandpussy
+
+- type: flavor
+  id: gold
+  flavorType: Complex
+  description: flavor-complex-gold
+
+- type: flavor
   id: goldbloomspecial
   flavorType: Complex
   description: flavor-complex-goldbloomspecial
@@ -55,9 +133,39 @@
   description: flavor-complex-grandnavy
 
 - type: flavor
+  id: graveyard
+  flavorType: Complex
+  description: flavor-complex-graveyard
+
+- type: flavor
+  id: greengrass
+  flavorType: Complex
+  description: flavor-complex-greengrass
+
+- type: flavor
+  id: gunmetal
+  flavorType: Complex
+  description: flavor-complex-gunmetal
+
+- type: flavor
+  id: hazelnut
+  flavorType: Complex
+  description: flavor-complex-hazelnut
+
+- type: flavor
+  id: healthcodeviolation
+  flavorType: Complex
+  description: flavor-complex-healthcodeviolation
+
+- type: flavor
   id: hornystallion
   flavorType: Complex
   description: flavor-complex-hornystallion
+
+- type: flavor
+  id: irishcarbomb
+  flavorType: Complex
+  description: flavor-complex-irish-car-bomb
 
 - type: flavor
   id: koboldkooler
@@ -70,6 +178,11 @@
   description: flavor-complex-lamplight
 
 - type: flavor
+  id: lemondrop
+  flavorType: Complex
+  description: flavor-complex-lemondrop
+
+- type: flavor
   id: lemonpopsicle
   flavorType: Complex
   description: flavor-complex-lemonpopsicle
@@ -80,9 +193,34 @@
   description: flavor-complex-loverskiss
 
 - type: flavor
+  id: lust
+  flavorType: Complex
+  description: flavor-complex-lust
+
+- type: flavor
+  id: mango
+  flavorType: Complex
+  description: flavor-complex-mango
+
+- type: flavor
   id: mariejulep
   flavorType: Complex
   description: flavor-complex-mariejulep
+
+- type: flavor
+  id: marshmallow
+  flavorType: Complex
+  description: flavor-complex-marshmallow
+
+- type: flavor
+  id: mining
+  flavorType: Complex
+  description: flavor-complex-mining
+
+- type: flavor
+  id: mint
+  flavorType: Complex
+  description: flavor-complex-mint
 
 - type: flavor
   id: mossbloodshot
@@ -95,9 +233,29 @@
   description: flavor-complex-nikkonectar
 
 - type: flavor
+  id: nuts
+  flavorType: Complex
+  description: flavor-complex-nuts
+
+- type: flavor
   id: opsshine
   flavorType: Complex
   description: flavor-complex-opsshine
+
+- type: flavor
+  id: orangecreamcicle
+  flavorType: Complex
+  description: flavor-complex-orangecreamcicle
+
+- type: flavor
+  id: pear
+  flavorType: Complex
+  description: flavor-complex-pear
+
+- type: flavor
+  id: pinkdrink
+  flavorType: Complex
+  description: flavor-complex-pinkdrink
 
 - type: flavor
   id: pompassion
@@ -130,40 +288,14 @@
   description: flavor-complex-salvagersdelight
 
 - type: flavor
-  id: syndicatesoverseer
+  id: sapopicante
   flavorType: Complex
-  description: flavor-complex-syndicatesoverseer
+  description: flavor-complex-sapopicante
 
 - type: flavor
-  id: voltage
+  id: silver
   flavorType: Complex
-  description: flavor-complex-voltage
-
-- type: flavor
-  id: yeolhandy
-  flavorType: Complex
-  description: flavor-complex-yeolhandy
-
-- type: flavor
-  id: syndicate-eggnog
-  flavorType: Complex
-  description: flavor-complex-syndicate-eggnog
-
-- type: flavor
-  id: ginandpussy
-  flavorType: Complex
-  description: flavor-complex-ginandpussy
-
-# Ported from DeltaV (Nyanotrasen + Delta V section)
-- type: flavor
-  id: soju
-  flavorType: Complex
-  description: flavor-complex-soju
-
-- type: flavor
-  id: orangecreamcicle
-  flavorType: Complex
-  description: flavor-complex-orangecreamcicle
+  description: flavor-complex-silver
 
 - type: flavor
   id: silverjack
@@ -171,106 +303,66 @@
   description: flavor-complex-silverjack
 
 - type: flavor
-  id: brainbomb
+  id: soju
   flavorType: Complex
-  description: flavor-complex-brainbomb
+  description: flavor-complex-soju
 
 - type: flavor
-  id: atomicpunch
+  id: spacetime
   flavorType: Complex
-  description: flavor-complex-atomicpunch
+  description: flavor-complex-spacetime
 
 - type: flavor
-  id: circusjuice
+  id: star
   flavorType: Complex
-  description: flavor-complex-circusjuice
+  description: flavor-complex-star
 
 - type: flavor
-  id: pinkdrink
+  id: strawberry
   flavorType: Complex
-  description: flavor-complex-pinkdrink
-
-- type: flavor
-  id: sapopicante
-  flavorType: Complex
-  description: flavor-complex-sapopicante
-
-- type: flavor
-  id: graveyard
-  flavorType: Complex
-  description: flavor-complex-graveyard
-
-- type: flavor
-  id: bubbletea
-  flavorType: Complex
-  description: flavor-complex-bubbletea
-
-- type: flavor
-  id: healthcodeviolation
-  flavorType: Complex
-  description: flavor-complex-healthcodeviolation
-
-- type: flavor
-  id: gunmetal
-  flavorType: Complex
-  description: flavor-complex-gunmetal
-
-- type: flavor
-  id: lemondrop
-  flavorType: Complex
-  description: flavor-complex-lemondrop
-
-- type: flavor
-  id: greengrass
-  flavorType: Complex
-  description: flavor-complex-greengrass
-
-- type: flavor
-  id: arsonistsbrew
-  flavorType: Complex
-  description: flavor-complex-arsonistsbrew
-
-# Ported from vanilla
-- type: flavor
-  id: irishcarbomb
-  flavorType: Complex
-  description: flavor-complex-irish-car-bomb
-
-# Ported alongside missing reagents (CucumberWater, Ectoplasm)
-- type: flavor
-  id: cucumber
-  flavorType: Complex
-  description: flavor-complex-cucumber
+  description: flavor-complex-strawberry
 
 - type: flavor
   id: sublime
   flavorType: Complex
   description: flavor-complex-sublime
 
-# Ported food entities reference these flavors but they weren't defined.
 - type: flavor
-  id: avocado
+  id: syndicate-eggnog
   flavorType: Complex
-  description: flavor-complex-avocado
+  description: flavor-complex-syndicate-eggnog
 
 - type: flavor
-  id: pear
+  id: syndicatesoverseer
   flavorType: Complex
-  description: flavor-complex-pear
+  description: flavor-complex-syndicatesoverseer
+
+- type: flavor
+  id: unicorntears
+  flavorType: Complex
+  description: flavor-complex-unicorntears
 
 - type: flavor
   id: vanilla
   flavorType: Complex
   description: flavor-complex-vanilla
 
-# Ported from Goob-Station (_Goobstation/Flavors/flavors.yml) alongside the
-# vox-fried "chicken" entity and the rainbow lollypop.
 - type: flavor
-  id: chuddy
+  id: voltage
   flavorType: Complex
-  description: flavor-complex-chuddy
+  description: flavor-complex-voltage
 
 - type: flavor
-  id: unicorntears
+  id: walnut
   flavorType: Complex
-  description: flavor-complex-unicorntears
+  description: flavor-complex-walnut
+
+- type: flavor
+  id: whitechocolatechip
+  flavorType: Complex
+  description: flavor-complex-whitechocolatechip
+
+- type: flavor
+  id: yeolhandy
+  flavorType: Complex
+  description: flavor-complex-yeolhandy

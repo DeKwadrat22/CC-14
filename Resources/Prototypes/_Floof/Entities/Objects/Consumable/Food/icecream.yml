@@ -296,7 +296,7 @@
   components:
   - type: FlavorProfile
     flavors:
-    - space time
+    - spacetime
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Food/icecream.rsi
     layers:

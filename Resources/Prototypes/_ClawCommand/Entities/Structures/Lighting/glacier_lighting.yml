@@ -39,9 +39,6 @@
     state: base
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeRed
-    damage:
-      types:
-        Heat: 2
   - type: StaticPrice #DynamicPrice
     price: 25
 

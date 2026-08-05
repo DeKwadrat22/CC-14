@@ -17,7 +17,6 @@
         type: GatewayBoundUserInterface
   - type: Gateway
     enabled: true
-    tagRestriction: LavalandStationGateway
   - type: Tag
     tags:
     - Structure
@@ -38,7 +37,6 @@
         type: GatewayBoundUserInterface
   - type: Gateway
     enabled: true
-    tagRestriction: LavalandGateway
   - type: Tag
     tags:
     - Structure

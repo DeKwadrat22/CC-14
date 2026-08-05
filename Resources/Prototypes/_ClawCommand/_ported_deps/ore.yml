@@ -1,0 +1,9 @@
+# Claw Command - ore prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/_Goobstation/ore.yml
+- type: ore
+  id: OreBSCrystal
+  oreEntity: MaterialBSCrystal1Unprocessed # Lavaland Change
+  minOreYield: 1
+  maxOreYield: 2

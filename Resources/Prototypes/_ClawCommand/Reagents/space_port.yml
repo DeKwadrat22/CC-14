@@ -45,14 +45,16 @@
         amount: 2
       - !type:HealthChange
         damage:
-          groups:
-            Burn: -5
-            Brute: -4
           types:
-            Caustic: -3
+            Heat: -1.25
+            Shock: -1.25
+            Cold: -1.25
+            Caustic: -4.25
+            Blunt: -1.3333
+            Slash: -1.3333
+            Piercing: -1.3333
             Poison: -3
             Bloodloss: -3
-
 # === Toxins ===
 
 - type: reagent
@@ -72,8 +74,9 @@
       - !type:HealthChange
         probability: 0.4
         damage:
-          groups:
-            Toxin: 2
+          types:
+            Poison: 1
+            Radiation: 1
       # Claw Command - restored by the psionics port. A sufficient dose permanently strips psionic powers.
       - !type:ChemRemovePsionic
         conditions:

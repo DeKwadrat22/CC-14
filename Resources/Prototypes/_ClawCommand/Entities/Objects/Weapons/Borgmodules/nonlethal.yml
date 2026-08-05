@@ -16,7 +16,6 @@
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 30
 
 - type: entity
@@ -27,7 +26,6 @@
   description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
   components:
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 40
 
 # Claw Command: borg-only reusable zipties. Unlike normal zipties these are NOT consumed on use

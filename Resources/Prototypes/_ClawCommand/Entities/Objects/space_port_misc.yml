@@ -183,7 +183,6 @@
     - suitStorage
     - Belt
   - type: GasTank
-    outputPressure: 42.6
     air:
       volume: 0.75
 
@@ -194,7 +193,6 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 42.6
     air:
       volume: 0.75
       temperature: 293.15

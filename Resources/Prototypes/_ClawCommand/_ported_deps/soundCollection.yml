@@ -1,0 +1,31 @@
+# Claw Command - soundCollection prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/_Nuclear14/SoundCollections/footsteps.yml
+- type: soundCollection
+  id: N14FootstepDirt
+  files:
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt1.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt2.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt3.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt4.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt5.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt6.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt7.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt8.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/Dirt/dirt9.ogg
+
+# from Resources/Prototypes/_Nuclear14/SoundCollections/footsteps.yml
+- type: soundCollection
+  id: N14FootstepMetalHollow
+  files:
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow1.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow2.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow3.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow4.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow5.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow6.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow7.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow8.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow9.ogg
+    - /Audio/_Nuclear14/Effects/Footsteps/MetalHollow/metalhollow10.ogg

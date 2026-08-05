@@ -26,7 +26,6 @@
   id: RecipeHotX
   name: hotcross bun recipe
   result: FoodBakedBunHotX
-  resultCount: 2
   time: 10
   group: Breads
   reagents:
@@ -38,7 +37,6 @@
   id: RecipeMeatBun
   name: meat bun recipe
   result: FoodBakedBunMeat
-  resultCount: 2
   time: 10
   group: Breads
   solids:

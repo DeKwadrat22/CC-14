@@ -44,7 +44,7 @@
   - LanguageSpeaker
   - LanguageKnowledge
   # Einstein Engines - Language end
-  blacklist:
+  equipmentBlacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
     - HumanoidProfile # will cause problems for downstream felinids getting cloned as Urists

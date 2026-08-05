@@ -48,6 +48,10 @@ namespace Content.Shared._ClawCommand.Lavaland.LavalandDeps
     {
         [DataField]
         public float Power = 0f;
+
+        // Goob's mobs set this alongside Power; the stub carries it so the ported YAML loads.
+        [DataField]
+        public float Factor = 1f;
     }
 
     // Goob multi-shot gun firing (pistol PKA). Inert — Goob's SharedMultishotSystem

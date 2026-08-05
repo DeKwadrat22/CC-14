@@ -20,7 +20,8 @@
       coefficients:
         Caustic: 0.95
   - type: TemperatureProtection
-    coefficient: 1
+    coolingCoefficient: 1
+    heatingCoefficient: 1
 
 # --- ClothingHandsGlovesColorYellowUnsulated ---
 - type: entity

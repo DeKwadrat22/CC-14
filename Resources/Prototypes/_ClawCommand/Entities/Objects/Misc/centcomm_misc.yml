@@ -2,8 +2,8 @@
 # Dropped components flagged inline.
 
 # --- Bedsheet "Invisibility Cloak" ---
-# Psionic and ClothingGrantPsionicPower components don't exist in this fork —
-# the cloak is reduced to a tattered bedsheet that can still be picked up.
+# The Psionic and ClothingGrantPsionicPower components were absent when this was first ported, so the cloak
+# was reduced to a plain tattered bedsheet. The psionics port brought both systems in, so the grant is back.
 - type: entity
   id: BedsheetInvisibilityCloak
   parent: BedsheetBase
@@ -153,10 +153,6 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeFrostyBlue
-    damage:
-      types:
-        Heat: 0.2
-
 # --- Directional tinted window ---
 - type: entity
   id: WindowTintedDirectional
@@ -191,18 +187,6 @@
       layers:
         - state: redws
     - type: GasCanister
-      gasMixture:
-        volume: 1000
-        moles:
-          - 1310.19735
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 561.51315
-        temperature: 293.15
     - type: Destructible
       thresholds:
       - trigger:

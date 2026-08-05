@@ -8,7 +8,6 @@
   startingGear: AnomalyGear
   alwaysUseSpawner: true
   overrideConsoleVisibility: true
-  canBeAntag: false
   icon: "JobIconNoId"
   joinNotifyCrew: false
   announceArrival: false # claw command - anomalies are not crew, no arrivals announcement ever

@@ -1,0 +1,18 @@
+# Claw Command - foodSequenceElement prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/_Goobstation/Cooking/food_sequence_element.yml
+- type: foodSequenceElement
+  id: FSE_Mango
+  name: food-sequence-content-mango
+  sprites:
+  - sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi
+    state: produce
+
+# from Goob _Goobstation/Cooking/food_sequence_element.yml
+- type: foodSequenceElement
+  id: FSE_MangoBurger
+  name: food-sequence-burger-content-mango
+  sprites:
+  - sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi
+    state: produce

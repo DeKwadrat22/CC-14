@@ -17,8 +17,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #command

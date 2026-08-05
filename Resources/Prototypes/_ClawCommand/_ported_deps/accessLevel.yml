@@ -1,0 +1,7 @@
+# Claw Command - accessLevel prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/DeltaV/Access/service.yml
+- type: accessLevel
+  id: Boxer
+  name: id-card-access-level-boxer

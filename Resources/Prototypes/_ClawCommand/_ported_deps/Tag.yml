@@ -1,0 +1,18 @@
+# Claw Command - Tag prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/Nyanotrasen/tags.yml
+- type: Tag
+  id: CoreSilver
+
+# from Resources/Prototypes/_ClawCommand/tags.yml
+- type: Tag
+  id: DockPod
+
+# from Resources/Prototypes/_ClawCommand/tags.yml
+- type: Tag
+  id: DroneUsable
+
+# from Resources/Prototypes/_Goobstation/tags.yml
+- type: Tag
+  id: ToyGrenade

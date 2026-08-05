@@ -18,6 +18,5 @@
       state: bluespace_lifeline
   - type: ConfirmableAction
     popup: bluespace-lifeline-confirm-popup
-    popupType: LargeCaution
     confirmDelay: 1
     primeTime: 5

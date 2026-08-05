@@ -1,3 +1,6 @@
+# Claw Command - cube spawns retargeted from Goob's Mob*Random variants to this fork's own
+# species mobs; the fork has no random-appearance variants. Cubes for species the fork does
+# not have at all (Harpy, Rodentia, Yowie, Chitinid) are removed rather than left pointing at nothing.
 # SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
@@ -16,7 +19,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobHumanRandom
+    - MobHuman
 
 - type: entity
   parent: MonkeyCube
@@ -25,7 +28,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobDionaRandom
+    - MobDiona
 
 - type: entity
   parent: MonkeyCube
@@ -34,7 +37,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobFelinidRandom
+    - MobFelinid
 
 - type: entity
   parent: MonkeyCube
@@ -43,7 +46,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobGingerbreadRandom
+    - MobGingerbread
 
 - type: entity
   parent: MonkeyCube
@@ -52,7 +55,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobMothRandom
+    - MobMoth
 
 - type: entity
   parent: MonkeyCube
@@ -61,25 +64,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobDwarfRandom
-
-- type: entity
-  parent: MonkeyCube
-  id: HarpyCube
-  name: harpy cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobHarpyRandom
-
-- type: entity
-  parent: MonkeyCube
-  id: RodentiaCube
-  name: rodentia cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobRodentiaRandom
+    - MobDwarf
 
 - type: entity
   parent: MonkeyCube
@@ -88,7 +73,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobReptilianRandom
+    - MobReptilian
 
 - type: entity
   parent: MonkeyCube
@@ -97,7 +82,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobVulpkaninRandom
+    - MobVulpkanin
 
 - type: entity
   parent: MonkeyCube
@@ -106,7 +91,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobSlimePersonRandom
+    - MobSlimePerson
 
 - type: entity
   parent: MonkeyCube
@@ -115,16 +100,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobTajaranRandom
-
-- type: entity
-  parent: MonkeyCube
-  id: YowieCube
-  name: yowie cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobYowieRandom
+    - MobTajaran
 
 - type: entity
   parent: MonkeyCube
@@ -133,7 +109,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobVoxRandom
+    - MobVox
 
 - type: entity
   parent: MonkeyCube
@@ -142,16 +118,7 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobShadowkinRandom
-
-- type: entity
-  parent: MonkeyCube
-  id: ChitinidCube
-  name: chitinid cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobChitinidRandom
+    - MobShadowkin
 
 - type: entity
   parent: MonkeyCube
@@ -160,4 +127,4 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobFeroxiRandom
+    - MobFeroxi

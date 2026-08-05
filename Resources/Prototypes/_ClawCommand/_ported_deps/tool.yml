@@ -1,0 +1,10 @@
+# Claw Command - tool qualities referenced by ported content but missing from this fork.
+# The prototype kind is `tool` here, not `toolQuality`, which is why the harvester missed it.
+
+# from Goob-Station Resources/Prototypes/_Goobstation/tool-qualities.yml
+- type: tool
+  id: Axing
+  name: tool-quality-axing-name
+  toolName: tool-quality-axing-tool-name
+  spawn: FireAxe
+  icon: { sprite: Objects/Weapons/Melee/fireaxe.rsi, state: icon }

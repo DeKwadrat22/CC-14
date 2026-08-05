@@ -35,4 +35,3 @@
         component: DrunkStatusEffect
         type: Add
         time: 20
-        refresh: false

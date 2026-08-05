@@ -34,7 +34,6 @@
 - type: marking
   id: AvaliTail
   bodyPart: Chest
-  markingCategory: Tail
   groupWhitelist: [ MarkingsAvali ]
   forcedColoring: true
   sprites:
@@ -45,7 +44,6 @@
 - type: marking
   id: AvaliTailFeathers
   bodyPart: Chest
-  markingCategory: Tail
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -55,7 +53,6 @@
 - type: marking
   id: AvaliLArmFeathers
   bodyPart: LHand
-  markingCategory: LeftHand
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -64,7 +61,6 @@
 - type: marking
   id: AvaliRArmFeathers
   bodyPart: RHand
-  markingCategory: RightHand
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -73,7 +69,6 @@
 - type: marking
   id: AvaliLLegFeathers
   bodyPart: LFoot
-  markingCategory: LeftFoot
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -82,7 +77,6 @@
 - type: marking
   id: AvaliRLegFeathers
   bodyPart: RFoot
-  markingCategory: RightFoot
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -92,7 +86,6 @@
 - type: marking
   id: AvaliFluff
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -102,7 +95,6 @@
 - type: marking
   id: AvaliFluffHead
   bodyPart: Head
-  markingCategory: Head
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi
@@ -111,7 +103,6 @@
 - type: marking
   id: AvaliFluffHeadUp
   bodyPart: Head
-  markingCategory: Head
   groupWhitelist: [ MarkingsAvali ]
   sprites:
   - sprite: _ClawCommand/Mobs/Customization/avali_marks.rsi

@@ -139,6 +139,7 @@
   - type: Bloodstream
     bloodReagent: AmmoniaBlood
   - type: Temperature
+  - type: TemperatureDamage
     coldDamageThreshold: 195.4   # cold-tolerant (ammonia freezing point ~ -77 C)
     heatDamageThreshold: 320.15  # heat-fragile (47 C)
     coldDamage:

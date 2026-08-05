@@ -18,7 +18,8 @@
       coefficients:
         Caustic: 0.25
   - type: TemperatureProtection
-    coefficient: 1
+    coolingCoefficient: 1
+    heatingCoefficient: 1
 
 # --- ClothingOuterChiefJustice ---
 - type: entity
@@ -32,7 +33,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/cjrobe.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    coolingCoefficient: 0.1
+    heatingCoefficient: 0.1
 
 # --- ClothingOuterCoatHyenhSweater ---
 - type: entity
@@ -46,7 +48,8 @@
     - type: Clothing
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/hyenh.rsi
     - type: TemperatureProtection
-      coefficient: 0.1
+      coolingCoefficient: 0.1
+      heatingCoefficient: 0.1
 
 # --- ClothingOuterCoatLettermanRed ---
 - type: entity
@@ -60,7 +63,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_red.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    coolingCoefficient: 0.4
+    heatingCoefficient: 0.4
 ## mnk
 
 # --- ClothingOuterHardsuitFreelancerPilot ---
@@ -102,7 +106,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/OuterClothing/Robes/brown.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    coolingCoefficient: 0.2
+    heatingCoefficient: 0.2
 
 # --- ClothingOuterRobeTechPriest ---
 - type: entity
@@ -116,7 +121,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/OuterClothing/Robes/techpriest.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    coolingCoefficient: 0.2
+    heatingCoefficient: 0.2
 
 # --- ClothingOuterWinterCoatLong ---
 - type: entity

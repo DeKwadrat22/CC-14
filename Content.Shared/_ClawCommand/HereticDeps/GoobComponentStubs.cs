@@ -307,7 +307,13 @@ namespace Content.Server._White.Xenomorphs.FaceHugger
 // --- EinsteinEngines language stack ---
 namespace Content.Shared._EinsteinEngines.Language.Components
 {
-    [RegisterComponent] public sealed partial class LanguageSpeakerComponent : Component;
+    [RegisterComponent]
+    public sealed partial class LanguageSpeakerComponent : Component
+    {
+        // Einstein Engines' language system sets a starting language on the mob; the stub carries
+        // the field so the ported YAML loads even though nothing reads it here.
+        [DataField] public string? CurrentLanguage;
+    }
     [RegisterComponent] public sealed partial class UniversalLanguageSpeakerComponent : Component;
 }
 
