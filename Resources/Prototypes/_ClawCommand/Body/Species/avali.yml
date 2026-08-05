@@ -131,10 +131,7 @@
   components:
   # Voice — uses the ported Avali speech + emote sound profiles (MaleAvali / FemaleAvali).
   - type: Vocal
-    sounds:
-      Male: MaleAvali
-      Female: FemaleAvali
-      Unsexed: MaleAvali
+    emoteSounds: MaleAvali # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
   - type: Speech
     speechSounds: MaleAvali
     speechVerb: Parrot

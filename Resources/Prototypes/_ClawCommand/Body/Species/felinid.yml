@@ -118,10 +118,7 @@
     - id: FoodMeatHuman
       amount: 3
   - type: Vocal
-    sounds:
-      Male: UnisexFelinid
-      Female: FemaleFelinid
-      Unsexed: UnisexFelinid
+    emoteSounds: UnisexFelinid # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
   - type: Speech
     speechSounds: Cat
     speechVerb: SpeechFelinid

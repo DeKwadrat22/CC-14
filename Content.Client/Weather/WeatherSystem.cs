@@ -45,24 +45,29 @@ public sealed partial class WeatherSystem : SharedWeatherSystem
 
         var player = _playerManager.LocalEntity;
 
-        if (player == null)
-            return;
-
-        var playerXform = Transform(player.Value);
+        // Weather entities are global PVS overrides, so we see every map's weather regardless of where we are.
+        // That means we can't early-out here: with no attached entity (lobby, round end, spectating a nullspace
+        // entity) we still have to walk the query and stop any stream that's still running.
+        TransformComponent? playerXform = player == null ? null : Transform(player.Value);
 
         var query = EntityQueryEnumerator<WeatherStatusEffectComponent, StatusEffectComponent>();
         while (query.MoveNext(out var uid, out var weather, out var status))
         {
-            if (weather.Sound == null || status.AppliedTo != playerXform.MapUid)
+            // continue, not return: every other weather entity still needs its stream stopped/updated.
+            if (weather.Sound == null || playerXform == null || status.AppliedTo != playerXform.MapUid)
             {
                 weather.Stream = _audio.Stop(weather.Stream);
-                return;
+                continue;
             }
 
             weather.Stream ??= _audio.PlayGlobal(weather.Sound, Filter.Local(), true)?.Entity;
 
             if (!_audioQuery.TryComp(weather.Stream, out var audio))
-                return;
+            {
+                // Stream entity went away underneath us; clear it so it gets replayed next tick.
+                weather.Stream = null;
+                continue;
+            }
 
             var occlusion = 0f;
 

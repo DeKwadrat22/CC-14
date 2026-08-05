@@ -113,10 +113,7 @@
     speechVerb: Vulpkanin
     allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ]
   - type: Vocal
-    sounds:
-      Male: UnisexKitsune
-      Female: FemaleKitsune
-      Unsexed: UnisexKitsune
+    emoteSounds: UnisexKitsune # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
   - type: Butcherable
     spawned:
     - id: FoodMeatHuman

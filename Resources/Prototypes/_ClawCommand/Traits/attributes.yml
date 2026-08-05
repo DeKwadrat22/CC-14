@@ -213,6 +213,7 @@
   components:
     - type: HealthCritAdjust
       offset: -50
+    - type: NoDiveLeap # Claw Command - brittle bones do not get thrown at the floor
 
 - type: trait
   id: Redshirt

@@ -5,6 +5,15 @@
   prototype: MobFelinid
   dollPrototype: AppearanceFelinid
   skinColoration: HumanToned
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexFelinid
+  - FemaleFelinid
+  - UnisexFelinid
+  voices:
+  - UnisexFelinid
+  - FemaleFelinid
 
 - type: species
   id: SpeciesFeroxi
@@ -32,6 +41,15 @@
   prototype: MobKitsunes
   dollPrototype: AppearanceKitsunes
   skinColoration: HumanToned
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexKitsune
+  - FemaleKitsune
+  - UnisexKitsune
+  voices:
+  - UnisexKitsune
+  - FemaleKitsune
 
 - type: species
   id: SpeciesShadowkin
@@ -51,6 +69,15 @@
   - Male
   - Female
   - Unsexed
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - MaleShadowkin
+  - FemaleShadowkin
+  - MaleShadowkin
+  voices:
+  - MaleShadowkin
+  - FemaleShadowkin
 
 - type: species
   id: SpeciesTajaran
@@ -63,6 +90,15 @@
   maleFirstNames: NamesTajaranFirst
   femaleFirstNames: NamesTajaranFirst
   lastNames: NamesTajaranLast
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexFelinid
+  - FemaleFelinid
+  - UnisexFelinid
+  voices:
+  - UnisexFelinid
+  - FemaleFelinid
 
 - type: species
   id: SpeciesIPC
@@ -77,6 +113,14 @@
   - Unsexed
   lastNames: IpcLast
   naming: FirstDashLast # CC: Custom!
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexIPC
+  - UnisexIPC
+  - UnisexIPC
+  voices:
+  - UnisexIPC
 
 - type: species
   id: SpeciesAvali
@@ -93,3 +137,12 @@
   - Male
   - Female
   - Unsexed
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - MaleAvali
+  - FemaleAvali
+  - MaleAvali
+  voices:
+  - MaleAvali
+  - FemaleAvali

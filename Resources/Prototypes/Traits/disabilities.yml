@@ -132,3 +132,4 @@
     - Security
   components:
     - type: ImpairedMobility
+    - type: NoDiveLeap # Claw Command - a cane user does not dive; plain lie-down still works

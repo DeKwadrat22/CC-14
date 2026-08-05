@@ -10,6 +10,11 @@
     name: ghost-role-information-listeningop-name
     description: ghost-role-information-listeningop-description
     rules: ghost-role-information-rules-team-antagonist
+    # Claw Command - without this the role falls back to GhostRoleComponent's default of
+    # MindRoleGhostRoleNeutral, which files listening operatives as ordinary crew. They are
+    # syndicate agents working for themselves, so FreeAgent is the honest category.
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 3.25h
@@ -45,6 +50,9 @@
     name: ghost-role-information-listeningop-character-name
     description: ghost-role-information-listeningop-character-description
     rules: ghost-role-information-rules-team-antagonist
+    # Claw Command - see the note on the sibling spawner above.
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 3.25h

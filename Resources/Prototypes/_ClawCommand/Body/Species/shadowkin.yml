@@ -99,10 +99,7 @@
     - id: FoodMeat
       amount: 3
   - type: Vocal
-    sounds:
-      Male: MaleShadowkin
-      Female: FemaleShadowkin
-      Unsexed: MaleShadowkin
+    emoteSounds: MaleShadowkin # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
   - type: Speech
     speechSounds: Alto
     allowedEmotes: [ 'Mars', 'Wurble', 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ]

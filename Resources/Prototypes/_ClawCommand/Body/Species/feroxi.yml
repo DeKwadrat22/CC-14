@@ -154,10 +154,7 @@
   - type: TypingIndicator
     proto: Feroxi
   - type: Vocal
-    sounds:
-      Male: MaleFeroxi
-      Female: FemaleFeroxi
-      Unsexed: MaleFeroxi
+    emoteSounds: EmoteSoundsMaleFeroxi # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
   - type: BodyEmotes
     soundsId: EmoteSoundsFeroxi
   - type: Damageable

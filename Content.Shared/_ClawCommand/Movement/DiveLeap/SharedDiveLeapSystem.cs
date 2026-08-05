@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared.CombatMode;
+using Content.Shared.Damage.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
@@ -97,6 +98,19 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
             return false;
 
         if (_timing.CurTime < leaper.NextLeap)
+        {
+            return false;
+        }
+
+        // Traits and effects that rule the move out entirely.
+        if (HasComp<NoDiveLeapComponent>(uid))
+            return false;
+
+        // Winded characters do not dive. A disabler or baton hit takes the move away well before it
+        // puts you in stamina crit, so being tagged is enough to stop someone diving out of a fight.
+        if (leaper.BlockedByStamina
+            && TryComp<StaminaComponent>(uid, out var stamina)
+            && stamina.StaminaDamage > leaper.MaxStaminaDamage)
         {
             return false;
         }

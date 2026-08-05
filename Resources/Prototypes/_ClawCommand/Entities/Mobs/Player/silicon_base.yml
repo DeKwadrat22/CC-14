@@ -223,10 +223,7 @@
       speechSounds: Pai
     - type: Vocal
       wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
-      sounds:
-        Male: UnisexIPC
-        Female: UnisexIPC
-        Unsexed: UnisexIPC
+      emoteSounds: UnisexIPC # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
     - type: MeleeWeapon
       hidden: true
       soundHit:

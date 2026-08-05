@@ -76,7 +76,7 @@
   components:
   - type: Solution
     solution:
-      maxVol: 10 # Miserably small
+      maxVol: 20 # Claw Command - was 10
   - type: Sprite
     sprite: Objects/Consumable/Drinks/water_cup.rsi
   - type: SolutionContainerVisuals

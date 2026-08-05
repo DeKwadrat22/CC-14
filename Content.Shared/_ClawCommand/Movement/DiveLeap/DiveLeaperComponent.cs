@@ -58,6 +58,24 @@ public sealed partial class DiveLeaperComponent : Component
     public float ArcHeight = 0.55f;
 
     /// <summary>
+    ///     Whether being winded stops you leaping. On by default.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool BlockedByStamina = true;
+
+    /// <summary>
+    ///     How much stamina damage you may be carrying and still leap.
+    ///
+    ///     Not zero on purpose. Sprinting and melee both accrue small amounts that decay a few
+    ///     seconds later, so a hard zero would silently disable the move during ordinary scuffling
+    ///     with nothing on screen to explain why. Ten sits above that background noise and well below
+    ///     anything a weapon does - a disabler bolt is 33, a baton more - so getting tagged takes the
+    ///     dive away immediately, exactly as intended, while brushing past someone does not.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float MaxStaminaDamage = 10f;
+
+    /// <summary>
     ///     Minimum gap between leaps, measured from landing.
     /// </summary>
     [DataField, AutoNetworkedField]
