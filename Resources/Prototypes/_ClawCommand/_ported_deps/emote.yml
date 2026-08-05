@@ -1,0 +1,10 @@
+# Claw Command - a deliberately empty emote.
+#
+# Several mobs silence their death gasp by overriding Deathgasp with an empty prototype id,
+# relying on the lookup failing. That reads as a missing prototype; this gives the same silence
+# with a real id - no chat message, no sound, no trigger words.
+- type: emote
+  id: ClawCommandSilent
+  category: General
+  chatMessages: []
+  chatTriggers: []

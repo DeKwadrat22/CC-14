@@ -19,9 +19,7 @@
   cost: 20000
   recipeUnlocks:
   - WeaponEnergyTurretAIMachineCircuitboard
-  - WeaponEnergyTurretStationMachineCircuitboard
   - WeaponEnergyTurretAIControlPanelElectronics
-  - WeaponEnergyTurretStationControlPanelElectronics
   technologyPrerequisites:
   - ConcentratedLaserWeaponry
   position: 5,-1
@@ -54,7 +52,6 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - BorgModulePka
   - ClarkeHarness
   - ClarkeHead
   - ClarkeLArm

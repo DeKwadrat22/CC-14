@@ -103,7 +103,6 @@
         component: SeeingRainbows
         type: Add
         time: 5
-        refresh: false
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent

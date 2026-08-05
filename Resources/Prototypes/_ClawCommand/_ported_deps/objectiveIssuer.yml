@@ -1,0 +1,5 @@
+# Claw Command - the heretic objectives named their issuer by its locale key; this fork's
+# objectiveIssuer prototypes use a short id with the key in `name`, as Objectives/issuers.yml does.
+- type: objectiveIssuer
+  id: Heretic
+  name: objective-issuer-heretic

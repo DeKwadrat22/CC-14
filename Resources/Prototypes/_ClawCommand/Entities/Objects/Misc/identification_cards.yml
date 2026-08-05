@@ -94,6 +94,7 @@
     - CentralCommand
     #- ClawCommandOfficer
     - Command
+    - Chemistry # Claw Command
   - type: Tag
     tags:
     - DoorBumpOpener

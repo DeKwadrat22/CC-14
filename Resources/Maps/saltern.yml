@@ -114092,7 +114092,7 @@ entities:
   - uid: 24822
     components:
     - type: Transform
-      pos: 5.5,-35.5
+      pos: -9.5,-21.5
       parent: 2
 - proto: LockerFreezer
   entities:
@@ -132839,7 +132839,7 @@ entities:
   - uid: 24820
     components:
     - type: Transform
-      pos: 6.5,-26.5
+      pos: -22.5,-19.5
       parent: 2
 - proto: SpaceCash
   entities:
@@ -133446,7 +133446,7 @@ entities:
   - uid: 24821
     components:
     - type: Transform
-      pos: 6.5,-35.5
+      pos: -8.5,-21.5
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:

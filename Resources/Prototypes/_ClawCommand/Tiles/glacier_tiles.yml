@@ -33,7 +33,9 @@
   baseTurf: Plating #Floofstation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: FloorTileItemMetalGrate
+  # Claw Command - FloorTileItemMetalGrate needs the FloorWasteland tile and FloorTileMetalGrate
+  # stack from the N14 set, which this fork does not carry; drops plain steel tiles instead.
+  itemDrop: FloorTileItemSteel
   footstepSounds:
     collection: N14FootstepMetalHollow
   friction: 0.30

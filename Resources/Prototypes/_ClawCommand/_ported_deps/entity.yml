@@ -91,21 +91,6 @@
 
 # from Resources/Prototypes/Entities/Objects/Specific/Robotics/borg_modules.yml
 - type: entity
-  id: BorgModulePka
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
-  name: proto kinetic accelerator cyborg module
-  components:
-  - type: Sprite
-    layers:
-    - state: cargo
-    - state: icon-pka
-  - type: ItemBorgModule
-    items:
-    - WeaponProtoKineticAcceleratorborg #Floof
-    - SurvivalKnife # floof they are salavaging they should be able to cut a fish
-
-# from Resources/Prototypes/_Goobstation/Entities/Clothing/Uniforms/jumpsuits.yml
-- type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitShaftMiner
   name: shaft miner's jumpsuit
@@ -188,23 +173,6 @@
 
 # from Resources/Prototypes/_Nuclear14/Entities/Objects/Misc/tiles.yml
 - type: entity
-  name: metal grate floor
-  parent: FloorTileItemBase
-  id: FloorTileItemMetalGrate
-  components:
-  - type: Sprite
-    state: wood
-  - type: Item
-    heldPrefix: wood
-  - type: FloorTile
-    outputs:
-      - FloorWasteland
-      - FloorMS13MetalGrate
-  - type: Stack
-    stackType: FloorTileMetalGrate
-
-# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
-- type: entity
   parent: GoldOreUnprocessed
   id: GoldOre1Unprocessed
   name: unprocessed gold ore
@@ -225,7 +193,7 @@
   - type: UnclaimedOre
     miningPoints: 12
 
-# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+# from Resources/Prototypes/_Goobstation/Entities/Objects/Materials/materials.yml
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalBlue
@@ -389,68 +357,6 @@
 
 # from Resources/Prototypes/_Lavaland/Entities/Objects/Projectiles/rude_buster.yml
 - type: entity
-  id: ProjectileRudeBuster
-  parent: BaseBullet
-  name: rude buster
-  description: Strong magical projectile, that focuses all of the user's will into a single powerful blow.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Lavaland/Objects/Projectiles/rude_buster.rsi
-    layers:
-    - state: buster
-      shader: unshaded
-      color: "#ae00ffdd"
-      scale: 1.5,1.5
-  - type: Reflective
-    reflective: Magic
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 40
-        Heat: 40
-        Structural: 80
-    penetrationThreshold: 500 # Good for breaking rocks (and hordes of fauna)
-  - type: StaminaDamageOnCollide
-    damage: 60
-  - type: Trail
-    color: "#ae00ffdd"
-    scale: 1.1
-    frequency: 0.02
-    lifetime: 0.8
-    lerpTime: 0.005
-    alphaLerpAmount: 0.2
-    scaleLerpAmount: 0.1
-    shader: unshaded
-    sprite:
-      sprite: /Textures/_Lavaland/Objects/Projectiles/rude_buster.rsi
-      state: buster
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.2,0.4,0.2"
-        hard: false
-        mask:
-        - Impassable
-        - BulletImpassable
-  - type: Ammo
-    muzzleFlash: null
-  - type: TileFrictionModifier
-    modifier: 0
-  - type: HomingProjectile # TODO this doesn't work since it needs a target to be assigned by an action
-    #homingTime: 0
-    homingSpeed: 2160
-  - type: PointLight
-    radius: 1.5
-    energy: 5
-    color: "#ae00ff"
-  - type: TimedDespawn
-    lifetime: 2.0
-
-# from Resources/Prototypes/_NF/Entities/Structures/Doors/secret_door.yml
-- type: entity
   id: ReinforcedSecretDoorAssembly
   name: secret reinforced door assembly
   parent: BaseSecretDoorAssembly
@@ -609,129 +515,7 @@
   - type: ChangeTemperatureOnCollide
     heat: -30000 # Lavaland Change
 
-# from Resources/Prototypes/Entities/Objects/Devices/Electronics/turret_controls.yml
-- type: entity
-  id: WeaponEnergyTurretStationControlPanelElectronics
-  parent: BaseElectronics
-  name: sentry turret control panel electronics
-  description: An electronics board used in a sentry turret control panel.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: security
-  - type: ElectronicsBoard
-    prototype: WeaponEnergyTurretStationControlPanel
-  - type: Tag
-    tags:
-    - TurretControlElectronics
-
-# from Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/turrets.yml
-- type: entity
-  id: WeaponEnergyTurretStationMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: sentry turret machine board
-  description: A machine printed circuit board for a sentry turret.
-  components:
-    - type: Sprite
-      state: security
-    - type: MachineBoard
-      prototype: WeaponEnergyTurretStation
-      requirements:
-        PowerCell: 1
-      tagRequirements:
-        TurretCompatibleWeapon:
-          Amount: 1
-          DefaultPrototype: WeaponLaserCannon
-          ExamineName: Laser Cannon
-        ProximitySensor:
-          Amount: 1
-          DefaultPrototype: ProximitySensor
-          ExamineName: Proximity Sensor
-
-# from Resources/Prototypes/_Lavaland/Entities/Objects/Weapons/Guns/Basic/pka.yml
-- type: entity
-  name: proto-kinetic pistol
-  id: WeaponProtoKineticPistol
-  parent: [ WeaponProtoKineticAcceleratorBase, BaseCargoContraband ]
-  description: Fires low-damage kinetic bolts, has a higher mod capacity.
-  components:
-  - type: Sprite
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_pistol.rsi
-    layers:
-    - state: icon
-  - type: Clothing
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_pistol.rsi
-  - type: BasicEntityAmmoProvider
-    proto: RapidBulletKinetic
-  - type: Gun
-    availableModes:
-    - FullAuto
-    - SemiAuto
-  - type: Multishot # Only a pistol should support that for balancing reasons
-    missChance: 0
-    spreadAddition: 5
-  - type: Item
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_pistol.rsi
-    size: Small
-    shape:
-    - 0,0,1,0
-    - 0,1,0,1
-
-# Space versions of all PKAs
-
-# from Resources/Prototypes/_Lavaland/Entities/Objects/Weapons/Guns/Basic/pka.yml
-- type: entity
-  name: proto-kinetic repeater
-  id: WeaponProtoKineticRepeater
-  parent: [ WeaponProtoKineticAcceleratorBase, BaseCargoContraband ]
-  description: Fires a barrage of medium-damage kinetic bolts at a short range.
-  components:
-  - type: Sprite
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_repeater.rsi
-    layers:
-    - state: icon
-  - type: Clothing
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_repeater.rsi
-  - type: Gun
-    selectedMode: Burst
-    burstFireRate: 5
-    burstCooldown: 1.5
-    availableModes:
-    - Burst
-  - type: BasicEntityAmmoProvider
-    proto: RapidBulletKinetic
-    capacity: 3
-    count: 3
-  - type: Item
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_repeater.rsi
-    shape:
-    - 0,0,2,1
-
-# from Resources/Prototypes/_Lavaland/Entities/Objects/Weapons/Guns/Basic/pka.yml
-- type: entity
-  name: proto-kinetic shotgun
-  id: WeaponProtoKineticShotgun
-  parent: [ BaseGunWieldable, WeaponProtoKineticAcceleratorBase, BaseCargoContraband ]
-  description: Fires a spread of low-damage kinetic bolts that are half as effective for mining.
-  components:
-  - type: Sprite
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_shotgun.rsi
-    layers:
-    - state: icon
-    - state: animation-icon
-      visible: false
-      map: [ "empty-icon" ]
-  - type: Clothing
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_shotgun.rsi
-  - type: BasicEntityAmmoProvider
-    proto: PelletKineticSpread
-  - type: GunRequiresWield
-  - type: Item
-    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_shotgun.rsi
-    shape:
-    - 0,0,4,0
-
-# from Resources/Prototypes/_NF/Entities/Structures/Doors/secret_door.yml
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_energy.yml
 - type: entity
   id: WoodSecretDoor
   name: wood wall

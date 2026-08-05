@@ -574,7 +574,7 @@
   # _ClawCommand: silence the on-death gasp too. Empty prototype id makes the emote
   # lookup in DeathgaspSystem fail silently → no chat msg, no MothDeathGasp sound.
   - type: Deathgasp
-    prototype: ""
+    prototype: ClawCommandSilent
   - type: CombatMode
   - type: Solution
     solution:

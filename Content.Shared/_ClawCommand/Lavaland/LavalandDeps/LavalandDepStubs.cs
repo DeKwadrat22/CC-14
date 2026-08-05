@@ -60,6 +60,9 @@ namespace Content.Shared._ClawCommand.Lavaland.LavalandDeps
     [RegisterComponent]
     public sealed partial class MultishotComponent : Component
     {
+        // Carried so Goob's kinetic weapon YAML loads; nothing reads them without the real system.
+        [DataField] public float MissChance;
+        [DataField] public float SpreadAddition;
     }
 
     // Goob _NF.Shuttles FTL drive (Lavaland outpost map root). Inert.

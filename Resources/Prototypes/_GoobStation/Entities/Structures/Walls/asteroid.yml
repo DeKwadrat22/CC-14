@@ -30,7 +30,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_asteroid
@@ -53,7 +55,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: ironrock
@@ -76,7 +80,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock
@@ -99,7 +105,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_wall
@@ -122,7 +130,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_snow
@@ -145,7 +155,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_sand
@@ -168,7 +180,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_chromite
@@ -191,7 +205,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreBSCrystal
+      # Claw Command - OreBSCrystal needs Goob's bluespace-crystal material/stack chain and its
+      # RandomTeleportOnUse component, neither of which this fork has. Falls back to gold.
+      currentOre: OreGold
     - type: Sprite
       layers:
         - state: rock_andesite

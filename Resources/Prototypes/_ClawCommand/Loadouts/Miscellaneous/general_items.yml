@@ -364,22 +364,6 @@
 # === CC Officer Weapon ===
 
 - type: loadout
-  id: LoadoutCCOfficerMk58
-  dummyEntity: WeaponPistolMk58
-  storage:
-    back:
-    - WeaponPistolMk58
-    - MagazinePistol
-
-- type: loadout
-  id: LoadoutCCOfficerDisabler
-  storage:
-    back:
-    - WeaponDisabler
-
-# === CC Maid Equipment ===
-
-- type: loadout
   id: LoadoutCCMaidAdvancedMop
   storage:
     back:
