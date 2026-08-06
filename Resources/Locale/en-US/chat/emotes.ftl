@@ -80,3 +80,7 @@ chat-emote-msg-snarl = snarls.
 chat-emote-msg-whine = whines.
 chat-emote-msg-howl = howls.
 chat-emote-msg-growl = growls.
+
+# Claw Command - placeholder name for the deliberately-empty ClawCommandSilent emote.
+# EmotePrototype.Name is required, but available: false keeps it out of the radial UI.
+chat-emote-name-clawcommandsilent = Silent

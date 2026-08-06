@@ -129,17 +129,36 @@
   id: CCSleeperAgentsTable
   table: !type:AllSelector
     children:
-    - id: SleeperAgents
+    - id: CCSecretSleeperAgents
 
 # Sleeper agents, repeatable. Each wave is a separate prototype because the rule runs for
 # the whole round, and an active rule can never be re-picked by the scheduler.
+#
+# Two waves is the hard ceiling at any population - there is deliberately no third.
+#
+# The condition is what spaces them out: the second wave is only eligible once the first has been
+# running for 60 minutes, and ReoccurrenceDelayCondition fails outright if that rule never ran, so
+# the waves can only ever fire in order. This is relative to the first wave rather than an absolute
+# earliestStart, so a shift that got its first wave late does not immediately owe you a second.
+#
+# Two knobs keep the second wave rare, and both are needed. The 60 minute gap means it usually
+# cannot even come up before a normal length shift ends - with a first wave around 35 minutes it
+# is not eligible until roughly 95. The extra prob: 0.2 then makes it a fifth as likely per roll
+# as the first wave, so even the long shifts that do reach it mostly do not get it. Net effect on
+# the hardest tier: ~1% of 100 minute rounds, ~18% of 130 minute ones. Shortening the delay is a
+# far bigger lever than raising the prob, because it buys many more eligible rolls.
+# See antag_variants.yml for why the weights are huge.
 - type: entityTable
   id: CCSleeperAgentsRepeatTable
   table: !type:AllSelector
     children:
-    - id: SleeperAgents
+    - id: CCSecretSleeperAgents
     - id: SleeperAgentsSecondWave
-    - id: SleeperAgentsThirdWave
+      prob: 0.2
+      conditions:
+      - !type:ReoccurrenceDelayCondition
+        ruleOverride: CCSecretSleeperAgents
+        delay: 60m
 
 # The same waves, but handing out Extended Irregular's "kill once" contracts instead of the
 # round-removal ones. Secret keeps the table above.
@@ -149,7 +168,11 @@
     children:
     - id: CCIrregularSleeperAgents
     - id: CCIrregularSleeperAgentsSecondWave
-    - id: CCIrregularSleeperAgentsThirdWave
+      prob: 0.2
+      conditions:
+      - !type:ReoccurrenceDelayCondition
+        ruleOverride: CCIrregularSleeperAgents
+        delay: 60m
 
 # Other single-target infiltrators.
 - type: entityTable
@@ -201,7 +224,10 @@
       prob: 0.8
     - !type:NestedSelector
       tableId: CCIrregularSleeperAgentsRepeatTable
-      prob: 0.2
+      # Numerically above Medium's 0.14 on purpose: Easy's scheduler is much slower
+      # (10-25 min band, gentler ramp) so it gets far fewer event rolls per shift. A higher
+      # per-roll chance is what lands both tiers on a sensible round-level number.
+      prob: 0.16
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.5
@@ -236,7 +262,7 @@
       prob: 0.85
     - !type:NestedSelector
       tableId: CCIrregularSleeperAgentsRepeatTable
-      prob: 0.4
+      prob: 0.14
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.6
@@ -274,7 +300,7 @@
       prob: 0.9
     - !type:NestedSelector
       tableId: CCIrregularSleeperAgentsRepeatTable
-      prob: 0.6
+      prob: 0.18
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.7
@@ -317,7 +343,7 @@
       prob: 0.5
     - !type:NestedSelector
       tableId: CCSleeperAgentsTable
-      prob: 0.6
+      prob: 0.14
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.5
@@ -356,7 +382,7 @@
       prob: 0.6
     - !type:NestedSelector
       tableId: CCSleeperAgentsRepeatTable
-      prob: 0.75
+      prob: 0.18
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.6
@@ -395,7 +421,7 @@
       prob: 0.7
     - !type:NestedSelector
       tableId: CCSleeperAgentsRepeatTable
-      prob: 0.85
+      prob: 0.25
     - !type:NestedSelector
       tableId: CCInfiltratorEventsTable
       prob: 0.7

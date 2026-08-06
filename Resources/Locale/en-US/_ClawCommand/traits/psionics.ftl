@@ -5,6 +5,9 @@ trait-category-psionic = Psionics
 trait-latent-psychic-name = Latent Psychic
 trait-latent-psychic-desc = Your mind brushes against the noosphere. You have no powers yet, but the potential is there — over the shift you may spontaneously manifest one. Be aware that psionic activity raises station glimmer, and that Epistemics is entitled to mindbreak rogue psions.
 
+trait-psionic-insulation-name = Psionic Insulation
+trait-psionic-insulation-desc = Something in you is shut against the noosphere — a scar, a discipline, or an accident of birth. No psionic power can touch you, and none will ever be yours. You cannot be read, swayed, or swapped, but neither can you be healed by a psion's hand.
+
 trait-anomalous-positronics-name = Anomalous Positronics
 trait-anomalous-positronics-desc = Your positronic brain was built with a flaw, or perhaps a gift. The insulation that normally seals synthetic minds off from the noosphere is absent, leaving you as exposed to psionics as any organic — for better and for worse.
 

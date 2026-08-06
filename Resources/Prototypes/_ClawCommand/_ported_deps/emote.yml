@@ -5,6 +5,9 @@
 # with a real id - no chat message, no sound, no trigger words.
 - type: emote
   id: ClawCommandSilent
+  # Required field, even though available: false keeps this out of the emote radial UI.
+  name: chat-emote-name-clawcommandsilent
+  available: false
   category: General
   chatMessages: []
   chatTriggers: []

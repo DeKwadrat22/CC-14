@@ -45,7 +45,7 @@
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
-            min: 10
+            min: 15 # Claw Command - was 10, matching the Wizard rule's own minPlayers.
       # Roundstart Minor Rules
       - !type:GroupSelector
         conditions:

@@ -20,6 +20,9 @@
   description: trait-latent-psychic-desc
   category: Psionic
   cost: 4
+  # Claw Command - you cannot both reach for the noosphere and be sealed off from it.
+  excludes:
+    - PsionicInsulation
   forbiddenSpecies:
     - SpeciesIPC
   speciesExemptTraits:
@@ -33,6 +36,41 @@
     - Borg
   specials:
     - !type:MakeLatentPsychicSpecial
+
+# Claw Command - the opposite gateway: opting out of psionics entirely. This is space's PsionicInsulation
+# trait, which the original port missed. Without it the only way to express "I want nothing to do with
+# psionics" was to stack the weakness traits, which left you psionic anyway and paid you for the privilege.
+#
+# Conversion notes:
+#   - upstream `points: -6` becomes `cost: 6`; being immune to every psionic power is worth paying for,
+#     even though Mindbroken is a real drawback.
+#   - `functions: !type:TraitAddComponent` becomes `specials: !type:AddComponentSpecial`, the equivalent here.
+#   - upstream also barred MedicalBorg; that job does not exist in this fork, so only Borg is listed.
+- type: trait
+  id: PsionicInsulation
+  name: trait-psionic-insulation-name
+  description: trait-psionic-insulation-desc
+  category: Psionic
+  cost: 6
+  excludes:
+    - LatentPsychic
+  # An IPC is already insulated, so there is nothing here for them to buy - unless they gave that up.
+  forbiddenSpecies:
+    - SpeciesIPC
+  speciesExemptTraits:
+    - AnomalousPositronics
+  # These roles are psionic as part of the job; sealing them off would break the role.
+  forbiddenJobs:
+    - ForensicMantis
+    - ResearchDirector
+    - Chaplain
+    - Librarian
+    - Borg
+  specials:
+    - !type:AddComponentSpecial
+      components:
+        - type: PsionicInsulation
+        - type: Mindbroken
 
 - type: trait
   id: AnomalousPositronics
@@ -79,9 +117,14 @@
   name: trait-low-potential-name
   description: trait-low-potential-desc
   category: Psionic
-  cost: -5
+  cost: -3 # Claw Command - refunded 5 upstream, which more than paid for Latent Psychic on its own.
   excludes:
     - HighPotential
+    # Claw Command - only one psionic weakness may be taken. All three together refunded 11 points against
+    # Latent Psychic's 4, so a character could bank 7 spare points for unrelated traits and still be a psion
+    # who manifests powers all shift. Picking a single weakness keeps the trade-off without the farm.
+    - LowAmplification
+    - LowDampening
   forbiddenSpecies:
     - SpeciesIPC
   speciesExemptTraits:
@@ -135,6 +178,9 @@
   excludes:
     - HighAmplification
     - PowerOverwhelming
+    # Claw Command - see LowPotential; only one psionic weakness may be taken.
+    - LowPotential
+    - LowDampening
   forbiddenSpecies:
     - SpeciesIPC
   speciesExemptTraits:
@@ -208,6 +254,9 @@
   cost: -3
   excludes:
     - HighDampening
+    # Claw Command - see LowPotential; only one psionic weakness may be taken.
+    - LowPotential
+    - LowAmplification
   forbiddenSpecies:
     - SpeciesIPC
   speciesExemptTraits:
