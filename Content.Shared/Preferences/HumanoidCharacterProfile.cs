@@ -607,38 +607,11 @@ namespace Content.Shared.Preferences
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
-            // Claw Command - block trait if species doesn't match.
-            if (traitProto.RestrictedSpecies.Count > 0 && !traitProto.RestrictedSpecies.Contains(Species))
-                return new(this);
-
-            // Claw Command - check mutual exclusions before allowing the trait.
-            if (traitProto.Excludes.Count > 0)
-            {
-                foreach (var excluded in traitProto.Excludes)
-                {
-                    if (_traitPreferences.Contains(excluded))
-                        return new(this);
-                }
-            }
-
-            // Claw Command - block trait if any preferred job is in a restricted department.
-            if (traitProto.RestrictedDepts.Count > 0)
-            {
-                foreach (var dept in protoManager.EnumeratePrototypes<DepartmentPrototype>())
-                {
-                    if (!traitProto.RestrictedDepts.Contains(dept.ID))
-                        continue;
-
-                    foreach (var role in dept.Roles)
-                    {
-                        if (_jobPriorities.TryGetValue(role, out var pri) && pri > JobPriority.Never)
-                            return new(this);
-                    }
-                }
-            }
-
-            // Claw Command - species blacklist, forbidden jobs, and the trait/job OR-gate.
-            if (!PassesTraitGates(traitProto, _traitPreferences))
+            // Claw Command - species whitelist/blacklist, mutual exclusions, restricted departments, forbidden
+            // jobs and the trait/job OR-gate. Shared with the lobby UI so the checkbox it draws as available is
+            // exactly the one this method will accept - before this the UI offered every trait unconditionally
+            // and a gated pick simply refused to stick, with nothing on screen to say why.
+            if (!TraitPrerequisitesMet(traitProto, protoManager, _traitPreferences))
                 return new(this);
 
             if (traitCategory == null)
@@ -702,17 +675,81 @@ namespace Content.Shared.Preferences
         }
 
         /// <summary>
+        ///     Claw Command - every reason a trait may be refused EXCEPT the point budget, in one place.
+        ///     The lobby UI calls this to decide whether to offer a trait at all, so what it shows as available
+        ///     and what <see cref="WithTraitPreference"/> will actually accept can never drift apart.
+        /// </summary>
+        /// <param name="selectedTraits">
+        ///     The traits already picked. Gates like <see cref="TraitPrototype.RequiresAnyTrait"/> and
+        ///     <see cref="TraitPrototype.Excludes"/> are resolved against this, which is what makes taking
+        ///     Latent Psychic open up the powers that depend on it.
+        /// </param>
+        public bool TraitPrerequisitesMet(
+            TraitPrototype traitProto,
+            IPrototypeManager protoManager,
+            IReadOnlyCollection<ProtoId<TraitPrototype>> selectedTraits)
+        {
+            // Species whitelist.
+            if (traitProto.RestrictedSpecies.Count > 0 && !traitProto.RestrictedSpecies.Contains(Species))
+                return false;
+
+            // Mutually exclusive traits.
+            foreach (var excluded in traitProto.Excludes)
+            {
+                if (selectedTraits.Contains(excluded))
+                    return false;
+            }
+
+            // Any preferred job sitting in a restricted department.
+            if (traitProto.RestrictedDepts.Count > 0)
+            {
+                foreach (var dept in protoManager.EnumeratePrototypes<DepartmentPrototype>())
+                {
+                    if (!traitProto.RestrictedDepts.Contains(dept.ID))
+                        continue;
+
+                    foreach (var role in dept.Roles)
+                    {
+                        if (_jobPriorities.TryGetValue(role, out var pri) && pri > JobPriority.Never)
+                            return false;
+                    }
+                }
+            }
+
+            return PassesTraitGates(traitProto, selectedTraits);
+        }
+
+        /// <summary>
+        ///     Claw Command - the traits that other traits gate on, through
+        ///     <see cref="TraitPrototype.RequiresAnyTrait"/> or <see cref="TraitPrototype.SpeciesExemptTraits"/>.
+        ///     Both the lobby list and <see cref="GetValidTraits"/> put these first, so a gateway trait is never
+        ///     ordered below the things it unlocks.
+        /// </summary>
+        public static HashSet<ProtoId<TraitPrototype>> GetGatewayTraits(IPrototypeManager protoManager)
+        {
+            var gateways = new HashSet<ProtoId<TraitPrototype>>();
+
+            foreach (var proto in protoManager.EnumeratePrototypes<TraitPrototype>())
+            {
+                gateways.UnionWith(proto.RequiresAnyTrait);
+                gateways.UnionWith(proto.SpeciesExemptTraits);
+            }
+
+            return gateways;
+        }
+
+        /// <summary>
         ///     Claw Command - evaluates the trait gates added for the psionics port: the species blacklist,
         ///     the forbidden-jobs list, and the "must have one of these traits OR one of these jobs" gate.
-        ///     Species whitelist, mutual exclusions and department restrictions are handled by their own blocks
-        ///     at each call site, because those predate this and are checked against different state.
+        ///     Species whitelist, mutual exclusions and department restrictions are handled by
+        ///     <see cref="TraitPrerequisitesMet"/>, which wraps this.
         /// </summary>
         /// <param name="traitProto">The trait being considered.</param>
         /// <param name="selectedTraits">
         ///     The traits to test membership against. Callers validating a whole profile pass the set accepted so
         ///     far; the single-trait path passes the current preferences.
         /// </param>
-        private bool PassesTraitGates(TraitPrototype traitProto, ICollection<ProtoId<TraitPrototype>> selectedTraits)
+        private bool PassesTraitGates(TraitPrototype traitProto, IReadOnlyCollection<ProtoId<TraitPrototype>> selectedTraits)
         {
             // Species blacklist, waivable by an exempting trait.
             if (traitProto.ForbiddenSpecies.Contains(Species))
@@ -983,62 +1020,22 @@ namespace Content.Shared.Preferences
             var groups = new Dictionary<string, int>();
             var result = new List<ProtoId<TraitPrototype>>();
 
-            // Claw Command - build a set of department-restricted jobs for fast lookup.
-            var blockedJobsByDept = new Dictionary<string, HashSet<ProtoId<JobPrototype>>>();
-            foreach (var dept in protoManager.EnumeratePrototypes<DepartmentPrototype>())
-            {
-                blockedJobsByDept[dept.ID] = new HashSet<ProtoId<JobPrototype>>(dept.Roles);
-            }
+            // Claw Command - gates like RequiresAnyTrait are resolved against the traits accepted so far, but
+            // the incoming set is an unordered HashSet. A single pass in hash order therefore kept or dropped a
+            // gated trait by luck: if High Amplification happened to come out before Latent Psychic, the gate
+            // saw an empty set and silently stripped the amplification on save. Ordering the traits that other
+            // traits gate on to the front makes the outcome deterministic and correct.
+            var gateways = GetGatewayTraits(protoManager);
+            var ordered = traits.OrderBy(t => gateways.Contains(t) ? 0 : 1);
 
-            foreach (var trait in traits)
+            foreach (var trait in ordered)
             {
                 if (!protoManager.TryIndex(trait, out var traitProto))
                     continue;
 
-                // Claw Command - skip if species doesn't match.
-                if (traitProto.RestrictedSpecies.Count > 0 && !traitProto.RestrictedSpecies.Contains(Species))
-                    continue;
-
-                // Claw Command - skip if an already-accepted trait is mutually exclusive.
-                var excluded = false;
-                foreach (var ex in traitProto.Excludes)
-                {
-                    if (result.Contains(ex))
-                    {
-                        excluded = true;
-                        break;
-                    }
-                }
-                if (excluded)
-                    continue;
-
-                // Claw Command - skip if any preferred job is in a restricted department.
-                if (traitProto.RestrictedDepts.Count > 0)
-                {
-                    var deptBlocked = false;
-                    foreach (var deptId in traitProto.RestrictedDepts)
-                    {
-                        if (!blockedJobsByDept.TryGetValue(deptId, out var deptJobs))
-                            continue;
-
-                        foreach (var role in deptJobs)
-                        {
-                            if (_jobPriorities.TryGetValue(role, out var pri) && pri > JobPriority.Never)
-                            {
-                                deptBlocked = true;
-                                break;
-                            }
-                        }
-                        if (deptBlocked)
-                            break;
-                    }
-                    if (deptBlocked)
-                        continue;
-                }
-
-                // Claw Command - species blacklist, forbidden jobs, and the trait/job OR-gate.
-                // Evaluated against the traits accepted so far, matching how Excludes is handled just above.
-                if (!PassesTraitGates(traitProto, result))
+                // Claw Command - species, exclusions, restricted departments, forbidden jobs and the
+                // trait/job OR-gate, all resolved against the traits accepted so far.
+                if (!TraitPrerequisitesMet(traitProto, protoManager, result))
                     continue;
 
                 // Always valid.

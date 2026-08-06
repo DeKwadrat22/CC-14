@@ -18,11 +18,17 @@ public sealed partial class HumanoidProfileEditor
     {
         TraitsList.RemoveAllChildren();
 
-        // Claw Command - sorted by point value rather than name: the traits that hand you points
-        // (negative Cost) first, then free ones, then the ones you spend those points on. Ties fall
-        // back to name so the order is stable within a price bracket.
+        // Claw Command - gateway traits first, then by point value rather than name: the traits that hand
+        // you points (negative Cost) first, then free ones, then the ones you spend those points on. Ties
+        // fall back to name so the order is stable within a price bracket.
+        //
+        // The gateway pass exists because sorting on cost alone buried Latent Psychic (4 points) underneath
+        // every psionic power it unlocks, several of which cost less or refund points. Reading top to bottom
+        // you met a wall of locked traits before ever reaching the one that unlocks them.
+        var gateways = HumanoidCharacterProfile.GetGatewayTraits(_prototypeManager);
         var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>()
-            .OrderBy(t => t.Cost)
+            .OrderBy(t => gateways.Contains(t.ID) ? 0 : 1)
+            .ThenBy(t => t.Cost)
             .ThenBy(t => Loc.GetString(t.Name))
             .ToList();
         TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
@@ -138,6 +144,11 @@ public sealed partial class HumanoidProfileEditor
                     SetDirty();
                     RefreshTraits(); // If too many traits are selected, they will be reset to the real value.
                 };
+
+                // Claw Command - lock it if the character does not meet its prerequisites. RefreshTraits runs
+                // again after every toggle above, so ticking a gateway trait re-evaluates this immediately.
+                ApplyTraitAvailability(selector, trait);
+
                 selectors.Add(selector);
             }
 
@@ -160,7 +171,10 @@ public sealed partial class HumanoidProfileEditor
                     continue;
 
                 // A negative-cost trait only ever raises the ceiling, so it can never be unaffordable.
-                if (poolLimit is >= 0 && selector.Cost > 0 && spent + selector.Cost > poolLimit.Value)
+                // Claw Command - a trait that is locked outright stays grey; painting it red would blame the
+                // point budget for something the player cannot buy at any price.
+                if (poolLimit is >= 0 && selector.Cost > 0 && spent + selector.Cost > poolLimit.Value
+                    && !selector.Checkbox.Disabled)
                 {
                     selector.Checkbox.Label.FontColorOverride = Color.Red;
                 }
@@ -168,6 +182,73 @@ public sealed partial class HumanoidProfileEditor
                 TraitsList.AddChild(selector);
             }
         }
+    }
+
+    /// <summary>
+    ///     Claw Command - greys out traits whose prerequisites the character does not meet, so a gated trait
+    ///     reads as locked rather than as a checkbox that refuses to stay ticked.
+    /// </summary>
+    /// <remarks>
+    ///     Already-selected traits are always left interactive, otherwise a pick that later became invalid
+    ///     (say the player enabled a job that forbids it) would be impossible to remove.
+    /// </remarks>
+    private void ApplyTraitAvailability(TraitPreferenceSelector selector, TraitPrototype trait)
+    {
+        if (Profile == null || selector.Preference)
+            return;
+
+        if (Profile.TraitPrerequisitesMet(trait, _prototypeManager, Profile.TraitPreferences))
+            return;
+
+        selector.SetUnavailable(GetTraitLockReason(trait));
+    }
+
+    /// <summary>
+    ///     Claw Command - names what would unlock a trait, when the thing blocking it is the
+    ///     "one of these traits or one of these jobs" gate. Anything else - species, a forbidden job, a
+    ///     mutually exclusive pick - falls back to a generic line, because those are already visible to the
+    ///     player elsewhere in the editor.
+    /// </summary>
+    private string GetTraitLockReason(TraitPrototype trait)
+    {
+        var conflict = Loc.GetString("humanoid-profile-editor-trait-locked-conflict");
+
+        if (Profile == null)
+            return conflict;
+
+        // A mutually exclusive pick, or a job that bars the trait outright, is not something the
+        // requires-one-of line can describe - listing prerequisites there would send the player looking for
+        // a trait to buy when the actual fix is to drop something they already have.
+        foreach (var excluded in trait.Excludes)
+        {
+            if (Profile.TraitPreferences.Contains(excluded))
+                return conflict;
+        }
+
+        foreach (var job in trait.ForbiddenJobs)
+        {
+            if (Profile.JobPriorities.TryGetValue(job, out var pri) && pri > JobPriority.Never)
+                return conflict;
+        }
+
+        var options = new List<string>();
+
+        foreach (var required in trait.RequiresAnyTrait)
+        {
+            if (_prototypeManager.TryIndex(required, out var requiredProto))
+                options.Add(Loc.GetString(requiredProto.Name));
+        }
+
+        foreach (var job in trait.RequiresAnyJob)
+        {
+            if (_prototypeManager.TryIndex(job, out var jobProto))
+                options.Add(jobProto.LocalizedName);
+        }
+
+        return options.Count == 0
+            ? conflict
+            : Loc.GetString("humanoid-profile-editor-trait-locked-requires",
+                ("options", string.Join(", ", options)));
     }
 
     /// <summary>

@@ -98,6 +98,7 @@
       rechargeSound:
         path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
     - type: BasicEntityAmmoProvider
+      proto: ProjectileRudeBuster # Claw Command - required field; its omission de-registered this entity
       capacity: 1
       count: 1
   - type: Tag

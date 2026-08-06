@@ -429,7 +429,7 @@ public sealed partial class SharedDiveLeapSystem : EntitySystem
 
         // Pay for the dive, and pay for it *here* rather than at launch.
         //
-        // Half a stamina pool is enough to drop an already-winded diver straight into stamina crit,
+        // A third of a stamina pool is enough to drop an already-winded diver straight into stamina crit,
         // and crit paralyses, which runs StandingStateSystem.Down -> ChangeLayers. That strips
         // StandingCollisionLayer, which is the very same MidImpassable bit the leap strips for the
         // flight. Charging at launch would therefore have both systems owning that bit at once:

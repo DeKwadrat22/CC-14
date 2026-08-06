@@ -62,16 +62,16 @@ public sealed partial class DiveLeaperComponent : Component
     ///
     ///     A fraction rather than a flat number so the cost tracks
     ///     <see cref="Content.Shared.Damage.Components.StaminaComponent.CritThreshold"/>, which traits
-    ///     and gear move around - half a pool means the same thing to everyone regardless of how big
-    ///     theirs is.
+    ///     and gear move around - a third of a pool means the same thing to everyone regardless of how
+    ///     big theirs is.
     ///
-    ///     There is deliberately no stamina gate on starting a leap. The cost is the limit: at half a
-    ///     pool you get about two dives before the third drops you into stamina crit, and diving while
-    ///     already winded knocks you out on landing. That reads better than a refusal with nothing on
-    ///     screen to explain it.
+    ///     There is deliberately no stamina gate on starting a leap. The cost is the limit: at a third
+    ///     of a pool you get three dives before the fourth drops you into stamina crit, and diving
+    ///     while already winded knocks you out on landing. That reads better than a refusal with
+    ///     nothing on screen to explain it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float StaminaCost = 0.5f;
+    public float StaminaCost = 0.33f;
 
     /// <summary>
     ///     Minimum gap between leaps, measured from landing.

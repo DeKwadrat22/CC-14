@@ -1,0 +1,31 @@
+# Claw Command - the crafting-menu entries for the glimmer prober and glimmer drain.
+#
+# The psionics port brought over the GlimmerDevices construction *graph* (glimmerdevices_graph.yml) and put a
+# `- type: Construction` component on GlimmerProber / GlimmerDrain / GlimmerDeviceFrame so the built machines
+# know which node they sit on - but never the two `- type: construction` prototypes that put the recipe in the
+# crafting menu in the first place. Without those there is no way to start the graph, so the machines could
+# only ever be whatever the map spawned with: destroy one and the station was permanently down a prober.
+# Upstream keeps these in Nyanotrasen/Recipes/Construction/machines.yml.
+#
+# Conversion notes vs the source:
+#   - Parented to BaseMachine (Recipes/Construction/machines.yml) instead of repeating category /
+#     placementMode / TileNotBlocked by hand. canBuildInImpassable defaults to false, so that line goes too.
+#   - ConstructionPrototype has no `icon` field in this codebase and takes LocIds rather than literal text for
+#     name/description. Modern recipes inherit all three from the target node's entity, so all three are
+#     omitted - the same treatment the tinfoil hat recipe in Psionics/Entities/insulation.yml already got.
+#
+# Materials come from the graph: 5 plasteel + 5 cable for the frame, then 5 bluespace crystal for a prober or
+# 5 normality crystal for a drain, each finished with a welder. Normality crystals are made in chemistry
+# (CreateNormalityCrystal in psionic_reactions.yml), which is what keeps drains from being free.
+
+- type: construction
+  parent: BaseMachine
+  id: GlimmerProber
+  graph: GlimmerDevices
+  targetNode: glimmerProber
+
+- type: construction
+  parent: BaseMachine
+  id: GlimmerDrain
+  graph: GlimmerDevices
+  targetNode: glimmerDrain

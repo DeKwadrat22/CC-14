@@ -68,6 +68,10 @@ humanoid-profile-editor-no-traits = No traits available
 
 humanoid-profile-editor-trait-count-hint = Points available: [{$current}/{$max}]
 
+# Claw Command - shown on traits that are locked behind another trait, a job, or a species.
+humanoid-profile-editor-trait-locked-requires = Requires one of: {$options}
+humanoid-profile-editor-trait-locked-conflict = Not available for this character.
+
 trait-category-disabilities = Disabilities
 trait-category-speech = Speech traits
 trait-category-quirks = Quirks
