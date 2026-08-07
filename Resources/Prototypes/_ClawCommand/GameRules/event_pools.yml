@@ -32,6 +32,13 @@
     - id: RandomSentience
     - id: SolarFlare
     - id: VentClog
+    # Claw Command - NoosphericStorm lives here rather than with the other glimmer events because it
+    # is the injector, not a symptom: it is the only one that ADDS glimmer (+65-85). CCGlimmerEventsTable
+    # is fired by CCGlimmerScheduler, which needs 200 glimmer before it does anything, so if the storm
+    # were only in there it could never fire on a station that had not already built glimmer some other
+    # way, and a round with a quiet Epistemics would see no psionic content at all. Keeping it ambient
+    # means the noosphere can always get going on its own; everything downstream is still glimmer-gated.
+    - id: NoosphericStorm
 
 # Split out so Extended Irregular can require a staffed science department.
 - type: entityTable
@@ -42,6 +49,34 @@
 
 # "Psion storm". Split out so Extended Irregular can make it rarer, since a hostile
 # lawset silicon is a whole antag's worth of round for a mode that isn't about that.
+# Claw Command - noospheric / glimmer events.
+#
+# This table is NOT nested into the per-gamemode pools. It is owned by CCGlimmerScheduler, which rolls
+# against the station's glimmer level rather than the ordinary event pacing: nothing under 200 glimmer,
+# then 15% per half hour at 200 rising 5% per further 100 glimmer. See schedulers.yml.
+#
+# Two separate filters decide what you actually get:
+#   CCGlimmerScheduler  -> WHETHER a glimmer event happens at all, from the current glimmer level.
+#   minimumGlimmer / maximumGlimmer on each event (Psionics/events.yml) -> WHICH ones are eligible.
+# So a roll at 220 can only surface the low end, while the same roll at 800 has the whole ladder open.
+#
+# NoosphericStorm appears both here and in CCAmbientEventsTable. It is the only event that raises glimmer,
+# so it also has to be reachable below 200 or nothing could ever start - see the note over there.
+- type: entityTable
+  id: CCGlimmerEventsTable
+  table: !type:AllSelector
+    children:
+    - id: NoosphericStorm
+    - id: MundaneDischarge
+    - id: NoosphericZap
+    - id: NoosphericFry
+    - id: PsionicCatGotYourTongue
+    - id: GlimmerWispSpawn
+    - id: GlimmerMiteSpawn
+    - id: GlimmerRandomSentience
+    - id: GlimmerRevenantSpawn
+    - id: FreeProber
+
 - type: entityTable
   id: CCIonStormEventsTable
   table: !type:AllSelector

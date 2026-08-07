@@ -117,6 +117,7 @@
     - id: CCIrregularEasyStationAntags
     - id: CCIrregularEasyScheduler
     - id: CCIrregularEasyMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
 
 - type: entity
   parent: BaseGameRule
@@ -130,6 +131,7 @@
     - id: CCIrregularMediumStationAntags
     - id: CCIrregularMediumScheduler
     - id: CCIrregularMediumMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
 
 - type: entity
   parent: BaseGameRule
@@ -143,6 +145,7 @@
     - id: CCIrregularHardStationAntags
     - id: CCIrregularHardScheduler
     - id: CCIrregularHardMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
 
 # --- difficulty roll -------------------------------------------------------
 

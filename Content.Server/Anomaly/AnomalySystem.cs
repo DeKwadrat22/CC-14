@@ -56,6 +56,9 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
         InitializeGenerator();
         InitializeVessel();
         InitializeCommands();
+        // Claw Command - the psionics port added AnomalySystem.Psionics.cs but never called its initialiser,
+        // so anomalies could not be dispelled and none of their psionic behaviour was live.
+        InitializePsionics();
     }
 
     private void OnMapInit(Entity<AnomalyComponent> anomaly, ref MapInitEvent args)

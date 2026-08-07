@@ -24,6 +24,19 @@ public sealed partial class GlimmerMobRuleComponent : Component
     public int MobsPerPsionic = 10;
 
     /// <summary>
+    ///     Claw Command - floor on the pre-multiplier mob count.
+    /// </summary>
+    /// <remarks>
+    ///     The psionic head-count above only counts entities that have BOTH PsionicComponent and
+    ///     NpcFactionMemberComponent. Player humanoids in this codebase carry no NpcFactionMember, so psionic
+    ///     crew are never counted and the divisor almost always yields 0 - which is why every swarm came out
+    ///     as literally one mob times the glimmer multiplier. Rather than change what counts as a psion and
+    ///     risk a feedback loop (glimmer mobs are themselves psionic), the floor is simply configurable.
+    /// </remarks>
+    [DataField]
+    public int MinimumMobs = 1;
+
+    /// <summary>
     /// If the current glimmer tier is above this, mob count gets multiplied by the difference.
     /// So by default 500-900 glimmer will double it and 900+ will triple it.
     /// </summary>

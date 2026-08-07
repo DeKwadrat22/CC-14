@@ -33,7 +33,7 @@ public sealed partial class GlimmerMobRule : StationEventSystem<GlimmerMobRuleCo
             hiddenSpawns = GetCoords<MidRoundAntagSpawnLocationComponent>(stations);
 
         var psionics = EntityQuery<PsionicComponent, NpcFactionMemberComponent>().Count();
-        var baseCount = Math.Max(1, psionics / comp.MobsPerPsionic);
+        var baseCount = Math.Max(comp.MinimumMobs, psionics / comp.MobsPerPsionic);
         var multiplier = Math.Max(1, (int) _glimmer.GetGlimmerTier() - (int) comp.GlimmerTier);
         var total = baseCount * multiplier;
 

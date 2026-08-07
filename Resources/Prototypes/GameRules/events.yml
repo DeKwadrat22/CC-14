@@ -17,6 +17,20 @@
     - id: MimicVendorRule # Claw Command - restored, upstream removed it in #44057
     - id: MothroachSpawn # CLAW COMMAND: Added.
     - id: MouseMigration
+    # Claw Command - glimmer/noospheric events. The psionics port never registered these anywhere, so none of
+    # them could fire. They are listed here as well as in _ClawCommand/GameRules/event_pools.yml because this
+    # fork runs both schedulers: upstream's BasicStationEventScheduler feeds off this table, while the Secret
+    # and Irregular presets use the CC* pools. All but NoosphericStorm gate themselves on the glimmer level.
+    - id: NoosphericStorm
+    - id: MundaneDischarge
+    - id: NoosphericZap
+    - id: NoosphericFry
+    - id: PsionicCatGotYourTongue
+    - id: GlimmerWispSpawn
+    - id: GlimmerMiteSpawn
+    - id: GlimmerRandomSentience
+    - id: GlimmerRevenantSpawn
+    - id: FreeProber
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SlimesSpawn # Claw Command

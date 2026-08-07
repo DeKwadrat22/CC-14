@@ -231,3 +231,34 @@
     scheduledGameRules: !type:NestedSelector
       prob: 0.05
       tableId: CCIrregularUnknownShuttlesTable
+
+# ---------------------------------------------------------------------------
+# Glimmer
+#
+# Unlike every other scheduler here, this one is not paced by difficulty or round time - it rolls
+# against the station's glimmer level. Below 200 glimmer it does nothing at all; at 200 there is a
+# 15% chance of a glimmer event within any half hour, rising 5% per further 100 glimmer (20% at 300,
+# 25% at 400 ...) up to a 60% ceiling. It rolls once a minute and derives the per-roll odds from
+# those numbers, so changing checkInterval will not change how often events actually land.
+#
+# It is shared by all six gamemodes on purpose. How psionic a shift gets should be down to what
+# Epistemics does to the noosphere, not which difficulty was rolled.
+#
+# Which event comes out of a successful roll is still the usual weighted pick, narrowed by each
+# event's own minimumGlimmer / maximumGlimmer window. NoosphericStorm is additionally in the ambient
+# pool so glimmer can get off the floor in the first place.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCGlimmerScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEventScheduler
+    minimumGlimmer: 200
+    baseChance: 0.15
+    chancePerStep: 0.05
+    glimmerPerStep: 100
+    maximumChance: 0.6
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCGlimmerEventsTable

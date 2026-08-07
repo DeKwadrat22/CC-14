@@ -58,6 +58,7 @@
     - CCSecretEasyStationAntags
     - CCSecretEasyScheduler
     - CCSecretEasyMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
 
@@ -73,6 +74,7 @@
     - CCSecretMediumStationAntags
     - CCSecretMediumScheduler
     - CCSecretMediumMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
 
@@ -88,5 +90,6 @@
     - CCSecretHardStationAntags
     - CCSecretHardScheduler
     - CCSecretHardMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation

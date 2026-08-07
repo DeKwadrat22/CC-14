@@ -162,3 +162,6 @@
   - type: GlimmerMobRule
     mobPrototype: MobGlimmerMite
     glimmerTier: Low # get more mites earlier on
+    # Claw Command - a "mite swarm" used to be 1-3 mites, because the psionic head-count never sees players
+    # and so always floors at one. Three makes it 3 / 6 / 9 at Moderate / High / Dangerous glimmer.
+    minimumMobs: 3
