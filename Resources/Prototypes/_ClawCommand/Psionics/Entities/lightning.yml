@@ -1,0 +1,19 @@
+# Claw Command - the beam Noospheric Zap fires.
+#
+# NoosphericZapPowerSystem has always spawned "LightningNoospheric", but the psionics port never
+# brought the prototype across from Nyanotrasen/Entities/Effects/lightning.yml. Spawn() throws on an
+# unknown prototype, so the throw happened before the paralyze and the stutter, and using the power
+# did nothing at all except log - which is exactly how it looked in game.
+#
+# Purely cosmetic on purpose: Electrified is disabled and the bolt cannot arc, because the actual
+# effect of the power is the stun applied in code. This is the visual for it, not a second attack.
+- type: entity
+  parent: BaseLightning
+  id: LightningNoospheric
+  name: noospheric lightning
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Electrified
+    enabled: false
+  - type: Lightning
+    canArc: false

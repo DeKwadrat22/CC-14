@@ -288,16 +288,17 @@
         - Critical
       damage:
         types:
-          Blunt: -0.30
-          Piercing: -0.30
-          Slash: -0.30
-          Heat: -0.30
-          Cold: -0.30
-          Asphyxiation: -0.25
-          Bloodloss: -0.25
-          Poison: -0.30
-          Cellular: -0.2
-          Radiation: -0.2
+          # Claw Command - all rates divided by 5.
+          Blunt: -0.06
+          Piercing: -0.06
+          Slash: -0.06
+          Heat: -0.06
+          Cold: -0.06
+          Asphyxiation: -0.05
+          Bloodloss: -0.05
+          Poison: -0.06
+          Cellular: -0.04
+          Radiation: -0.04
     - type: BloodRegenBoost
       regenMultiplier: 1.15
 
