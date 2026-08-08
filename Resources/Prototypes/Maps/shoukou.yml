@@ -3,7 +3,7 @@
   mapName: 'Shoukou'
   mapPath: /Maps/shoukou.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 6 # Claw Command
+  minPlayers: 10 # Claw Command
   maxPlayers: 60
   stations:
     Shoukou:

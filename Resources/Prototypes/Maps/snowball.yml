@@ -3,7 +3,7 @@
   mapName: 'Snowball Station'
   mapPath: /Maps/snowball.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 6 # Claw Command
+  minPlayers: 13 # Claw Command
   maxPlayers: 50
   stations:
     Snowball:

@@ -8,7 +8,7 @@
   mapPath: /Maps/glacier.yml
   # Glacier is a planet map (snow surface with atmosphere), not space — same processor as the other stations.
   planets: [Lavaland]
-  minPlayers: 7
+  minPlayers: 10
   maxPlayers: 60
   stations:
     Glacier:

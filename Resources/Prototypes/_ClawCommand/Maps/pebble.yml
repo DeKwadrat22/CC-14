@@ -5,7 +5,7 @@
   mapPath: /Maps/pebble.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
   minPlayers: 0
-  maxPlayers: 20
+  maxPlayers: 17
   stations:
     PebbleStation:
       stationProto: StandardNanotrasenStation

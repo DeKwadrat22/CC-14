@@ -44,6 +44,9 @@
   components:
     - type: StationEvent
       reoccurrenceDelay: 15
+      startAnnouncement: station-event-mundane-discharge-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
     - type: GlimmerEvent
       maximumGlimmer: 300
       glimmerBurnLower: 18
@@ -58,6 +61,9 @@
     - type: StationEvent
       weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
       reoccurrenceDelay: 15
+      startAnnouncement: station-event-noospheric-zap-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
     - type: GlimmerEvent
     - type: NoosphericZapRule
 
@@ -67,6 +73,10 @@
   parent: BaseGlimmerEvent
   categories: [ HideSpawnMenu ]
   components:
+    - type: StationEvent
+      startAnnouncement: station-event-noospheric-fry-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
     - type: GlimmerEvent
       minimumGlimmer: 550
       maximumGlimmer: 1000
@@ -77,6 +87,10 @@
   parent: BaseGlimmerEvent
   categories: [ HideSpawnMenu ]
   components:
+    - type: StationEvent
+      startAnnouncement: station-event-psionic-cat-got-your-tongue-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
     - type: GlimmerEvent
       minimumGlimmer: 400
       maximumGlimmer: 1000
@@ -102,6 +116,14 @@
   id: BaseGlimmerSignaturesEvent
   categories: [ HideSpawnMenu ]
   components:
+  # Claw Command - one announcement shared by all five children (mites, wisps, revenant, prober,
+  # random sentience) rather than one each. Deliberate: the crew is told the noosphere produced
+  # something without being told what, so finding out is still the job. Matches how these already
+  # share `report: glimmer-event-report-signatures` for the Sophic Scribe's end-of-event readout.
+  - type: StationEvent
+    startAnnouncement: station-event-glimmer-signatures-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
   - type: GlimmerEvent
     minimumGlimmer: 300
     maximumGlimmer: 1000

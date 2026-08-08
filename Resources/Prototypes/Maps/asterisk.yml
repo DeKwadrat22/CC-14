@@ -3,7 +3,7 @@
   mapName: 'Asterisk'
   mapPath: /Maps/asterisk.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 0
+  minPlayers: 5
   maxPlayers: 17
   stations:
     Asterisk:

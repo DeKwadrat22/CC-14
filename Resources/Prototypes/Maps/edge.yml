@@ -3,7 +3,7 @@
   mapName: 'Edge'
   mapPath: /Maps/edge.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 15 # Claw Command
+  minPlayers: 20 # Claw Command
   maxPlayers: 80
   stations:
     Edge:
