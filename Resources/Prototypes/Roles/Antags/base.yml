@@ -65,6 +65,24 @@
   - SecurityOfficer
   - SecurityCadet
   - ClawCommandOfficer
+  # Claw Command - the senior variants share a department, a spawn point and a mindshield with the
+  # jobs above, so they inherit the restriction too. Missed when the senior jobs were first ported.
+  - SeniorOfficer
+  # Claw Command - the Mantis is mindshielded on spawn and investigates the crew for a living, same as
+  # the rest of this list. Upstream expressed this with `canBeAntag: false` on the job, which is not a
+  # field JobPrototype has in this codebase, so the psionics port dropped the line and the restriction
+  # with it. This is the equivalent that actually works.
+  - ForensicMantis
+
+# Claw Command - Shadekin "Anomaly" awakened role. Not crew, spawns in the hideout with full powers and
+# no arrivals announcement, so it is already outside the crew antag pool in spirit. Kept as its own
+# specifier rather than folded into the Security list so it can be composed independently.
+- type: antagSpecifier
+  abstract: true
+  parent: BaseAntagSpecifier
+  id: AnomalyBlacklistedAntag
+  jobBlacklist:
+  - Anomaly
 
 - type: antagSpecifier
   abstract: true
@@ -73,5 +91,5 @@
 
 - type: antagSpecifier
   abstract: true
-  parent: [ MindshieldRestrictedAntag, CyborgBlacklistedAntag, InternBlacklistedAntag ]
+  parent: [ MindshieldRestrictedAntag, CyborgBlacklistedAntag, InternBlacklistedAntag, AnomalyBlacklistedAntag ]
   id: RestrictedAntag

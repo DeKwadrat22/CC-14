@@ -81,6 +81,11 @@
   id: FlashlightSeclite
   description: A robust flashlight used by security.
   components:
+  # Claw Command - paramedics carry one in their locker, and they are the one medical role that
+  # works unlit maints and space. BaseSecurityContraband would otherwise make every paramedic
+  # holding their own issued kit a contraband hit, so Medical is legal to carry one too.
+  - type: Contraband
+    allowedDepartments: [ Security, Medical ]
   - type: Tag
     tags:
       - SecBeltEquip

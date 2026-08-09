@@ -138,6 +138,8 @@
       - id: CheapRollerBedSpawnFolded
       - id: EmergencyRollerBedSpawnFolded
     - id: PinpointerCrew #claw command
+    - id: FlashlightSeclite # Claw Command - paramedics are the one medical role that works unlit
+                            # maints and space, and the void hardsuit carries no light of its own.
     - id: ClothingShoesBootsWinterParamedic # Claw Command - Delta-V departmental winter boots
     - id: PlushieLizardJobParamedic
       prob: 0.02

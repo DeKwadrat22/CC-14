@@ -15,18 +15,13 @@
     # syndicate agents working for themselves, so FreeAgent is the honest category.
     mindRoles:
     - MindRoleGhostRoleFreeAgent
+    # Claw Command - a flat overall gate. This used to also demand 2h in each of Security,
+    # Civilian and Command; requirements are ANDed, so that was really a 6h floor spread across
+    # three unrelated departments, and the 3.25h overall entry could never bind. Six hours of
+    # anything is the actual intent.
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 3.25h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 2h
+      time: 6h
     raffle:
       settings: short
   - type: GhostRoleMobSpawner
@@ -53,18 +48,10 @@
     # Claw Command - see the note on the sibling spawner above.
     mindRoles:
     - MindRoleGhostRoleFreeAgent
+    # Claw Command - see the note on the sibling spawner above.
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 3.25h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 2h
+      time: 6h
     raffle:
       settings: short
   - type: GhostRoleCharacterSpawner
