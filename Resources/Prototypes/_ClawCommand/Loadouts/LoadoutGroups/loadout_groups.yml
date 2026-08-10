@@ -7,6 +7,18 @@
   - SecurityOfficerWintercoat
   - ClothingClawCommandArmoredCowboyJacket
   - ClothingClawCommandArmoredJacket
+  # Claw Command - imported wardrobe
+  - CCWArmorUnloading6B5
+  - CCWBZBeryoza
+  - CCWBZBeryozaGraphite
+  - CCWBZBeryozaPolos
+  - CCWBZBeryozaZarya
+  - CCWBodyArmorMultikam
+  - CCWCamouflageRobe
+  - CCWClothingOuterArmorQMCoat
+  - CCWClothingOuterCoatDetectiveDark
+  - CCWClothingUniformOuterSnowmaiden
+  - CCWCoatBZ
 
 - type: loadoutGroup
   id: ClawCommandOfficerJumpsuit
@@ -14,6 +26,40 @@
   loadouts:
   - ClothingUniformJumpsuitClawCommandOfficer
   - ClothingUniformJumpskirtClawCommandOfficer
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: ClawCommandMaidJumpsuit
@@ -22,6 +68,40 @@
   - ClothingUniformJumpskirtJanimaidmini
   - ClothingUniformJumpskirtJanimaid
   - ClothingUniformJumpskirtTacticalMaid
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: ClawCommandBackpack
@@ -30,6 +110,8 @@
   - ClothingBackpackClawCommand
   - ClothingBackpackSatchelClawCommand
   - ClothingBackpackDuffelClawCommand
+  # Claw Command - imported wardrobe
+  - CCWClothingBackpackMaidBackbow
 
 #Head
 - type: loadoutGroup
@@ -39,6 +121,44 @@
   loadouts:
   - SecurityHelmet
   - TrooperHat
+  # Claw Command - imported wardrobe
+  - CCWArmyBeretArmyG
+  - CCWArmyBeretArmyS
+  - CCWArmyBeretArmyY
+  - CCWAssaultACH
+  - CCWAssaultACHML
+  - CCWAssaultACHUN
+  - CCWBloodyHeadband
+  - CCWClothingHeadHatBeretBonBon
+  - CCWClothingHeadHatBeretGaqut
+  - CCWClothingHeadHatBowlerCool
+  - CCWClothingHeadHatBowlerHatBrown
+  - CCWClothingHeadHatBowlerOrange
+  - CCWClothingHeadHatBowlerPink
+  - CCWClothingHeadHatImam
+  - CCWClothingHeadHatPirateCaptain
+  - CCWClothingHeadHatSeniorOfficerBeret
+  - CCWClothingHeadHatSnowmaiden
+  - CCWClothingHeadHelmetCIsuppressor
+  - CCWClothingHeadHelmetK63
+  - CCWClothingHeadHelmetScienceMask
+  - CCWClothingHeadHelmetVisorDawn
+  - CCWClothingHeadHelmetVisorGorka
+  - CCWClothingHeadHelmetbrokengod
+  - CCWClothingHeadHelmetepsilon9
+  - CCWClothingHeadHelmeteta10
+  - CCWClothingHeadHelmetupsilon11
+  - CCWDressCapArmyB
+  - CCWDressCapArmyS
+  - CCWDressCapArmyY
+  - CCWHeadband
+  - CCWSwampHood
+  - CCWVlPCBeret
+  - CCWVlPCCap
+  - CCWVlPCFlowerOne
+  - CCWWitchersHat
+  - CCWWitchersPurpleHat
+  - CCWWitchersRedHat
 
 - type: loadoutGroup
   id: LoadoutGroupCCMJobTrinkets
@@ -165,6 +285,10 @@
   - LoadoutSecGlovesBlack
   - LoadoutSecGlovesFingerless
   - LoadoutSecGlovesRed
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsGlovesCamouflage
+  - CCWClothingHandsGlovesLatexLong
+  - CCWVlPCGloves
 
 # Security Gloves
 - type: loadoutGroup
@@ -177,6 +301,12 @@
   - LoadoutSecGlovesCombat
   - LoadoutSecGlovesFingerless
   - LoadoutSecGlovesRed
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsFancyGloves
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsGlovesCamouflage
+  - CCWClothingHandsGlovesLatexLong
+  - CCWVlPCGloves
 
 # Captain Sidearm
 - type: loadoutGroup
@@ -208,6 +338,40 @@
   loadouts:
   - PrisonerJumpsuit
   - PrisonerJumpskirt
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: PrisonerShoes
@@ -217,6 +381,14 @@
   loadouts:
   - BlackShoes
   - WinterBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
 
 # Captain
 - type: loadoutGroup
@@ -232,6 +404,14 @@
   - WinterBoots
   - JackBoots
   - CombatBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
 
 # Head of Personnel
 - type: loadoutGroup
@@ -247,6 +427,14 @@
   - WinterBoots
   - JackBoots
   - CombatBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
 
 # Chief Medical Officer
 - type: loadoutGroup

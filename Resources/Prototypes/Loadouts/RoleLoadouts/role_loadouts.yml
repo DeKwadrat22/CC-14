@@ -24,15 +24,6 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
-  - CCCaptainRegalia
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -62,11 +53,6 @@
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # Silicons
 - type: roleLoadout
@@ -106,10 +92,6 @@
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
   - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobBartender
@@ -135,11 +117,8 @@
   - GroupSpeciesBreathTool
   - BarkeepWeapon # Claw Command - bar defence
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -163,9 +142,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobChef
@@ -190,11 +167,8 @@
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobLibrarian
@@ -218,9 +192,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobLawyer
@@ -244,10 +216,7 @@
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
   - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobChaplain
@@ -275,11 +244,7 @@
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobJanitor
@@ -304,11 +269,8 @@
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobBotanist
@@ -332,11 +294,8 @@
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobClown
@@ -361,11 +320,7 @@
   - CCPets # CC14
   - ClownJobTrinkets
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobMime
@@ -390,11 +345,8 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
   #- MimeJobTrinkets
 
 - type: roleLoadout
@@ -422,9 +374,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # Cargo
 - type: roleLoadout
@@ -451,11 +401,6 @@
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -481,11 +426,7 @@
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -511,8 +452,6 @@
   - CCWardrobeHats
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # Engineering
 - type: roleLoadout
@@ -538,11 +477,6 @@
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -565,9 +499,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -592,11 +524,7 @@
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -621,9 +549,6 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # Science
 - type: roleLoadout
@@ -652,10 +577,6 @@
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
   - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobScientist
@@ -683,11 +604,6 @@
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -711,9 +627,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # Security
 - type: roleLoadout
@@ -742,15 +656,6 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
-  - CCSecurityRegalia
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -781,15 +686,7 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
-  - CCSecurityRegalia
+  - WardenNeck
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -821,14 +718,7 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -859,14 +749,6 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -892,12 +774,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
 
 # Wildcards
   - CCServiceWeapon # Claw Command - service weapons
@@ -929,11 +806,8 @@
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobPsychologist
@@ -957,9 +831,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
@@ -976,7 +848,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 # gives vox a nitrogen breathing tank
 # other species get nothing
@@ -989,7 +860,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalStandard
@@ -1003,7 +873,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalClown
@@ -1016,7 +885,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalExtended
@@ -1030,7 +898,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalExtendedAntag # Used by antagonists that spawn off-station (e.g wizards)
@@ -1052,7 +919,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
@@ -1066,7 +932,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalSyndicate
@@ -1080,7 +945,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalMilitaryDouble
@@ -1092,7 +956,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalNukie
@@ -1106,7 +969,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalEVA
@@ -1119,7 +981,6 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: RoleSurvivalEVAAntag # Used by antagonists that spawn off-station AND in space (e.g ninjas)
@@ -1137,4 +998,3 @@
   - CCWardrobeNeckwear
   - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories

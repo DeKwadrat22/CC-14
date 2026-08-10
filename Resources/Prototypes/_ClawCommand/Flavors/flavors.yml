@@ -5,7 +5,10 @@
 - type: flavor
   id: FlavorClawtail
   flavorType: Complex
-  description: flavor-complex-flavorclawtail
+  # Claw Command - was flavor-complex-flavorclawtail, an auto-generated stub whose text was literally
+  # "FlavorClawtail". The written flavour text already existed as flavor-complex-clawtail in
+  # flavor-profiles.ftl but nothing pointed at it, so tasting a clawtail printed the prototype id.
+  description: flavor-complex-clawtail
 
 - type: flavor
   id: ablustine

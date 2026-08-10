@@ -25,11 +25,6 @@
 #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
-  - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -56,11 +51,7 @@
 #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -84,9 +75,7 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
   - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobChemist
@@ -113,9 +102,6 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobParamedic
@@ -141,8 +127,4 @@
 #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories

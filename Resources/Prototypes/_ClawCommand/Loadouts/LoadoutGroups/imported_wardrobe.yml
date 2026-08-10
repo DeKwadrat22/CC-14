@@ -1,7 +1,15 @@
 # Claw Command - loadout groups for the imported wardrobe.
 #
-# Every group is minLimit 0, so nothing here is ever forced on a character. See
-# Miscellaneous/imported_wardrobe.yml for the entries themselves and why the pools are split.
+# Almost everything imported was folded into the group each job already has for that slot, so a
+# security officer picks a new helmet inside SecurityHead and the captain picks a dress uniform
+# inside CaptainJumpsuit - no parallel category sitting next to the real one.
+#
+# What is left here is the fallback for jobs that have no group for a slot at all. A passenger has
+# no "head" category to merge into, so it gets one. Roles that do have a group never see these,
+# which is why each is attached to a specific subset of roles rather than to everything.
+#
+# WardenNeck is not a wardrobe group: every other head-of-staff role already has a <Role>Neck
+# group and the warden simply lacked one, so it follows that existing convention.
 
 - type: loadoutGroup
   id: CCWardrobeHats
@@ -43,7 +51,6 @@
   - CCWChestBeaconRed
   - CCWChestBeaconWhite
   - CCWChestBeaconYellow
-  - CCWCloakViolet
   - CCWClothingNeckMaidChoker
   - CCWClothingNeckPirateParrot
   - CCWClothingNeckShawlRed
@@ -55,24 +62,17 @@
   - CCWDoubleBedsheetBlack
   - CCWDoubleBedsheetBlue
   - CCWDoubleBedsheetBrown
-  - CCWDoubleBedsheetCE
-  - CCWDoubleBedsheetCMO
-  - CCWDoubleBedsheetCap
   - CCWDoubleBedsheetCat
   - CCWDoubleBedsheetChaplain
   - CCWDoubleBedsheetClown
-  - CCWDoubleBedsheetCommand
   - CCWDoubleBedsheetGreen
   - CCWDoubleBedsheetGrey
-  - CCWDoubleBedsheetHOP
-  - CCWDoubleBedsheetHOS
   - CCWDoubleBedsheetIan
   - CCWDoubleBedsheetMed
   - CCWDoubleBedsheetMime
   - CCWDoubleBedsheetOrange
   - CCWDoubleBedsheetPink
   - CCWDoubleBedsheetPurple
-  - CCWDoubleBedsheetRD
   - CCWDoubleBedsheetRainbow
   - CCWDoubleBedsheetWhite
   - CCWDoubleBedsheetWinter
@@ -148,92 +148,58 @@
   - CCWClothingHandsGlovesCamouflage
   - CCWClothingHandsGlovesLatexLong
   - CCWVlPCGloves
-  - CCWCamouflageMask
-  - CCWClothingKrilBig
-  - CCWClothingKrilSmall
-  - CCWClothingNanoMask
   - CCWClothingBeltKama
   - CCWClothingBeltKamaGreen
   - CCWClothingBeltKamaRed
   - CCWClothingBeltKamaTurquoise
   - CCWClothingBeltKamaYellow
-  - CCWClothingUniformOuterSnowmaiden
+  - CCWCamouflageMask
+  - CCWClothingKrilSmall
+  - CCWClothingNanoMask
   - CCWClothingBackpackMaidBackbow
 
 - type: loadoutGroup
-  id: CCCombatOuterwear
-  name: cc-loadout-group-combat-outerwear
+  id: WardenNeck
+  name: loadout-group-warden-neck
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - CCWArmorUnloading6B5
-  - CCWBZBeryoza
-  - CCWBZBeryozaGraphite
-  - CCWBZBeryozaPolos
-  - CCWBZBeryozaZarya
-  - CCWBodyArmorMultikam
-  - CCWCamouflageRobe
-  - CCWClothingOuterArmorQMCoat
-  - CCWClothingOuterCoatDetectiveDark
-  - CCWCoatBZ
-
-- type: loadoutGroup
-  id: CCCombatHeadgear
-  name: cc-loadout-group-combat-headgear
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - CCWAssaultACH
-  - CCWAssaultACHML
-  - CCWAssaultACHUN
-  - CCWClothingHeadHatBeretBonBon
-  - CCWClothingHeadHatBeretGaqut
-  - CCWClothingHeadHatSeniorOfficerBeret
-  - CCWClothingHeadHelmetCIsuppressor
-  - CCWClothingHeadHelmetK63
-  - CCWClothingHeadHelmetScienceMask
-  - CCWClothingHeadHelmetVisorDawn
-  - CCWClothingHeadHelmetVisorGorka
-  - CCWClothingHeadHelmetbrokengod
-  - CCWClothingHeadHelmetepsilon9
-  - CCWClothingHeadHelmeteta10
-  - CCWClothingHeadHelmetupsilon11
-
-- type: loadoutGroup
-  id: CCCombatKit
-  name: cc-loadout-group-combat-kit
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - CCWClothingBeltPirateRedBelt
-  - CCWClothingHandsFancyGloves
-
-- type: loadoutGroup
-  id: CCCaptainRegalia
-  name: cc-loadout-group-captain-regalia
-  minLimit: 0
-  maxLimit: 2
-  loadouts:
-  - CCWClothingHeadGeneralHat
-  - CCWClothingHeadHatBeretCaptainSheriff
-  - CCWClothingHeadHatBeretCaptainWhite
-  - CCWClothingHeadHatCapcapSheriff
-  - CCWClothingHeadHatCapcapWhite
-  - CCWCapSheriffcloack
-  - CCWCapwhitecloack
-  - CCWClothingNeckGeneralCloak
-  - CCWClothingUniformJumpskirtCaptainAlt
-  - CCWClothingUniformJumpskirtWhiteCaptain
-  - CCWClothingUniformJumpsuitCaptainAlt
-  - CCWClothingUniformJumpsuitSheriffCaptain
-  - CCWClothingUniformJumpsuitWhiteCaptain
-
-- type: loadoutGroup
-  id: CCSecurityRegalia
-  name: cc-loadout-group-security-regalia
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - CCWClothingNeckCloakHosFormal
-  - CCWClothingNeckMantleHOSShoulder
+  - CCWChestBeaconBlue
+  - CCWChestBeaconBlueRed
+  - CCWChestBeaconRed
+  - CCWChestBeaconWhite
+  - CCWChestBeaconYellow
+  - CCWClothingNeckMaidChoker
+  - CCWClothingNeckPirateParrot
+  - CCWClothingNeckShawlRed
+  - CCWClothingNeckShoulderPad
+  - CCWClothingNeckShoulderPadGreen
+  - CCWClothingNeckShoulderPadRed
+  - CCWClothingNeckShoulderPadTurquoise
+  - CCWClothingNeckShoulderPadYellow
+  - CCWDoubleBedsheetBlack
+  - CCWDoubleBedsheetBlue
+  - CCWDoubleBedsheetBrown
+  - CCWDoubleBedsheetCat
+  - CCWDoubleBedsheetChaplain
+  - CCWDoubleBedsheetClown
+  - CCWDoubleBedsheetGreen
+  - CCWDoubleBedsheetGrey
+  - CCWDoubleBedsheetIan
+  - CCWDoubleBedsheetMed
+  - CCWDoubleBedsheetMime
+  - CCWDoubleBedsheetOrange
+  - CCWDoubleBedsheetPink
+  - CCWDoubleBedsheetPurple
+  - CCWDoubleBedsheetRainbow
+  - CCWDoubleBedsheetWhite
+  - CCWDoubleBedsheetWinter
+  - CCWDoubleBedsheetYellow
+  - CCWGuardCloak
+  - CCWOperatorMantle
+  - CCWShoulderBeaconBlue
+  - CCWShoulderBeaconBlueRed
+  - CCWShoulderBeaconRed
+  - CCWShoulderBeaconWhite
+  - CCWShoulderBeaconYellow
   - CCWWardenMantleID

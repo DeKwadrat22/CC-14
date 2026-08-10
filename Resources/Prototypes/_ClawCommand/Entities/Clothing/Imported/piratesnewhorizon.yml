@@ -62,13 +62,6 @@
   - type: Clothing
     sprite: Imperial/PiratesNewHorizon/clothing/belt/redbelt.rsi
   - type: Appearance
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.7
 
 - type: entity
   id: ClothingBeltPirateSpeed

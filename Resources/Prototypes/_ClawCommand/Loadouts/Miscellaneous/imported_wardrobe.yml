@@ -153,11 +153,6 @@
     neck: ChestBeaconYellow
 
 - type: loadout
-  id: CCWCloakViolet
-  equipment:
-    neck: CloakViolet
-
-- type: loadout
   id: CCWClothingNeckMaidChoker
   equipment:
     neck: ClothingNeckMaidChoker
@@ -213,21 +208,6 @@
     neck: DoubleBedsheetBrown
 
 - type: loadout
-  id: CCWDoubleBedsheetCE
-  equipment:
-    neck: DoubleBedsheetCE
-
-- type: loadout
-  id: CCWDoubleBedsheetCMO
-  equipment:
-    neck: DoubleBedsheetCMO
-
-- type: loadout
-  id: CCWDoubleBedsheetCap
-  equipment:
-    neck: DoubleBedsheetCap
-
-- type: loadout
   id: CCWDoubleBedsheetCat
   equipment:
     neck: DoubleBedsheetCat
@@ -243,11 +223,6 @@
     neck: DoubleBedsheetClown
 
 - type: loadout
-  id: CCWDoubleBedsheetCommand
-  equipment:
-    neck: DoubleBedsheetCommand
-
-- type: loadout
   id: CCWDoubleBedsheetGreen
   equipment:
     neck: DoubleBedsheetGreen
@@ -256,16 +231,6 @@
   id: CCWDoubleBedsheetGrey
   equipment:
     neck: DoubleBedsheetGrey
-
-- type: loadout
-  id: CCWDoubleBedsheetHOP
-  equipment:
-    neck: DoubleBedsheetHOP
-
-- type: loadout
-  id: CCWDoubleBedsheetHOS
-  equipment:
-    neck: DoubleBedsheetHOS
 
 - type: loadout
   id: CCWDoubleBedsheetIan
@@ -296,11 +261,6 @@
   id: CCWDoubleBedsheetPurple
   equipment:
     neck: DoubleBedsheetPurple
-
-- type: loadout
-  id: CCWDoubleBedsheetRD
-  equipment:
-    neck: DoubleBedsheetRD
 
 - type: loadout
   id: CCWDoubleBedsheetRainbow
@@ -576,11 +536,6 @@
   id: CCWCamouflageMask
   equipment:
     mask: CamouflageMask
-
-- type: loadout
-  id: CCWClothingKrilBig
-  equipment:
-    mask: ClothingKrilBig
 
 - type: loadout
   id: CCWClothingKrilSmall

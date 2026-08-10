@@ -101,14 +101,13 @@
     sprite: Imperial/Seriozha/Fredik21/cloth/cihead.rsi
   - type: Clothing
     sprite: Imperial/Seriozha/Fredik21/cloth/cihead.rsi
-  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.75
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: HideLayerClothing
     layers:
       Hair: HEAD
@@ -210,10 +209,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.95
-        Heat: 0.95
-        Piercing: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: Unremoveable
 
 - type: entity
@@ -226,14 +225,13 @@
     sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9head.rsi
   - type: Clothing
     sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9head.rsi
-  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: HideLayerClothing
     layers:
       Hair: HEAD
@@ -248,14 +246,13 @@
     sprite: Imperial/Seriozha/Fredik21/cloth/eta10head.rsi
   - type: Clothing
     sprite: Imperial/Seriozha/Fredik21/cloth/eta10head.rsi
-  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: HideLayerClothing
     layers:
       Hair: HEAD
@@ -270,14 +267,13 @@
     sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11head.rsi
   - type: Clothing
     sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11head.rsi
-  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: HideLayerClothing
     layers:
       Hair: HEAD

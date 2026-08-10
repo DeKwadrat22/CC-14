@@ -1,6 +1,7 @@
 # Claw Command - flavour text for _ClawCommand/Flavors/flavors.yml.
 
-flavor-complex-flavorclawtail = FlavorClawtail
+# Claw Command - flavor-complex-flavorclawtail removed; FlavorClawtail now points at
+# flavor-complex-clawtail in flavor-profiles.ftl, which has the real written flavour text.
 flavor-base-chuddy = chuddy
 flavor-complex-coconut = coconut
 flavor-complex-emptiness = emptiness

@@ -20,17 +20,6 @@
     size: Huge
     shape:
     - "0,0,1,2"
-  - type: Storage
-    grid:
-    - "0,0,1,1"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/ArmorUnloading6B5.rsi
   - type: Clothing
@@ -38,9 +27,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.85
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   id: ArmoredUnloading6B43Desert
@@ -284,10 +276,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.84
-        Slash: 0.97
-        Piercing: 0.97
-        Heat: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: Sprite
     sprite: Imperial/DeadSector/head/AssaultACH.rsi
   - type: Clothing
@@ -308,10 +300,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.84
-        Slash: 0.97
-        Piercing: 0.97
-        Heat: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: Sprite
     sprite: Imperial/DeadSector/head/AssaultACHML.rsi
   - type: Clothing
@@ -332,10 +324,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.84
-        Slash: 0.97
-        Piercing: 0.97
-        Heat: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: Sprite
     sprite: Imperial/DeadSector/head/AssaultACHUN.rsi
   - type: Clothing
@@ -379,17 +371,6 @@
     size: Huge
     shape:
     - "0,0,1,1"
-  - type: Storage
-    grid:
-    - "0,0,1,0"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/BZBeryoza.rsi
   - type: Clothing
@@ -397,9 +378,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.9
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   id: BZBeryozaGraphite
@@ -412,17 +396,6 @@
     size: Huge
     shape:
     - "0,0,1,1"
-  - type: Storage
-    grid:
-    - "0,0,1,0"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/BZBeryozaGraphite.rsi
   - type: Clothing
@@ -430,15 +403,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.8
-        Heat: 0.6
-        Cold: 0.6
-        Radiation: 0.8
-        Caustic: 0.95
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.95
+    damageCoefficient: 0.9
 
 - type: entity
   id: BZBeryozaPolos
@@ -451,17 +421,6 @@
     size: Huge
     shape:
     - "0,0,1,1"
-  - type: Storage
-    grid:
-    - "0,0,1,0"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/BZBeryozaPolos.rsi
   - type: Clothing
@@ -469,14 +428,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.95
-        Cold: 0.95
-        Caustic: 0.6
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
 
 - type: entity
   id: BZBeryozaZarya
@@ -489,17 +446,6 @@
     size: Huge
     shape:
     - "0,0,1,1"
-  - type: Storage
-    grid:
-    - "0,0,1,0"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/BZBeryozaZarya.rsi
   - type: Clothing
@@ -507,15 +453,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
+        Blunt: 0.7
+        Slash: 0.7
         Piercing: 0.7
-        Heat: 0.9
-        Cold: 0.9
-        Shock: 0.85
-        Caustic: 0.95
+        Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.95
+    damageCoefficient: 0.9
 
 - type: entity
   id: BZSGranit
@@ -662,17 +605,6 @@
     size: Huge
     shape:
     - "0,0,1,2"
-  - type: Storage
-    grid:
-    - "0,0,1,1"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/BodyArmorMultikam.rsi
   - type: Clothing
@@ -682,13 +614,10 @@
       coefficients:
         Blunt: 0.7
         Slash: 0.7
-        Piercing: 0.8
-        Shock: 0.85
-        Heat: 0.95
-        Cold: 0.95
-        Caustic: 0.6
+        Piercing: 0.7
+        Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.45
+    damageCoefficient: 0.9
 
 - type: entity
   id: BodyArmorMultikamRaptor
@@ -874,15 +803,14 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
-        Cold: 0.85
-        Shock: 0.85
-        Caustic: 0.85
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCamouflageRobe
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   id: ClothingHandsGlovesCamouflage
@@ -926,10 +854,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.95
-        Heat: 0.95
-        Piercing: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: PowerCellDraw
     drawRate: 3
   - type: ToggleCellDraw
@@ -953,10 +881,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.95
-        Heat: 0.95
-        Piercing: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: PowerCellDraw
     drawRate: 3
   - type: ToggleCellDraw
@@ -1183,17 +1111,6 @@
     size: Huge
     shape:
     - "0,0,1,2"
-  - type: Storage
-    grid:
-    - "0,0,1,1"
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Sprite
     sprite: Imperial/DeadSector/outer_clothing/CoatBZ.rsi
   - type: Clothing
@@ -1205,12 +1122,8 @@
         Slash: 0.7
         Piercing: 0.7
         Heat: 0.8
-        Cold: 0.8
-        Shock: 0.85
-        Radiation: 0.95
-        Caustic: 0.75
   - type: ExplosionResistance
-    damageCoefficient: 0.8
+    damageCoefficient: 0.9
 
 - type: entity
   id: DressCapArmyB

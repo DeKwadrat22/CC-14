@@ -16,6 +16,40 @@
   - SecurityJumpsuitGrey
   - SecurityJumpskirtGrey
   - TrooperUniform
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: SeniorOfficerID
@@ -35,6 +69,40 @@
   - StationEngineerJumpskirt
   - StationEngineerHazardsuit
   - EngiMJ
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: SeniorEngineerID
@@ -56,6 +124,29 @@
   - GreenSurgeryCap
   - PurpleSurgeryCap
   - NurseHat
+  # Claw Command - imported wardrobe
+  - CCWArmyBeretArmyG
+  - CCWArmyBeretArmyS
+  - CCWArmyBeretArmyY
+  - CCWBloodyHeadband
+  - CCWClothingHeadHatBowlerCool
+  - CCWClothingHeadHatBowlerHatBrown
+  - CCWClothingHeadHatBowlerOrange
+  - CCWClothingHeadHatBowlerPink
+  - CCWClothingHeadHatImam
+  - CCWClothingHeadHatPirateCaptain
+  - CCWClothingHeadHatSnowmaiden
+  - CCWDressCapArmyB
+  - CCWDressCapArmyS
+  - CCWDressCapArmyY
+  - CCWHeadband
+  - CCWSwampHood
+  - CCWVlPCBeret
+  - CCWVlPCCap
+  - CCWVlPCFlowerOne
+  - CCWWitchersHat
+  - CCWWitchersPurpleHat
+  - CCWWitchersRedHat
 
 - type: loadoutGroup
   id: SeniorPhysicianJumpsuit
@@ -69,6 +160,40 @@
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
   - MedicMJ
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: SeniorPhysicianOuterClothing
@@ -78,6 +203,8 @@
   - SeniorPhysicianLabCoat
   - RegularLabCoat
   - MedicalDoctorWintercoat
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformOuterSnowmaiden
 
 - type: loadoutGroup
   id: SeniorPhysicianID
@@ -98,6 +225,40 @@
   - RoboticistJumpsuit
   - RoboticistJumpskirt
   - ResearchMJ
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
 
 - type: loadoutGroup
   id: SeniorResearcherOuterClothing
@@ -110,6 +271,8 @@
   - ScienceWintercoat
   - RoboticistLabCoat
   - RoboticistWintercoat
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformOuterSnowmaiden
 
 - type: loadoutGroup
   id: SeniorResearcherID

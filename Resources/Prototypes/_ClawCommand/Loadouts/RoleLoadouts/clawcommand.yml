@@ -21,14 +21,7 @@
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
-  - CCCombatOuterwear
-  - CCCombatHeadgear
-  - CCCombatKit
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -51,9 +44,6 @@
   # Claw Command - imported wardrobe
   - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobClawCommandMaid
@@ -78,8 +68,4 @@
   - LoadoutGroupCCMJobTrinkets
   - GroupSpeciesBreathToolSecurity
   # Claw Command - imported wardrobe
-  - CCWardrobeHats
   - CCWardrobeNeckwear
-  - CCWardrobeOutfits
-  - CCWardrobeFootwear
-  - CCWardrobeAccessories
