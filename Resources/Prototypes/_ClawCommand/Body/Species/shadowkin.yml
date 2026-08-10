@@ -94,6 +94,9 @@
   name: Urist McShadow
   suffix: Claw Command
   components:
+  # Claw Command - a shadekin has no station record to match a print against, so forensics reports
+  # the creature by name instead of a hex string that leads nowhere. See ForensicSignatureSystem.
+  - type: ForensicSignature
   - type: Butcherable
     spawned:
     - id: FoodMeat
