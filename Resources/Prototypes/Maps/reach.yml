@@ -10,10 +10,13 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Reach Transport {1}'
+          # Claw Command - CC, not NTSC. NanotrasenNameGenerator hardcodes an "NT" in front of
+          # whatever prefixCreator you give it, so the fork's generator is used to set the whole
+          # prefix. Renders as e.g. "CC Reach Mothership LV-042".
+          mapNameTemplate: '{0} Reach Mothership {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'SC'
+            !type:ClawCommandNameGenerator
+            prefix: 'CC'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationJobs

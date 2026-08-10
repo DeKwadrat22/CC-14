@@ -1,6 +1,8 @@
-﻿<Document>
-  # Silicon Rule 8 - Your HUD determines who is crew
-  Unless a law redefines the definition of crew, then anyone who the HUD indicates to you has a valid station job, including passengers, is a crewmember. In the default set of laws, this is shown with a green border around the job icon in the HUD. You cannot do something that causes someone to not be considered crew, but you can allow someone else to do something that causes someone to not be crew.
+<Document>
+  # Silicon Rule 8 - The crew manifest determines who is crew
+  Unless a law redefines the definition of crew, a crewmember is anyone listed on the [bold]crew manifest[/bold], passengers included. This is the same definition Security works from; see [textlink="Security Standard Operating Procedure" link="GuideSecuritySOP"].
 
-  If your set of laws changes, regardless of what law is changed, the green border is replaced with a yellow one. This indicates that your laws [italic]may[/italic] have changed the definition for what crew is. Use your best judgement and interpretation of your laws to define who is crew.
+  Crew status [bold]cannot[/bold] be extended to, or created for, an entity that never had it to begin with. Anomalous lifeforms and other non-crew entities are not crew, and no action by you or anyone else makes them crew. You cannot do something that causes someone to stop being considered crew, but you can allow someone else to do something that causes it.
+
+  If your set of laws changes, regardless of what law is changed, the green border around the job icon in your HUD is replaced with a yellow one. That border is not the definition of crew - it is only a signal that your laws [italic]may[/italic] have redefined it. Where they have, use your best judgement and interpretation of your laws to decide who is crew.
 </Document>

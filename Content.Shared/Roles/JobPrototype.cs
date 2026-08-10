@@ -89,6 +89,15 @@ public sealed partial class JobPrototype : IPrototype
     public bool? OverrideConsoleVisibility;
 
     /// <summary>
+    /// Claw Command: whether spawning into this job creates a <c>GeneralStationRecord</c>.
+    /// That record is what puts somebody on the crew manifest and in records consoles, so a role
+    /// that is not legally crew sets this to false. See the Security SOP: crew status cannot be
+    /// extended to, or created for, an entity that never had it.
+    /// </summary>
+    [DataField]
+    public bool AddToStationRecords = true;
+
+    /// <summary>
     /// The "weight" or importance of this job. If this number is large, the job system will assign this job
     /// before assigning other jobs.
     /// </summary>

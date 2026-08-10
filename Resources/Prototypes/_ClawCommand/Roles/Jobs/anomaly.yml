@@ -11,6 +11,9 @@
   icon: "JobIconNoId"
   joinNotifyCrew: false
   announceArrival: false # claw command - anomalies are not crew, no arrivals announcement ever
+  # Claw Command - anomalies are not legally crew, so they get no station record. That keeps them
+  # off the crew manifest and out of every records console, matching the Security and Anomaly SOP.
+  addToStationRecords: false
   whitelisted: true
   access:
   - Maintenance
