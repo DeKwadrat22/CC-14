@@ -1,0 +1,398 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Crook
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingFancyBackpack
+  parent: ClothingBackpack
+  name: "fancy bag"
+  description: "Will blind any poverty."
+  suffix: "Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Fancy/bag.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Fancy/flask.rsi
+
+- type: entity
+  id: ClothingHandsFancyGloves
+  parent: ClothingHandsBase
+  name: "fancy gloves"
+  description: "Will blind any poverty."
+  suffix: "Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Fancy/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Fancy/gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+  - type: FingerprintMask
+
+- type: entity
+  id: ClothingHandsGlovesCombatUnremoveable
+  parent: ClothingHandsGlovesCombat
+  name: "gloves"
+  suffix: "Неснимаемое, Crook, Samurai"
+  components:
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingOuterMadzima
+  parent: ClothingOuterStorageBase
+  name: "breakdance coat"
+  description: "Time to get crazy!"
+  suffix: "Majima, Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Madzima/OuterClothing/Coats/Breakdance.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Madzima/OuterClothing/Coats/Breakdance.rsi
+
+- type: entity
+  id: ClothingShoesFancyBoots
+  parent: ClothingShoesBaseButcherable
+  name: "fancy shoes"
+  description: "Will blind any poverty."
+  suffix: "Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Fancy/boots.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Fancy/boots.rsi
+  - type: Matchbox
+
+- type: entity
+  id: ClothingShoesMadzima
+  parent: ClothingShoesBaseButcherable
+  name: "breakdance shoes"
+  description: "Time for an ass kicking!"
+  suffix: "Majima, Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Madzima/Shoes/Misc/Breakdance.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Madzima/Shoes/Misc/Breakdance.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMadzima
+  parent: ClothingUniformBase
+  name: "breakdance outfit"
+  description: "See ya around missy!"
+  suffix: "Majima, Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Madzima/Uniforms/Jumpsuit/Breakdance.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Madzima/Uniforms/Jumpsuit/Breakdance.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitOperativeUnremoveable
+  parent: ClothingUniformJumpsuitOperative
+  name: "jumpsuit"
+  suffix: "Неснимаемое, Crook, Samurai"
+  components:
+  - type: Unremoveable
+
+- type: entity
+  id: DoubleBedsheetBlack
+  parent: BedsheetBase
+  name: "black bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: black
+
+- type: entity
+  id: DoubleBedsheetBlue
+  parent: BedsheetBase
+  name: "blue bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: blue
+
+- type: entity
+  id: DoubleBedsheetBrown
+  parent: BedsheetBase
+  name: "brown bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: brown
+
+- type: entity
+  id: DoubleBedsheetCC
+  parent: BedsheetBase
+  name: "centcomm bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: cc
+
+- type: entity
+  id: DoubleBedsheetCE
+  parent: BedsheetBase
+  name: "CE bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: ce
+
+- type: entity
+  id: DoubleBedsheetCMO
+  parent: BedsheetBase
+  name: "CMO bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: cmo
+
+- type: entity
+  id: DoubleBedsheetCap
+  parent: BedsheetBase
+  name: "cap bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: cap
+
+- type: entity
+  id: DoubleBedsheetCat
+  parent: BedsheetBase
+  name: "cat bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: cat
+
+- type: entity
+  id: DoubleBedsheetChaplain
+  parent: BedsheetBase
+  name: "chaplain bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: chaplain
+
+- type: entity
+  id: DoubleBedsheetClown
+  parent: BedsheetBase
+  name: "clown bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: clown
+
+- type: entity
+  id: DoubleBedsheetCommand
+  parent: BedsheetBase
+  name: "command bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: command
+
+- type: entity
+  id: DoubleBedsheetCult
+  parent: BedsheetBase
+  name: "cult bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: cult
+
+- type: entity
+  id: DoubleBedsheetGreen
+  parent: BedsheetBase
+  name: "green bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: green
+
+- type: entity
+  id: DoubleBedsheetGrey
+  parent: BedsheetBase
+  name: "grey bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: grey
+
+- type: entity
+  id: DoubleBedsheetHOP
+  parent: BedsheetBase
+  name: "HOP bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: hop
+
+- type: entity
+  id: DoubleBedsheetHOS
+  parent: BedsheetBase
+  name: "HOS bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: hos
+
+- type: entity
+  id: DoubleBedsheetIan
+  parent: BedsheetBase
+  name: "Ian bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: ian
+
+- type: entity
+  id: DoubleBedsheetMed
+  parent: BedsheetBase
+  name: "med bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: med
+
+- type: entity
+  id: DoubleBedsheetMime
+  parent: BedsheetBase
+  name: "mime bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: mime
+
+- type: entity
+  id: DoubleBedsheetOrange
+  parent: BedsheetBase
+  name: "orange bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: orange
+
+- type: entity
+  id: DoubleBedsheetPink
+  parent: BedsheetBase
+  name: "pink bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: pink
+
+- type: entity
+  id: DoubleBedsheetPurple
+  parent: BedsheetBase
+  name: "purple bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: purple
+
+- type: entity
+  id: DoubleBedsheetRD
+  parent: BedsheetBase
+  name: "RD bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: rd
+
+- type: entity
+  id: DoubleBedsheetRainbow
+  parent: BedsheetBase
+  name: "rainbow bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: rainbow
+
+- type: entity
+  id: DoubleBedsheetSyndie
+  parent: BedsheetBase
+  name: "syndie bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: syndie
+
+- type: entity
+  id: DoubleBedsheetWhite
+  parent: BedsheetBase
+  name: "white bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: white
+
+- type: entity
+  id: DoubleBedsheetWinter
+  parent: BedsheetBase
+  name: "winter bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: winter
+
+- type: entity
+  id: DoubleBedsheetYellow
+  parent: BedsheetBase
+  name: "yellow bedsheet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/doublebed.rsi
+    state: yellow
+
+- type: entity
+  id: FancyUniform
+  parent: ClothingUniformBase
+  name: "fancy jumpsuit"
+  description: "Will blind any poverty."
+  suffix: "Crook"
+  components:
+  - type: Sprite
+    sprite: Imperial/Crook/Misc/Fancy/jumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/Crook/Misc/Fancy/jumpsuit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: ShoesSpaceSamurai
+  parent:
+  - ClothingShoesBaseButcherable
+  - BaseMajorContraband
+  name: "space ninja shoes"
+  description: "A pair of nano-enhanced boots with built-in magnetic suction cups. It has a red glow."
+  suffix: "Crook, Samurai"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/redninja.rsi
+    state: icon-on
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/redninja.rsi
+  - type: NoSlip
+  - type: Magboots
+  - type: Unremoveable
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: FootstepModifier
+

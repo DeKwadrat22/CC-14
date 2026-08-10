@@ -1,0 +1,85 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: StarWars
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingHeadHardsuitStormTrooper
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "stormtrooper hardsuit helmet"
+  description: "helmet with anti-guidance system"
+  suffix: "звёздные войны, империя"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/StarWars/helmet2.rsi
+  - type: Clothing
+    sprite: Imperial/StarWars/helmet2.rsi
+  - type: PointLight
+    color: "#FFFFFF"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  id: ClothingHeadHardsuitVader
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "Vader helmet"
+  description: "looking at him makes you feel scared"
+  suffix: "звёздные войны, империя"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/StarWars/helmet1.rsi
+  - type: Clothing
+    sprite: Imperial/StarWars/helmet1.rsi
+  - type: PointLight
+    color: "#800000"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  id: ClothingImperialBlackSithUniform
+  parent: ClothingUniformBase
+  name: "black turtleneck"
+  description: "a black turtleneck. For the real Sith"
+  suffix: "звёздные войны, империя"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/StarWars/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/StarWars/uniform.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingImperialVaderCloak
+  parent: ClothingNeckBase
+  name: "the black cloak"
+  description: "black as the forces of darkness"
+  suffix: "звёздные войны, империя"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/StarWars/cloak.rsi
+

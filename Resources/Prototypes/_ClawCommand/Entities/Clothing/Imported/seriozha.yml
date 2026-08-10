@@ -1,0 +1,1238 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Seriozha
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: CloakNDADelexor
+  parent: ClothingNeckBase
+  name: "vampire cloak"
+  description: "Worn by high ranking vampires of the transylvanian society of vampires."
+  suffix: "Seriozha, Кастомизация, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/misc/Customization/nda_cloak.rsi
+
+- type: entity
+  id: CloakNDAWhite
+  parent: ClothingNeckBase
+  name: "vampire cloak"
+  description: "Worn by high ranking vampires of the transylvanian society of vampires."
+  suffix: "Seriozha, Кастомизация, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/misc/Customization/white_cloak.rsi
+
+- type: entity
+  id: CloakViolet
+  parent: ClothingNeckBase
+  name: "vampire cloak"
+  description: "Worn by high ranking vampires of the transylvanian society of vampires."
+  suffix: "Seriozha, Кастомизация, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/misc/Customization/violet_cloak.rsi
+
+- type: entity
+  id: ClothingHandsGlovesbrokengod
+  parent: ClothingHandsGlovesColorBlack
+  name: "broken god gloves"
+  description: "Mechanical arms - reliable protection and precise control over tools for the glory of the Machine God."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/brokengod/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/brokengod/gloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingHeadHatFoxNDA953
+  parent: ClothingHeadBase
+  name: "fox ears"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/nda/nda953.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/nda/nda953.rsi
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingHeadHatHolyWatermelonSCP343
+  parent: ClothingHeadHatHolyWatermelon
+  name: "Divine Robe"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingHeadHatHoodCultScarletKing
+  parent: ClothingHeadHatHoodCulthood
+  name: "hood of the cult of the children of the Scarlet King"
+  description: "The hood looks as if it was not sewn, but woven from living, but dead, organic fibers."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.95
+        Heat: 0.95
+        Piercing: 0.95
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingHeadHelmetCIsuppressor
+  parent: ClothingHeadHelmetBase
+  name: "ci helmet suppressor"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/cihead.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/cihead.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  id: ClothingHeadHelmetDZ
+  parent: ClothingHeadHelmetCBURN
+  name: "DZ exosuit helmet"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorhelmetDZ.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map:
+      - light
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: PointLight
+    color: "#006400"
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitSCPDeva
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "Empire Deva Helmet"
+  description: "Durable and high-tech helmet protecting the wearer's head. Contains built-in communicator and display for tactical info."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/empiredeva/headhardsuitfighter.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/empiredeva/headhardsuitfighter.rsi
+  - type: PointLight
+    color: "#5814ce"
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitSCPDevaCommander
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "Empire Deva Helmet"
+  description: "Durable and high-tech helmet protecting the wearer's head. Contains built-in communicator and display for tactical information."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/empiredeva/headhardsuitcommand.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/empiredeva/headhardsuitcommand.rsi
+  - type: PointLight
+    color: "#ccc90a"
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitSCPGOCPHYSICS
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "GOC Exoskeleton Helmet \"Guardian Physics\""
+  description: "Technological superiority"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/goc/headhardsuirgoc.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/goc/headhardsuirgoc.rsi
+  - type: PointLight
+    color: "#1859e4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+
+- type: entity
+  id: ClothingHeadHelmetbrokengod
+  parent: ClothingHeadHelmetBase
+  name: "Helmet broken god"
+  description: "“Dome of Repentance” - silence outside, prayer inside."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/brokengod/head.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/brokengod/head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.95
+        Heat: 0.95
+        Piercing: 0.95
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingHeadHelmetepsilon9
+  parent: ClothingHeadHelmetBase
+  name: "epsilon9 helmet"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9head.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9head.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  id: ClothingHeadHelmeteta10
+  parent: ClothingHeadHelmetBase
+  name: "eta10 helmet"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/eta10head.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/eta10head.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  id: ClothingHeadHelmetupsilon11
+  parent: ClothingHeadHelmetBase
+  name: "upsilon11 helmet"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11head.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11head.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  id: ClothingHeadHelmetzeta9
+  parent: ClothingHeadHelmetBase
+  name: "Mole-3 helmet"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/zeta9head.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/zeta9head.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  id: ClothingJumpskirtClassD
+  parent: ClothingUniformSkirtBase
+  name: "Class D form"
+  description: "Expendable Robe - This uniform is designed not for comfort, but for control. The bright color, limited functionality, and identification number emphasize the Class D employee's status as a replaceable asset, subject to disposal if necessary."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdskirt.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+
+- type: entity
+  id: ClothingJumpsuitAlpha9
+  parent: ClothingUniformSkirtBase
+  name: "jumpsuit Alpha9"
+  description: "Specialized suit for use with anomalous objects."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/alpha9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/alpha9.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+
+- type: entity
+  id: ClothingJumpsuitClassD
+  parent: ClothingUniformSkirtBase
+  name: "Class D form"
+  description: "Expendable Robe - This uniform is designed not for comfort, but for control. The bright color, limited functionality, and identification number emphasize the Class D employee's status as a replaceable asset, subject to disposal if necessary."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/classd.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/classd.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+
+- type: entity
+  id: ClothingJumpsuitClassDSkirtcleaner
+  parent: ClothingUniformSkirtBase
+  name: "Class D form for cleaning"
+  description: "Cleaning doesn't guarantee survival. Class D uniform for SCP work. Full protection against threats... known to us. If you see anything strange, run (if you can)."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdcleanerskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdcleanerskirt.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+
+- type: entity
+  id: ClothingJumpsuitClassDcleaner
+  parent: ClothingUniformSkirtBase
+  name: "Class D form for cleaning"
+  description: "Cleaning doesn't guarantee survival. Class D uniform for SCP work. Full protection against threats... known to us. If you see anything strange, run (if you can)."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdcleaner.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/classdcleaner.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+
+- type: entity
+  id: ClothingJumpsuitGOC
+  parent: ClothingUniformSkirtBase
+  name: "GOK overalls"
+  description: "A suit for any mission. This suit is the foundation of a GOK operator's equipment. It provides protection from fire, rain, and cuts, while its well-placed pockets ensure essential tools are always within reach. But most importantly, it serves as a reliable base for the body armor that protects the soldier's most valuable asset—his life."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/goc.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/goc.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuitGOCpr
+  parent: ClothingUniformSkirtBase
+  name: "Representative's jumpsuit GOC"
+  description: "The blue suit of determination. The official look of the GOC. Respect and readiness for action."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/gocpr.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/gocpr.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuitNu7
+  parent: ClothingUniformSkirtBase
+  name: "Nu-7 Operative Jumpsuit"
+  description: "Hammer Strike, survive to protect."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/nu7.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/nu7.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuitZeta9
+  parent: ClothingUniformSkirtBase
+  name: "jumpsuit Zeta9"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/zeta9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/zeta9.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuitepsilon9
+  parent: ClothingUniformSkirtBase
+  name: "jumpsuit epsilon9"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/epsilon9.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuiteta10
+  parent: ClothingUniformSkirtBase
+  name: "jumpsuit eta10"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/eta10.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/eta10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingJumpsuitupsilon11
+  parent: ClothingUniformSkirtBase
+  name: "upsilon11 overalls"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/upsilon11.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingOuterArmorAlpha9
+  parent: ClothingOuterArmorBase
+  name: "MTF Alpha-9 \"Phantom\" arm"
+  description: "This isn't just protection; it's the embodiment of the philosophy of Mobile Task Force Alpha-9, the Last Frontier. Created for those who dare to work on the edge with SCP objects, it combines unprecedented protection with hidden capabilities"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armoralpha9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armoralpha9.rsi
+  - type: FireProtection
+    reduction: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.3
+        Piercing: 0.4
+        Heat: 0.4
+        Radiation: 0.4
+        Caustic: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterArmorCIJuggernaut
+  parent: ClothingOuterArmorBase
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorci.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorci.rsi
+  - type: FireProtection
+    reduction: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.65
+
+- type: entity
+  id: ClothingOuterArmorGOCSCP
+  parent: ClothingOuterArmorBase
+  name: "GOC vest"
+  description: "This body armor is a symbol of the GOC's determination to destroy anomalies at any cost. It will withstand enemy weapons so that the operator can complete his mission—eradicate the threat and return the world to normal."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorgoc.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorgoc.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.4
+        Heat: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterArmorNu7
+  parent: ClothingOuterArmorBase
+  name: "Bulletproof vest NYU-7 Forpost"
+  description: "The standard body armor for MTF NU-7 operators provides basic protection against small arms fire and shrapnel. Designed for mobile operations and rapid response to threats. Compatible with load-bearing systems and additional equipment."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armornu7.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armornu7.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.4
+        Heat: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterArmorbrokengod
+  parent: ClothingOuterArmorBase
+  name: "broken god"
+  description: "Steam Blessing - the roar of a steam boiler is a song of war. May the power of steam bring purification and protection."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/brokengod/armor.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/brokengod/armor.rsi
+  - type: FireProtection
+    reduction: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingOuterArmorbrokengodHammerman
+  parent: ClothingOuterArmorBase
+  name: "broken god Hammerman"
+  description: "The Hammer Fortress is armor crafted for those who carry out the will of the God-Machine, unleashing it upon their enemies."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/brokengod/armorHammerman.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/brokengod/armorHammerman.rsi
+  - type: FireProtection
+    reduction: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: StaminaResistance
+    damageCoefficient: 0.2
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.3
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingOuterArmorepsilon9
+  parent: ClothingOuterArmorBase
+  name: "Flame Arrestor Kit"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorepsilon9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorepsilon9.rsi
+  - type: FireProtection
+    reduction: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Poison: 0.6
+        Blunt: 0.8
+        Slash: 0.7
+        Heat: 0.2
+        Piercing: 0.7
+        Cellular: 0.3
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmoreta10
+  parent: ClothingOuterArmorBase
+  name: "Flame Arrestor Kit"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armoreta10.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armoreta10.rsi
+  - type: FireProtection
+    reduction: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Poison: 0.4
+        Blunt: 0.6
+        Slash: 0.6
+        Heat: 0.4
+        Piercing: 0.6
+        Cellular: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmorupsilon11SCP
+  parent: ClothingOuterArmorBase
+  name: "upsilon11 vest"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorupsilon11.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorupsilon11.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterArmorzeta9
+  parent: ClothingOuterArmorBase
+  name: "Set Ermine"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorzeta9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/armorzeta9.rsi
+  - type: FireProtection
+    reduction: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.6
+        Radiation: 0.4
+        Caustic: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterCoatSCP
+  parent: ClothingOuterStorageFoldableBase
+  name: "Foundation scientist's lab coat"
+  description: "Foundation Scientist Lab Coat. A standard white coat made of acid-resistant fabric with an anti-static finish. It features a patch with the clearance code, identification number, and Foundation logo. It is designed to protect against accidental contamination and prevent static electricity, which is important when working with sensitive equipment."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/scploat.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/scploat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  id: ClothingOuterCoatSCPGOCpr
+  parent: ClothingOuterStorageBase
+  name: "Armored jacket GOC"
+  description: "Respect and protection. Mining and Processing Plant representative jacket. Presentable on the outside. Safety on the inside."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/goccoat.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/goccoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterCoatSCPo5
+  parent: ClothingOuterStorageBase
+  name: "Armored jacket O5"
+  description: "Whisper of steel. On the outside, an ordinary jacket. On the inside, protection designed for those who cannot afford to die. Alpha-1, always close by."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/o5coat.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/o5coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.7
+        Heat: 0.6
+        Radiation: 0.6
+        Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+
+- type: entity
+  id: ClothingOuterScarletKing
+  parent: ClothingOuterBase
+  name: "Robe of the Children of the Scarlet King cult"
+  description: "The robe looks heavy and dense, as if it were made from skins, but not of animal origin."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/scarletking/robes.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/scarletking/robes.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.2
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingSCPCloakRed
+  parent: ClothingNeckBase
+  name: "definetly not vampire cloak"
+  suffix: "seriozha, Недра, Кастомизация"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/misc/Customization/red_cloak.rsi
+
+- type: entity
+  id: ClothingShoesBootsWorkSCP
+  parent: ClothingShoesMilitaryBase
+  name: "Humanity Fighter Boots"
+  description: "you can feel every step in them"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: FootstepModifier
+
+- type: entity
+  id: ClothingShoesBootsbrokengod
+  parent: ClothingShoesMilitaryBase
+  name: "broken god Boots"
+  description: "These boots not only help you walk on the ground, but also protect you from the forces hidden beneath it."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/brokengod/boot.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/brokengod/boot.rsi
+  - type: Matchbox
+  - type: FootstepModifier
+  - type: Unremoveable
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.2
+
+- type: entity
+  id: ClothingShoesCultScarletKing
+  parent: ClothingShoesCult
+  name: "boots of the children of the Scarlet King"
+  description: "These boots look like normal shoes, but their existence defies logic."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: ClothingSpeedModifier
+    walkModifier: 1.3
+    sprintModifier: 1.5
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingShoesSCP
+  parent: ClothingShoesColorBlack
+  name: "Work Boots"
+  description: "Field boots. Your connection to the ground. The only thing that can save you from something crawling from below."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: FootstepModifier
+
+- type: entity
+  id: ClothingUniformJumpskirtMinuteManCamoUrbanNDA
+  parent: ClothingUniformSkirtBase
+  name: "OGC overalls"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/ogkskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/ogkskirt.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingUniformJumpskirtSCPCom
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "overalls of the head of the Operational Control Group"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/seccomskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/seccomskirt.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: ClothingUniformJumpsuitColorWhiteSCP343
+  parent: ClothingUniformJumpsuitColorWhite
+  name: "Divine Robe"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Poison: 0
+        Blunt: 0
+        Slash: 0
+        Heat: 0
+        Piercing: 0
+        Cellular: 0
+        Radiation: 0
+        Caustic: 0
+  - type: Unremoveable
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: StaminaResistance
+    damageCoefficient: 0
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: FireProtection
+    reduction: 0
+
+- type: entity
+  id: ClothingUniformJumpsuitKimonoNDA953
+  parent: ClothingUniformJumpsuitKimono
+  name: "Kimono NDA953"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingUniformJumpsuitSCPCom
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "overalls of the head of the Operational Control Group"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/seccomj.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/seccomj.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: MaskAlpha9SCP
+  parent: ClothingMaskGas
+  name: "Alpha 9 gas mask"
+  description: "We breathe next to anomalies."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/mackalpha9.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/mackalpha9.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: MaskGOCSCP
+  parent: ClothingMaskGas
+  name: "Gas mask GOK"
+  description: "Don't breathe, don't look, fight. GOK gas mask. Survival is secondary, eliminating the threat is primary."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/cloth/mackgoc.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/cloth/mackgoc.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  id: NDACrowbar
+  parent: NDACrowbarBase
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    storedSprite:
+      sprite: Imperial/Seriozha/Fredik21/crowbar.rsi
+      state: storage
+
+- type: entity
+  id: SCP268
+  parent:
+  - ClothingHeadHeadHatBaseFlippable
+  - BaseToggleClothing
+  name: "Cap of Invisibility"
+  description: "NDA-268 is a hat made of tweed wool, commonly worn by boy newspaper sellers. The shape and design match hats produced in Ireland."
+  suffix: "Fredik21, Недра, Объект"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 0.02
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -10
+      lastVisibility: -1
+      maxVisibility: 1
+  - type: Stealth
+
+- type: entity
+  id: SCP4975Invisibility
+  parent:
+  - ClothingHeadHeadHatBaseFlippable
+  - BaseToggleClothing
+  name: "Invisibility in hand"
+  description: "DO NOT PUT HER ON THE FLOOR!! Press Z to activate invisibility."
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 0.02
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -10
+      lastVisibility: -1
+      maxVisibility: 1
+  - type: Unremoveable
+
+- type: entity
+  id: SCP714
+  parent:
+  - RingBase
+  - GoldRingBase
+  name: "Non-precious Ring"
+  description: "NDA-714 looks like a regular green nephrite ring. It can adapt to the finger size of the last person who touched it. It changes size only for “new” subjects, which is its least significant property."
+  suffix: "Fredik21, Недра, Объект"
+  components:
+  - type: Sprite
+    layers:
+    - state: ring
+      color: "#06531e"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0
+        Poison: 0
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+
+- type: entity
+  id: UltraCleanerGrenade
+  parent: CleanerGrenade
+  name: "cleanade"
+  description: "Special grenade for janitors, releasing large cloud of space cleaner foam."
+  suffix: "seriozha, Арена"
+  components:
+  - type: SmokeOnTrigger
+    duration: 35
+    spreadAmount: 900
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceCleaner
+        Quantity: 900
+
+- type: entity
+  id: UltraTrashBag
+  parent: TrashBagBlue
+  name: "trash bag"
+  components:
+  - type: UseDelay
+    delay: 0.01
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,52,14"
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 50
+
+- type: entity
+  id: WhistleNDA
+  parent: BaseWhistle
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/fun/whistle.rsi
+    state: sec
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/fun/whistle.rsi
+    equippedPrefix: sec
+  - type: EmitSoundOnUse
+
+- type: entity
+  id: WhiteholeNDA
+  parent: WhiteholeGrenade
+  name: "Anchor Reality Scranton"
+  suffix: "Fredik21, Недра"
+  components:
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/structure/screlton.rsi
+    state: icon
+  - type: TimerTrigger
+    delay: 3
+    beepInterval: 0.69
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: /Audio/Effects/Grenades/Supermatter/whitehole_start.ogg
+      params:
+        volume: 5
+  - type: AnchorOnTrigger
+    keysIn:
+    - timer
+    removeOnTrigger: true
+  - type: TwoStageTrigger
+    triggerDelay: 60
+    components:
+    - type: AmbientSound
+      enabled: true
+      volume: -5
+      range: 20
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg
+    - type: GravityWell
+      maxRange: 10
+      baseRadialAcceleration: -50
+      baseTangentialAcceleration: -5
+      gravPulsePeriod: 0.03
+    - type: SingularityDistortion
+      intensity: -20
+      falloffPower: 4.5
+    - type: PointLight
+      enabled: true
+      color: "#9400D3"
+      energy: 8
+      radius: 20
+      softness: 1
+      offset: "0, 0"
+    - type: EmitSoundOnTrigger
+      keysIn:
+      - stageTwo
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+        params:
+          volume: 15
+      positional: true
+    - type: DeleteOnTrigger
+      keysIn:
+      - stageTwo
+  - type: StaticPrice
+    price: 100000
+

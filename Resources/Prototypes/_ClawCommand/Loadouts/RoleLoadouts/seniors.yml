@@ -29,6 +29,15 @@
   - GroupSpeciesBreathToolSecurity
   - CCServiceWeapon # Claw Command - service weapons
   - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
+  - CCWardrobeAccessories
+  - CCCombatOuterwear
+  - CCCombatHeadgear
+  - CCCombatKit
   # Claw Command - service-weapon budget. Six rather than five because
   # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
   # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
@@ -55,6 +64,12 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
+  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobSeniorPhysician
@@ -79,6 +94,12 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
+  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobSeniorResearcher
@@ -104,6 +125,12 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
+  - CCWardrobeAccessories
 
 - type: roleLoadout
   id: JobSeniorCourier
@@ -127,3 +154,9 @@
   - CCPlushiesToys # CC14
   - CCPets # CC14
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
+  - CCWardrobeAccessories

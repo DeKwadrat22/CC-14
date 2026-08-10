@@ -1,0 +1,43 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: ForTDMRoles
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingOuterArmorHeavyTDM
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  name: "heavy armor suit"
+  description: "bla bla bla heavy weapons guy"
+  suffix: "TDM, Unremoveable"
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/heavy.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/heavy.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.5
+        Radiation: 0.6
+        Caustic: 0.75
+  - type: StaminaResistance
+    damageCoefficient: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.55
+    sprintModifier: 0.55
+  - type: GroupExamine
+  - type: ProtectedFromStepTriggers
+    slots: WITHOUT_POCKET
+  - type: Unremoveable
+

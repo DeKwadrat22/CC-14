@@ -37,7 +37,10 @@
 
 - type: startingGear
   id: ClawCommandOfficerGear
-  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
+  # Claw Command - no sidearm or pistol ammo here on purpose. The CCO's firearm comes entirely from the
+  # service-weapon loadout tab, so whatever they picked there is the only gun they spawn with. The Mk58
+  # that used to sit in the backpack was left behind when the spare magazines it referenced were removed,
+  # which meant every CCO got a free pistol on top of their chosen loadout.
   equipment:
     eyes: ClothingEyesGlassesMedSec
     ears: ClothingHeadsetAltCommand
@@ -47,7 +50,6 @@
     - Flash
     - Zipties
     - Zipties
-    - WeaponPistolMk58 # CLAW COMMAND - sidearm for the two spare mags below
 
 - type: job
   id: ClawCommandMaid

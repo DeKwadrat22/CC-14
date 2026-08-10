@@ -1,0 +1,843 @@
+# Claw Command - loadout entries for the wardrobe imported from the Imperial Space public tree.
+#
+# Four pools live here, kept apart on purpose:
+#
+#   CCWardrobe*        cosmetic only - no armour, no storage, no pressure protection, nothing that
+#                      changes how a round plays. Offered to every job that wears clothes, the same
+#                      way CCPlushiesToys and CCPets already are.
+#   CCCombat*          ordinary body armour, helmets and webbing. Security, the Claw Command
+#                      Officer and the Captain only, since those are the roles that already pick
+#                      armour at spawn. Nothing better than a 0.6 damage coefficient, so none of it
+#                      outclasses the station's own security gear.
+#   CCCaptainRegalia   the captain's dress uniforms, sheriff set and cloaks. Captain only.
+#   CCSecurityRegalia  head of security's formal cloak and mantle, and the warden's mantle.
+#
+# Rank insignia is deliberately absent from the general pools and from the AutoDrobe - a costume
+# vendor that hands out a captain's cloak is a free command disguise.
+#
+# Generated alongside Entities/Clothing/Imported/; regenerate both together.
+
+- type: loadout
+  id: CCWArmyBeretArmyG
+  equipment:
+    head: ArmyBeretArmyG
+
+- type: loadout
+  id: CCWArmyBeretArmyS
+  equipment:
+    head: ArmyBeretArmyS
+
+- type: loadout
+  id: CCWArmyBeretArmyY
+  equipment:
+    head: ArmyBeretArmyY
+
+- type: loadout
+  id: CCWBloodyHeadband
+  equipment:
+    head: BloodyHeadband
+
+- type: loadout
+  id: CCWClothingHeadHatBowlerCool
+  equipment:
+    head: ClothingHeadHatBowlerCool
+
+- type: loadout
+  id: CCWClothingHeadHatBowlerHatBrown
+  equipment:
+    head: ClothingHeadHatBowlerHatBrown
+
+- type: loadout
+  id: CCWClothingHeadHatBowlerOrange
+  equipment:
+    head: ClothingHeadHatBowlerOrange
+
+- type: loadout
+  id: CCWClothingHeadHatBowlerPink
+  equipment:
+    head: ClothingHeadHatBowlerPink
+
+- type: loadout
+  id: CCWClothingHeadHatImam
+  equipment:
+    head: ClothingHeadHatImam
+
+- type: loadout
+  id: CCWClothingHeadHatPirateCaptain
+  equipment:
+    head: ClothingHeadHatPirateCaptain
+
+- type: loadout
+  id: CCWClothingHeadHatSnowmaiden
+  equipment:
+    head: ClothingHeadHatSnowmaiden
+
+- type: loadout
+  id: CCWDressCapArmyB
+  equipment:
+    head: DressCapArmyB
+
+- type: loadout
+  id: CCWDressCapArmyS
+  equipment:
+    head: DressCapArmyS
+
+- type: loadout
+  id: CCWDressCapArmyY
+  equipment:
+    head: DressCapArmyY
+
+- type: loadout
+  id: CCWHeadband
+  equipment:
+    head: Headband
+
+- type: loadout
+  id: CCWSwampHood
+  equipment:
+    head: SwampHood
+
+- type: loadout
+  id: CCWVlPCBeret
+  equipment:
+    head: VlPCBeret
+
+- type: loadout
+  id: CCWVlPCCap
+  equipment:
+    head: VlPCCap
+
+- type: loadout
+  id: CCWVlPCFlowerOne
+  equipment:
+    head: VlPCFlowerOne
+
+- type: loadout
+  id: CCWWitchersHat
+  equipment:
+    head: WitchersHat
+
+- type: loadout
+  id: CCWWitchersPurpleHat
+  equipment:
+    head: WitchersPurpleHat
+
+- type: loadout
+  id: CCWWitchersRedHat
+  equipment:
+    head: WitchersRedHat
+
+- type: loadout
+  id: CCWChestBeaconBlue
+  equipment:
+    neck: ChestBeaconBlue
+
+- type: loadout
+  id: CCWChestBeaconBlueRed
+  equipment:
+    neck: ChestBeaconBlueRed
+
+- type: loadout
+  id: CCWChestBeaconRed
+  equipment:
+    neck: ChestBeaconRed
+
+- type: loadout
+  id: CCWChestBeaconWhite
+  equipment:
+    neck: ChestBeaconWhite
+
+- type: loadout
+  id: CCWChestBeaconYellow
+  equipment:
+    neck: ChestBeaconYellow
+
+- type: loadout
+  id: CCWCloakViolet
+  equipment:
+    neck: CloakViolet
+
+- type: loadout
+  id: CCWClothingNeckMaidChoker
+  equipment:
+    neck: ClothingNeckMaidChoker
+
+- type: loadout
+  id: CCWClothingNeckPirateParrot
+  equipment:
+    neck: ClothingNeckPirateParrot
+
+- type: loadout
+  id: CCWClothingNeckShawlRed
+  equipment:
+    neck: ClothingNeckShawlRed
+
+- type: loadout
+  id: CCWClothingNeckShoulderPad
+  equipment:
+    neck: ClothingNeckShoulderPad
+
+- type: loadout
+  id: CCWClothingNeckShoulderPadGreen
+  equipment:
+    neck: ClothingNeckShoulderPadGreen
+
+- type: loadout
+  id: CCWClothingNeckShoulderPadRed
+  equipment:
+    neck: ClothingNeckShoulderPadRed
+
+- type: loadout
+  id: CCWClothingNeckShoulderPadTurquoise
+  equipment:
+    neck: ClothingNeckShoulderPadTurquoise
+
+- type: loadout
+  id: CCWClothingNeckShoulderPadYellow
+  equipment:
+    neck: ClothingNeckShoulderPadYellow
+
+- type: loadout
+  id: CCWDoubleBedsheetBlack
+  equipment:
+    neck: DoubleBedsheetBlack
+
+- type: loadout
+  id: CCWDoubleBedsheetBlue
+  equipment:
+    neck: DoubleBedsheetBlue
+
+- type: loadout
+  id: CCWDoubleBedsheetBrown
+  equipment:
+    neck: DoubleBedsheetBrown
+
+- type: loadout
+  id: CCWDoubleBedsheetCE
+  equipment:
+    neck: DoubleBedsheetCE
+
+- type: loadout
+  id: CCWDoubleBedsheetCMO
+  equipment:
+    neck: DoubleBedsheetCMO
+
+- type: loadout
+  id: CCWDoubleBedsheetCap
+  equipment:
+    neck: DoubleBedsheetCap
+
+- type: loadout
+  id: CCWDoubleBedsheetCat
+  equipment:
+    neck: DoubleBedsheetCat
+
+- type: loadout
+  id: CCWDoubleBedsheetChaplain
+  equipment:
+    neck: DoubleBedsheetChaplain
+
+- type: loadout
+  id: CCWDoubleBedsheetClown
+  equipment:
+    neck: DoubleBedsheetClown
+
+- type: loadout
+  id: CCWDoubleBedsheetCommand
+  equipment:
+    neck: DoubleBedsheetCommand
+
+- type: loadout
+  id: CCWDoubleBedsheetGreen
+  equipment:
+    neck: DoubleBedsheetGreen
+
+- type: loadout
+  id: CCWDoubleBedsheetGrey
+  equipment:
+    neck: DoubleBedsheetGrey
+
+- type: loadout
+  id: CCWDoubleBedsheetHOP
+  equipment:
+    neck: DoubleBedsheetHOP
+
+- type: loadout
+  id: CCWDoubleBedsheetHOS
+  equipment:
+    neck: DoubleBedsheetHOS
+
+- type: loadout
+  id: CCWDoubleBedsheetIan
+  equipment:
+    neck: DoubleBedsheetIan
+
+- type: loadout
+  id: CCWDoubleBedsheetMed
+  equipment:
+    neck: DoubleBedsheetMed
+
+- type: loadout
+  id: CCWDoubleBedsheetMime
+  equipment:
+    neck: DoubleBedsheetMime
+
+- type: loadout
+  id: CCWDoubleBedsheetOrange
+  equipment:
+    neck: DoubleBedsheetOrange
+
+- type: loadout
+  id: CCWDoubleBedsheetPink
+  equipment:
+    neck: DoubleBedsheetPink
+
+- type: loadout
+  id: CCWDoubleBedsheetPurple
+  equipment:
+    neck: DoubleBedsheetPurple
+
+- type: loadout
+  id: CCWDoubleBedsheetRD
+  equipment:
+    neck: DoubleBedsheetRD
+
+- type: loadout
+  id: CCWDoubleBedsheetRainbow
+  equipment:
+    neck: DoubleBedsheetRainbow
+
+- type: loadout
+  id: CCWDoubleBedsheetWhite
+  equipment:
+    neck: DoubleBedsheetWhite
+
+- type: loadout
+  id: CCWDoubleBedsheetWinter
+  equipment:
+    neck: DoubleBedsheetWinter
+
+- type: loadout
+  id: CCWDoubleBedsheetYellow
+  equipment:
+    neck: DoubleBedsheetYellow
+
+- type: loadout
+  id: CCWGuardCloak
+  equipment:
+    neck: GuardCloak
+
+- type: loadout
+  id: CCWOperatorMantle
+  equipment:
+    neck: OperatorMantle
+
+- type: loadout
+  id: CCWShoulderBeaconBlue
+  equipment:
+    neck: ShoulderBeaconBlue
+
+- type: loadout
+  id: CCWShoulderBeaconBlueRed
+  equipment:
+    neck: ShoulderBeaconBlueRed
+
+- type: loadout
+  id: CCWShoulderBeaconRed
+  equipment:
+    neck: ShoulderBeaconRed
+
+- type: loadout
+  id: CCWShoulderBeaconWhite
+  equipment:
+    neck: ShoulderBeaconWhite
+
+- type: loadout
+  id: CCWShoulderBeaconYellow
+  equipment:
+    neck: ShoulderBeaconYellow
+
+- type: loadout
+  id: CCWClothingUniformHiredStalker
+  equipment:
+    jumpsuit: ClothingUniformHiredStalker
+
+- type: loadout
+  id: CCWClothingUniformJumpStinky
+  equipment:
+    jumpsuit: ClothingUniformJumpStinky
+
+- type: loadout
+  id: CCWClothingUniformJumpskirtCoroner
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCoroner
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitCitizen
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCitizen
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitCitizenPrisoner
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCitizenPrisoner
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitCitizenSmoking
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCitizenSmoking
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitCoroner
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCoroner
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerBrutal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBrutal
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerCool
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerCool
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerLazy
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerLazy
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerOld
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerOld
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerOrange
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerOrange
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerSporting
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerSporting
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerStrange
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerStrange
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitLawyerStupid
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerStupid
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitMadzima
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMadzima
+
+- type: loadout
+  id: CCWClothingUniformMercenary
+  equipment:
+    jumpsuit: ClothingUniformMercenary
+
+- type: loadout
+  id: CCWClothingUniformMonolith
+  equipment:
+    jumpsuit: ClothingUniformMonolith
+
+- type: loadout
+  id: CCWClothingUniformPeresvet
+  equipment:
+    jumpsuit: ClothingUniformPeresvet
+
+- type: loadout
+  id: CCWClothingUniformScientificGreen
+  equipment:
+    jumpsuit: ClothingUniformScientificGreen
+
+- type: loadout
+  id: CCWClothingUniformScientificOrange
+  equipment:
+    jumpsuit: ClothingUniformScientificOrange
+
+- type: loadout
+  id: CCWClothingUniformSparta
+  equipment:
+    jumpsuit: ClothingUniformSparta
+
+- type: loadout
+  id: CCWClothingUniformStalkerVer1
+  equipment:
+    jumpsuit: ClothingUniformStalkerVer1
+
+- type: loadout
+  id: CCWClothingUniformStalkerVer2
+  equipment:
+    jumpsuit: ClothingUniformStalkerVer2
+
+- type: loadout
+  id: CCWClothingUniformStalkerVer3
+  equipment:
+    jumpsuit: ClothingUniformStalkerVer3
+
+- type: loadout
+  id: CCWClothingUniformTactical
+  equipment:
+    jumpsuit: ClothingUniformTactical
+
+- type: loadout
+  id: CCWFancyUniform
+  equipment:
+    jumpsuit: FancyUniform
+
+- type: loadout
+  id: CCWGreyJumpsuitXxRaayTimePortal
+  equipment:
+    jumpsuit: GreyJumpsuitXxRaayTimePortal
+
+- type: loadout
+  id: CCWVlPCUniformOne
+  equipment:
+    jumpsuit: VlPCUniformOne
+
+- type: loadout
+  id: CCWVlPCUniformThree
+  equipment:
+    jumpsuit: VlPCUniformThree
+
+- type: loadout
+  id: CCWVlPCUniformTwo
+  equipment:
+    jumpsuit: VlPCUniformTwo
+
+- type: loadout
+  id: CCWWitcherKombvOne
+  equipment:
+    jumpsuit: WitcherKombvOne
+
+- type: loadout
+  id: CCWWitcherKombvTwo
+  equipment:
+    jumpsuit: WitcherKombvTwo
+
+- type: loadout
+  id: CCWClothingShoesBootsCamouflage
+  equipment:
+    shoes: ClothingShoesBootsCamouflage
+
+- type: loadout
+  id: CCWClothingShoesBootsScienceImperial
+  equipment:
+    shoes: ClothingShoesBootsScienceImperial
+
+- type: loadout
+  id: CCWClothingShoesFancyBoots
+  equipment:
+    shoes: ClothingShoesFancyBoots
+
+- type: loadout
+  id: CCWClothingShoesMadzima
+  equipment:
+    shoes: ClothingShoesMadzima
+
+- type: loadout
+  id: CCWClothingShoesParamedic
+  equipment:
+    shoes: ClothingShoesParamedic
+
+- type: loadout
+  id: CCWClothingShoesParamedicAlt
+  equipment:
+    shoes: ClothingShoesParamedicAlt
+
+- type: loadout
+  id: CCWShoesXxRaayTimePortal
+  equipment:
+    shoes: ShoesXxRaayTimePortal
+
+- type: loadout
+  id: CCWClothingHandsGlovesCamouflage
+  equipment:
+    gloves: ClothingHandsGlovesCamouflage
+
+- type: loadout
+  id: CCWClothingHandsGlovesLatexLong
+  equipment:
+    gloves: ClothingHandsGlovesLatexLong
+
+- type: loadout
+  id: CCWVlPCGloves
+  equipment:
+    gloves: VlPCGloves
+
+- type: loadout
+  id: CCWCamouflageMask
+  equipment:
+    mask: CamouflageMask
+
+- type: loadout
+  id: CCWClothingKrilBig
+  equipment:
+    mask: ClothingKrilBig
+
+- type: loadout
+  id: CCWClothingKrilSmall
+  equipment:
+    mask: ClothingKrilSmall
+
+- type: loadout
+  id: CCWClothingNanoMask
+  equipment:
+    mask: ClothingNanoMask
+
+- type: loadout
+  id: CCWClothingBeltKama
+  equipment:
+    belt: ClothingBeltKama
+
+- type: loadout
+  id: CCWClothingBeltKamaGreen
+  equipment:
+    belt: ClothingBeltKamaGreen
+
+- type: loadout
+  id: CCWClothingBeltKamaRed
+  equipment:
+    belt: ClothingBeltKamaRed
+
+- type: loadout
+  id: CCWClothingBeltKamaTurquoise
+  equipment:
+    belt: ClothingBeltKamaTurquoise
+
+- type: loadout
+  id: CCWClothingBeltKamaYellow
+  equipment:
+    belt: ClothingBeltKamaYellow
+
+- type: loadout
+  id: CCWClothingUniformOuterSnowmaiden
+  equipment:
+    outerClothing: ClothingUniformOuterSnowmaiden
+
+- type: loadout
+  id: CCWClothingBackpackMaidBackbow
+  equipment:
+    back: ClothingBackpackMaidBackbow
+
+- type: loadout
+  id: CCWArmorUnloading6B5
+  equipment:
+    outerClothing: ArmorUnloading6B5
+
+- type: loadout
+  id: CCWBZBeryoza
+  equipment:
+    outerClothing: BZBeryoza
+
+- type: loadout
+  id: CCWBZBeryozaGraphite
+  equipment:
+    outerClothing: BZBeryozaGraphite
+
+- type: loadout
+  id: CCWBZBeryozaPolos
+  equipment:
+    outerClothing: BZBeryozaPolos
+
+- type: loadout
+  id: CCWBZBeryozaZarya
+  equipment:
+    outerClothing: BZBeryozaZarya
+
+- type: loadout
+  id: CCWBodyArmorMultikam
+  equipment:
+    outerClothing: BodyArmorMultikam
+
+- type: loadout
+  id: CCWCamouflageRobe
+  equipment:
+    outerClothing: CamouflageRobe
+
+- type: loadout
+  id: CCWClothingOuterArmorQMCoat
+  equipment:
+    outerClothing: ClothingOuterArmorQMCoat
+
+- type: loadout
+  id: CCWClothingOuterCoatDetectiveDark
+  equipment:
+    outerClothing: ClothingOuterCoatDetectiveDark
+
+- type: loadout
+  id: CCWCoatBZ
+  equipment:
+    outerClothing: CoatBZ
+
+- type: loadout
+  id: CCWAssaultACH
+  equipment:
+    head: AssaultACH
+
+- type: loadout
+  id: CCWAssaultACHML
+  equipment:
+    head: AssaultACHML
+
+- type: loadout
+  id: CCWAssaultACHUN
+  equipment:
+    head: AssaultACHUN
+
+- type: loadout
+  id: CCWClothingHeadHatBeretBonBon
+  equipment:
+    head: ClothingHeadHatBeretBonBon
+
+- type: loadout
+  id: CCWClothingHeadHatBeretGaqut
+  equipment:
+    head: ClothingHeadHatBeretGaqut
+
+- type: loadout
+  id: CCWClothingHeadHatSeniorOfficerBeret
+  equipment:
+    head: ClothingHeadHatSeniorOfficerBeret
+
+- type: loadout
+  id: CCWClothingHeadHelmetCIsuppressor
+  equipment:
+    head: ClothingHeadHelmetCIsuppressor
+
+- type: loadout
+  id: CCWClothingHeadHelmetK63
+  equipment:
+    head: ClothingHeadHelmetK63
+
+- type: loadout
+  id: CCWClothingHeadHelmetScienceMask
+  equipment:
+    head: ClothingHeadHelmetScienceMask
+
+- type: loadout
+  id: CCWClothingHeadHelmetVisorDawn
+  equipment:
+    head: ClothingHeadHelmetVisorDawn
+
+- type: loadout
+  id: CCWClothingHeadHelmetVisorGorka
+  equipment:
+    head: ClothingHeadHelmetVisorGorka
+
+- type: loadout
+  id: CCWClothingHeadHelmetbrokengod
+  equipment:
+    head: ClothingHeadHelmetbrokengod
+
+- type: loadout
+  id: CCWClothingHeadHelmetepsilon9
+  equipment:
+    head: ClothingHeadHelmetepsilon9
+
+- type: loadout
+  id: CCWClothingHeadHelmeteta10
+  equipment:
+    head: ClothingHeadHelmeteta10
+
+- type: loadout
+  id: CCWClothingHeadHelmetupsilon11
+  equipment:
+    head: ClothingHeadHelmetupsilon11
+
+- type: loadout
+  id: CCWClothingBeltPirateRedBelt
+  equipment:
+    belt: ClothingBeltPirateRedBelt
+
+- type: loadout
+  id: CCWClothingHandsFancyGloves
+  equipment:
+    gloves: ClothingHandsFancyGloves
+
+- type: loadout
+  id: CCWClothingHeadGeneralHat
+  equipment:
+    head: ClothingHeadGeneralHat
+
+- type: loadout
+  id: CCWClothingHeadHatBeretCaptainSheriff
+  equipment:
+    head: ClothingHeadHatBeretCaptainSheriff
+
+- type: loadout
+  id: CCWClothingHeadHatBeretCaptainWhite
+  equipment:
+    head: ClothingHeadHatBeretCaptainWhite
+
+- type: loadout
+  id: CCWClothingHeadHatCapcapSheriff
+  equipment:
+    head: ClothingHeadHatCapcapSheriff
+
+- type: loadout
+  id: CCWClothingHeadHatCapcapWhite
+  equipment:
+    head: ClothingHeadHatCapcapWhite
+
+- type: loadout
+  id: CCWCapSheriffcloack
+  equipment:
+    neck: CapSheriffcloack
+
+- type: loadout
+  id: CCWCapwhitecloack
+  equipment:
+    neck: Capwhitecloack
+
+- type: loadout
+  id: CCWClothingNeckGeneralCloak
+  equipment:
+    neck: ClothingNeckGeneralCloak
+
+- type: loadout
+  id: CCWClothingUniformJumpskirtCaptainAlt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCaptainAlt
+
+- type: loadout
+  id: CCWClothingUniformJumpskirtWhiteCaptain
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtWhiteCaptain
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitCaptainAlt
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptainAlt
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitSheriffCaptain
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSheriffCaptain
+
+- type: loadout
+  id: CCWClothingUniformJumpsuitWhiteCaptain
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWhiteCaptain
+
+- type: loadout
+  id: CCWClothingNeckCloakHosFormal
+  equipment:
+    neck: ClothingNeckCloakHosFormal
+
+- type: loadout
+  id: CCWClothingNeckMantleHOSShoulder
+  equipment:
+    neck: ClothingNeckMantleHOSShoulder
+
+- type: loadout
+  id: CCWWardenMantleID
+  equipment:
+    neck: WardenMantleID

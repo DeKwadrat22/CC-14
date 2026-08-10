@@ -1,0 +1,73 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: XxRaay
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingBeltHolsterViperFilledXxRaay
+  parent: ClothingBeltHolster
+  name: "viper holster (filled)"
+  suffix: "XxRaay, FlagsTDM"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponPistolViper
+    - id: MagazinePistolHighCapacity
+    - id: MagazinePistolHighCapacity
+
+- type: entity
+  id: GasMaskXxRaayTimePortal
+  parent: ClothingMaskGas
+  suffix: "XxRaay, TimePortal"
+  components:
+  - type: Sprite
+    sprite: Imperial/XxRaay/SS13/graytider_gasmask.rsi
+
+- type: entity
+  id: GreyJumpsuitXxRaayTimePortal
+  parent: ClothingUniformJumpsuitColorGrey
+  suffix: "XxRaay, TimePortal"
+  components:
+  - type: Sprite
+    sprite: Imperial/XxRaay/SS13/graytider_jumpsuit.rsi
+    layers:
+    - state: icon
+  - type: Item
+    inhandVisuals: {}
+  - type: Clothing
+    sprite: Imperial/XxRaay/SS13/graytider_jumpsuit.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+
+- type: entity
+  id: InsulatedGlovesXxRaayTimePortal
+  parent: ClothingHandsGlovesColorYellow
+  suffix: "XxRaay, TimePortal"
+  components:
+  - type: Sprite
+    sprite: Imperial/XxRaay/SS13/graytider_gloves.rsi
+
+- type: entity
+  id: ShoesXxRaayTimePortal
+  parent: ClothingShoesColorBlack
+  suffix: "XxRaay, TimePortal"
+  components:
+  - type: Sprite
+    sprite: Imperial/XxRaay/SS13/graytider_shoes.rsi
+    layers:
+    - state: icon
+  - type: Item
+    inhandVisuals: {}
+  - type: Clothing
+    sprite: Imperial/XxRaay/SS13/graytider_shoes.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+

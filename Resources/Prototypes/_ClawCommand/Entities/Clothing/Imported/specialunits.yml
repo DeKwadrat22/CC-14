@@ -1,0 +1,202 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: SpecialUnits
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingBackpackRCU
+  parent: ClothingBackpackERTSecurity
+  name: "elite backpack"
+  description: "You don't have to know whose backpack it is."
+  suffix: "RiotControlUnit"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/RCU/Clothing/backpack.rsi
+  - type: Storage
+    grid:
+    - "0,0,12,3"
+
+- type: entity
+  id: ClothingBeltRCU
+  parent:
+  - ClothingBeltStorageBase
+  - ClothingBeltChiefEngineer
+  name: "tactical RCU belt"
+  description: "A tactical belt of security officers."
+  suffix: "RiotControlUnit, filled"
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/assault.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/assault.rsi
+  - type: StorageFill
+    contents:
+    - id: PowerDrill
+    - id: JawsOfLife
+    - id: WelderExperimental
+    - id: Multitool
+    - id: CableApcStack
+  - type: Appearance
+
+- type: entity
+  id: ClothingHeadHelmetModsuitSpecialOfficer
+  parent: ClothingHeadHardsuitBase
+  name: "special officer helmet"
+  description: "Designed to protect your head from enemy forces."
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/SOO/Modsuit/Head.rsi
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/SOO/Modsuit/Head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: PressureProtection
+    highPressureMultiplier: 0.001
+    lowPressureMultiplier: 1000
+  - type: FlashImmunity
+  - type: EyeProtection
+
+- type: entity
+  id: ClothingMaskDeathSquadAlt
+  parent: ClothingMaskGas
+  name: "death squad protective mask"
+  description: "Definitely not stolen from some nerd and modified to fit the most elite NT squad..."
+  suffix: "DeathSquad"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/ProtectiveMask.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/ProtectiveMask.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: FireProtection
+    reduction: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.85
+        Caustic: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingMaskRCU
+  parent: ClothingMaskGas
+  name: "elite protective mask"
+  description: "A red mask for elite squad of NanoTrasen."
+  suffix: "RiotControlUnit"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/RCU/Clothing/gasmask.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/RCU/Clothing/gasmask.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: FireProtection
+    reduction: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingUniformJumpsuitDeathSquadMonkey
+  parent: ClothingUniformBase
+  name: "death squad jumpsuit monkey"
+  description: "A robust jumpsuit, for a robust monkey."
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/DeathSquad/Pets/DonDon/death_squad_monkey_jumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/DeathSquad/Pets/DonDon/death_squad_monkey_jumpsuit.rsi
+  - type: SuitSensor
+    controlsLocked: false
+    randomMode: false
+    mode: SensorCords
+
+- type: entity
+  id: GlassesDeathSquad
+  parent: ClothingEyesGlassesSecurity
+  name: "advanced sunglasses"
+  description: "High-quality glasses with integrated position identification system and all kinds of eye protection."
+  suffix: "DeathSquad"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/DeathAdvancedGlasses.rsi
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/DeathAdvancedGlasses.rsi
+  - type: EyeProtection
+  - type: SolutionScanner
+
+- type: entity
+  id: GlassesVisorRCU
+  parent: GlassesDeathSquad
+  name: "experimental visor"
+  description: "High-quality visor with integrated position identification system and all kinds of eye protection."
+  suffix: "RiotControlUnit"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/RCU/Clothing/exp.rsi
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/RCU/Clothing/exp.rsi
+
+- type: entity
+  id: OperatorMantle
+  parent: WardenMantleID
+  name: "operator mantle"
+  description: "A prestigious mantle for a senior RCU employee."
+  suffix: "RiotControlUnit"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/wardenmantle.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/wardenmantle.rsi
+
+- type: entity
+  id: ProtectiveBalaclava
+  parent: ClothingMaskBandanaBase
+  name: "ptotective balaclava"
+  description: "Protects the head from excessive shaking when heavy weapons hit the armor."
+  suffix: "DeathSquad"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/ProtectiveBalaclava.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/SpecialUnits/DeathSquad/Staff/ProtectiveBalaclava.rsi
+  - type: BreathMask
+  - type: FireProtection
+    reduction: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.85
+        Caustic: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.9
+

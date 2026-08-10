@@ -1,0 +1,104 @@
+# Claw Command - abstract bases required by the imported Imperial clothing.
+# Same licence rule as the rest of Imported/: CC-licensed art only.
+
+- type: entity
+  id: ClothingHeadHelmetWoodGrouseBase
+  parent: ClothingHeadHelmetBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  suffix: "DeadSector"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_green.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_green.rsi
+    quickEquip: true
+  - type: Item
+    heldPrefix: false
+    size: Normal
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.2
+        Piercing: 0.4
+        Heat: 0.2
+        Cold: 0.2
+        Shock: 0.5
+        Caustic: 0.2
+        Radiation: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 1.04
+    sprintModifier: 1.04
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+
+- type: entity
+  id: ClothingNeckTieBase
+  parent: ClothingNeckBase
+  abstract: true
+  components:
+  - type: Item
+    storedRotation: -45
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManBase
+  parent: ClothingUniformBase
+  name: "filler"
+  abstract: true
+  components:
+  - type: TemperatureProtection
+    heatingCoefficient: 0.4
+    coolingCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Cold: 0.9
+
+- type: entity
+  id: NDACrowbarBase
+  parent: BaseItem
+  name: "crowbar"
+  description: "A multipurpose tool used for many tasks, such as prying doors or bludgeoning interdimensional invaders."
+  abstract: true
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+  - type: Tag
+    tags:
+    - Crowbar
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    qualities:
+    - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: ToolTileCompatible
+  - type: StaticPrice
+    price: 22
+  - type: Prying
+  - type: Sprite
+    sprite: Imperial/Seriozha/Fredik21/crowbar.rsi
+  - type: Clothing
+    sprite: Imperial/Seriozha/Fredik21/crowbar.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Item
+    sprite: Imperial/Seriozha/Fredik21/crowbar.rsi
+    size: Small
+    shape:
+    - "0,0,0,1"
+

@@ -1,0 +1,244 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: PiratesNewHorizon
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingBeltPirateBeltGunsman
+  parent: ClothingBeltStorageBase
+  name: "mighty gunsman belt"
+  description: "Allows you not to be let down by lack of ammo."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/gunman.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/gunman.rsi
+  - type: Appearance
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+      - CigPack
+      components:
+      - BallisticAmmoProvider
+      - Ammo
+      - CartridgeAmmo
+      - Explosive
+
+- type: entity
+  id: ClothingBeltPirateBlackBelt
+  parent: ClothingBeltBase
+  name: "black pirate belt"
+  description: "Allows you not to be let down by lack of survivability."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/blackbelt.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/blackbelt.rsi
+  - type: Appearance
+  - type: Reflect
+    reflects:
+    - NonEnergy
+    reflectProb: 0.1
+    spread: 360
+
+- type: entity
+  id: ClothingBeltPirateRedBelt
+  parent: ClothingBeltBase
+  name: "forsaken belt"
+  description: "Allows you not to be let down by lack of survivability."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/redbelt.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/redbelt.rsi
+  - type: Appearance
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+
+- type: entity
+  id: ClothingBeltPirateSpeed
+  parent: ClothingBeltBase
+  name: "steadfast belt"
+  description: "Allows yall not to be let down by lack of speed."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/belt_c.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/belt/belt_c.rsi
+  - type: Appearance
+  - type: ClothingSpeedModifier
+    walkModifier: 1.05
+    sprintModifier: 1.15
+
+- type: entity
+  id: ClothingEyesEyepatchEngineering
+  parent:
+  - ClothingEyesBase
+  - ClothingHeadEyeBaseFlippable
+  - BaseRestrictedContraband
+  name: "engineering eyepatch"
+  description: "An eyepatch, capable of protecting your eyes while welding."
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/engpatch.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/engpatch.rsi
+  - type: EyeProtection
+
+- type: entity
+  id: ClothingEyesEyepatchFlashProof
+  parent:
+  - ClothingEyesBase
+  - ClothingHeadEyeBaseFlippable
+  - BaseRestrictedContraband
+  name: "flashproof eyepatch"
+  description: "An eyepatch, capable of protecting your eyes from flashes."
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/flashpatch.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/flashpatch.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingEyesEyepatchHudChemical
+  parent:
+  - ClothingEyesBase
+  - ClothingHeadEyeBaseFlippable
+  - BaseRestrictedContraband
+  name: "chemical hud eyepatch"
+  description: "A heads-up display that can scan the chemical composition of a solution."
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/chempatch.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/chempatch.rsi
+  - type: SolutionScanner
+
+- type: entity
+  id: ClothingEyesEyepatchHudOmni
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  - ShowMedicalIcons
+  - BaseRestrictedContraband
+  - ClothingHeadEyeBaseFlippable
+  name: "the all seeing eyepatch"
+  description: "An eyepatch, capable of everything."
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/omnipatch.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/omnipatch.rsi
+  - type: EyeProtection
+  - type: FlashImmunity
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+    - Biological
+  - type: ShowThirstIcons
+  - type: ShowHungerIcons
+  - type: ShowSyndicateIcons
+  - type: TrayScanner
+  - type: ClothingSpeedModifier
+    walkModifier: 1.5
+    sprintModifier: 1.1
+  - type: StaticPrice
+    price: 62350
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+
+- type: entity
+  id: ClothingHeadHatPirateCaptain
+  parent: ClothingHeadBase
+  name: "captain pirate hat"
+  description: "If you think this hat representing tight-fistness, then yall are wrong..."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/hat/hat_c.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/hat/hat_c.rsi
+
+- type: entity
+  id: ClothingNeckPirateParrot
+  parent: ClothingNeckBase
+  name: "stuffed shoulder parrot"
+  description: "Greatest pirates' fel, unfortunately (?) undead."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/neck/popug.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/neck/popug.rsi
+
+- type: entity
+  id: ClothingOuterCoatPirateNewHorizon
+  parent: ClothingOuterCoatPirate
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/pirate_coat.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/pirate_coat.rsi
+
+- type: entity
+  id: ClothingShoesCaptainPirateBoots
+  parent:
+  - ClothingShoesBase
+  - ClothingShoesMilitaryBase
+  name: "captain's elite boots"
+  description: "Boots made of high-class security's skin, everyone around you will be jealous."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/boots/boots_c.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/boots/boots_c.rsi
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
+
+- type: entity
+  id: ClothingShoesPirateBootsHorizon
+  parent:
+  - ClothingShoesBase
+  - ClothingShoesMilitaryBase
+  name: "pirate's trusted boots"
+  description: "The only thing that keeps a pirate standing... Literally."
+  suffix: "Pirate"
+  components:
+  - type: Sprite
+    sprite: Imperial/PiratesNewHorizon/clothing/boots/p_boots.rsi
+  - type: Clothing
+    sprite: Imperial/PiratesNewHorizon/clothing/boots/p_boots.rsi
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
+

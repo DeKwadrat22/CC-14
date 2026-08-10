@@ -220,8 +220,18 @@
   storage:
     back:
     - Flash
+# Claw Command - every ammunition entry below is paired with an identical `...Spare`. A loadout can only
+# be selected once, so carrying two of the same magazine or speedloader is impossible without a second
+# prototype to tick. The spares are deliberate duplicates: same item, same cost, no name of their own -
+# LoadoutPrototype has no name field, so both render from the item and read as two of the same thing in
+# the list, which is precisely what picking a spare means.
 - type: loadout
   id: CCServiceEquipMagazinePistol
+  storage:
+    back:
+    - MagazinePistol
+- type: loadout
+  id: CCServiceEquipMagazinePistolSpare
   storage:
     back:
     - MagazinePistol
@@ -231,7 +241,20 @@
     back:
     - MagazinePistolRubber
 - type: loadout
+  id: CCServiceEquipMagazinePistolRubberSpare
+  storage:
+    back:
+    - MagazinePistolRubber
+- type: loadout
   id: CCServiceEquipSpeedLoaderMagnum
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnum
+- type: loadout
+  id: CCServiceEquipSpeedLoaderMagnumSpare
   effects:
   - !type:PointsCostLoadoutEffect
     cost: 2
@@ -247,6 +270,14 @@
     back:
     - SpeedLoaderMagnumRubber
 - type: loadout
+  id: CCServiceEquipSpeedLoaderMagnumRubberSpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnumRubber
+- type: loadout
   id: CCServiceEquipSpeedLoaderRifleHeavy
   effects:
   - !type:PointsCostLoadoutEffect
@@ -255,7 +286,23 @@
     back:
     - SpeedLoaderRifleHeavy
 - type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavySpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavy
+- type: loadout
   id: CCServiceEquipSpeedLoaderRifleHeavyRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavyRubber
+- type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavyRubberSpare
   effects:
   - !type:PointsCostLoadoutEffect
     cost: 2
@@ -340,11 +387,17 @@
   - CCServiceEquipCombatKnife
   - CCServiceEquipFlash
   - CCServiceEquipMagazinePistol
+  - CCServiceEquipMagazinePistolSpare
   - CCServiceEquipMagazinePistolRubber
+  - CCServiceEquipMagazinePistolRubberSpare
   - CCServiceEquipSpeedLoaderMagnum
+  - CCServiceEquipSpeedLoaderMagnumSpare
   - CCServiceEquipSpeedLoaderMagnumRubber
+  - CCServiceEquipSpeedLoaderMagnumRubberSpare
   - CCServiceEquipSpeedLoaderRifleHeavy
+  - CCServiceEquipSpeedLoaderRifleHeavySpare
   - CCServiceEquipSpeedLoaderRifleHeavyRubber
+  - CCServiceEquipSpeedLoaderRifleHeavyRubberSpare
 
 - type: loadoutGroup
   id: BarkeepWeapon

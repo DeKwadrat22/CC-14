@@ -1,0 +1,597 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: StationsContent
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingBeltMinuteManCamoDesertWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/desertwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/desertwebbing.rsi
+
+- type: entity
+  id: ClothingBeltMinuteManCamoForestWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/forestwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/forestwebbing.rsi
+
+- type: entity
+  id: ClothingBeltMinuteManCamoSnowWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/snowebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/snowebbing.rsi
+
+- type: entity
+  id: ClothingBeltMinuteManCamoUrbanWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/urbanwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/urbanwebbing.rsi
+
+- type: entity
+  id: ClothingBeltMinuteManMedicWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/cmmedwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/cmmedwebbing.rsi
+
+- type: entity
+  id: ClothingBeltMinuteManWebbing
+  parent: ClothingBeltSecurityWebbing
+  name: "security webbing"
+  description: "Unique and versatile chest rig, can hold security gear."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/cmmwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Belt/cmmwebbing.rsi
+
+- type: entity
+  id: ClothingCapCapMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/capcap.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/capcap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingFedoraHeadMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/fedora_hat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/fedora_hat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingGeneralHeadMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/general_hat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/general_hat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadDesertHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/deserthelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/deserthelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadForestHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/foresthelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/foresthelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/antichristhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/antichristhelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadMinutemanCap
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/flatcap.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/flatcap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadRiotHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/riothelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/riothelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+        Caustic: 0.75
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadSnowHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/snowhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/snowhelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingHeadUrbanHelmetMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/urbanhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/urbanhelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingMaskGasMinuteMan
+  parent: ClothingMaskGas
+  name: "security gas mask"
+  description: "A standard issue Security gas mask."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Mask/gasmask.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Mask/gasmask.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.8
+
+- type: entity
+  id: ClothingMedicapMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/medicap.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/medicap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingOfficerHeadMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/officer_hat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/officer_hat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingOuterArmorMinutemanAdmiral
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/admiral.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/admiral.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+        Cold: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanCaptainCoat
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/captaincoat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/captaincoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.6
+        Cold: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanGeneral
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/general.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/general.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.6
+        Cold: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanRiotSuit
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/riot.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/riot.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.8
+        Heat: 0.5
+        Cold: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+
+- type: entity
+  id: ClothingOuterArmorMinutemanSuitBomber
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/bomber.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/bomber.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+        Cold: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanSuitJacket
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/suitjacket.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/suitjacket.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.7
+        Cold: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanSuitJacketCMD
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/suitjacketcmd.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/suitjacketcmd.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.5
+        Cold: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorMinutemanTrenchcoat
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/trenchcoat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Armor/trenchcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Cold: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingSlouchHeadMinuteman
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/slouch_hat.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Head/slouch_hat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteBoy
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minuteboy.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minuteboy.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteMan
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutemen.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutemen.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManCamoDesert
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camodesert.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camodesert.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManCamoForest
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camoforest.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camoforest.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManCamoSnow
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camosnow.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camosnow.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManCamoUrban
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camourban.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/camourban.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteManFormal
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutemenformal.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutemenformal.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitMinuteWoman
+  parent: ClothingUniformJumpsuitMinuteManBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutewomen.rsi
+  - type: Clothing
+    sprite: Imperial/StationsContent/HephaestusStation/Minutemen/Clothing/Jumpsuit/minutewomen.rsi
+

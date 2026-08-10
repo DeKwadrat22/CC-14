@@ -1,0 +1,1837 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Clothing
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: CapSheriffbackpack
+  parent: ClothingBackpack
+  name: "Sheriff Captain Backpack"
+  description: "There are traces of those who disobeyed!"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/capsheriffbackpack.rsi
+
+- type: entity
+  id: CapSheriffcloack
+  parent: ClothingNeckBase
+  name: "The Captain's Sheriff cloak"
+  description: "He exudes severity!"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/capsheriffcloack.rsi
+
+- type: entity
+  id: Capwhitebackpack
+  parent: ClothingBackpack
+  name: "White Captain Backpack"
+  description: "Is it your imagination, or is there a stain on it?"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/capwhitebackpack.rsi
+
+- type: entity
+  id: Capwhitecloack
+  parent: ClothingNeckBase
+  name: "The Captain's White cloak"
+  description: "Its bright white light dazzles with its greatness."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/capwhitecloack.rsi
+
+- type: entity
+  id: CentComEliteCoat
+  parent: ClothingOuterWinterCoatToggleable
+  name: "Elite CENTCOM Women's Winter coat"
+  description: "The CENTCOM winter coat is extremely pleasant to the touch."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/Coat.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/Coat.rsi
+
+- type: entity
+  id: ClothingBackpackCentCom
+  parent: ClothingBackpack
+  name: "Centcom Backpack"
+  description: "The standard backpack of bureaucrats."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCBackpack.rsi
+
+- type: entity
+  id: ClothingBackpackDuffelCentCom
+  parent: ClothingBackpackDuffel
+  name: "Centcom's Duffel Bag"
+  description: "To transport thousands of papers."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCDuffel.rsi
+
+- type: entity
+  id: ClothingBackpackDuffelDSO
+  parent: ClothingBackpackDuffel
+  name: "DSO Duffel Bag"
+  description: "To transport tons of weapons, or corpses."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSODuffel.rsi
+
+- type: entity
+  id: ClothingBackpackDuffelSecurityFilledSeniorOfficer
+  parent: ClothingBackpackDuffelSecurity
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: MagazinePistol
+    - id: MagazineBoxPistolPractice
+    - id: MagazinePistolPractice
+
+- type: entity
+  id: ClothingBackpackSatchelCentCom
+  parent: ClothingBackpackSatchel
+  name: "Centcom's Bag"
+  description: "On guard of bureaucratic fashion."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCStachel.rsi
+
+- type: entity
+  id: ClothingBackpackSatchelDSO
+  parent: ClothingBackpackSatchel
+  name: "Satchel DSO"
+  description: "For serial fashionistas."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOStachel.rsi
+
+- type: entity
+  id: ClothingBackpackSecurityFilledSeniorOfficer
+  parent: ClothingBackpackSecurity
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: MagazinePistol
+    - id: MagazineBoxPistolPractice
+    - id: MagazinePistolPractice
+
+- type: entity
+  id: ClothingBeltKatanaSheath
+  parent:
+  - ClothingBeltBase
+  - ClothingSlotBase
+  name: "katana sheath"
+  description: "An elegant sheath, designed for quick access to the katana."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Belt/Sheaths/katana_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Imperial/Clothing/Belt/Sheaths/katana_sheath.rsi
+  - type: ItemSlots
+    slots:
+      item:
+        name: "Sabre"
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Katana
+  - type: Item
+    size: Ginormous
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Katana
+  - type: Appearance
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingSeniorOfficer
+  parent: ClothingBeltStorageBase
+  name: "brigmedical chest rig"
+  description: "A set of tactical webbing worn by brigmedic."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Security/seniorOfficer/Clothing/seniorofficerwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Security/seniorOfficer/Clothing/seniorofficerwebbing.rsi
+  - type: Item
+    size: Huge
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,4,3"
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingSeniorOfficerFilled
+  parent: ClothingBeltMilitaryWebbingSeniorOfficer
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeFlashBang
+    - id: Flash
+    - id: Zipties
+    - id: Zipties
+    - id: Handcuffs
+    - id: Handcuffs
+    - id: Stunbaton
+
+- type: entity
+  id: ClothingBeltParamedicFilled
+  parent: ClothingBeltMedical
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+    - id: Brutepack
+      amount: 1
+    - id: Ointment
+      amount: 1
+    - id: Bloodpack
+      amount: 1
+    - id: Gauze
+    - id: EmergencyMedipen
+      amount: 6
+
+- type: entity
+  id: ClothingBeltSheriffSheath
+  parent: ClothingBeltSheath
+  name: "sabre sheath"
+  description: "An ornate sheath designed to hold an officer's blade."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/sheath.rsi
+
+- type: entity
+  id: ClothingBeltWhiteSheath
+  parent: ClothingBeltSheath
+  name: "sabre sheath"
+  description: "An ornate sheath designed to hold an officer's blade."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/sheath.rsi
+
+- type: entity
+  id: ClothingCentComGlassesEmerald
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "CENTCOM Emerald Glasses"
+  description: "Wearing them makes you feel like a merchant with rather unprofitable prices. And a big nose."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesEmerald.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesEmerald.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingCentComGlassesGold
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "CentCom Gold Glasses"
+  description: "Gold-plated glasses for the richest paper uncles and aunts."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesGold.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesGold.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingCentComGlassesGreen
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "CENTCOM's Green Glasses"
+  description: "Stylish CENTCOM Tactical Glasses"
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesGreen.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesGreen.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingCentComGlassesYellow
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "CENTCOM Yellow Glasses"
+  description: "Stylish CENTCOM Tactical Glasses"
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesYellow.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/CCGlassesYellow.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingDSOGlassesDiamond
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "Colorless glasses"
+  description: "They look depressing. However, they are suitable to look at war crimes"
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOGlassesDiamond.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOGlassesDiamond.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingDSOGlassesWhite
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "White DSO Glasses"
+  description: "Stylish Tactical Glasses DSO"
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOGlassesWhite.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOGlassesWhite.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingHandsGlovesCaptainSheriff
+  parent: ClothingHandsGlovesCaptain
+  name: "captain gloves"
+  description: "Regal white gloves, with a nice gold trim. Swanky."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/gloves.rsi
+
+- type: entity
+  id: ClothingHandsGlovesCaptainWhite
+  parent: ClothingHandsGlovesCaptain
+  name: "captain gloves"
+  description: "Regal white gloves, with a nice gold trim. Swanky."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/gloves.rsi
+
+- type: entity
+  id: ClothingHandsGlovesLatexLong
+  parent: ClothingHandsGlovesLatex
+  name: "fc gloves"
+  description: "Regal blue gloves, with a nice gold trim. Swanky."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Science/longlatex.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Science/longlatex.rsi
+  - type: FingerprintMask
+
+- type: entity
+  id: ClothingHeadBeretDSO
+  parent: ClothingHeadBase
+  name: "Black Beret"
+  description: "The black beret is for no less black officers in the soul."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOBeret.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOBeret.rsi
+
+- type: entity
+  id: ClothingHeadFlowerCentComEmerald
+  parent: ClothingHeadBase
+  name: "The Emerald Flower"
+  description: "A beautiful, shiny emerald flower."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/FlowerEmerald.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/FlowerEmerald.rsi
+
+- type: entity
+  id: ClothingHeadFlowerCentComGold
+  parent: ClothingHeadBase
+  name: "Golden Flower"
+  description: "A beautiful, shiny GOLDEN flower."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/FlowerGold.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/FlowerGold.rsi
+
+- type: entity
+  id: ClothingHeadFlowerDSOWhite
+  parent: ClothingHeadBase
+  name: "White Flower"
+  description: "A colorless flower. It is ideal for giving respect to the dead on the spot."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/FlowerWhite.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/FlowerWhite.rsi
+
+- type: entity
+  id: ClothingHeadHatBeretCaptainSheriff
+  parent: ClothingHeadBase
+  name: "beret"
+  description: "A beret, an artists favorite headwear."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/beret.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/beret.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: ClothingHeadHatBeretCaptainWhite
+  parent: ClothingHeadBase
+  name: "beret"
+  description: "A beret, an artists favorite headwear."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/beret.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/beret.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: ClothingHeadHatCapcapSheriff
+  parent: ClothingHeadBase
+  name: "cap cap"
+  description: "A grand, stylish captain cap."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/capcap.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/capcap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: ClothingHeadHatCapcapWhite
+  parent: ClothingHeadBase
+  name: "cap cap"
+  description: "A grand, stylish captain cap."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/capcap.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/capcap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: ClothingHeadHatSeniorOfficerBeret
+  parent: ClothingHeadBase
+  name: "senior officer beret"
+  description: "A stylish clothing option for security officers."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Security/seniorOfficer/Clothing/seniorofficerberet.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Security/seniorOfficer/Clothing/seniorofficerberet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: ClothingHeadHelmetGoldenEagle
+  parent: ClothingHeadHelmetBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  suffix: "DeadSector"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/golden_eagle.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/golden_eagle.rsi
+    quickEquip: true
+  - type: Item
+    heldPrefix: false
+    size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.7
+        Cold: 0.7
+        Shock: 0.7
+        Caustic: 0.7
+        Radiation: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+
+- type: entity
+  id: ClothingHeadHelmetK63
+  parent: ClothingHeadHelmetBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  suffix: "DeadSector"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/k6_3.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/k6_3.rsi
+    quickEquip: true
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+  - type: Item
+    size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.93
+        Heat: 0.93
+        Shock: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+
+- type: entity
+  id: ClothingHeadHelmetOpsCore
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  suffix: "DeadSector"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/ops_core.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/ops_core.rsi
+    quickEquip: true
+  - type: Item
+    heldPrefix: false
+    size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.75
+        Heat: 0.9
+        Cold: 0.9
+        Shock: 0.6
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+
+- type: entity
+  id: ClothingHeadHelmetScienceMask
+  parent: ClothingHeadBase
+  name: "helmet"
+  description: "Standard security gear. Protects the head from impacts."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Science/GlassMask.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Science/GlassMask.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.8
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+
+- type: entity
+  id: ClothingHeadHelmetWoodGrouseBlack
+  parent: ClothingHeadHelmetWoodGrouseBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_black.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_black.rsi
+
+- type: entity
+  id: ClothingHeadHelmetWoodGrouseBlue
+  parent: ClothingHeadHelmetWoodGrouseBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_blue.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_blue.rsi
+
+- type: entity
+  id: ClothingHeadHelmetWoodGrouseGreen
+  parent: ClothingHeadHelmetWoodGrouseBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_green.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_green.rsi
+
+- type: entity
+  id: ClothingHeadHelmetWoodGrouseOrange
+  parent: ClothingHeadHelmetWoodGrouseBase
+  name: "fire helmet"
+  description: "An atmos tech's best friend. Provides some heat resistance and looks cool."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_orange.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Head/Helmets/wood_grouse_orange.rsi
+
+- type: entity
+  id: ClothingNeckDSOMedal
+  parent: ClothingNeckBase
+  name: "Department of Special Operations Medal"
+  description: "It is given to the best."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOMedal.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOMedal.rsi
+
+- type: entity
+  id: ClothingNeckMantleHOSShoulder
+  parent: ClothingNeckMantleHOS
+  name: "head of security's shoulder mantle"
+  description: "Shootouts with nukies are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Mantles/hosmantle_shoulder.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Mantles/hosmantle_shoulder.rsi
+
+- type: entity
+  id: ClothingOuterArmorCargoJacket
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Cargo/CargoResprite/OuterClothing/jacket.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Cargo/CargoResprite/OuterClothing/jacket.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Cold: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 1
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+
+- type: entity
+  id: ClothingOuterArmorComissarGreen
+  parent: ClothingOuterStorageBase
+  name: "Comissar vest"
+  description: "Gold!"
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/battlecomissar/comissarvest.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/battlecomissar/comissarvest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorComissarRed
+  parent: ClothingOuterStorageBase
+  name: "Parade Comissar vest"
+  description: "Wery official."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/agitcomissar/comissarvest.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/agitcomissar/comissarvest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterArmorQMCoat
+  parent: ClothingOuterBaseMedium
+  name: "armor vest"
+  description: "A standard Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Cargo/CargoResprite/OuterClothing/qmcoat.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Cargo/CargoResprite/OuterClothing/qmcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.85
+        Piercing: 0.9
+        Heat: 0.9
+        Cold: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: ClothingOuterCoatHoSGreatcoat
+  parent: ClothingOuterCoatHoSTrench
+  name: "armored greatcoat"
+  description: "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/hos_greatcoat.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/hos_greatcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.55
+        Heat: 0.65
+        Caustic: 0.75
+
+- type: entity
+  id: ClothingShoesBootsScienceImperial
+  parent: ClothingShoesBaseButcherable
+  name: "workboots"
+  description: "Engineering lace-up work boots for the especially blue-collar."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Science/sciboots.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Science/sciboots.rsi
+
+- type: entity
+  id: ClothingShoesParamedic
+  parent: ClothingShoesBaseButcherable
+  name: "Paramedic shoes"
+  description: "Scuffs from brisk walking are visible"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Medical/ParamedicBoots.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Medical/ParamedicBoots.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtDressCentCom
+  parent: ClothingUniformSkirtBase
+  name: "Centcom Skirt"
+  description: "A luxurious skirt for the most beautiful ladies of CENTCOM."
+  suffix: "Vl, ЦентКом"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/Skirt.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/CentCom/Skirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtDressDSO
+  parent: ClothingUniformSkirtBase
+  name: "Skirt DSO"
+  description: "A beautiful skirt for the female officers of the Department of Special Operations."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOSkirt.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOSkirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtWhiteCaptain
+  parent: ClothingUniformJumpskirtCaptain
+  name: "captain's white jumpskirt"
+  description: "It's a white jumpskirt with some gold markings denoting the rank of \"Captain\"."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/captainwhiteskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/captainwhiteskirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRDTurtleNeck
+  parent: ClothingUniformBase
+  name: "cargo tech jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Science/rnd.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Science/rnd.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSheriffCaptain
+  parent: ClothingUniformJumpsuitCaptain
+  name: "captain's sheriff jumpsuit"
+  description: "It's a shite jumpsuit with some gold markings denoting the rank of \"Captain\"."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/captainsheriff.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/sheriff/captainsheriff.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitWhiteCaptain
+  parent: ClothingUniformJumpsuitCaptain
+  name: "captain's white jumpsuit"
+  description: "It's a white jumpsuit with some gold markings denoting the rank of \"Captain\"."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/captainwhite.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/Command/CaptainExtraDrip/white/captainwhite.rsi
+
+- type: entity
+  id: DSOEliteCoat
+  parent: ClothingOuterWinterCoatToggleable
+  name: "Luxury winter coat DSO"
+  description: "Extremely pleasant to the touch winter coat DSO."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOCoat.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOCoat.rsi
+
+- type: entity
+  id: DSOMiniCoat
+  parent: ClothingOuterWinterCoatToggleable
+  name: "Black jacket"
+  description: "Fashionable black officers' jacket."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOMiniCoat.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/Departments/CentCom/DSO/DSOMiniCoat.rsi
+
+- type: entity
+  id: USSPArmbandBlu
+  parent: ClothingNeckBase
+  name: "Blue armband"
+  description: "A neosilk blue armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/armbands/bluband.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/armbands/bluband.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPArmbandEng
+  parent: ClothingNeckBase
+  name: "Engineer armband"
+  description: "A neosilk orange armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/armbands/yelband.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/armbands/yelband.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPArmbandRed
+  parent: ClothingNeckBase
+  name: "Red armband"
+  description: "A neosilk red armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/armbands/redband.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/armbands/redband.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPBeltAssault
+  parent: ClothingBeltStorageBase
+  name: "assault belt"
+  description: "A tactical assault belt."
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/assault.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/assault.rsi
+  - type: ItemMapper
+    mapLayers:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+      tear_gas_grenade:
+        whitelist:
+          components:
+          - SmokeOnTrigger
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  id: USSPChefCoat
+  parent: ClothingOuterStorageBase
+  name: "armor vest"
+  description: "A slim Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/chef/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/chef/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: USSPChefHelm
+  parent: ClothingHeadHatChef
+  name: "general cap"
+  description: "All remaining systems will BOW TO THE SOVIET UNION! FIRE!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/chef/hat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/chef/hat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPComissarCapeGreen
+  parent: ClothingNeckBase
+  name: "ComissarCape"
+  description: "A neosilk blue armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/battlecomissar/comissarcape.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/battlecomissar/comissarcape.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPComissarCapeRed
+  parent: ClothingNeckBase
+  name: "ComissarCape"
+  description: "A neosilk blue armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/agitcomissar/comissarcape.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/agitcomissar/comissarcape.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPComissarHelmGreen
+  parent: ClothingHeadBase
+  name: "comissar cap"
+  description: "I am the law."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/battlecomissar/comissar.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/battlecomissar/comissar.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPComissarHelmRed
+  parent: ClothingHeadBase
+  name: "comissar cap"
+  description: "I am the law."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/agitcomissar/comissar.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/agitcomissar/comissar.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPComissarUniformGreen
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/battlecomissar/comissaruniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/battlecomissar/comissaruniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPComissarUniformRed
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/agitcomissar/comissaruniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/agitcomissar/comissaruniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPGeneralCoat
+  parent: ClothingOuterStorageBase
+  name: "general armor vest"
+  description: "A slim Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/general/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/general/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: USSPGeneralHelm
+  parent: ClothingHeadBase
+  name: "general cap"
+  description: "All remaining systems will BOW TO THE SOVIET UNION! FIRE!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/general/hat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/general/hat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPGlassesWar
+  parent: ClothingEyesBase
+  name: "ninja visor"
+  description: "An advanced visor protecting a ninja's eyes from flashing lights."
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+
+- type: entity
+  id: USSPHardsuitGuardHelmet
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "Guard hardsuit helmet"
+  description: "What does this button do?"
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Imperial/ussp/hardsuits/guardhelm.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/hardsuits/guardhelm.rsi
+  - type: PointLight
+    color: "#4aeff4"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: USSPHardsuitSoldierHelmet
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "Military hardsuit helmet"
+  description: "The lightweight helmet of a hardsuit."
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Imperial/ussp/hardsuits/soldierhelm.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/hardsuits/soldierhelm.rsi
+  - type: PointLight
+    color: "#ffeeb2"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: USSPHardsuitStormHelmet
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "Elite hardsuit helmet"
+  description: "The lightweight helmet of the elite military hardsuit."
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Imperial/ussp/hardsuits/divstormhelm.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/hardsuits/divstormhelm.rsi
+  - type: PointLight
+    color: "#4aeff4"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: USSPMajorPin
+  parent: ClothingNeckBase
+  name: "ComissarCape"
+  description: "A neosilk blue armband."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/policemajor/pin.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/policemajor/pin.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPMarshalCoat
+  parent: ClothingOuterStorageBase
+  name: "marshal armor vest"
+  description: "A slim Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/highcommand/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/highcommand/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+
+- type: entity
+  id: USSPMarshalHelm
+  parent: ClothingHeadBase
+  name: "general cap"
+  description: "All remaining systems will BOW TO THE SOVIET UNION! FIRE!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/highcommand/hat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/highcommand/hat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPMarshalUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/highcommand/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/highcommand/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPMilitiaCoat
+  parent: ClothingOuterStorageBase
+  name: "armor vest"
+  description: "A slim Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/police/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/police/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: USSPMilitiaHelm
+  parent: ClothingHeadBase
+  name: "militia cap"
+  description: "I am the law."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/police/hat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/police/hat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPMilitiaMajorCoat
+  parent: ClothingOuterStorageBase
+  name: "major armor vest"
+  description: "A slim Type I armored vest that provides decent protection against most types of damage."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/policemajor/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/policemajor/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.65
+  - type: StaminaResistance
+    damageCoefficient: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+
+- type: entity
+  id: USSPMilitiaMajorHelm
+  parent: ClothingHeadBase
+  name: "militia major cap"
+  description: "I am the law."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/policemajor/hat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/policemajor/hat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPMilitiaMajorUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/policemajor/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/policemajor/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPMilitiaUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/police/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/police/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPRedGloves
+  parent: ClothingHandsGlovesColorBlack
+  name: "Soviet gloves"
+  description: "OUR."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/gloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPRedSecHelm
+  parent: ClothingHeadBase
+  name: "general cap"
+  description: "the most cool beret"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/highcommand/hat2.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/highcommand/hat2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  id: USSPServiceUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPSoldierBeret
+  parent: ClothingHeadBase
+  name: "Soviet beret"
+  description: "I am the order!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/sergeantberet.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/sergeantberet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: USSPSoldierBoots
+  parent: ClothingShoesMilitaryBase
+  name: "jackboots"
+  description: "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/boots.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/boots.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPSoldierCoat
+  parent: ClothingOuterStorageBase
+  name: "Military coat"
+  description: "Military camo coat."
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: USSPSoldierUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPSoldierUshanka
+  parent: ClothingHeadBase
+  name: "Soviet Ushanka"
+  description: "Armed and dangerous."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/soldier/ushanka.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/soldier/ushanka.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: USSPguardsmenArmor
+  parent: ClothingOuterStorageBase
+  name: "Elite guardsmen armor"
+  description: "bulletproof armor made for engineers."
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/ussp/guardsmen/elitearmor.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/guardsmen/elitearmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.55
+  - type: StaminaResistance
+    damageCoefficient: 0.55
+  - type: ExplosionResistance
+    damageCoefficient: 0.55
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: USSPguardsmenBeret
+  parent: ClothingHeadBase
+  name: "Guardsmen Helmet"
+  description: "Defend the Ship!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/guardsmen/ushanka.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/guardsmen/ushanka.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  id: USSPstormdivisionBeret
+  parent: ClothingHeadBase
+  name: "Storm elite helmet"
+  description: "This is the most elite helmet. Or is it?"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/stormdivision/sergeantberet.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/stormdivision/sergeantberet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+
+- type: entity
+  id: USSPstormdivisionCoat
+  parent: ClothingOuterStorageBase
+  name: "Elite coat"
+  description: "Good protection and look."
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/ussp/stormdivision/coat.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/stormdivision/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: USSPstormdivisionGloves
+  parent: ClothingHandsGlovesColorBlack
+  name: "Soviet gloves"
+  description: "OUR."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/stormdivision/gloves.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/stormdivision/gloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  id: USSPstormdivisionMask
+  parent: ClothingMaskGas
+  name: "The mercenary's gas mask"
+  description: "The usual gas mask of a mercenary. Apparently, it was stolen from some kind of military warehouse."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/ussp/Merc/Mask.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/Merc/Mask.rsi
+
+- type: entity
+  id: USSPstormdivisionUniform
+  parent: UnsensoredClothingUniformBase
+  name: "operative jumpsuit"
+  description: "Uniform for elite syndicate operatives performing tactical operations in deep space."
+  components:
+  - type: Sprite
+    sprite: Imperial/ussp/stormdivision/uniform.rsi
+  - type: Clothing
+    sprite: Imperial/ussp/stormdivision/uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+

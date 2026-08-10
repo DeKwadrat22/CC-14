@@ -1,0 +1,2224 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Other
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: AdministrationBeret
+  parent: ClothingHeadBase
+  name: "beret"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/DeadSector/head/beretv.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/head/beretv.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  id: Centcomcloackformal
+  parent: ClothingNeckBase
+  name: "CentocomCloackFormal"
+  description: "Radiates bureaucracy!"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/centcomcloakformal.rsi
+
+- type: entity
+  id: ChestBeaconBlue
+  parent: ClothingNeckBase
+  name: "Chest Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Blue"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/chest/BBeacon.rsi
+
+- type: entity
+  id: ChestBeaconBlueRed
+  parent: ClothingNeckBase
+  name: "Chest Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, BlueRed"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/chest/BRBeacon.rsi
+
+- type: entity
+  id: ChestBeaconRed
+  parent: ClothingNeckBase
+  name: "Chest Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Red"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/chest/RBeacon.rsi
+
+- type: entity
+  id: ChestBeaconWhite
+  parent: ClothingNeckBase
+  name: "Chest Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, White"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/chest/WBeacon.rsi
+
+- type: entity
+  id: ChestBeaconYellow
+  parent: ClothingNeckBase
+  name: "Chest Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Yellow"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/chest/YBeacon.rsi
+
+- type: entity
+  id: ClothingAdministrationNeck
+  parent: ClothingNeckBase
+  name: "cloak"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/DeadSector/neck/admin.rsi
+
+- type: entity
+  id: ClothingBackpackCallERTCBURNFilled
+  parent: ClothingBackpackERTSecurity
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+
+- type: entity
+  id: ClothingBackpackCallERTEngineerFilled
+  parent: ClothingBackpackERTEngineer
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+
+- type: entity
+  id: ClothingBackpackCallERTJanitorFilled
+  parent: ClothingBackpackERTJanitor
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+
+- type: entity
+  id: ClothingBackpackCallERTMedicalFilled
+  parent: ClothingBackpackERTMedical
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+
+- type: entity
+  id: ClothingBackpackCallERTSecurityFilled
+  parent: ClothingBackpackERTSecurity
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+
+- type: entity
+  id: ClothingBackpackDeadSquadSecurity
+  parent: ClothingBackpackERTSecurity
+  name: "Dead squad backpack"
+  description: "You don't have to know whose backpack it is."
+  suffix: "DeathSquad"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/deadsquadBackpack.rsi
+  - type: Storage
+    grid:
+    - "0,0,11,4"
+
+- type: entity
+  id: ClothingBackpackDuffelSona
+  parent: ClothingBackpackDuffel
+  name: "Duffel S-o.N.A"
+  description: "A duffel bag of S-o.N.A. AI Dynamics corporation, with additional BlueSpace storage, which was leased from NanoTrasen."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Duffel.rsi
+
+- type: entity
+  id: ClothingBackpackDuffelSyndicateAKMS
+  parent: ClothingBackpackDuffelSyndicateBundle
+  name: "AKMS bundle"
+  description: "Old faithful: The classic AKMS, bundled with four magazines."
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleAk
+    - id: MagazineLightRifle
+      amount: 2
+
+- type: entity
+  id: ClothingBackpackDuffelWithGrenadesCleanade
+  parent: ClothingBackpackDuffel
+  name: "Duffel bag"
+  description: "A duffel bag of S-o.N.A. AI Dynamics corporation, with additional BlueSpace storage, which was leased from NanoTrasen."
+  suffix: "JRT"
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeCleanade
+      amount: 12
+
+- type: entity
+  id: ClothingBackpackDuffelWithHydra
+  parent: ClothingBackpackDuffel
+  name: "Duffel bag"
+  description: "A duffel bag of S-o.N.A. AI Dynamics corporation, with additional BlueSpace storage, which was leased from NanoTrasen."
+  suffix: "JRT"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLauncherHydra
+    - id: GrenadeCleanade
+      amount: 8
+
+- type: entity
+  id: ClothingBackpackMaidBackbow
+  parent: BaseItem
+  name: "maid's back bow"
+  description: "Cool bow for a cool maid."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidBackbow.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidBackbow.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: Item
+    shape:
+    - "0,0,2,2"
+    size: Normal
+  - type: Appearance
+
+- type: entity
+  id: ClothingBackpackSona
+  parent: ClothingBackpack
+  name: "Backpack S-o.N.A"
+  description: "Backpack with additional storage of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Backpack.rsi
+
+- type: entity
+  id: ClothingBeltDeadSquadFilled
+  parent: ClothingBeltChiefEngineer
+  suffix: "DeathSquad, Filled"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/deadsquadBelt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/deadsquadBelt.rsi
+  - type: StorageFill
+    contents:
+    - id: PowerDrill
+    - id: JawsOfLife
+    - id: WelderExperimental
+    - id: Multitool
+    - id: CableApcStack
+
+- type: entity
+  id: ClothingBeltJanimaid
+  parent: ClothingBeltStorageBase
+  name: "janimaid belt"
+  description: "A special belt for the most obedient cat-janimaid."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidBelt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidBelt.rsi
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - "0,2,5,3"
+    - "2,0,5,3"
+    - "2,2,7,3"
+  - type: Appearance
+
+- type: entity
+  id: ClothingBeltJanimaidFilled
+  parent: ClothingBeltJanimaid
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+    - id: RagItem
+    - id: SprayBottleSpaceCleaner
+  - type: ItemMapper
+    mapLayers:
+      bottle:
+        whitelist:
+          tags:
+          - Bottle
+      bottle_spray:
+        whitelist:
+          tags:
+          - Spray
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingBrigmed
+  parent: ClothingBeltStorageBase
+  name: "brigmedical chest rig"
+  description: "A set of tactical webbing worn by brigmedic."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicwebbing.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicwebbing.rsi
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,4,3"
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingBrigmedFilled
+  parent: ClothingBeltMilitaryWebbingBrigmed
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+    - id: Brutepack
+      amount: 2
+    - id: Ointment
+      amount: 1
+    - id: Bloodpack
+      amount: 1
+    - id: Gauze
+    - id: EmergencyMedipen
+
+- type: entity
+  id: ClothingBeltSecurityERTCallFilled
+  parent: ClothingBeltSecurity
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeFlashBang
+    - id: GrenadeFlashBang
+    - id: AdvancedStunbaton
+    - id: Handcuffs
+    - id: Handcuffs
+
+- type: entity
+  id: ClothingBeltSona
+  parent: ClothingBeltStorageBase
+  name: "Belt S-o.N.A"
+  description: "The standard security belt of the S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Belt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Belt.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - CigPack
+      - Taser
+      - SecBeltEquip
+      - Radio
+      components:
+      - Stunbaton
+      - FlashOnTrigger
+      - Flash
+      - Handcuff
+  - type: ItemMapper
+    mapLayers:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingEliteNeckCloakSona
+  parent: ClothingNeckBase
+  name: "Elite cloak S-o.N.A"
+  description: "A beautiful elite cloak that is used by high-ranking people in the S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/EliteNeck.rsi
+
+- type: entity
+  id: ClothingEyesGlassesElysium
+  parent: ClothingEyesBase
+  name: "glasses"
+  description: "A pair of spectacular spectacles with prescription lenses."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/glasses.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/glasses.rsi
+  - type: VisionCorrection
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  id: ClothingEyesGlassesSona
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "Safety glasses S-o.N.A"
+  description: "Stylish glasses of S-o.N.A. AI Dynamics corporation, which protect against flashes and have a built-in visor."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Glasses.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Glasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  id: ClothingEyesLinsesSona
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "Lenses S-o.N.A"
+  description: "Technological lenses of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Linses.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Linses.rsi
+
+- type: entity
+  id: ClothingHandsGlovesAdministration
+  parent: ClothingHandsButcherable
+  name: "gloves"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/hands/admin.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/hands/admin.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-green
+  - type: FingerprintMask
+
+- type: entity
+  id: ClothingHandsGlovesCentCom
+  parent: ClothingHandsGlovesCaptain
+  name: "centcom gloves"
+  description: "The captain's repainted gloves. Just don't tell the owner"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/ClothingHandsGlovesCentCom.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/ClothingHandsGlovesCentCom.rsi
+
+- type: entity
+  id: ClothingHeadEVAHelmetCentCom
+  parent: ClothingHeadEVAHelmetBase
+  name: "EVA helmet CentCom"
+  description: "A EVA helmet for big shot."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaHelmet.rsi
+    state: icon
+  - type: Item
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaHelmet.rsi
+  - type: Clothing
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaHelmet.rsi
+    slots:
+    - HEAD
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.9
+        Radiation: 0.05
+        Heat: 0.5
+
+- type: entity
+  id: ClothingHeadFlowerSona
+  parent: ClothingHeadBase
+  name: "Blue flower for hair"
+  description: "A beautiful blue flower, it smells like an orchid."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Sona/HeadFlower.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/HeadFlower.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  id: ClothingHeadHardsuitSingularitySienceBlack
+  parent: ClothingHeadHardsuitBase
+  name: "scientiest helmet"
+  suffix: "Singularity"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Black/head.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Black/head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+        Radiation: 0.85
+        Caustic: 0.95
+
+- type: entity
+  id: ClothingHeadHardsuitSingularitySienceGreen
+  parent: ClothingHeadHardsuitBase
+  name: "scientiest helmet"
+  suffix: "Singularity"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Green/head.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Green/head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.75
+        Radiation: 0.6
+        Caustic: 0.97
+
+- type: entity
+  id: ClothingHeadHardsuitSingularitySienceOrange
+  parent: ClothingHeadHardsuitBase
+  name: "scientiest helmet"
+  suffix: "Singularity"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Orange/head.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/Orange/head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.8
+        Radiation: 0.6
+        Caustic: 0.95
+
+- type: entity
+  id: ClothingHeadHardsuitSingularitySienceWhite
+  parent: ClothingHeadHardsuitBase
+  name: "scientiest helmet"
+  suffix: "Singularity"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/White/head.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Radsuits/White/head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.7
+        Radiation: 0.55
+        Caustic: 0.85
+
+- type: entity
+  id: ClothingHeadHatBeretBonBon
+  parent: ClothingHeadBase
+  name: "BonBon's beret"
+  description: null
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/mime/Clothing/beret.rsi
+  - type: Clothing
+    sprite: Imperial/Other/mime/Clothing/beret.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingHeadHatBeretSona
+  parent: ClothingHeadBase
+  name: "Beret S-o.N.A"
+  description: "The stylish beret of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Beret.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  id: ClothingHeadHatCapSona
+  parent: ClothingHeadBase
+  name: "Cap S-o.N.A"
+  description: "The standard cap of employees of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Cap.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  id: ClothingHeadHatCentComCap
+  parent: ClothingHeadBase
+  name: "CentCom cap"
+  description: "It smells like paper."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/centcomcap.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/centcomcap.rsi
+
+- type: entity
+  id: ClothingHeadHatHereticRobe
+  parent: ClothingHeadBase
+  name: "heretic cloak hood"
+  description: "A hood of a heretic cloak, it is made from the hide of resilient fauna from a distant planet."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Heretic/Clothes/HereticHelmet.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: Imperial/Other/Heretic/Clothes/HereticHelmet.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  id: ClothingHeadHatSnowmaiden
+  parent: ClothingHeadBase
+  name: "snow maiden hat"
+  description: "A scorchingly beautiful kokoshnik."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Christmas/Snowmaiden/snowmaiden_hat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Christmas/Snowmaiden/snowmaiden_hat.rsi
+
+- type: entity
+  id: ClothingHeadHelmetBrigmedic
+  parent: ClothingHeadBase
+  name: "SWAT helmet"
+  description: "An extremely robust helmet, commonly used by paramed forces. This one has the Nanotrasen logo emblazoned on the top."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedichelmet.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedichelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.65
+
+- type: entity
+  id: ClothingHeadHelmetCBURNLeader
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "CBURN exosuit helmet"
+  description: "A pressure resistant and fireproof hood worn by special cleanup units."
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Imperial/Other/ErtCall/CBURN/cburncommanderHead.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map:
+      - light
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: PointLight
+    color: orange
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.1
+        Shock: 0.1
+        Cold: 0.2
+        Radiation: 0.2
+
+- type: entity
+  id: ClothingHeadHelmetCBURNMedic
+  parent: ClothingHeadHelmetCBURNLeader
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Imperial/Other/ErtCall/CBURN/cburnmedicHead.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map:
+      - light
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitERTEngineerAlternative
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "ERT engineer hardsuit helmet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: PointLight
+    color: "#f4ffad"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitERTJanitorAlternative
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "ERT janitor hardsuit helmet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: PointLight
+    color: "#cbadff"
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitERTLeaderAlternative
+  parent: ClothingHeadHelmetHardsuitSyndieCommander
+  name: "ERT leader hardsuit helmet"
+  description: "A special hardsuit helmet worn by members of an emergency response team."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: PointLight
+    color: "#addbff"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitERTMedicalAlternative
+  parent: ClothingHeadHelmetHardsuitSyndieElite
+  name: "ERT medic hardsuit helmet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: PointLight
+    color: "#adffec"
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitERTSecurityAlternative
+  parent: ClothingHeadHelmetHardsuitSyndie
+  name: "ERT security hardsuit helmet"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/Hardsuits/Head/ertleader.rsi
+  - type: PointLight
+    color: "#ffadc6"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitJRT
+  parent:
+  - BaseCentcommContraband
+  - ClothingHeadHelmetHardsuitSyndie
+  name: "JRT hardsuit helmet"
+  description: "A special hardsuit helmet worn by members of an emergency response team."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
+  - type: PointLight
+    color: "#cbadff"
+
+- type: entity
+  id: ClothingKrilBig
+  parent: ClothingMaskPullableBase
+  name: "Big wings"
+  description: "Overbearing..."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/KrilBig.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/KrilBig.rsi
+
+- type: entity
+  id: ClothingKrilSmall
+  parent: ClothingMaskPullableBase
+  name: "Small wings"
+  description: "A little less, but still... Overbearing..."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/KrilSmall.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/KrilSmall.rsi
+
+- type: entity
+  id: ClothingMaskGasSona
+  parent: ClothingMaskGas
+  name: "Heavy gas mask S-o.N.A"
+  description: "A heavy S-o.N.A gas mask, effectively filtering gases and slightly stimulating its owner through the introduction of various stimulants."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Mask.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Mask.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.95
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+
+- type: entity
+  id: ClothingMaskRebreatherBrigmedic
+  parent: ClothingMaskBreathMedical
+  name: "military-style medical mask"
+  description: "A medical mask with a small layer of protection against damage and viruses, similar to the one used in the medical units of the first corporate war."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicrebreather.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicrebreather.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Caustic: 0.85
+
+- type: entity
+  id: ClothingNeckCloakHosFormal
+  parent: ClothingNeckBase
+  name: "head of security's formal cloak"
+  description: "Made for business meetings with NanoTrasen's enemies."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/hoscloakformal.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+
+- type: entity
+  id: ClothingNeckCloakNanotrasenBlack
+  parent: ClothingNeckBase
+  name: "black cloak"
+  description: "A black cloak."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/TFG/Clothing/cloakNT.rsi
+  - type: Clothing
+    sprite: Imperial/Other/TFG/Clothing/cloakNT.rsi
+
+- type: entity
+  id: ClothingNeckCloakSona
+  parent: ClothingNeckBase
+  name: "Cloak S-o.N.A"
+  description: "A beautiful cloak that is used by high-ranking people in the S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Neck.rsi
+
+- type: entity
+  id: ClothingNeckMaidChoker
+  parent: ClothingNeckBase
+  name: "maid choker"
+  description: "A special choker for maid."
+  components:
+  - type: Item
+    shape:
+    - "0,0,1,0"
+  - type: Sprite
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidChoker.rsi
+  - type: Clothing
+    sprite: Imperial/Other/TFG/NewMaidClothing/maidChoker.rsi
+
+- type: entity
+  id: ClothingNeckMantleSonaShoulder
+  parent: ClothingNeckBase
+  name: "Mantle S-o.N.A"
+  description: "The mantle of S-o.N.A. AI Dynamics corporation, covered with a special fiber, which partially protects against laser guns."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Mantle.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Mantle.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+
+- type: entity
+  id: ClothingNeckShawlRed
+  parent: ClothingNeckBase
+  name: "red shawl"
+  description: "A stylish striped red shawl."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/mime/Clothing/shawl_red.rsi
+  - type: Clothing
+    sprite: Imperial/Other/mime/Clothing/shawl_red.rsi
+
+- type: entity
+  id: ClothingNeckTieCCAgent
+  parent: ClothingNeckTieRed
+  name: "special tie"
+  description: "A special tie for cool bodyguards."
+  suffix: "Crowbar"
+  components:
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10
+        Slash: 3
+  - type: Tool
+    qualities:
+    - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: StaticPrice
+    price: 499
+  - type: Prying
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.95
+
+- type: entity
+  id: ClothingOuterArmorCentCom
+  parent: ClothingOuterArmorBasic
+  name: "armor vest CentCom"
+  description: "It will protect even the most terrible bureaucrat from a sudden attack"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/ClothingOuterArmorCentCom.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/ClothingOuterArmorCentCom.rsi
+
+- type: entity
+  id: ClothingOuterArmorElysium
+  parent: ClothingOuterArmorBase
+  name: "vest"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/BasicArmor.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/BasicArmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.6
+        Heat: 0.85
+        Cold: 0.85
+        Shock: 0.75
+        Caustic: 0.85
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterCoatDetectiveDark
+  parent: ClothingOuterCoatDetective
+  name: "noir trenchcoat"
+  description: "A hard-boiled private investigator's dark trenchcoat."
+  components:
+  - type: Sprite
+    sprite: Imperial/Clothing/OuterClothing/Coats/noirdet.rsi
+  - type: Clothing
+    sprite: Imperial/Clothing/OuterClothing/Coats/noirdet.rsi
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.8
+
+- type: entity
+  id: ClothingOuterEVASuitCentCom
+  parent: ClothingOuterEVASuitBase
+  name: "EVA suit CentCom"
+  description: "For big shot in big problem."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaSuit.rsi
+    state: icon
+  - type: Item
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaSuit.rsi
+  - type: Clothing
+    sprite: Imperial/Other/TFG/RepresentativeStuff/evaSuit.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.9
+        Radiation: 0.05
+        Heat: 0.5
+
+- type: entity
+  id: ClothingOuterSonaArmor
+  parent: ClothingOuterStorageBase
+  name: "Body armor S-o.N.A"
+  description: "The bulletproof vest of S-o.N.A. AI Dynamics corporation, designed to bring maximum convenience to the wearer, also giving decent protection."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Armor.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.55
+        Heat: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  id: ClothingOuterSonaVestWeb
+  parent: ClothingOuterStorageBase
+  name: "Vest S-o.N.A"
+  description: "Vest of S-o.N.A. AI Dynamics corporation, with new generation plates."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Vest.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Vest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.6
+        Piercing: 0.25
+        Heat: 0.75
+  - type: StaminaResistance
+    damageCoefficient: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+
+- type: entity
+  id: ClothingOuterSpecialForceCoatBlue
+  parent: ClothingOuterStorageBase
+  name: "blue coat"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/CoatBlue.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/CoatBlue.rsi
+
+- type: entity
+  id: ClothingOuterSpecialForceCoatDark
+  parent: ClothingOuterStorageBase
+  name: "dark coat"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/CoatDark.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/CoatDark.rsi
+
+- type: entity
+  id: ClothingOuterSpecialForceJacketNoRem
+  parent: ClothingOuterStorageBase
+  name: "jacket"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/JacketNoRem.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/JacketNoRem.rsi
+
+- type: entity
+  id: ClothingOuterSpecialForceJacketRem
+  parent: ClothingOuterStorageBase
+  name: "jacket"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/JacketRem.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/JacketRem.rsi
+
+- type: entity
+  id: ClothingOuterSpecialForceSpecialCoat
+  parent: ClothingOuterStorageBase
+  name: "special coat"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/outer_clothing/SpecialCoat.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/outer_clothing/SpecialCoat.rsi
+
+- type: entity
+  id: ClothingOuterStorageElysium
+  parent: ClothingOuterStorageBase
+  name: "sientiest tactical vest"
+  description: "sientiest tactical vest"
+  suffix: "Singularity"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/vest.rsi
+
+- type: entity
+  id: ClothingOuterSuitHeretic
+  parent: ClothingOuterBase
+  name: "heretic robe"
+  description: "Heretic's robe"
+  components:
+  - type: AllowSuitStorage
+  - type: Sprite
+    sprite: Imperial/Other/Heretic/Clothes/HereticRobe.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: Imperial/Other/Heretic/Clothes/HereticRobe.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHereticRobe
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+  - type: HideLayerClothing
+    slots:
+    - Tail
+
+- type: entity
+  id: ClothingSatchelSona
+  parent: ClothingBackpack
+  name: "Satchel S-o.N.A"
+  description: "The standard bag of S-o.N.A. AI Dynamics employees."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Satchel.rsi
+
+- type: entity
+  id: ClothingShoesColorWhiteCCAgent
+  parent: ClothingShoesColorWhite
+  name: "special white shoes"
+  description: "A special white shoes, custom-made for the cool bodyguards of a particularly important boss."
+  suffix: "NoSlip"
+  components:
+  - type: NoSlip
+  - type: StaticPrice
+    price: 499
+
+- type: entity
+  id: ClothingShoesParamedicAlt
+  parent: ClothingShoesBaseButcherable
+  name: "Paramedic shoes"
+  description: "Scuffs from brisk walking are visible"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/ParamedicBoots.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/ParamedicBoots.rsi
+
+- type: entity
+  id: ClothingUniformCapJumpskirtSona
+  parent: ClothingUniformSkirtBase
+  name: "Luxurious S-o.N.A skirt"
+  description: "A comfortable and practical skirt made of the highest quality materials."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/CapSkirt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/CapSkirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtBrigmedicNew
+  parent: ClothingUniformBase
+  name: "jumpskirt le brigmedic"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicnewjumpskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicnewjumpskirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtCaptainAlt
+  parent: ClothingUniformBase
+  name: "Captain's turtleneck-skirt"
+  description: "This turtleneck highlights the leadership qualities of those who wear it.  Every self-respecting head of Nanotrasen facilities should wear it with his head held high and inspire fear in the eyes of a common enemy."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/captainjumpskirt_alt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/captainjumpskirt_alt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtSona
+  parent: ClothingUniformSkirtBase
+  name: "Bright blue S-o.N.A skirt"
+  description: "A bright blue skirt used by employees of S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Skirt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Skirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitAdminSmokingV1
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/SmokingV1.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/SmokingV1.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitAdminSmokingV2
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/SmokingV2.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/SmokingV2.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitBrigmedicNew
+  parent: ClothingUniformBase
+  name: "brigmedic jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicnewjumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Brigmedic/Clothing/brigmedicnewjumpsuit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCBURN
+  parent: ClothingUniformJumpsuitERTLeader
+  name: "ERT security uniform"
+  description: "A special suit made for the elite security under CentCom."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ErtCall/CBURN/jumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ErtCall/CBURN/jumpsuit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCaptainAlt
+  parent: ClothingUniformBase
+  name: "Captain's turtleneck"
+  description: "This turtleneck highlights the leadership qualities of those who wear it.  Every self-respecting head of Nanotrasen facilities should wear it with his head held high and inspire fear in the eyes of a common enemy."
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/captain_alt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/captain_alt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCitizen
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/CitizenJumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/CitizenJumpsuit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCitizenPrisoner
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/Prisoner.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/Prisoner.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCitizenSmoking
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/Smoking.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/Smoking.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumCitizen
+  parent: ClothingUniformBase
+  name: "citizen jumpsuit"
+  description: "Comfortable jumpsut of a citizen."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/cit_suit.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/cit_suit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumCitizenAlt
+  parent: ClothingUniformBase
+  name: "citizen jumpsuit"
+  description: "Federation citizen's jumpsuit."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Default.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Default.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumCitizenHonorable
+  parent: ClothingUniformBase
+  name: "honorable citizen jumpsuit"
+  description: "Has a honorable ribbon!"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/cit_suitD.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/cit_suitD.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumCitizenLoyal
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for a loyal group of Federation citizens. Wearing it, you feel your heart being filled with the warmth of patriotism."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Loyal.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Loyal.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumCitizenWork
+  parent: ClothingUniformBase
+  name: "work jumpsuit"
+  description: "A comfortable suit designed for heavy and labour-intensive work. It has a Federation patch."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Worker.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Citizen/Worker.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumDepartamentAdmin
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for managers. Poverty will envy you."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/administrator.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/administrator.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumDepartamentMigration
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for migration officers. Poverty will envy you."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/migration.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/migration.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumDepartamentWorker
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for employees. Poverty will envy you."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/worker.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/worker.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumDepartamentWorkerAlt
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for employees. Poverty will envy you."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/workeralt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/workeralt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumDepartamentWorkerAlter
+  parent: ClothingUniformBase
+  name: "formal suit"
+  description: "A comfortable suit designed for employees. Poverty will envy you."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/workeralter.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Departaments/workeralter.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumSecurity
+  parent: ClothingUniformBase
+  name: "patrol jumpsuit"
+  description: "Officer's jumpsuit with a beatifull cut."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Security/patrol_suit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumSecurityAlt
+  parent: ClothingUniformBase
+  name: "officer turtleneck"
+  description: "Officer's turtleneck. Comfortable and pleasant to the touch."
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Security/sec_suit.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitElysiumSecurityPatrol
+  parent: ClothingUniformBase
+  name: "tactical suit"
+  description: "A comfortable suit designed for Federation patrolmen. Beat the intruders!"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Security/patrol.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Clothing/Jumpsuits/Security/patrol.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSonaCurort
+  parent: ClothingUniformBase
+  name: "S-o.N.A Resort suit"
+  description: "A beautiful set of clothes, which depicts a modern high-tech pattern."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SonaCurort.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SonaCurort.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSonaHead
+  parent: ClothingUniformBase
+  name: "Turtleneck S-o.N.A"
+  description: "The standard turtleneck of the fighters of the S-o.N.A. AI Dynamics corporation, which has additional protection against burns."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SonaHead.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SonaHead.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: ClothingUniformJumpsuitSonaSec
+  parent: ClothingUniformBase
+  name: "Jumpsuit S-o.N.A"
+  description: "A practical and comfortable suit made of pure synthetics."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SonaSec.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SonaSec.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSpecialForceOffice
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/Office.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/Office.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSpecialForcePoliceV1
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/PoliceV1.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/PoliceV1.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitSpecialForcePoliceV2
+  parent: ClothingUniformBase
+  name: "uniform"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/uniforms/PoliceV2.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/uniforms/PoliceV2.rsi
+
+- type: entity
+  id: ClothingUniformOuterSnowmaiden
+  parent: ClothingOuterBase
+  name: "snow maiden suit"
+  description: "3... 2... 1... Cristmas tree, light up!"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Christmas/Snowmaiden/snowmaiden_suit.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Christmas/Snowmaiden/snowmaiden_suit.rsi
+
+- type: entity
+  id: EngSuitTwo
+  parent:
+  - ClothingHeadHardsuitBase
+  - ClothingHeadSuitWithLightBase
+  name: "Helmet from the suit of the bio-engineer S-o.N.A"
+  description: "A standard helmet from a bio-engineer's spacesuit."
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/EngSuitTwo.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/EngSuitTwo.rsi
+  - type: PointLight
+    color: "#8afdff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  id: OperSuitSonaOne
+  parent:
+  - ClothingOuterBase
+  - BaseToggleClothing
+  name: "The suit of the operative S-o.N.A"
+  description: "An advanced spacesuit combining the technologies of several corporations at once. Probably stolen..."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: Imperial/Other/Sona/OperSuitOne.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/OperSuitOne.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1.3
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: 0.2
+      lastVisibility: 0.2
+
+- type: entity
+  id: OperSuitSonaTwo
+  parent: ClothingHeadEVAHelmetBase
+  name: "The helmet from the operatives' suit."
+  description: "The standard helmet that goes with the operatives' suit."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/OperSuitTwo.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/OperSuitTwo.rsi
+
+- type: entity
+  id: ShoulderBeaconBlue
+  parent: ClothingNeckBase
+  name: "Shoulder Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Blue"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/shoulder/BBeacon.rsi
+
+- type: entity
+  id: ShoulderBeaconBlueRed
+  parent: ClothingNeckBase
+  name: "Shoulder Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, BlueRed"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/shoulder/BRBeacon.rsi
+
+- type: entity
+  id: ShoulderBeaconRed
+  parent: ClothingNeckBase
+  name: "Shoulder Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Red"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/shoulder/RBeacon.rsi
+
+- type: entity
+  id: ShoulderBeaconWhite
+  parent: ClothingNeckBase
+  name: "Shoulder Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, White"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/shoulder/WBeacon.rsi
+
+- type: entity
+  id: ShoulderBeaconYellow
+  parent: ClothingNeckBase
+  name: "Shoulder Beacon"
+  description: "A beacon for giving signals who are you"
+  suffix: "ElysiumPrime, Yellow"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Clothing/shoulder/YBeacon.rsi
+
+- type: entity
+  id: SonaArmoryHelmet
+  parent: ClothingHeadBase
+  name: "Helmet S-o.N.A"
+  description: "Helmet of the elite security of the S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/ArmoryHelmet.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/ArmoryHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: SonaBeltEngineer
+  parent: ClothingBeltStorageBase
+  name: "Engineer's Belt"
+  description: "Advanced Engineer belt of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/EngBelt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/EngBelt.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Wirecutter
+      - Crowbar
+      - Screwdriver
+      - Flashlight
+      - Wrench
+      - GeigerCounter
+      - Flare
+      - CableCoil
+      - Powerdrill
+      - JawsOfLife
+      - CigPack
+      - Radio
+      - HolofanProjector
+      - Multitool
+      - AppraisalTool
+      components:
+      - SprayPainter
+      - NetworkConfigurator
+      - RCD
+      - RCDAmmo
+      - Welder
+      - Flash
+      - Handcuff
+      - PowerCell
+      - Geiger
+      - TrayScanner
+      - GasAnalyzer
+  - type: ItemMapper
+    mapLayers:
+      drill:
+        whitelist:
+          tags:
+          - Powerdrill
+      cutters_red:
+        whitelist:
+          tags:
+          - Wirecutter
+      crowbar:
+        whitelist:
+          tags:
+          - Crowbar
+      crowbar_red:
+        whitelist:
+          tags:
+          - CrowbarRed
+      jaws:
+        whitelist:
+          tags:
+          - JawsOfLife
+      screwdriver_nuke:
+        whitelist:
+          tags:
+          - Screwdriver
+      multitool:
+        whitelist:
+          tags:
+          - Multitool
+      wrench:
+        whitelist:
+          tags:
+          - Wrench
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  id: SonaCoat
+  parent: ClothingOuterStorageBase
+  name: "Coat S-o.N.A"
+  description: "The winter coat of S-o.N.A. AI Dynamics employees used at Arctic bases."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Coat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+
+- type: entity
+  id: SonaEyesGlassesMeson
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  name: "Blue Engineering Glasses"
+  description: "Modified engineering glasses of S-o.N.A. AI Dynamics Corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SonaMeson.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SonaMeson.rsi
+  - type: EyeProtection
+
+- type: entity
+  id: SonaLabCoat
+  parent: ClothingOuterStorageBase
+  name: "Women's lab coat S-o.N.A"
+  description: "The standard lab coat of S-o.N.A. AI Dynamics scientists."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Labcoat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Labcoat.rsi
+
+- type: entity
+  id: SonaSecCoat
+  parent: ClothingOuterStorageBase
+  name: "Jacket S-o.N.A"
+  description: "The standard jacket of S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SecCoat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SecCoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.95
+
+- type: entity
+  id: SonaWebbing
+  parent: ClothingBeltStorageBase
+  name: "Webbing S-o.N.A"
+  description: "Tactical Webbing of the fighters of the S-o.N.A. AI Dynamics corporation."
+  suffix: "S-o.N.A"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/Sona/SonaWebbing.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/SonaWebbing.rsi
+  - type: Item
+    size: Large
+
+- type: entity
+  id: SpecialForcePoliceBeret
+  parent: ClothingHeadBase
+  name: "beret"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/DeadSector/head/beret.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/head/beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  id: SpecialForcePoliceCap
+  parent: ClothingHeadBase
+  name: "cap"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/DeadSector/head/Cap.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/head/Cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  id: TabletElysiumPrime
+  parent: BaseItem
+  name: "Tablet"
+  description: "Contains all the corruption schemes going on behind the scenes, but he is passworded"
+  suffix: "ElysiumPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ElysiumPrime/Misc/planshet.rsi
+    state: icon
+  - type: Item
+    sprite: Imperial/Other/ElysiumPrime/Misc/planshet.rsi
+    size: Small
+  - type: Clothing
+    sprite: Imperial/Other/ElysiumPrime/Misc/planshet.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  id: WardenMantleID
+  parent: ClothingNeckBase
+  name: "WardenMantle"
+  description: "The prisoners should be afraid of you!"
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/ImperialClothes/wardenmantle.rsi
+  - type: Clothing
+    sprite: Imperial/Other/ImperialClothes/wardenmantle.rsi
+
+- type: entity
+  id: WitcherDressvOne
+  parent: ClothingOuterStorageBase
+  name: "The Dark Witch's Dress"
+  description: "A beautiful long dress of a dark witch."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/BlackDress.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/BlackDress.rsi
+
+- type: entity
+  id: WitcherDressvTwo
+  parent: ClothingOuterStorageBase
+  name: "The Red Witch's Dress"
+  description: "Beautiful long dress of the red witch."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/RedDress.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/RedDress.rsi
+
+- type: entity
+  id: WitcherKombvOne
+  parent: ClothingUniformBase
+  name: "Witch's Underwear"
+  description: "Standard witch underwear."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/Defelaut/Kombv1.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/Defelaut/Kombv1.rsi
+
+- type: entity
+  id: WitcherKombvTwo
+  parent: ClothingUniformBase
+  name: "The Red Witch's Underwear"
+  description: "Standard witch underwear."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/Defelaut/Kombv2.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/Defelaut/Kombv2.rsi
+
+- type: entity
+  id: WitcherPurpleDress
+  parent: ClothingOuterStorageBase
+  name: "The Purple Witch's Dress"
+  description: "A beautiful long purple witch dress."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/PurpleDress.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/PurpleDress.rsi
+
+- type: entity
+  id: WitcherRedDress
+  parent: ClothingOuterStorageBase
+  name: "The Scarlet Witch's Dress"
+  description: "A beautiful long scarlet witch dress."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/RedDress2.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/RedDress2.rsi
+
+- type: entity
+  id: WitchersHat
+  parent: ClothingHeadBase
+  name: "The Witch's Hat"
+  description: "The red Witch's hat."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/Hat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/Hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  id: WitchersPurpleGloves
+  parent: ClothingHandsGlovesColorBlack
+  name: "purple witch's gloves"
+  description: "The rather beautiful gloves of the purple witch."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/PurpleGloves.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/PurpleGloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
+  id: WitchersPurpleHat
+  parent: ClothingHeadBase
+  name: "The Witch's Hat"
+  description: "The purple witch hat."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/PurpleHat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/PurpleHat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  id: WitchersRedGloves
+  parent: ClothingHandsGlovesColorBlack
+  name: "Scarlet Witch Gloves"
+  description: "Beautiful scarlet witch gloves."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/RedGloves.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/RedGloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
+  id: WitchersRedHat
+  parent: ClothingHeadBase
+  name: "The Witch's Hat"
+  description: "The scarlet witch's hat."
+  suffix: "Ведьмы"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Other/Witchers/RedHat.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Witchers/RedHat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+

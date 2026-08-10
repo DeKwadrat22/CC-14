@@ -1,0 +1,55 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Objects
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: AdvancedStunbaton
+  parent: Stunbaton
+  name: "stun baton"
+  description: "A stun baton for incapacitating people with. Actively harming with this is considered bad tone."
+  components:
+  - type: Sprite
+    sprite: Imperial/Objects/Weapons/Melee/AdvancedStunBaton/stunbaton.rsi
+  - type: Stunbaton
+    energyPerUse: 25
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+
+- type: entity
+  id: ClothingUniformJumpStinky
+  parent: ClothingUniformBase
+  name: "grey jumpsuit"
+  description: "A tasteful grey jumpsuit that reminds you of the good old days."
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    layers:
+    - state: icon
+      color: "#b3b3b3"
+    - state: trinkets-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b3b3b3"
+      - state: trinkets-inhand-left
+      right:
+      - state: inhand-right
+        color: "#b3b3b3"
+      - state: trinkets-inhand-right
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b3b3b3"
+      - state: trinkets-equipped-INNERCLOTHING
+

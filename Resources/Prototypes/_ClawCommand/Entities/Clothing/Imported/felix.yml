@@ -1,0 +1,1047 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Felix
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ArgonLeadMercJumpsuitUnsensored
+  parent: UnsensoredClothingUniformBase
+  name: "argon king's jumpsuit"
+  description: "The honorary jumpsuit of the king of Clan Argon."
+  suffix: "ArgonPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Jumpsuits/tacticallead.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Jumpsuits/tacticallead.rsi
+
+- type: entity
+  id: ArgonMercBootsNoslip
+  parent: ClothingShoesBaseButcherable
+  name: "argon boots"
+  description: "A pair of studded boots. Surprisingly light."
+  suffix: "ArgonPrime"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Boots/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Boots/tactical.rsi
+  - type: NoSlip
+  - type: ClothingSpeedModifier
+    walkModifier: 1.06
+    sprintModifier: 1.06
+
+- type: entity
+  id: ArgonMercGlovesInsulated
+  parent: ClothingHandsBase
+  name: "argon gloves"
+  description: "Tactical gloves."
+  suffix: "ArgonPrime"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Gloves/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Gloves/tactical.rsi
+  - type: Appearance
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: FingerprintMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+
+- type: entity
+  id: ArgonMercJumpsuitUnsensored
+  parent: UnsensoredClothingUniformBase
+  name: "argon jumpsuit"
+  description: "The jumpsuit of a knight of Clan Argon."
+  suffix: "ArgonPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Jumpsuits/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Jumpsuits/tactical.rsi
+
+- type: entity
+  id: ClothingBackpackRegularForce
+  parent: ClothingBackpack
+  name: "nanocapacity of Regular Forces"
+  description: "An advanced capacity designed with nanofabric to carry a lot of stuff without slowing down the wearer."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/back/capacity.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,7,4"
+  - type: ExplosionResistance
+    damageCoefficient: 0
+
+- type: entity
+  id: ClothingBeltKama
+  parent: ClothingBeltSuspendersRed
+  name: "tactical kama"
+  description: "flexible leather armour element in the form of a half-skirt attached to the belt."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/kama/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/kama/default.rsi
+
+- type: entity
+  id: ClothingBeltKamaGreen
+  parent: ClothingBeltSuspendersRed
+  name: "tactical kama"
+  description: "flexible leather armour element in the form of a half-skirt attached to the belt."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/kama/green.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/kama/green.rsi
+
+- type: entity
+  id: ClothingBeltKamaRed
+  parent: ClothingBeltSuspendersRed
+  name: "tactical kama"
+  description: "flexible leather armour element in the form of a half-skirt attached to the belt."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/kama/red.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/kama/red.rsi
+
+- type: entity
+  id: ClothingBeltKamaTurquoise
+  parent: ClothingBeltSuspendersRed
+  name: "tactical kama"
+  description: "flexible leather armour element in the form of a half-skirt attached to the belt."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/kama/turquoise.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/kama/turquoise.rsi
+
+- type: entity
+  id: ClothingBeltKamaYellow
+  parent: ClothingBeltSuspendersRed
+  name: "tactical kama"
+  description: "flexible leather armour element in the form of a half-skirt attached to the belt."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/kama/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/kama/yellow.rsi
+
+- type: entity
+  id: ClothingEyesHudGuard
+  parent:
+  - ClothingEyesBase
+  - ShowSecurityIcons
+  - ShowMedicalIcons
+  name: "guard hud"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/eyes/guard.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/eyes/guard.rsi
+
+- type: entity
+  id: ClothingEyesHudMedCorps
+  parent:
+  - ClothingEyesBase
+  - ShowMedicalIcons
+  name: "medcorps hud"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/eyes/medcorps.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/eyes/medcorps.rsi
+
+- type: entity
+  id: ClothingEyesHudRegularForce
+  parent: ClothingEyesBase
+  name: "regular force hud"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/eyes/regular.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/eyes/regular.rsi
+
+- type: entity
+  id: ClothingHeadHelmetArgon
+  parent: ClothingHeadEVAHelmetBase
+  name: "argon knight's helmet"
+  description: "A helmet."
+  suffix: "ArgonPrime"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.95
+        Cold: 0.95
+        Shock: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Armor/Head/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Armor/Head/tactical.rsi
+
+- type: entity
+  id: ClothingHeadHelmetArgonKing
+  parent: ClothingHeadEVAHelmetBase
+  name: "argon king's helmet"
+  description: "A helmet."
+  suffix: "ArgonPrime"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.95
+        Cold: 0.95
+        Shock: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Armor/Head/tacticallead.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Armor/Head/tacticallead.rsi
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitRegularForce
+  parent: ClothingHeadEVAHelmetBase
+  name: "Regular Force spacesuit helmet"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.97
+        Heat: 0.97
+        Cold: 0.98
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/head/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/head/default.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitRegularForceAssassin
+  parent: ClothingHeadEVAHelmetBase
+  name: "assassin spacesuit helmet"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Cold: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+        Shock: 0.95
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/head/assassin.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/head/assassin.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitRegularForceGuard
+  parent: ClothingHeadEVAHelmetBase
+  name: "guardsman's spacesuit helmet"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.95
+        Cold: 0.95
+        Shock: 0.95
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/head/guard.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/head/guard.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitRegularForceMedic
+  parent: ClothingHeadEVAHelmetBase
+  name: "medic spacesuit helmet"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.97
+        Slash: 0.97
+        Heat: 0.95
+        Cold: 0.95
+        Radiation: 0.97
+        Caustic: 0.93
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/head/medic.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/head/medic.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitRegularForcePilot
+  parent: ClothingHeadEVAHelmetBase
+  name: "pilot spacesuit helmet"
+  description: null
+  suffix: "Felix"
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.97
+        Heat: 0.97
+        Cold: 0.98
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/head/pilot.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/head/pilot.rsi
+  - type: Appearance
+
+- type: entity
+  id: ClothingNanoMask
+  parent: ClothingMaskPullableBase
+  name: "nanomask"
+  description: "A breathing mask created with nanofabric."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/masks/nanomask.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/masks/nanomask.rsi
+  - type: IngestionBlocker
+  - type: Item
+    size: Normal
+  - type: IdentityBlocker
+    coverage: MOUTH
+
+- type: entity
+  id: ClothingNeckCapeKingArgon
+  parent: ClothingNeckBase
+  name: "argon king's mantle"
+  description: "Show them who is in charge here."
+  suffix: "ArgonPrime"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Neck/cape.rsi
+
+- type: entity
+  id: ClothingNeckShoulderArmorArgon
+  parent: ClothingNeckBase
+  name: "argon pauldrons"
+  description: "They lend you a menacing silhouette."
+  suffix: "ArgonPrime"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Neck/shoulderarmor.rsi
+
+- type: entity
+  id: ClothingNeckShoulderPad
+  parent: ClothingNeckBase
+  name: "tactical shoulder pad"
+  description: "It is a piece of lined material and serves as a designation of unit affiliation."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/default.rsi
+
+- type: entity
+  id: ClothingNeckShoulderPadGreen
+  parent: ClothingNeckBase
+  name: "tactical shoulder pad"
+  description: "It is a piece of lined material and serves as a designation of unit affiliation."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/green.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/green.rsi
+
+- type: entity
+  id: ClothingNeckShoulderPadRed
+  parent: ClothingNeckBase
+  name: "tactical shoulder pad"
+  description: "It is a piece of lined material and serves as a designation of unit affiliation."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/red.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/red.rsi
+
+- type: entity
+  id: ClothingNeckShoulderPadTurquoise
+  parent: ClothingNeckBase
+  name: "tactical shoulder pad"
+  description: "It is a piece of lined material and serves as a designation of unit affiliation."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/turquoise.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/turquoise.rsi
+
+- type: entity
+  id: ClothingNeckShoulderPadYellow
+  parent: ClothingNeckBase
+  name: "tactical shoulder pad"
+  description: "It is a piece of lined material and serves as a designation of unit affiliation."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/neck/shoulderpad/yellow.rsi
+
+- type: entity
+  id: ClothingOuterArmorArgonKnight
+  parent:
+  - ClothingOuterBaseMedium
+  - AllowSuitStorageClothing
+  name: "argon knight's breastplate"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "ArgonPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Armor/OuterClothing/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Armor/OuterClothing/tactical.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.8
+        Cold: 0.8
+        Shock: 0.9
+        Radiation: 0.8
+        Caustic: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+
+- type: entity
+  id: ClothingOuterArmorArgonLeader
+  parent:
+  - ClothingOuterBaseMedium
+  - AllowSuitStorageClothing
+  name: "argon king's breastplate"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "ArgonPrime"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Armor/OuterClothing/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Armor/OuterClothing/tactical.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.65
+        Cold: 0.65
+        Shock: 0.6
+        Radiation: 0.65
+        Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmorFifthEyeAssassin
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  - BaseToggleClothing
+  name: "assassin's armoured suit"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/assassin.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/assassin.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.3
+        Cold: 0.3
+        Shock: 0.3
+        Radiation: 0.4
+        Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -10
+      lastVisibility: -1
+      maxVisibility: 1
+
+- type: entity
+  id: ClothingOuterArmorFifthEyeNegotiator
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  name: "negotiator's armoured suit"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/negotiator.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/negotiator.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.65
+        Cold: 0.65
+        Shock: 0.65
+        Radiation: 0.75
+        Caustic: 0.75
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmorFifthEyeRanger
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  name: "ranger's armoured suit"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/ranger.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/ranger.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.75
+        Cold: 0.75
+        Shock: 0.85
+        Radiation: 0.6
+        Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmorFifthEyeSaboteur
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  name: "saboteur's armoured suit"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/saboteur.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/saboteur.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.2
+        Cold: 0.2
+        Shock: 0.65
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterArmorFifthEyeStormtrooper
+  parent:
+  - ClothingOuterBaseLarge
+  - AllowSuitStorageClothing
+  name: "stormtrooper's armoured suit"
+  description: "Armour packed with plates of some ancient, unidentified material. Light and strong."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/stormtrooper.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/outerclothing/stormtrooper.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.65
+        Cold: 0.65
+        Shock: 0.55
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+- type: entity
+  id: ClothingOuterHardsuitRegularForce
+  parent: ClothingOuterEVASuitBase
+  name: "Regular Force spacesuit"
+  description: "The spacesuit of a based unit of the Regular Army Forces."
+  suffix: "Felix"
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - "0,0,2,2"
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/body/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/body/default.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.75
+        Cold: 0.95
+        Radiation: 0.85
+        Caustic: 0.85
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+
+- type: entity
+  id: ClothingOuterHardsuitRegularForceAssassin
+  parent:
+  - ClothingOuterEVASuitBase
+  - BaseToggleClothing
+  name: "assassin spacesuit"
+  description: "The spacesuit of a based unit of the Regular Army Forces."
+  suffix: "Felix"
+  components:
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -10
+      lastVisibility: -1
+      maxVisibility: 1
+  - type: Item
+    size: Large
+    shape:
+    - "0,0,2,2"
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/body/assassin.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/body/assassin.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.7
+        Heat: 0.55
+        Cold: 0.55
+        Shock: 0.55
+        Radiation: 0.55
+        Caustic: 0.55
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1.2
+  - type: HeldSpeedModifier
+
+- type: entity
+  id: ClothingOuterHardsuitRegularForceGuard
+  parent: ClothingOuterEVASuitBase
+  name: "guardsman's spacesuit"
+  description: "The spacesuit of a based unit of the Regular Army Forces."
+  suffix: "Felix"
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - "0,0,2,2"
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/body/guard.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/body/guard.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.75
+        Heat: 0.65
+        Cold: 0.85
+        Shock: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+
+- type: entity
+  id: ClothingOuterHardsuitRegularForceMedic
+  parent: ClothingOuterEVASuitBase
+  name: "medic spacesuit"
+  description: "The spacesuit of a based unit of the Regular Army Forces."
+  suffix: "Felix"
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - "0,0,2,2"
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/body/medic.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/body/medic.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.75
+        Cold: 0.85
+        Radiation: 0.85
+        Caustic: 0.85
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1.1
+  - type: HeldSpeedModifier
+
+- type: entity
+  id: ClothingOuterHardsuitRegularForcePilot
+  parent: ClothingOuterEVASuitBase
+  name: "pilot spacesuit"
+  description: "The spacesuit of a based unit of the Regular Army Forces."
+  suffix: "Felix"
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - "0,0,2,2"
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/hardsuits/body/pilot.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/hardsuits/body/pilot.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.95
+        Heat: 0.95
+        Cold: 0.95
+  - type: StaminaResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForce
+  parent: ClothingUniformBase
+  name: "Regular Force uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/default.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceArmyOfficer
+  parent: ClothingUniformBase
+  name: "army officer uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_army.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_army.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceGuard
+  parent: ClothingUniformBase
+  name: "guardsman's uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/guard.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/guard.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceGuardOfficer
+  parent: ClothingUniformBase
+  name: "guardsman officer's uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_guard.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_guard.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceMedic
+  parent: ClothingUniformBase
+  name: "medical uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/medic.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/medic.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceMedicOfficer
+  parent: ClothingUniformBase
+  name: "medical officer uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_medic.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_medic.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForceOfficer
+  parent: ClothingUniformBase
+  name: "Regular Force officer uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/officer_default.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitRegularForcePilot
+  parent: ClothingUniformBase
+  name: "pilot uniform"
+  description: "Jumpsuit used by special forces in special operations."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/jumpsuits/pilot.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/jumpsuits/pilot.rsi
+
+- type: entity
+  id: FifthEyeBootsNoslip
+  parent: ClothingShoesBaseButcherable
+  name: "tactical boots"
+  description: "A pair of boots with magnetic grips. Surprisingly light."
+  suffix: "5ОКО"
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Boots/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Boots/tactical.rsi
+  - type: NoSlip
+  - type: Magboots
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+
+- type: entity
+  id: FifthEyeGlovesInsulated
+  parent: ClothingHandsBase
+  name: "tactical gloves"
+  description: "Gloves that will keep the current from cooking you."
+  suffix: "5ОКО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/Felix/Argon/Clothing/Gloves/tactical.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Argon/Clothing/Gloves/tactical.rsi
+  - type: Appearance
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: FingerprintMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+
+- type: entity
+  id: FifthEyeJumpsuitUnsensored
+  parent: UnsensoredClothingUniformBase
+  name: "tactical jumpsuit"
+  description: "The jumpsuit of an organisation nobody will name."
+  suffix: "5ОКО"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Secret/Clothing/innerclothing/default.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Secret/Clothing/innerclothing/default.rsi
+
+- type: entity
+  id: GuardCloak
+  parent: ClothingNeckBase
+  name: "guard cloak"
+  description: "Radiates excellence."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/neck/guard_cloak.rsi
+
+- type: entity
+  id: RegularForceMedicWebbing
+  parent: ClothingBeltStorageBase
+  name: "Regular Force medic RPS"
+  description: "A very comfortable PLCE that doesn't restrict movement."
+  suffix: "Felix"
+  components:
+  - type: Sprite
+    sprite: Imperial/Felix/Clothing/belt/medic_rps.rsi
+  - type: Clothing
+    sprite: Imperial/Felix/Clothing/belt/medic_rps.rsi
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,5,3"
+

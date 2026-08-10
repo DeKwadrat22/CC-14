@@ -1,0 +1,61 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: ChildrenOfHonkmother
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingHonkmotherShoes
+  parent: ClothingShoesBaseButcherable
+  name: "honkmother shoes"
+  description: "As light as the owner's thoughts."
+  components:
+  - type: Sprite
+    sprite: Imperial/ChildrenOfHonkmother/shoes.rsi
+  - type: Clothing
+    sprite: Imperial/ChildrenOfHonkmother/shoes.rsi
+  - type: Matchbox
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  id: ClothingMaskHonkmotherFace
+  parent: ClothingMaskClownBase
+  name: "honkmother face"
+  description: "The face of the Honkmother sees everything and everyone. Always."
+  components:
+  - type: Sprite
+    sprite: Imperial/ChildrenOfHonkmother/mask.rsi
+  - type: Clothing
+    sprite: Imperial/ChildrenOfHonkmother/mask.rsi
+  - type: Tag
+    tags:
+    - ClownMask
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - HeadSide
+    - Hair
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  id: ClothingUniformHonkmotherSuit
+  parent: ClothingUniformBase
+  name: "honkmother suit"
+  description: "Honkmother's business suit for important negotiations."
+  components:
+  - type: Sprite
+    sprite: Imperial/ChildrenOfHonkmother/suit.rsi
+  - type: Clothing
+    sprite: Imperial/ChildrenOfHonkmother/suit.rsi
+  - type: StaticPrice
+    price: 1000
+
