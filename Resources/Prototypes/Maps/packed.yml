@@ -4,7 +4,7 @@
   mapName: 'Packed'
   mapPath: /Maps/packed.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 13
+  minPlayers: 7
   maxPlayers: 35
   stations:
     Packed:

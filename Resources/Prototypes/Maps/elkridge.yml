@@ -3,7 +3,7 @@
   mapName: 'Elkridge Depot'
   mapPath: /Maps/elkridge.yml
   planets: [Lavaland] # _ClawCommand: lavaland on this station
-  minPlayers: 20
+  minPlayers: 15
   maxPlayers: 45
   stations:
     Elkridge:
