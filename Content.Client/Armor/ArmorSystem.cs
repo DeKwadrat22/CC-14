@@ -3,4 +3,7 @@
 namespace Content.Client.Armor;
 
 /// <inheritdoc/>
-public sealed partial class ArmorSystem : SharedArmorSystem;
+public sealed class ArmorSystem : SharedArmorSystem
+{
+
+}

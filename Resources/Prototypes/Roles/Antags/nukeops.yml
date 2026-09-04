@@ -8,9 +8,6 @@
   - !type:OverallPlaytimeRequirement
     time: 5h
   guides: [ NuclearOperatives ]
-  tags:
-  - OffStation
-  - Roundstart
 
 - type: antag
   id: NukeopsMedic
@@ -25,9 +22,6 @@
     role: JobChemist
     time: 3h
   guides: [ NuclearOperatives ]
-  tags:
-  - OffStation
-  - Roundstart
 
 - type: antag
   id: NukeopsCommander
@@ -43,9 +37,6 @@
     time: 5h
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
-  tags:
-  - OffStation
-  - Roundstart
 
 - type: antagSpecifier
   abstract: true

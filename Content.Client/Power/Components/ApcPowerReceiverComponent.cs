@@ -2,6 +2,8 @@
 
 namespace Content.Client.Power.Components;
 
-/// <inheritdoc />
 [RegisterComponent]
-public sealed partial class ApcPowerReceiverComponent : SharedApcPowerReceiverComponent;
+public sealed partial class ApcPowerReceiverComponent : SharedApcPowerReceiverComponent
+{
+    public override float Load { get; set; }
+}

@@ -65,8 +65,7 @@ public abstract partial class SharedAnomalyScannerSystem : EntitySystem
             used: uid
         )
         {
-            DistanceThreshold = 2f,
-            ExamineText = Loc.GetString(component.DoAfterExamineText, ("user", args.User)),
+            DistanceThreshold = 2f
         };
         _doAfter.TryStartDoAfter(doAfterArgs);
     }

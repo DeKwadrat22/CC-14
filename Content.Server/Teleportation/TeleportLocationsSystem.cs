@@ -1,7 +1,6 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Chat;
-using Content.Shared.Popups;
 using Content.Shared.Teleportation;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
@@ -17,7 +16,6 @@ namespace Content.Server.Teleportation;
 public sealed partial class TeleportLocationsSystem : SharedTeleportLocationsSystem
 {
     [Dependency] private ChatSystem _chat = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()
@@ -40,7 +38,7 @@ public sealed partial class TeleportLocationsSystem : SharedTeleportLocationsSys
 
     protected override void OnTeleportToLocationRequest(Entity<TeleportLocationsComponent> ent, ref TeleportLocationDestinationMessage args)
     {
-        if (IsDelayed(ent))
+        if (Delay.IsDelayed(ent.Owner, TeleportDelay))
             return;
 
         if (!string.IsNullOrWhiteSpace(ent.Comp.Speech))
@@ -50,13 +48,6 @@ public sealed partial class TeleportLocationsSystem : SharedTeleportLocationsSys
         }
 
         base.OnTeleportToLocationRequest(ent, ref args);
-    }
-
-    protected override void HandleTeleportDestinationObstructed(EntityUid userUid)
-    {
-        // Client can't know if the destination is obstructed if it's not loaded.
-        var msg = Loc.GetString("teleportation-menu-destination-obstructed");
-        _popup.PopupEntity(msg, userUid, userUid, PopupType.MediumCaution);
     }
 
     // If it's in shared this doesn't populate the points on the UI

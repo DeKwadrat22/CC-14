@@ -1,8 +1,8 @@
 - type: entity
   abstract: true
   parent: [ DrinkBaseMaterialPlastic, SolutionNormal, DrinkBase, DrinkBaseOpenable ]
-  id: DrinkBottlePlasticBase
-  suffix:
+  id: DrinkBottlePlasticBaseFull
+  suffix: Full
   components:
   - type: Item
     size: Normal
@@ -20,10 +20,22 @@
     tags:
     - DrinkBottle # Needed to fit in the soda dispenser, needs a better name
 
+- type: entity
+  abstract: true
+  parent: [SolutionSmall, DrinkBottlePlasticBaseFull]
+  id: DrinkBottlePlasticSmallBaseFull
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/waterbottle.rsi # fallback
+  - type: FitsInDispenser
+    solution: drink
+
 # Empty
 
 - type: entity
-  parent: [DrinkVisualsOpenable, SolutionLarge, DrinkBottlePlasticBase]
+  parent: [DrinkVisualsOpenable, SolutionLarge, DrinkBottlePlasticBaseFull]
   id: CustomDrinkJug
   name: beverage jug
   description: A jug for storing custom made drinks.
@@ -33,27 +45,7 @@
     shape:
     - 0,0,1,3
 
-- type: entity
-  abstract: true
-  parent: CustomDrinkJug
-  id: CustomDrinkJugFilled
-  name: beverage jug
-  suffix: Full
-
 # Small Plastic Bottles
-
-- type: entity
-  abstract: true
-  parent: [SolutionSmall, DrinkBottlePlasticBase]
-  id: DrinkBottlePlasticSmallBaseFull
-  suffix: Full
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/waterbottle.rsi # fallback
-  - type: FitsInDispenser
-    solution: drink
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottlePlasticSmallBaseFull]
@@ -72,12 +64,6 @@
     localizedLabel: reagent-name-water
 
 # Large Plastic Bottles
-
-- type: entity
-  abstract: true
-  parent: DrinkBottlePlasticBase
-  id: DrinkBottlePlasticBaseFull
-  suffix: Full
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
@@ -162,7 +148,7 @@
 # Large
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkSugarJug
   name: sugar jug
   suffix: For Drinks, Full
@@ -178,7 +164,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkLemonLimeJug
   name: Smite jug
   description: A dual citrus sensation.
@@ -193,7 +179,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkMeadJug
   name: mead jug
   description: Storing mead in a plastic jug should be a crime.
@@ -208,7 +194,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkIceJug
   name: ice jug
   description: Stubborn water. Pretty cool.
@@ -223,7 +209,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkCoconutWaterJug
   name: coconut water jug
   description: It's on the inside of the coconut that counts.
@@ -238,7 +224,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkCoffeeJug
   name: coffee jug
   description: Wake up juice, of the heated kind.
@@ -253,7 +239,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkTeaJug
   name: tea jug
   description: The drink of choice for the Bri'ish and hipsters.
@@ -268,7 +254,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkGreenTeaJug
   name: green tea jug
   description: It's like tea... but green! great for settling the stomach.
@@ -283,7 +269,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkIcedTeaJug
   name: iced tea jug
   description: For when the regular tea is too hot for you. Boohoo.
@@ -298,7 +284,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkDrGibbJug
   name: Dr. Gibb jug
   description: 42 different flavours... in a jug!
@@ -313,7 +299,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkRootBeerJug
   name: root beer jug
   description: This drink makes Australians giggle.
@@ -328,7 +314,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkWaterMelonJuiceJug
   name: watermelon juice jug
   description: May include leftover seeds.
@@ -343,7 +329,7 @@
   # TODO new sprite
 
 - type: entity
-  parent: CustomDrinkJugFilled
+  parent: CustomDrinkJug
   id: DrinkEnergyDrinkJug
   name: Red Bool jug
   description: A jug of Red Bool, with enough caffeine to kill a whole station.

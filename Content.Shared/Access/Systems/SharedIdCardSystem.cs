@@ -298,24 +298,29 @@ public abstract partial class SharedIdCardSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp))
             return;
         ent.Comp.ExpireTime = time;
-        ent.Comp.Expired = false;
+        Dirty(ent);
+    }
+
+    public void SetPermanent(Entity<ExpireIdCardComponent?> ent, bool val)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+        ent.Comp.Permanent = val;
         Dirty(ent);
     }
 
     /// <summary>
     /// Marks an <see cref="ExpireIdCardComponent"/> as expired, setting the accesses.
     /// </summary>
-    public virtual bool ExpireId(Entity<ExpireIdCardComponent> ent)
+    public virtual void ExpireId(Entity<ExpireIdCardComponent> ent)
     {
         if (ent.Comp.Expired)
-            return false;
+            return;
 
         _access.TrySetTags(ent, ent.Comp.ExpiredAccess);
-        var pauseTime = _metaSystem.GetPauseTime(ent.Owner);
-        ent.Comp.ExpireTime ??= _timing.CurTime - pauseTime - TimeSpan.FromTicks(1);
         ent.Comp.Expired = true;
+        ent.Comp.Permanent = false;
         Dirty(ent);
-        return true;
     }
 
     public override void Update(float frameTime)
@@ -324,14 +329,10 @@ public abstract partial class SharedIdCardSystem : EntitySystem
         var query = EntityQueryEnumerator<ExpireIdCardComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.Expired || comp.ExpireTime is not { } expireTime)
+            if (comp.Expired || comp.Permanent)
                 continue;
 
-            var pauseTime = _metaSystem.GetPauseTime(uid);
-            if (expireTime > TimeSpan.MaxValue - pauseTime)
-                continue;
-
-            if (_timing.CurTime <= expireTime + pauseTime)
+            if (_timing.CurTime < comp.ExpireTime)
                 continue;
 
             ExpireId((uid, comp));

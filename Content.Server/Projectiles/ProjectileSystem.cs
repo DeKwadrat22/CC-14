@@ -46,9 +46,7 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
             return;
         }
 
-        var damageEv = new BeforeProjectileHitEvent(component.Damage, target, component.Shooter);
-        RaiseLocalEvent(uid, ref damageEv);
-        var ev = new ProjectileHitEvent(damageEv.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
+        var ev = new ProjectileHitEvent(component.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
         RaiseLocalEvent(uid, ref ev);
 
         var otherName = ToPrettyString(target);
@@ -58,22 +56,18 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
             damageRequired -= _damageableSystem.GetTotalDamage((target, damageableComponent));
             damageRequired = FixedPoint2.Max(damageRequired, FixedPoint2.Zero);
         }
+        var deleted = Deleted(target);
 
-        if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances, origin: component.Shooter))
+        if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances, origin: component.Shooter) && Exists(component.Shooter))
         {
-            if (!Deleted(target))
+            if (!deleted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
             }
 
-            var shotByString = Exists(component.Shooter)
-                ? $"{ToPrettyString(component.Shooter!.Value):user}"
-                : "a now deleted entity (grenade?)";
-
             _adminLogger.Add(LogType.BulletHit,
                 LogImpact.Medium,
-                $"Projectile {ToPrettyString(uid):projectile} shot by {shotByString} hit {otherName:target} and dealt {damage:damage} damage");
-
+                $"Projectile {ToPrettyString(uid):projectile} shot by {ToPrettyString(component.Shooter!.Value):user} hit {otherName:target} and dealt {damage:damage} damage");
 
             component.ProjectileSpent = !TryPenetrate((uid, component), damage, damageRequired);
         }
@@ -82,7 +76,7 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
             component.ProjectileSpent = true;
         }
 
-        if (!Deleted(target))
+        if (!deleted)
         {
             _guns.PlayImpactSound(target, damage, component.SoundHit, component.ForceSound);
 

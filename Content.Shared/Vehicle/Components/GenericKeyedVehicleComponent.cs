@@ -1,5 +1,4 @@
-﻿using Content.Shared.Vehicle.Systems;
-using Content.Shared.Whitelist;
+﻿using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Vehicle.Components;

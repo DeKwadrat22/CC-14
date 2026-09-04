@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "created by IProduceWidgets, Vox & light sprites by TiniestShark (Github)",
+    "copyright": "created by IProduceWidgets, Vox sprites by TiniestShark (Github)",
     "size": {
         "x": 32,
         "y": 32
@@ -11,33 +11,38 @@
             "name": "icon"
         },
         {
-            "name": "icon-unshaded"
+            "name": "icon-flash"
         },
         {
-            "name": "light-overlay"
-        },
-        {
-            "name": "equipped-head",
+            "name": "off-equipped-HELMET",
             "directions": 4
         },
         {
-            "name": "equipped-head-unshaded",
+            "name": "off-equipped-HELMET-vox",
             "directions": 4
         },
         {
-            "name": "equipped-head-light",
+            "name": "off-inhand-left",
             "directions": 4
         },
         {
-            "name": "equipped-head-vox",
+            "name": "off-inhand-right",
             "directions": 4
         },
         {
-            "name": "equipped-head-unshaded-vox",
+            "name": "on-equipped-HELMET",
             "directions": 4
         },
         {
-            "name": "equipped-head-light-vox",
+            "name": "on-equipped-HELMET-vox",
+            "directions": 4
+        },
+        {
+            "name": "on-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "on-inhand-right",
             "directions": 4
         }
     ]

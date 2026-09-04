@@ -88,12 +88,10 @@
     damageRecovery:
       types:
         Asphyxiation: -1.0
-  - type: Satiation
-    satiations:
-      Hunger:
-        prototype: DionaHunger
-      Thirst:
-        prototype: DionaThirst
+  - type: Hunger
+    baseDecayRate: 0.0083
+  - type: Thirst
+    baseDecayRate: 0.0083
   - type: Damageable
     damageModifierSet: Diona
   - type: DamageVisuals

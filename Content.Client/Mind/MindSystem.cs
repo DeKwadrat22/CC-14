@@ -2,7 +2,7 @@
 
 namespace Content.Client.Mind;
 
-public sealed partial class MindSystem : SharedMindSystem
+public sealed class MindSystem : SharedMindSystem
 {
     public override void Initialize()
     {

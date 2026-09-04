@@ -17,6 +17,5 @@ public abstract partial class SharedFeedbackManager : IEntityEventSubscriber
     private void OnFeedbackOriginsUpdated(string newOrigins)
     {
         _validOrigins = newOrigins.Split(' ').ToList();
-        Display(GetOriginFeedbackPrototypes(false));
     }
 }

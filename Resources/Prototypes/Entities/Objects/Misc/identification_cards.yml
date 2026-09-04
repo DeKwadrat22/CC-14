@@ -809,24 +809,6 @@
       offset: *icon-offset
       state: Zookeeper
 
-- type: entity
-  parent: IDCardStandard
-  id: TramDriverIDCard
-  name: tram driver ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: stripe_top
-      color: "#ffc500"
-    - state: stripe_bottom
-      color: "#454a50"
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: TramDriver
-  - type: PresetIdCard
-    job: TramDriver
-
 #Supply
 
 - type: entity
@@ -963,17 +945,10 @@
 #Antags
 
 - type: entity
-  parent: [IDCardStandard, BaseChameleon]
+  parent: [PassengerIDCard, BaseChameleon]
   id: AgentIDCard
-  name: passenger ID card
   suffix: Agent
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: Passenger
   - type: Access
     tags:
     - Maintenance

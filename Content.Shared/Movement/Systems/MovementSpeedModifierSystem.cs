@@ -72,13 +72,16 @@ namespace Content.Shared.Movement.Systems
         }
 
         /// <summary>
-        /// This API method refreshes the movement modifiers for both being weightless and grounded.
+        /// This API method refreshes the movement modifiers for either being weightless, or being grounded depending
+        /// on which modifiers the entity is currently using.
         /// </summary>
-        /// <param name="ent">The entity we're refreshing modifiers for.</param>
+        /// <param name="ent">The entity we're refreshing modifiers for</param>
         public void RefreshMovementModifiers(Entity<MovementSpeedModifierComponent?> ent)
         {
-            RefreshWeightlessModifiers(ent);
-            RefreshMovementSpeedModifiers(ent);
+            if (_gravity.IsWeightless(ent.Owner))
+                RefreshWeightlessModifiers(ent);
+            else
+                RefreshMovementSpeedModifiers(ent);
         }
 
         /// <summary>

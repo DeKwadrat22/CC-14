@@ -98,8 +98,6 @@
     noMovementLayers:
       movement:
         state: vehicle
-  - type: Vehicle
-  - type: VehicleHandBlocker
   - type: GenericKeyedVehicle
     containerId: key_slot
     keyWhitelist:
@@ -110,7 +108,7 @@
     enabled: false
     radius: 3.5
     softness: 2
-    lightMask: ConeSingle
+    mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: GravityAffected
   - type: Destructible

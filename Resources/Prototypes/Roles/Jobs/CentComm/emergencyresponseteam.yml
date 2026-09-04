@@ -607,7 +607,7 @@
     belt:
     - MegaSprayBottleSpaceCleaner
     - Holoprojector
-    - LightReplacerFilled
+    - LightReplacer
     - WireBrush
     - CrowbarRed
     - WeaponPistolMk58

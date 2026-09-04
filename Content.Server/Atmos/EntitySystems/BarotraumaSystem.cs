@@ -19,7 +19,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private DamageableSystem _damageableSystem = default!;
         [Dependency] private AlertsSystem _alertsSystem = default!;
-        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private IAdminLogManager _adminLogger= default!;
         [Dependency] private InventorySystem _inventorySystem = default!;
         [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
@@ -30,14 +30,27 @@ namespace Content.Server.Atmos.EntitySystems
         {
             SubscribeLocalEvent<PressureProtectionComponent, GotEquippedEvent>(OnPressureProtectionEquipped);
             SubscribeLocalEvent<PressureProtectionComponent, GotUnequippedEvent>(OnPressureProtectionUnequipped);
-            SubscribeLocalEvent<PressureProtectionComponent, ComponentStartup>(OnUpdateResistance);
+            SubscribeLocalEvent<PressureProtectionComponent, ComponentInit>(OnUpdateResistance);
             SubscribeLocalEvent<PressureProtectionComponent, ComponentRemove>(OnUpdateResistance);
+
+            SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
+            SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
         }
 
-        [SubscribeLocalEvent]
-        private void OnBarotraumaInit(Entity<BarotraumaComponent> ent, ref MapInitEvent args)
+        private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
         {
-            RefreshPressureImmunity(ent, ent.Comp);
+            if (TryComp<BarotraumaComponent>(uid, out var barotrauma))
+            {
+                barotrauma.HasImmunity = true;
+            }
+        }
+
+        private void OnPressureImmuneRemove(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentRemove args)
+        {
+            if (TryComp<BarotraumaComponent>(uid, out var barotrauma))
+            {
+                barotrauma.HasImmunity = false;
+            }
         }
 
         /// <summary>
@@ -155,19 +168,6 @@ namespace Content.Server.Atmos.EntitySystems
 
             var modified = (environmentPressure + barotrauma.HighPressureModifier) * (barotrauma.HighPressureMultiplier);
             return Math.Max(modified, Atmospherics.OneAtmosphere);
-        }
-
-        /// <summary>
-        /// Refreshes whether the entity is immune to pressure damage.
-        /// </summary>
-        public void RefreshPressureImmunity(EntityUid uid, BarotraumaComponent? barotrauma = null)
-        {
-            if (!Resolve(uid, ref barotrauma, false))
-                return;
-
-            var ev = new RefreshPressureImmunityEvent();
-            RaiseLocalEvent(uid, ref ev);
-            barotrauma.HasImmunity = ev.IsImmune;
         }
 
         public bool TryGetPressureProtectionValues(

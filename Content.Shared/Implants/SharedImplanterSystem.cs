@@ -5,7 +5,6 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Forensics;
-using Content.Shared.Forensics.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
@@ -34,7 +33,6 @@ public abstract partial class SharedImplanterSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private ForensicsSystem _forensics = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     [Dependency] private EntityQuery<SubdermalImplantComponent> _implantCompQuery;
@@ -64,7 +62,7 @@ public abstract partial class SharedImplanterSystem : EntitySystem
         if (ent.Comp.Implant != null)
             ent.Comp.ImplanterSlot.StartingItem = ent.Comp.Implant;
 
-        _itemSlots.AddItemSlot(ent.Owner, ImplanterComponent.ImplanterSlotId, ent.Comp.ImplanterSlot);
+        _itemSlots.AddItemSlot(ent, ImplanterComponent.ImplanterSlotId, ent.Comp.ImplanterSlot);
     }
 
     private void OnMapInit(Entity<ImplanterComponent> ent, ref MapInitEvent args)
@@ -288,7 +286,8 @@ public abstract partial class SharedImplanterSystem : EntitySystem
         else
             ImplantMode(ent);
 
-        _forensics.TransferDna(ent, target);
+        var ev = new TransferDnaEvent { Donor = target, Recipient = ent.Owner };
+        RaiseLocalEvent(target, ref ev);
 
         Dirty(ent);
     }
@@ -436,7 +435,8 @@ public abstract partial class SharedImplanterSystem : EntitySystem
         _container.Remove(implant, implantContainer);
         _container.Insert(implant, implanterContainer);
 
-        _forensics.TransferDna(implanter, target);
+        var ev = new TransferDnaEvent { Donor = target, Recipient = implanter };
+        RaiseLocalEvent(target, ref ev);
     }
 
     /// <summary>

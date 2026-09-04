@@ -1,6 +1,5 @@
 using Content.Server.Wires;
 using Content.Shared.VendingMachines;
-using Content.Shared.VendingMachines.Components;
 using Content.Shared.Wires;
 
 namespace Content.Server.VendingMachines;
@@ -38,7 +37,7 @@ public sealed partial class VendingMachineContrabandWireAction : BaseToggleWireA
     {
         if (EntityManager.TryGetComponent(owner, out VendingMachineComponent? vending))
         {
-            _vendingMachineSystem.SetContraband((owner, vending), !vending.Contraband);
+            _vendingMachineSystem.SetContraband(owner, !vending.Contraband, vending);
         }
     }
 

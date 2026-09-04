@@ -22,7 +22,7 @@ public sealed partial class MechComponent : Component
     /// <summary>
     /// The maximum amount of damage the mech can take.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 MaxIntegrity = 250;
 
     /// <summary>
@@ -36,7 +36,7 @@ public sealed partial class MechComponent : Component
     /// The maximum amount of energy the mech can have.
     /// Derived from the currently inserted battery.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 MaxEnergy = 0;
 
     /// <summary>
@@ -55,6 +55,15 @@ public sealed partial class MechComponent : Component
     public bool Broken = false;
 
     /// <summary>
+    /// The slot the pilot is stored in.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public ContainerSlot PilotSlot = default!;
+
+    [ViewVariables]
+    public readonly string PilotSlotId = "mech-pilot-slot";
+
+    /// <summary>
     /// The current selected equipment of the mech.
     /// If null, the mech is using just its fists.
     /// </summary>
@@ -64,7 +73,7 @@ public sealed partial class MechComponent : Component
     /// <summary>
     /// The maximum amount of equipment items that can be installed in the mech
     /// </summary>
-    [DataField]
+    [DataField("maxEquipmentAmount"), ViewVariables(VVAccess.ReadWrite)]
     public int MaxEquipmentAmount = 3;
 
     /// <summary>
@@ -83,9 +92,22 @@ public sealed partial class MechComponent : Component
     public readonly string EquipmentContainerId = "mech-equipment-container";
 
     /// <summary>
+    /// How long it takes to enter the mech.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float EntryDelay = 3;
+
+    /// <summary>
+    /// How long it takes to pull *another person*
+    /// outside of the mech. You can exit instantly yourself.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float ExitDelay = 3;
+
+    /// <summary>
     /// How long it takes to pull out the battery.
     /// </summary>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float BatteryRemovalDelay = 2;
 
     /// <summary>
@@ -95,7 +117,7 @@ public sealed partial class MechComponent : Component
     /// This needs to be redone
     /// when mech internals are added
     /// </remarks>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool Airtight;
 
     /// <summary>

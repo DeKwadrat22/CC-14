@@ -2,7 +2,7 @@
 
 namespace Content.Shared.Administration.Systems;
 
-public sealed partial class RejuvenateSystem : EntitySystem
+public sealed class RejuvenateSystem : EntitySystem
 {
     /// <summary>
     /// Fully heals the target, removing all damage, debuffs or other negative status effects.

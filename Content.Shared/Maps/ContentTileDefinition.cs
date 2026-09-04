@@ -48,7 +48,7 @@ public sealed partial class ContentTileDefinition : IPrototype, IInheritingProto
     public List<ProtoId<ContentTileDefinition>> BaseWhitelist { get; private set; } = new();
 
     [DataField]
-    public HashSet<ProtoId<ToolQualityPrototype>> DeconstructTools = new();
+    public PrototypeFlags<ToolQualityPrototype> DeconstructTools { get; set; } = new();
 
     /// <summary>
     /// Effective mass of this tile for grid impacts.

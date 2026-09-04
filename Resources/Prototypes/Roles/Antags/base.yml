@@ -93,5 +93,3 @@
   abstract: true
   parent: [ MindshieldRestrictedAntag, CyborgBlacklistedAntag, InternBlacklistedAntag, AnomalyBlacklistedAntag ]
   id: RestrictedAntag
-  jobBlacklist:
-  - TramDriver

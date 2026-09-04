@@ -200,6 +200,8 @@
     actions:
     - ActionGravityJump
   - type: ItemActionGrant
+    actions:
+    - ActionGravityJump
     activeIfWorn: true
   - type: StaticPrice
     price: 220

@@ -1,5 +1,4 @@
 using Content.Shared.Changeling.Systems;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -91,8 +90,9 @@ public sealed partial class ChangelingDevourComponent : Component
     {
         DamageDict = new()
         {
-            { "Slash", 15},
-            { "Piercing", 15 },
+            { "Slash", 10},
+            { "Piercing", 10 },
+            { "Blunt", 5 },
         },
     };
 
@@ -104,17 +104,11 @@ public sealed partial class ChangelingDevourComponent : Component
     {
         DamageDict = new()
         {
-            { "Slash", 60},
-            { "Piercing", 60 },
-            { "Caustic", 100 },
+            { "Slash", 20},
+            { "Piercing", 20 },
+            { "Blunt", 10 },
         },
     };
-
-    /// <summary>
-    /// Solution that will be spilled at the location of the devoured entity when finished.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public Solution? DevourSpill = new([new("LivingTissue", 10)]);
 
     /// <summary>
     /// The list of protective damage types capable of preventing a devour if over the threshold.
@@ -137,7 +131,7 @@ public sealed partial class ChangelingDevourComponent : Component
     /// DNA awarded for successfully devouring a new identity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> DevourDnaReward = new()
+    public Dictionary<string, FixedPoint2> DevourDnaReward = new()
     {
         { "ChangelingDNA", 10 }
     };

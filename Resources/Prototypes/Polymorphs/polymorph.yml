@@ -136,6 +136,17 @@
     inventory: Drop
     cooldown: 160
 
+- type: polymorph
+  id: SmartCorgiMorph
+  configuration:
+    entity: MobCorgiSmart
+    forced: false
+    inventory: Drop
+    transferName: true
+    revertOnCrit: false
+    revertOnDeath: false
+    allowRepeatedMorphs: false
+
 # this is the monkey polymorph for artifact.
 - type: polymorph
   id: ArtifactMonkey
@@ -237,12 +248,3 @@
     exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg
     duration: 120
     effectProto: EffectDesynchronizer
-
-# Changeling Meteor
-- type: polymorph
-  id: ChangelingMeteor
-  configuration:
-    entity: ChangelingMeteor
-    forced: true
-    polymorphPopup: null
-    exitPolymorphPopup: null

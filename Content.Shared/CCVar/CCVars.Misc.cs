@@ -2,7 +2,6 @@
 
 using Content.Shared.Administration;
 using Content.Shared.CCVar.CVarAccess;
-using Content.Shared.Mapping;
 
 namespace Content.Shared.CCVar;
 
@@ -30,12 +29,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> AnomalyGenerationGridBoundsScale =
         CVarDef.Create("anomaly.generation_grid_bounds_scale", 0.6f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     If enabled, the server automatically triggers an AFK check popup when a player's inactivity exceeds afk.time (or admin.afk_time for admins)
-    /// </summary>
-    public static readonly CVarDef<bool> AfkAutomaticChecks =
-        CVarDef.Create("afk.automatic_checks", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     How long a client can go without any input before being considered AFK.
@@ -135,14 +128,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> PlaytimeMinutesToday =
         CVarDef.Create("playtime.minutes_today", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     If the cvar is enabled, every <see cref="StructureAlignerComponent"/> will be Aligned when the map initializes.
-    /// </summary>
-    /// <remarks>
-    ///     May be considered a stopgap measure when unupgraded maps are in rotation?
-    /// </remarks>
-    public static readonly CVarDef<bool> MapInitAlign =
-        CVarDef.Create("align.map_init", false, CVar.SERVER | CVar.REPLICATED);
-
 }

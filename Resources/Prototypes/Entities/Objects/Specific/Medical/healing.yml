@@ -693,20 +693,6 @@
         id: PillTricordrazine
         amount: 5
 
--  type: entity
-   name: pill canister
-   parent: PillCanister
-   id: PillCanisterAmbuzol
-   suffix: Ambuzol 15u, 2
-   components:
-   - type: Label
-     localizedLabel: pill-label-ambuzol-15u
-   - type: EntityTableContainerFill
-     containers:
-       storagebase:
-         id: PillAmbuzol
-         amount: 2
-
 - type: entity
   name: pill
   suffix: Bicaridine 20u
@@ -791,7 +777,7 @@
     solution:
       reagents:
       - ReagentId: Ambuzol
-        Quantity: 15
+        Quantity: 10
 
 - type: entity
   name: ambuzol plus pill
@@ -1028,19 +1014,6 @@
     solution:
       reagents:
       - ReagentId: Stimulants
-        Quantity: 15
-
-- type: entity
-  suffix: hivarol
-  parent: PrefilledSyringe
-  id: SyringeHivarol
-  components:
-  - type: Label
-    localizedLabel: reagent-name-hivarol
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Hivarol
         Quantity: 15
 
 # Entity Tables

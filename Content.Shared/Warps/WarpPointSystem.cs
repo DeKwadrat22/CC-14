@@ -1,9 +1,9 @@
 using Content.Shared.Examine;
-using Content.Shared.Ghost.Components;
+using Content.Shared.Ghost;
 
 namespace Content.Shared.Warps;
 
-public sealed partial class WarpPointSystem : EntitySystem
+public sealed class WarpPointSystem : EntitySystem
 {
     public override void Initialize()
     {

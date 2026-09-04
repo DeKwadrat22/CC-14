@@ -29,7 +29,7 @@ public abstract partial class SharedStackSystem
         var stackId = ProtoMan.Index(stackEnt.Comp.StackTypeId);
         var entityUid = PredictedSpawnNextToOrDrop(stackId.Spawn, stackEnt.Owner);
 
-        SetCount((entityUid, null), 1);
+        SetCount(entityUid, 1);
         return entityUid;
     }
 
@@ -120,7 +120,7 @@ public abstract partial class SharedStackSystem
     {
         transferred = 0;
 
-        if (donor.Owner == recipient.Owner)
+        if (donor == recipient)
             return false;
 
         // Recipient is being torn down, don't give it anything.

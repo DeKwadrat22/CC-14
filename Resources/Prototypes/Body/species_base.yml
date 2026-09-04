@@ -73,6 +73,8 @@
   - type: StatusEffects
     allowed:
     - Electrocution
+    - PressureImmunity
+    - Muted
     - Pacified
     - Flashed
     - Adrenaline
@@ -170,24 +172,17 @@
   - MobAtmosStandard
   - MobFlammable
   - BaseSpeciesMob
-  - BaseMobDestructible
-  - BaseHungerThirstSlowdown
   id: BaseSpeciesMobOrganic
   save: false
   components:
-  - type: Satiation
-    satiations:
-      Hunger:
-        prototype: NormalSatiationHunger
-      Thirst:
-        prototype: NormalSatiationThirst
+  - type: Hunger
+  - type: Thirst
   - type: Barotrauma
     damage:
       types:
         Blunt: 0.50
         Heat: 0.1
   - type: PassiveDamage
-    intervalHaltOnDamageTaken: 5s
     allowedStates:
     - Alive
     damage:
@@ -199,9 +194,11 @@
   - type: Fingerprint
   - type: Blindable
   - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
   - type: TemperatureDamage
-    heatDamageThreshold: 316.15
-    coldDamageThreshold: 273.15
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
     coldDamage:
       types:
         Cold: 0.1 #per second, scales with temperature & other constants

@@ -178,7 +178,7 @@ public sealed partial class SharedKitchenSpikeSystem : EntitySystem
             args.User,
             PopupType.MediumCaution);
 
-        var delay = TimeSpan.FromSeconds(butcherable.ButcherDelay / tool.SpeedModifier);
+        var delay = TimeSpan.FromSeconds(tool.SpeedModifier * butcherable.ButcherDelay);
 
         if (_mobStateSystem.IsAlive(victim.Value))
             delay += ent.Comp.ButcherDelayAlive;
