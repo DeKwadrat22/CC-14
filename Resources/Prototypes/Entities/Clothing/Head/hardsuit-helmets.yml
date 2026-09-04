@@ -411,10 +411,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85         # Claw | Help keep the commander's brain in! (Assuming there was one to begin with.)
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -523,50 +523,6 @@
         Piercing: 0.9
         Heat: 0.9
 
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetCBURN
-  name: CBURN exosuit helmet
-  description: A pressure resistant and fireproof hood worn by special cleanup units.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/cburn.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: light-overlay
-      visible: false
-      shader: unshaded
-      map: [ "light" ]
-  - type: Clothing
-    clothingVisuals:
-      head:
-      - state: equipped-head
-      - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-  - type: PointLight
-    color: orange
-  - type: PressureProtection
-    highPressureMultiplier: 0.08
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    heatingCoefficient: 0.005
-    coolingCoefficient: 0.005
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-  - type: ZombificationResistance
-    zombificationResistanceCoefficient: 0.75
-
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
 - type: entity
@@ -663,8 +619,6 @@
   - type: PointLight
     color: "#cbadff"
 
-<<<<<<< HEAD
-=======
 #CBURN Hardsuit
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -689,7 +643,6 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.75
 
->>>>>>> root/master
 #Deathsquad Hardsuit
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]

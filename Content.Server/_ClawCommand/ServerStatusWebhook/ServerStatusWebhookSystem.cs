@@ -5,6 +5,7 @@ using Content.Server.Discord;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
+using Content.Shared.AlertLevel;
 using Content.Shared.GameTicking;
 using Robust.Server;
 using Robust.Server.Player;
@@ -254,11 +255,11 @@ public sealed partial class ServerStatusWebhookSystem : EntitySystem
         var query = EntityQueryEnumerator<AlertLevelComponent>();
         while (query.MoveNext(out _, out var alert))
         {
-            if (string.IsNullOrEmpty(alert.CurrentLevel))
+            if (string.IsNullOrEmpty(alert.CurrentAlertLevel.Id))
                 continue;
 
             // Capitalize first letter for nicer display (e.g. "green" -> "Green").
-            var level = alert.CurrentLevel;
+            var level = alert.CurrentAlertLevel.Id;
             if (level.Length > 0)
                 level = char.ToUpperInvariant(level[0]) + level[1..];
 

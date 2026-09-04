@@ -136,7 +136,7 @@ public sealed partial class CarvingKnifeSystem : EntitySystem
             Content.Shared.Eye.Blinding.Systems.BlindnessSystem.BlindingStatusEffect,
             ent.Comp.BlindnessTime);
 
-        _status.TryAddStatusEffect<MutedComponent>(args.Victim,
+        _status.TryAddStatusEffect<MutedStatusEffectComponent>(args.Victim,
             "Muted",
             ent.Comp.MuteTime,
             true,

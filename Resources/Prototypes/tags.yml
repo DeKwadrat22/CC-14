@@ -234,9 +234,6 @@
   id: CaptainSabre # Storage whitelist: ClothingBeltSheath. ItemMapper: ClothingBeltSheath
 
 - type: Tag
-  id: CentCommSabre # Storage whitelist: ClothingBeltCentcommSheath. ItemMapper: ClothingBeltCentcommSheath
-
-- type: Tag
   id: Carp # CargoBounty: BountyCarp
 
 - type: Tag
@@ -463,9 +460,6 @@
 
 - type: Tag
   id: Dice # Storage whitelist: BorgModuleService, DiceBag, BooksBag
-
-- type: Tag
-  id: Dildo # claw command
 
 - type: Tag
   id: DiscreteHealthAnalyzer # Storage whitelist: ClothingBeltMedical. ConstructionGraph: MediBot
@@ -941,7 +935,7 @@
   id: Mayo # Storage whitelist: ClothingBeltChef
 
 - type: Tag
-  id: Meat # SpecialDigestible: OrganReptilianStomach. CargoBounty: BountyFood. Several MetamorphRecipes. CC14: OrganFelinidStomach.
+  id: Meat # SpecialDigestible: OrganReptilianStomach. CargoBounty: BountyFood. Several MetamorphRecipes.
 
 - type: Tag
   id: Medal # Storage whitelist: MedalCase
@@ -1252,9 +1246,6 @@
   id: RollingPin # Storage whitelist: ClothingBeltChef. ItemMapper: ClothingBeltChef
 
 - type: Tag
-  id: RPD
-
-- type: Tag
   id: Ruminant # SpecialDigestible: OrganAnimalRuminantStomach
 
 ## S ##
@@ -1309,9 +1300,6 @@
 
 - type: Tag
   id: SiliconEmotes # Whitelisted and blacklisted in various EmotePrototypes to create a silicon emote group.
-
-- type: Tag #claw command - IPC
-  id: SiliconMob
 
 - type: Tag
   id: Skewer # Food sequence key
@@ -1511,7 +1499,7 @@
 ## V ##
 
 - type: Tag
-  id: Vegetable # CargoBounty: BountyVegetable. CC14: OrganFelinidStomach.
+  id: Vegetable # CargoBounty: BountyVegetable
 
 - type: Tag # Used on DungeonRoom prototypes.
   id: VGRoidInterior # RoomFill spawner whitelist for VGRoidInteriorRoomMarker.
@@ -1562,9 +1550,6 @@
   id: WhitelistChameleonPDA # Chameleon key for ChameleonPDA
 
 - type: Tag
-<<<<<<< HEAD
-  id: Whip # claw command
-=======
   id: Windoor # Used in ConstructionGraph "Windoor" to navigate between Windoor, PlasmaWindoor, and UraniumWindoor airlocks.
 
 - type: Tag
@@ -1572,7 +1557,6 @@
 
 - type: Tag
   id: WindoorUranium # Used in ConstructionGraph "Windoor" to navigate between Windoor, PlasmaWindoor, and UraniumWindoor airlocks.
->>>>>>> root/master
 
 - type: Tag
   id: Window # Tagged entity is a window. Several systems and several targeting whitelists (XenoArtifactShatterWindows) care about this.

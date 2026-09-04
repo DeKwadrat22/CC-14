@@ -1,6 +1,5 @@
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Shared._ClawCommand.Traits.Components;
 
@@ -19,7 +18,7 @@ public sealed partial class SelfAwareComponent : Component
     ///     generated AutoNetworkedField state handler dereferences these directly, so a null here
     ///     is a client-side NullReferenceException in OnHandleState, not a quiet no-op.
     /// </remarks>
-    [DataField(customTypeSerializer: typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>)), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public HashSet<string> AnalyzableTypes = new();
 
     /// <summary>
@@ -28,7 +27,7 @@ public sealed partial class SelfAwareComponent : Component
     /// <remarks>
     ///     Claw Command - must never be null, see <see cref="AnalyzableTypes"/>.
     /// </remarks>
-    [DataField(customTypeSerializer: typeof(PrototypeIdHashSetSerializer<DamageGroupPrototype>)), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public HashSet<string> DetectableGroups = new();
 
 }

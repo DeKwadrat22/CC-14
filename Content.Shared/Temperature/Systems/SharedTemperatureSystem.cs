@@ -128,15 +128,6 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
             conductance *= ev.HeatTransferModifier;
         }
 
-<<<<<<< HEAD
-        // Sub-kilogram entities (small clothing, paper, etc.) shouldn't get their heat capacity rounded
-        // toward zero — that produces nonsense temperatures when atmos pushes them around.
-        // Port: EE Physics-Based Air Throws (#342).
-        if (physics.Mass < 1f)
-            return comp.SpecificHeat;
-
-        return comp.SpecificHeat * physics.FixturesMass;
-=======
         var lastTemp = entity.Comp.Temperature;
         var heatEx = HeatContainerHelpers.ConductHeat(ref entity.Comp, ref heatContainer, deltaT, conductance);
 
@@ -216,6 +207,5 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
         entity.Comp.Temperature = temp;
         var changeEv = new TemperatureChangedEvent(entity.Comp.Temperature, lastTemp);
         RaiseLocalEvent(entity, ref changeEv, broadcast: true);
->>>>>>> root/master
     }
 }

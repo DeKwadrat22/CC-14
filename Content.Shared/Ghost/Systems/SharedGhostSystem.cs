@@ -229,6 +229,9 @@ public sealed class GhostUpdateGhostRoleCountEvent : EntityEventArgs
     }
 }
 
+[Serializable, NetSerializable]
+public sealed partial class GhostReturnToRoundRequest : EntityEventArgs;
+
 /// <summary>
 /// Raised on an entity when Its mind is attempting to ghost out.
 /// </summary>

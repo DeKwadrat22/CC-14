@@ -8,11 +8,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-<<<<<<< HEAD
-using Content.Server.ClawCommand.Cabinet.Events;
-=======
 using Content.Shared.Station.Components;
->>>>>>> root/master
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -79,7 +75,7 @@ public sealed partial class StationJobsSystem : EntitySystem
 
         stationJobs.JobList = stationJobs.SetupAvailableJobs.ToDictionary(
             x => x.Key,
-            x => (int?)(x.Value[1] < 0 ? null : x.Value[1]));
+            x=> (int?)(x.Value[1] < 0 ? null : x.Value[1]));
 
         stationJobs.TotalJobs = stationJobs.JobList.Values.Select(x => x ?? 0).Sum();
 
@@ -121,8 +117,6 @@ public sealed partial class StationJobsSystem : EntitySystem
 
         if (!TryAdjustJobSlot(station, jobPrototypeId, -1, false, false, stationJobs))
             return false;
-        var playerJobAdded = new PlayerJobAddedEvent(netUserId, jobPrototypeId);
-        RaiseLocalEvent(station, ref playerJobAdded, false); // added AddedPlayerJobsEvent for CaptainStateSystem
 
         stationJobs.PlayerJobs.TryAdd(netUserId, new());
         stationJobs.PlayerJobs[netUserId].Add(jobPrototypeId);
@@ -189,7 +183,7 @@ public sealed partial class StationJobsSystem : EntitySystem
                 return true;
             case true:
                 // Job is unlimited so just say we adjusted it and do nothing.
-                if (available is not { } avail)
+                if (available is not {} avail)
                     return true;
 
                 // Would remove more jobs than we have available.
@@ -221,13 +215,7 @@ public sealed partial class StationJobsSystem : EntitySystem
     {
         if (!Resolve(station, ref jobsComponent, false))
             return false;
-        // added RemovedPlayerJobsEvent for CaptainStateSystem
-        if (jobsComponent.PlayerJobs.Remove(userId, out var playerJobsEntry))
-        {
-            var playerJobRemovedEvent = new PlayerJobsRemovedEvent(userId, playerJobsEntry);
-            RaiseLocalEvent(station, ref playerJobRemovedEvent, false);
-            return true;
-        }
+
         return jobsComponent.PlayerJobs.Remove(userId);
     }
 
@@ -429,7 +417,7 @@ public sealed partial class StationJobsSystem : EntitySystem
 
         return stationJobs.SetupAvailableJobs.ToDictionary(
             x => x.Key,
-            x => (int?)(x.Value[0] < 0 ? null : x.Value[0]));
+            x=> (int?)(x.Value[0] < 0 ? null : x.Value[0]));
     }
 
     /// <summary>

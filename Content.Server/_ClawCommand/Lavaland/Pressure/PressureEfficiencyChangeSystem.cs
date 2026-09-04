@@ -49,7 +49,7 @@ public sealed partial class PressureEfficiencyChangeSystem : EntitySystem
         SubscribeLocalEvent<PressureDamageChangeComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<PressureDamageChangeComponent, GetMeleeDamageEvent>(OnGetDamage, after: new []{typeof(SharedWieldableSystem)});
         SubscribeLocalEvent<PressureDamageChangeComponent, GunShotEvent>(OnGunShot);
-        SubscribeLocalEvent<PressureDamageChangeComponent, ProjectileShotEvent>(OnProjectileShot);
+        SubscribeLocalEvent<PressureDamageChangeComponent, Content.Shared._ClawCommand.Lavaland.Weapons.Ranged.Events.ProjectileShotEvent>(OnProjectileShot);
 
         SubscribeLocalEvent<PressureArmorChangeComponent, ExaminedEvent>(OnArmorExamined);
         SubscribeLocalEvent<PressureArmorChangeComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnArmorRelayDamageModify, before: [typeof(SharedArmorSystem)]);
@@ -87,7 +87,7 @@ public sealed partial class PressureEfficiencyChangeSystem : EntitySystem
                 projectile.Damage *= ent.Comp.AppliedModifier;
     }
 
-    private void OnProjectileShot(Entity<PressureDamageChangeComponent> ent, ref ProjectileShotEvent args)
+    private void OnProjectileShot(Entity<PressureDamageChangeComponent> ent, ref Content.Shared._ClawCommand.Lavaland.Weapons.Ranged.Events.ProjectileShotEvent args)
     {
         if (!ApplyModifier(ent)
             || !ent.Comp.ApplyToProjectiles

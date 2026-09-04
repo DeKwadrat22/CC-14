@@ -268,7 +268,7 @@ ImprovisedExplosiveFuel: FireBombFuel
 ClothingHeadHatHairflower: FoodPoppy
 
 # 2024-03-21
-# RPED null-map removed by _ClawCommand RapidPartExchange port — entity now exists.
+RPED: null
 
 # 2024-03-30
 TraversalDistorterMachineCircuitboard: null
@@ -539,12 +539,9 @@ LightTree06: LightTree
 DrinkIrishCarBomb: DrinkIrishSlammer
 
 # 2025-01-06
-# Claw Command: BorgModuleRadiationDetection, BorgModuleGPS and BorgModuleLightReplacer
-# were brought back as part of the space-port modules port
-# (_ClawCommand/Entities/Objects/Specific/Robotics/space_port_modules.yml). The upstream
-# migration entries would silently delete or rename them at map-load, so we drop them
-# here for the three we re-added. AdvancedTreatment stays removed (we explicitly skipped
-# it during the port because HandheldHealthAnalyzerUnpowered isn't in the fork).
+BorgModuleRadiationDetection: null
+BorgModuleGPS: null
+BorgModuleLightReplacer: BorgModuleCustodial
 BorgModuleAdvancedTreatment: null
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime
@@ -638,9 +635,8 @@ ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
 ClothingHeadHelmetHardsuitBasic: null
 SuitStorageBasic: SuitStorageEVA
 
-# _ClawCommand: Re-added.
 # 2025-05-18
-# ClothingNeckCloakMiner: null
+ClothingNeckCloakMiner: null
 
 # 2025-05-22
 MatterBinStockPart: MicroManipulatorStockPart
@@ -849,99 +845,6 @@ CratePartsT3: null
 CratePartsT3T4: null
 CratePartsT4: null
 
-<<<<<<< HEAD
-# 2026-07-04
-AirlockChiefJusticeLocked: AirlockLawyerLocked
-AirlockJusticeLocked: AirlockLawyerLocked
-AirlockClownLocked: AirlockTheatreLocked
-AirlockMimeLocked: AirlockTheatreLocked
-AirlockMusicianLocked: AirlockTheatreLocked
-AirlockCorspmanLocked: AirlockSecurityLocked
-AirlockMantisLocked: AirlockScience
-AirlockCorpsmanGlassLocked: AirlockSecurityGlassLocked
-AirlockCorpsmanLocked: AirlockSecurityGlassLocked
-AirlockNanotrasenRepresentativeCommandGlassLocked: AirlockCommandGlassLocked
-AirlockMailGlassLocked: AirlockCargoGlassLocked
-AirlockProsecutorGlassLocked: AirlockLawyerGlassLocked
-AirlockJusticeGlass: AirlockLawyerGlassLocked
-BorgModuleStun: BorgModuleSecurity
-CargoTechFab: Autolathe
-ClothingEyesGlassesChemist: ClothingEyesGlassesChemical
-ClothingEyesGlassesGarMeson: ClothingEyesGlassesMeson
-ClothingEyesGlassesMesonBudget: ClothingEyesGlassesMeson
-CrateCentCommCryo: CrateCommandSecure
-DefaultStationBeaconExam: DefaultStationBeaconMedbay
-DefaultStationBeaconJustice: DefaultStationBeaconCourtroom
-DefaultStationBeaconPsychologist: DefaultStationBeaconPsychology
-HypoMini: JetInjector
-LeftFootHuman: OrganHumanFootLeft
-LeftHandHuman: OrganHumanHandLeft
-OrganSlimeLungs: OrganSlimePersonLungs
-LockerChiefJusticeFilled: ClosetLegalFilled
-LockerClerkFilled: LockerScienceFilled
-MailTeleporter: CargoMailTeleporter
-MaterialSilo: MachineMaterialSilo
-RightHandHuman: OrganHumanHandRight
-RightLegSkeleton: OrganSkeletonPersonLegRight
-SolidReinforcedSecretDoor: EESolidReinforcedSecretDoor
-SpawnPointBlueshieldMaid: SpawnPointClawCommandMaid
-SpawnPointBlueshieldOfficer: SpawnPointClawCommandOfficer
-SpawnPointMailCarrier: SpawnPointCargoTechnician
-SpawnPointMedicalBorg: SpawnPointBorg
-UltravasculineChemistryBottle: ChemistryBottleUltravasculine
-UniqueLockerBlueshieldOfficerFilled: LockerClawCommandOfficerFilled
-WakizashiStun: WeaponMeleeKatana
-WeaponMechIndustrialKineticAccelerator: WeaponProtoKineticAccelerator
-WeaponProtoKineticAcceleratorSawn: WeaponProtoKineticAccelerator
-WoodSecretDoor: EEWoodSecretDoor
-LockerSteelIdLockable: LockerSteel
-Autodoc: null
-BorgModuleAdvancedSurgery: null
-BorgModuleKill: null
-BorgModulePka: null
-CheerfulQuadborgPlushie: null
-ClothingOuterShadowkinRestraints: null
-CrateTradeDarkSecure: null
-DeepFryerMachineCircuitboard: null
-DefaultStationBeaconChiefJustice: null
-DefaultStationBeaconCorpsman: null
-DefaultStationBeaconMantis: null
-DefaultStationBeaconMetempsychosis: null
-DefaultStationBeaconProber: null
-DefaultStationBeaconProsecutor: null
-DubiousOrganSpawner: null
-GavelBlock: null
-JermovCircuitBoard: null
-MedicalBiofabMachineBoard: null
-MetempsychoticMachine: null
-PillCryptobiolin: null
-PortalShadowkinSpawner: null
-ReverseEngineeringMachine: null
-SpawnPointAdminAssistant: null
-SpawnPointBrigmedic: null
-SpawnPointChiefJustice: null
-SpawnPointClerk: null
-SpawnPointLocationMidRoundAntag: null
-SpawnPointNanotrasenRepresentative: null
-SpawnPointProsecutor: null
-SuitStorageCorpsman: null
-TrialTimer: null
-UniqueLockerNanorepFilled: null
-VendingMachineCourierDrobe: null
-VendingMachineMNKDrobe: null
-# Claw Command - the psionics port removed five entries that used to live in this block:
-#   GlimmerProber, OracleSpawner, SophicScribeSpawner, SpawnPointForensicMantis -> null
-#   LockerForensicMantisFilled -> LockerScienceFilled
-# They were added when this content was stripped from the fork. The prototypes exist again, so the
-# migration was silently deleting (or downgrading) every one of them at map load, on every station.
-# AirlockMantisLocked / DefaultStationBeaconMantis / DefaultStationBeaconProber above are deliberately
-# left in place: those prototypes were NOT part of the port and still do not exist.
-
-# 2026-07-06
-LockerBartender: LockerBooze # Why was this even made?
-
-#2027-07-17
-=======
 # 2026-07-16
 WallNecropolis: WallSolid
 WallVaultAlien: WallSolid
@@ -978,7 +881,6 @@ WallBasaltCobblebrick: WallConcrete
 WallIce: WallRockSnow
 
 #2026-07-17
->>>>>>> root/master
 WeaponRifleM90GrenadeLauncher: null
 
 # 2026-07-18

@@ -1,7 +1,7 @@
 // claw command - IPC
 using Content.Shared.Damage;
 using Content.Shared.Tools;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Silicon.WeldingHealing;
 
@@ -14,8 +14,8 @@ public sealed partial class WeldingHealingComponent : Component
     [DataField(required: true)]
     public DamageSpecifier Damage;
 
-    [DataField(customTypeSerializer:typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
-    public string QualityNeeded = "Welding";
+    [DataField]
+    public ProtoId<ToolQualityPrototype> QualityNeeded = "Welding";
 
     /// <summary>
     ///     The fuel amount needed to repair physical related damage

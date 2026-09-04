@@ -10,7 +10,7 @@ namespace Content.Shared.Ghost.Components;
 /// Represents an observer ghost.
 /// Handles limiting interactions, using ghost abilities, ghost visibility, and ghost warping.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedGhostSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedGhostSystem), Other = AccessPermissions.ReadWrite)]
 [AutoGenerateComponentState(true)]
 public sealed partial class GhostComponent : Component
 {

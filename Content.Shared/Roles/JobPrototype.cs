@@ -56,13 +56,8 @@ public sealed partial class JobPrototype : IPrototype
     [DataField]
     public bool JoinNotifyCrew;
 
-    /// <summary>
-    ///     claw command - When false, no arrival announcement is made for this job at all,
-    ///     neither on spawn nor when they first set foot on the station. Used by roles that
-    ///     are not crew and should not show up in the arrivals feed, e.g. Anomaly (Shadekin).
-    /// </summary>
     [DataField]
-    public bool AnnounceArrival { get; private set; } = true;
+    public bool AnnounceArrival;
 
     /// <summary>
     /// When true - the player will recieve a message about importancy of their job.
@@ -89,34 +84,11 @@ public sealed partial class JobPrototype : IPrototype
     [DataField]
     public bool? OverrideConsoleVisibility;
 
-<<<<<<< HEAD
     /// <summary>
-    /// Claw Command: whether spawning into this job creates a <c>GeneralStationRecord</c>.
-    /// That record is what puts somebody on the crew manifest and in records consoles, so a role
-    /// that is not legally crew sets this to false. See the Security SOP: crew status cannot be
-    /// extended to, or created for, an entity that never had it.
+    /// Whether this job should create a station record for its holder.
     /// </summary>
     [DataField]
     public bool AddToStationRecords = true;
-
-    /// <summary>
-    /// The "weight" or importance of this job. If this number is large, the job system will assign this job
-    /// before assigning other jobs.
-    /// </summary>
-    [DataField]
-    public int Weight;
-
-    /// <summary>
-    /// How to sort this job relative to other jobs in the UI.
-    /// Jobs with a higher value with sort before jobs with a lower value.
-    /// If not set, <see cref="Weight"/> is used as a fallback.
-    /// </summary>
-    [DataField]
-    public int? DisplayWeight;
-
-    public int RealDisplayWeight => DisplayWeight ?? Weight;
-=======
->>>>>>> root/master
 
     /// <summary>
     /// A numerical score for how much easier this job is for antagonists.
@@ -170,13 +142,6 @@ public sealed partial class JobPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<GuideEntryPrototype>>? Guides;
-
-    /// <summary>
-    ///     CLAW COMMAND
-    ///     When true, this job always spawns at its job-specific spawn point, bypassing arrivals even for late joiners.
-    /// </summary>
-    [DataField]
-    public bool AlwaysUseSpawner { get; private set; }
 }
 
 /// <summary>

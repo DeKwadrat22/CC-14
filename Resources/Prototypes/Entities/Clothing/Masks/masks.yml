@@ -15,8 +15,6 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - GasMask # _ClawCommand - heretic ritual input (ArmorerRitual)
-    - Mask # _ClawCommand - heretic ritual input (MaskOfMadness)
   - type: HideLayerClothing
     layers:
       Snout: Mask
@@ -34,8 +32,6 @@
     sprite: Clothing/Mask/gassecurity.rsi
   - type: Clothing
     sprite: Clothing/Mask/gassecurity.rsi
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -56,8 +52,6 @@
     sprite: Clothing/Mask/gassyndicate.rsi
   - type: FlashImmunity
   - type: EyeProtection
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -93,7 +87,6 @@
     sprite: Clothing/Mask/gascaptain.rsi
   - type: BreathMask
   - type: IngestionBlocker
-    blockSmokeIngestion: true # Claw Command: passive smoke protection (Goob port)
 
 - type: entity
   parent: [ ClothingMaskGasAtmos, BaseCentcommContraband ]
@@ -107,7 +100,6 @@
     sprite: Clothing/Mask/gascentcom.rsi
   - type: BreathMask
   - type: IngestionBlocker
-    blockSmokeIngestion: true # Claw Command: passive smoke protection (Goob port)
 
 - type: entity
   parent: [ClothingMaskGas, BaseCargoContraband]
@@ -119,8 +111,6 @@
     sprite: Clothing/Mask/gasexplorer.rsi
   - type: Clothing
     sprite: Clothing/Mask/gasexplorer.rsi
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -164,8 +154,6 @@
     sprite: Clothing/Mask/medicalsecurity.rsi
   - type: Clothing
     sprite: Clothing/Mask/medicalsecurity.rsi
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -279,8 +267,6 @@
     sprite: Clothing/Mask/clown_security.rsi
   - type: Clothing
     sprite: Clothing/Mask/clown_security.rsi
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -377,9 +363,6 @@
   - type: Construction
     graph: Muzzle
     node: muzzle
-  - type: Tag # _ClawCommand - heretic ritual input (ImperfectRitual)
-    tags:
-    - Muzzle
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -427,8 +410,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask # _ClawCommand - re-listed from ClothingMaskGas (ArmorerRitual); tags don't merge on inheritance
-    - Mask # _ClawCommand - re-listed from ClothingMaskGas (MaskOfMadness)
   - type: HideLayerClothing
     slots:
     - Hair
@@ -436,8 +417,6 @@
     - HeadTop
     - HeadSide
     hideOnToggle: true
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -456,8 +435,6 @@
     sprite: Clothing/Mask/merc.rsi
   - type: Clothing
     sprite: Clothing/Mask/merc.rsi
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port)
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -479,8 +456,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask # _ClawCommand - re-listed from ClothingMaskGas (ArmorerRitual); tags don't merge on inheritance
-    - Mask # _ClawCommand - re-listed from ClothingMaskGas (MaskOfMadness)
   - type: HideLayerClothing
     slots:
     - Hair
@@ -488,8 +463,6 @@
     hideOnToggle: true
   - type: FlashImmunity
   - type: EyeProtection
-  - type: IngestionBlocker # Claw Command: passive smoke protection (Goob port) — also inherited by DeathSquad
-    blockSmokeIngestion: true
   - type: Armor
     modifiers:
       coefficients:
@@ -770,14 +743,9 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-<<<<<<< HEAD
-    - GasMask # _ClawCommand - re-listed from ClothingMaskGas (ArmorerRitual); tags don't merge on inheritance
-    - Mask # _ClawCommand - re-listed from ClothingMaskGas (MaskOfMadness)
-=======
   - type: ImageOverlay
     pathToOverlayImage: "/Textures/Clothing/Head/Welding/weldingTexture.png"
     additionalColorOverlay: "#00000050"
->>>>>>> root/master
 
 # Entity tables
 - type: entityTable

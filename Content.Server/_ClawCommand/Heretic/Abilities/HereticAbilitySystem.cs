@@ -43,6 +43,7 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Content.Shared.Body;
+using Content.Shared.Body.Systems;
 using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Content.Shared.Stunnable;
@@ -561,7 +562,9 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
                 _blood.FlushChemicals((uid, blood), leech.ChemPurgeRate * multiplier, leech.ExcludedReagent);
 
             if (temperatureQuery.TryComp(uid, out var temperature))
-                _temperature.ForceChangeTemperature(uid, leech.TargetTemperature, temperature);
+                _temperature.ChangeHeat((uid, temperature),
+                    (leech.TargetTemperature - temperature.Temperature) * temperature.HeatCapacity,
+                    ignoreHeatResistance: true);
 
             if (staminaQuery.TryComp(uid, out var stamina) && stamina.StaminaDamage > 0)
             {

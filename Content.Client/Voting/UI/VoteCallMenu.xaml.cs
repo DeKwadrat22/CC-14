@@ -4,7 +4,6 @@ using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
-using Content.Shared.Ghost;
 using Content.Shared.Ghost.Systems;
 using Content.Shared.Voting;
 using JetBrains.Annotations;

@@ -1,5 +1,5 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -9,7 +9,7 @@ namespace Content.Server.Abilities.Psionics
         [ViewVariables]
         public EntityUid OriginalEntity = default!;
         [DataField("mindSwapReturnActionId",
-        customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        customTypeSerializer: typeof(ProtoIdSerializer<EntityPrototype>))]
         public string? MindSwapReturnActionId = "ActionMindSwapReturn";
 
         [DataField("mindSwapReturnActionEntity")]

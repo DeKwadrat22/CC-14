@@ -16,11 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Human, Animal, Rat, Plant, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added MarkingsFelinid, Feroxi, and Kitsune
-=======
           type: [ Human, Animal, Rat, Plant, Arachnid ]
->>>>>>> root/master
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -51,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added MarkingsFelinid, Feroxi, and Kitsune
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

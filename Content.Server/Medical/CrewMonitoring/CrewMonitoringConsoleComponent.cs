@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-using Content.Shared.Medical.SuitSensor;
-using Content.Server._ClawCommand.SyndieOutpost; // Claw Command
-=======
 using Content.Shared.Medical.SuitSensors;
->>>>>>> root/master
 
 namespace Content.Server.Medical.CrewMonitoring;
 
 [RegisterComponent]
-[Access(typeof(CrewMonitoringConsoleSystem),
-    typeof(SyndieOutpostHackSystem))] // Claw Command - direct data tap
+[Access(typeof(CrewMonitoringConsoleSystem), Other = AccessPermissions.ReadWrite)]
 public sealed partial class CrewMonitoringConsoleComponent : Component
 {
     /// <summary>

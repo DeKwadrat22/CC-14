@@ -1,7 +1,6 @@
 using Content.Shared._ClawCommand.Devices.Components;
 using Content.Shared.Pinpointer;
 using Robust.Server.GameObjects;
-using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Medical.SuitSensors;
 
 namespace Content.Server._ClawCommand.Devices.Systems;

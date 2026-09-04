@@ -17,11 +17,7 @@ namespace Content.Shared.Body.Components;
 /// </summary>
 [RegisterComponent, NetworkedComponent,]
 [AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
-<<<<<<< HEAD
-[Access(typeof(SharedBloodstreamSystem), typeof(Content.Shared._ClawCommand.Traits.Systems.EntityThresholdAdjustSystem))]
-=======
-[Access(typeof(BloodstreamSystem))]
->>>>>>> root/master
+[Access(typeof(BloodstreamSystem), typeof(Content.Shared._ClawCommand.Traits.Systems.EntityThresholdAdjustSystem), Other = AccessPermissions.ReadWrite)]
 public sealed partial class BloodstreamComponent : Component
 {
     public const string DefaultBloodSolutionName = "bloodstream";

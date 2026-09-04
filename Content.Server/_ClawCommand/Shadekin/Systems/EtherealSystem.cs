@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Shared._ClawCommand.Shadekin;
+using Content.Goobstation.Common.Atmos;
 using Content.Shared._ClawCommand.Shadekin.Components;
 using Content.Shared.Eye;
 using Content.Shared.Movement.Components;
@@ -35,15 +36,12 @@ public sealed partial class EtherealSystem : SharedEtherealSystem
         if (TryComp<EyeComponent>(uid, out var eye))
             _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
 
-        if (TryComp<TemperatureComponent>(uid, out var temp))
-            temp.AtmosTemperatureTransferEfficiency = 0;
-
         var stealth = EnsureComp<StealthComponent>(uid);
         _stealth.SetVisibility(uid, 0.8f, stealth);
 
         SuppressFactions(uid, component, true);
 
-        EnsureComp<PressureImmunityComponent>(uid);
+        EnsureComp<SpecialPressureImmunityComponent>(uid);
         EnsureComp<RespiratorImmuneComponent>(uid);
         EnsureComp<MovementIgnoreGravityComponent>(uid);
     }
@@ -62,13 +60,10 @@ public sealed partial class EtherealSystem : SharedEtherealSystem
         if (TryComp<EyeComponent>(uid, out var eye))
             _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);
 
-        if (TryComp<TemperatureComponent>(uid, out var temp))
-            temp.AtmosTemperatureTransferEfficiency = 0.1f;
-
         SuppressFactions(uid, component, false);
 
         RemComp<StealthComponent>(uid);
-        RemComp<PressureImmunityComponent>(uid);
+        RemComp<SpecialPressureImmunityComponent>(uid);
         RemComp<RespiratorImmuneComponent>(uid);
         RemComp<MovementIgnoreGravityComponent>(uid);
     }

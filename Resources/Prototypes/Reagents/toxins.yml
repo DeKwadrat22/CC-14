@@ -413,24 +413,15 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # Applying damage to the mobs with lower metabolism capabilities # CC14 - Added Felinids
-=======
           type: [ Animal, Arachnid ] # Applying damage to the mobs with lower metabolism capabilities
->>>>>>> root/master
         damage:
           types:
             Poison: 0.4
       - !type:Vomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
-<<<<<<< HEAD
-          - !type:MetabolizerTypeCondition
-            type: [ Animal, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
         - !type:MetabolizerTypeCondition
           type: [ Animal, Arachnid ]
->>>>>>> root/master
 
 - type: reagent
   id: Amatoxin
@@ -498,11 +489,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, Vox, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
           type: [ Animal, Vox, Arachnid ]
->>>>>>> root/master
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -512,20 +499,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, Vox, Plant, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
           type: [ Animal, Vox, Plant, Arachnid ]
->>>>>>> root/master
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, Vox, Plant, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
           type: [ Animal, Vox, Plant, Arachnid ]
->>>>>>> root/master
           inverted: true
         damage:
           types:
@@ -540,11 +519,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
           type: [ Animal, Arachnid ]
->>>>>>> root/master
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
@@ -572,11 +547,7 @@
           reagent: Allicin
           min: 1
         - !type:MetabolizerTypeCondition
-<<<<<<< HEAD
-          type: [ Animal, MetabolizerFelinid, MetabolizerFeroxi, MetabolizerKitsune ] # CC14 - Added Felinids
-=======
           type: [ Animal ]
->>>>>>> root/master
         damage:
           types:
             Poison: 0.06

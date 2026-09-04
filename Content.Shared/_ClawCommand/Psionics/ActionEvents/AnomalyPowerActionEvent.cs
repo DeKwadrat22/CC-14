@@ -2,7 +2,6 @@ using Content.Shared.Anomaly.Effects.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Explosion;
 using Robust.Shared.Prototypes;
 
@@ -208,7 +207,7 @@ public partial record struct ExplosionAnomalySettings()
     /// <summary>
     ///     The explosion prototype to spawn
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
+    [DataField]
     public string? ExplosionPrototype = default!;
 
     /// <summary>
@@ -229,7 +228,7 @@ public partial record struct ExplosionAnomalySettings()
     /// <summary>
     ///     The explosion prototype to spawn on Supercrit
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
+    [DataField]
     public string? SupercritExplosionPrototype = default!;
 
     /// <summary>

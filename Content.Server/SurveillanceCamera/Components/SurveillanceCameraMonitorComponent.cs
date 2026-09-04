@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-using Content.Server._ClawCommand.SyndieOutpost; // Claw Command
-=======
 using Content.Shared.DeviceNetwork;
 using Robust.Shared.Prototypes;
->>>>>>> root/master
 
 namespace Content.Server.SurveillanceCamera;
 
 [RegisterComponent]
-[Access(typeof(SurveillanceCameraMonitorSystem),
-    typeof(SyndieOutpostHackSystem))] // Claw Command - direct camera data tap
+[Access(typeof(SurveillanceCameraMonitorSystem))]
 public sealed partial class SurveillanceCameraMonitorComponent : Component
 {
     /// <summary>

@@ -1,6 +1,5 @@
 using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 
 namespace Content.Shared.Abilities.Psionics
@@ -13,10 +12,8 @@ namespace Content.Shared.Abilities.Psionics
         // Claw Command - upstream carried a dead `InstantActionComponent? TelegnosisPowerAction` field here.
         // Nothing ever read or assigned it, and InstantActionComponent has since moved to
         // Content.Shared.Actions.Components, so it is dropped rather than given a using for a field that does nothing.
-        [ValidatePrototypeId<EntityPrototype>]
         public const string TelegnosisActionPrototype = "ActionTelegnosis";
-        [DataField("telegnosisActionId",
-        customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        [DataField("telegnosisActionId")]
         public string? TelegnosisActionId = "ActionTelegnosis";
 
         [DataField("telegnosisActionEntity")]

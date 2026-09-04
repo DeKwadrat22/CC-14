@@ -28,15 +28,7 @@ public sealed partial class CommunicationsConsoleMenu : FancyWindow
         MessagingControls.OnRadioAnnounce += message => OnRadioAnnounce?.Invoke(message);
         MessagingControls.OnScreenBroadcast += message => OnScreenBroadcast?.Invoke(message);
 
-<<<<<<< HEAD
-        public event Action? OnEmergencyLevel;
-        public event Action? OnRequestERT; // Claw Command
-        public event Action<string>? OnAlertLevel;
-        public event Action<string>? OnAnnounce;
-        public event Action<string>? OnBroadcast;
-=======
         AlertLevelControls.OnAlertLevelChanged += newLevel => OnAlertLevelChanged?.Invoke(newLevel);
->>>>>>> root/master
 
         ShuttleControls.OnShuttleCalled += () => OnShuttleCalled?.Invoke();
         ShuttleControls.OnShuttleRecalled += () => OnShuttleRecalled?.Invoke();
@@ -65,92 +57,6 @@ public sealed partial class CommunicationsConsoleMenu : FancyWindow
         var alertLevelSelectable = selectableAlertLevels != null && canChangeAlertLevel;
         AlertLevelControls.UpdateAlertLevels(selectableAlertLevels, currentAlertLevel, alertLevelSelectable);
 
-<<<<<<< HEAD
-            AnnounceButton.OnPressed += _ => OnAnnounce?.Invoke(Rope.Collapse(MessageInput.TextRope));
-            AnnounceButton.Disabled = !CanAnnounce;
-
-            BroadcastButton.OnPressed += _ => OnBroadcast?.Invoke(Rope.Collapse(MessageInput.TextRope));
-            BroadcastButton.Disabled = !CanBroadcast;
-
-            AlertLevelButton.OnItemSelected += args =>
-            {
-                var metadata = AlertLevelButton.GetItemMetadata(args.Id);
-                if (metadata != null && metadata is string cast)
-                {
-                    OnAlertLevel?.Invoke(cast);
-                }
-            };
-
-
-            AlertLevelButton.Disabled = !AlertLevelSelectable;
-
-            EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
-            EmergencyShuttleButton.Disabled = !CanCall;
-
-            RequestERTButton.OnPressed += _ => OnRequestERT?.Invoke(); // Claw Command
-        }
-
-        protected override void FrameUpdate(FrameEventArgs args)
-        {
-            base.FrameUpdate(args);
-            UpdateCountdown();
-        }
-
-        // The current alert could make levels unselectable, so we need to ensure that the UI reacts properly.
-        // If the current alert is unselectable, the only item in the alerts list will be
-        // the current alert. Otherwise, it will be the list of alerts, with the current alert
-        // selected.
-        public void UpdateAlertLevels(List<string>? alerts, string currentAlert)
-        {
-            AlertLevelButton.Clear();
-
-            if (alerts == null)
-            {
-                var name = currentAlert;
-                if (_loc.TryGetString($"alert-level-{currentAlert}", out var locName))
-                {
-                    name = locName;
-                }
-                AlertLevelButton.AddItem(name);
-                AlertLevelButton.SetItemMetadata(AlertLevelButton.ItemCount - 1, currentAlert);
-            }
-            else
-            {
-                foreach (var alert in alerts)
-                {
-                    var name = alert;
-                    if (_loc.TryGetString($"alert-level-{alert}", out var locName))
-                    {
-                        name = locName;
-                    }
-                    AlertLevelButton.AddItem(name);
-                    AlertLevelButton.SetItemMetadata(AlertLevelButton.ItemCount - 1, alert);
-                    if (alert == currentAlert)
-                    {
-                        AlertLevelButton.Select(AlertLevelButton.ItemCount - 1);
-                    }
-                }
-            }
-        }
-
-        public void UpdateCountdown()
-        {
-            if (!CountdownStarted)
-            {
-                CountdownLabel.SetMessage(string.Empty);
-                EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-call-shuttle");
-                return;
-            }
-
-            var diff = MathHelper.Max((CountdownEnd - _timing.CurTime) ?? TimeSpan.Zero, TimeSpan.Zero);
-
-            EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-recall-shuttle");
-            var infoText = Loc.GetString($"comms-console-menu-time-remaining",
-                ("time", diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture)));
-            CountdownLabel.SetMessage(infoText);
-        }
-=======
         ShuttleControls.UpdateState(commsState.CanCall, commsState.CountdownStarted, commsState.ExpectedCountdownEnd);
->>>>>>> root/master
     }
 }

@@ -60,10 +60,10 @@ public sealed partial class VoidCurseSystem : SharedVoidCurseSystem
         if (TryComp<TemperatureComponent>(ent, out var temp))
         {
             // temperaturesystem is not idiotproof :(
-            var t = temp.CurrentTemperature - 3f * ent.Comp.Stacks;
-            _temp.ForceChangeTemperature(ent, Math.Clamp(t, Atmospherics.TCMB, Atmospherics.Tmax), temp);
+            var target = Math.Clamp(temp.Temperature - 3f * ent.Comp.Stacks, Atmospherics.TCMB, Atmospherics.Tmax);
+            _temp.ChangeHeat(ent.AsNullable(), (target - temp.Temperature) * temp.HeatCapacity, true);
         }
 
-        _statusEffect.TryAddStatusEffect<MutedComponent>(ent, "Muted", TimeSpan.FromSeconds(5), true);
+        _statusEffect.TryAddStatusEffect<MutedStatusEffectComponent>(ent, "Muted", TimeSpan.FromSeconds(5), true);
     }
 }

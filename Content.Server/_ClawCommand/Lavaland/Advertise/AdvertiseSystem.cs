@@ -16,6 +16,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
 using Content.Shared.Chat;
 using Content.Shared.VendingMachines;
+using Content.Shared.VendingMachines.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;

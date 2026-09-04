@@ -20,13 +20,10 @@
   roles:
   - Passenger
   - Visitor
-<<<<<<< HEAD
   - ServiceWorker
   - Prisoner #claw command
   - DogborgJanitor # _ClawCommand
   - DogborgService # _ClawCommand
-=======
->>>>>>> root/master
 
 # Please kill this
 - type: department
@@ -135,13 +132,6 @@
   description: department-Service-description
   color: "#9FED58"
   roles:
-<<<<<<< HEAD
-  - ResearchDirector
-  - Scientist
-  - ResearchAssistant
-  - SeniorResearcher # _ClawCommand
-  - ForensicMantis # _ClawCommand - psionics port
-=======
   - Bartender
   - Botanist
   - Chaplain
@@ -156,7 +146,8 @@
   - Reporter
   - ServiceWorker
   - TramDriver
->>>>>>> root/master
+  - SeniorResearcher # _ClawCommand
+  - ForensicMantis # _ClawCommand - psionics port
 
 - type: department
   id: Silicon
@@ -177,9 +168,6 @@
   roles:
   - Reporter
   - Psychologist
-<<<<<<< HEAD
   - Anomaly # CLAW COMMAND - Shadekin awakened role
-=======
   - TramDriver
->>>>>>> root/master
   primary: false

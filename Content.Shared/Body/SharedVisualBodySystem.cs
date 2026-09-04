@@ -157,7 +157,7 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
             var resolved = markingsComp.Markings.ToDictionary(
                 kvp => kvp.Key,
                 kvp => ResolveMarkings(kvp.Value, ent.Comp.Profile.SkinColor, ent.Comp.Profile.EyeColor, groupProto.Appearances));
-            SetOrganMarkings((ent.Owner, markingsComp), resolved);
+            SetOrganMarkings((ent.Owner, markingsComp), resolved, markingsComp.MarkingsDisplacement);
         }
     }
 

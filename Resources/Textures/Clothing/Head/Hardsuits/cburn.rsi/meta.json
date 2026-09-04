@@ -6,58 +6,6 @@
         "x": 32,
         "y": 32
     },
-<<<<<<< HEAD
-    {
-      "name": "icon-unshaded"
-    },
-    {
-      "name": "icon-flash"
-    },
-    {
-      "name": "light-overlay"
-    },
-    {
-      "name": "equipped-head",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-reptilian",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-reptilian",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-feroxi",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-feroxi",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-vulpkanin",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-vulpkanin",
-      "directions": 4
-    }
-  ]
-=======
     "states": [
         {
             "name": "icon"
@@ -105,5 +53,4 @@
             "directions": 4
         }
     ]
->>>>>>> root/master
 }

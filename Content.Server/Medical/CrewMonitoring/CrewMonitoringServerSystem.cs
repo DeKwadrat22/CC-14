@@ -2,12 +2,8 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Shared.DeviceNetwork.Events;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
-<<<<<<< HEAD
-using Content.Shared._ClawCommand.SyndieOutpost; // Claw Command
-=======
 using Content.Shared.Medical.CrewMonitoring;
 using Content.Shared.Medical.SuitSensors;
->>>>>>> root/master
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -41,15 +37,6 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
 
         while (servers.MoveNext(out var id, out var server))
         {
-            // Claw Command: a syndicate outpost's crew-monitor server sits on a grid that gets
-            // added to the real station (SyndieOutpostSpawnRule.AddGridToStation), so it would
-            // otherwise count as a second station server and broadcast its own (empty) sensor
-            // list over the CrewMonitor frequency, wiping the real station console every tick.
-            // The outpost console receives its data through the direct hack tap
-            // (SyndieOutpostHackSystem) instead, so this server must never broadcast.
-            if (HasComp<SyndieOutpostHackComponent>(id))
-                continue;
-
             if (!_singletonServerSystem.IsActiveServer(id))
                 continue;
 
@@ -78,32 +65,19 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Drop the sensor status if it hasn't been updated for too long.
-    /// Two upstream bugs fixed here:
-    /// 1) `dif.Seconds` returns only the seconds component (0-59), not the elapsed total — so
-    ///    a 70-second gap evaluates to 10 and timed-out sensors were getting kept while
-    ///    sensors that had been gone for over a minute looked fresh.
-    /// 2) Calling `Dictionary.Remove` from inside `foreach` on the same dictionary throws
-    ///    `InvalidOperationException` on the next MoveNext, aborting the broadcast tick.
+    /// Drop the sensor status if it hasn't been updated for to long
     /// </summary>
     private void UpdateTimeout(EntityUid uid, CrewMonitoringServerComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
 
-        List<string>? toRemove = null;
         foreach (var (address, sensor) in component.SensorStatus)
         {
             var dif = _gameTiming.CurTime - sensor.Timestamp;
-            if (dif.TotalSeconds > component.SensorTimeout)
-                (toRemove ??= new List<string>()).Add(address);
+            if (dif.Seconds > component.SensorTimeout)
+                component.SensorStatus.Remove(address);
         }
-
-        if (toRemove == null)
-            return;
-
-        foreach (var address in toRemove)
-            component.SensorStatus.Remove(address);
     }
 
     /// <summary>

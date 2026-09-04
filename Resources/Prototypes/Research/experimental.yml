@@ -1,11 +1,3 @@
-# Experimental discipline — tech-tree layout
-#
-# X axis: tier progression (T1 cols 0-2, T2 cols 4-5, T3 col 7)
-# Y axis: themed row clustering inside the Experimental band (rows 11-13)
-#   Row 11  Anomalous research chain
-#   Row 12  Xenoarcheology & alternative research
-#   Row 13  Field manipulation & robotics
-
 # Tier 1
 
 - type: technology
@@ -17,7 +9,6 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 1,13
   recipeUnlocks:
   - ProximitySensor
 
@@ -30,7 +21,6 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 0,11
   recipeUnlocks:
   - AnomalyScanner
   - AnomalyLocator
@@ -47,7 +37,6 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 0,12
   recipeUnlocks:
   - NodeScanner
   - AnalysisComputerCircuitboard
@@ -62,7 +51,6 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 1,12
   recipeUnlocks:
   - TechDiskComputerCircuitboard
 
@@ -75,7 +63,6 @@
   discipline: Experimental
   tier: 1
   cost: 7500
-  position: 0,13
   recipeUnlocks:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
@@ -89,7 +76,6 @@
   discipline: Experimental
   tier: 1
   cost: 10000
-  position: 2,13
   recipeUnlocks:
   - WeaponGauntletGorilla
 
@@ -104,12 +90,8 @@
   discipline: Experimental
   tier: 2
   cost: 5000
-  position: 5,11
   recipeUnlocks:
   - ArtifactCrusherMachineCircuitboard
-  technologyPrerequisites:
-  - BasicXenoArcheology
-
 
 - type: technology
   id: AdvancedAnomalyResearch
@@ -120,7 +102,6 @@
   discipline: Experimental
   tier: 2
   cost: 10000
-  position: 4,11
   recipeUnlocks:
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
@@ -137,13 +118,9 @@
   discipline: Experimental
   tier: 2
   cost: 7500
-  position: 4,13
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
-  technologyPrerequisites:
-  - AlternativeResearch
-
 
 - type: technology
   id: GravityManipulation
@@ -154,14 +131,9 @@
   discipline: Experimental
   tier: 2
   cost: 10000
-  position: 5,13
   recipeUnlocks:
     - WeaponForceGun
     - WeaponTetherGun
-  technologyPrerequisites:
-  - AbnormalArtifactManipulation
-  - AnomalyCoreHarnessing
-
 
 # Tier 3
 
@@ -174,12 +146,8 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  position: 7,11
   recipeUnlocks:
   - DeviceQuantumSpinInverter
-  technologyPrerequisites:
-  - GravityManipulation
-
 
 - type: technology
   id: BluespaceTimeManipulation
@@ -190,14 +158,8 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  position: 7,12
   recipeUnlocks:
   - DeviceDesynchronizer
-<<<<<<< HEAD
-  technologyPrerequisites:
-  - GravityManipulation
-
-=======
 
 - type: technology
   id: TeleSci
@@ -212,4 +174,3 @@
   - StationTeleportersControlCircuitboard
   - StationTeleporterMachineCircuitboard
   - TeleporterChipBlank
->>>>>>> root/master

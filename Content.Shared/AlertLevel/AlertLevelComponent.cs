@@ -10,7 +10,7 @@ namespace Content.Shared.AlertLevel;
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState, AutoGenerateComponentPause]
-[Access(typeof(AlertLevelSystem))]
+[Access(typeof(AlertLevelSystem), Other = AccessPermissions.ReadWrite)]
 public sealed partial class AlertLevelComponent : Component
 {
     /// <summary>

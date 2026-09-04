@@ -43,9 +43,6 @@
   components:
   - type: Anchorable
   - type: Rotatable
-  - type: Tag # _ClawCommand - heretic ritual input (Reminiscence); all chairs/stools inherit
-    tags:
-    - Chair
 
 #Start anchored, cannot be rotated while anchored
 - type: entity
@@ -270,17 +267,7 @@
             volume: -3
       - !type:SpawnEntitiesBehavior
         spawn:
-<<<<<<< HEAD
-          MaterialWoodPlank:
-            min: 1
-            max: 1
-  - type: Tag
-    tags:
-    - Wooden
-    - Chair # _ClawCommand - re-listed from UnanchoredChairBase (Reminiscence ritual); tags don't merge on inheritance
-=======
           MaterialWoodPlank1: *Min0Max1
->>>>>>> root/master
   - type: StaticPrice
     price: 75
 
