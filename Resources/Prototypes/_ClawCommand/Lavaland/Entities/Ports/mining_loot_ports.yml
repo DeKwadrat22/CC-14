@@ -1,0 +1,180 @@
+# Lavaland mining loot spawners + EntityTables ported from Goob (_Lavaland/Entities/Objects/Weapons).
+# Fork already defines CrusherUpgrades and SecondaryKineticWeapons. We add the
+# missing CrusherWeapons, ProtoKineticWeapons[Space], ProtoKineticUpgrades, and
+# the LavalandWeapons composite. Tables reference vanilla fork weapons where
+# available; missing weapon references just produce silent runtime misses.
+
+# --- EntityTables ---
+
+- type: entityTable
+  id: CrusherWeapons
+  table: !type:GroupSelector
+    children:
+    - id: WeaponCrusher
+
+- type: entityTable
+  id: ProtoKineticWeapons
+  table: !type:GroupSelector
+    children:
+    - id: WeaponProtoKineticAccelerator
+
+- type: entityTable
+  id: ProtoKineticWeaponsSpace
+  table: !type:GroupSelector
+    children:
+    - id: WeaponProtoKineticAccelerator
+
+- type: entityTable
+  id: ProtoKineticUpgrades
+  table: !type:GroupSelector
+    children:
+    - id: WeaponProtoKineticAccelerator # placeholder; replace when PKA upgrade items are ported
+
+- type: entityTable
+  id: LavalandWeapons
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: CrusherWeapons
+    - !type:NestedSelector
+      tableId: CrusherUpgrades
+      weight: 2
+    - !type:NestedSelector
+      tableId: ProtoKineticWeapons
+      weight: 0.8
+    - !type:NestedSelector
+      tableId: SecondaryKineticWeapons
+      weight: 0.5
+
+# --- Spawner entities (referenced by Lavaland ruin maps) ---
+
+- type: entity
+  name: crusher weapon spawner
+  id: CrusherWeaponLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Melee/crusher.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: CrusherWeapons
+
+- type: entity
+  name: crusher upgrade spawner
+  id: CrusherUpgradeLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Melee/crusher.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: CrusherUpgrades
+
+- type: entity
+  name: proto-kinetic weapon spawner
+  id: ProtoKineticWeaponLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: ProtoKineticWeapons
+
+- type: entity
+  name: space proto-kinetic weapon spawner
+  id: ProtoKineticWeaponSpaceLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland, Space Upgrade
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: ProtoKineticWeaponsSpace
+
+- type: entity
+  name: proto-kinetic upgrade spawner
+  id: ProtoKineticUpgradeLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: ProtoKineticUpgrades
+
+- type: entity
+  name: secondary kinetic weapon spawner
+  id: SecondaryKineticWeaponLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Melee/crusher.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: SecondaryKineticWeapons
+
+- type: entity
+  name: lavaland weapons loot spawner
+  id: LavalandWeaponLootSpawner
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Melee/crusher.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: LavalandWeapons
+
+# --- Plasma ore stack entity (parent + single variant) ---
+# Fork's `PlasmaOreUnprocessed` is a stack proto, not an entity. We add the
+# entity wrapper here matching Goob's _Lavaland/.../ore.yml.
+- type: entity
+  parent: PlasmaOre
+  id: PlasmaOreUnprocessed
+  name: unprocessed plasma ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: PlasmaOreUnprocessed
+
+- type: entity
+  parent: PlasmaOreUnprocessed
+  id: PlasmaOre1Unprocessed
+  name: unprocessed plasma ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

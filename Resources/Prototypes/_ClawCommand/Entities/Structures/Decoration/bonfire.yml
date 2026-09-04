@@ -1,0 +1,39 @@
+# Decorative lit bonfire ported for asterisk map (Construction graph stripped since
+# the Bonfire construction graph isn't ported — this is a static decorative entity).
+- type: entity
+  id: BonfireLit
+  parent: BaseStructure
+  name: Bonfire
+  description: What can be better then late evening under the sky with guitar and friends.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+      - state: burning
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: AlwaysHot
+  - type: Tag
+    tags:
+      - NoPaint

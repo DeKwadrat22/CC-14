@@ -11,7 +11,9 @@
           mapNameTemplate: "Meteor Arena"
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             Passenger: [ -1, -1 ]
+            Prisoner: [ 5, 5 ] #claw command
 - type: gameMap
   id: dm01-entryway
   mapName: DM01 Entryway
@@ -25,4 +27,6 @@
           mapNameTemplate: "DM01 Entryway"
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             Passenger: [ -1, -1 ]
+            Prisoner: [ 5, 5 ] #claw command

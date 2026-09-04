@@ -107,7 +107,7 @@ namespace Content.Client.UserInterface.Controls
     /// <summary>
     /// Helper functions for working with <see cref="FancyWindow"/>.
     /// </summary>
-    public static class FancyWindowExt
+    public static partial class FancyWindowExt
     {
         /// <summary>
         /// Sets information for a window (title and guidebooks) based on an entity.

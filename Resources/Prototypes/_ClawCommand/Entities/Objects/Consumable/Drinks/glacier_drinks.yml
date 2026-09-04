@@ -1,0 +1,43 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- OilJarCorn ---
+- type: entity
+  parent: BaseOilJar
+  id: OilJarCorn
+  name: jar of corn oil
+  description: A large tinted glass jar with a simple label of a corn stalk on it.
+  components:
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["drinkCanIcon"]
+      - state: corn
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: Cornoil
+          Quantity: 100
+
+# --- BaseOilJar ---
+- type: entity
+  parent: DrinkBottleGlassBaseFull
+  id: BaseOilJar
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Consumable/Drinks/oil_jar.rsi
+    state: icon
+    layers:
+      - state: icon
+        map: ["drinkCanIcon"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        drinkCanIcon:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
+

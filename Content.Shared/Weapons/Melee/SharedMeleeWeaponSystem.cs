@@ -74,7 +74,8 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
     /// <summary>
-    /// Maximum amount of targets allowed for a wide-attack.
+    /// CC: Moved to <see cref="MeleeWeaponComponent"/>
+    /// Maximum number of targets allowed for a wide-attack.
     /// </summary>
     public const int MaxTargets = 5;
 
@@ -645,10 +646,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             return true;
         }
 
+        // CC : Moved these calls to the Component.
         // Naughty input
-        if (entities.Count > MaxTargets)
+        if (entities.Count > component.MaxTargets)
         {
-            entities.RemoveRange(MaxTargets, entities.Count - MaxTargets);
+            entities.RemoveRange(component.MaxTargets, entities.Count - component.MaxTargets);
         }
 
         // Validate client

@@ -1,0 +1,58 @@
+# Candles
+- type: loadout
+  id: LoadoutCandleBox
+  storage:
+    back:
+    - BoxCandle
+  groupBy: "candles"
+
+- type: loadout
+  id: LoadoutSmallCandleBox
+  storage:
+    back:
+    - BoxCandleSmall
+  groupBy: "candles"
+
+- type: loadout
+  id: LoadoutMagicCandleBox
+  storage:
+    back:
+    - BoxCandleInfinite
+  groupBy: "candles"
+
+# Lighters
+- type: loadout
+  id: LoadoutCheapLighter
+  storage:
+    back:
+    - CheapLighter
+  groupBy: "lighters"
+
+- type: loadout
+  id: LoadoutFlippoLighter
+  storage:
+    back:
+    - FlippoLighter
+  groupBy: "lighters"
+
+# Smokeables
+- type: loadout
+  id: LoadoutCigPackMixed
+  storage:
+    back:
+    - CigPackMixed
+  groupBy: "smokeables"
+
+- type: loadout
+  id: LoadoutSmokingPipe
+  storage:
+    back:
+    - SmokingPipeFilledTobacco
+  groupBy: "smokeables"
+
+- type: loadout
+  id: LoadoutCigar
+  storage:
+    back:
+    - Cigar
+  groupBy: "smokeables"

@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 - type: entity
   abstract: true
   parent: [ BaseItem ]
@@ -304,6 +306,8 @@
     borderColor: "#d7d7d0"
   - type: Icon
     state: pda-cook
+  - type: ReplacementAccent # for random sentience event | CC: Re-added
+    accent: italian
 
 - type: entity
   parent: BasePDA
@@ -1005,8 +1009,22 @@
   id: DeathsquadPDA
   suffix: Death Squad
   components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-deathsquad
   - type: Pda
     id: CentcomIDCardDeathsquad
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Devices/pda.rsi
+    state: pda-deathsquad
+  - type: Icon
+    sprite: _ClawCommand/Objects/Devices/pda.rsi
+    state: pda-deathsquad
+  - type: PdaBorderColor
+    borderColor: "#04040a"
+    accentVColor: "#16bab5"
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

@@ -1,0 +1,101 @@
+# Ported from SimpleStation14/benches.yml — only the entities referenced by the
+# CentComm map (Pew, Steel, SofaCorp variants). Construction graph entries are
+# omitted because the upstream `Seat` graph nodes are not present in this fork.
+
+# Base bench (port of BenchBaseMiddle)
+- type: entity
+  parent: SeatBase
+  id: BenchBaseMiddle
+  name: bench
+  description: Multiple seats spanning a single object. Truly a marvel of science.
+  suffix: Middle
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    state: middle
+
+# Pews
+- type: entity
+  name: pew
+  id: BenchPewMiddle
+  parent: BenchBaseMiddle
+  components:
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/pews.rsi
+
+- type: entity
+  id: BenchPewLeft
+  suffix: Left
+  parent: BenchPewMiddle
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  id: BenchPewRight
+  suffix: Right
+  parent: BenchPewMiddle
+  components:
+  - type: Sprite
+    state: right
+
+# Steel benches
+- type: entity
+  name: steel bench
+  id: BenchSteelMiddle
+  parent: BenchBaseMiddle
+  components:
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/steel_bench.rsi
+
+- type: entity
+  id: BenchSteelLeft
+  suffix: Left
+  parent: BenchSteelMiddle
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  id: BenchSteelRight
+  suffix: Right
+  parent: BenchSteelMiddle
+  components:
+  - type: Sprite
+    state: right
+
+# Corp sofa
+- type: entity
+  name: grey sofa
+  id: BenchSofaCorpMiddle
+  placement:
+    mode: SnapgridCenter
+  parent: BenchBaseMiddle
+  components:
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/sofa_corp.rsi
+  - type: StaticPrice
+    price: 30
+
+- type: entity
+  id: BenchSofaCorpLeft
+  suffix: Left
+  parent: BenchSofaCorpMiddle
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  id: BenchSofaCorpRight
+  suffix: Right
+  parent: BenchSofaCorpMiddle
+  components:
+  - type: Sprite
+    state: right

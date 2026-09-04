@@ -1,0 +1,412 @@
+# _ClawCommand: service weapons, ported from the `space` fork's Security weapons loadouts.
+#
+# Costs are space's, unchanged. The role's points budget lives on the roleLoadout prototypes in
+# _ClawCommand/Loadouts/RoleLoadouts/service_weapons.yml; a zero-cost pick carries no effect at all
+# so it stays free even for roles with no budget.
+#
+# Everything here hands out a *CCIssued / *BarkeepIssued variant - the non-contraband twins in
+# _ClawCommand/Entities/Objects/Weapons/issued_weapons.yml - so a service member is never carrying
+# something their own department would book them for.
+#
+# Deliberately absent: the Head of Security and Warden job-specific weapons (WeaponDisablerSMG,
+# WeaponSecurityEnergyShotgun) and the energy revolver, which needs C# this fork does not have.
+
+# ---------------------------------------------------------------------------
+# Duty weapon - one pick
+# ---------------------------------------------------------------------------
+- type: loadout
+  id: CCServiceTruncheon
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 3
+  storage:
+    back:
+    - TruncheonCCIssued
+- type: loadout
+  id: CCServiceEnergyCutlass
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 4
+  storage:
+    back:
+    - EnergyCutlassCCIssued
+- type: loadout
+  id: CCServiceDisabler
+  storage:
+    back:
+    - WeaponDisablerCCIssued
+- type: loadout
+  id: CCServiceMk58
+  storage:
+    back:
+    - WeaponPistolMk58CCIssued
+- type: loadout
+  id: CCServiceMk58Rubber
+  storage:
+    back:
+    - WeaponPistolMk58NonlethalCCIssued
+- type: loadout
+  id: CCServiceInspector
+  storage:
+    back:
+    - WeaponRevolverInspectorCCIssued
+- type: loadout
+  id: CCServiceInspectorRubber
+  storage:
+    back:
+    - WeaponRevolverInspectorNonlethalCCIssued
+- type: loadout
+  id: CCServiceDeckard
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponRevolverDeckardCCIssued
+- type: loadout
+  id: CCServiceDeckardRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponRevolverDeckardNonlethalCCIssued
+- type: loadout
+  id: CCServiceViper
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 5
+  storage:
+    back:
+    - WeaponPistolViperCCIssued
+- type: loadout
+  id: CCServiceViperRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 5
+  storage:
+    back:
+    - WeaponPistolViperNonLethalCCIssued
+- type: loadout
+  id: CCServiceViperWood
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 5
+  storage:
+    back:
+    - WeaponPistolViperWoodCCIssued
+- type: loadout
+  id: CCServiceSvalinn
+  storage:
+    back:
+    - WeaponLaserSvalinnCCIssued
+- type: loadout
+  id: CCServiceSvalinnPDW
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponLaserSvalinnPDWCCIssued
+- type: loadout
+  id: CCServiceEnergyGunMini
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - WeaponEnergyGunMiniCCIssued
+- type: loadout
+  id: CCServiceEnergyGunPistol
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - WeaponEnergyGunPistolCCIssued
+- type: loadout
+  id: CCServicePollock
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponPistolPollockCCIssued
+- type: loadout
+  id: CCServiceSnub
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 3
+  storage:
+    back:
+    - WeaponRevolverSnubCCIssued
+- type: loadout
+  id: CCServiceSnubRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 3
+  storage:
+    back:
+    - WeaponRevolverSnubNonlethalCCIssued
+- type: loadout
+  id: CCServiceK38Master
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponRevolverK38MasterCCIssued
+- type: loadout
+  id: CCServiceK38MasterRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 1
+  storage:
+    back:
+    - WeaponRevolverK38MasterNonlethalCCIssued
+- type: loadout
+  id: CCServiceFitz
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - WeaponRevolverFitzCCIssued
+- type: loadout
+  id: CCServiceFitzRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - WeaponRevolverFitzNonlethalCCIssued
+- type: loadout
+  id: CCServicePython
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 5
+  storage:
+    back:
+    - WeaponRevolverPythonCCIssued
+- type: loadout
+  id: CCServicePythonRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 5
+  storage:
+    back:
+    - WeaponRevolverPythonNonlethalCCIssued
+- type: loadout
+  id: CCServiceArgenti
+  storage:
+    back:
+    - WeaponRevolverArgentiCCIssued
+- type: loadout
+  id: CCServiceArgentiRubber
+  storage:
+    back:
+    - WeaponRevolverArgentiNonlethalCCIssued
+
+# ---------------------------------------------------------------------------
+# Equipment and ammunition - up to three picks
+# ---------------------------------------------------------------------------
+- type: loadout
+  id: CCServiceEquipCombatKnife
+  storage:
+    back:
+    - CombatKnife
+- type: loadout
+  id: CCServiceEquipFlash
+  storage:
+    back:
+    - Flash
+# Claw Command - every ammunition entry below is paired with an identical `...Spare`. A loadout can only
+# be selected once, so carrying two of the same magazine or speedloader is impossible without a second
+# prototype to tick. The spares are deliberate duplicates: same item, same cost, no name of their own -
+# LoadoutPrototype has no name field, so both render from the item and read as two of the same thing in
+# the list, which is precisely what picking a spare means.
+- type: loadout
+  id: CCServiceEquipMagazinePistol
+  storage:
+    back:
+    - MagazinePistol
+- type: loadout
+  id: CCServiceEquipMagazinePistolSpare
+  storage:
+    back:
+    - MagazinePistol
+- type: loadout
+  id: CCServiceEquipMagazinePistolRubber
+  storage:
+    back:
+    - MagazinePistolRubber
+- type: loadout
+  id: CCServiceEquipMagazinePistolRubberSpare
+  storage:
+    back:
+    - MagazinePistolRubber
+- type: loadout
+  id: CCServiceEquipSpeedLoaderMagnum
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnum
+- type: loadout
+  id: CCServiceEquipSpeedLoaderMagnumSpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnum
+- type: loadout
+  id: CCServiceEquipSpeedLoaderMagnumRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnumRubber
+- type: loadout
+  id: CCServiceEquipSpeedLoaderMagnumRubberSpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderMagnumRubber
+- type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavy
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavy
+- type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavySpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavy
+- type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavyRubber
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavyRubber
+- type: loadout
+  id: CCServiceEquipSpeedLoaderRifleHeavyRubberSpare
+  effects:
+  - !type:PointsCostLoadoutEffect
+    cost: 2
+  storage:
+    back:
+    - SpeedLoaderRifleHeavyRubber
+
+# ---------------------------------------------------------------------------
+# Bar defence - one pick, always free
+# ---------------------------------------------------------------------------
+- type: loadout
+  id: BarkeepWeaponDoubleBarrel
+  storage:
+    back:
+    - WeaponShotgunDoubleBarreledRubberBarkeepIssued
+- type: loadout
+  id: BarkeepWeaponMosin
+  storage:
+    back:
+    - WeaponSniperMosinRubberBarkeepIssued
+- type: loadout
+  id: BarkeepWeaponRepeater
+  storage:
+    back:
+    - WeaponSniperRepeaterNonlethalBarkeepIssued
+- type: loadout
+  id: BarkeepWeaponArgenti
+  storage:
+    back:
+    - WeaponRevolverArgentiNonlethalBarkeepIssued
+- type: loadout
+  id: BarkeepWeaponBrassKnuckles
+  storage:
+    back:
+    - WeaponBrassKnucklesBarkeepIssued
+
+# ---------------------------------------------------------------------------
+# Groups
+# ---------------------------------------------------------------------------
+- type: loadoutGroup
+  id: CCServiceWeapon
+  name: loadout-group-cc-service-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCServiceTruncheon
+  - CCServiceEnergyCutlass
+  - CCServiceDisabler
+  - CCServiceMk58
+  - CCServiceMk58Rubber
+  - CCServiceInspector
+  - CCServiceInspectorRubber
+  - CCServiceDeckard
+  - CCServiceDeckardRubber
+  - CCServiceViper
+  - CCServiceViperRubber
+  - CCServiceViperWood
+  - CCServiceSvalinn
+  - CCServiceSvalinnPDW
+  - CCServiceEnergyGunMini
+  - CCServiceEnergyGunPistol
+  - CCServicePollock
+  - CCServiceSnub
+  - CCServiceSnubRubber
+  - CCServiceK38Master
+  - CCServiceK38MasterRubber
+  - CCServiceFitz
+  - CCServiceFitzRubber
+  - CCServicePython
+  - CCServicePythonRubber
+  - CCServiceArgenti
+  - CCServiceArgentiRubber
+
+# Three picks stands in for space's separate "spare" duplicates: rather than a second prototype per
+# magazine, the group limit is what lets an officer pack extra.
+- type: loadoutGroup
+  id: CCServiceEquipment
+  name: loadout-group-cc-service-equipment
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - CCServiceEquipCombatKnife
+  - CCServiceEquipFlash
+  - CCServiceEquipMagazinePistol
+  - CCServiceEquipMagazinePistolSpare
+  - CCServiceEquipMagazinePistolRubber
+  - CCServiceEquipMagazinePistolRubberSpare
+  - CCServiceEquipSpeedLoaderMagnum
+  - CCServiceEquipSpeedLoaderMagnumSpare
+  - CCServiceEquipSpeedLoaderMagnumRubber
+  - CCServiceEquipSpeedLoaderMagnumRubberSpare
+  - CCServiceEquipSpeedLoaderRifleHeavy
+  - CCServiceEquipSpeedLoaderRifleHeavySpare
+  - CCServiceEquipSpeedLoaderRifleHeavyRubber
+  - CCServiceEquipSpeedLoaderRifleHeavyRubberSpare
+
+- type: loadoutGroup
+  id: BarkeepWeapon
+  name: loadout-group-barkeep-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - BarkeepWeaponDoubleBarrel
+  - BarkeepWeaponMosin
+  - BarkeepWeaponRepeater
+  - BarkeepWeaponArgenti
+  - BarkeepWeaponBrassKnuckles

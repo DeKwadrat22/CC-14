@@ -283,6 +283,7 @@
     - id: PowerCellMedium
     - id: DoubleEmergencyOxygenTankFilled
     - id: DoubleEmergencyNitrogenTankFilled
+    - id: EmergencyTankDoubleExtendedWaterVaporFilled # _ClawCommand: Added.
 
 - type: entityTable
   id: ToiletCisternUtilityTable

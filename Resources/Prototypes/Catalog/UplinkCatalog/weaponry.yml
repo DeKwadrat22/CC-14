@@ -1,5 +1,21 @@
 # Weaponry
 
+# Claw Command
+# Fuck you. Removing the item was stupid. Even if it was supposedly "Niche"
+# More Niche items include but are not limited to; Mosin, Cybersun Pen, THE ENTIRE POINTLESS TAB, syndicate PAI, holoparasite, holoclown, syndi soap, grenade penguin, ECT.
+- type: listing
+  id: UplinkRevolverPython
+  name: uplink-revolver-python-name
+  description: uplink-revolver-python-desc
+  productEntity: WeaponRevolverPythonAP
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 7 # Claw | Price increased as per Steele's request. +1 mwahah :3 - Steele
+  categories:
+  - UplinkWeaponry
+
 - type: listing
   id: UplinkPistolViper
   name: uplink-pistol-viper-name
@@ -33,6 +49,8 @@
   name: uplink-rifle-mosin-name
   description: uplink-rifle-mosin-desc
   productEntity: WeaponSniperMosin
+  discountDownTo: # Claw | Such a terrible and rarely used weapon, the discount will help incentivise experimenting, and goofy loadouts.
+    Telecrystal: 0
   cost:
     Telecrystal: 1
   categories:
@@ -136,11 +154,11 @@
     Telecrystal: 8
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+#  conditions: # CLAW COMMAND: Controversial change.
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
 
 - type: listing
   id: uplinkRiggedBoxingGloves

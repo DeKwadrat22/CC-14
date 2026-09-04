@@ -34,8 +34,8 @@
       prob: 0.05
     - id: SubXenoborgs
       prob: 0.05
-    - id: Changeling
-      prob: 0.25
+    - id: CalmHeretic # _ClawCommand: heretic as a sub-event during extended/secret/irregular
+      prob: 0.15
 
 - type: entity
   parent: BaseGameRule
@@ -47,8 +47,6 @@
       prob: 0.5
     - id: SubXenoborgs
       prob: 0.05
-    - id: Changeling
-      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -60,8 +58,8 @@
       prob: 0.5
     - id: SubWizard
       prob: 0.05
-    - id: Changeling
-      prob: 0.25
+    - id: CalmHeretic # _ClawCommand: heretic as a sub-event
+      prob: 0.15
 
 - type: entity
   parent: BaseGameRule
@@ -71,8 +69,6 @@
     rules:
     - id: Thief
       prob: 0.5
-    - id: Changeling
-      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -219,11 +215,7 @@
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 20
-    delay:
-      min: 240
-      max: 420
-    cancelPresetOnTooFewPlayers: false
+    minPlayers: 25
   - type: AntagSelection
     agentName: changeling-round-end-agent-name
     antags:
@@ -242,8 +234,6 @@
     - groups: ChangelingObjectiveGroupKillDummy
       maxPicks: 1
     maxDifficulty: 8
-  - type: DynamicRuleCost
-    cost: 75
 
 - type: entity
   id: Revolutionary
@@ -301,7 +291,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 15 # Claw Command - was 10.
   - type: DynamicRuleCost
     cost: 150
 

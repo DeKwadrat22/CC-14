@@ -37,6 +37,21 @@ public sealed partial class SuitSensorSystem : SharedSuitSensorSystem
             if (status == null)
                 continue;
 
+            // Claw Command: periodically nudge the cached ConnectedServer so it
+            // self-heals from stale state — the singleton crew monitor server
+            // flickered off and came back under a new address, the station's
+            // active server got swapped mid-round, a sensor crossed a station
+            // boundary, etc. The block immediately below does the actual lookup
+            // when ConnectedServer is null. We never touch the broadcast path,
+            // the timeout dict, or the per-sensor NextUpdate cadence — if the
+            // refresh lookup happens to fail this tick we just skip the same
+            // way an initial lookup would, and try again next tick.
+            if (curTime >= sensor.NextServerResolve)
+            {
+                sensor.ConnectedServer = null;
+                sensor.NextServerResolve = curTime + sensor.ServerResolveInterval;
+            }
+
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
             {

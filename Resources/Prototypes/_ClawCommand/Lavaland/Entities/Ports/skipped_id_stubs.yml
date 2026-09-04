@@ -1,0 +1,12 @@
+# Minimal entity prototypes for IDs the maps referenced but I previously skipped.
+# NightVisionGoggles stub removed — real implementation now lives in
+# Resources/Prototypes/_ClawCommand/Entities/Clothing/Eyes/goggles.yml with a full
+# Goob NightVision overlay system port. SyringeGun stub kept until real port.
+
+# --- Syringe Gun ---
+# Reparent to Pistol Mk58 so it exists as a holdable weapon. No syringe-shoot.
+- type: entity
+  parent: WeaponPistolMk58
+  id: SyringeGun
+  name: syringe gun
+  description: A pistol that fires syringes. (Stub — fires conventional pistol rounds for now.)

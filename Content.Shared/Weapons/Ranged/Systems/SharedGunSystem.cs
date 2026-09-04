@@ -647,7 +647,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// Used for animated effects on the client.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class HitscanEvent : EntityEventArgs
+    public sealed partial class HitscanEvent : EntityEventArgs
     {
         public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = [];
     }

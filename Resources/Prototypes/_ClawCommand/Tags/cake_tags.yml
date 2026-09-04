@@ -1,0 +1,14 @@
+- type: Tag
+  id: CakeBase
+
+# DrinkGlass tag: marker for drinking-glass entities (used by ported Floof/DeltaV/Nyano glasses).
+- type: Tag
+  id: DrinkGlass
+
+# HidesNose tag: marker for masks that hide nose layer (used by ClothingMaskGasMuffled).
+- type: Tag
+  id: HidesNose
+
+# Skirt tag: marker for skirt/dress uniforms allowing nonhuman legs (used by WeddingDress).
+- type: Tag
+  id: Skirt

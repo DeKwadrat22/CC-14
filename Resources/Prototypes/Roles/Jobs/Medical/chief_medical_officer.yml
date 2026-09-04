@@ -1,3 +1,4 @@
+# !! CLAW COMMAND MODIFIED !! #
 # Best job.
 
 - type: job
@@ -6,12 +7,12 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 2.5h
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 5h
+    #- !type:RoleTimeRequirement # claw command commented out.
+    #  role: JobChemist
+    #  time: 2.5h
+    #- !type:RoleTimeRequirement
+    #  role: JobMedicalDoctor
+    #  time: 5h
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 10h
@@ -26,6 +27,7 @@
   - ChiefMedicalOfficer
   - Brig
   - Cryogenics
+  - Psychologist # _ClawCommand: Added.
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

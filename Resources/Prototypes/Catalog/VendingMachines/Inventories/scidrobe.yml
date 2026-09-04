@@ -15,5 +15,7 @@
     ClothingOuterWinterSci: 2
     ClothingNeckScarfStripedPurple: 3
     ClothingShoesBootsWinterSci: 2
+    ClothingHandsEpiWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksEpi: 1 # Claw Command - Floof
   contrabandInventory:
     ToyFigurineResearchDirector: 1  

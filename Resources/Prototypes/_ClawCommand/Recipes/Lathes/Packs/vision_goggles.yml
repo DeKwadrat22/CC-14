@@ -1,0 +1,12 @@
+# Dynamic pack — added to the Protolathe's dynamicPacks list. Wraps the goggle
+# recipes from /Recipes/Lathes/goggles.yml so that NightVisionTech and
+# ThermalVisionTech research unlocks actually surface in a printer menu.
+# Without this pack reference no lathe ever discovers the recipes.
+- type: latheRecipePack
+  id: VisionGoggles
+  recipes:
+  - ClothingEyesNightVisionGoggles
+  - ClothingEyesNightVisionSecurityGoggles
+  - ClothingEyesNightVisionMedicalGoggles
+  - ClothingEyesNightVisionDiagnosticGoggles
+  - ClothingEyesThermalVisionGoggles

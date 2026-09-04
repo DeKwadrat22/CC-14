@@ -1,0 +1,408 @@
+
+using Robust.Shared.Console;
+using Content.Server.Administration;
+using Content.Shared.Administration;
+using System.Linq;
+using Content.Server.Spawners.Components;
+using Robust.Shared.Prototypes;
+using Content.Shared.Roles;
+using Content.Server.Chat.Systems;
+using Content.Server.ClawCommand.Cabinet.Components;
+using Content.Shared.Inventory;
+using Content.Shared.Station.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
+using Content.Server.Discord;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
+using Content.Shared.Players;
+using Robust.Shared.Network;
+using Content.Shared.Roles.Jobs;
+using Content.Shared.Preferences;
+using Content.Server.Preferences.Managers;
+using Content.Server.Mind;
+using Content.Server.Station.Systems;
+namespace Content.Server._ClawCommand.Ert;
+
+internal sealed partial class ErtSystem : EntitySystem
+{
+
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private IServerPreferencesManager _prefs = default!;
+    [Dependency] private IConsoleHost _consoleHost = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private DiscordWebhook _discord = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+
+    public ProtoId<JobPrototype>? SecurityPrototype = "RandomHumanoidSpawnerERTSecurity";
+    public ProtoId<JobPrototype>? MedicalPrototype = "RandomHumanoidSpawnerERTMedical";
+    public ProtoId<JobPrototype>? LeaderPrototype = "RandomHumanoidSpawnerERTLeader";
+    public ProtoId<JobPrototype>? AdmiralPrototype = "RandomHumanoidSpawnerAdmiralClaw";
+    IEnumerable<String> _ertTypes = ["security"];
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _consoleHost.RegisterCommand("ert", Loc.GetString("ert-command-desc"), "ert type amount discordNotify admiral admiralMe",
+            ErtCallback,
+            GetCompletion);
+    }
+
+    [AdminCommand(AdminFlags.Admin)]
+    public void ErtCallback(IConsoleShell shell, string argStr, string[] args)
+    {
+
+        if (args.Length > 5 || args.Length < 1)
+        {
+            shell.WriteError("Needs at least one argument (type).");
+            return;
+        }
+
+        var type = args[0].ToLowerInvariant();
+        if (!_ertTypes.Contains(type))
+        {
+            shell.WriteError("Invalid type.");
+            return;
+        }
+
+        var amount = 4;
+        if (args.Length > 1 && !int.TryParse(args[1], out amount))
+        {
+            shell.WriteError("Unable to parse amount.");
+            return;
+        }
+        if (amount <= 0)
+        {
+            shell.WriteError("Amount must be a positive integer.");
+            return;
+        }
+        if (amount > 14)
+        {
+            shell.WriteError("Amount must be less than or equal to 14.");
+            return;
+        }
+
+        bool discordNotify = false;
+        if (args.Length > 2 && !bool.TryParse(args[2], out discordNotify))
+        {
+            shell.WriteError("Unable to parse discordNotify.");
+            return;
+        }
+        bool admiral = false;
+        if (args.Length > 3 &&
+            !bool.TryParse(args[3], out admiral))
+        {
+            shell.WriteError("Unable to parse admiral.");
+            return;
+        }
+        bool admiralMe = false;
+        if (args.Length > 4 &&
+            !bool.TryParse(args[4], out admiralMe))
+        {
+            shell.WriteError("Unable to parse admiralMe.");
+            return;
+        }
+
+        if (type == "security")
+        {
+            // Reset counts
+            int securityAmount = 0;
+            int medicalAmount = 0;
+
+            if (amount > 0)
+            {
+                // One leader always takes one slot
+                int remaining = amount - 1;
+
+                if (remaining > 0)
+                {
+                    // Ratio 1 medical : 4 security
+                    const int medicalRatio = 1;
+                    const int securityRatio = 4;
+                    const int ratioTotal = medicalRatio + securityRatio;
+
+                    medicalAmount = (int) Math.Round((double) remaining * medicalRatio / ratioTotal);
+                    securityAmount = remaining - medicalAmount;
+
+                    // Enforce minimum medical rule
+                    if (medicalAmount == 0 && amount >= 3)
+                    {
+                        medicalAmount = 1;
+                        securityAmount = remaining - medicalAmount;
+                    }
+                }
+            }
+
+            var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+            var unitName = SecurityUnitNameGenerator.Generate();
+
+            int securityI = 0;
+            int medicalI = 0;
+            while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+            {
+                var isMatchingSecurityJob = spawnPoint.Job?.Id == "ERTSecurity";
+                var isMatchingMedicalJob = spawnPoint.Job?.Id == "ERTMedical";
+                var isMatchingLeaderJob = spawnPoint.Job?.Id == "ERTLeader";
+                var isMatchingAdmiralJob = spawnPoint.Job?.Id == "AdmiralClaw";
+
+                EntityUid? mob = null;
+                if (securityI < securityAmount && isMatchingSecurityJob)
+                {
+                    mob = Spawn(SecurityPrototype, xform.Coordinates);
+                    securityI++;
+
+                }
+                else if (medicalI < medicalAmount && isMatchingMedicalJob)
+                {
+                    mob = Spawn(MedicalPrototype, xform.Coordinates);
+                    medicalI++;
+                }
+                else if (isMatchingLeaderJob)
+                {
+                    mob = Spawn(LeaderPrototype, xform.Coordinates);
+                }
+                else if (isMatchingAdmiralJob && admiral)
+                {
+                    if (admiralMe)
+                    {
+                        if (shell.Player is null)
+                        {
+                            shell.WriteLine("You must be Player.");
+                            continue;
+                        }
+                        if (shell.Player is not ICommonSession player)
+                        {
+                            shell.WriteError(Loc.GetString("shell-only-players-can-run-this-command"));
+                            return;
+                        }
+                        if (shell.Player.AttachedEntity is null)
+                        {
+                            shell.WriteLine("You must be attached to an entity, observe as ghost.");
+                            continue;
+                        }
+                        if (!_mindSystem.TryGetMind(shell.Player.AttachedEntity.Value, out var mindId, out var mind))
+                        {
+                            shell.WriteLine("You must have a mind, try observe as ghost.");
+                            continue;
+
+                        }
+
+                        var data = player.ContentData();
+                        if (data?.UserId == null)
+                        {
+                            shell.WriteError(Loc.GetString("shell-entity-is-not-mob"));
+                            continue;
+                        }
+
+                        HumanoidCharacterProfile character;
+
+                        character = (HumanoidCharacterProfile) _prefs.GetPreferences(data.UserId).SelectedCharacter;
+
+                        mob = _entityManager.System<StationSpawningSystem>()
+                .SpawnPlayerMob(xform.Coordinates, "AdmiralClaw", character, null);
+
+                        _mindSystem.TransferTo(mindId, mob);
+
+                    }
+                    else
+                    {
+                        mob = Spawn(AdmiralPrototype, xform.Coordinates);
+                    }
+                }
+            }
+            var admiralText = "";
+            if (admiral)
+            {
+                admiralText = " and 1 admiral";
+            }
+            // Claw Command — robust station lookup. Prefer the station with
+            // CaptainStateComponent (the "main" station). If no station has it
+            // (e.g. on maps where the captain state cabinet wasn't placed),
+            // fall back to ANY StationDataComponent so the ERT announcement
+            // still fires for players.
+            var mainStation = EntityQueryEnumerator<CaptainStateComponent>();
+            EntityUid? station = null;
+            while (mainStation.MoveNext(out var uid, out var _))
+            {
+                station = uid;
+                break;
+            }
+            if (station is null)
+            {
+                var anyStation = EntityQueryEnumerator<StationDataComponent>();
+                while (anyStation.MoveNext(out var uid, out var _))
+                {
+                    station = uid;
+                    break;
+                }
+            }
+            if (station is null)
+            {
+                shell.WriteError("No station found to broadcast the ERT announcement to.");
+                return;
+            }
+            shell.WriteLine($"{unitName} detached. Spawning {securityI} security staff, {medicalI} medical staff, 1 leader" + admiralText + ".");
+            _chatSystem.DispatchStationAnnouncement(station.Value, "Emergency Response: " + unitName + " is being detached and briefed at centcomm. ETA 10 minutes.",
+                sender: "Claw Command",
+                announcementSound: new SoundPathSpecifier("/Audio/Misc/redalert.ogg"),
+                colorOverride: Color.FromHex("#ff2768ff"));
+            if (discordNotify)
+            {
+                try
+                {
+                    SendERTDiscordMessage(amount);
+                }
+                catch (Exception e)
+                {
+                    Log.Error($"Error while sending ert Discord message: {e}");
+                }
+            }
+
+        }
+
+    }
+
+    private async void SendERTDiscordMessage(int amount)
+    {
+        try
+        {
+            var webhookIdentifier = _cfg.GetCVar(CCVars.DiscordERTNotificationWebhook);
+            if (webhookIdentifier == null)
+                return;
+            if (await _discord.GetWebhook(webhookIdentifier) is not { } identifier)
+                return;
+
+            var discordRoundEndRoleWebhook = _cfg.GetCVar(CCVars.DiscordERTNotificationRoleWebhook);
+
+            if (discordRoundEndRoleWebhook == null)
+                return;
+
+            var content = "<@&" + discordRoundEndRoleWebhook + "> attention, an emergency response is in progress. An ERT team with " + amount + " members has been tasked. Help is requested! Please join the response team at centcomm to get briefed.";
+            var payload = new WebhookPayload { Content = content };
+            payload.AllowedMentions.AllowRoleMentions();
+
+            await _discord.CreateMessage(identifier.ToIdentifier(), payload);
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Error while sending discord ert message:\n{e}");
+        }
+    }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+        {
+            return CompletionResult.FromHintOptions(_ertTypes, "Determines which type of ERT roles spawn.");
+        }
+        else if (args.Length == 2)
+        {
+            return CompletionResult.FromHintOptions(["4"], "Optional integer: Amount of ERT roles to spawn, excludes admiral. By default with admiral enabled it is 4+1=5 total.");
+        }
+        else if (args.Length == 3)
+        {
+            return CompletionResult.FromHintOptions(["false"], "Optional boolean: Notify Discord (ONLY ONE NOTIFY PER ROUND).");
+        }
+        else if (args.Length == 4)
+        {
+            return CompletionResult.FromHintOptions(["false"], "Optional boolean: Spawn admin only admiral role.");
+        }
+        else if (args.Length == 5)
+        {
+            return CompletionResult.FromHintOptions(["false"], "Optional boolean: Admiral comes in as your currently selected character. Won't work if you admin ghosted. Respawn to lobby and observe as your char and then do the command without having entered aghost.");
+        }
+
+        return CompletionResult.Empty;
+    }
+    // copy of Content.Server.DeltaV.Administration.Commands;
+    public bool FetchCharacters(NetUserId player, out HumanoidCharacterProfile[] characters)
+    {
+        characters = null!;
+        if (!_prefs.TryGetCachedPreferences(player, out var prefs))
+            return false;
+
+        characters = prefs.Characters
+            .Where(kv => kv.Value is HumanoidCharacterProfile)
+            .Select(kv => (HumanoidCharacterProfile) kv.Value)
+            .ToArray();
+
+        return true;
+    }
+}
+
+
+public static partial class SecurityUnitNameGenerator
+{
+    private static readonly Random Rng = new Random();
+
+    private static readonly string[] CoreNames =
+    {
+        "Aegis", "Iron", "Obsidian", "Vanguard",
+        "Sentinel", "Helios", "Phalanx", "Nova",
+        "Atlas", "Onyx", "Cerberus", "Delta", "Sigma", "Omega", "Alpha", "Beta"
+    };
+
+    private static readonly string[] Suffixes =
+    {
+        "Wing","Task Group","Division","Detachment","Unit", "Team", "Squad", "Response"
+    };
+
+    public static string Generate()
+    {
+        var name = Pick(CoreNames);
+
+        // 70% chance to add a short suffix
+        if (Chance(0.7f))
+            name += " " + Pick(Suffixes);
+
+        // 60% chance to add a number between 1-14
+        if (Chance(0.6f))
+        {
+            var number = Rng.Next(1, 15);
+            name += Chance(0.5f)
+                ? $"-{number}"
+                : $" {number}";
+        }
+
+        return name;
+    }
+
+    private static string Pick(string[] array)
+        => array[Rng.Next(array.Length)];
+
+    private static bool Chance(float probability)
+        => Rng.NextDouble() < probability;
+
+    public static (int leader, int medical, int security) DistributeSecurity(int total)
+    {
+        if (total <= 0)
+            return (0, 0, 0);
+
+        int leader = 1;
+        int remaining = total - leader;
+
+        if (remaining <= 0)
+            return (leader, 0, 0);
+
+        // Ratio parts: 1 medical, 4 security
+        const int medicalRatio = 1;
+        const int securityRatio = 4;
+        const int ratioTotal = medicalRatio + securityRatio;
+
+        int medical = (int) Math.Round((double) remaining * medicalRatio / ratioTotal);
+        int security = remaining - medical;
+
+        // Enforce minimum medical rule
+        if (medical == 0 && total >= 3)
+        {
+            medical = 1;
+            security = remaining - medical;
+        }
+
+        return (leader, medical, security);
+    }
+
+
+}

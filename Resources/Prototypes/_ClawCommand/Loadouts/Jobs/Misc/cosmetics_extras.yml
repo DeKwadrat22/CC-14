@@ -1,0 +1,11 @@
+# Misc cosmetic loadouts ported from Goob.
+
+- type: loadout
+  id: SecurityHelmetAlt
+  equipment:
+    head: ClothingHeadHelmetBasicAlt
+
+- type: loadout
+  id: ReporterDress
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtReporter

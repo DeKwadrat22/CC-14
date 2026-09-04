@@ -8,6 +8,7 @@
   - BaseMobAnimal
   abstract: true
   components:
+  - type: WeatherImmune # _ClawCommand: lavaland Ashfall heat 4/s — mirrors Goob asteroid.yml.
   - type: Reactive
     groups:
       Flammable: [Touch]

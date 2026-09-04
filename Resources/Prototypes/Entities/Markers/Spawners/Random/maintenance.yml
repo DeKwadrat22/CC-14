@@ -203,6 +203,10 @@
         children:
         - id: NitrogenTankFilled
         - id: DoubleEmergencyNitrogenTankFilled
+      - !type:GroupSelector # _ClawCommand: Filled.
+        children:
+        - id: TankWaterVaporFilled
+        - id: EmergencyTankDoubleExtendedWaterVaporFilled
       - id: EmergencyFunnyOxygenTankFilled
         weight: 0.5
       - !type:GroupSelector
@@ -358,6 +362,13 @@
       - id: ClothingHandsKnuckleDusters
       - !type:NestedSelector
         tableId: AllToyWeaponsTable
+      # claw command
+      - id: WhipPink
+      - id: WhipTeal
+      - id: WhipPinkCrotch
+      - id: WhipTealCrotch
+      - id: SpankPinkPaddle
+      - id: SpankTealPaddle
 
 - type: entity
   name: Maint Loot Spawner

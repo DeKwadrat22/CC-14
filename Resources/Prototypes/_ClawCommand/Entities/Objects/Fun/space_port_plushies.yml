@@ -1,0 +1,50 @@
+# _ClawCommand: plushies ported from space.
+#
+# Survey-correction: 34 plushie candidates, per-ID verified — only 2 actually missing here:
+#   PlushieArachne / PlushieShadowkin (real entities in space).
+#   PlushieDiona SKIPPED — already in fork as Entities/Objects/Fun/Plushies/plushies.yml:560.
+#     (Caught after initial verification missed the trailing-comment ID; re-verified with word boundary.)
+#   PlushieJester SKIPPED — ghost recipe in space (no entity proto exists).
+#
+# Adaptations:
+#   - PlushieShadowkin in space points at `Voice/Shadowkin/mar.ogg` and a Nyanotrasen Felinid mew.
+#     The fork keeps shadowkin audio under `_ClawCommand/Voice/Shadowkin/` and cat mews under
+#     `Animals/cat_meow*.ogg` — paths are repointed accordingly.
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieArachne
+  name: Arachne plushie
+  description: A plushie of an Arachne, a half human, half spider creature. Why does it look familiar?
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_arachne
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Human/female_sigh.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieShadowkin
+  name: shadowkin plushie
+  description: A plushie of a Shadowkin. It's very soft.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: shadowkin
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_ClawCommand/Voice/Shadowkin/mar.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/cat_meow.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_ClawCommand/Voice/Shadowkin/mar.ogg

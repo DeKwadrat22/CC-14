@@ -9,6 +9,11 @@
     slots: [innerclothing]
     equipSound:
       path: /Audio/Items/jumpsuit_equip.ogg
+  - type: HideLayerClothing # Claw Command - hide genital layers when wearing a uniform
+    layers:
+      Genital: INNERCLOTHING
+      Penis: INNERCLOTHING
+      Breasts: INNERCLOTHING
   - type: ToolRefinable
     refineResult:
     - id: MaterialCloth1

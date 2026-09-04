@@ -82,6 +82,28 @@ public sealed partial class SuitSensorComponent : Component
     public string? ConnectedServer = null;
 
     /// <summary>
+    ///     Claw Command: how often the sensor should force a fresh lookup of its
+    ///     <see cref="ConnectedServer"/>, even when the cached address still looks
+    ///     valid. Without this we'd keep blasting packets at a singleton that was
+    ///     replaced or briefly went down — the existing IsAddressPresent fast-path
+    ///     in <c>SuitSensorSystem.Update</c> only catches the case where the address
+    ///     literally vanishes from the network, not stale routing after a power
+    ///     flicker, station-server swap, or map-load transient.
+    /// </summary>
+    [DataField]
+    public TimeSpan ServerResolveInterval = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    ///     Claw Command: timestamp at which the next forced <see cref="ConnectedServer"/>
+    ///     re-resolution may happen. Initialised to <c>TimeSpan.Zero</c> so the first
+    ///     sensor tick after spawn always re-resolves, then advances by
+    ///     <see cref="ServerResolveInterval"/> on each refresh.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
+    public TimeSpan NextServerResolve = TimeSpan.Zero;
+
+    /// <summary>
     /// The previous mode of the suit. This is used to restore the state when an EMP effect ends.
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables]

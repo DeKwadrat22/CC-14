@@ -225,7 +225,7 @@ public sealed partial class DoAfterArgs
         NetUsed = entManager.GetNetEntity(Used);
     }
 
-    private DoAfterArgs()
+    internal DoAfterArgs() // Claw Command change from private to internal
     {
     }
 

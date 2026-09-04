@@ -1,0 +1,175 @@
+# Xenomorph entities ported from Goob (_White/Xenomorphs + spawn markers).
+# Statics are decoration-only: the full xeno antag system (egg-hatching, queen
+# evolution, acid blood, infection) is not ported — Resin walls/doors/weeds and
+# eggs spawn as inert props. Spawn markers point at the fork's existing
+# MobXeno* entities at Entities/Mobs/NPCs/xeno.yml.
+
+# Spawn markers — wire Goob's IDs to the fork's existing xeno mobs.
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobXenomorphDrone
+  name: ghost role spawn point
+  suffix: xeno drone
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobXenoDrone
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Aliens/Xenos/drone.rsi
+      state: running
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobXenomorphPraetorian
+  name: ghost role spawn point
+  suffix: xeno praetorian
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobXenoPraetorian
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Aliens/Xenos/praetorian.rsi
+      state: running
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobXenomorphQueen
+  name: ghost role spawn point
+  suffix: xeno queen
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobXenoQueen
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Aliens/Xenos/queen.rsi
+      state: running
+
+# Statics — decoration-only resin/walls/eggs.
+- type: entity
+  parent: BaseStructure
+  id: WallResin
+  name: resin wall
+  description: Thick resin solidified into a wall.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid.rsi
+    state: rgeneric
+  - type: Icon
+    sprite: Structures/Walls/solid.rsi
+    state: rgeneric
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        layer:
+        - WallLayer
+
+# Decoration-only resin door. Reparented to BaseStructure because the Airlock parent layers
+# in closed_unlit/welded/bolted_unlit/emergency_unlit/panel_open/sparks states that the resin
+# door RSI doesn't have, which spammed sprite errors. Sprite from the fork's _RMC14 xeno set.
+- type: entity
+  parent: BaseStructure
+  id: ResinDoor
+  name: resin door
+  description: Thick resin solidified into a door.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_door.rsi
+    state: resin
+    drawdepth: Doors
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: BaseStructure
+  id: ResinNest
+  name: resin nest
+  description: A nest formed of cured resin. You could probably climb in.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: nest_overlay
+    drawdepth: BelowFloor
+
+- type: entity
+  parent: BaseStructure
+  id: ResinWeed
+  name: resin weeds
+  description: Tendrils of cured resin spreading out across the floor.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: weed0
+    drawdepth: BelowFloor
+
+- type: entity
+  parent: ResinWeed
+  id: ResinWeedNode
+  suffix: node
+  name: resin weed node
+  description: A cluster of resin at the source of the weed spread.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: weednode
+    drawdepth: BelowFloor
+
+- type: entity
+  parent: BaseStructure
+  id: XenomorphEggBurst
+  name: hatched xeno egg
+  description: A xenomorph egg, opened. Whatever was inside is loose now.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
+    state: egg_opened
+
+- type: entity
+  parent: BaseItem
+  id: OrganXenomorphStomach
+  name: xenomorph stomach
+  description: A stomach that smells faintly of acid. From a xenomorph.
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: stomach

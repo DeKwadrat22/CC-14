@@ -144,7 +144,7 @@ internal sealed partial class ChatManager : IChatManager
 
             DebugTools.AssertNotNull(adminData);
 
-            if (adminData == null)
+            if (adminData == null || !adminData.Flags.HasFlag(AdminFlags.Admin))
                 return false;
 
             if (flagBlacklist != null && adminData.HasFlag(flagBlacklist.Value))
@@ -291,7 +291,18 @@ internal sealed partial class ChatManager : IChatManager
 
         Color? colorOverride = null;
         var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
-        if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
+        if (_adminManager.HasAdminFlag(player, AdminFlags.VIP))
+        {
+            if (_adminManager.HasAdminFlag(player, AdminFlags.VIPPlus))
+            {
+                colorOverride = Color.FromHex("#ff006f");
+            }
+            else
+            {
+                colorOverride = Color.FromHex("#aa00ff");
+            }
+        }
+        if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;

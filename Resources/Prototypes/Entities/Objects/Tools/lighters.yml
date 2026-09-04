@@ -42,6 +42,18 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 10
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: SpaceGarbage
 
 - type: entity
   abstract: true
@@ -62,6 +74,9 @@
   name: basic lighter
   description: A simple plastic cigarette lighter.
   components:
+  - type: Tag # _ClawCommand - heretic ritual input (MaskOfMadness)
+    tags:
+    - Lighter
   - type: Sprite
     sprite: Objects/Tools/Lighters/lighters.rsi
     layers:

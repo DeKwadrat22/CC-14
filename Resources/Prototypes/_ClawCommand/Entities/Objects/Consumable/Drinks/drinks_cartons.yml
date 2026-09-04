@@ -1,0 +1,63 @@
+# _ClawCommand: DrinkCartonBaseLargeFull is now defined by upstream
+# (Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks-cartons.yml).
+# Our duplicate was removed during the 2026-06 upstream merge.
+
+- type: entity
+  id: DrinkCartonVisualsOpenable
+  abstract: true
+  components:
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+
+- type: entity
+  parent: DrinkCartonBaseFull
+  id: DrinkCartonBaseSmallFull
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 25
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkMilkCartonMini
+  name: mini milk
+  description: An opaque white liquid produced by the mammary glands of mammals.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 25
+        reagents:
+        - ReagentId: Milk
+          Quantity: 25
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/milkmini.rsi
+    state: icon
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkMilkCartonMiniChocolate
+  name: mini choco milk
+  description: A milk drink flavored with chocolate.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 25
+        reagents:
+        - ReagentId: MilkChoco
+          Quantity: 25
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/milkminichoco.rsi
+    state: icon

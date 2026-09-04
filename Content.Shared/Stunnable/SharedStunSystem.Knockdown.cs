@@ -248,6 +248,13 @@ public abstract partial class SharedStunSystem
         if (playerSession.AttachedEntity is not { Valid: true } playerEnt || !Exists(playerEnt))
             return;
 
+        // Claw Command - hitting this while sprinting dives instead of dropping on the spot. The
+        // leap system does all its own gating (sprinting, upright, not contained, off cooldown) and
+        // only returns true when a leap actually started, so anything it declines falls through to
+        // the ordinary behaviour below.
+        if (_diveLeap.TryStartLeap(playerEnt))
+            return;
+
         ToggleKnockdown(playerEnt);
     }
 

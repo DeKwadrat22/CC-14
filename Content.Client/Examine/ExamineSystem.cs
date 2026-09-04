@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using System.Threading;
 using Content.Client.Verbs;
+using Content.Shared.CombatMode;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
@@ -117,6 +118,26 @@ namespace Content.Client.Examine
 
             if (_playerManager.LocalEntity is not { } player ||
                 !CanExamine(player, entity))
+            {
+                return false;
+            }
+
+            // Claw Command - in combat mode a Shift-held click is an attack, not an examine.
+            //
+            // This fork defaults control.walk_by_default to true, so Shift is the sprint key and is
+            // held down for the whole time a player is running. Shift+MouseLeft is bound to this
+            // function, and the engine force-releases every binding that is a strict subset of a
+            // matched combo - so plain Use (MouseLeft) is dropped to Up and the gun, which only
+            // fires while Use reads Down, never gets a shot request. Net effect: you cannot click
+            // to shoot or swing at any point while sprinting, which is most visible mid dive-leap
+            // because a leap requires sprinting to start.
+            //
+            // Declining here does both halves of the fix: no examine tooltip pops over the target,
+            // and the unhandled click falls through to Use so the attack goes out. The Shift+click
+            // binding carries allowSubCombs so Use survives to be reached at all - see the note on
+            // the ExamineEntity bind in keybinds.yml. Out of combat nothing changes: examine still
+            // handles the click and Use is never reached.
+            if (TryComp<CombatModeComponent>(player, out var combat) && combat.IsInCombatMode)
             {
                 return false;
             }
@@ -461,7 +482,7 @@ namespace Content.Client.Examine
     /// <summary>
     /// An entity was examined on the client.
     /// </summary>
-    public sealed class ClientExaminedEvent : EntityEventArgs
+    public sealed partial class ClientExaminedEvent : EntityEventArgs
     {
         /// <summary>
         ///     The entity performing the examining.

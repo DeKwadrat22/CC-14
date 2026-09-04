@@ -31,6 +31,8 @@ public abstract partial class SharedChatSystem : EntitySystem
     public const char EmotesAltPrefix = '*';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
+    public const char SubtlePrefix = '-'; // claw command
+    public const char TelepathicPrefix = '='; // claw command - psionic telepathy channel
     public const char DefaultChannelKey = 'h';
 
     public const int VoiceRange = 10; // how far voice goes in world units
@@ -477,7 +479,9 @@ public enum InGameICChatType : byte
 {
     Speak,
     Emote,
-    Whisper
+    Whisper,
+    Subtle, // claw command
+    Telepathic, // claw command - psionic telepathy
 }
 
 /// <summary>

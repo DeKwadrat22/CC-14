@@ -1,0 +1,54 @@
+- type: job
+  id: CentralCommandOfficer
+  name: job-name-centcommofficer
+  description: job-description-centcommoff
+  playTimeTracker: JobCentralCommandOfficer
+  setPreference: false
+  startingGear: CentcommGearOfficer
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-hos
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcommGearOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    shoes: ClothingShoesBootsMagERT
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesCentcomm
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitCentcommOfficer
+    neck: ClothingNeckCloakCentcom
+    mask: ClothingMaskGasSecurity
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    back: ClothingBackpackSatchelCentComm
+    belt: ClothingBeltCentcommSheathFilled
+    suitstorage: OxygenTankFilled
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+  storage:
+    back:
+      - BoxSurvivalMilitaryDouble
+      - PortableRecharger
+      - JawsOfLife
+      - MedkitCombatFilled
+      - CombatMedipen
+      - CombatMedipen
+      - PowerCellHigh
+  inhand:
+  - WeaponPulseCarbine
+
+- type: chameleonOutfit
+  id: CentralCommandOfficerOutfit
+  job: CentralCommandOfficer
+  hasMindShield: true
+  equipment:
+    neck: ClothingNeckScarfStripedCentcom
+    mask: ClothingMaskGasCentcom

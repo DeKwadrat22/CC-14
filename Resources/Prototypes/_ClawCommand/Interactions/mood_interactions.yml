@@ -1,0 +1,67 @@
+# Hugging - improves the mood of the user
+- type: Interaction
+  id: Hug
+  parent: [BaseGlobal, BaseHands]
+  priority: 2
+  #icon: /Textures/Interface/Actions/hug.png
+  delay: 0.7
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
+  minHeightRange: 1
+  hideByRequirement: true
+  requirement:
+    !type:MobStateRequirement
+    inverted: true
+  action:
+    # TODO: this should pull the target closer or sumth, but I need to code that action first
+    !type:MoodAction
+    effect: BeingHugged
+  effectFailure: null
+
+# Petting someone (people) - improves the mood of the target
+- type: Interaction
+  id: Pet
+  parent: [BaseGlobal, BaseHands]
+  priority: 1
+  #icon: /Textures/Interface/Actions/hug.png
+  delay: 0.4
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
+  minHeightRange: 1
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:MobStateRequirement
+      inverted: true
+    - !type:EntityWhitelistRequirement
+      whitelist:
+        components: [Mind]
+  action:
+    !type:MoodAction
+    effect: BeingPet
+  effectFailure: null
+
+# Petting someone (animals) - improves the mood of the user and the target
+- type: Interaction
+  id: PetAnimal
+  parent: Pet
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:MobStateRequirement
+      allowedStates: [Alive]
+    - !type:EntityWhitelistRequirement
+      blacklist:
+        components: [Mind]
+  action:
+    # Petting an animal cheers up both parties.
+    !type:ComplexAction
+    actions:
+    - !type:MoodAction
+      effect: BeingPet
+    - !type:OnUserAction
+      action:
+        !type:MoodAction
+        effect: PetAnimal
+  effectFailure: null

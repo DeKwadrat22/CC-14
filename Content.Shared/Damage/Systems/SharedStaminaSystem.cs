@@ -519,7 +519,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     }
 
     [Serializable, NetSerializable]
-    public sealed class StaminaAnimationEvent(NetEntity entity) : EntityEventArgs
+    public sealed partial class StaminaAnimationEvent(NetEntity entity) : EntityEventArgs
     {
         public NetEntity Entity = entity;
     }

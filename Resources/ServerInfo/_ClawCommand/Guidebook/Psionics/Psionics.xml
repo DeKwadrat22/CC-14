@@ -1,0 +1,52 @@
+<Document>
+# Psionics
+
+Somewhere behind the physical universe sits the [color=#a4885c]noösphere[/color] — the layer of reality that thought moves through. Most people never touch it. A few do, and those few are [color=#a4885c]psions[/color].
+
+Every psionic act leaves a mark on the noösphere. The station measures that accumulated disturbance as [color=#a4885c]glimmer[/color], written Ψ. Glimmer is the single number that ties this whole system together: it is what Epistemics manages, what draws creatures out of the noösphere, and what eventually forces command to call [color=#a4885c]Code White[/color].
+
+## Becoming psionic
+
+There are three routes.
+
+- The [color=#a4885c]Latent Psychic[/color] trait. You start with no powers, but the potential is there, and over the shift you may manifest one on your own.
+- Certain jobs. The [color=#a4885c]Mantis[/color] and the [color=#a4885c]Research Director[/color] are psionic as a condition of employment, as are the Chaplain and the Librarian.
+- [color=#a4885c]Lotophagoi Oil[/color]. A large enough dose buys one extra roll at manifesting a power, at far better odds than chance. This is the intended non-antagonist route in.
+
+Synthetics are a special case. An IPC's positronic brain is insulated from the noösphere by design, and insulation blocks psionics entirely. The [color=#a4885c]Anomalous Positronics[/color] trait represents a unit built without that shielding.
+
+## Powers
+
+Powers are rolled, not chosen — beyond the ones you buy at character creation. Each new power costs twice as much accumulated [color=#a4885c]Potentia[/color] as the last, so a psion with three powers is far rarer than one with a single trick.
+
+Two stats shape how a power behaves:
+
+- [color=#a4885c]Amplification[/color] — how hard it lands. Higher is stronger, and louder to anyone listening for it.
+- [color=#a4885c]Dampening[/color] — how controlled it is. Higher is quieter and more precise.
+
+Casting costs [color=#a4885c]Mana[/color], shown as an alert while you have powers. It regenerates on its own. Click the alert to read your exact figure.
+
+Every power used raises glimmer a little. A station full of psions casting freely will climb into dangerous territory on its own, with nobody doing anything wrong.
+
+## Telepathy
+
+Psions with the Telepathy power can talk mind to mind. Use the Telepathic channel in the chat selector, or prefix a message with '='.
+
+Telepathy is not private. Anyone with the power hears it, and at high glimmer the message bleeds into the dreams of sleeping crew and anyone tripping on space drugs. Someone with [color=#a4885c]Psychognomy[/color] hears an impression of who you are rather than your name — a descriptor, never an identity.
+
+## Insulation and mindbreaking
+
+Two things stop a psion.
+
+[color=#a4885c]Psionic insulation[/color] is temporary and reversible: a tinfoil hat, an insulative skullcap, or a head cage. It suppresses powers while worn and nothing more.
+
+[color=#a4885c]Mindbreaking[/color] is permanent. [color=#a4885c]Mindbreaker Toxin[/color] — or a Mantis who has decided you are a problem — severs the connection to the noösphere for good. The powers do not come back. It is not a punishment to hand out lightly, and the alert procedures set out when it is and is not permitted.
+
+## Glimmer and the station
+
+  <GuideEntityEmbed Entity="GlimmerProber"/>
+
+Glimmer probers convert noöspheric disturbance into research points. They are the reason Epistemics wants glimmer high. Glimmer drains do the opposite. At high glimmer both become unstable and start throwing lightning.
+
+As glimmer climbs, the noösphere pushes back — see the Glimmer Creatures page. Past Ψ450 command is entitled to call Code White; see the Alert Procedure page for what that means in practice.
+</Document>

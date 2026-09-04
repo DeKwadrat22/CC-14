@@ -32,6 +32,23 @@ public sealed partial class SpawnPointSystem : EntitySystem
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
+            // _ClawCommand: spawn point accepts the player if no job constraint, or the
+            // primary job matches, or the requested job is in AdditionalJobs (lets the
+            // single SpawnPointBorg serve all dogborg variants without per-map edits).
+            var jobMatches = args.Job == null
+                || spawnPoint.Job == null
+                || spawnPoint.Job == args.Job
+                || spawnPoint.AdditionalJobs.Contains(args.Job.Value);
+
+            //claw command - if DesiredSpawnPointType is Job, use job spawn points even during InRound
+            if (args.DesiredSpawnPointType == SpawnPointType.Job &&
+                spawnPoint.SpawnType == SpawnPointType.Job &&
+                jobMatches)
+            {
+                possiblePositions.Add(xform.Coordinates);
+                continue;
+            }
+
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
                 possiblePositions.Add(xform.Coordinates);
@@ -39,7 +56,7 @@ public sealed partial class SpawnPointSystem : EntitySystem
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
+                jobMatches)
             {
                 possiblePositions.Add(xform.Coordinates);
             }

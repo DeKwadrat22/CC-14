@@ -163,6 +163,26 @@ namespace Content.Client.Lobby.UI
 
             #endregion Sex
 
+            #region Height and Width
+            UpdateHeightWidthSliders();
+
+            HeightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
+            WidthSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Width);
+
+            HeightReset.OnPressed += _ =>
+            {
+                HeightSlider.Value = DefaultHeight;
+                UpdateDimensions(SliderUpdate.Height);
+            };
+
+            WidthReset.OnPressed += _ =>
+            {
+                WidthSlider.Value = DefaultWidth;
+                UpdateDimensions(SliderUpdate.Width);
+            };
+
+            #endregion
+
             #region Voice
 
             VoiceButton.OnItemSelected += args =>
@@ -184,6 +204,22 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Age
+
+
+            // claw command
+            #region Custom Species Name
+
+            CustomSpeciesNameEdit.OnTextChanged += args =>
+            {
+                var text = args.Text.Trim();
+                if (text.Length > 0 && text.Length < 3)
+                    return;
+                if (text.Length > 15)
+                    text = text[..15];
+                SetCustomSpeciesName(text);
+            };
+
+            #endregion
 
             #region Gender
 
@@ -386,6 +422,8 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateCustomSpeciesNameEdit(); // claw command
+            UpdateHeightWidthSliders();
 
             RefreshAntags();
             RefreshJobs();

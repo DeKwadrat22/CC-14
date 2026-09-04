@@ -3,8 +3,13 @@ namespace Content.Shared.Chat
     /// <summary>
     ///     Represents chat channels that the player can filter chat tabs by.
     /// </summary>
+    /// <remarks>
+    ///     Claw Command - widened from ushort to uint. Bits 0-15 were all taken, so there was no room left to add
+    ///     the Telepathic channel the psionics port needs. Nothing casts this enum to ushort and it is not
+    ///     persisted in the database, so the only effect is four bytes instead of two on the wire.
+    /// </remarks>
     [Flags]
-    public enum ChatChannel : ushort
+    public enum ChatChannel : uint
     {
         None = 0,
 
@@ -86,9 +91,20 @@ namespace Content.Shared.Chat
         Unspecified = 1 << 14,
 
         /// <summary>
+        ///     Subtle chat heard only by players right next to each other, with line of sight.
+        /// </summary>
+        Subtle = 1 << 15, // claw command
+
+        /// <summary>
+        ///     Claw Command - telepathic chat, heard only by entities with TelepathyComponent.
+        ///     Used by the psionics port for the Telepathy power, the Oracle and dream messages.
+        /// </summary>
+        Telepathic = 1 << 16,
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
-        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications,
+        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications | Subtle | Telepathic, // claw command - added Subtle, Telepathic
 
         AdminRelated = Admin | AdminAlert | AdminChat,
     }

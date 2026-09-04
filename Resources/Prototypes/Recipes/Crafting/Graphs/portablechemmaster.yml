@@ -1,0 +1,35 @@
+- type: constructionGraph
+  id: PortableChemMasterGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: portableChemMaster
+      steps:
+        - tag: ChemDispensable
+          name: construction-graph-tag-jug
+          icon:
+            sprite: Objects/Specific/Chemistry/jug.rsi
+            state: icon_empty
+
+        - tag: Bottle
+          name: construction-graph-tag-bottle
+          icon:
+            sprite: Objects/Specific/Chemistry/bottle.rsi
+            state: bottle
+
+        - tag: Dropper
+          name: construction-graph-tag-dropper
+          icon:
+            sprite: Objects/Specific/Chemistry/dropper.rsi
+            state: dropper
+
+        - tag: Pipe
+          name: construction-graph-tag-pipe-bend
+          icon:
+            sprite: Structures/Piping/Atmospherics/pipe.rsi
+            state: storageBend
+          doAfter: 5
+
+  - node: portableChemMaster
+    entity: PortableChemMaster

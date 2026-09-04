@@ -30,6 +30,7 @@
                 - /Maps/Shuttles/trading_outpost.yml
         - type: StationJobs
           availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #command (6)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -42,23 +43,28 @@
             #engineering (4)
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 2, 2 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
             TechnicalAssistant: [ 2, 2 ] #intern, not counted
             #medical (4)
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
             #science (1 - 2)
             Scientist: [ 1, 2 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
             ResearchAssistant: [ 2, 2 ] #intern, not counted
             #security (4 - 5)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 1, 2 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ] #intern, not counted
             Lawyer: [ 1, 1 ]
             #supply (0)
             #civilian (0+)
             Passenger: [ -1, -1 ] #infinite, not counted
+            Prisoner: [ 5, 5 ] #claw command
             #silicon (1)
             StationAi: [ 1, 1 ]

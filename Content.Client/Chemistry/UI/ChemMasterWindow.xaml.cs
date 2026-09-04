@@ -278,7 +278,7 @@ namespace Content.Client.Chemistry.UI
             bufferHBox.AddChild(bufferLabel);
             var bufferVol = new Label
             {
-                Text = $"{state.BufferCurrentVolume}u",
+                Text = $"{state.BufferCurrentVolume}/{state.BufferMaxVolume}u",
                 StyleClasses = { StyleClass.LabelWeak }
             };
             bufferHBox.AddChild(bufferVol);
@@ -449,7 +449,7 @@ namespace Content.Client.Chemistry.UI
         }
     }
 
-    public sealed class ReagentButton : Button
+    public sealed partial class ReagentButton : Button
     {
         public ChemMasterReagentAmount Amount { get; set; }
         public bool IsBuffer = true;

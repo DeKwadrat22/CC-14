@@ -1,0 +1,35 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: KAKTYC
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingHeadGeneralHat
+  parent: ClothingHeadBase
+  name: "general's hat"
+  description: "Sometimes the only way to survive is to forget who you are."
+  suffix: "KCL, kaktyc"
+  components:
+  - type: Sprite
+    sprite: Imperial/KAKTYC/sanabi/sanabihat.rsi
+  - type: Clothing
+    sprite: Imperial/KAKTYC/sanabi/sanabihat.rsi
+
+- type: entity
+  id: ClothingNeckGeneralCloak
+  parent: ClothingNeckBase
+  name: "general's cloak"
+  description: "It doesn't matter if you reach the end."
+  suffix: "KCL, kaktyc"
+  components:
+  - type: Sprite
+    sprite: Imperial/KAKTYC/sanabi/sanabicloak.rsi
+  - type: Clothing
+    sprite: Imperial/KAKTYC/sanabi/sanabicloak.rsi
+

@@ -1,0 +1,119 @@
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._ClawCommand.Body;
+
+/// <summary>
+///     Claw Command - Carries the weight derived from a character's height and width sliders, and
+///     remembers the prototype values it overwrote so it can be recomputed without drifting.
+///
+///     Added automatically to anything with a humanoid profile. See <see cref="BodyWeightSystem"/>
+///     for what the weight actually feeds into.
+/// </summary>
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class BodyWeightComponent : Component
+{
+    /// <summary>
+    ///     Body weight in kilograms. Display value; the mechanics all key off <see cref="Scale"/>.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public float Weight;
+
+    /// <summary>
+    ///     Standing height in centimetres. Display only.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public float HeightCm;
+
+    /// <summary>
+    ///     Weight as a multiple of the species baseline. 1.0 is a default-built character, and every
+    ///     effect below is expressed relative to it so an untouched slider changes nothing.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public float Scale = 1f;
+
+    #region Prototype baselines
+
+    // Everything below is captured the first time weight is applied, before anything is overwritten.
+    // Recomputing then always works forward from the prototype value rather than compounding on top
+    // of the last result, which is what would happen if we just multiplied in place.
+
+    [ViewVariables]
+    public bool CapturedBaselines;
+
+    [ViewVariables]
+    public float BaseDensity;
+
+    [ViewVariables]
+    public float BaseRadius;
+
+    [ViewVariables]
+    public float BaseHungerDecay;
+
+    [ViewVariables]
+    public float BaseThirstDecay;
+
+    [ViewVariables]
+    public Dictionary<Mobs.MobState, Content.Shared.FixedPoint.FixedPoint2> BaseThresholds = new();
+
+    [ViewVariables]
+    public Dictionary<EntityUid, Content.Shared.FixedPoint.FixedPoint2> BaseStomachCapacity = new();
+
+    #endregion
+
+    /// <summary>
+    ///     How much of the weight difference carries into maximum health, and one-directional: it
+    ///     only ever raises thresholds, never lowers them.
+    ///
+    ///     Tuned so the very heaviest build lands on +15% and no further. The largest scale the
+    ///     sliders allow is 1.2 * 1.2^2 = 1.728, so the influence needed is 0.15 / 0.728 = 0.206.
+    ///     Re-derive this if a species ever widens MaxHeight or MaxWidth, or the ceiling drifts up.
+    /// </summary>
+    [DataField]
+    public float HealthInfluence = 0.206f;
+
+    /// <summary>
+    ///     How much of the weight difference carries into hunger and thirst burn rate. Bigger bodies
+    ///     need more fuel, but a heavy character should not be tied to the kitchen.
+    ///
+    ///     Tuned so the very heaviest build burns +25% and no further, same derivation as
+    ///     <see cref="HealthInfluence"/>: the largest scale the sliders allow is 1.2 * 1.2^2 = 1.728,
+    ///     so the influence needed is 0.25 / 0.728 = 0.343. Re-derive this if a species ever widens
+    ///     MaxHeight or MaxWidth. The lightest build lands at about -12% off the same figure.
+    /// </summary>
+    [DataField]
+    public float MetabolismInfluence = 0.343f;
+
+    /// <summary>
+    ///     How much of the weight difference carries into stomach capacity.
+    /// </summary>
+    [DataField]
+    public float CapacityInfluence = 0.75f;
+
+    /// <summary>
+    ///     How much of the weight difference resists alcohol. Body mass is most of what real alcohol
+    ///     tolerance is, so this one runs close to full strength.
+    /// </summary>
+    [DataField]
+    public float AlcoholInfluence = 0.9f;
+
+    /// <summary>
+    ///     How much of the weight difference carries into keeping your footing in spacewind, and
+    ///     one-directional: it only ever helps, never hurts.
+    ///
+    ///     Raw mass would give the heaviest build 1.73x the footing of a default one and leave the
+    ///     lightest on 0.65x, which punishes a slight character for a cosmetic slider in a situation
+    ///     they cannot do anything about. Floored at 1, so a light build is simply never worse than
+    ///     default, and tuned so the very heaviest lands on 1.33x: the largest scale the sliders
+    ///     allow is 1.2 * 1.2^2 = 1.728, so 0.33 / 0.728 = 0.453.
+    /// </summary>
+    [DataField]
+    public float SpacewindInfluence = 0.453f;
+
+    /// <summary>
+    ///     How much of the width difference carries into physical size. Deliberately small: a mob
+    ///     fixture wider than half a tile starts catching on doorways and corners, and getting stuck
+    ///     on the geometry is a far worse outcome than a big character not feeling quite big enough.
+    /// </summary>
+    [DataField]
+    public float CollisionInfluence = 0.5f;
+}

@@ -1,0 +1,43 @@
+# Lighting variants ported from Nyanotrasen for asterisk map (and general decor).
+# All require light tube/bulb prototypes that exist in upstream base.
+
+- type: entity
+  parent: PoweredlightExterior
+  id: PoweredLightBlueInterior
+  suffix: Blue Interior
+  description: A light fixture. Draws power and produces light when equipped with a light tube.
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: BlueLightTube
+- type: entity
+  parent: Poweredlight
+  id: PoweredLightColoredBlack
+  suffix: Black
+  description: A light fixture. Draws power and produces light when equipped with a light tube.
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: ColoredLightTubeBlackLight
+- type: entity
+  parent: Poweredlight
+  id: PoweredLightColoredRed
+  suffix: Soft Red
+  description: A light fixture. Draws power and produces light when equipped with a light tube.
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: ColoredLightTubeRed
+- type: entity
+  parent: PoweredSmallLight
+  id: PoweredSmallLightMaintenance
+  suffix: Maintenance
+  description: A light fixture. Draws power and produces light when equipped with a light bulb.
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulbMaintenance
+- type: entity
+  parent: PoweredSmallLight
+  id: PoweredSmallLightMaintenanceRed
+  suffix: Maintenance, Red
+  description: A light fixture. Draws power and produces light when equipped with a light bulb.
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulbMaintenanceRed

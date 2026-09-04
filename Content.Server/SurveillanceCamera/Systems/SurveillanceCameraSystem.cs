@@ -377,18 +377,18 @@ public sealed partial class SurveillanceCameraSystem : SharedSurveillanceCameraS
     }
 }
 
-public sealed class OnSurveillanceCameraViewerAddEvent : EntityEventArgs
+public sealed partial class OnSurveillanceCameraViewerAddEvent : EntityEventArgs
 {
 
 }
 
-public sealed class OnSurveillanceCameraViewerRemoveEvent : EntityEventArgs
+public sealed partial class OnSurveillanceCameraViewerRemoveEvent : EntityEventArgs
 {
 
 }
 
 // What happens when a camera deactivates.
-public sealed class SurveillanceCameraDeactivateEvent : EntityEventArgs
+public sealed partial class SurveillanceCameraDeactivateEvent : EntityEventArgs
 {
     public EntityUid Camera { get; }
 

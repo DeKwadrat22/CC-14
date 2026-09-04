@@ -138,6 +138,10 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    dynamicPacks:
+    - MicroPartsPack # _ClawCommand: micro modular machine parts (vanilla)
+    - AdvancedPartsPack # _ClawCommand: advanced modular machine parts
+    - SuperPartsPack # _ClawCommand: super modular machine parts
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -198,6 +202,7 @@
     staticPacks:
     - ChemistryStatic
     - SurgeryStatic
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the security techfab)
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
@@ -212,6 +217,7 @@
     - Janitor
     - Instruments
     - Equipment
+    - VisionGoggles # _ClawCommand: night/thermal vision goggles, gated by NightVisionTech / ThermalVisionTech
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -259,6 +265,7 @@
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
+    - LawBoardsStatic # _ClawCommand: silicon law boards, minus the ones the departments print themselves
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -311,6 +318,7 @@
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
+    - DogborgKitsStatic # _ClawCommand: dogborg conversion kits
     dynamicPacks:
     - Robotics
     - BorgModules
@@ -393,6 +401,9 @@
     - SecurityPracticeStatic
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - DogborgModulesStatic # _ClawCommand: security cyborg modules (disabler/investigation) print here only
+    - ShadekinRestraintsStatic # _ClawCommand: shadekin restraints (also printed at the science protolathe)
+    - SecurityLawBoardsStatic # _ClawCommand: Silicon Police law board
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -402,6 +413,7 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    - DogborgModulesDynamic # _ClawCommand: research-gated security cyborg modules (combat/riot)
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
@@ -478,6 +490,7 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - MedicalLawBoardsStatic # _ClawCommand: Medical law board
     dynamicPacks:
     - Chemistry
   - type: Machine

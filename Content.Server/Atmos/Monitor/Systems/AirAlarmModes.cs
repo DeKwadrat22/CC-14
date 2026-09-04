@@ -52,7 +52,7 @@ public interface IAirAlarmModeUpdate
     public void Update(EntityUid uid);
 }
 
-public sealed class AirAlarmModeFactory
+public sealed partial class AirAlarmModeFactory
 {
     private static IAirAlarmMode _filterMode = new AirAlarmFilterMode();
     private static IAirAlarmMode _wideFilterMode = new AirAlarmWideFilterMode();
@@ -94,7 +94,7 @@ public abstract partial class AirAlarmModeExecutor : IAirAlarmMode
     }
 }
 
-public sealed class AirAlarmNoneMode : AirAlarmModeExecutor
+public sealed partial class AirAlarmNoneMode : AirAlarmModeExecutor
 {
     public override void Execute(EntityUid uid)
     {
@@ -115,7 +115,7 @@ public sealed class AirAlarmNoneMode : AirAlarmModeExecutor
     }
 }
 
-public sealed class AirAlarmFilterMode : AirAlarmModeExecutor
+public sealed partial class AirAlarmFilterMode : AirAlarmModeExecutor
 {
     public override void Execute(EntityUid uid)
     {
@@ -134,7 +134,7 @@ public sealed class AirAlarmFilterMode : AirAlarmModeExecutor
     }
 }
 
-public sealed class AirAlarmWideFilterMode : AirAlarmModeExecutor
+public sealed partial class AirAlarmWideFilterMode : AirAlarmModeExecutor
 {
     public override void Execute(EntityUid uid)
     {
@@ -153,7 +153,7 @@ public sealed class AirAlarmWideFilterMode : AirAlarmModeExecutor
     }
 }
 
-public sealed class AirAlarmPanicMode : AirAlarmModeExecutor
+public sealed partial class AirAlarmPanicMode : AirAlarmModeExecutor
 {
     public override void Execute(EntityUid uid)
     {
@@ -172,7 +172,7 @@ public sealed class AirAlarmPanicMode : AirAlarmModeExecutor
     }
 }
 
-public sealed class AirAlarmFillMode : AirAlarmModeExecutor
+public sealed partial class AirAlarmFillMode : AirAlarmModeExecutor
 {
     public override void Execute(EntityUid uid)
     {

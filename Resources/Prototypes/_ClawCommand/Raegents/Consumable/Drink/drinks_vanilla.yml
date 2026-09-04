@@ -1,0 +1,58 @@
+- type: reagent
+  id: KiraSpecial
+  name: reagent-name-kira-special
+  parent: BaseDrink
+  desc: reagent-desc-kira-special
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: sweet
+  color: "#CCCC99"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/kiraspecial.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  fizziness: 0.3
+
+- type: reagent
+  id: IrishCarBomb
+  name: reagent-name-irish-car-bomb
+  parent: BaseAlcohol
+  desc: reagent-desc-irish-car-bomb
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: irishcarbomb
+  color: "#2E6671"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.16
+
+- type: reagent
+  id: MilkChoco
+  name: reagent-name-milk-choco
+  group: Drinks
+  desc: reagent-desc-milk-choco
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: chocolate
+  color: "#664300"
+  recognizable: true
+  plantMetabolism:
+    - !type:PlantAdjustNutrition
+      amount: 0.1
+    - !type:PlantAdjustWater
+      amount: 0.9
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4

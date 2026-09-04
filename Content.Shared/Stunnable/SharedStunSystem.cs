@@ -39,6 +39,7 @@ public abstract partial class SharedStunSystem : EntitySystem
     [Dependency] protected SharedDoAfterSystem DoAfter = default!;
     [Dependency] protected SharedStaminaSystem Stamina = default!;
     [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private _ClawCommand.Movement.DiveLeap.SharedDiveLeapSystem _diveLeap = default!; // Claw Command
 
     public override void Initialize()
     {

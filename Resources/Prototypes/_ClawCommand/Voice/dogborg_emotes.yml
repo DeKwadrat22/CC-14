@@ -1,0 +1,44 @@
+# Dogborg-only pose emotes. Toggle the body sprite between standing and the
+# matching Citadel-ported pose (sit / rest / belly-up). Handled by
+# DogborgPoseSystem. Whitelisted to entities with DogborgPoseComponent so they
+# can't be triggered by regular borgs, humanoids, etc.
+#
+# Pose is purely cosmetic: no movement penalties, no laying-down conversion.
+# Movement automatically clears the pose (see DogborgPoseSystem.OnSpriteMove).
+
+- type: emote
+  id: DogborgSit
+  name: chat-emote-name-dogborg-sit
+  category: General
+  whitelist:
+    components:
+    - DogborgPose
+  chatMessages: [chat-emote-msg-dogborg-sit]
+  chatTriggers:
+  - sits
+  - sits down
+
+- type: emote
+  id: DogborgRest
+  name: chat-emote-name-dogborg-rest
+  category: General
+  whitelist:
+    components:
+    - DogborgPose
+  chatMessages: [chat-emote-msg-dogborg-rest]
+  chatTriggers:
+  - lies down
+  - lays down
+  - rests
+
+- type: emote
+  id: DogborgBellyUp
+  name: chat-emote-name-dogborg-bellyup
+  category: General
+  whitelist:
+    components:
+    - DogborgPose
+  chatMessages: [chat-emote-msg-dogborg-bellyup]
+  chatTriggers:
+  - rolls over
+  - belly up

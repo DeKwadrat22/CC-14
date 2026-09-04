@@ -1,0 +1,69 @@
+# PUT YOUR TAGS IN ALPHABETICAL ORDER
+# ALSO DOCUMENT WHAT THE HELL THEY DO
+
+# B #
+- type: Tag
+  id: BorgModuleSecurity # Gates the security cyborg modules to security borg types only (borgType moduleWhitelist).
+
+- type: Tag
+  id: MagicCandle # Storage whitelist: BoxCandleInfinite
+
+- type: Tag
+  id: TagNutribrick # snacks::FoodSnackNutribrickOpen
+
+# D #
+
+# Dogborg conversion kit tags — one per variant. The cyborg construction graph
+# uses these to branch from `CyborgEndoskeleton` to a specific dogborg chassis
+# based on which kit the roboticist inserts.
+- type: Tag
+  id: DogborgKitK9
+- type: Tag
+  id: DogborgKitK9Dark
+- type: Tag
+  id: DogborgKitValeSec
+- type: Tag
+  id: DogborgKitMedihound
+- type: Tag
+  id: DogborgKitMedihoundDark
+- type: Tag
+  id: DogborgKitValeMed
+- type: Tag
+  id: DogborgKitPupDozer
+- type: Tag
+  id: DogborgKitValeEng
+- type: Tag
+  id: DogborgKitScrubpup
+- type: Tag
+  id: DogborgKitValeServ
+- type: Tag
+  id: DogborgKitBlade
+
+# I #
+- type: Tag
+  id: TagIceCream # Used for digestion of ice-cream bowls for different species.
+
+# K #
+- type: Tag
+  id: Katana
+
+# Service weapons - tags the ported guns and ammunition whitelist against.
+# See _ClawCommand/Entities/Objects/Weapons/service_weapons.yml.
+- type: Tag
+  id: CartridgeSpecial
+
+- type: Tag
+  id: SpeedLoaderSpecial
+
+- type: Tag
+  id: SpeedLoaderRifleHeavy
+
+- type: Tag
+  id: BulletRubber
+
+- type: Tag
+  id: BrassKnuckles
+
+# Used as a crafting step by the Svalinn PDW graph.
+- type: Tag
+  id: WeaponLaserSvalinn

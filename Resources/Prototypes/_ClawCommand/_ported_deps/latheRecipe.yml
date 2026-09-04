@@ -1,0 +1,24 @@
+# Claw Command - latheRecipe prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/Recipes/Lathes/robotics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretAIControlPanelElectronics
+  result: WeaponEnergyTurretAIControlPanelElectronics
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml
+- type: latheRecipe
+  id: WeaponEnergyTurretAIMachineCircuitboard
+  result: WeaponEnergyTurretAIMachineCircuitboard
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+# from Resources/Prototypes/Recipes/Lathes/electronics.yml

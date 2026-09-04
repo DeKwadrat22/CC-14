@@ -1,0 +1,52 @@
+# LockerBartender / LockerJanitor / LockerCentComm: previously referenced
+# sprite states (`bartender`, `jan`, `CentCom`) that don't exist in the
+# upstream closet.rsi, so the lockers rendered as broken sprites and the
+# examine UI surfaced state-not-found errors.
+#
+# Reused existing states that match the role:
+#   bartender  -> `cabinet`     (matches upstream LockerBooze)
+#   janitor    -> `generic` + `mixed_door`  (matches upstream ClosetJanitor)
+#   centcom    -> `cco`, on the _ClawCommand closet RSI which ships the CCO state
+
+- type: entity
+  id: LockerBartender
+  parent: LockerBase
+  name: bartender's locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: cabinet
+    stateDoorOpen: cabinet_open
+    stateDoorClosed: cabinet_door
+  - type: AccessReader
+    access: [ [ "Bar" ] ]
+
+# Basic
+- type: entity
+  id: LockerJanitor
+  parent: LockerBase
+  name: janitor locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: mixed_door
+  - type: AccessReader
+    access: [ [ "Janitor" ] ]
+
+# Medicine
+- type: entity
+  id: LockerCentComm
+  name: central command officer locker
+  parent: LockerBaseSecure
+  components:
+  - type: Appearance
+  - type: AccessReader
+    access: [["CentralCommand"]]
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Storage/closet.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: cco
+    stateDoorOpen: cco_open
+    stateDoorClosed: cco_door

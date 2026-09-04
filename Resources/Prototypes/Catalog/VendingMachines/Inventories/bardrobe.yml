@@ -17,5 +17,7 @@
     ClothingOuterVest: 2
     ClothingBeltBandolier: 2
     ClothingEyesGlassesSunglasses: 2
+    ClothingUnderSocksBartender: 3 # Claw Command - Floof departmental socks
+    ClothingHandsBartenderWarmers: 3 # Claw Command - Floof departmental warmers
   contrabandInventory:
     ToyFigurineBartender: 1

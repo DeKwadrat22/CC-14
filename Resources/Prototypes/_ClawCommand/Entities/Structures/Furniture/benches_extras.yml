@@ -1,0 +1,50 @@
+# Park & sofa bench multi-tile structures ported from SimpleStation14 for asterisk map.
+# BenchBaseMiddle parent is defined in benches.yml — these are just additional variants.
+
+- type: entity
+  name: park bench
+  id: BenchParkMiddle
+  parent: BenchBaseMiddle
+  components:
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/parkbench_wooden.rsi
+
+- type: entity
+  id: BenchParkLeft
+  suffix: Left
+  parent: BenchParkMiddle
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  id: BenchParkRight
+  suffix: Right
+  parent: BenchParkMiddle
+  components:
+  - type: Sprite
+    state: right
+
+- type: entity
+  name: sofa
+  id: BenchSofaMiddle
+  parent: BenchBaseMiddle
+  components:
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/sofa.rsi
+
+- type: entity
+  id: BenchSofaLeft
+  suffix: Left
+  parent: BenchSofaMiddle
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  id: BenchSofaRight
+  suffix: Right
+  parent: BenchSofaMiddle
+  components:
+  - type: Sprite
+    state: right

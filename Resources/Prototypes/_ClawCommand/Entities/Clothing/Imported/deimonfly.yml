@@ -1,0 +1,86 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: DeimonFly
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingBeltTDM
+  parent:
+  - ClothingBeltStorageBase
+  - ClothingBeltChiefEngineer
+  name: "tactical belt"
+  description: "A belt for tactful combat!"
+  suffix: "space battle, DeimonFly"
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/assault.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/assault.rsi
+  - type: StorageFill
+    contents:
+    - id: PowerDrill
+    - id: JawsOfLife
+    - id: WelderExperimental
+    - id: Multitool
+    - id: trayScanner
+    - id: HolofanProjector
+    - id: RCD
+    - id: RCDAmmo
+    - id: AirGrenade
+    - id: CableApcStack
+  - type: Appearance
+  - type: Storage
+    maxItemSize: Normal
+    defaultStorageOrientation: Vertical
+    grid:
+    - "0,0,11,1"
+    whitelist:
+      tags:
+      - Wirecutter
+      - Crowbar
+      - Screwdriver
+      - Flashlight
+      - Wrench
+      - GeigerCounter
+      - Flare
+      - CableCoil
+      - Powerdrill
+      - JawsOfLife
+      - CigPack
+      - Radio
+      - HolofanProjector
+      - Multitool
+      - AppraisalTool
+      - HandGrenade
+      components:
+      - StationMap
+      - SprayPainter
+      - SprayPainterAmmo
+      - NetworkConfigurator
+      - RCD
+      - RCDAmmo
+      - Welder
+      - Flash
+      - Handcuff
+      - PowerCell
+      - Geiger
+      - TrayScanner
+      - GasAnalyzer
+
+- type: entity
+  id: ClothingNeckCloakCOTGMCRed
+  parent: ClothingNeckBase
+  name: "syndicate commander cloak"
+  description: "A pompous syndicate command cloak with heavy trim and just enough menace to match the armor."
+  components:
+  - type: Sprite
+    sprite: Imperial/DeimonFly/Clothing/CloakSyndicateCommander.rsi
+  - type: Clothing
+    sprite: Imperial/DeimonFly/Clothing/CloakSyndicateCommander.rsi
+

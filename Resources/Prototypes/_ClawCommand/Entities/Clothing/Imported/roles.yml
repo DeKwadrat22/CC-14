@@ -1,0 +1,196 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Roles
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: AdvancedStunbatonBorg
+  parent: Stunbaton
+  name: "ert borg stun baton"
+  description: "A stun baton for incapacitating people with. Actively harming with this is considered bad tone."
+  components:
+  - type: Sprite
+    sprite: Imperial/Objects/Weapons/Melee/AdvancedStunBaton/stunbaton.rsi
+  - type: Stunbaton
+    energyPerUse: 25
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 0
+    bluntStaminaDamageFactor: 2.0
+    angle: 60
+    animation: WeaponArcThrust
+  - type: Battery
+    maxCharge: 200
+    startingCharge: 200
+  - type: BatterySelfRecharger
+    autoRechargeRate: 10
+
+- type: entity
+  id: ClothingBeltHolsterSpecialOfficer
+  parent: ClothingBeltHolster
+  name: "ClothingBeltHolster"
+  description: "Specially equipped holster for the needs of a special operations officer."
+  suffix: "ДСО"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRevolverMatebaAP
+    - id: SpeedLoaderMagnumAP
+    - id: SpeedLoaderMagnumAP
+
+- type: entity
+  id: ClothingHeadHatSpecialOfficer
+  parent: ClothingHeadBase
+  name: "Special Officer hat cap"
+  description: "She inspires confidence in you"
+  suffix: "SOO"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/CentCom/SpecialOfficer/specialofficerhatcap.rsi
+  - type: Clothing
+    sprite: Imperial/Roles/CentCom/SpecialOfficer/specialofficerhatcap.rsi
+
+- type: entity
+  id: ClothingNeckCloakSpecialOfficer
+  parent: ClothingNeckBase
+  name: "Special Officer cloack"
+  description: "It's black color makes your heart beat faster"
+  suffix: "SOO"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/CentCom/SpecialOfficer/specialofficercloak.rsi
+
+- type: entity
+  id: ClothingShoesBootsJackSpecialOfficer
+  parent: ClothingShoesBootsJack
+  name: "Shoes boots for Special Officer"
+  description: "You can see the baked blood on them"
+  suffix: "SOO"
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: NoSlip
+  - type: Magboots
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Matchbox
+  - type: ItemSlots
+    slots:
+      item:
+        name: "clothing-boots-sidearm"
+        whitelist:
+          tags:
+          - Knife
+          - Sidearm
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
+  - type: FootstepModifier
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.2
+
+- type: entity
+  id: ClothingShoesBootsMagAdvErtBorg
+  parent:
+  - ClothingShoesBootsMagBase
+  name: "advanced magnetic module"
+  description: "State-of-the-art magnetic boots that do not slow down their wearer."
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/Other/ertborgs/magbootsertborg.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Unremoveable
+
+- type: entity
+  id: ClothingUniformJumpskirtCoroner
+  parent: ClothingUniformBase
+  name: "jumpskirt le coroner"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/Medical/Coroner/coroner-jumpskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Roles/Medical/Coroner/coroner-jumpskirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtSpecialOfficer
+  parent: ClothingUniformJumpskirtHoSAlt
+  name: "SpecialOfficer uniform"
+  description: "A form that instills fear in enemies of NanoTrasen"
+  suffix: "SOO"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/CentCom/SpecialOfficer/specialofficerjumpskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Roles/CentCom/SpecialOfficer/specialofficerjumpskirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitCoroner
+  parent: ClothingUniformBase
+  name: "coroner jumpsuit"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/Medical/Coroner/coroner-jumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/Roles/Medical/Coroner/coroner-jumpsuit.rsi
+
+- type: entity
+  id: RCDRechargingErtBorg
+  parent: RCD
+  name: "ert borg RCD"
+  description: "Cyborg-mounted Rapid Construction Device which creates compressed matter on the fly using an internal fabricator."
+  suffix: "AutoRecharge"
+  components:
+  - type: LimitedCharges
+    maxCharges: 40
+  - type: AutoRecharge
+    rechargeDuration: 2
+
+- type: entity
+  id: StunbatonBorg
+  parent: Stunbaton
+  name: "borg's stun baton"
+  description: "A stun baton for incapacitating people with. Actively harming with this is considered bad tone."
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50
+
+- type: entity
+  id: TrashBagBorg
+  parent: TrashBag
+  name: "borg trash bag"
+  components:
+  - type: Sprite
+    sprite: Imperial/Roles/Synthetics/Janitorial/trashbag.rsi
+    layers:
+    - state: icon-0
+      map:
+      - enum.StorageFillLayers.Fill
+  - type: Storage
+    quickInsert: true
+    areaInsert: true
+    storageOpenSound:
+      collection: trashBagRustle
+    storageInsertSound:
+      collection: trashBagRustle
+    whitelist:
+      tags:
+      - Cartridge
+      - Trash
+

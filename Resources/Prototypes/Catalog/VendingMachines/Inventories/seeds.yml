@@ -4,7 +4,9 @@
     AloeSeeds: 3
     AmbrosiaVulgarisSeeds: 3
     AppleSeeds: 5
+    AvocadoSeeds: 5 # Claw Command - ported (Frontier)
     BananaSeeds: 5
+    BeeSeeds: 5 # Claw Command - ported (Frontier)
     BerrySeeds: 5
     CarrotSeeds: 5
     CabbageSeeds: 5
@@ -12,8 +14,10 @@
     CherrySeeds: 5
     ChiliSeeds: 5
     CocoaSeeds: 3
+    CoffeeSeeds: 3 # Claw Command - ported (Floof - Botany Additions)
     CornSeeds: 5
     CottonSeeds: 5
+    CucumberSeeds: 5 # Claw Command - ported (Frontier)
     EggplantSeeds: 5
     GalaxythistleSeeds: 3
     GarlicSeeds: 3
@@ -22,11 +26,14 @@
     LimeSeeds: 5
     PineappleSeeds: 5
     LingzhiSeeds: 3
+    MangoSeeds: 5 # Claw Command - ported (Goob from RMC-14)
     OatSeeds: 5
     OnionSeeds: 5
     OnionRedSeeds: 5
     OrangeSeeds: 5
     PeaSeeds: 5
+    PearSeeds: 3 # Claw Command - ported (Floof - Botany Additions)
+    PomegranateSeeds: 3 # Claw Command - ported (Floofstation)
     PoppySeeds: 3
     PotatoSeeds: 5
     PumpkinSeeds: 5
@@ -42,3 +49,4 @@
     TobaccoSeeds: 2
     FoodSnackSemki: 2
     FlyAmanitaSeeds: 1
+    HumpShroomSeeds: 1 # Claw Command - ported (Floof - Botany Additions)

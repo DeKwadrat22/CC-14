@@ -16,6 +16,12 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> ToggleWalk =
         CVarDef.Create("control.toggle_walk", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    ///     Walk by default instead of sprint. Hold shift to sprint.
+    /// </summary>
+    public static readonly CVarDef<bool> WalkByDefault = // Claw Command
+        CVarDef.Create("control.walk_by_default", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
     // The rationale behind the default limit is simply that I can easily get to 7 interactions per second by just
     // trying to spam toggle a light switch or lever (though the UseDelay component limits the actual effect of the
     // interaction).  I don't want to accidentally spam admins with alerts just because somebody is spamming a

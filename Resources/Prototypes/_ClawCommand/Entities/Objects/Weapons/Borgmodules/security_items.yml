@@ -1,0 +1,67 @@
+# Claw Command: item dependencies for the security cyborg combat/investigation modules, adapted
+# from space/_Floof. The energy weapons self-recharge their internal battery so a combat borg never
+# has to dock to reload (matching the disabler/stunbaton nonlethals). Everything here is
+# HideSpawnMenu — these should only ever be provided by a borg module's hands, never spawned
+# standalone. The fork has no ProjectileBatteryAmmoProvider, so the Mk58 uses BatteryAmmoProvider.
+
+- type: entity
+  name: mk 58
+  parent: BaseWeaponBatterySmall
+  suffix: Robot, energy based
+  id: WeaponborgPistolMk58
+  categories: [ HideSpawnMenu ]
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one runs off the chassis power cell.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: BatteryAmmoProvider
+    proto: BulletPistol
+    fireCost: 100
+  - type: BatterySelfRecharger
+    autoRechargeRate: 30
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+
+- type: entity
+  parent: WeaponXrayCannon
+  suffix: Robot
+  id: BorgWeaponXrayCannon
+  categories: [ HideSpawnMenu ]
+  description: A weapon that is almost as infamous as its users.
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 30
+
+# Claw Command addition: borg self-recharging variant of the advanced laser used by the combat
+# modules. Floof handed borgs the raw WeaponAdvancedLaser (no recharge, would run dry); we give it
+# the same auto-recharge treatment as the fork's other borg guns.
+- type: entity
+  parent: WeaponAdvancedLaser
+  suffix: Robot
+  id: BorgWeaponAdvancedLaser
+  categories: [ HideSpawnMenu ]
+  description: An advanced laser weapon wired straight into the chassis power cell.
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 30
+
+# Integrated detective PDA for the investigation module. No ID card (id: null) since a borg has no
+# ID. Frontier bookSlot from the _Floof source is dropped — the fork's PDAs have no bookSlot.
+- type: entity
+  parent: DetectivePDA
+  id: DetectivePDACyborg
+  name: integrated detective PDA
+  description: Smells like digital rain... pouring down the virtual rooftops...
+  components:
+  - type: Pda
+    id: null

@@ -57,9 +57,21 @@ public abstract partial class SharedFirelockSystem : EntitySystem
         var overrideAccess = (args.User != null) && _accessReaderSystem.IsAllowed(args.User.Value, uid);
 
         if (!component.Powered || (!overrideAccess && component.IsLocked))
+        {
             args.Cancel();
-        else if (args.User != null)
-            WarnPlayer((uid, component), args.User.Value);
+            return;
+        }
+
+        if (args.User == null)
+            return;
+
+        WarnPlayer((uid, component), args.User.Value);
+
+        // Claw Command - opening a firelock by hand gets the same grace period as prying one open.
+        // Without it the atmos monitor or Monstermos can slam it shut on the very next tick, so
+        // someone who clicks a firelock open walks straight into a closed door. Prying has always
+        // had this; clicking never did.
+        DelayEmergencyClose((uid, component));
     }
 
     private void OnBeforePry(EntityUid uid, FirelockComponent component, ref BeforePryEvent args)
@@ -98,7 +110,16 @@ public abstract partial class SharedFirelockSystem : EntitySystem
 
     private void OnAfterPried(EntityUid uid, FirelockComponent component, ref PriedEvent args)
     {
-        component.EmergencyCloseCooldown = _gameTiming.CurTime + component.EmergencyCloseCooldownDuration;
+        DelayEmergencyClose((uid, component));
+    }
+
+    /// <summary>
+    ///     Hold off the automatic emergency close for a moment, so a firelock somebody just deliberately
+    ///     opened doesn't shut again before they can walk through it.
+    /// </summary>
+    private void DelayEmergencyClose(Entity<FirelockComponent> ent)
+    {
+        ent.Comp.EmergencyCloseCooldown = _gameTiming.CurTime + ent.Comp.EmergencyCloseCooldownDuration;
     }
 
     #endregion

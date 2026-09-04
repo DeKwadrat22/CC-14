@@ -1,0 +1,451 @@
+- type: loadoutGroup
+  id: ClawCommandOfficerOuterClothing
+  name: loadout-group-clawcommand-outerclothing
+  loadouts:
+  - ClothingClawCommandArmourVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+  - ClothingClawCommandArmoredCowboyJacket
+  - ClothingClawCommandArmoredJacket
+  # Claw Command - imported wardrobe
+  - CCWArmorUnloading6B5
+  - CCWBZBeryoza
+  - CCWBZBeryozaGraphite
+  - CCWBZBeryozaPolos
+  - CCWBZBeryozaZarya
+  - CCWBodyArmorMultikam
+  - CCWCamouflageRobe
+  - CCWClothingOuterArmorQMCoat
+  - CCWClothingOuterCoatDetectiveDark
+  - CCWClothingUniformOuterSnowmaiden
+  - CCWCoatBZ
+
+- type: loadoutGroup
+  id: ClawCommandOfficerJumpsuit
+  name: loadout-group-clawcommand-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitClawCommandOfficer
+  - ClothingUniformJumpskirtClawCommandOfficer
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
+
+- type: loadoutGroup
+  id: ClawCommandMaidJumpsuit
+  name: loadout-group-clawcommandmaid-jumpsuit
+  loadouts:
+  - ClothingUniformJumpskirtJanimaidmini
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtTacticalMaid
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
+
+- type: loadoutGroup
+  id: ClawCommandBackpack
+  name: loadout-group-clawcommand-backpack
+  loadouts:
+  - ClothingBackpackClawCommand
+  - ClothingBackpackSatchelClawCommand
+  - ClothingBackpackDuffelClawCommand
+  # Claw Command - imported wardrobe
+  - CCWClothingBackpackMaidBackbow
+
+#Head
+- type: loadoutGroup
+  id: ClawCommandHead
+  name: loadout-group-clawcommand-head
+  minLimit: 0
+  loadouts:
+  - SecurityHelmet
+  - TrooperHat
+  # Claw Command - imported wardrobe
+  - CCWArmyBeretArmyG
+  - CCWArmyBeretArmyS
+  - CCWArmyBeretArmyY
+  - CCWAssaultACH
+  - CCWAssaultACHML
+  - CCWAssaultACHUN
+  - CCWBloodyHeadband
+  - CCWClothingHeadHatBeretBonBon
+  - CCWClothingHeadHatBeretGaqut
+  - CCWClothingHeadHatBowlerCool
+  - CCWClothingHeadHatBowlerHatBrown
+  - CCWClothingHeadHatBowlerOrange
+  - CCWClothingHeadHatBowlerPink
+  - CCWClothingHeadHatImam
+  - CCWClothingHeadHatPirateCaptain
+  - CCWClothingHeadHatSeniorOfficerBeret
+  - CCWClothingHeadHatSnowmaiden
+  - CCWClothingHeadHelmetCIsuppressor
+  - CCWClothingHeadHelmetK63
+  - CCWClothingHeadHelmetScienceMask
+  - CCWClothingHeadHelmetVisorDawn
+  - CCWClothingHeadHelmetVisorGorka
+  - CCWClothingHeadHelmetbrokengod
+  - CCWClothingHeadHelmetepsilon9
+  - CCWClothingHeadHelmeteta10
+  - CCWClothingHeadHelmetupsilon11
+  - CCWDressCapArmyB
+  - CCWDressCapArmyS
+  - CCWDressCapArmyY
+  - CCWHeadband
+  - CCWSwampHood
+  - CCWVlPCBeret
+  - CCWVlPCCap
+  - CCWVlPCFlowerOne
+  - CCWWitchersHat
+  - CCWWitchersPurpleHat
+  - CCWWitchersRedHat
+
+- type: loadoutGroup
+  id: LoadoutGroupCCMJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - SecStar
+  - LoadoutCCMGoldenShaker
+  - LoadoutCCMGoldenPlunger
+
+# General Loadout Categories - CC14
+# Available to all jobs
+
+- type: loadoutGroup
+  id: CCEmergencyGear
+  name: cc-loadout-group-emergency-gear
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - LoadoutBreathingMask
+  - LoadoutEmergencyOxygenTank
+  - LoadoutExtendedOxygenTank
+  - LoadoutCrowbar
+  - LoadoutFireExtinguisher
+  - LoadoutFlashlight
+  - LoadoutLantern
+  - LoadoutFlare
+  - LoadoutEmergencyMedipen
+  - LoadoutSpaceMedipen
+  - LoadoutMedkit
+
+- type: loadoutGroup
+  id: CCFoodDrink
+  name: cc-loadout-group-food-drink
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutWaterBottle
+  - LoadoutMRE
+  - LoadoutFlaskShiny
+  - LoadoutFlaskLithium
+  - LoadoutFlaskVacuum
+  - LoadoutFlaskMRE
+
+- type: loadoutGroup
+  id: CCMiscItems
+  name: cc-loadout-group-misc-items
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutPersonalAI
+  - LoadoutCrayonBox
+  - LoadoutBarberScissors
+  - LoadoutHandLabeler
+  - LoadoutStationMap
+  - LoadoutWaistbag
+  - LoadoutPen
+  - LoadoutLuxuryPen
+  - LoadoutBookRandom
+
+- type: loadoutGroup
+  id: CCPlushiesToys
+  name: cc-loadout-group-plushies-toys
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutPlushieGhost
+  - LoadoutPlushieBee
+  - LoadoutPlushieHampter
+  - LoadoutPlushieNuke
+  - LoadoutPlushieSharkBlue
+  - LoadoutPlushieSharkPink
+  - LoadoutPlushieSharkGrey
+  - LoadoutPlushieCarp
+  - LoadoutPlushieSlime
+  - LoadoutPlushieSnake
+  - LoadoutPlushiePenguin
+  - LoadoutPlushieMoth
+  - LoadoutPlushieVox
+  - LoadoutPlushieVulp
+  - LoadoutPlushieArachind
+  - LoadoutPlushieDiona
+  - LoadoutRubberDuck
+  - LoadoutToyMouse
+  - LoadoutMagic9Ball
+  - LoadoutBeachBall
+
+- type: loadoutGroup
+  id: CCPets
+  name: cc-loadout-group-pets
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPetMouse
+  - LoadoutPetHamster
+  - LoadoutPetMothroach
+
+# CC Officer Weapon
+- type: loadoutGroup
+  id: CCMaidEquipment
+  name: cc-loadout-group-maid-equipment
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCCMaidAdvancedMop
+
+# CC Maid Weapon
+- type: loadoutGroup
+  id: CCMaidWeapon
+  name: cc-loadout-group-maid-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCCMaidKatana
+
+# Security Gloves
+- type: loadoutGroup
+  id: CCMaidGloves
+  name: cc-loadout-group-security-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutSecGlovesBlack
+  - LoadoutSecGlovesFingerless
+  - LoadoutSecGlovesRed
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsGlovesCamouflage
+  - CCWClothingHandsGlovesLatexLong
+  - CCWVlPCGloves
+
+# Security Gloves
+- type: loadoutGroup
+  id: CCSecurityGloves
+  name: cc-loadout-group-security-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutSecGlovesBlack
+  - LoadoutSecGlovesCombat
+  - LoadoutSecGlovesFingerless
+  - LoadoutSecGlovesRed
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsFancyGloves
+  # Claw Command - imported wardrobe
+  - CCWClothingHandsGlovesCamouflage
+  - CCWClothingHandsGlovesLatexLong
+  - CCWVlPCGloves
+
+# Captain Sidearm
+- type: loadoutGroup
+  id: CCCaptainSidearm
+  name: cc-loadout-group-captain-sidearm
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutCaptainPulsePistol
+  - LoadoutCaptainDisabler
+
+# Bartender Weapon
+- type: loadoutGroup
+  id: CCBartenderWeapon
+  name: cc-loadout-group-bartender-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBartenderKnuckles
+  - LoadoutBartenderMosin
+  - LoadoutBartenderDoubleBarrelRubber # _ClawCommand: non-lethal loaded DB
+  - LoadoutBartenderDoubleBarrel       # _ClawCommand: simple bar DB shotgun
+  - LoadoutBartenderSawnOff            # _ClawCommand: sawed-off bar shotgun
+
+# Prisoner
+- type: loadoutGroup
+  id: PrisonerJumpsuitGroup
+  name: loadout-group-prisoner-jumpsuit
+  loadouts:
+  - PrisonerJumpsuit
+  - PrisonerJumpskirt
+  # Claw Command - imported wardrobe
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
+
+- type: loadoutGroup
+  id: PrisonerShoes
+  name: loadout-group-prisoner-shoes
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - BlackShoes
+  - WinterBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
+
+# Captain
+- type: loadoutGroup
+  id: LoadoutGroupCaptainShoes
+  minLimit: 0
+  defaultSelected: 1
+  name: cc-loadout-group-captain-shoes
+  loadouts:
+  - LoadoutCaptainShoesLaceup
+  - BlackShoes
+  - LoadoutShoesBlue
+  - LoadoutShoesBrown
+  - WinterBoots
+  - JackBoots
+  - CombatBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
+
+# Head of Personnel
+- type: loadoutGroup
+  id: LoadoutGroupHoPShoes
+  minLimit: 0
+  defaultSelected: 1
+  name: cc-loadout-group-hop-shoes
+  loadouts:
+  - LoadoutCaptainShoesLaceup
+  - BlackShoes
+  - LoadoutShoesBlue
+  - LoadoutShoesBrown
+  - WinterBoots
+  - JackBoots
+  - CombatBoots
+  # Claw Command - imported wardrobe
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
+
+# Chief Medical Officer
+- type: loadoutGroup
+  id: LoadoutGroupCMOGlasses
+  name: cc-loadout-group-cmo-glasses
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - LoadoutEyesHudMedical
+  - LoadoutEyesHudMedicalEyepatch
+  - LoadoutEyesHudChemical # No chemistry eyepatch
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen

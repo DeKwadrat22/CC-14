@@ -202,7 +202,7 @@ namespace Content.Client.Chat.UI
 
     }
 
-    public sealed class TextSpeechBubble : SpeechBubble
+    public sealed partial class TextSpeechBubble : SpeechBubble
     {
         public TextSpeechBubble(ChatMessage message, EntityUid senderEntity, string speechStyleClass, Color? fontColor = null)
             : base(message, senderEntity, speechStyleClass, fontColor)
@@ -230,7 +230,7 @@ namespace Content.Client.Chat.UI
         }
     }
 
-    public sealed class FancyTextSpeechBubble : SpeechBubble
+    public sealed partial class FancyTextSpeechBubble : SpeechBubble
     {
 
         public FancyTextSpeechBubble(ChatMessage message, EntityUid senderEntity, string speechStyleClass, Color? fontColor = null)

@@ -156,6 +156,8 @@
     - id: HolofanProjector
     - id: RCD
     - id: RCDAmmo
+    - id: RPD
+    - id: RCDAmmo # Extra compressed matter for the RPD
     - id: AirGrenade
     - id: PlushieLizardJobAtmospherictechnician
       prob: 0.02
@@ -167,6 +169,7 @@
     - id: ClothingOuterHardsuitAtmos
     - id: OxygenTankFilled
     - id: ClothingMaskBreath
+    - id: ClothingShoesBootsMag # Integrated magboots were disabled; ship physical magboots alongside the suit.
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -201,6 +204,8 @@
     - id: trayScanner
     - id: RCD
     - id: RCDAmmo
+    - id: RPD
+    - id: RCDAmmo # Extra compressed matter for the RPD
     - id: MetalFoamGrenade
     - id: PlushieLizardJobTechnicalassistant
       prob: 0.02

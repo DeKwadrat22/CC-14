@@ -1,0 +1,95 @@
+- type: gamePreset
+  id: SurvivalHellshift
+  alias:
+    - hellshift
+  showInVote: false
+  name: hellshift-title
+  description: hellshift-description
+  rules:
+    - HellshiftStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+
+- type: gamePreset
+  id: SurvivalIrregular
+  alias: [irregular]
+  showInVote: false
+  name: irregular-title
+  description: irregular-description
+  rules:
+    #- IrregularStationEventScheduler
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+
+# Claw Command - Extended Irregular rolls its own difficulty (easy / medium / hard) via
+# CCIrregularDifficultyRoll, which brings that difficulty's roundstart antags, event
+# scheduler and meteor scheduler with it. See _ClawCommand/GameRules/difficulty.yml.
+#
+# It deliberately does NOT use SubGamemodesRule any more: that pulls in heretic, wizard and
+# xenoborgs, none of which belong in this mode. Thief is rolled by the difficulty instead.
+- type: gamePreset
+  id: SurvivalIrregularExtended
+  alias: [irregular-extended]
+  showInVote: true
+  name: irregular-extended-title
+  description: irregular-extended-description
+  rules:
+    - CCIrregularDifficultyRoll
+    - CCIrregularSpaceTrafficControlScheduler
+    - BasicRoundstartVariation
+
+# Claw Command - Secret difficulty tiers. Picked by secret_weights.yml, never voted for
+# directly. Unlike Extended Irregular these list their rules flat, because SecretRuleSystem
+# already adds a preset's rules in order.
+- type: gamePreset
+  id: SecretEasy
+  alias: [secret-easy]
+  showInVote: false
+  name: secret-easy-title
+  description: secret-easy-description
+  rules:
+    - CCSecretEasyMajorAntag
+    - SubDummyNonAntagChance
+    - CCSecretEasyStationAntags
+    - CCSecretEasyScheduler
+    - CCSecretEasyMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretMedium
+  alias: [secret-medium]
+  showInVote: false
+  name: secret-medium-title
+  description: secret-medium-description
+  rules:
+    - CCSecretMediumMajorAntag
+    - SubDummyNonAntagChance
+    - CCSecretMediumStationAntags
+    - CCSecretMediumScheduler
+    - CCSecretMediumMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretHard
+  alias: [secret-hard]
+  showInVote: false
+  name: secret-hard-title
+  description: secret-hard-description
+  rules:
+    - CCSecretHardMajorAntag
+    - SubDummyNonAntagChance
+    - CCSecretHardStationAntags
+    - CCSecretHardScheduler
+    - CCSecretHardMeteorScheduler
+    - CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

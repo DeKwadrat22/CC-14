@@ -26,6 +26,7 @@
     DrinkLithiumFlask: 1
     StrangePill: 3
     ChemistryBottleToxin: 1
+    ToxinChemistryBottle: 1 # Claw Command - alt-ID reagent bottle
 
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
@@ -60,4 +61,8 @@
     ChemistryBottleMuteToxin: 3
     ChemistryBottleLead: 2
     ChemistryBottleToxin: 1
+    PaxChemistryBottle: 3 # Claw Command - alt-ID reagent bottles
+    MuteToxinChemistryBottle: 3 # Claw Command
+    LeadChemistryBottle: 2 # Claw Command
+    ToxinChemistryBottle: 1 # Claw Command
 

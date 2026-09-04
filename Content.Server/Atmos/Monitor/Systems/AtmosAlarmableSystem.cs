@@ -270,7 +270,7 @@ public sealed partial class AtmosAlarmableSystem : EntitySystem
     }
 }
 
-public sealed class AtmosAlarmEvent : EntityEventArgs
+public sealed partial class AtmosAlarmEvent : EntityEventArgs
 {
     public AtmosAlarmType AlarmType { get; }
 

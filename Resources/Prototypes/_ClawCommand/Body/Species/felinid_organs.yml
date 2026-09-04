@@ -1,0 +1,133 @@
+
+- type: entity
+  parent: OrganBase
+  id: OrganFelinidBase
+  abstract: true
+  suffix: Claw Command, Felinid
+
+- type: entity
+  id: OrganFelinidMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ MetabolizerFelinid ]
+
+- type: entity
+  parent: OrganFelinidBase
+  id: OrganFelinidInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganFelinidBase
+  id: OrganFelinidExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: MarkingsFelinid
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganFelinidExternal ]
+  id: OrganFelinidTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganFelinidExternal ]
+  id: OrganFelinidHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganFelinidExternal ]
+  id: OrganFelinidArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganFelinidExternal ]
+  id: OrganFelinidArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganFelinidExternal ]
+  id: OrganFelinidHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganFelinidExternal ]
+  id: OrganFelinidHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganFelinidExternal ]
+  id: OrganFelinidLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganFelinidExternal ]
+  id: OrganFelinidLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganFelinidExternal ]
+  id: OrganFelinidFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganFelinidExternal ]
+  id: OrganFelinidFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganFelinidInternal ]
+  id: OrganFelinidBrain
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganFelinidInternal, OrganFelinidExternal ]
+  id: OrganFelinidEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganFelinidInternal ]
+  id: OrganFelinidTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganFelinidInternal ]
+  id: OrganFelinidAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganFelinidInternal ]
+  id: OrganFelinidEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidStomach
+  components:
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Meat
+      - Vegetable
+      - Pill
+      - TagNutribrick
+      - TagIceCream
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidKidneys

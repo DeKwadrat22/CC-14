@@ -263,6 +263,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorEngineer
+  - type: PresetIdCard # Claw Command - senior jobs exist now, so the card can preset its title/access
+    job: SeniorEngineer
 
 #Medical
 
@@ -371,6 +373,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorPhysician
+  - type: PresetIdCard # Claw Command - senior jobs exist now, so the card can preset its title/access
+    job: SeniorPhysician
 
 #Science
 
@@ -425,6 +429,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorResearcher
+  - type: PresetIdCard # Claw Command - senior jobs exist now, so the card can preset its title/access
+    job: SeniorResearcher
 
 #Security
 
@@ -531,6 +537,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorOfficer
+  - type: PresetIdCard # Claw Command - senior jobs exist now, so the card can preset its title/access
+    job: SeniorOfficer
 
 #Service
 
@@ -854,6 +862,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorCourier
+  - type: PresetIdCard # Claw Command - senior jobs exist now, so the card can preset its title/access
+    job: SeniorCourier
 
 - type: entity
   parent: IDCardStandard

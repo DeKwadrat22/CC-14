@@ -161,9 +161,9 @@
   - type: Gun
     fireRate: 4
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      path: /Audio/Weapons/Guns/Gunshots/heavy_shot_suppressed.ogg # Claw Command
       params:
-        volume: -14
+        volume: -4 # Claw Command | The volume on this is essentially meaningless as the sound of the bullet hitting its target will nearly always be significantly louder than the gun firing.
     availableModes:
     - SemiAuto
   - type: ItemSlots

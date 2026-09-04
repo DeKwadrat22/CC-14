@@ -1,0 +1,56 @@
+# Microwave recipes ported from space/ where the result entity already exists
+# in target but the recipe was never brought over. Note: Raisins reagent was
+# dropped from the hotcross bun recipe since target doesn't have that reagent.
+
+- type: microwaveMealRecipe
+  id: RecipeHoneyBun
+  name: honey bun recipe
+  result: FoodBakedBunHoney
+  time: 5
+  group: Breads
+  solids:
+    FoodBreadBun: 1
+  reagents:
+    Honey: 5
+
+- type: microwaveMealRecipe
+  id: RecipeCookedSpaceshroom
+  name: cooked spaceshroom recipe
+  result: FoodSpaceshroomCooked
+  time: 5
+  group: Savory
+  solids:
+    FoodSpaceshroom: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHotX
+  name: hotcross bun recipe
+  result: FoodBakedBunHotX
+  time: 10
+  group: Breads
+  reagents:
+    Sugar: 5
+  solids:
+    FoodDoughSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMeatBun
+  name: meat bun recipe
+  result: FoodBakedBunMeat
+  time: 10
+  group: Breads
+  solids:
+    FoodDoughSlice: 1
+    FoodMeatCutlet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRicePudding2
+  name: rice pudding recipe
+  result: FoodRicePudding
+  time: 15
+  group: Dessert
+  reagents:
+    Rice: 15
+    Cream: 15
+  solids:
+    FoodBowlBig: 1

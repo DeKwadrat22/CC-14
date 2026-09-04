@@ -1,0 +1,12 @@
+# Ported from upstream: Entities/Clothing/OuterClothing/misc.yml
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterUnathiRobe
+  name: roughspun robes
+  description: A traditional Unathi garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/unathirobe.rsi

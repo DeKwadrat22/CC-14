@@ -1,0 +1,9 @@
+# CentComm Director cloak
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckCloakCentcommDirector
+  name: CentComm director's cloak
+  description: A lightweight and elegant cloak, emanating calmness.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/Cloaks/ccd_cloak.rsi

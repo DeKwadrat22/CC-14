@@ -131,7 +131,7 @@ namespace Content.Client.NPC
         }
     }
 
-    public sealed class PathfindingOverlay : Overlay
+    public sealed partial class PathfindingOverlay : Overlay
     {
         private readonly IEntityManager _entManager;
         private readonly IEyeManager _eyeManager;

@@ -1,0 +1,14 @@
+# Claw Command - opt-in antag bait.
+#
+# Purely a targeting flag: it grants no mechanical up- or downside on its own. Syndicate kill
+# objectives (see Objectives/traitor.yml) pick from the marked crew first via `preferredConditions`,
+# and only fall back to a random pick when nobody marked is available.
+
+- type: trait
+  id: MarkedTarget
+  name: trait-marked-target-name
+  description: trait-marked-target-desc
+  category: Quirks
+  cost: -3
+  components:
+  - type: MarkedTarget

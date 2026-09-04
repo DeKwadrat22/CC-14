@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._ClawCommand.Silicons.Borgs; // _ClawCommand - law board activation gating
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Player;
@@ -25,6 +26,13 @@ public abstract partial class SharedBorgSystem
             return false;
 
         if (_mobState.IsIncapacitated(chassis.Owner))
+            return false;
+
+        // _ClawCommand - lets other systems veto activation. Used by the law board slot: a borg with no
+        // lawset installed is inert.
+        var attempt = new BorgActivateAttemptEvent();
+        RaiseLocalEvent(chassis.Owner, ref attempt);
+        if (attempt.Cancelled)
             return false;
 
         return true;

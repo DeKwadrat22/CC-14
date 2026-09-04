@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleFoxForm
+  name: Fox Form
+  description: Transform in or out of your fox form.
+  components:
+  - type: Action
+    icon: { sprite: _ClawCommand/Mobs/Species/Kitsune/transform.rsi, state: foxform }
+    iconOn: { sprite: _ClawCommand/Mobs/Species/Kitsune/transform.rsi, state: humanform }
+    itemIconStyle: NoItem
+    useDelay: 10 # emote spam
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:KitsuneFoxFormActionEvent

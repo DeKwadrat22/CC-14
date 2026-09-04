@@ -1,0 +1,29 @@
+#HUMANOID FIGURINES
+
+- type: entity
+  parent: BaseFigurine
+  id: ToyGriffin
+  name: griffin figure
+  description: An action figure modeled after 'The Griffin', criminal mastermind.
+  components:
+  - type: Sprite
+    state: griffinprize
+
+- type: entity
+  parent: BaseFigurine
+  id: ToyOwlman
+  name: owl figure
+  description: An action figure modeled after 'The Owl', defender of justice.
+  components:
+  - type: Sprite
+    state: owlprize
+
+- type: entity
+  parent: BaseFigurine
+  id: ToySkeleton
+  name: skeleton figure
+  description: Spooked ya!
+  components:
+  - type: Sprite
+    state: skeletonprize
+

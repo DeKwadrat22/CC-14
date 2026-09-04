@@ -1,0 +1,25 @@
+- type: marking
+  id: BlushCheeks
+  bodyPart: Head
+  groupWhitelist: [ Human, Reptilian, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsFeroxi, Vulpkanin, MarkingsAvali , MarkingsIPC]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/face.rsi
+    state: blush
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#ff8080"
+
+- type: marking
+  id: BlushLong
+  bodyPart: Head
+  groupWhitelist: [ Human, Reptilian, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsFeroxi, Vulpkanin, MarkingsAvali , MarkingsIPC]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/face.rsi
+    state: blush_long
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#ff8080"

@@ -10,3 +10,5 @@
     ClothingHeadBandSkull: 2
     ClothingHeadsetRobotics: 2
     ClothingOuterWinterRobo: 2
+    ClothingBackpackRobotics: 2 # Claw Command - Delta-V
+    ClothingShoesBootsWinterRobo: 2 # Claw Command - Delta-V departmental winter boots

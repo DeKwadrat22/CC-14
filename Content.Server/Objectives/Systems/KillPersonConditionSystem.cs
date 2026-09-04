@@ -2,6 +2,8 @@ using Content.Server.Objectives.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components; // Claw Command
+using Content.Shared.Mobs; // Claw Command
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Configuration;
 
@@ -22,6 +24,7 @@ public sealed partial class KillPersonConditionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<KillPersonConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
+        SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged); // Claw Command
     }
 
     private void OnGetProgress(EntityUid uid, KillPersonConditionComponent comp, ref ObjectiveGetProgressEvent args)
@@ -29,7 +32,48 @@ public sealed partial class KillPersonConditionSystem : EntitySystem
         if (!_target.GetTarget(uid, out var target))
             return;
 
-        args.Progress = GetProgress(target.Value, comp.RequireDead, comp.RequireMaroon);
+        // Claw Command - a latched kill stays banked, so the dead check is already satisfied.
+        var requireDead = comp.RequireDead && !IsLatched(comp, target.Value);
+
+        args.Progress = GetProgress(target.Value, requireDead, comp.RequireMaroon);
+    }
+
+    /// <summary>
+    /// Claw Command - Banks the kill on any objective targeting the mind of a mob that just died.
+    /// Progress is only ever polled on demand, so without this a target who is killed and then
+    /// revived before anyone opens their objectives would never register as having died at all.
+    /// </summary>
+    // By value, not by ref: MobStateChangedEvent already has by-value broadcast subscribers elsewhere,
+    // and the bus refuses to mix the two.
+    private void OnMobStateChanged(MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        if (!TryComp<MindContainerComponent>(args.Target, out var container) || container.Mind is not { } mind)
+            return;
+
+        var query = EntityQueryEnumerator<KillPersonConditionComponent, TargetObjectiveComponent>();
+        while (query.MoveNext(out _, out var comp, out var target))
+        {
+            if (comp.LatchOnDeath && target.Target == mind)
+                comp.Latched = true;
+        }
+    }
+
+    /// <summary>
+    /// Claw Command - Whether this objective's kill is banked. Also latches on poll, to catch bodies
+    /// that left play without a state change to <see cref="MobState.Dead"/> first, such as a gib.
+    /// </summary>
+    private bool IsLatched(KillPersonConditionComponent comp, EntityUid target)
+    {
+        if (!comp.LatchOnDeath || comp.Latched)
+            return comp.Latched;
+
+        if (!TryComp<MindComponent>(target, out var mind) || mind.OwnedEntity == null || _mind.IsCharacterDeadIc(mind))
+            comp.Latched = true;
+
+        return comp.Latched;
     }
 
     private float GetProgress(EntityUid target, bool requireDead, bool requireMaroon)

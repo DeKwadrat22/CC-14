@@ -1,0 +1,314 @@
+# Claw Command - IPC Screen Markings
+# Screens use the Head bodyPart since our project doesn't have a Face layer
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenStatic
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_static
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenBlue
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_blue
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenBreakout
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_breakout
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenEight
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eight
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenGoggles
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_goggles
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenExclaim
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_exclaim
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenHeart
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_heart
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenMonoeye
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_monoeye
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenNature
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_nature
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenOrange
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_orange
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenPink
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_pink
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenQuestion
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_question
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenShower
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_shower
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenYellow
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_yellow
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenScroll
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_scroll
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenConsole
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_console
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenRgb
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rgb
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenGlider
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_glider
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenRainbowhoriz
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rainbowhoriz
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenBsod
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_bsod
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenRedtext
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_redtext
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenSinewave
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_sinewave
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenSquarewave
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_squarewave
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenEcgwave
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_ecgwave
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenEyes
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyes
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenEyestall
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyestall
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenEyesangry
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyesangry
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenLoading
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_loading
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenWindowsxp
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_windowsxp
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenTetris
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_tetris
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenTv
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_tv
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenTextdrop
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_textdrop
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenStars
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_stars
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenRainbowdiag
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rainbowdiag
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenBlank
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_blank
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenSmile
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_smile
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenFrown
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_frown
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenRing
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_ring
+
+- type: marking
+  groupWhitelist: [ MarkingsIPC ]
+  id: ScreenL
+  bodyPart: Head
+  sprites:
+    - sprite: Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_l

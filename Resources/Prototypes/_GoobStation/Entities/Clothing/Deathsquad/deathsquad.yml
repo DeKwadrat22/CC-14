@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Goob-sprite Deathsquad alts + default magboots. Hardsuit + helmet parent their
+# vanilla counterparts so stats mirror upstream exactly; only the Sprite/Clothing
+# paths swap to the _GoobStation art. Magboots are the default deathsquad boots
+# (used by the DeathSquadGear loadout) and parent ClothingShoesBootsMagAdv.
+
+- type: entity
+  parent: ClothingOuterHardsuitDeathsquad
+  id: ClothingOuterHardsuitDeathsquadAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitDeathsquadAlt
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitDeathsquad
+  id: ClothingHeadHelmetHardsuitDeathsquadAlt
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Head/Hardsuits/deathsquad.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Head/Hardsuits/deathsquad.rsi
+
+- type: entity
+  parent: ClothingShoesBootsMagERT
+  id: ClothingShoesBootsMagDeathsquad
+  name: Deathsquad Magboots
+  description: The sound of these boots are iconic; the sound of terror. They have a heavy magnetic pull, servomotors enhancing mobility and integrated thrusters. It can hold 0.75 L of gas.
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+    state: icon
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+  - type: Item
+    sprite: _GoobStation/Clothing/Shoes/Boots/deathsquad.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.10
+    sprintModifier: 1.10
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit

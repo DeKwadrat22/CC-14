@@ -12,6 +12,11 @@ public sealed partial class Loadout : IEquatable<Loadout>
     [DataField]
     public ProtoId<LoadoutPrototype> Prototype;
 
+    // Claw Command - custom loadout item naming
+    [DataField]
+    public string? CustomName;
+    // Claw Command end
+
     public bool Equals(Loadout? other)
     {
         if (ReferenceEquals(null, other)) return false;

@@ -1,0 +1,42 @@
+# Claw Command - Prisoner as a selectable roundstart/midround job
+- type: job
+  id: Prisoner
+  name: job-name-prisoner
+  description: job-description-prisoner
+  playTimeTracker: JobPrisoner
+  startingGear: PrisonerGear
+  icon: "JobIconPrisoner"
+  supervisors: job-supervisors-security
+  setPreference: true
+  alwaysUseSpawner: true
+  weight: 0
+  access:
+  - GenpopEnter
+
+- type: startingGear
+  id: PrisonerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    id: PermanentPrisonerIDCard
+    ears: ClothingHeadsetGrey
+    shoes: ClothingShoesColorBlack
+
+# Permanent prisoner ID - no ExpireIdCard so GenpopLeave is never granted
+- type: entity
+  parent: PrisonerIDCard
+  id: PermanentPrisonerIDCard
+  name: permanent prisoner ID card
+  description: A prisoner ID card for long-term inmates. This card does not expire.
+  components:
+  - type: ExpireIdCard
+    permanent: true
+    expiredAccess: []
+
+- type: chameleonOutfit
+  id: PrisonerChameleonOutfit
+  job: Prisoner
+  equipment:
+    mask: ClothingMaskBreath
+    hands: ClothingHandsGlovesFingerless
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack

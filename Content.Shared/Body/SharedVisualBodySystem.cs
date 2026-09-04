@@ -36,7 +36,14 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
 
         // This method uses two loops since some marking with constrained colors care about the colors of previous markings.
         // As such we want to ensure we can apply the markings they rely on first.
-        foreach (var marking in markings)
+
+        // CLAW COMMAND 14 - Sort markings by a new layering system. This was simple enough. - Cookie
+        var sorted = markings
+        .OrderBy(m => _marking.TryGetMarking(m, out var proto) ? proto.RenderPriority : 0)
+        .ToList();
+
+        // foreach (var marking in markings)
+        foreach (var marking in sorted)
         {
             if (!_marking.TryGetMarking(marking, out var proto))
                 continue;
@@ -134,6 +141,23 @@ public abstract partial class SharedVisualBodySystem : EntitySystem
         {
             ent.Comp.Data.State = state;
             SetOrganAppearance(ent, ent.Comp.Data, ent.Comp.Displacement);
+        }
+
+        // CLAW COMMAND: re-resolve this organ's currently-applied markings against the new skin/eye
+        // color. The marking-apply path (OnMarkingsOrganApplyMarkings) only runs for categories that
+        // are present in the character profile, so species DEFAULT markings — which live on the organ
+        // and aren't stored in the profile (e.g. a Vulpkanin's default ears/tail) — would otherwise
+        // keep their creation-time color when the skin changed: the body recolored but the default
+        // markings did not. ResolveMarkings only re-derives skin-following (forcedColoring / MatchSkin)
+        // markings; user-picked colors on customizable markings are preserved.
+        if (TryComp<VisualOrganMarkingsComponent>(ent, out var markingsComp)
+            && markingsComp.Markings.Count > 0
+            && ProtoMan.TryIndex(markingsComp.MarkingData.Group, out var groupProto))
+        {
+            var resolved = markingsComp.Markings.ToDictionary(
+                kvp => kvp.Key,
+                kvp => ResolveMarkings(kvp.Value, ent.Comp.Profile.SkinColor, ent.Comp.Profile.EyeColor, groupProto.Appearances));
+            SetOrganMarkings((ent.Owner, markingsComp), resolved);
         }
     }
 

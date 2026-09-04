@@ -1,0 +1,13 @@
+# Claw Command - Syndicate outpost pinpointer
+- type: listing
+  id: UplinkPinpointerSyndieOutpost
+  name: uplink-pinpointer-syndie-outpost-name
+  description: uplink-pinpointer-syndie-outpost-desc
+  productEntity: PinpointerSyndieOutpost
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkDeception

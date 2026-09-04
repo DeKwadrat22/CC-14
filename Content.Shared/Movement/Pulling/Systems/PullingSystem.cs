@@ -61,6 +61,8 @@ public sealed partial class PullingSystem : EntitySystem
         UpdatesAfter.Add(typeof(SharedPhysicsSystem));
         UpdatesOutsidePrediction = true;
 
+        InitializeGrab(); // claw command - grab intent
+
         SubscribeLocalEvent<PullableComponent, MoveInputEvent>(OnPullableMoveInput);
         SubscribeLocalEvent<PullableComponent, CollisionChangeEvent>(OnPullableCollisionChange);
         SubscribeLocalEvent<PullableComponent, JointRemovedEvent>(OnJointRemoved);
@@ -245,6 +247,11 @@ public sealed partial class PullingSystem : EntitySystem
 
     private void OnVirtualItemDeleted(EntityUid uid, PullerComponent component, VirtualItemDeletedEvent args)
     {
+        // claw command - we're mid grab-stage change and are managing these items ourselves; a removed
+        // choke hand is a de-escalation, not the player dropping the pull.
+        if (_updatingGrabVirtualItems)
+            return;
+
         // If client deletes the virtual hand then stop the pull.
         if (component.Pulling == null)
             return;
@@ -300,7 +307,9 @@ public sealed partial class PullingSystem : EntitySystem
             return;
         }
 
-        args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
+        // claw command - grab intent stacks a further penalty on top of the base pulling slowdown.
+        var grabMod = GetGrabSpeedModifier(component);
+        args.ModifySpeed(component.WalkSpeedModifier * grabMod, component.SprintSpeedModifier * grabMod);
     }
 
     private void OnPullableMoveInput(EntityUid uid, PullableComponent component, ref MoveInputEvent args)
@@ -371,6 +380,10 @@ public sealed partial class PullingSystem : EntitySystem
         if (oldPuller != null)
             RemComp<ActivePullerComponent>(oldPuller.Value);
 
+        // claw command - grab intent: drop the grab ladder and any hands it was occupying.
+        TryComp<PullerComponent>(oldPuller, out var oldPullerComp);
+        ClearGrabState(pullableComp, oldPullerComp);
+
         pullableComp.PullJointId = null;
         pullableComp.Puller = null;
         Dirty(pullableUid, pullableComp);
@@ -379,6 +392,7 @@ public sealed partial class PullingSystem : EntitySystem
         if (TryComp<PullerComponent>(oldPuller, out var pullerComp))
         {
             var pullerUid = oldPuller.Value;
+            _blocker.UpdateCanMove(pullableUid); // claw command - grab no longer roots them
             _alertsSystem.ClearAlert(pullerUid, pullerComp.PullingAlert);
             pullerComp.Pulling = null;
             Dirty(oldPuller.Value, pullerComp);
@@ -484,6 +498,11 @@ public sealed partial class PullingSystem : EntitySystem
 
         if (pullable.Comp.Puller == pullerUid)
         {
+            // claw command - grab intent: in combat mode, pressing pull again escalates the grab
+            // (pull -> soft -> hard -> choke) instead of letting go.
+            if (TryGrab((pullable.Owner, pullable.Comp), pullerUid))
+                return true;
+
             return TryStopPull(pullable, pullable.Comp);
         }
 
@@ -598,7 +617,7 @@ public sealed partial class PullingSystem : EntitySystem
         return true;
     }
 
-    public bool TryStopPull(EntityUid pullableUid, PullableComponent pullable, EntityUid? user = null)
+    public bool TryStopPull(EntityUid pullableUid, PullableComponent pullable, EntityUid? user = null, bool ignoreGrab = false)
     {
         var pullerUidNull = pullable.Puller;
 
@@ -610,6 +629,15 @@ public sealed partial class PullingSystem : EntitySystem
 
         if (msg.Cancelled)
             return false;
+
+        // claw command - grab intent: a grabbed victim breaking free themselves has to win a roll first.
+        if (!ignoreGrab && user == pullableUid && !AttemptGrabRelease((pullableUid, pullable)))
+        {
+            if (_netManager.IsServer)
+                _popup.PopupEntity(Loc.GetString("popup-grab-release-fail-self"), pullableUid, pullableUid, PopupType.MediumCaution);
+
+            return false;
+        }
 
         StopPulling(pullableUid, pullable);
         return true;

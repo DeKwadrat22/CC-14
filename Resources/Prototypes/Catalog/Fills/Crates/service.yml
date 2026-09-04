@@ -225,6 +225,14 @@
         - id: NewtonCradle
         - id: BoxEnvelope
         - id: BrbSign
+        # Claw Command - DV office supplies
+        - id: BoxReamBright
+        - id: BoxReamClassic
+        - id: BoxReamWhite
+        - id: PaperStickyNoteStackFilled
+          amount: 2
+        - id: PaperStickyNoteStackFilledBlue
+          amount: 2
         - id: DeskBell
 
 - type: entity

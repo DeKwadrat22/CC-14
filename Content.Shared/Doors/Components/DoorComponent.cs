@@ -15,6 +15,11 @@ namespace Content.Shared.Doors.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class DoorComponent : Component
 {
+
+    /// Claw command, temporarily blocks atmos when the door has been opened.
+    [DataField]
+    public bool BlockOpenAtmos = false;
+
     /// <summary>
     /// The current state of the door -- whether it is open, closed, opening, or closing.
     /// </summary>

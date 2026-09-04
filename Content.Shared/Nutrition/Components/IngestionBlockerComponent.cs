@@ -18,4 +18,10 @@ public sealed partial class IngestionBlockerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Enabled = true;
+
+    // Claw Command: ported from Goob-Station — when true and worn in the mask slot,
+    // this passively prevents smoke from being ingested into the bloodstream even
+    // without internals enabled. Gives "real" gas masks meaningful smoke protection.
+    [DataField, AutoNetworkedField]
+    public bool BlockSmokeIngestion;
 }

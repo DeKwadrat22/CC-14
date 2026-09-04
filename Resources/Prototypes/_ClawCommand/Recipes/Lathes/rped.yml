@@ -1,0 +1,13 @@
+# RPED lathe recipe.
+
+- type: latheRecipe
+  id: RPED
+  result: RPED
+  categories:
+  - Tools
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 300
+    Plastic: 200
+    Gold: 100

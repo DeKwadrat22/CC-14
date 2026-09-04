@@ -1,0 +1,138 @@
+# Ported from _Nuclear14/Entities/Structures/Furniture/{beds,chairs,table}.yml
+# and _Nuclear14/Entities/Structures/Storage/closets.yml — just the four
+# entities referenced by the CentComm map. Construction graph references are
+# omitted (the N14* graphs don't exist on this fork).
+
+- type: entity
+  parent: Bed
+  id: N14Bed
+  name: Bed
+  description: A clean mattress for sleeping on.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
+    state: bed
+
+- type: entity
+  parent: StoolBase
+  id: N14ChairStoolBarBlack
+  description: A black bar stool.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
+    state: bar_black
+    snapCardinals: true
+
+# Local copy of the closet base (the original is overflowing with N14-specific
+# components; we strip down to what's needed for the cabinet to load).
+- type: entity
+  parent: ClosetBase
+  id: N14ClosetBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Closets/closet.rsi
+    layers:
+    - state: closet
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closet_door
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Physics
+    bodyType: Static
+  - type: EntityStorageVisuals
+    stateBaseClosed: closet
+    stateDoorOpen: closet_open
+    stateDoorClosed: closet_door
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: N14ClosetBase
+  id: N14ClosetCabinetWood
+  name: cabinet
+  description: An old pre-war wooden cabinet.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Closets/cabinet.rsi
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Tag
+    tags:
+    - Wooden
+
+- type: entity
+  id: N14TableMetalGrate
+  parent: Table
+  name: metal table
+  description: A cold handmade metal table made from grating.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
+
+# Added for the new Saltern map import.
+- type: entity
+  parent: ChairWood
+  id: N14ChairArmchair
+  name: armchair
+  description: A padded armchair.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: armchair
+
+- type: entity
+  parent: Chair
+  id: N14ChairMetalRed
+  name: red metal chair
+  description: A red metal chair for sitting on.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: metal_chair_red
+
+- type: entity
+  parent: OfficeChairBase
+  id: N14ChairOfficeErgonomic
+  name: ergonomic office chair
+  description: An ergonomic chair built for long shifts.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: ergo_chair
+
+- type: entity
+  parent: Table
+  id: N14TableDeskWood2
+  name: wooden desk
+  description: A wooden desk.
+  components:
+  # Override Table's IconSmooth layers — N14 desk RSI is a single-state standalone sprite.
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
+    layers:
+    - state: desk_wood
+  - type: Icon
+    sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
+    state: desk_wood
+  - type: IconSmooth
+    mode: NoSprite

@@ -10,6 +10,8 @@
     DrinkLemonLimeCan: 2
     DrinkLemonLimeCranberryCan: 2
     DrinkFourteenLokoCan: 2
+    DrinkBoykisserEnergy: 4 # Claw Command - Floof port
+    DrinkNNNCan: 2 # Claw Command - Floof port
   contrabandInventory:
     DrinkDrGibbCan: 3
     DrinkChangelingStingCan: 2

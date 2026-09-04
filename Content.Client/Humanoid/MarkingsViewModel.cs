@@ -100,7 +100,8 @@ public sealed partial class MarkingsViewModel
         {
             _organProfileData[organ] = data with { SkinColor = skinColor };
         }
-        OrganProfileDataChanged?.Invoke(false);
+        // OrganProfileDataChanged?.Invoke(); // CLAW COMMAND - Lag fix
+        MarkingsColorsChanged?.Invoke();
     }
 
     /// <summary>
@@ -140,7 +141,10 @@ public sealed partial class MarkingsViewModel
                 kvp => kvp.Key,
                 kvp => kvp.Value.ToDictionary(
                     it => it.Key,
-                    it => it.Value.ShallowClone()));
+                    it => it.Value.Select(marking => new Marking(marking.MarkingId, marking.MarkingColors)
+                    {
+                        Forced = marking.Forced,
+                    }).ToList()));
 
             MarkingsReset?.Invoke();
         }
@@ -151,9 +155,9 @@ public sealed partial class MarkingsViewModel
     /// </summary>
     public event Action? MarkingsReset;
 
-    /// <summary>
-    /// Raised whenever a specific layer's markings have changed
-    /// </summary>
+    // CLAW COMMAND //
+    public event Action? MarkingsColorsChanged;
+
     public event Action<ProtoId<OrganCategoryPrototype>, HumanoidVisualLayers>? MarkingsChanged;
 
     private Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> _organData = new();
@@ -393,6 +397,15 @@ public sealed partial class MarkingsViewModel
     /// </summary>
     public void ValidateMarkings()
     {
+        // CLAW COMMAND - Remove any organ markings that don't exist in the current species' organ data.
+        // This prevents markings from a previous species (e.g. Vulpkanin tail/ears)
+        // persisting when switching to a species that lacks those organs (e.g. Human).
+        foreach (var organ in _markings.Keys.ToArray())
+        {
+            if (!_organData.ContainsKey(organ))
+                _markings.Remove(organ);
+        }
+
         foreach (var (organ, organData) in _organData)
         {
             if (!_organProfileData.TryGetValue(organ, out var organProfileData))

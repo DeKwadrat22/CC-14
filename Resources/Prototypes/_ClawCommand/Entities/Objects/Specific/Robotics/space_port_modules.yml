@@ -1,0 +1,151 @@
+# _ClawCommand: borg modules ported from space.
+#
+# Survey-correction: 14 candidates in agent's "missing" list — verified per-ID against fork:
+#   ALREADY-PRESENT (8 duplicates avoided): BorgModuleAnomaly, BorgModuleArtifact, BorgModuleAppraisal,
+#     BorgModuleService, BorgModuleAdvancedCleaning, BorgModuleCleaning, BorgModuleClowning,
+#     BorgModuleConstruction, BorgModuleGardening, BorgModuleHarvesting, BorgModuleMusique,
+#     BorgModuleMining, BorgModuleRCD, BorgModuleRPD.
+#
+#   SKIPPED (dependencies missing):
+#     - BorgModuleJetpack       — no BorgJetpack component in fork
+#     - BorgModulePka           — needs WeaponProtoKineticAcceleratorborg (not ported)
+#     - BorgModuleAdvancedTreatment — needs HandheldHealthAnalyzerUnpowered (not ported)
+#     - BorgModuleStun/Kill/Investigation/GorillaGauntlet — security modules need a stack of
+#       weapons/scanners/PDAs that aren't in fork; some reference Gauze10Lingering (shitmed rule).
+#     - BorgModuleDiagnosis    — ghost recipe in space, no entity proto exists either.
+#     - BorgModuleAdvancedMeasures — doesn't exist as entity in space at all (orphan recipe).
+#
+# Architectural adaptation: Space uses `ItemBorgModule.items: [list of EntProtoId]`. The fork
+# refactored this to `ItemBorgModule.hands: [list of BorgHand records]`, so each space item is
+# converted to `- item: X` under the new hands field.
+#
+# PORTED HERE (6 modules, all deps satisfied):
+#   - BorgModuleGPS / BorgModuleRadiationDetection (basic utility)
+#   - BorgModuleGrapplingGun (cargo)
+#   - BorgModuleLightReplacer (janitor)
+#   - BorgModuleTreatment / BorgModuleDefibrillator (medical, non-shitmed)
+
+# === Utility ===
+
+- type: entity
+  id: BorgModuleGPS
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: GPS cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-gps
+  - type: ItemBorgModule
+    hands:
+    - item: HandheldGPSBasic
+    - item: HandHeldMassScannerBorg
+    - item: HandheldStationMapUnpowered
+
+- type: entity
+  id: BorgModuleRadiationDetection
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: radiation detection cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-radiation
+  - type: ItemBorgModule
+    hands:
+    - item: GeigerCounter
+
+# === Cargo ===
+
+- type: entity
+  id: BorgModuleGrapplingGun
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  name: grappling gun cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-grappling-gun
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponGrapplingGun
+    - item: HandheldGPSBasic
+
+# _ClawCommand - salvage-only armour plating module. Loot-only (space + lavaland). Parented to
+# BaseBorgModuleCargo so only salvage cyborgs (vanilla 'mining' + dogborg-blade) can install it.
+# Passive: ComponentBorgModule grants a DamageProtectionBuff (self-applied on the chassis via
+# DamageModifyEvent) plus ExplosionResistance while installed, both removed cleanly on uninstall.
+# Matches the security-borg armour values: blunt/slash 50%, piercing 45%, heat 40%, explosion 35%.
+- type: entity
+  id: BorgModuleSalvageArmor
+  parent: BaseBorgModuleCargo
+  name: salvage plating cyborg module
+  description: A slab of ruggedised armour plating salvaged from the deep. Bolts onto a salvage cyborg to shrug off blows, blades, punctures, heat and blasts.
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-mining-adv
+  - type: ComponentBorgModule
+    components:
+    - type: DamageProtectionBuff
+      modifiers:
+        salvagePlating:
+          id: ModifierSetSalvageBorgPlating
+          coefficients:
+            Blunt: 0.5
+            Slash: 0.5
+            Piercing: 0.55
+            Heat: 0.6
+    - type: ExplosionResistance
+      damageCoefficient: 0.65
+
+# === Janitor ===
+
+- type: entity
+  id: BorgModuleLightReplacer
+  parent: [ BaseBorgModuleJanitor, BaseProviderBorgModule ]
+  name: light replacer cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: janitor
+    - state: icon-light-replacer
+  - type: ItemBorgModule
+    hands:
+    - item: LightReplacer
+    - item: Crowbar
+    - item: Screwdriver
+
+# === Medical (non-shitmed) ===
+
+- type: entity
+  id: BorgModuleTreatment
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: treatment cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-treatment
+  - type: ItemBorgModule
+    hands:
+    - item: Brutepack
+    - item: Ointment
+    - item: Gauze
+    - item: Bloodpack
+    - item: Syringe
+    - item: Dropper
+
+- type: entity
+  id: BorgModuleDefibrillator
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: defibrillator cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-defib
+  - type: ItemBorgModule
+    hands:
+    - item: DefibrillatorOneHandedUnpowered

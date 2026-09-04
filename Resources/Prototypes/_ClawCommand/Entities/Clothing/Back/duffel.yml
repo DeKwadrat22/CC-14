@@ -1,0 +1,10 @@
+# Claw Command duffel bag
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelClawCommand
+  suffix: Claw Command
+  name: claw command duffel bag
+  description: A very protective duffel bag, smells like fur.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Back/Duffels/clawcommand.rsi

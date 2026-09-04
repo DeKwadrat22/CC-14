@@ -6,6 +6,8 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Access.Components;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 /// <summary>
 /// Stores access levels necessary to "use" an entity
 /// and allows checking if something or somebody is authorized with these access levels.
@@ -95,6 +97,13 @@ public sealed partial class AccessReaderComponent : Component
     /// </remarks>
     [DataField]
     public LocId ExaminationText = "access-reader-examination";
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     Whether the entity has access to its reader component.
+    /// </summary>
+    [DataField]
+    public bool OwnerHasAccess;
 }
 
 [DataDefinition, Serializable, NetSerializable]

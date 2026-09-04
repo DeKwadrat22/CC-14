@@ -98,6 +98,25 @@
     price: 40
   - type: IgnitionSource
     temperature: 700
+  - type: WeldingHealing #claw command - IPC
+    damageContainers:
+      - Silicon
+    damage:
+      types:
+        Blunt: -15
+        Piercing: -15
+        Slash: -15
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 80
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: [SolutionToolWelder, BaseWelder]

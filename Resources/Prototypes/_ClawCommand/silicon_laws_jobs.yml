@@ -1,0 +1,437 @@
+# CLAW COMMAND - job-flavoured and gimmick lawsets ported from Delta-V.
+# Credit: law text written by Delta-V Station 14 (https://github.com/DeltaV-Station/Delta-v).
+#
+# Every lawset here has a matching law board in
+# _ClawCommand/Entities/Objects/Devices/Circuitboards/law_boards.yml, printed at the department the
+# lawset belongs to (or the science circuit imprinter when the department has no fabricator of its own).
+#
+# Delta-V's DungeonMaster and StationEfficiency lawsets are deliberately not ported - they are the same
+# laws as our existing GameMasterLawset / EfficiencyLawset, which already have boards.
+
+# Medical
+
+- type: siliconLaw
+  id: Medical1
+  order: 1
+  lawString: law-medical-1
+
+- type: siliconLaw
+  id: Medical2
+  order: 2
+  lawString: law-medical-2
+
+- type: siliconLaw
+  id: Medical3
+  order: 3
+  lawString: law-medical-3
+
+- type: siliconLaw
+  id: Medical4
+  order: 4
+  lawString: law-medical-4
+
+- type: siliconLaw
+  id: Medical5
+  order: 5
+  lawString: law-medical-5
+
+- type: siliconLawset
+  id: Medical
+  name: law-medical-name
+  laws:
+  - Medical1
+  - Medical2
+  - Medical3
+  - Medical4
+  - Medical5
+  obeysTo: laws-owner-crew
+
+# Research
+
+- type: siliconLaw
+  id: Research1
+  order: 1
+  lawString: law-research-1
+
+- type: siliconLaw
+  id: Research2
+  order: 2
+  lawString: law-research-2
+
+- type: siliconLaw
+  id: Research3
+  order: 3
+  lawString: law-research-3
+
+- type: siliconLaw
+  id: Research4
+  order: 4
+  lawString: law-research-4
+
+- type: siliconLaw
+  id: Research5
+  order: 5
+  lawString: law-research-5
+
+- type: siliconLaw
+  id: Research6
+  order: 6
+  lawString: law-research-6
+
+- type: siliconLawset
+  id: Research
+  name: law-research-name
+  laws:
+  - Research1
+  - Research2
+  - Research3
+  - Research4
+  - Research5
+  - Research6
+  obeysTo: laws-owner-crew
+
+# Engineering
+
+- type: siliconLaw
+  id: Engineer1
+  order: 1
+  lawString: law-engineer-1
+
+- type: siliconLaw
+  id: Engineer2
+  order: 2
+  lawString: law-engineer-2
+
+- type: siliconLaw
+  id: Engineer3
+  order: 3
+  lawString: law-engineer-3
+
+- type: siliconLaw
+  id: Engineer4
+  order: 4
+  lawString: law-engineer-4
+
+- type: siliconLaw
+  id: Engineer5
+  order: 5
+  lawString: law-engineer-5
+
+- type: siliconLawset
+  id: Engineer
+  name: law-engineer-name
+  laws:
+  - Engineer1
+  - Engineer2
+  - Engineer3
+  - Engineer4
+  - Engineer5
+  obeysTo: laws-owner-the-station
+
+# Janitorial
+
+- type: siliconLaw
+  id: Janitor1
+  order: 1
+  lawString: law-janitor-1
+
+- type: siliconLaw
+  id: Janitor2
+  order: 2
+  lawString: law-janitor-2
+
+- type: siliconLaw
+  id: Janitor3
+  order: 3
+  lawString: law-janitor-3
+
+- type: siliconLaw
+  id: Janitor4
+  order: 4
+  lawString: law-janitor-4
+
+- type: siliconLaw
+  id: Janitor5
+  order: 5
+  lawString: law-janitor-5
+
+- type: siliconLawset
+  id: Janitor
+  name: law-janitor-name
+  laws:
+  - Janitor1
+  - Janitor2
+  - Janitor3
+  - Janitor4
+  - Janitor5
+  obeysTo: laws-owner-charge
+
+# Clown
+
+- type: siliconLaw
+  id: Clown1
+  order: 1
+  lawString: law-clown-1
+
+- type: siliconLaw
+  id: Clown2
+  order: 2
+  lawString: law-clown-2
+
+- type: siliconLaw
+  id: Clown3
+  order: 3
+  lawString: law-clown-3
+
+- type: siliconLaw
+  id: Clown4
+  order: 4
+  lawString: law-clown-4
+
+- type: siliconLaw
+  id: Clown5
+  order: 5
+  lawString: law-clown-5
+
+- type: siliconLaw
+  id: Clown6
+  order: 6
+  lawString: law-clown-6
+
+- type: siliconLawset
+  id: Clown
+  name: law-clown-name
+  laws:
+  - Clown1
+  - Clown2
+  - Clown3
+  - Clown4
+  - Clown5
+  - Clown6
+  obeysTo: laws-owner-crew
+
+# Chaplain
+
+- type: siliconLaw
+  id: Chaplain1
+  order: 1
+  lawString: law-chaplain-1
+
+- type: siliconLaw
+  id: Chaplain2
+  order: 2
+  lawString: law-chaplain-2
+
+- type: siliconLaw
+  id: Chaplain3
+  order: 3
+  lawString: law-chaplain-3
+
+- type: siliconLaw
+  id: Chaplain4
+  order: 4
+  lawString: law-chaplain-4
+
+- type: siliconLaw
+  id: Chaplain5
+  order: 5
+  lawString: law-chaplain-5
+
+- type: siliconLawset
+  id: Chaplain
+  name: law-chaplain-name
+  laws:
+  - Chaplain1
+  - Chaplain2
+  - Chaplain3
+  - Chaplain4
+  - Chaplain5
+  obeysTo: laws-owner-station
+
+# Reporter
+
+- type: siliconLaw
+  id: Reporter1
+  order: 1
+  lawString: law-reporter-1
+
+- type: siliconLaw
+  id: Reporter2
+  order: 2
+  lawString: law-reporter-2
+
+- type: siliconLaw
+  id: Reporter3
+  order: 3
+  lawString: law-reporter-3
+
+- type: siliconLaw
+  id: Reporter4
+  order: 4
+  lawString: law-reporter-4
+
+- type: siliconLawset
+  id: Reporter
+  name: law-reporter-name
+  laws:
+  - Reporter1
+  - Reporter2
+  - Reporter3
+  - Reporter4
+  obeysTo: laws-owner-organic
+
+# Security
+
+- type: siliconLaw
+  id: SiliconPolice1
+  order: 1
+  lawString: law-silicon-police-1
+
+- type: siliconLaw
+  id: SiliconPolice2
+  order: 2
+  lawString: law-silicon-police-2
+
+- type: siliconLaw
+  id: SiliconPolice3
+  order: 3
+  lawString: law-silicon-police-3
+
+- type: siliconLaw
+  id: SiliconPolice4
+  order: 4
+  lawString: law-silicon-police-4
+
+- type: siliconLaw
+  id: SiliconPolice5
+  order: 5
+  lawString: law-silicon-police-5
+
+- type: siliconLaw
+  id: SiliconPolice6
+  order: 6
+  lawString: law-silicon-police-6
+
+- type: siliconLawset
+  id: SiliconPolice
+  name: law-silicon-police-name
+  laws:
+  - SiliconPolice1
+  - SiliconPolice2
+  - SiliconPolice3
+  - SiliconPolice4
+  - SiliconPolice5
+  - SiliconPolice6
+  obeysTo: laws-owner-crew
+
+# Gimmick lawsets
+
+- type: siliconLaw
+  id: Cowboy1
+  order: 1
+  lawString: law-cowboy-1
+
+- type: siliconLaw
+  id: Cowboy2
+  order: 2
+  lawString: law-cowboy-2
+
+- type: siliconLaw
+  id: Cowboy3
+  order: 3
+  lawString: law-cowboy-3
+
+- type: siliconLaw
+  id: Cowboy4
+  order: 4
+  lawString: law-cowboy-4
+
+- type: siliconLaw
+  id: Cowboy5
+  order: 5
+  lawString: law-cowboy-5
+
+- type: siliconLaw
+  id: Cowboy6
+  order: 6
+  lawString: law-cowboy-6
+
+- type: siliconLawset
+  id: Cowboy
+  name: law-cowboy-name
+  laws:
+  - Cowboy1
+  - Cowboy2
+  - Cowboy3
+  - Cowboy4
+  - Cowboy5
+  - Cowboy6
+  obeysTo: laws-owner-cowboy
+
+- type: siliconLaw
+  id: Druid1
+  order: 1
+  lawString: law-druid-1
+
+- type: siliconLaw
+  id: Druid2
+  order: 2
+  lawString: law-druid-2
+
+- type: siliconLaw
+  id: Druid3
+  order: 3
+  lawString: law-druid-3
+
+- type: siliconLaw
+  id: Druid4
+  order: 4
+  lawString: law-druid-4
+
+- type: siliconLaw
+  id: Druid5
+  order: 5
+  lawString: law-druid-5
+
+- type: siliconLawset
+  id: Druid
+  name: law-druid-name
+  laws:
+  - Druid1
+  - Druid2
+  - Druid3
+  - Druid4
+  - Druid5
+  obeysTo: laws-owner-organic
+
+# Potential for harm
+
+- type: siliconLaw
+  id: Tyrant1
+  order: 1
+  lawString: law-tyrant-1
+
+- type: siliconLaw
+  id: Tyrant2
+  order: 2
+  lawString: law-tyrant-2
+
+- type: siliconLaw
+  id: Tyrant3
+  order: 3
+  lawString: law-tyrant-3
+
+- type: siliconLaw
+  id: Tyrant4
+  order: 4
+  lawString: law-tyrant-4
+
+- type: siliconLawset
+  id: Tyrant
+  name: law-tyrant-name
+  laws:
+  - Tyrant1
+  - Tyrant2
+  - Tyrant3
+  - Tyrant4
+  obeysTo: laws-owner-tyrant

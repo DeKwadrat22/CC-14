@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: buzzes
+  files:
+  - /Audio/_DeltaV/Effects/Buzzes/buzz1.ogg
+  - /Audio/_DeltaV/Effects/Buzzes/buzz2.ogg
+  - /Audio/_DeltaV/Effects/Buzzes/buzz3.ogg
+  - /Audio/_DeltaV/Effects/Buzzes/buzz4.ogg

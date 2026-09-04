@@ -1,0 +1,205 @@
+# Claw Command - loadout groups for the imported wardrobe.
+#
+# Almost everything imported was folded into the group each job already has for that slot, so a
+# security officer picks a new helmet inside SecurityHead and the captain picks a dress uniform
+# inside CaptainJumpsuit - no parallel category sitting next to the real one.
+#
+# What is left here is the fallback for jobs that have no group for a slot at all. A passenger has
+# no "head" category to merge into, so it gets one. Roles that do have a group never see these,
+# which is why each is attached to a specific subset of roles rather than to everything.
+#
+# WardenNeck is not a wardrobe group: every other head-of-staff role already has a <Role>Neck
+# group and the warden simply lacked one, so it follows that existing convention.
+
+- type: loadoutGroup
+  id: CCWardrobeHats
+  name: cc-loadout-group-wardrobe-hats
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCWArmyBeretArmyG
+  - CCWArmyBeretArmyS
+  - CCWArmyBeretArmyY
+  - CCWBloodyHeadband
+  - CCWClothingHeadHatBowlerCool
+  - CCWClothingHeadHatBowlerHatBrown
+  - CCWClothingHeadHatBowlerOrange
+  - CCWClothingHeadHatBowlerPink
+  - CCWClothingHeadHatImam
+  - CCWClothingHeadHatPirateCaptain
+  - CCWClothingHeadHatSnowmaiden
+  - CCWDressCapArmyB
+  - CCWDressCapArmyS
+  - CCWDressCapArmyY
+  - CCWHeadband
+  - CCWSwampHood
+  - CCWVlPCBeret
+  - CCWVlPCCap
+  - CCWVlPCFlowerOne
+  - CCWWitchersHat
+  - CCWWitchersPurpleHat
+  - CCWWitchersRedHat
+
+- type: loadoutGroup
+  id: CCWardrobeNeckwear
+  name: cc-loadout-group-wardrobe-neckwear
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCWChestBeaconBlue
+  - CCWChestBeaconBlueRed
+  - CCWChestBeaconRed
+  - CCWChestBeaconWhite
+  - CCWChestBeaconYellow
+  - CCWClothingNeckMaidChoker
+  - CCWClothingNeckPirateParrot
+  - CCWClothingNeckShawlRed
+  - CCWClothingNeckShoulderPad
+  - CCWClothingNeckShoulderPadGreen
+  - CCWClothingNeckShoulderPadRed
+  - CCWClothingNeckShoulderPadTurquoise
+  - CCWClothingNeckShoulderPadYellow
+  - CCWDoubleBedsheetBlack
+  - CCWDoubleBedsheetBlue
+  - CCWDoubleBedsheetBrown
+  - CCWDoubleBedsheetCat
+  - CCWDoubleBedsheetChaplain
+  - CCWDoubleBedsheetClown
+  - CCWDoubleBedsheetGreen
+  - CCWDoubleBedsheetGrey
+  - CCWDoubleBedsheetIan
+  - CCWDoubleBedsheetMed
+  - CCWDoubleBedsheetMime
+  - CCWDoubleBedsheetOrange
+  - CCWDoubleBedsheetPink
+  - CCWDoubleBedsheetPurple
+  - CCWDoubleBedsheetRainbow
+  - CCWDoubleBedsheetWhite
+  - CCWDoubleBedsheetWinter
+  - CCWDoubleBedsheetYellow
+  - CCWGuardCloak
+  - CCWOperatorMantle
+  - CCWShoulderBeaconBlue
+  - CCWShoulderBeaconBlueRed
+  - CCWShoulderBeaconRed
+  - CCWShoulderBeaconWhite
+  - CCWShoulderBeaconYellow
+
+- type: loadoutGroup
+  id: CCWardrobeOutfits
+  name: cc-loadout-group-wardrobe-outfits
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCWClothingUniformHiredStalker
+  - CCWClothingUniformJumpStinky
+  - CCWClothingUniformJumpskirtCoroner
+  - CCWClothingUniformJumpsuitCitizen
+  - CCWClothingUniformJumpsuitCitizenPrisoner
+  - CCWClothingUniformJumpsuitCitizenSmoking
+  - CCWClothingUniformJumpsuitCoroner
+  - CCWClothingUniformJumpsuitLawyerBrutal
+  - CCWClothingUniformJumpsuitLawyerCool
+  - CCWClothingUniformJumpsuitLawyerLazy
+  - CCWClothingUniformJumpsuitLawyerOld
+  - CCWClothingUniformJumpsuitLawyerOrange
+  - CCWClothingUniformJumpsuitLawyerSporting
+  - CCWClothingUniformJumpsuitLawyerStrange
+  - CCWClothingUniformJumpsuitLawyerStupid
+  - CCWClothingUniformJumpsuitMadzima
+  - CCWClothingUniformMercenary
+  - CCWClothingUniformMonolith
+  - CCWClothingUniformPeresvet
+  - CCWClothingUniformScientificGreen
+  - CCWClothingUniformScientificOrange
+  - CCWClothingUniformSparta
+  - CCWClothingUniformStalkerVer1
+  - CCWClothingUniformStalkerVer2
+  - CCWClothingUniformStalkerVer3
+  - CCWClothingUniformTactical
+  - CCWFancyUniform
+  - CCWGreyJumpsuitXxRaayTimePortal
+  - CCWVlPCUniformOne
+  - CCWVlPCUniformThree
+  - CCWVlPCUniformTwo
+  - CCWWitcherKombvOne
+  - CCWWitcherKombvTwo
+
+- type: loadoutGroup
+  id: CCWardrobeFootwear
+  name: cc-loadout-group-wardrobe-footwear
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCWClothingShoesBootsCamouflage
+  - CCWClothingShoesBootsScienceImperial
+  - CCWClothingShoesFancyBoots
+  - CCWClothingShoesMadzima
+  - CCWClothingShoesParamedic
+  - CCWClothingShoesParamedicAlt
+  - CCWShoesXxRaayTimePortal
+
+- type: loadoutGroup
+  id: CCWardrobeAccessories
+  name: cc-loadout-group-wardrobe-accessories
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CCWClothingHandsGlovesCamouflage
+  - CCWClothingHandsGlovesLatexLong
+  - CCWVlPCGloves
+  - CCWClothingBeltKama
+  - CCWClothingBeltKamaGreen
+  - CCWClothingBeltKamaRed
+  - CCWClothingBeltKamaTurquoise
+  - CCWClothingBeltKamaYellow
+  - CCWCamouflageMask
+  - CCWClothingKrilSmall
+  - CCWClothingNanoMask
+  - CCWClothingBackpackMaidBackbow
+
+- type: loadoutGroup
+  id: WardenNeck
+  name: loadout-group-warden-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CCWChestBeaconBlue
+  - CCWChestBeaconBlueRed
+  - CCWChestBeaconRed
+  - CCWChestBeaconWhite
+  - CCWChestBeaconYellow
+  - CCWClothingNeckMaidChoker
+  - CCWClothingNeckPirateParrot
+  - CCWClothingNeckShawlRed
+  - CCWClothingNeckShoulderPad
+  - CCWClothingNeckShoulderPadGreen
+  - CCWClothingNeckShoulderPadRed
+  - CCWClothingNeckShoulderPadTurquoise
+  - CCWClothingNeckShoulderPadYellow
+  - CCWDoubleBedsheetBlack
+  - CCWDoubleBedsheetBlue
+  - CCWDoubleBedsheetBrown
+  - CCWDoubleBedsheetCat
+  - CCWDoubleBedsheetChaplain
+  - CCWDoubleBedsheetClown
+  - CCWDoubleBedsheetGreen
+  - CCWDoubleBedsheetGrey
+  - CCWDoubleBedsheetIan
+  - CCWDoubleBedsheetMed
+  - CCWDoubleBedsheetMime
+  - CCWDoubleBedsheetOrange
+  - CCWDoubleBedsheetPink
+  - CCWDoubleBedsheetPurple
+  - CCWDoubleBedsheetRainbow
+  - CCWDoubleBedsheetWhite
+  - CCWDoubleBedsheetWinter
+  - CCWDoubleBedsheetYellow
+  - CCWGuardCloak
+  - CCWOperatorMantle
+  - CCWShoulderBeaconBlue
+  - CCWShoulderBeaconBlueRed
+  - CCWShoulderBeaconRed
+  - CCWShoulderBeaconWhite
+  - CCWShoulderBeaconYellow
+  - CCWWardenMantleID

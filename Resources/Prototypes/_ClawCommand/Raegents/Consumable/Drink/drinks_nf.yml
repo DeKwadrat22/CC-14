@@ -1,0 +1,18 @@
+# Ported from Frontier (_NF) — verbatim apart from porting notes.
+# Restored over earlier substitution: CucumberWater was substituted with Water.
+# metamorphicSprite stripped: the _NF/Objects/Consumable/Drinks/cucumberwater.rsi
+# was not ported (would error at load time). Re-add if the rsi is ported.
+
+- type: reagent
+  id: CucumberWater
+  name: reagent-name-cucumber-water
+  parent: BaseDrink
+  desc: reagent-desc-cucumber-water
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: cucumber
+  color: "#b1ceb0"
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 6

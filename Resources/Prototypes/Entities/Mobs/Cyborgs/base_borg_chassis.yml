@@ -17,6 +17,7 @@
       collection: MetalThud
   - type: CombatMode
   - type: NoSlip
+  - type: Mood # Claw Command
   - type: StaticPrice
     price: 1250
   - type: Fixtures
@@ -123,6 +124,7 @@
       cell_slot: !type:ContainerSlot { }
       borg_module: !type:Container { }
       part-container: !type:Container
+      borg_lawboard: !type:ContainerSlot { } # _ClawCommand - law board slot
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -135,6 +137,22 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+  # _ClawCommand - the borg's lawset lives on a board in this slot, not on the chassis prototype. The slot
+  # is registered by BorgLawBoardSystem instead of being declared in ItemSlots above, because a child
+  # prototype redeclaring ItemSlots for its own cell would replace the whole slot dictionary and drop it.
+  # Insertion is handled by that system's do-after, hence no insert-on-interact.
+  - type: BorgLawBoard
+    lawBoardSlot:
+      name: clawcommand-borg-lawboard-slot
+      whitelist:
+        requireAll: true
+        components:
+        - SiliconLawProvider
+        - Item
+      insertOnInteract: false
+      swap: false
+      ejectOnBreak: true
+      ejectVerbText: clawcommand-borg-lawboard-eject-verb
   - type: Body
   - type: StatusEffects
     allowed:
@@ -169,6 +187,33 @@
   - type: Damageable
   - type: Injurable
     damageContainer: Silicon
+  - type: Destructible
+    generateOverkillThreshold: false
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Machines/warning_buzzer.ogg
+          params:
+            volume: 5
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:EmptyContainersBehaviour
+        containers:
+        - borg_brain
+        - borg_module
+        - cell_slot
+        - borg_lawboard # _ClawCommand
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: HandheldLight
     toggleOnInteract: false
     wattage: 0.2
@@ -197,7 +242,7 @@
       isLooped: true
   - type: PointLight
     enabled: false
-    lightMask: ConeSingle
+    mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 4
     netsync: false
@@ -235,32 +280,6 @@
   id: BaseBorgChassis
   components:
   - type: IonStormTarget
-  - type: Destructible
-    generateOverkillThreshold: false
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 75
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Machines/warning_buzzer.ogg
-          params:
-            volume: 5
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:EmptyContainersBehaviour
-        containers:
-        - borg_brain
-        - borg_module
-        - cell_slot
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
 
 - type: entity
   abstract: true
@@ -318,9 +337,16 @@
   parent: [BaseBorgChassis, BaseBorgTransponder]
   abstract: true
   components:
-  - type: RandomMetadata
-    nameSegments:
-    - NamesBorg
+  # Claw Command: disabled. RandomMetadata stamps a "Borg-XX-YY" name onto every
+  # chassis-NT-derived entity at init, which overrode the player's character
+  # name for roundstart and late-join borg/dogborg jobs. We assign the profile
+  # name from BorgSpawnNameSystem on PlayerSpawnCompleteEvent instead. Ghost
+  # role variants (PlayerBorgDerelict / PlayerEngineeringBorgDerelict /
+  # PlayerJanitorBorgDerelict / PlayerMedicalBorgDerelict / syndicate ghosts)
+  # carry their own RandomMetadata so the no-profile fallback still works.
+  # - type: RandomMetadata
+  #   nameSegments:
+  #   - NamesBorg
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -354,6 +380,8 @@
   - type: SiliconLawProvider
     laws: SyndicateStatic
     subverted: true
+  - type: BorgLawBoard # _ClawCommand - syndieborgs boot with a Syndimov board instead of Crewsimov
+    defaultBoard: SyndimovCircuitBoard
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
@@ -402,6 +430,8 @@
   components:
   - type: SiliconLawProvider
     laws: SyndicateStatic #Non-subverted version so they can still be changed
+  - type: BorgLawBoard # _ClawCommand - matches the chassis lawset above
+    defaultBoard: SyndimovCircuitBoard
   - type: StartIonStormed
     ionStormAmount: 3
   - type: IonStormTarget
@@ -459,6 +489,8 @@
     stunTime: 5
   - type: SiliconLawProvider
     laws: XenoborgLawset # custom laws here
+  - type: BorgLawBoard # _ClawCommand - xenoborgs carry their own lawset board
+    defaultBoard: XenoborgCircuitBoard
   - type: IntrinsicRadioTransmitter # can only use binary and xenoborg channel
     channels:
     - Xenoborg
@@ -502,34 +534,6 @@
   - type: NpcFactionMember
     factions:
     - Xenoborg
-  - type: PointLight
-    color: "#3010ff"
-    energy: 7
-  - type: GuideHelp
-    guides:
-    - Cyborgs
-    - Robotics
-    - Xenoborgs
-  - type: Access
-    tags:
-    - Xenoborg
-  - type: AccessReader
-    access: [["Xenoborg"]]
-  - type: ShowJobIcons # not sure if it is needed
-  - type: ShowCrewIcons
-  - type: InteractionPopup
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg
-  - type: Xenoborg
-  - type: BypassLock
-    bypassDelay: 15 # We don't want people to easily be able to remove xenoborg brains.
-  - type: EmpResistance
-    strengthMultiplier: 0
-
-- type: entity
-  abstract: true
-  id: BaseXenoborgDestructible
-  components:
   - type: Destructible
     thresholds:
     - trigger:
@@ -558,5 +562,27 @@
         - borg_brain
         - borg_module
         - cell_slot
+        - borg_lawboard # _ClawCommand
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PointLight
+    color: "#3010ff"
+    energy: 7
+  - type: GuideHelp
+    guides:
+    - Cyborgs
+    - Robotics
+    - Xenoborgs
+  - type: Access
+    tags:
+    - Xenoborg
+  - type: AccessReader
+    access: [["Xenoborg"]]
+  - type: ShowJobIcons # not sure if it is needed
+  - type: ShowCrewIcons
+  - type: InteractionPopup
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Xenoborg
+  - type: BypassLock
+    bypassDelay: 15 # We don't want people to easily be able to remove xenoborg brains.

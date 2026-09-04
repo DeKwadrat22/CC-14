@@ -1498,7 +1498,7 @@ namespace Content.Shared.Interaction
     ///     Raised when a player attempts to activate an item in an inventory slot or hand slot
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class InteractInventorySlotEvent : EntityEventArgs
+    public sealed partial class InteractInventorySlotEvent : EntityEventArgs
     {
         /// <summary>
         ///     Entity that was interacted with.

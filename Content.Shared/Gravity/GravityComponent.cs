@@ -20,5 +20,12 @@ namespace Content.Shared.Gravity
         /// </summary>
         [DataField, AutoNetworkedField]
         public bool Inherent;
+
+        /// <summary>
+        /// Gravitational acceleration in m/s^2. Used by Space Wind to compute the friction force a tile applies
+        /// against entities being pushed by airflow (friction = gravity * tileMobFrictionNoInput * mass).
+        /// </summary>
+        [DataField]
+        public double Acceleration = 9.80665;
     }
 }

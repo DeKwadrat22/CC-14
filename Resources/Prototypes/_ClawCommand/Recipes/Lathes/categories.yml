@@ -1,0 +1,9 @@
+# Lathe categories for mech ports.
+
+- type: latheCategory
+  id: RipleyMKII
+  name: lathe-category-mechs-ripleymkii
+
+- type: latheCategory
+  id: Clarke
+  name: lathe-category-mechs-clarke

@@ -1,0 +1,21 @@
+# _ClawCommand: the crafting recipe that exposes SvalinnPDWGraph in the construction menu.
+#
+# Ported alongside the graph from `space` (_ClawCommand/Recipes/Crafting/improvised.yml). Without
+# this the graph loads fine but is unreachable - nothing ever points at it, so the PDW could only
+# ever arrive through the service-weapon loadout.
+#
+# The graph's first step matches on the WeaponLaserSvalinn tag, which this fork's svalinn did not
+# carry; it is added in Entities/Objects/Weapons/Guns/Battery/battery_guns.yml.
+#
+# Two divergences from space's copy: name and description go through the localiser here, and this
+# fork's ConstructionPrototype has no `icon` field at all - the menu icon comes from the target
+# node's entity - so space's inline icon block is dropped rather than ported.
+- type: construction
+  name: construction-svalinn-pdw-name
+  id: svalinnPDW
+  graph: SvalinnPDWGraph
+  startNode: start
+  targetNode: svalinnPDW
+  category: construction-category-weapons
+  description: construction-svalinn-pdw-description
+  objectType: Item

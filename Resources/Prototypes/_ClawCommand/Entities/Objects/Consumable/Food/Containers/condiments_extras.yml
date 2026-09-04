@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketFrostoil
+  name: coldsauce
+  description: Coldsauce. Leaves the tongue numb in its passage.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Frostoil
+          Quantity: 10
+  - type: Icon
+    state: packet-frostoil
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-

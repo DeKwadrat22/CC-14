@@ -71,7 +71,7 @@ namespace Content.Server.StationEvents
     }
 
     [ToolshedCommand, AdminCommand(AdminFlags.Debug)]
-    public sealed class StationEventCommand : ToolshedCommand
+    public sealed partial class StationEventCommand : ToolshedCommand
     {
         private EventManagerSystem? _stationEvent;
         private EntityTableSystem? _entityTable;

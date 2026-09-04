@@ -117,12 +117,63 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    #region Claw Command - character dimensions
+
+    /// <summary>
+    ///     Claw Command - Smallest sprite height scale a character of this species may have.
+    ///     Enforced server-side in <see cref="Content.Shared.Preferences.HumanoidCharacterProfile.EnsureValid"/>,
+    ///     so a modified client cannot submit an arbitrary scale.
+    /// </summary>
+    [DataField]
+    public float MinHeight = 0.9f;
+
+    /// <summary>
+    ///     Claw Command - Largest sprite height scale a character of this species may have.
+    ///     Keep this modest: sprite height is applied as a raw scale, and every 0.1 above 1.0 pushes
+    ///     the sprite roughly 1.6px past its tile in each direction even with bottom pinning on.
+    /// </summary>
+    [DataField]
+    public float MaxHeight = 1.2f;
+
+    /// <inheritdoc cref="MinHeight"/>
+    [DataField]
+    public float MinWidth = 0.85f;
+
+    /// <inheritdoc cref="MaxHeight"/>
+    [DataField]
+    public float MaxWidth = 1.2f;
+
+    /// <summary>
+    ///     Claw Command - What a member of this species weighs, in kilograms, at height 1.0 and
+    ///     width 1.0. The default matches what the physics fixture on BaseSpeciesMob already produced
+    ///     (density 185 over a 0.35 radius circle is 71.2kg), so a default-built human weighs exactly
+    ///     what they weighed before weight was ever tied to the sliders.
+    /// </summary>
+    [DataField]
+    public float BaseWeight = 71f;
+
+    /// <summary>
+    ///     Claw Command - How tall a member of this species stands, in centimetres, at height 1.0.
+    ///     Only used to present a believable figure next to the weight readout in the character
+    ///     editor; nothing mechanical reads it. Matches the figure the editor's height slider was
+    ///     already displaying, so the centimetres shown do not change.
+    /// </summary>
+    [DataField]
+    public float BaseHeightCm = 176.1f;
+
+    #endregion
 }
 
+// !! CLAW COMMAND MODIFIED !! //
+// CC : Added 'FirstDashLast'
+// CC : Added 'FirstTheLast'
 public enum SpeciesNaming : byte
 {
     First,
     FirstLast,
     FirstDashFirst,
     TheFirstofLast,
+    FirstDashLast,
+    FirstTheLast,
 }

@@ -1,0 +1,186 @@
+# Claw Command - antag rules repackaged for the Secret / Extended Irregular difficulty rollers.
+#
+# Two things live here:
+#   1. Extra sleeper agent waves, so a shift can be infiltrated more than once.
+#   2. `Sub*` copies of the roundstart antag rules with cancelPresetOnTooFewPlayers disabled.
+#
+# (2) matters because these are picked by a SubGamemodes roll rather than being the preset
+# itself. Upstream cancels the whole preset when a rule's minPlayers isn't met, which is right
+# when the player voted for Nukeops, and very wrong when a difficulty roll happened to land on
+# it at 12 players. These variants just quietly don't run instead.
+
+# ---------------------------------------------------------------------------
+# Sleeper agent waves
+#
+# SleeperAgents runs for the whole round (duration: null), and the scheduler will never pick a
+# rule that is already active. So a repeat wave has to be a distinct prototype. Combined with the
+# inherited maxOccurrences: 1, that caps a shift at TWO waves at any population. There is no third
+# wave on purpose - do not add one back without also re-checking the totals, because every wave
+# elects its own agents and a third doubles the worst case rather than nudging it.
+#
+# Pacing is deliberately NOT left to the weighted draw. The second wave is gated to a fixed delay
+# after the first (ReoccurrenceDelayCondition in the pool tables, currently 60m), and the
+# weight is set high enough to dominate the roll, so a wave lands within a roll or two of coming
+# off cooldown instead of losing a 1-in-40 lottery against the ambient event list every time.
+# Competing weight in these pools totals roughly 160-220, so 4000 wins ~95% of rolls where the
+# category passed its prob. The per-difficulty `prob` in event_pools.yml is therefore the real
+# knob now: it is close to "chance this event roll becomes a sleeper wave". The second wave then
+# carries its own extra prob on top (0.2), which is what keeps it the rare escalation rather than
+# the default ending of any long shift.
+#
+# Because each wave can only ever fire once, a dominant weight cannot crowd the pool for long -
+# it costs at most two event slots across the whole shift.
+#
+# The absolute earliestStart is only the floor for the FIRST wave; the second inherits 30 and is
+# actually spaced by the relative condition.
+#
+# minimumPlayers is 7 for the first wave and 15 for the second. Seven is the floor for a single
+# infiltrator at all; below fifteen one wave is all a station can get. Agent count per wave scales
+# separately off LinearAntagCount on the base rule, against LIVING crew at the moment the wave
+# fires rather than lobby headcount: 1 agent below 20, 2 at or above.
+# ---------------------------------------------------------------------------
+
+# Secret's first wave. A distinct prototype from the base SleeperAgents purely so the weight
+# below stays out of ModerateAntagEventsTable, which vanilla Extended / Hellshift / Irregular
+# still pull from at the base weight of 8.
+- type: entity
+  parent: SleeperAgents
+  id: CCSecretSleeperAgents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 4000
+    minimumPlayers: 7
+
+- type: entity
+  parent: CCSecretSleeperAgents
+  id: SleeperAgentsSecondWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 30
+    weight: 4000
+    minimumPlayers: 15
+
+# ---------------------------------------------------------------------------
+# Extended Irregular syndicate variants
+#
+# Same antags, different contract. These swap the objective set for CCTraitorObjectiveGroupsIrregular,
+# whose kill objectives are settled by the death itself instead of demanding the target never reach
+# CentComm. Secret keeps the round-removal versions, which is why these have to be separate
+# prototypes rather than an edit to the rules above - both modes share those.
+#
+# The wave tuning below is duplicated from SleeperAgentsSecondWave on purpose: an entity can only
+# inherit one of "is the second wave" and "uses Irregular objectives" cleanly.
+# If you retune the waves above, retune them here too.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: SleeperAgents
+  id: CCIrregularSleeperAgents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 4000
+    minimumPlayers: 7
+  - type: AntagRandomObjectives
+    sets:
+    - groups: CCTraitorObjectiveGroupsIrregular
+    maxDifficulty: 5
+
+- type: entity
+  parent: CCIrregularSleeperAgents
+  id: CCIrregularSleeperAgentsSecondWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 30
+    weight: 4000
+    minimumPlayers: 15
+
+# ---------------------------------------------------------------------------
+# Roundstart antags, sub-rollable
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: Traitor
+  id: SubTraitor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 5
+    cancelPresetOnTooFewPlayers: false
+    delay:
+      min: 240
+      max: 420
+
+# Extended Irregular's roundstart traitors. Same rule, "kill once" contracts. See the note above.
+- type: entity
+  parent: SubTraitor
+  id: CCIrregularSubTraitor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AntagRandomObjectives
+    sets:
+    - groups: CCTraitorObjectiveGroupsIrregular
+    maxDifficulty: 5
+
+- type: entity
+  parent: Nukeops
+  id: SubNukeops
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: Revolutionary
+  id: SubRevolutionary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 15
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: Zombie
+  id: SubZombie
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+    cancelPresetOnTooFewPlayers: false
+    delay:
+      min: 600
+      max: 900
+
+- type: entity
+  parent: Heretic
+  id: SubHeretic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 15
+    cancelPresetOnTooFewPlayers: false
+
+# Metagame protection is never worth cancelling a preset over. Upstream's DummyNonAntag
+# would abort the round setup below 5 players, which Extended Irregular should survive.
+- type: entity
+  parent: DummyNonAntag
+  id: SubDummyNonAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 5
+    cancelPresetOnTooFewPlayers: false
+
+- type: entity
+  parent: BaseGameRule
+  id: SubDummyNonAntagChance
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubDummyNonAntag
+      prob: 0.3

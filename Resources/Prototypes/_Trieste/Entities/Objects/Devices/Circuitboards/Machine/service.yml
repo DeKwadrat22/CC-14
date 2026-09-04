@@ -1,0 +1,19 @@
+- type: entity
+  id: TP14OvenCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste
+  name: oven machine board
+  description: A machine printed circuit board for a stove-top oven.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: TP14KitchenOven
+    stackRequirements:
+      Manipulator: 2
+      Glass: 8
+      Steel: 20
+      Cable: 4
+  - type: Tag
+    tags:
+    - TP14TagOven

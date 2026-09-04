@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Fluids;
@@ -28,6 +29,7 @@ public abstract partial class SharedCreamPieSystem : EntitySystem
     [Dependency] private SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private TriggerSystem _trigger = default!;
     [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -104,6 +106,12 @@ public abstract partial class SharedCreamPieSystem : EntitySystem
         Dirty(ent);
 
         _appearance.SetData(ent.Owner, CreamPiedVisuals.Creamed, value);
+
+        // Claw Command - getting pied is humiliating.
+        if (value)
+            _mood.AddMoodlet(ent.Owner, "Creampied");
+        else
+            _mood.RemoveMoodlet(ent.Owner, "Creampied");
     }
 
     private void OnCreamPieLand(Entity<CreamPieComponent> ent, ref LandEvent args)

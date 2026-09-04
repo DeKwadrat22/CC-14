@@ -110,7 +110,7 @@ public abstract partial class SharedGasTileOverlaySystem : EntitySystem
     }
 
     [Serializable, NetSerializable]
-    public sealed class GasOverlayUpdateEvent : EntityEventArgs
+    public sealed partial class GasOverlayUpdateEvent : EntityEventArgs
     {
         public Dictionary<NetEntity, List<GasOverlayChunk>> UpdatedChunks = new();
         public Dictionary<NetEntity, HashSet<Vector2i>> RemovedChunks = new();

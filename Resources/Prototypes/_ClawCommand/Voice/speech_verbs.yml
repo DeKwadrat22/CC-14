@@ -1,0 +1,15 @@
+- type: speechVerb
+  id: SpeechFelinid
+  name: cc-chat-speech-verb-name-felinid
+  speechVerbStrings:
+  - cc-chat-speech-verb-felinid-1
+  - cc-chat-speech-verb-felinid-2
+  - cc-chat-speech-verb-felinid-3
+
+- type: speechVerb
+  id: SpeechFeroxi
+  name: cc-chat-speech-verb-name-feroxi
+  speechVerbStrings:
+  - cc-chat-speech-verb-feroxi-1
+  - cc-chat-speech-verb-feroxi-2
+  - cc-chat-speech-verb-feroxi-3

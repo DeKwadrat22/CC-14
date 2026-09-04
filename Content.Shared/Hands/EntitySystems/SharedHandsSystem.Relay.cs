@@ -2,6 +2,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Camera;
 using Content.Shared.Cuffs;
 using Content.Shared.Hands.Components;
+using Content.Shared.Heretic; // _ClawCommand - heretic focus relay
 using Content.Shared.Movement.Systems;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -15,6 +16,7 @@ public abstract partial class SharedHandsSystem
     {
         SubscribeLocalEvent<HandsComponent, GetEyePvsScaleRelayedEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, RefreshMovementSpeedModifiersEvent>(RelayEvent);
+        SubscribeLocalEvent<HandsComponent, CheckMagicItemEvent>(RelayEvent); // _ClawCommand - relay heretic focus check to held items (codex/book)
 
         // By-ref events.
         SubscribeLocalEvent<HandsComponent, GetEyeOffsetRelayedEvent>(RefRelayEvent);

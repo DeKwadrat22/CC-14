@@ -1,0 +1,31 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- BookSalvageEpistemicsRandom ---
+- type: entity
+  name: epistemics book
+  parent: BookSalvageEpistemics
+  id: BookSalvageEpistemicsRandom
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - BookSalvageEpistemics1
+    offset: 0.1
+
+# --- BookSalvageEpistemics ---
+- type: entity
+  name: epistemics book
+  parent: BookRandom # placeholder
+  id: BookSalvageEpistemics
+  categories: [ HideSpawnMenu ]
+  description: 'A metallic hardcover book.'
+
+
+# --- BookSalvageEpistemics1 ---
+- type: entity
+  parent: BookSalvageEpistemics
+  id: BookSalvageEpistemics1
+  suffix: 1
+  components:
+  - type: Paper
+    content: book-text-epistemics1

@@ -69,10 +69,5 @@
   equipment:
     id: CargoPDA
 
-- type: loadout
-  id: SeniorCourierPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCargo
-  equipment:
-    id: SeniorCourierPDA
+# Claw Command - SeniorCourierPDA moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorCourier job only)

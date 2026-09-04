@@ -1,0 +1,11 @@
+construction-graph-tag-dogborg-kit-k9 = K9 dogborg conversion kit
+construction-graph-tag-dogborg-kit-k9-dark = K9 dark dogborg conversion kit
+construction-graph-tag-dogborg-kit-vale-sec = Vale security dogborg conversion kit
+construction-graph-tag-dogborg-kit-medihound = medihound dogborg conversion kit
+construction-graph-tag-dogborg-kit-medihound-dark = medihound dark dogborg conversion kit
+construction-graph-tag-dogborg-kit-vale-med = Vale medical dogborg conversion kit
+construction-graph-tag-dogborg-kit-pup-dozer = pup dozer dogborg conversion kit
+construction-graph-tag-dogborg-kit-vale-eng = Vale engineering dogborg conversion kit
+construction-graph-tag-dogborg-kit-scrubpup = scrubpup dogborg conversion kit
+construction-graph-tag-dogborg-kit-vale-serv = Vale service dogborg conversion kit
+construction-graph-tag-dogborg-kit-blade = Blade dogborg conversion kit

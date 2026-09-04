@@ -421,7 +421,8 @@ public sealed partial class SharedKitchenSpikeSystem : EntitySystem
         {
             var contained = kitchenSpike.BodyContainer.ContainedEntity;
 
-            if (!contained.HasValue)
+            // CLAW COMMAND: Added additional checks.
+            if (!contained.HasValue || !Exists(contained.Value) || TerminatingOrDeleted(contained.Value))
                 continue;
 
             if (kitchenSpike.NextDamage > _gameTiming.CurTime)

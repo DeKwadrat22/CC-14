@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: ForceSayStringDatasetShadowkin
+  values:
+    prefix: cc-damage-force-say-shadowkin-
+    count: 7

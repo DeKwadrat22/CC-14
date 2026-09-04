@@ -26,23 +26,36 @@ namespace Content.Shared.Humanoid
                 Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
             }
 
-            switch (speciesProto.Naming)
-            {
-                case SpeciesNaming.First:
-                    return Loc.GetString("namepreset-first",
-                        ("first", GetFirstName(speciesProto, gender)));
-                case SpeciesNaming.TheFirstofLast:
-                    return Loc.GetString("namepreset-thefirstoflast",
-                        ("first", GetFirstName(speciesProto, gender)), ("last", GetLastName(speciesProto)));
-                case SpeciesNaming.FirstDashFirst:
-                    return Loc.GetString("namepreset-firstdashfirst",
-                        ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)));
-                case SpeciesNaming.FirstLast:
-                default:
-                    return Loc.GetString("namepreset-firstlast",
-                        ("first", GetFirstName(speciesProto, gender)), ("last", GetLastName(speciesProto)));
-            }
+        // CC: Added 'FirstDashLast'
+        // CC: Added 'FirstTheLast'
+        switch (speciesProto.Naming)
+        {
+            case SpeciesNaming.First:
+                return Loc.GetString("namepreset-first",
+                    ("first", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.TheFirstofLast:
+                return Loc.GetString("namepreset-thefirstoflast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
+            case SpeciesNaming.FirstDashFirst:
+                return Loc.GetString("namepreset-firstdashfirst",
+                    ("first1", GetFirstName(speciesProto, gender)),
+                    ("first2", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.FirstDashLast:
+                return Loc.GetString("namepreset-firstdashlast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetFirstName(speciesProto, gender)));
+            case SpeciesNaming.FirstTheLast:
+                return Loc.GetString("namepreset-firstthelast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
+            case SpeciesNaming.FirstLast:
+            default:
+                return Loc.GetString("namepreset-firstlast",
+                    ("first", GetFirstName(speciesProto, gender)),
+                    ("last", GetLastName(speciesProto)));
         }
+    }
 
         public string GetFirstName(SpeciesPrototype speciesProto, Gender? gender = null)
         {

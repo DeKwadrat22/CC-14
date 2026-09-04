@@ -21,6 +21,12 @@ public sealed partial class HumanoidProfileEditor
         NameEdit.Text = Profile?.Name ?? "";
     }
 
+    // claw command
+    private void UpdateCustomSpeciesNameEdit()
+    {
+        CustomSpeciesNameEdit.Text = Profile?.CustomSpeciesName ?? "";
+    }
+
     /// <summary>
     /// Randomize values selectively while respecting locked values.
     /// </summary>

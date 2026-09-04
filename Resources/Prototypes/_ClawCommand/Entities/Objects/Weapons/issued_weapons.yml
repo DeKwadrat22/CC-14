@@ -1,0 +1,692 @@
+# _ClawCommand: non-contraband "issued" variants of the service weapons.
+#
+# The base guns inherit a Contraband component from Base*Contraband parents, and SS14 entity
+# prototypes have no way to remove an inherited component - ContrabandComponent always renders
+# its examine entry, and AllowedDepartments only changes the wording from "avoid carrying" to
+# "in the clear". So anything whose contraband comes from a direct parent is re-parented past
+# that base here and restates its own component block; anything already clean just inherits.
+#
+# Generated to mirror the source entities exactly - if you retune a base gun, retune its issued
+# twin to match.
+
+- type: entity
+  parent: BaseItem
+  id: TruncheonCCIssued
+  name: CC issued truncheon
+  description: A rigid, steel-studded baton, meant to harm. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/truncheon.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 20
+    soundHit:
+      collection: MetalThud
+    bluntStaminaDamageFactor: 1.5
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - Truncheon
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/truncheon.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: StaticPrice
+    price: 80
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+
+- type: entity
+  parent: BaseMeleeWeaponEnergy
+  id: EnergyCutlassCCIssued
+  name: CC issued energy cutlass
+  description: An exotic energy weapon. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Slash: 10
+            Heat: 12
+    deactivatedSecret: true
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_cutlass.rsi
+    layers:
+      - state: e_cutlass
+      - state: e_cutlass_blade
+        color: "#e95151"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: Item
+    sprite: Objects/Weapons/Melee/e_cutlass.rsi
+
+- type: entity
+  parent: WeaponDisablerPractice
+  id: WeaponDisablerCCIssued
+  name: CC issued disabler
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-unshaded-0
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+    quickEquip: false
+    slots:
+      - suitStorage
+      - Belt
+  - type: BatteryAmmoProvider
+    proto: BulletDisabler
+    fireCost: 62.5
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+  - type: PacifismAllowedGun
+
+- type: entity
+  parent: BaseWeaponPistol
+  id: WeaponPistolMk58CCIssued
+  name: CC issued mk 58
+  description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a conventional semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from .35 pistol magazines. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+
+- type: entity
+  parent: WeaponPistolMk58CCIssued
+  id: WeaponPistolMk58NonlethalCCIssued
+  name: CC issued mk 58
+  description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a conventional semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from .35 pistol magazines. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58nl.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverInspectorCCIssued
+  name: CC issued Inspector
+  description: A double-action revolver manufactured by various companies. It is readily available on the civilian market, making it a popular choice among private investigators. You feel lucky just holding it. Loads 6 rounds of .45 magnum. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: RevolverAmmoProvider
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverInspectorNonlethalCCIssued
+  name: CC issued Inspector (rubber)
+  description: A double-action revolver manufactured by various companies. It is readily available on the civilian market, making it a popular choice among private investigators. You feel lucky just holding it. Loads 6 rounds of .45 magnum. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: RevolverAmmoProvider
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverDeckardCCIssued
+  name: CC issued Deckard
+  description: A beautifully machined, custom-built revolver. Used when there is no time for the Voight-Kampff test. Loads 5 rounds of .45 magnum. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-3
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Gun
+    fireRate: 2
+  - type: RevolverAmmoProvider
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverDeckardNonlethalCCIssued
+  name: CC issued Deckard (rubber)
+  description: A beautifully machined, custom-built revolver. Used when there is no time for the Voight-Kampff test. Loads 5 rounds of .45 magnum. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-3
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Gun
+    fireRate: 2
+  - type: RevolverAmmoProvider
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1500
+- type: entity
+  parent: BaseWeaponPistol
+  id: WeaponPistolViperCCIssued
+  name: CC issued viper
+  description: A common handgun illegally modified by the Syndicate. The Viper sports a selector switch between semi-auto and ‘rock and roll’. The standard sidearm for any soldier who fights under the three serpents. Feeds from .35 pistol magazines. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  - type: Gun
+    selectedMode: FullAuto # Override of BaseWeaponPistol to default to full-auto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHighCapacity
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: WeaponPistolViperCCIssued
+  id: WeaponPistolViperNonLethalCCIssued
+  name: CC issued viper
+  description: A common handgun illegally modified by the Syndicate. The Viper sports a selector switch between semi-auto and ‘rock and roll’. The standard sidearm for any soldier who fights under the three serpents. Feeds from .35 pistol magazines. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/vipernl.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: WeaponPistolViperWood
+  id: WeaponPistolViperWoodCCIssued
+  name: CC issued viper
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: BaseWeaponPowerCellSmall
+  id: WeaponLaserSvalinnCCIssued
+  name: CC issued svalinn laser pistol
+  description: A cheap and widely used laser pistol. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: 0,-7
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Tag
+    tags:
+    - Sidearm
+    - LaserWeapon
+
+- type: entity
+  parent: WeaponLaserSvalinnCCIssued
+  id: WeaponLaserSvalinnPDWCCIssued
+  name: CC issued jury-rigged svalinn PDW
+  description: A technically-legal modification of a civilian-grade laser pistol, meant for pest control in sectors where "pests" really means "dog-sized carnivorous spiders". The low quality of the base gun means the emitter tends to overheat on full-auto even with the oversized sink built into the thing. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 4
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 5
+    angleDecay: 20
+  - type: Construction
+    graph: SvalinnPDWGraph
+    node: svalinnPDW
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_Floof/Entities/Objects/Weapons/Melee/brassnuckles.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: WeaponEnergyGunMini
+  id: WeaponEnergyGunMiniCCIssued
+  name: CC issued miniature energy gun
+  description: A light version of the Energy gun with a smaller capacity. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponEnergyGunPistol
+  id: WeaponEnergyGunPistolCCIssued
+  name: CC issued PDW-9 Energy Pistol
+  description: A military grade sidearm, used by many militia forces throughout the local sector. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponPistolPollock
+  id: WeaponPistolPollockCCIssued
+  name: CC issued Pollock
+  description: A compact and mass-produced combat pistol. Uses .35 auto ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponRevolverSnub
+  id: WeaponRevolverSnubCCIssued
+  name: CC issued snubbed .45
+  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponRevolverSnub
+  id: WeaponRevolverSnubNonlethalCCIssued
+  name: CC issued snubbed .45 (rubber)
+  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+
+- type: entity
+  parent: WeaponRevolverK38Master
+  id: WeaponRevolverK38MasterCCIssued
+  name: CC issued k-38 masterpiece
+  description: A classic, if not outdated, law enforcement firearm. Uses .38 special ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponRevolverK38Master
+  id: WeaponRevolverK38MasterNonlethalCCIssued
+  name: CC issued k-38 masterpiece (rubber)
+  description: A classic, if not outdated, law enforcement firearm. Uses .38 special ammo. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+
+- type: entity
+  parent: WeaponRevolverFitz
+  id: WeaponRevolverFitzCCIssued
+  name: CC issued fitz special
+  description: A compact and concealable self defence snub revolver. Uses .38 special ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponRevolverFitz
+  id: WeaponRevolverFitzNonlethalCCIssued
+  name: CC issued fitz special (rubber)
+  description: A compact and concealable self defence snub revolver. Uses .38 special ammo. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverPythonCCIssued
+  name: CC issued Python
+  description: A powerful double-action revolver manufactured by the Syndicate. Loud and flashy, perfect for any agent looking to make a statement. Loads 6 rounds of .45 magnum. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      params:
+        volume: 2.25
+  - type: StaticPrice
+    price: 1500 # Botany can shit these out like candy, but let's see how it goes
+
+- type: entity
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverPythonNonlethalCCIssued
+  name: CC issued Python (rubber)
+  description: A powerful double-action revolver manufactured by the Syndicate. Loud and flashy, perfect for any agent looking to make a statement. Loads 6 rounds of .45 magnum. Loaded with .45 magnum rubber. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      params:
+        volume: 2.25
+  - type: StaticPrice
+    price: 1500 # Botany can shit these out like candy, but let's see how it goes
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  parent: WeaponRevolverArgenti
+  id: WeaponRevolverArgentiCCIssued
+  name: CC issued Argenti
+  description: The civilian grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: WeaponRevolverArgentiNonlethal
+  id: WeaponRevolverArgentiNonlethalCCIssued
+  name: CC issued Argenti
+  description: The civilian grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo. Issued to a Claw Command service member; carrying it on duty is authorised.
+  suffix: CC Issued
+
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunDoubleBarreledBarkeepIssued
+  abstract: true
+  name: barkeep issued double-barreled shotgun
+  description: An immortal classic. Uses .50 shotgun shells. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 3
+  - type: GunSpreadModifier
+    spread: 0.6
+  - type: BallisticAmmoProvider
+    capacity: 2
+  - type: Construction
+    graph: ShotgunSawn
+    node: start
+    deconstructionTarget: null
+
+- type: entity
+  parent: WeaponShotgunDoubleBarreledBarkeepIssued
+  id: WeaponShotgunDoubleBarreledRubberBarkeepIssued
+  name: barkeep issued double-barreled shotgun
+  description: An immortal classic. Uses .50 shotgun shells. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
+
+- type: entity
+  parent: [BaseWeaponSniper, BaseGunWieldable, SolutionDart]
+  id: WeaponSniperMosinBarkeepIssued
+  abstract: true
+  name: barkeep issued Kardashev-Mosin
+  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    layers:
+    - state: base
+    - state: base1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: base
+    inHandsFillBaseName: -fill-
+    inHandsMaxFillLevels: 1
+    equippedFillBaseName: -fill-
+    equippedMaxFillLevels: 1
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 12
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: MeleeRequiresWield
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+  - type: Tool
+    qualities: Slicing
+    speedModifier: 0.5 #It's a bayonet
+  - type: GunRequiresWield
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: WeaponSniperMosinBarkeepIssued
+  id: WeaponSniperMosinRubberBarkeepIssued
+  name: barkeep issued Kardashev-Mosin
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleRubber
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_ClawCommand/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  parent: WeaponSniperRepeaterNonlethal
+  id: WeaponSniperRepeaterNonlethalBarkeepIssued
+  name: barkeep issued N2524 Pattern Repeater
+  description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability and stopping power. Uses .45 magnum ammo. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+
+- type: entity
+  parent: WeaponBrassKnuckles
+  id: WeaponBrassKnucklesBarkeepIssued
+  name: barkeep issued brass knuckles
+  description: Ever wanted to protect your bar but your hands are too big for guns? SESWC has what you need! Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued
+
+- type: entity
+  parent: WeaponRevolverArgentiNonlethal
+  id: WeaponRevolverArgentiNonlethalBarkeepIssued
+  name: barkeep issued Argenti
+  description: The civilian grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo. Issued to a bar keeper for the defence of their bar; carrying it on duty is authorised.
+  suffix: Barkeep Issued

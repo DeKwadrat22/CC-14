@@ -16,6 +16,8 @@
     ClothingOuterWinterEngi: 2
     ClothingNeckScarfStripedOrange: 3
     ClothingShoesBootsWinterEngi: 2
+    ClothingHandsEngiWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksEngi: 1 # Claw Command - Floof
   contrabandInventory:
     ToyFigurineEngineer: 1
     ToyFigurineChiefEngineer: 1

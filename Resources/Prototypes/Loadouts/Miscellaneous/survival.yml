@@ -19,6 +19,11 @@
     - Moth
     - Reptilian
     - Vulpkanin
+    - SpeciesFelinid # CC14 - Added Felinids
+    - SpeciesKitsunes # CC14 - Added Kitsunes
+    - SpeciesTajaran # CC14 - Added Tajaran (oxygen breather, was missing)
+    - SpeciesShadowkin # CC14 - Added Shadowkin (oxygen breather, was missing)
+    - SpeciesAvali # CC14 - Added Avali (oxygen breather, was missing)
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox

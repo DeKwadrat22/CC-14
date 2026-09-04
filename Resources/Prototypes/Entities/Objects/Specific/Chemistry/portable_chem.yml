@@ -1,0 +1,62 @@
+#Claw Command :3
+- type: entity
+  id: PortableChemMaster
+  parent: BaseItem
+  name: makeshift mixer
+  description: A portable chemical mixer.
+  components:
+
+  - type: Construction
+    graph: PortableChemMasterGraph
+    node: portableChemMaster
+
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/portable_mixer.rsi
+    state: portable_mixer
+
+  - type: Icon
+    sprite: Objects/Specific/Chemistry/portable_mixer.rsi
+    state: portable_mixer
+
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+
+  - type: ChemMaster
+    pillDosageLimit: 5
+
+  - type: ActivatableUI
+    key: enum.ChemMasterUiKey.Key
+
+  - type: UserInterface
+    interfaces:
+      enum.ChemMasterUiKey.Key:
+        type: ModernChemMasterBui # CC14: New ui
+
+  - type: ContainerContainer
+    containers:
+      beakerSlot: !type:ContainerSlot
+      outputSlot: !type:ContainerSlot
+
+  - type: ItemSlots
+    slots:
+      beakerSlot:
+        whitelist:
+          components:
+          - FitsInDispenser
+      outputSlot:
+        whitelistFailPopup: chem-master-component-cannot-put-entity-message
+        whitelist:
+          tags:
+          - Bottle
+          - PillCanister
+
+  - type: SolutionContainerManager
+    solutions:
+      buffer:
+        maxVol: 100
+
+  - type: DumpableSolution
+    solution: buffer
+    unlimited: false

@@ -17,6 +17,7 @@ using Content.Shared.StationRecords;
 using Content.Shared.StationRecords.Components;
 using Content.Shared.StationRecords.Systems;
 using Content.Shared.Tag;
+using Content.Shared._ClawCommand.Heretic.Components; // Claw Command: ascended Path of Lock access bypass
 using Robust.Shared.Containers;
 using Robust.Shared.Collections;
 using Robust.Shared.GameStates;
@@ -214,6 +215,21 @@ public sealed partial class AccessReaderSystem : EntitySystem
         var accessSources = FindPotentialAccessItems(user);
         var access = FindAccessTags(user, accessSources);
         FindStationRecordKeys(user, out var stationKeys, accessSources);
+
+        // CLAW COMMAND: START
+        if (reader.OwnerHasAccess && target == user)
+        {
+            LogAccess((target, reader), user);
+            return true;
+        }
+
+        // Claw Command: ascended Path of Lock heretics bypass every access reader on the station.
+        if (HasComp<LockMasterComponent>(user))
+        {
+            LogAccess((target, reader), user);
+            return true;
+        }
+        // CLAW COMMAND: END
 
         if (!IsAllowed(access, stationKeys, target, reader))
             return false;

@@ -1,0 +1,74 @@
+# Ported from Frontier (_NF) — verbatim apart from porting notes.
+# Restored over earlier substitutions:
+#   - CoffeeGrounds was substituted with Coffee
+#   - Honey was substituted with Sugar
+#   - Flavorol was substituted with Vitamin
+
+- type: reagent
+  id: CoffeeGrounds
+  name: reagent-name-coffeegrounds
+  group: Foods
+  desc: reagent-desc-coffeegrounds
+  flavor: bitter
+  color: "#4B382A"
+  physicalDesc: reagent-physical-desc-powdery
+  recognizable: true # "Waiter, there seems to be grounds in my coffee."
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.1
+      - !type:SatiateThirst
+        factor: -0.25
+
+- type: reagent
+  id: Honey
+  name: reagent-name-honey
+  group: Foods
+  desc: reagent-desc-honey
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: honey
+  flavorMinimum: 0.05
+  color: "#E79A3F"
+  viscosity: 0.5
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:ReagentCondition
+          reagent: Nutriment
+          min: 0.1
+        factor: 1
+  footstepSound:
+    collection: FootstepSticky
+    params:
+      volume: 6
+
+- type: reagent
+  id: Flavorol # Something magical a chef adds to a dish to make it better. Ported alongside higher-end cooked meals.
+  name: reagent-name-flavorol
+  group: Foods
+  desc: reagent-desc-flavorol
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: nutriment
+  color: "#775441"
+  metabolisms:
+    Food:
+      metabolismRate: 0.1
+      effects:
+      # !type:MovespeedModifier stripped — effect not present in this fork.
+      - !type:SatiateHunger
+      - !type:HealthChange # minor health benefit if you eat full meals
+        conditions:
+        - !type:ReagentCondition
+          reagent: Flavorol
+          min: 10
+        damage:
+          types:
+            Poison: -0.1
+            Radiation: -0.1
+            Cold: -0.2
+      - !type:ModifyBloodLevel
+        amount: .5

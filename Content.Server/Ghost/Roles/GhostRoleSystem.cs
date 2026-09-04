@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared.Ghost.Roles.Raffles;
 using Content.Server.Ghost.Roles.UI;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -39,8 +40,10 @@ using Content.Shared.Ghost.Components;
 
 namespace Content.Server.Ghost.Roles;
 
+// !!  CLAW COMMAND MODIFIED !! //
+
 [UsedImplicitly]
-public sealed partial class GhostRoleSystem : EntitySystem
+public sealed partial class GhostRoleSystem : EntitySystem // Claw Command - partial for character spawner
 {
     [Dependency] private IBanManager _ban = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
@@ -54,6 +57,9 @@ public sealed partial class GhostRoleSystem : EntitySystem
     [Dependency] private SharedRoleSystem _roleSystem = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
+
+    // CC: Added for job requirements.
+    [Dependency] private PlayTimeTrackingManager _playTime = default!;
 
     private uint _nextRoleIdentifier;
     private bool _needsUpdateGhostRoleCount = true;
@@ -91,6 +97,7 @@ public sealed partial class GhostRoleSystem : EntitySystem
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeRole);
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GetVerbsEvent<Verb>>(OnVerb);
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GhostRoleRadioMessage>(OnGhostRoleRadioMessage);
+        SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeCharacter); // Claw Command
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
     }
 
@@ -479,6 +486,12 @@ public sealed partial class GhostRoleSystem : EntitySystem
             return;
         }
 
+        if (!MeetsRoleRequirements(player, roleEnt.Comp.Requirements))
+        {
+            Log.Warning($"Server rejected ghost role request '{roleEnt.Comp.RoleName}' for '{player.Name}' - failed playtime requirement");
+            return;
+        }
+
         // Decide to do a raffle or not
         if (roleEnt.Comp.RaffleConfig is not null)
         {
@@ -656,10 +669,34 @@ public sealed partial class GhostRoleSystem : EntitySystem
                 }
             }
 
+            // CC: Start //
+            var meetsRequirements = true;
+            string? requirementText = null;
+
             var rafflePlayerCount = (uint?) raffle?.CurrentMembers.Count ?? 0;
             var raffleEndTime = raffle is not null
                 ? _timing.CurTime.Add(raffle.Countdown)
                 : TimeSpan.MinValue;
+
+            if (player != null && role.Requirements.Count > 0)
+            {
+                var playTimes = _playTime.GetTrackerTimes(player);
+                // Use the return value, NOT `reason != null`. Each JobRequirement.Check
+                // initializes `reason = new FormattedMessage()` even on success, so the old
+                // `reason != null` check failed for every player on every gated role and
+                // produced an empty tooltip (the cause of the LPO bug).
+                meetsRequirements = JobRequirements.TryRequirementsMet(
+                    role.Requirements.ToHashSet(),
+                    playTimes,
+                    out FormattedMessage? reason,
+                    EntityManager,
+                    ProtoMan,
+                    null);
+
+                if (!meetsRequirements && reason != null)
+                    requirementText = reason.ToMarkup();
+            }
+            // CC: End //
 
             TryPrototypes((uid, role), out var antags, out var jobs);
 
@@ -672,11 +709,30 @@ public sealed partial class GhostRoleSystem : EntitySystem
                 RolePrototypes = (jobs, antags),
                 Kind = kind,
                 RafflePlayerCount = rafflePlayerCount,
-                RaffleEndTime = raffleEndTime
+                RaffleEndTime = raffleEndTime,
+                MeetsRequirements = meetsRequirements,
+                RequirementText = requirementText,
             });
         }
 
         return roles.ToArray();
+    }
+
+    // Claw Command Specific //
+    private bool MeetsRoleRequirements(ICommonSession player, List<JobRequirement> requirements)
+    {
+        if (requirements.Count == 0)
+            return true;
+
+        var playTimes = _playTime.GetTrackerTimes(player);
+
+        return JobRequirements.TryRequirementsMet(
+            requirements.ToHashSet(),                          // List -> HashSet
+            (IReadOnlyDictionary<string, TimeSpan>) playTimes, // cast to IReadOnly
+            out _,
+            EntityManager,
+            ProtoMan,
+            null);
     }
 
     private void OnPlayerAttached(PlayerAttachedEvent message)

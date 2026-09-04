@@ -2053,7 +2053,7 @@
 - type: entity
   parent: BaseVendingMachine
   id: VendingMachineTankDispenserEVA
-  suffix: EVA [O2, N2]
+  suffix: EVA [O2, N2, H2O] # _ClawCommand: Added H2O.
   name: gas tank dispenser
   description: A vendor for dispensing gas tanks.
   components:
@@ -2066,7 +2066,7 @@
 - type: entity
   parent: BaseVendingMachine
   id: VendingMachineTankDispenserEngineering
-  suffix: ENG [O2, Plasma]
+  suffix: ENG [O2, N2, H2O, Plasma] # _ClawCommand: Added N2 and H2O (already had N2O inside)
   name: gas tank dispenser
   description: A vendor for dispensing gas tanks. This one has an engineering livery.
   components:

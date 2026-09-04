@@ -1,0 +1,233 @@
+# Shadekin structures, portals, spawners, phase effects and gear ported from Floofstation.
+# Textures live under Resources/Textures/_Floof/Shadekin (already present in this fork).
+- type: entity
+  id: Phoronic
+  parent: BaseStructure
+  name: phoronic cascade
+  description: "A huge structure made of pure plasma. Dark energy roils and bursts within it."
+  components:
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      noRot: true
+      drawdepth: Mobs
+      offset: "0.0,0.5"
+      sprite: _Floof/Shadekin/phoronic.rsi
+      state: phoronic
+    - type: SpriteFade
+
+- type: entity
+  id: PortalShadowkinHub
+  parent: BasePortal
+  name: dark hub
+  description: This portal is used by shadekins to go nearly anywhere in the universe!
+  components:
+    - type: Sprite
+      noRot: true
+      sprite: _Floof/Shadekin/shadekin_portal.rsi
+      layers:
+        - state: hub_portal
+    - type: PointLight
+      color: "#793a80dd"
+      radius: 3
+      energy: 1
+      netsync: false
+    - type: Portal
+      arrivalSound: /Audio/Items/hiss.ogg
+      departureSound: /Audio/Items/hiss.ogg
+      canTeleportToOtherMaps: true
+      randomTeleport: false
+    - type: DarkHub
+    - type: DarkLight
+
+- type: entity
+  id: PortalShadowkin
+  parent: BasePortal
+  name: dark portal
+  description: The portal to the dark...
+  components:
+    - type: Sprite
+      noRot: true
+      sprite: _Floof/Shadekin/shadekin_portal.rsi
+      layers:
+        - state: portal
+    - type: PointLight
+      color: "#793a80dd"
+      radius: 3
+      energy: 1
+      netsync: false
+    - type: Portal
+      arrivalSound: /Audio/Items/hiss.ogg
+      departureSound: /Audio/Items/hiss.ogg
+      canTeleportToOtherMaps: true
+      randomTeleport: false
+    - type: DarkPortal
+    - type: DarkLight
+
+- type: entity
+  id: PortalShadowkinSpawner
+  parent: MarkerBase
+  components:
+    - type: SpawnPoint
+      spawn_type: Job
+      job_id: Anomaly
+    - type: ConditionalSpawner
+      prototypes:
+        - PortalShadowkin
+    - type: Sprite
+      sprite: _Floof/Shadekin/shadekin_portal.rsi
+      state: portal
+
+- type: entity
+  id: ShadekinSpawner
+  parent: MarkerBase
+  components:
+    # Doubles as the Anomaly job spawn point (so the role spawns directly in the Dark hideout)
+    # and the relocation/rejuvenation target used by AnomalyJobSystem and ShadekinSystem.
+    - type: SpawnPoint
+      spawn_type: Job
+      job_id: Anomaly
+    - type: AnomalyJobSpawn
+    - type: Sprite
+      sprite: _Floof/Shadekin/shadekin_portal.rsi
+      state: hub_portal
+
+- type: entity
+  name: Shadekin Haze
+  id: ShadekinShadow
+  parent: BaseShadow
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+    - type: Appearance
+    - type: Transform
+      anchored: true
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/Effects/Shadowkin/shadeskip.ogg
+    - type: TimedDespawn
+      lifetime: 30
+    - type: Physics
+      canCollide: false
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+        - state: spookysmoke
+          color: "#793a80dd"
+          map: [base]
+    - type: Tag
+      tags:
+        - HideContextMenu
+        - SpookyFog
+    - type: OptionsVisualizer
+      visuals:
+        base:
+          - options: Default
+            data: { state: spookysmoke }
+          - options: ReducedMotion
+            data: { state: spookysmoke_static }
+
+- type: entity
+  id: ShadekinPhaseInEffect
+  name: Shadekin Phase in
+  components:
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/_ClawCommand/Shadekin/phase.ogg
+    - type: TimedDespawn
+      lifetime: 0.5
+    - type: Sprite
+      layers:
+        - sprite: _Floof/Shadekin/phase.rsi
+          state: tp_in
+          shader: unshaded
+      netsync: false
+      drawdepth: Effects
+
+- type: entity
+  id: ShadekinPhaseIn2Effect
+  name: Shadekin Phase in2
+  components:
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/_ClawCommand/Shadekin/phase.ogg
+    - type: TimedDespawn
+      lifetime: 0.5
+    - type: Transform
+      noRot: true
+    - type: Sprite
+      layers:
+        - sprite: _Floof/Shadekin/phase.rsi
+          state: tp_in2
+          shader: unshaded
+      netsync: false
+      drawdepth: Effects
+
+- type: entity
+  id: ShadekinPhaseOutEffect
+  name: Shadekin Phase out
+  components:
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/_ClawCommand/Shadekin/phase.ogg
+    - type: TimedDespawn
+      lifetime: 0.5
+    - type: Sprite
+      layers:
+        - sprite: _Floof/Shadekin/phase.rsi
+          state: tp_out
+          shader: unshaded
+      netsync: false
+      drawdepth: Effects
+
+# DarkTile itself already exists in this fork (see Structures/Decoration/dark_tile.yml);
+# only the Kudzu-spreading dangerous variant is added here.
+- type: entity
+  id: DarkTileDangerous
+  parent: [DarkTile, BaseShadow]
+  suffix: Dangerous
+  components:
+    - type: Kudzu
+      spreadChance: 0.99
+      growthTickChance: 0.2
+    - type: ActiveEdgeSpreader
+    - type: GrowingKudzu
+    - type: EdgeSpreader
+      id: Kudzu
+
+# A "fake passenger ID" (as in the Floof port): looks and reads like an ordinary passenger card
+# Fake "paper" passenger ID ported from Floofstation. Parented to Clothing (NOT IDCardStandard) so it
+# is not a real ID card - it just sits in the idcard slot looking like a rpg/paper passenger ID while
+# carrying Maintenance access, letting the Anomaly blend in.
+- type: entity
+  parent: Clothing
+  id: AnomalyIDCard
+  name: anomaly ID card
+  description: A card necessary to access various areas aboard the station. This one's clearly drawn on paper, huh?
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: rpg
+    - state: department
+      color: "#C96DBF"
+    - state: passenger
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+    tags:
+    - Maintenance
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon

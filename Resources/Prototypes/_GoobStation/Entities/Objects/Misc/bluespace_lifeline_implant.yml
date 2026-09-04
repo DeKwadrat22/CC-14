@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: BluespaceLifelineImplant
+  name: bluespace lifeline implant
+  description: Teleports the host's body to Central Command on death. They will not be able to return.
+  categories: []
+  components:
+  - type: SubdermalImplant
+    permanent: true
+    implantAction: ActionActivateBluespaceLifeline
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: TriggerOnActivateImplant
+  - type: DeleteParentOnTrigger
+  - type: SpawnOnTrigger
+    proto: BluespaceLifelineSpawnCore
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu
+
+- type: entity
+  id: BluespaceLifelineImplanter
+  name: bluespace lifeline implanter
+  suffix: Bluespace Lifeline
+  parent: BaseImplantOnlyImplanter
+  categories: []
+  components:
+  - type: Implanter
+    implant: BluespaceLifelineImplant

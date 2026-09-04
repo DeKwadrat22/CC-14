@@ -11,6 +11,12 @@ public sealed partial class TraitPreferenceSelector : Control
 {
     public int Cost;
 
+    /// <summary>
+    ///     Claw Command - the trait's own description, kept so <see cref="SetUnavailable"/> can prepend the
+    ///     reason it is locked without throwing the description away.
+    /// </summary>
+    private readonly string? _description;
+
     public bool Preference
     {
         get => Checkbox.Pressed;
@@ -23,7 +29,11 @@ public sealed partial class TraitPreferenceSelector : Control
     {
         RobustXamlLoader.Load(this);
 
-        var text = trait.Cost != 0 ? $"[{trait.Cost}] " : "";
+        // Claw Command - the label sign is INVERTED from the raw budget Cost so it reads the way a player
+        // expects: a trait that refunds budget (negative Cost) shows as a "+N" gain, and one that spends
+        // budget (positive Cost) shows as a "-N" cost. Previously the raw Cost was shown, so a +2-giving
+        // downside read as "-2" and a 4-point cost read as a bare "4", which players found backwards.
+        var text = trait.Cost != 0 ? $"[{-trait.Cost:+0;-0}] " : "";
         text += Loc.GetString(trait.Name);
 
         Cost = trait.Cost;
@@ -32,8 +42,25 @@ public sealed partial class TraitPreferenceSelector : Control
 
         if (trait.Description is { } desc)
         {
-            Checkbox.ToolTip = Loc.GetString(desc);
+            _description = Loc.GetString(desc);
+            Checkbox.ToolTip = _description;
         }
+    }
+
+    /// <summary>
+    ///     Claw Command - locks the trait out because its prerequisites are not met, and says why.
+    /// </summary>
+    /// <remarks>
+    ///     The lobby used to offer every trait unconditionally, so clicking a gated one just quietly bounced
+    ///     back to unticked - which reads as a broken checkbox rather than a locked one. Greying it out and
+    ///     putting the requirement in the tooltip makes the gate legible; ticking the trait it wants re-runs
+    ///     RefreshTraits and unlocks it on the spot.
+    /// </remarks>
+    public void SetUnavailable(string reason)
+    {
+        Checkbox.Disabled = true;
+        Checkbox.Label.FontColorOverride = Color.DarkGray;
+        Checkbox.ToolTip = _description is null ? reason : $"{reason}\n\n{_description}";
     }
 
     private void OnCheckBoxToggled(BaseButton.ButtonToggledEventArgs args)

@@ -1,0 +1,68 @@
+# Claw Command - Syndicate Outpost ghost role spawn point (random syndie character)
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: SpawnPointGhostSyndicateListener
+  name: ghost role spawn point
+  suffix: syndicate listener
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-listeningop-name
+    description: ghost-role-information-listeningop-description
+    rules: ghost-role-information-rules-team-antagonist
+    # Claw Command - without this the role falls back to GhostRoleComponent's default of
+    # MindRoleGhostRoleNeutral, which files listening operatives as ordinary crew. They are
+    # syndicate agents working for themselves, so FreeAgent is the honest category.
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    # Claw Command - a flat overall gate. This used to also demand 2h in each of Security,
+    # Civilian and Command; requirements are ANDed, so that was really a 6h floor spread across
+    # three unrelated departments, and the 3.25h overall entry could never bind. Six hours of
+    # anything is the actual intent.
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 6h
+    raffle:
+      settings: short
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSyndicateListener
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Species/Human/parts.rsi
+        state: full
+
+# Claw Command - Syndicate Outpost ghost role spawn point (player's own character)
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: SpawnPointGhostSyndicateListenerCharacter
+  name: ghost role spawn point
+  suffix: syndicate listener, your character
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-listeningop-character-name
+    description: ghost-role-information-listeningop-character-description
+    rules: ghost-role-information-rules-team-antagonist
+    # Claw Command - see the note on the sibling spawner above.
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    # Claw Command - see the note on the sibling spawner above.
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 6h
+    raffle:
+      settings: short
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: SyndicateListenerGear
+    factions:
+    - Syndicate
+    implants:
+    - DeathAcidifierImplant
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Species/Human/parts.rsi
+        state: full

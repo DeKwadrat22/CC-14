@@ -1,4 +1,7 @@
-﻿using Content.Shared.Movement.Components;
+﻿using Content.Shared._ClawCommand.Silicons.Borgs;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Client.GameObjects;
@@ -22,6 +25,20 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
 
         SubscribeLocalEvent<BorgSwitchableTypeComponent, AfterAutoHandleStateEvent>(AfterStateHandler);
         SubscribeLocalEvent<BorgSwitchableTypeComponent, ComponentStartup>(OnComponentStartup);
+        // _ClawCommand: when a dogborg starts/stops moving, swap the Body and
+        // LightStatus layers to their "_moving" counterparts so the walk cycle
+        // is shown only while actually walking.
+        //
+        // We subscribe on the BorgSwitchableTypeComponent (not SpriteMovementComponent)
+        // because ClientSpriteMovementSystem already owns
+        // (SpriteMovementComponent, AfterAutoHandleStateEvent) and
+        // SharedSpriteMovementSystem owns (SpriteMovementComponent, SpriteMoveEvent),
+        // and Robust forbids a second subscription for the same (component, event) pair.
+        //
+        // OnSpriteMove pre-writes SpriteMovementComponent.IsMoving from
+        // args.IsMoving before reading it, so dispatch order between us and
+        // SharedSpriteMovementSystem doesn't matter.
+        SubscribeLocalEvent<BorgSwitchableTypeComponent, SpriteMoveEvent>(OnSpriteMove);
     }
 
     private void OnComponentStartup(Entity<BorgSwitchableTypeComponent> ent, ref ComponentStartup args)
@@ -34,14 +51,32 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         UpdateEntityAppearance(ent);
     }
 
+    private void OnSpriteMove(Entity<BorgSwitchableTypeComponent> ent, ref SpriteMoveEvent args)
+    {
+        // The bus may invoke us before SharedSpriteMovementSystem because we
+        // subscribe on BorgSwitchableTypeComponent and they subscribe on
+        // SpriteMovementComponent — different (component, event) slots that
+        // aren't globally ordered. Mirror the new value ourselves so the read
+        // inside UpdateEntityAppearance via GetMotionState is correct
+        // regardless of dispatch order. If shared already ran first, this is
+        // a no-op assignment.
+        if (TryComp<SpriteMovementComponent>(ent.Owner, out var move))
+            move.IsMoving = args.IsMoving;
+        UpdateEntityAppearance(ent);
+    }
+
     protected override void UpdateEntityAppearance(
         Entity<BorgSwitchableTypeComponent> entity,
         BorgTypePrototype prototype)
     {
         if (TryComp(entity, out SpriteComponent? sprite))
         {
-            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.Body, prototype.SpriteBodyState);
-            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.LightStatus, prototype.SpriteToggleLightState);
+            // _ClawCommand: route Body/LightStatus through BorgSystem's motion
+            // helper so dogborgs (those with SpriteMovementComponent) animate
+            // their legs only when actually moving. Regular borgs return the
+            // base state unchanged.
+            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.Body, _borgSystem.GetMotionState(entity.Owner, prototype.SpriteBodyState));
+            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.LightStatus, _borgSystem.GetMotionState(entity.Owner, prototype.SpriteToggleLightState));
         }
 
         if (TryComp(entity, out BorgChassisComponent? chassis))
@@ -59,5 +94,18 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         }
 
         base.UpdateEntityAppearance(entity, prototype);
+
+        // _ClawCommand: the base just (re)populated SpriteMovementComponent's layer maps
+        // (keyed "movement", which aliases the Body layer) to drive the Body's "_moving"
+        // swap. For baked dogborgs the Body layer is owned entirely by
+        // BorgSystem.UpdateBorgAppearance (static base / pose / wreck), so empty those maps
+        // — otherwise ClientSpriteMovementSystem ALSO writes the Body layer and an
+        // unoccupied chassis visibly "trots", and the two writers race. The IsMoving flag
+        // is kept: GetMotionState reads it to animate the Light layer instead.
+        if (HasComp<BorgBakedBodyComponent>(entity) && TryComp<SpriteMovementComponent>(entity, out var move))
+        {
+            move.MovementLayers.Clear();
+            move.NoMovementLayers.Clear();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+﻿using System.Numerics;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Prototypes;
@@ -69,6 +70,30 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public IReadOnlyList<GenericUnlock> GenericUnlocks = new List<GenericUnlock>();
+
+    /// <summary>
+    /// Grid position of this tech inside the fancy R&D console tech-tree view.
+    /// X axis is tier progression (T1 left, T3 right); Y is themed clustering.
+    /// One unit = 150 pixels at default zoom.
+    /// </summary>
+    [DataField]
+    public Vector2i Position { get; private set; }
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     What color the line should be in the UI.
+    /// </summary>
+    [DataField]
+    public Color LineColor = Color.White;
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     What side a prerequisite should attempt to connect to.
+    ///     USAGE:
+    ///     <para>AbnormalArtifactManipulation: Left</para>
+    /// </summary>
+    [DataField]
+    public Dictionary<string, string> LineConnectSides = new();
 }
 
 [DataDefinition]

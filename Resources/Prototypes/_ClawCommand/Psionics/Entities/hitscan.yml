@@ -1,0 +1,27 @@
+# Claw Command - psionics port.
+#
+# Upstream declared this as `- type: hitscan`, a dedicated prototype kind with damage and flash sprites in one
+# block. Hitscans are entities now, assembled from HitscanAmmo / HitscanBasicRaycast / HitscanBasicVisuals /
+# HitscanBasicDamage, so the same lash is rebuilt on top of BasicHitscan with the original omni sprites and damage.
+
+- type: entity
+  parent: BasicHitscan
+  id: WispLash
+  name: wisp lash
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Cold: 8
+        Shock: 8
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_omni
+    travelFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: beam_omni
+    impactFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact_omni

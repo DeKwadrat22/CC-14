@@ -287,7 +287,7 @@ public abstract partial class SharedStackSystem : EntitySystem
 /// <summary>
 /// Event raised when a stack's count has changed.
 /// </summary>
-public sealed class StackCountChangedEvent : EntityEventArgs
+public sealed partial class StackCountChangedEvent : EntityEventArgs
 {
     /// <summary>
     /// The old stack count.

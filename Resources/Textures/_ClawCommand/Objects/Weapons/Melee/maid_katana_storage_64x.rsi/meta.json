@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Storage sprite by RedBookcase on Github. Modified by DaCookieCakes for Claw Command 14.",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "storage_off"
+        },
+        {
+            "name": "storage_on"
+        }
+    ]
+}

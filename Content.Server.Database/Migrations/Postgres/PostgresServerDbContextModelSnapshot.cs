@@ -1195,6 +1195,22 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("voice");
 
+                    // Claw Command
+                    b.Property<float>("Width")
+                        .HasColumnType("real")
+                        .HasColumnName("width");
+
+                    // Claw Command
+                    b.Property<float>("Height")
+                        .HasColumnType("real")
+                        .HasColumnName("height");
+
+                    // Claw Command
+                    b.Property<string>("CustomSpeciesName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("custom_species_name");
+
                     b.HasKey("Id")
                         .HasName("PK_profile");
 
@@ -1215,6 +1231,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnName("profile_loadout_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    // CLAW COMMAND: Added.
+                    b.Property<string>("CustomName")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_name");
 
                     b.Property<string>("LoadoutName")
                         .IsRequired()

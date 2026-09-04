@@ -25,18 +25,17 @@
 
 - type: startingGear
   id: SecurityCadetGear
+  # Claw Command - sidearm and pistol ammo removed; picked from the service-weapon loadout instead.
   equipment:
     shoes: ClothingShoesBootsJackFilled
     outerClothing: ClothingOuterArmorBasic
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58
     pocket2: BookSecurity
   storage:
     back:
     - Flash
-    - MagazinePistol
 
 - type: chameleonOutfit
   id: SecurityCadetChameleonOutfit

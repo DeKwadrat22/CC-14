@@ -1,0 +1,138 @@
+# _ClawCommand: reagents ported from space/ that were actually missing in the fork.
+#
+# Survey-vs-reality correction (verified by grep against fork): Frostoil / HolyWater / IrishCarBomb /
+# KiraSpecial / Ectoplasm reagents already shipped in _ClawCommand/Raegents/Consumable/* — porting
+# them again would duplicate IDs. This file only carries the genuinely-absent ones.
+#
+# System-availability adaptations:
+#   - PsionicRegenerationEssence: pure healing reagent, no psionic-only effects in source so no stripping needed.
+#
+# UPDATE (psionics port): the psionic system now exists, so the effects that were stripped here have been
+# restored — SoulbreakerToxin mindbreaks again (that is what Mindbreaker Toxin is for), and LotophagoiOil
+# grants its bonus psionic power roll. The mood system also exists, so AddMoodlet stays as-is.
+
+# === Drinks ===
+
+- type: reagent
+  id: JuicePotato
+  name: reagent-name-juice-potato
+  parent: BaseJuice
+  desc: reagent-desc-juice-potato
+  physicalDesc: reagent-physical-desc-starchy
+  flavor: potatoes
+  color: "#302000"
+
+# === Medicine ===
+
+- type: reagent
+  id: PsionicRegenerationEssence
+  name: reagent-name-prometheum
+  group: Biological
+  desc: reagent-desc-prometheum
+  flavor: metallic
+  color: "#700055"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Metabolites:
+      effects:
+      - !type:SatiateThirst
+        factor: -3
+      - !type:SatiateHunger
+        factor: -3
+      - !type:ModifyBleedAmount
+        amount: -1
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -1.25
+            Shock: -1.25
+            Cold: -1.25
+            Caustic: -4.25
+            Blunt: -1.3333
+            Slash: -1.3333
+            Piercing: -1.3333
+            Poison: -3
+            Bloodloss: -3
+# === Toxins ===
+
+- type: reagent
+  id: SoulbreakerToxin
+  name: reagent-name-soulbreaker-toxin
+  group: Toxins
+  desc: reagent-desc-soulbreaker-toxin
+  flavor: bitter
+  color: "#FFFFF0"
+  physicalDesc: reagent-physical-desc-cloudy
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 40
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        probability: 0.4
+        damage:
+          types:
+            Poison: 1
+            Radiation: 1
+      # Claw Command - restored by the psionics port. A sufficient dose permanently strips psionic powers.
+      - !type:ChemRemovePsionic
+        conditions:
+        - !type:ReagentCondition
+          reagent: SoulbreakerToxin
+          min: 5
+
+# === Narcotics ===
+
+- type: reagent
+  id: LotophagoiOil
+  name: reagent-name-lotophagoi-oil
+  group: Narcotics
+  desc: reagent-desc-lotophagoi-oil
+  flavor: enthralling
+  color: "#FFBF00"
+  physicalDesc: reagent-physical-desc-overpowering
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.2
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: ScrambledAccent
+      # Claw Command - restored by the psionics port. A big enough dose buys one extra roll at psionic
+      # powers, at four times the usual odds. This is the intended non-antag route into psionics.
+      - !type:ChemRerollPsionic
+        bonusMultiplier: 4
+        conditions:
+        - !type:ReagentCondition
+          reagent: LotophagoiOil
+          min: 20
+      # Claw Command - restored by the psionics port. Makes the drinker echo telepathic chatter aloud.
+      - !type:GenericStatusEffect
+        key: SlurredSpeech
+        component: TelepathicRepeater
+      # Claw Command - the most extreme high in the game, and the worst comedown.
+      - !type:AddMoodlet
+        moodlet: LotoTranscendence
+        guidebookShowEffectName: true
+        conditions:
+        - !type:ReagentCondition
+          reagent: LotophagoiOil
+          min: 5
+
+# === Fun ===
+
+- type: reagent
+  id: Saxoite
+  name: reagent-name-saxoite
+  desc: reagent-desc-saxoite
+  physicalDesc: reagent-physical-desc-ground-brass
+  flavor: sax
+  color: "#B8A603"

@@ -1,0 +1,88 @@
+- type: marking
+  id: BullishHorns
+  bodyPart: HeadTop
+  groupWhitelist: [Human, Slime, MarkingsIPC, MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsAvali] # Floof - M3739 - #1062 - Give Kitsune access to Kemonomimi markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: bullishhorns
+
+- type: marking
+  id: BunnyEars
+  bodyPart: HeadTop
+  groupWhitelist: [Human, Slime, MarkingsIPC, MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsAvali] # Floof - M3739 - #1062 - Give Kitsune access to Kemonomimi markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      bunnyearstone2:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: bunnyearstone1
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: bunnyearstone2
+
+- type: marking
+  id: BunnyEarsAlt
+  bodyPart: HeadTop
+  groupWhitelist: [Human, Slime, MarkingsIPC, MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsAvali] # Floof - M3739 - #1062 - Give Kitsune access to Kemonomimi markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: bunnyearsalt
+
+- type: marking
+  id: FoxEars
+  bodyPart: HeadTop
+  groupWhitelist: [Human, Slime, MarkingsIPC, MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsAvali] # Floof - M3739 - #1062 - Give Kitsune access to Kemonomimi markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: foxears
+
+- type: marking
+  id: GoatHorns
+  bodyPart: HeadTop
+  groupWhitelist: [Human, Slime, MarkingsIPC, MarkingsKitsune, MarkingsFelinid, Vulpkanin, MarkingsAvali] # Floof - M3739 - #1062 - Give Kitsune access to Kemonomimi markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      goathornstone22:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: goathornstone1
+  - sprite: _ClawCommand/Mobs/Customization/kemonomimi-ears.rsi
+    state: goathornstone2

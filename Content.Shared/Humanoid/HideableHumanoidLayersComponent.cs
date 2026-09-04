@@ -1,10 +1,11 @@
+using Content.Shared.Body;
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Humanoid;
 
 [NetworkedComponent, RegisterComponent, AutoGenerateComponentState(true)]
-[Access(typeof(SharedHideableHumanoidLayersSystem))]
+[Access(typeof(SharedHideableHumanoidLayersSystem), typeof(SharedVisualBodySystem))] // Claw Command - added SharedVisualBodySystem access
 public sealed partial class HideableHumanoidLayersComponent : Component
 {
     /// <summary>

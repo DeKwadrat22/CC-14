@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 - type: entity
   id: LockerBoozeFilled
   suffix: Filled
@@ -12,6 +14,7 @@
   id: FillLockerBooze
   table: !type:AllSelector
     children:
+    - id: BookBartendersManual # _ClawCommand: Added.
     - id: ClothingOuterArmorBasicSlim
     - id: WeaponShotgunDoubleBarreledRubber
     - id: DrinkShaker
@@ -49,12 +52,15 @@
   id: FillClosetChef
   table: !type:AllSelector
     children:
+    - id: FoodShakerSalt # _ClawCommand: Added.
+    - id: FoodShakerPepper # _ClawCommand: Added.
     - id: VariantCubeBox
     - id: SprayBottleWater
     - id: FoodBoxCloth
     - id: ReagentContainerSugar
     - id: FoodCondimentBottleEnzyme
     - id: DrinkSoyMilkCarton
+    - id: BookHowToCookForFortySpaceman # _ClawCommand: Added.
     - !type:AllSelector
       rolls: 2
       children:
@@ -63,11 +69,12 @@
       # yes, I'm using this as an excuse to not have to do extra work.
       - id: ReagentContainerFlour
       - id: BoxMousetrap
-    - !type:AllSelector
-      rolls: 3
-      children:
-      - id: FoodCondimentPacketSalt
-      - id: FoodCondimentPacketPepper
+# _ClawCommand: Commented out due to the shakers being added.
+#   - !type:AllSelector
+#     rolls: 3
+#     children:
+#     - id: FoodCondimentPacketSalt
+#     - id: FoodCondimentPacketPepper
     - id: PlushieLizardJobChef
       prob: 0.02
     - id: PlushieLizardJobServiceworker
@@ -143,6 +150,8 @@
     - id: ClothingOuterApronBotanist
     - id: ClothingHeadBandBotany
     - id: ChemistryBottleRobustHarvest
+      prob: 0.3
+    - id: RobustHarvestChemistryBottle # Claw Command - alt-ID
       prob: 0.3
     - id: ClothingBeltPlantFilled
     - id: PlantBag ##Some maps don't have nutrivend

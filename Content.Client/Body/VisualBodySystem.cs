@@ -155,12 +155,24 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
 
     private IEnumerable<Marking> AllMarkings(Entity<VisualOrganMarkingsComponent> ent)
     {
+        // CLAW COMMAND 14 - Sort markings by a new layering system. This was simple enough. - Cookie
+        var allMarkings = ent.Comp.Markings.Values
+        .SelectMany(m => m)
+        .OrderBy(m => _marking.TryGetMarking(m, out var proto) ? proto.RenderPriority : 0);
+
+        /*
         foreach (var markings in ent.Comp.Markings.Values)
         {
             foreach (var marking in markings)
             {
                 yield return marking;
             }
+        }
+        */
+
+        foreach (var marking in allMarkings)
+        {
+            yield return marking;
         }
 
         var censorNudity = _cfg.GetCVar(CCVars.AccessibilityClientCensorNudity) || _cfg.GetCVar(CCVars.AccessibilityServerCensorNudity);
@@ -255,6 +267,71 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
                     // TODO: fix this when LayerSetShader is moved out of component
                     target.Comp.LayerSetShader(index + i + 1 + numDisplacements, shader);
                 }
+            }
+
+            applied.Add(marking);
+        }
+        ent.Comp.AppliedMarkings = applied;
+    }
+    // CLAW COMMAND 14 - Markings replacement system
+    private void ApplyMarkings(Entity<VisualOrganMarkingsComponent> ent, EntityUid target)
+    {
+        var applied = new List<Marking>();
+        var layerOffsets = new Dictionary<HumanoidVisualLayers, int>();
+        foreach (var marking in AllMarkings(ent))
+        {
+            if (!_marking.TryGetMarking(marking, out var proto))
+                continue;
+
+            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out _, true))
+                continue;
+
+            for (var i = 0; i < proto.Sprites.Count; i++)
+            {
+                var sprite = proto.Sprites[i];
+
+                DebugTools.Assert(sprite is SpriteSpecifier.Rsi);
+                if (sprite is not SpriteSpecifier.Rsi rsi)
+                    continue;
+
+                // Determine which layer this sprite should go into
+                var layerSlot = proto.BodyPart;
+                if (proto.Layering != null &&
+                    proto.Layering.TryGetValue(rsi.RsiState, out var layerName) &&
+                    Enum.TryParse<HumanoidVisualLayers>(layerName, out var parsedLayer))
+                {
+                    layerSlot = parsedLayer;
+                }
+
+                if (!_sprite.LayerMapTryGet(target, layerSlot, out var index, true))
+                    continue;
+
+                var offset = layerOffsets.GetValueOrDefault(layerSlot, 0);
+                var layerId = $"{proto.ID}-{rsi.RsiState}";
+
+                if (!_sprite.LayerMapTryGet(target, layerId, out _, false))
+                {
+                    var targLayerAdj = index + offset + 1;
+                    var layer = _sprite.AddLayer(target, sprite, targLayerAdj);
+                    _sprite.LayerMapSet(target, layerId, layer);
+                    _sprite.LayerSetSprite(target, layerId, rsi);
+
+                    if (ent.Comp.InitiallyHiddenLayers.Contains(proto.BodyPart))
+                         _sprite.LayerSetVisible(target, layerId, false);
+
+                    // Claw Command - hide marking if its layer is currently hidden by clothing
+                    if (ent.Comp.HideableLayers.Contains(proto.BodyPart) &&
+                        TryComp<HideableHumanoidLayersComponent>(target, out var hideComp) &&
+                        hideComp.HiddenLayers.ContainsKey(proto.BodyPart))
+                        _sprite.LayerSetVisible(target, layerId, false);
+                }
+
+                if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
+                    _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
+                else
+                    _sprite.LayerSetColor(target, layerId, Color.White);
+
+                layerOffsets[layerSlot] = offset + 1;
             }
 
             applied.Add(marking);

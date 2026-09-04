@@ -1,0 +1,183 @@
+# Ported from Nyanotrasen/Entities/Objects/Weapons/Guns/Pistols/pistols.yml,
+# DeltaV/Entities/Objects/Weapons/Guns/Rifles/rifles.yml and the upstream
+# Entities/Objects/Weapons/Guns/SMGs/smgs.yml entry for the HoS Wt550.
+
+# Tag required by the Universal magazine/pistol whitelists.
+- type: Tag
+  id: MagazineUniversalMagnum
+
+# --- "Universal" magnum pistol + magazine ---
+
+- type: entity
+  id: BaseMagazineUniversalMagnum
+  name: "Universal magazine (.45 magnum)"
+  parent: BaseMagazinePistol
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineUniversalMagnum
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+    proto: CartridgeMagnum
+    capacity: 12
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Ammunition/Magazine/Magnum/universal_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineUniversalMagnum
+  name: "Universal magazine (.45 magnum)"
+  parent: BaseMagazineUniversalMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnum
+    capacity: 12
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  name: mk 32 "Universal"
+  parent: BaseWeaponPistol
+  id: WeaponPistolUniversal
+  description: An expensive and robust pistol with decent offensive capabilities. Uses .45 magnum ammo.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
+  - type: Gun
+    fireRate: 3
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/DeltaV/Weapons/Guns/Gunshots/universal.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineUniversalMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineUniversalMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+# --- Box of Universal magazines ---
+
+- type: entity
+  name: box of .45 magnum Universal magazines
+  parent: BoxMagazine
+  id: BoxMagazineUniversalMagnum
+  description: A box full of .45 magnum magazines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineUniversalMagnum
+        amount: 6
+  - type: Storage
+    maxItemSize: Small
+    grid:
+      - 0,0,3,2
+    whitelist:
+      components:
+        - BallisticAmmoProvider
+
+# --- Vulcan rifle ---
+
+- type: entity
+  name: Vulcan
+  # BaseGunWieldable mirrors space's BaseWeaponRifle wield setup (Wieldable +
+  # GunWieldBonus). Fork's BaseWeaponRifle omits Wieldable, so we add it here
+  # rather than mutating the shared base.
+  parent: [ BaseWeaponRifle, BaseGunWieldable ]
+  id: WeaponRifleVulcan
+  description: One of the first firearms modified for space usage, this rifle was purpose-designed to punch holes in Cargonian "combat mechs." Uses .30 rifle ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/vulcan.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/vulcan.rsi
+
+# --- HoS antique Wt550 ---
+
+- type: entity
+  name: antique Wt550
+  id: WeaponSubMachineGunWt550HoS
+  parent: WeaponSubMachineGunWt550
+  description: A prized possession of the station's Head of Security. The smell of dried blood lingers on this weapon's muzzle. A small torch with 24 stars surrounding it has been engraved on the grip.
+  # StealTarget(HoSAntiqueWeapon) dropped — stealGroup proto doesn't exist in
+  # this fork.

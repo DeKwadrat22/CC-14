@@ -1,0 +1,4 @@
+- type: localizedDataset
+  id: NamesShadowkin
+  values: { prefix: names-shadowkin-dataset-, count: 49 }
+

@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconClawCommandOfficer
+  icon:
+    sprite: /Textures/_ClawCommand/Interface/Misc/job_icons.rsi
+    state: clawcommandofficer
+  jobName: job-name-cco
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconClawCommandMaid
+  icon:
+    sprite: /Textures/_ClawCommand/Interface/Misc/job_icons.rsi
+    state: clawcommandmaid
+  jobName: job-name-ccm

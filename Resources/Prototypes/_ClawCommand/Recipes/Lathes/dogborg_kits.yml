@@ -1,0 +1,90 @@
+# Lathe recipes for dogborg conversion kits. Added to the Exosuit Fabricator
+# alongside the regular `BorgLimbsStatic` pack via the DogborgKitsStatic pack
+# entry.
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseRoboticsRecipe
+  id: BaseDogborgKitRecipe
+  completetime: 2
+  materials:
+    Steel: 100
+    Glass: 200
+    Plastic: 100
+
+# ===== Security =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitK9
+  result: DogborgKitK9
+
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitK9Dark
+  result: DogborgKitK9Dark
+
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitValeSec
+  result: DogborgKitValeSec
+
+# ===== Medical =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitMedihound
+  result: DogborgKitMedihound
+
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitMedihoundDark
+  result: DogborgKitMedihoundDark
+
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitValeMed
+  result: DogborgKitValeMed
+
+# ===== Engineering =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitPupDozer
+  result: DogborgKitPupDozer
+
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitValeEng
+  result: DogborgKitValeEng
+
+# ===== Janitor =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitScrubpup
+  result: DogborgKitScrubpup
+
+# ===== Service =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitValeServ
+  result: DogborgKitValeServ
+
+# ===== Mining =====
+- type: latheRecipe
+  parent: BaseDogborgKitRecipe
+  id: DogborgKitBlade
+  result: DogborgKitBlade
+
+# Static pack — added to the Exosuit Fabricator's staticPacks list.
+- type: latheRecipePack
+  id: DogborgKitsStatic
+  recipes:
+  - DogborgKitK9
+  - DogborgKitK9Dark
+  - DogborgKitValeSec
+  - DogborgKitMedihound
+  - DogborgKitMedihoundDark
+  - DogborgKitValeMed
+  - DogborgKitPupDozer
+  - DogborgKitValeEng
+  - DogborgKitScrubpup
+  - DogborgKitValeServ
+  - DogborgKitBlade

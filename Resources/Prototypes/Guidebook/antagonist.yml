@@ -3,12 +3,14 @@
   name: guide-entry-antagonists
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
   children:
+  - GuideAntagonistSOP #claw command
   - Traitors
   - Thieves
   - Revolutionaries
   - NuclearOperatives
   - SpaceNinja
   - Wizard
+  - Heretics # _ClawCommand - heretics
   - Zombies
   - Xenoborgs
   - Changelings

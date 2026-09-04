@@ -1,0 +1,514 @@
+# Dogborg cyborg variants. These are children of the regular BorgChassis*
+# entities — same behavior, modules, and stats; only the sprite RSI differs.
+# Sprite work originates from Citadel-Station-13 (see
+# Resources/Textures/_ClawCommand/Mobs/Silicon/LICENSE.md).
+
+# Common visual setup macro: each dogborg uses the same three-layer scheme
+# as upstream BorgChassisSelectable — base body / eyes / lights — but
+# remapped to per-variant state names from the ported RSI.
+
+# ===== Medical: Medihound =====
+- type: entity
+  parent: BorgChassisMedical
+  id: BorgChassisMedicalMedihound
+  name: medihound cyborg
+  description: A canine-shaped medical cyborg, a relic of an older station design.
+  suffix: Medihound
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_medihound.rsi
+    layers:
+    - state: medihound
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: medihound_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: medihound_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: medihound_e
+    noMindState: medihound
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-medihound
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by
+  # BorgChassisMedicalMedihoundDark and PlayerDogborgMedical.
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
+
+- type: entity
+  parent: BorgChassisMedicalMedihound
+  id: BorgChassisMedicalMedihoundDark
+  name: medihound dark cyborg
+  suffix: Medihound Dark
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_medihounddark.rsi
+    layers:
+    - state: medihounddark
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: medihounddark_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: medihounddark_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: medihounddark_e
+    noMindState: medihounddark
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-medihound-dark
+
+- type: entity
+  parent: BorgChassisMedical
+  id: BorgChassisMedicalVale
+  name: vale medical cyborg
+  description: A canine-shaped medical cyborg with sleek lines.
+  suffix: Vale (medical)
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_valemed.rsi
+    layers:
+    - state: valemed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: valemed_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: valemed_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: valemed_e
+    noMindState: valemed
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-vale-med
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to MEDICAL + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9).
+  - type: AccessReader
+    access: [["Medical"], ["Research"], ["Security"]]
+
+# ===== Security: K9 =====
+# Our fork's borgType prototypes don't include a `security` variant (only generic,
+# engineering, mining, janitor, medical, service). K9 is therefore parented off
+# the generic chassis so the player picks modules normally after selection.
+- type: entity
+  parent: BorgChassisGeneric
+  id: BorgChassisSecurityK9
+  name: K9 cyborg
+  description: A canine-shaped security cyborg. Bite is worse than its bark.
+  suffix: K9
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_k9.rsi
+    layers:
+    - state: k9
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: k9_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: k9_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: k9_e
+    noMindState: k9
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-k9
+  # _ClawCommand - security-borg plating (inherited by K9-Dark, Vale-sec and PlayerDogborgSecurity):
+  # blunt/slash 50%, piercing 45%, heat 40% damage reduction, plus 35% explosion resistance.
+  - type: Damageable
+    damageModifierSet: ModifierSetSecurityBorg
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  # _ClawCommand - restrict this borg's Lock/unlock (and thus its wiring + module UI, gated by
+  # UIRequiresLock) to SECURITY + Command access, overriding the default Command+Research from
+  # BaseBorgChassisNT. Only security or command can lock/unlock the security K9. Inherited by
+  # BorgChassisSecurityK9Dark, BorgChassisSecurityVale and PlayerDogborgSecurity.
+  - type: AccessReader
+    access: [["Security"], ["Command"]]
+  # _ClawCommand - security dogborgs have hardened optics: flashes and flashbangs
+  # don't blind them. Only on this chassis line, so K9-Dark, Vale-sec and
+  # PlayerDogborgSecurity inherit it while the medical/engi/jani/service/mining
+  # dogborgs stay flashable.
+  - type: FlashImmunity
+
+- type: entity
+  parent: BorgChassisSecurityK9
+  id: BorgChassisSecurityK9Dark
+  name: K9 dark cyborg
+  suffix: K9 Dark
+  components:
+  # K9 Dark doesn't ship separate _e/_l states in the source DMI, so the Light/
+  # LightStatus layers reuse the base k9dark state. They're invisible by default
+  # — the borg-type system needs the layer keys to exist regardless, so it can
+  # toggle visibility for mind / light status without throwing.
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_k9dark.rsi
+    layers:
+    - state: k9dark
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: k9dark
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: k9dark
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      shader: unshaded
+      visible: false
+  - type: BorgChassis
+    hasMindState: k9dark
+    noMindState: k9dark
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-k9-dark
+
+- type: entity
+  parent: BorgChassisSecurityK9
+  id: BorgChassisSecurityVale
+  name: vale security cyborg
+  description: A sleek canine security cyborg.
+  suffix: Vale (security)
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_valesec.rsi
+    layers:
+    - state: valesec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: valesec_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: valesec_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: valesec_e
+    noMindState: valesec
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-vale-sec
+
+# ===== Engineering: Pup Dozer =====
+- type: entity
+  parent: BorgChassisEngineer
+  id: BorgChassisEngineerPupDozer
+  name: pup dozer cyborg
+  description: A bulky canine engineering cyborg built for heavy lifting.
+  suffix: Pup Dozer
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_pupdozer.rsi
+    layers:
+    - state: pupdozer
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: pupdozer_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: pupdozer_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: pupdozer_e
+    noMindState: pupdozer
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-pupdozer
+
+- type: entity
+  parent: BorgChassisEngineer
+  id: BorgChassisEngineerVale
+  name: vale engineering cyborg
+  description: A sleek canine engineering cyborg.
+  suffix: Vale (engineering)
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_valeeng.rsi
+    layers:
+    - state: valeeng
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: valeeng_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: valeeng_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: valeeng_e
+    noMindState: valeeng
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-vale-eng
+
+# ===== Janitor: Scrubpup =====
+- type: entity
+  parent: BorgChassisJanitor
+  id: BorgChassisJanitorScrubpup
+  name: scrubpup cyborg
+  description: A small canine janitor cyborg. Tireless mopping companion.
+  suffix: Scrubpup
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_scrubpup.rsi
+    layers:
+    - state: scrubpup
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: scrubpup_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: scrubpup_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: scrubpup_e
+    noMindState: scrubpup
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-scrubpup
+
+# ===== Service: Vale =====
+- type: entity
+  parent: BorgChassisService
+  id: BorgChassisServiceVale
+  name: vale service cyborg
+  description: A sleek canine service cyborg.
+  suffix: Vale (service)
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_valeserv.rsi
+    layers:
+    - state: valeserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: valeserv_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: valeserv_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: valeserv_e
+    noMindState: valeserv
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-vale-serv
+
+# ===== Mining: Blade =====
+- type: entity
+  parent: BorgChassisMining
+  id: BorgChassisMiningBlade
+  name: blade mining cyborg
+  description: A canine mining cyborg with claws built for chewing through rock.
+  suffix: Blade
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Mobs/Silicon/dogborg_blade.rsi
+    layers:
+    - state: blade
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+      visible: false
+    - state: blade_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: blade_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    hasMindState: blade_e
+    noMindState: blade
+  - type: BorgBakedBody
+  # _ClawCommand: SpriteMovement here is a marker for BorgSystem.GetMotionState.
+  # MovementLayers/NoMovementLayers are left empty on purpose � layer state
+  # swaps are driven by BorgSwitchableTypeSystem + BorgSystem so the body,
+  # eye-glow and light-strip layers all flip in lockstep.
+  - type: SpriteMovement
+  # _ClawCommand: pose state + action buttons for the sit / rest / belly-up
+  # poses. The matching emote prototypes (DogborgSit/Rest/BellyUp) and the
+  # action events all funnel into DogborgPoseSystem.
+  - type: DogborgPose
+  - type: ActionGrant
+    actions:
+    - ActionDogborgSit
+    - ActionDogborgRest
+    - ActionDogborgBellyUp
+  - type: BorgSwitchableType
+    selectedBorgType: dogborg-blade
+  # _ClawCommand - restrict lock/unlock (and the lock-gated module UI) to SALVAGE + Science (Research) +
+  # Security only, overriding the default Command+Research from BaseBorgChassisNT. Anyone without one of
+  # those accesses can't lock/unlock it (same policy as the security K9). Inherited by PlayerDogborgMining.
+  - type: AccessReader
+    access: [["Salvage"], ["Research"], ["Security"]]

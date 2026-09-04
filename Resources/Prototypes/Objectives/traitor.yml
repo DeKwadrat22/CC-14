@@ -92,6 +92,13 @@
     unique: false
   - type: TargetObjective
     title: objective-condition-maroon-person-title
+  # Claw Command - characters with the Marked Target trait get picked first, random otherwise.
+  - type: PickRandomPerson
+    preferredConditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - MarkedTarget
   - type: KillPersonCondition
     requireMaroon: true
 
@@ -113,6 +120,12 @@
       whitelist:
         components:
         - CommandStaff
+    # Claw Command - a marked head outranks an unmarked one, but the pool is still heads only.
+    preferredConditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - MarkedTarget
   - type: KillPersonCondition
     # don't count missing evac as killing as heads are higher profile, so you really need to do the dirty work
     # if ce flies a shittle to centcom you better find a way onto it

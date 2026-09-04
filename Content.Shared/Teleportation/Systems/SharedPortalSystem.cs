@@ -1,4 +1,7 @@
 ﻿using System.Linq;
+using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components; // CLAW COMMAND
+using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
@@ -91,6 +94,10 @@ public abstract partial class SharedPortalSystem : EntitySystem
 
     private void OnCollide(Entity<PortalComponent> ent, ref StartCollideEvent args)
     {
+        // CLAW COMMAND - ethereal (phased) entities pass through portals harmlessly
+        if (HasComp<EtherealComponent>(ent) || HasComp<EtherealComponent>(args.OtherEntity))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 
@@ -102,6 +109,50 @@ public abstract partial class SharedPortalSystem : EntitySystem
         // best not.
         if (Transform(subject).Anchored)
             return;
+
+        // CLAW COMMAND - dark hub gating for shadekin.
+        if (HasComp<_ClawCommand.Shadekin.Components.DarkHubComponent>(ent))
+        {
+            if (TryComp<ShadekinComponent>(subject, out var hubShadekin))
+            {
+                // A shadekin severed from the Dark (blackeye - e.g. bound by shadekin restraints) can no
+                // longer travel through its hubs, the same way the dark portal already refuses them below.
+                if (hubShadekin.Blackeye)
+                {
+                    _popup.PopupEntity(Loc.GetString("shadekin-restraint-portal-fail"), subject, subject, PopupType.LargeCaution);
+                    return;
+                }
+
+                // A rejuvenating shadekin is held here until fully recovered.
+                if (hubShadekin.Rejuvenating)
+                {
+                    _popup.PopupEntity(Loc.GetString("hubportal-rejuvenate"), subject, subject, PopupType.LargeCaution);
+                    return;
+                }
+            }
+        }
+
+        // CLAW COMMAND - dark portal only teleports shadekin, those pulled by a shadekin, or phase-granted entities
+        if (HasComp<DarkPortalComponent>(ent))
+        {
+            var passed = false;
+
+            if (TryComp<PullableComponent>(subject, out var darkPullable)
+                && darkPullable.BeingPulled
+                && TryComp<ShadekinComponent>(darkPullable.Puller, out var pullerKin)
+                && !pullerKin.Blackeye)
+                passed = true;
+
+            if (TryComp<ShadekinComponent>(subject, out var darkShadekin)
+                && !darkShadekin.Blackeye)
+                passed = true;
+
+            if (HasComp<_ClawCommand.Shadekin.Components.EtherealPhaseComponent>(subject))
+                passed = true;
+
+            if (!passed)
+                return;
+        }
 
         // break pulls before portal enter so we don't break shit
         if (TryComp<PullableComponent>(subject, out var pullable) && pullable.BeingPulled)
@@ -155,6 +206,10 @@ public abstract partial class SharedPortalSystem : EntitySystem
 
     private void OnEndCollide(Entity<PortalComponent> ent, ref EndCollideEvent args)
     {
+        // CLAW COMMAND - ethereal (phased) entities pass through portals harmlessly
+        if (HasComp<EtherealComponent>(ent) || HasComp<EtherealComponent>(args.OtherEntity))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 

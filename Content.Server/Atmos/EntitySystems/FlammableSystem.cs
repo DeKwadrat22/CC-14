@@ -3,6 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Stunnable;
 using Content.Server.Temperature.Systems;
 using Content.Server.Damage.Components;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -42,6 +43,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private DamageableSystem _damageableSystem = default!;
         [Dependency] private AlertsSystem _alertsSystem = default!;
         [Dependency] private FixtureSystem _fixture = default!;
+        [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
         [Dependency] private IAdminLogManager _adminLogger = default!;
         [Dependency] private InventorySystem _inventory = default!;
         [Dependency] private SharedAppearanceSystem _appearance = default!;
@@ -458,10 +460,12 @@ namespace Content.Server.Atmos.EntitySystems
                 if (!flammable.OnFire)
                 {
                     _alertsSystem.ClearAlert(uid, flammable.FireAlert);
+                    _mood.RemoveMoodlet(uid, "OnFire"); // Claw Command
                     continue;
                 }
 
                 _alertsSystem.ShowAlert(uid, flammable.FireAlert);
+                _mood.AddMoodlet(uid, "OnFire"); // Claw Command
 
                 if (flammable.FireStacks > 0)
                 {

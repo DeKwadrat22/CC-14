@@ -1,0 +1,23 @@
+# Claw Command - Extended Irregular objective groups.
+#
+# Identical to TraitorObjectiveGroups except the kill group, which is swapped for the "kill once"
+# variants. Every other group is referenced by id rather than copied, so retuning steal/state/
+# social/sabotage/other upstream keeps applying to Irregular automatically.
+
+- type: weightedRandom
+  id: CCTraitorObjectiveGroupKillOnce
+  weights:
+    KillOncePersonObjective: 1
+    # Already a plain "destroy it" order upstream, no maroon requirement to strip.
+    KillStationAiObjective: 0.25
+    KillOnceHeadObjective: 0.25
+
+- type: weightedRandom
+  id: CCTraitorObjectiveGroupsIrregular
+  weights:
+    TraitorObjectiveGroupSteal: 1
+    CCTraitorObjectiveGroupKillOnce: 1
+    TraitorObjectiveGroupState: 1
+    TraitorObjectiveGroupSocial: 1
+    TraitorObjectiveGroupSabotage: 1
+    TraitorObjectiveGroupOther: 1

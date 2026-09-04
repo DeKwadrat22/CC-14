@@ -113,6 +113,8 @@
         sound:
           collection: MetalGlassBreak
   - type: StationInfiniteBatteryTarget
+  - type: BatteryDrinkerSource #claw command - IPC
+    maxAmount: 10000
   - type: Electrified
     onHandInteract: false
     onInteractUsing: false

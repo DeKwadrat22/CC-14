@@ -250,7 +250,7 @@ public sealed partial class GasTileHeatBlurOverlay : Overlay
         return MathHelper.Clamp01(strength);
     }
 
-    internal sealed class CachedResources : IDisposable
+    internal sealed partial class CachedResources : IDisposable
     {
         public IRenderTexture? HeatTarget;
         public IRenderTexture? HeatBlurTarget;

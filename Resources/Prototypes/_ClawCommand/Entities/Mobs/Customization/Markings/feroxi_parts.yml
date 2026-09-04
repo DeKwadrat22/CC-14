@@ -1,0 +1,229 @@
+# Head
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiHeadStripesTiger
+#  bodyPart: Head
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-head-stripes-tiger
+
+# Ears
+- type: marking
+  id: FeroxiEars
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/ear_markings.rsi
+    state: feroxi-ears
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/ear_markings.rsi
+    state: feroxi-ears-inner
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/ear_markings.rsi
+    state: feroxi-ears-tips
+
+# Snout
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiSnout
+#  bodyPart: Snout
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout-countershading
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiSnoutNurse
+#  bodyPart: Snout
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  coloring:
+#    layers:
+#      feroxi-snout-nurse:
+#        type:
+#          !type:SimpleColoring
+#          color: "#FFFFFF"
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout-countershading
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout-nurse
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiSnoutStripe
+#  bodyPart: Snout
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout-countershading
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
+#    state: feroxi-snout-stripe
+
+# Body
+- type: marking
+  id: FeroxiBodyCountershadingFemale
+  bodyPart: Chest
+  groupWhitelist: [ MarkingsFeroxi ]
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+    state: feroxi-torso-countershading-f
+
+- type: marking
+  id: FeroxiBodyCountershadingMale
+  bodyPart: Chest
+  groupWhitelist: [ MarkingsFeroxi ]
+  sexRestriction: [ Male ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+    state: feroxi-torso-countershading-m
+
+- type: marking
+  id: FeroxiBodyStripesBlitz
+  bodyPart: Chest
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+    state: feroxi-torso-stripes-blitz
+
+- type: marking
+  id: FeroxiBodyStripesTiger
+  bodyPart: Chest
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+    state: feroxi-torso-stripes-tiger
+
+# Arms/Hands
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiLeftArmStripesBlitz
+#  bodyPart: LArm
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-left-arm-stripes-blitz
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiLeftArmStripesTiger
+#  bodyPart: LArm
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-left-arm-stripes-tiger
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiRightArmStripesBlitz
+#  bodyPart: RArm
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-right-arm-stripes-blitz
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiRightArmStripesTiger
+#  bodyPart: RArm
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-right-arm-stripes-tiger
+
+# Legs/Feet
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiLeftLegStripesBlitz
+#  bodyPart: LLeg
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-left-leg-stripes-blitz
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiLeftLegStripesTiger
+#  bodyPart: LLeg
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-left-leg-stripes-tiger
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiRightLegStripesBlitz
+#  bodyPart: RLeg
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-right-leg-stripes-blitz
+
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiRightLegStripesTiger
+#  bodyPart: RLeg
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
+#    state: feroxi-right-leg-stripes-tiger
+
+# Tails
+# COMMENTED OUT - duplicate ID exists in feroxi.yml
+#- type: marking
+#  id: FeroxiTail
+#  bodyPart: Tail
+#  groupWhitelist: [ MarkingsFeroxi ]
+#  sprites:
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+#    state: feroxi-tail
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+#    state: feroxi-tail-bottom-tip
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+#    state: feroxi-tail-top-tip
+#  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+#    state: feroxi-tail-under
+
+- type: marking
+  id: FeroxiTailStripe
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-stripes
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-bottom-tip
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-top-tip
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-tail-under
+
+- type: marking
+  id: FeroxiTailDorsal
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-tip
+
+- type: marking
+  id: FeroxiTailDorsalStripe
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFeroxi ]
+  sprites:
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-stripes
+  - sprite: _DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
+    state: feroxi-dorsal-tip

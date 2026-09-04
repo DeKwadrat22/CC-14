@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "copyright": "Taken from https://github.com/tgstation/tgstation/blob/05ec94e46349c35e29ca91e5e97d0c88ae26ad44/icons/mob/species/human/human_face.dmi modified by Adrian16199",
+  "license": "CC-BY-SA-3.0",
+  "states": [
+    {
+      "name": "short_bedhead",
+      "directions": 4
+    },
+    {
+      "name": "classic_bob",
+      "directions": 4
+    },
+    {
+      "name": "classic_messy",
+      "directions": 4
+    },
+    {
+      "name": "classic_gentle",
+      "directions": 4
+    },
+    {
+      "name": "classic_lowfade",
+      "directions": 4
+    },
+    {
+      "name": "classic_medfade",
+      "directions": 4
+    },
+    {
+      "name": "classic_nofade",
+      "directions": 4
+    },
+    {
+      "name": "classic_ombre",
+      "directions": 4
+    },
+    {
+      "name": "classic_crewcut",
+      "directions": 4
+    },
+    {
+      "name": "long_spikehair",
+      "directions": 4
+    },
+    {
+      "name": "nerfish",
+      "directions": 4
+    },
+    {
+      "name": "plantish_poofs",
+      "directions": 4
+    },
+    {
+      "name": "ratty_royalty",
+      "directions": 4
+    },
+    {
+      "name": "short_and_messy",
+      "directions": 4
+    },
+    {
+      "name": "short_spikehair",
+      "directions": 4
+    },
+    {
+      "name": "spikehawk",
+      "directions": 4
+    },
+    {
+      "name": "the_political",
+      "directions": 4
+    },
+    {
+      "name": "zeta_basic_braids",
+      "directions": 4
+    },
+    {
+      "name": "quadspike",
+      "directions": 4
+    },
+    {
+      "name": "the_johnny",
+      "directions": 4
+    },
+    {
+      "name": "matted_spikes",
+      "directions": 4
+    },
+    {
+      "name": "manageable_mess",
+      "directions": 4
+    },
+    {
+      "name": "poofed",
+      "directions": 4
+    },
+    {
+      "name": "over_shoulder_braids",
+      "directions": 4
+    },
+    {
+      "name": "monk",
+      "directions": 4
+    },
+    {
+      "name": "mini_matted_spikes",
+      "directions": 4
+    },
+    {
+      "name": "natural_mess_short",
+      "directions": 4
+    },
+    {
+      "name": "natural_mess_long",
+      "directions": 4
+    },
+    {
+      "name": "front_spikes",
+      "directions": 4
+    },
+    {
+      "name": "messy_ponytail",
+      "directions": 4
+    },
+    {
+      "name": "faded",
+      "directions": 4
+    },
+    {
+      "name": "halfsies",
+      "directions": 4
+    },
+    {
+      "name": "porcupine",
+      "directions": 4
+    },
+    {
+      "name": "half_shaved_braids",
+      "directions": 4
+    },
+    {
+      "name": "lone_tail",
+      "directions": 4
+    },
+    {
+      "name": "over_the_shoulder",
+      "directions": 4
+    },
+    {
+      "name": "standard_asymmetry",
+      "directions": 4
+    }
+  ]
+}

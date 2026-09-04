@@ -1,0 +1,592 @@
+using System.Linq;
+using Content.Server.Ghost;
+using Content.Shared._ClawCommand.Mood;
+using Content.Shared._ClawCommand.Shadekin;
+using Content.Shared._ClawCommand.Shadekin.Components;
+using Content.Shared.Actions;
+using Content.Goobstation.Shared.Overlays; // Claw Command - NightVision, gated on the awakened state below.
+using Content.Shared.Alert;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Examine;
+using Content.Shared.Inventory;
+using Content.Shared.Light.Components;
+using Content.Shared.Maps;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Physics;
+using Content.Shared.Popups;
+using Content.Shared.Rejuvenate;
+using Content.Shared.Rounding;
+using Robust.Server.Containers;
+using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+
+namespace Content.Server._ClawCommand.Shadekin.Systems;
+
+public sealed partial class ShadekinSystem : EntitySystem
+{
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private InventorySystem _inventorySystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedJointSystem _joints = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private PhysicsSystem _physics = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private GhostSystem _ghost = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
+    [Dependency] private IGameTiming _timing = default!; // Claw Command
+
+    public const string ShadekinPhaseActionId = "ShadekinActionPhase";
+    public const string ShadekinSleepActionId = "ShadekinActionSleep";
+    public const string ShadekinDarkVisionActionId = "ShadekinDarkVision"; // Claw Command
+
+    private sealed class LightCone
+    {
+        public float Direction { get; set; }
+        public float InnerWidth { get; set; }
+        public float OuterWidth { get; set; }
+    }
+    private readonly Dictionary<string, List<LightCone>> _lightMasks = new()
+    {
+        ["/Textures/Effects/LightMasks/cone.png"] = new List<LightCone>
+    {
+        new LightCone { Direction = 0, InnerWidth = 30, OuterWidth = 60 }
+    },
+        ["/Textures/Effects/LightMasks/double_cone.png"] = new List<LightCone>
+    {
+        new LightCone { Direction = 0, InnerWidth = 30, OuterWidth = 60 },
+        new LightCone { Direction = 180, InnerWidth = 30, OuterWidth = 60 }
+    }
+    };
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<ShadekinComponent, MapInitEvent>(OnInit);
+        SubscribeLocalEvent<ShadekinComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<ShadekinComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<ShadekinComponent, ShadekinPhaseActionEvent>(OnPhaseAction);
+        SubscribeLocalEvent<ShadekinComponent, CritShadekinEvent>(OnCritShadekinAction);
+    }
+
+    private void OnInit(EntityUid uid, ShadekinComponent component, MapInitEvent args)
+    {
+        if (component.Blackeye)
+            ApplyBlackEye(uid, component);
+        else
+        {
+            _actionsSystem.AddAction(uid, ref component.ShadekinPhaseAction, ShadekinPhaseActionId, uid);
+            SetDarkVision(uid, true); // Claw Command
+            if (TryComp<MobStateActionsComponent>(uid, out var mobstate))
+            {
+                mobstate.Actions[MobState.Critical].Clear();
+                mobstate.Actions[MobState.Critical].Add("ShadekinActionRejuvenate");
+            }
+        }
+
+        _actionsSystem.AddAction(uid, ref component.ShadekinSleepAction, ShadekinSleepActionId, uid);
+        UpdateAlert(uid, component);
+    }
+
+    public void ApplyBlackEye(EntityUid uid, ShadekinComponent component)
+    {
+        // NOTE (CLAW COMMAND): Floof recolored the eyes black here via HumanoidAppearanceComponent.
+        // This fork's organ-based body locks VisualOrganComponent behind [Access(SharedVisualBodySystem)],
+        // so the black-eye *visual* is omitted; the black-eye state (no powers, drained energy) is intact.
+
+        _actionsSystem.RemoveAction(uid, component.ShadekinPhaseAction);
+        SetDarkVision(uid, false); // Claw Command
+
+        if (TryComp<MobStateActionsComponent>(uid, out var mobstate))
+        {
+            mobstate.Actions[MobState.Critical].Clear();
+            mobstate.Actions[MobState.Critical].Add("ActionCritSuccumb");
+            mobstate.Actions[MobState.Critical].Add("ActionCritFakeDeath");
+            mobstate.Actions[MobState.Critical].Add("ActionCritLastWords");
+        }
+
+        component.Energy = 0;
+
+        // CLAW COMMAND: a blackeye is cut off from the Dark, so light stops mattering to them entirely.
+        // Drop the light exposure and its moodlets rather than leaving whatever was last applied stuck on.
+        component.LightExposure = 0;
+        ClearLightMood(uid);
+
+        UpdateAlert(uid, component);
+    }
+
+    /// <summary>
+    ///     CLAW COMMAND - permanently restrains a shadekin (the shadekin restraints item). This severs them
+    ///     from the Dark: they drop into the ordinary "blackeye" state, so phase-skip is gone, their energy
+    ///     is burned, light stops mattering to them, the death-to-hideout respawn is disabled (they are now
+    ///     truly mortal) and their crit menu reverts to the normal one - i.e. they become a normal, mortal
+    ///     member of the species again. Darkvision is the single power the restraints leave intact. The
+    ///     <see cref="ShadekinCuffComponent"/> marker is also stamped on so the phase / energy-regen /
+    ///     respawn gates stay shut even if anything were to try re-awakening them.
+    /// </summary>
+    public void RestrainShadekin(EntityUid uid, ShadekinComponent component)
+    {
+        // The canonical "powers suppressed" marker every ability path already gates on (HasComp).
+        EnsureComp<ShadekinCuffComponent>(uid);
+
+        var wasAwakened = !component.Blackeye;
+
+        // Blackeye IS "a normal shadekin": ApplyBlackEye removes the phase action, drains energy, clears
+        // light exposure/moodlets and restores the ordinary crit actions. Blackeye also fails the dark
+        // portal's !Blackeye gate, so an "aether door" no longer takes them.
+        component.Blackeye = true;
+        ApplyBlackEye(uid, component);
+
+        // ...but the restraints bind their connection to the Dark, not their eyes. A shadekin who was
+        // awakened keeps the darkvision ApplyBlackEye just stripped; a never-awakened one had none and so
+        // gains nothing from being bound.
+        if (wasAwakened)
+            SetDarkVision(uid, true);
+    }
+
+    public void UpdateAlert(EntityUid uid, ShadekinComponent component)
+    {
+        var lightseverity = component.LightExposure;
+        var energyseverity = (short) ContentHelpers.RoundToLevels(component.Energy, component.MaxEnergy, 5);
+
+        if (component.Blackeye)
+            energyseverity = 0;
+
+        _alerts.ShowAlert(uid, "Shadekin-" + lightseverity + "-" + energyseverity);
+    }
+
+    private void OnRejuvenate(EntityUid uid, ShadekinComponent component, RejuvenateEvent args)
+    {
+        if (component.Blackeye)
+            return;
+
+        component.Energy = component.MaxEnergy;
+
+        _actionsSystem.AddAction(uid, ref component.ShadekinPhaseAction, ShadekinPhaseActionId, uid);
+        SetDarkVision(uid, true); // Claw Command - this is also the path the Anomaly job awakens through.
+
+        if (TryComp<MobStateActionsComponent>(uid, out var mobstate))
+        {
+            mobstate.Actions[MobState.Critical].Clear();
+            mobstate.Actions[MobState.Critical].Add("ShadekinActionRejuvenate");
+        }
+
+        UpdateAlert(uid, component);
+    }
+
+    /// <summary>
+    ///     Claw Command - Darkvision is a power of the Dark rather than a species trait, so only awakened
+    ///     shadekin get it; every ordinary (blackeye) shadekin sees like anyone else. The NightVision
+    ///     component carries the ShadekinDarkVision toggle action with it, so adding/removing it here also
+    ///     grants/strips the action.
+    /// </summary>
+    private void SetDarkVision(EntityUid uid, bool enabled)
+    {
+        if (!enabled)
+        {
+            RemComp<NightVisionOverlayComponent>(uid);
+            return;
+        }
+
+        if (HasComp<NightVisionOverlayComponent>(uid))
+            return;
+
+        // Configure before adding: adding a component to a map-initialised entity fires its MapInit right
+        // away, and that's where SwitchableOverlaySystem reads ToggleAction to grant the action.
+        AddComp(uid,
+            new NightVisionOverlayComponent
+            {
+                DrawOverlay = false,
+                ToggleAction = ShadekinDarkVisionActionId,
+                ActivateSound = null,
+                DeactivateSound = null,
+            });
+    }
+
+    private void OnPhaseAction(EntityUid uid, ShadekinComponent component, ShadekinPhaseActionEvent args)
+    {
+        if (component.Blackeye)
+        {
+            args.Handled = true;
+            return;
+        }
+
+        if (HasComp<ShadekinCuffComponent>(uid))
+        {
+            _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid, PopupType.LargeCaution);
+            args.Handled = true;
+            return;
+        }
+
+        if (component.LightExposure == 4)
+        {
+            _popup.PopupEntity(Loc.GetString("shadekin-lightextreme-energy"), uid, uid, PopupType.LargeCaution);
+            args.Handled = true;
+            return;
+        }
+
+        if (HasComp<EtherealComponent>(uid))
+        {
+            Phase(uid);
+            args.Handled = true;
+            return;
+        }
+
+        // CLAW COMMAND: phasing costs a flat amount. Ambient light no longer surcharges the cost, so
+        // phase-skipping through a lit area doesn't drain extra energy from the presence of lights.
+        var price = 100;
+
+        if (component.Energy >= price)
+        {
+            if (Phase(uid))
+            {
+                component.Energy -= price;
+                UpdateAlert(uid, component);
+            }
+        }
+        else
+            _popup.PopupEntity(Loc.GetString("shadekin-no-energy"), uid, uid, PopupType.LargeCaution);
+
+        args.Handled = true;
+    }
+
+    public bool Phase(EntityUid uid)
+    {
+        if (TryComp<EtherealComponent>(uid, out var ethereal))
+        {
+            // CLAW COMMAND: this was the revenant's GetEntitiesIntersectingBody(Impassable) check, which counts
+            // *any* fixture sitting on the Impassable layer - hard or not - and matches against fattened broadphase
+            // AABBs rather than the tile you occupy. The dark portals use BasePortal's portalFixture, which is
+            // hard: false but layered as WallLayer (so, Impassable), so the portal itself read as a solid object,
+            // and so did a wall you were standing flush against. That made materialising on or beside a portal
+            // impossible and left every portal needing a tile of empty space around it to be usable at all.
+            // Scope the check to the tile actually being stood on and only count hard fixtures.
+            var tileref = _turf.GetTileRef(Transform(uid).Coordinates);
+            if (tileref != null
+            && _turf.IsTileBlocked(tileref.Value, CollisionGroup.Impassable))
+            {
+                _popup.PopupEntity(Loc.GetString("revenant-in-solid"), uid, uid);
+                return false;
+            }
+
+            if (HasComp<ShadekinComponent>(uid))
+            {
+                var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
+                    .Where(x => HasComp<PoweredLightComponent>(x));
+                foreach (var light in lightQuery)
+                {
+                    _ghost.DoGhostBooEvent(light);
+                }
+
+                var effect = SpawnAtPosition("ShadekinPhaseInEffect", Transform(uid).Coordinates);
+                Transform(effect).LocalRotation = Transform(uid).LocalRotation;
+            }
+            else
+                SpawnAtPosition("ShadekinShadow", Transform(uid).Coordinates);
+
+            RemComp(uid, ethereal);
+
+            // CLAW COMMAND: EtherealComponent cancels PreventCollideEvent, so nothing was allowed to form a contact
+            // while phased, and contacts are only rebuilt for proxies that move. Materialising while standing still
+            // on top of a portal would otherwise leave you overlapping it with no StartCollide until you took a step.
+            _physics.RegenerateContacts(uid);
+        }
+        else
+        {
+            if (_container.IsEntityInContainer(uid))
+            {
+                _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
+                return false;
+            }
+
+            var newEthereal = EnsureComp<EtherealComponent>(uid);
+            if (HasComp<ShadekinComponent>(uid))
+            {
+                var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
+                    .Where(x => HasComp<PoweredLightComponent>(x));
+                foreach (var light in lightQuery)
+                {
+                    _ghost.DoGhostBooEvent(light);
+                }
+
+                var effect = SpawnAtPosition("ShadekinPhaseOutEffect", Transform(uid).Coordinates);
+                Transform(effect).LocalRotation = Transform(uid).LocalRotation;
+
+                newEthereal.LastEtherealTime = _timing.CurTime;
+            }
+            else
+                SpawnAtPosition("ShadekinShadow", Transform(uid).Coordinates);
+        }
+        return true;
+    }
+
+    private void OnCritShadekinAction(EntityUid uid, ShadekinComponent component, CritShadekinEvent args)
+    {
+        _mobState.ChangeMobState(uid, MobState.Dead);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, ShadekinComponent component, MobStateChangedEvent args)
+    {
+        if (component.Blackeye
+            || HasComp<ShadekinCuffComponent>(uid)
+            || args.NewMobState != MobState.Dead)
+            return;
+
+        if (TryComp<InventoryComponent>(uid, out var inventoryComponent) && _inventorySystem.TryGetSlots(uid, out var slots))
+        {
+            foreach (var slot in slots)
+            {
+                _inventorySystem.TryUnequip(uid, slot.Name, true, true, false, inventoryComponent);
+            }
+        }
+
+        SpawnAtPosition("ShadekinShadow", Transform(uid).Coordinates);
+
+        var spawns = new List<Entity<AnomalyJobSpawnComponent>>();
+        var query = EntityQueryEnumerator<AnomalyJobSpawnComponent>();
+        while (query.MoveNext(out var spawnUid, out var spawn))
+        {
+            spawns.Add((spawnUid, spawn));
+        }
+
+        _random.Shuffle(spawns);
+
+        foreach (var (spawnUid, spawn) in spawns)
+        {
+            _joints.RecursiveClearJoints(uid);
+            _transform.SetCoordinates(uid, Transform(spawnUid).Coordinates);
+            break;
+        }
+
+        var effect = SpawnAtPosition("ShadekinPhaseIn2Effect", Transform(uid).Coordinates);
+        Transform(effect).LocalRotation = Transform(uid).LocalRotation;
+
+        RaiseLocalEvent(uid, new RejuvenateEvent());
+        component.Rejuvenating = true;
+        component.Energy = 0;
+    }
+
+    private Angle GetAngle(EntityUid lightUid, SharedPointLightComponent lightComp, EntityUid targetUid)
+    {
+        var (lightPos, lightRot) = _transform.GetWorldPositionRotation(lightUid);
+        lightPos += lightRot.RotateVec(lightComp.Offset);
+
+        var (targetPos, targetRot) = _transform.GetWorldPositionRotation(targetUid);
+
+        var mapDiff = targetPos - lightPos;
+
+        var oppositeMapDiff = (-lightRot).RotateVec(mapDiff);
+        var angle = oppositeMapDiff.ToWorldAngle();
+
+        if (angle == double.NaN && _transform.ContainsEntity(targetUid, lightUid) || _transform.ContainsEntity(lightUid, targetUid))
+        {
+            angle = 0f;
+        }
+
+        return angle;
+    }
+
+    /// <summary>
+    ///     Claw Command - Shadekin are at home in the dark and increasingly miserable in the light.
+    ///     Indexed by the moodlet that a given light exposure level maps to.
+    /// </summary>
+    private static readonly ProtoId<MoodEffectPrototype>[] LightMoodlets =
+    {
+        "ShadekinDarkness",
+        "ShadekinLightAnnoyed",
+        "ShadekinLightHigh",
+        "ShadekinLightExtreme",
+    };
+
+    /// <summary>
+    ///     Claw Command - Applies the one light moodlet that matches the current exposure and clears the rest.
+    ///     Exposure level 1 (dim light, or phased out into the Dark) is neutral: no moodlet either way.
+    /// </summary>
+    private void UpdateLightMood(EntityUid uid, int lightExposure)
+    {
+        var index = lightExposure switch
+        {
+            0 => 0,
+            2 => 1,
+            3 => 2,
+            4 => 3,
+            _ => -1,
+        };
+
+        for (var i = 0; i < LightMoodlets.Length; i++)
+        {
+            if (i == index)
+                _mood.AddMoodlet(uid, LightMoodlets[i]);
+            else
+                _mood.RemoveMoodlet(uid, LightMoodlets[i]);
+        }
+    }
+
+    /// <summary>
+    ///     Claw Command - Drops every light moodlet, for shadekin that light no longer applies to.
+    /// </summary>
+    private void ClearLightMood(EntityUid uid)
+    {
+        foreach (var moodlet in LightMoodlets)
+            _mood.RemoveMoodlet(uid, moodlet);
+    }
+
+    public float GetLightExposure(EntityUid uid)
+    {
+        var illumination = 0f;
+
+        var lightQuery = _lookup.GetEntitiesInRange(uid, 20)
+                .Where(x => HasComp<PointLightComponent>(x));
+
+        foreach (var light in lightQuery)
+        {
+            if (!TryComp<PointLightComponent>(light, out var pointLight))
+                continue;
+
+            if (HasComp<DarkLightComponent>(light))
+                continue;
+
+            if (!pointLight.Enabled
+                || pointLight.Radius < 1
+                || pointLight.Energy <= 0)
+                continue;
+
+            var (lightPos, lightRot) = _transform.GetWorldPositionRotation(light);
+            lightPos += lightRot.RotateVec(pointLight.Offset);
+
+            if (!_examine.InRangeUnOccluded(light, uid, pointLight.Radius, null))
+                continue;
+
+            Transform(uid).Coordinates.TryDistance(EntityManager, Transform(light).Coordinates, out var dist);
+
+            var denom = dist / pointLight.Radius;
+            var attenuation = 1 - (denom * denom);
+            var calculatedLight = 0f;
+
+            if (pointLight.MaskPath is not null)
+            {
+                var angleToTarget = GetAngle(light, pointLight, uid);
+                foreach (var cone in _lightMasks[pointLight.MaskPath])
+                {
+                    var coneLight = 0f;
+                    var angleAttenuation = (float) Math.Min((float) Math.Max(cone.OuterWidth - angleToTarget, 0f), cone.InnerWidth) / cone.OuterWidth;
+
+                    if (angleToTarget.Degrees - cone.Direction > cone.OuterWidth)
+                        continue;
+                    else if (angleToTarget.Degrees - cone.Direction > cone.InnerWidth
+                        && angleToTarget.Degrees - cone.Direction < cone.OuterWidth)
+                        coneLight = pointLight.Energy * attenuation * attenuation * angleAttenuation;
+                    else
+                        coneLight = pointLight.Energy * attenuation * attenuation;
+
+                    calculatedLight = Math.Max(calculatedLight, coneLight);
+                }
+            }
+            else
+                calculatedLight = pointLight.Energy * attenuation * attenuation;
+
+            illumination += calculatedLight;
+        }
+
+        return illumination;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<ShadekinComponent>();
+        while (query.MoveNext(out var uid, out var component))
+        {
+            component.Accumulator += frameTime;
+
+            if (_mobState.IsDead(uid))
+                continue;
+
+            if (component.Accumulator <= 1)
+                continue;
+
+            component.Accumulator = 0;
+
+            // CLAW COMMAND: light exposure is part of being connected to the Dark, so it only applies to awakened
+            // shadekin. An ordinary blackeye member of the species is severed from it and shouldn't be miserable
+            // in a lit room - previously the moodlets sat above the blackeye guard below and hit everyone.
+            // Skipping here also spares every ordinary shadekin a 20-tile light scan once a second.
+            if (component.Blackeye)
+                continue;
+
+            var ethereal = HasComp<EtherealComponent>(uid);
+
+            var lightExposure = 0f;
+
+            if (!_container.IsEntityInContainer(uid))
+                lightExposure = GetLightExposure(uid);
+
+            if (lightExposure >= 20f)
+                component.LightExposure = 4;
+            else if (lightExposure >= 10f)
+                component.LightExposure = 3;
+            else if (lightExposure >= 5f)
+                component.LightExposure = 2;
+            else if (lightExposure >= 0.8f)
+                component.LightExposure = 1;
+            else
+                component.LightExposure = 0;
+
+            UpdateAlert(uid, component);
+            UpdateLightMood(uid, ethereal ? 1 : (int) component.LightExposure); // Claw Command
+
+            // Blackeyes already bailed above; cuffs only suppress the energy side, light still applies.
+            if (HasComp<ShadekinCuffComponent>(uid))
+                continue;
+
+            if (component.Energy > component.MaxEnergy)
+                component.Energy = component.MaxEnergy;
+
+            if (component.Energy < 0)
+                component.Energy = 0;
+
+            if (component.Energy < component.MaxEnergy)
+            {
+                var energyGain = 1f;
+
+                if (!ethereal)
+                {
+                    if (component.LightExposure == 4)
+                        energyGain = 0f;
+                    else if (component.LightExposure == 3)
+                        energyGain = 0.1f;
+                    else if (component.LightExposure == 2)
+                        energyGain = 0.4f;
+                    else if (component.LightExposure == 1)
+                        energyGain = 0.5f;
+                }
+
+                if (HasComp<SleepingComponent>(uid))
+                    energyGain *= 2;
+
+                energyGain *= component.Energymultiplier;
+
+                component.Energy += energyGain;
+            }
+
+            UpdateAlert(uid, component);
+
+            if (component.Rejuvenating && component.Energy >= component.MaxEnergy)
+            {
+                component.Rejuvenating = false;
+                _popup.PopupEntity(Loc.GetString("shadekin-rejuvenate-completed"), uid, uid, PopupType.Large);
+            }
+        }
+    }
+}

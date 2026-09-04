@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Service/Service.xml"
   filterEnabled: True
   children:
+  - GuideServiceSOP #claw command
   - Bartender
   - Botany
   - Chef

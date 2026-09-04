@@ -29,8 +29,8 @@
     collection: AmbienceHoly
   priority: 4
   conditions:
+  # Claw Command - `anchored: true` removed, so any Prayable in range counts, carried ones included.
   - !type:NearbyComponentsCondition
-    anchored: true
     components:
     - type: Prayable
     range: 5

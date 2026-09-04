@@ -1,11 +1,6 @@
 # Head
-- type: loadout
-  id: SeniorPhysicianBeret
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-  equipment:
-    head: ClothingHeadHatBeretSeniorPhysician
+# Claw Command - SeniorPhysicianBeret moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorPhysician job only)
 
 - type: loadout
   id: MedicalHeadMirror
@@ -51,21 +46,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtMedicalDoctor
 
-- type: loadout
-  id: SeniorPhysicianJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
-
-- type: loadout
-  id: SeniorPhysicianJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorPhysician
+# Claw Command - SeniorPhysicianJumpsuit/Jumpskirt moved to _ClawCommand/Loadouts/Jobs/seniors.yml
 
 - type: loadout
   id: MedicalBlueScrubs
@@ -104,13 +85,7 @@
   equipment:
     outerClothing: ClothingOuterWinterMed
 
-- type: loadout
-  id: SeniorPhysicianLabCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-  equipment:
-    outerClothing: ClothingOuterCoatLabSeniorPhysician
+# Claw Command - SeniorPhysicianLabCoat moved to _ClawCommand/Loadouts/Jobs/seniors.yml
 
 # Shoes
 - type: loadout
@@ -124,13 +99,7 @@
   equipment:
     id: MedicalPDA
 
-- type: loadout
-  id: SeniorPhysicianPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-  equipment:
-    id: SeniorPhysicianPDA
+# Claw Command - SeniorPhysicianPDA moved to _ClawCommand/Loadouts/Jobs/seniors.yml
 
 #Masks
 - type: loadout

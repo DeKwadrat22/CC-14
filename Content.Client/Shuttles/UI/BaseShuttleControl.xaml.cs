@@ -295,7 +295,7 @@ public partial class BaseShuttleControl : MapGridControl
     }
 }
 
-public sealed class GridDrawData
+public sealed partial class GridDrawData
 {
     /*
      * List of lists because we use LineStrip and TriangleStrip respectively (less data to pass to the GPU).

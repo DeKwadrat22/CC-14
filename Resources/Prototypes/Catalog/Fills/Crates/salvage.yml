@@ -9,7 +9,10 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: ClothingOuterHardsuitSalvage
+        - !type:GroupSelector # Claw Command - 50/50 original vs Alt
+          children:
+          - id: ClothingOuterHardsuitSalvage
+          - id: ClothingOuterHardsuitSalvageAlt
         - id: ClothingMaskBreath
         - id: OxygenTankFilled
         - id: FireExtinguisher
@@ -133,6 +136,8 @@
           amount: 2
         - id: DoubleEmergencyNitrogenTankFilled
           amount: 2
+        - id: EmergencyTankDoubleExtendedWaterVapor # _ClawCommand: Added.
+          amount: 2
 
 - type: entity
   parent: CrateGenericSteel
@@ -181,10 +186,14 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: ClothingOuterHardsuitSalvage
+        - !type:GroupSelector # Claw Command - 50/50 original vs Alt
+          children:
+          - id: ClothingOuterHardsuitSalvage
+          - id: ClothingOuterHardsuitSalvageAlt
         - id: ClothingMaskBreath
         - id: OxygenTankFilled
         - id: NitrogenTankFilled
+        - id: TankWaterVaporFilled # _ClawCommand: Filled.
 
 - type: entity
   parent: CrateGenericSteel

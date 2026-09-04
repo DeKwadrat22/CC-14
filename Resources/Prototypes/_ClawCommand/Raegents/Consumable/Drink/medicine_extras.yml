@@ -1,0 +1,46 @@
+- type: reagent
+  id: HolyWater
+  name: reagent-name-holywater
+  group: Medicine
+  desc: reagent-desc-holywater
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: holy
+  color: "#75b1f0"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  reactiveEffects:
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+        - !type:Extinguish
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Holy: 0.5
+  metabolisms: #Could nullify debuffs of feeding.
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+    Medicine:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 0.1
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -0.25
+            Slash: -0.25
+            Piercing: -0.25
+            Heat: -0.25
+            Cold: -0.25
+            Holy: 1
+  plantMetabolism: #Heals plants a little with the holy power within it.
+  - !type:PlantAdjustHealth
+    amount: 0.1
+  tileReactions:
+  - !type:ExtinguishTileReaction { }

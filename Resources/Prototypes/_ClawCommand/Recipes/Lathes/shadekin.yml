@@ -1,0 +1,15 @@
+# CLAW COMMAND - shadekin restraints lathe recipe + its own static pack, printed at both the security
+# techfab and the science protolathe. The item + behaviour live in
+# Entities/Objects/Misc/shadekin_restraints.yml and Content.*/_ClawCommand/Shadekin.
+- type: latheRecipe
+  id: ShadekinRestraints
+  result: ShadekinRestraints
+  completetime: 6
+  materials:
+    Steel: 800
+    Plastic: 300
+
+- type: latheRecipePack
+  id: ShadekinRestraintsStatic
+  recipes:
+  - ShadekinRestraints

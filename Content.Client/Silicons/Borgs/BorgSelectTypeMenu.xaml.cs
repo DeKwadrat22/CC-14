@@ -33,7 +33,10 @@ public sealed partial class BorgSelectTypeMenu : FancyWindow
         IoCManager.InjectDependencies(this);
 
         var group = new ButtonGroup();
-        foreach (var borgType in _prototypeManager.EnumeratePrototypes<BorgTypePrototype>().OrderBy(PrototypeName))
+        // _ClawCommand: only offer types flagged Selectable. Dogborg variants are
+        // pre-assigned to their own chassis (via conversion kits) and use a different
+        // sprite RSI, so they must not appear in the generic borg's selection menu.
+        foreach (var borgType in _prototypeManager.EnumeratePrototypes<BorgTypePrototype>().Where(b => b.Selectable).OrderBy(PrototypeName))
         {
             var button = new Button
             {

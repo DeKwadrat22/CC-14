@@ -14,9 +14,17 @@
   - Glasses
   - AssistiveItems
   - SurvivalMedical
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -32,9 +40,18 @@
   - Glasses
   - AssistiveItems
   - SurvivalMedical
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -45,9 +62,20 @@
   - Glasses
   - AssistiveItems
   - SurvivalMedical
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobChemist
@@ -61,9 +89,19 @@
   - Glasses
   - AssistiveItems
   - SurvivalMedical
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
 
 - type: roleLoadout
   id: JobParamedic
@@ -78,6 +116,15 @@
   - Glasses
   - AssistiveItems
   - SurvivalMedical
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
 #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear

@@ -1,0 +1,41 @@
+# Shadekin "dark tile" decoration ported from _Floof for asterisk map.
+# The Shadekin component now exists in this fork, so the original whitelist is restored:
+# Shadekin are not slowed on their own dark tiles.
+- type: entity
+  id: DarkTile
+  name: Dark
+  description: It's a strange, impenetrable darkness.
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          layer:
+            - SlipLayer
+          mask:
+            - ItemMask
+          density: 1000
+          hard: false
+    - type: FloorOccluder
+    - type: Clickable
+    - type: Appearance
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      drawdepth: BelowFloor
+      sprite: _Floof/Shadekin/dark.rsi
+      state: dark
+    - type: SpeedModifierContacts
+      walkSpeedModifier: 0.3
+      sprintSpeedModifier: 0.3
+      ignoreWhitelist:
+        components:
+          - Shadekin

@@ -1,0 +1,9 @@
+﻿- type: marking
+  id: ReptilianSharpCobraHood
+  bodyPart: HeadTop
+  groupWhitelist: [Reptilian]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/sharpcobrahood.rsi
+    state: sharp_cobra_hood_overlay
+  - sprite: _ClawCommand/Mobs/Customization/Reptilian/sharpcobrahood.rsi
+    state: sharp_cobra_hood

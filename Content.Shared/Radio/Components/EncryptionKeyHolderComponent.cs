@@ -7,6 +7,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Radio.Components;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 /// <summary>
 ///     This component is by entities that can contain encryption keys
 /// </summary>
@@ -33,6 +35,13 @@ public sealed partial class EncryptionKeyHolderComponent : Component
 
     [DataField]
     public SoundSpecifier KeyInsertionSound = new SoundPathSpecifier("/Audio/Items/pistol_magin.ogg");
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     Whether to show the keys inside the holder while it's locked.
+    /// </summary>
+    [DataField]
+    public bool ExamineWhileLocked = true;
 
     [ViewVariables]
     public Container KeyContainer = default!;

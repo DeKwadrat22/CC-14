@@ -1,0 +1,36 @@
+# Shadekin "Anomaly" awakened role ported from Floofstation.
+# A Shadekin who spawns in the dark hideout with full powers, un-blackeyed by AnomalyJobSystem.
+- type: job
+  id: Anomaly
+  name: job-name-anomaly
+  description: job-description-anomaly
+  playTimeTracker: JobAnomaly
+  startingGear: AnomalyGear
+  alwaysUseSpawner: true
+  overrideConsoleVisibility: true
+  icon: "JobIconNoId"
+  joinNotifyCrew: false
+  announceArrival: false # claw command - anomalies are not crew, no arrivals announcement ever
+  # Claw Command - anomalies are not legally crew, so they get no station record. That keeps them
+  # off the crew manifest and out of every records console, matching the Security and Anomaly SOP.
+  addToStationRecords: false
+  whitelisted: true
+  access:
+  - Maintenance
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+        - SpeciesShadowkin
+    - !type:OverallPlaytimeRequirement
+      time: 6h
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: AnomalyJob
+
+- type: startingGear
+  id: AnomalyGear
+  equipment:
+    shoes: ClothingClothWrap
+    id: AnomalyIDCard
+    ears: ClothingHeadsetGrey

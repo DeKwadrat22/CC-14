@@ -589,6 +589,13 @@
     damageRecovery:
       types:
         Asphyxiation: -0.5
+    # _ClawCommand: silence the suffocation gasp emote on mothroaches.
+    # Cooldown longer than any round means the Gasp emote (and its MaleGasp sound) never fires.
+    gaspEmoteCooldown: 999999
+  # _ClawCommand: silence the on-death gasp too. Empty prototype id makes the emote
+  # lookup in DeathgaspSystem fail silently → no chat msg, no MothDeathGasp sound.
+  - type: Deathgasp
+    prototype: ClawCommandSilent
   - type: CombatMode
   - type: Solution
     solution:

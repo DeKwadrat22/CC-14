@@ -29,6 +29,9 @@
             "name": "icon-cables"
         },
         {
+            "name": "icon-rpd"
+        },
+        {
             "name": "icon-inflatable"
         },
         {
@@ -263,7 +266,18 @@
         {
             "name": "base-stripes-inhand-right",
             "directions": 4
+        },
+        {
+            "name": "icon-jetpack"
+        },
+        {
+            "name": "icon-pka"
+        },
+        {
+            "name": "icon-surgery"
+        },
+        {
+            "name": "icon-advanced-surgery"
         }
     ]
-
 }

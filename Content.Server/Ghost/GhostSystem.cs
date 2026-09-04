@@ -1,10 +1,13 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
+using Content.Server.Administration.Managers;
+using Content.Shared.Administration;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -64,6 +67,7 @@ namespace Content.Server.Ghost
         [Dependency] private MobThresholdSystem _mobThresholdSystem = default!;
         [Dependency] private IConfigurationManager _configurationManager = default!;
         [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IAdminManager _adminManager = default!; // Claw Command
         [Dependency] private SharedMindSystem _mind = default!;
         [Dependency] private GameTicker _gameTicker = default!;
         [Dependency] private DamageableSystem _damageable = default!;
@@ -380,14 +384,42 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
+        // CLAW COMMAND - the single CentComm warp kept in the ghost menu (its top-level entry). Granular
+        // CentComm sub-markers (e.g. "Central Command - Docking Area") are filtered out instead.
+        private const string CentcommGhostWarpName = "Central Command";
+
         private IEnumerable<GhostWarp> GetLocationWarps()
         {
-            var allQuery = AllEntityQuery<WarpPointComponent>();
+            var centcommMaps = GetCentcommMapUids();
+            var allQuery = AllEntityQuery<WarpPointComponent, TransformComponent>();
 
-            while (allQuery.MoveNext(out var uid, out var warp))
+            // CLAW COMMAND - CentComm is a far-off end-game station. Keep its granular sub-markers out of the
+            // ghost warp menu, but still expose the top-level "Central Command" entry so ghosts can reach it
+            // (players on CentComm remain reachable via GetPlayerWarps).
+            while (allQuery.MoveNext(out var uid, out var warp, out var xform))
             {
+                var location = warp.Location ?? Name(uid);
+
+                if (xform.MapUid is { } map && centcommMaps.Contains(map) && location != CentcommGhostWarpName)
+                    continue;
+
                 yield return new GhostWarp(GetNetEntity(uid), warp.Location == null ? Name(uid) : Loc.GetString(warp.Location), true);
             }
+        }
+
+        // CLAW COMMAND - map entity of every station's CentComm, gathered from StationCentcommComponent, so
+        // warp points sitting on a CentComm map can be filtered out of the ghost warp list.
+        private HashSet<EntityUid> GetCentcommMapUids()
+        {
+            var maps = new HashSet<EntityUid>();
+            var query = AllEntityQuery<StationCentcommComponent>();
+            while (query.MoveNext(out var cc))
+            {
+                if (cc.MapEntity is { } map)
+                    maps.Add(map);
+            }
+
+            return maps;
         }
 
         private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid? except = null)
@@ -489,7 +521,7 @@ namespace Content.Server.Ghost
         }
 
         public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
-            bool canReturn = false)
+            bool canReturn = false, ICommonSession? session = null)
         {
             if (!Resolve(mind, ref mind.Comp))
                 return null;
@@ -510,7 +542,20 @@ namespace Content.Server.Ghost
                 return null;
             }
 
-            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
+            var ghostPrototype = GameTicker.ObserverPrototypeName;
+
+            // Claw Command - VIP ghosts. The entity check only works when the mind is still in a body, which it
+            // isn't when observing straight from the lobby, so fall back to the player's session.
+            if (session == null && mind.Comp.UserId is { } vipUserId)
+                _player.TryGetSessionById(vipUserId, out session);
+
+            if (mind.Comp.CurrentEntity is { } vipBody && _adminManager.HasAdminFlag(vipBody, AdminFlags.VIP)
+                || session != null && _adminManager.HasAdminFlag(session, AdminFlags.VIP))
+            {
+                ghostPrototype = "MobObserverVip";
+            }
+
+            var ghost = SpawnAtPosition(ghostPrototype, spawnPosition.Value);
             var ghostComponent = Comp<GhostComponent>(ghost);
 
             if (TryComp<GhostSpriteStateComponent>(ghost, out var state))  // If more TryComps are added this should be turned into an event
@@ -523,7 +568,7 @@ namespace Content.Server.Ghost
             // However, that should rarely happen.
             if (!string.IsNullOrWhiteSpace(mind.Comp.CharacterName))
                 _metaData.SetEntityName(ghost, mind.Comp.CharacterName);
-            else if (mind.Comp.UserId is { } userId && _player.TryGetSessionById(userId, out var session))
+            else if (session != null)
                 _metaData.SetEntityName(ghost, session.Name);
 
             if (mind.Comp.TimeOfDeath.HasValue)
@@ -651,7 +696,7 @@ namespace Content.Server.Ghost
         }
     }
 
-    public sealed class GhostAttemptHandleEvent(MindComponent mind, bool canReturnGlobal) : HandledEntityEventArgs
+    public sealed partial class GhostAttemptHandleEvent(MindComponent mind, bool canReturnGlobal) : HandledEntityEventArgs
     {
         public MindComponent Mind { get; } = mind;
         public bool CanReturnGlobal { get; } = canReturnGlobal;

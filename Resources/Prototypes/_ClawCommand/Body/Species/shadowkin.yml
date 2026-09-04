@@ -1,0 +1,165 @@
+# Claw Command - Shadekin species ported from Floofstation/ADT
+- type: markingsGroup
+  parent: Undergarments
+  id: MarkingsShadowkin
+  limits:
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ TailShadowkin ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ EarsShadowkin ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Genital:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentBottom:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceShadowkin
+  categories: [ HideSpawnMenu ]
+  suffix: Claw Command
+  name: shadekin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganShadowkinTorso
+      Head: OrganShadowkinHead
+      ArmLeft: OrganShadowkinArmLeft
+      ArmRight: OrganShadowkinArmRight
+      HandRight: OrganShadowkinHandRight
+      HandLeft: OrganShadowkinHandLeft
+      LegLeft: OrganShadowkinLegLeft
+      LegRight: OrganShadowkinLegRight
+      FootLeft: OrganShadowkinFootLeft
+      FootRight: OrganShadowkinFootRight
+      Brain: OrganShadowkinBrain
+      Eyes: OrganShadowkinEyes
+      Tongue: OrganShadowkinTongue
+      Appendix: OrganShadowkinAppendix
+      Ears: OrganShadowkinEars
+      Lungs: OrganShadowkinLungs
+      Heart: OrganShadowkinHeart
+      Stomach: OrganShadowkinStomach
+      Liver: OrganShadowkinLiver
+      Kidneys: OrganShadowkinKidneys
+  - type: HumanoidProfile
+    species: SpeciesShadowkin
+
+- type: entity
+  parent:
+  - AppearanceShadowkin
+  - BaseSpeciesMobOrganicNoRespirator
+  id: MobShadowkin
+  name: Urist McShadow
+  suffix: Claw Command
+  components:
+  # Claw Command - a shadekin has no station record to match a print against, so forensics reports
+  # the creature by name instead of a hex string that leads nowhere. See ForensicSignatureSystem.
+  - type: ForensicSignature
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: Vocal
+    emoteSounds: MaleShadowkin # Claw Command - was a sex-keyed 'sounds' dict, removed by the WizDen rebase
+  - type: Speech
+    speechSounds: Alto
+    allowedEmotes: [ 'Mars', 'Wurble', 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Mew', 'Purr', 'Yip', 'Yap', 'Gekker', 'CatMeow', 'CatHisses' ]
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Damageable
+    damageModifierSet: ModifierSetShadowkin
+  - type: TypingIndicator
+    proto: alien
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 4.5
+  - type: Temperature
+    specificHeat: 46
+  - type: TemperatureDamage
+    heatDamageThreshold: 330
+    coldDamageThreshold: 195
+    coldDamage:
+      types:
+        Cold: 0.05
+    heatDamage:
+      types:
+        Heat: 0.25
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      180: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      48: 0.85
+      64: 0.65
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        restitution: 0.0
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+  - type: Flammable
+    damage:
+      types:
+        Heat: 1.5
+  - type: DamageForceSay
+    forceSayStringDataset: ForceSayStringDatasetShadowkin # Custom dataset, see 'Datasets/damage_force_say.yml'
+  # CLAW COMMAND - Shadekin dark powers (ported from Floofstation). Blackeye by default (powerless);
+  # the Anomaly job awakens them. Darkvision is *not* listed here on purpose: it's a power of the Dark,
+  # so ShadekinSystem grants/strips the NightVision component (and its ShadekinDarkVision toggle) with
+  # the awakened state. An ordinary blackeye shadekin sees like anyone else.
+  - type: Shadekin

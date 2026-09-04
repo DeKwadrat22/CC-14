@@ -109,6 +109,7 @@
       path: /Audio/Machines/airlock_deny.ogg
     openingAnimationTime: 0.6
     closingAnimationTime: 0.6
+    blockOpenAtmos: true # CLAW COMMAND: Added.
   - type: Weldable
     fuel: 5
     time: 3

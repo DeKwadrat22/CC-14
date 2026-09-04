@@ -1,0 +1,289 @@
+# Ghost-role spawn points for the dogborg cyborg variants.
+#
+# Each spawn point is mapper-placeable (and admin spawn-able from the entity menu).
+# When a player claims the role from the ghost role menu, they spawn as the
+# corresponding `BorgChassisXxxYyy` entity defined in
+# Resources/Prototypes/_ClawCommand/Entities/Mobs/Cyborgs/dogborg_chassis.yml.
+#
+# Sprites: Citadel-Station-13 (CC-BY-SA-3.0). See the LICENSE.md next to the
+# dogborg RSIs for full attribution.
+
+# Shared base. Hides itself from the spawn menu — concrete variants below appear
+# in the spawn menu instead.
+- type: entity
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  parent: MarkerBase
+  id: BaseSpawnPointGhostDogborg
+  name: ghost role spawn point
+  suffix: dogborg
+  components:
+  - type: GhostRole
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain # same as other station cyborgs
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+
+# ===== Security =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgK9
+  suffix: dogborg, K9
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-k9-name
+    description: ghost-role-information-dogborg-k9-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisSecurityK9
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_k9.rsi
+      state: k9
+
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgK9Dark
+  suffix: dogborg, K9 Dark
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-k9dark-name
+    description: ghost-role-information-dogborg-k9-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisSecurityK9Dark
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_k9dark.rsi
+      state: k9dark
+
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgValeSec
+  suffix: dogborg, Vale (security)
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-valesec-name
+    description: ghost-role-information-dogborg-vale-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisSecurityVale
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_valesec.rsi
+      state: valesec
+
+# ===== Medical =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgMedihound
+  suffix: dogborg, Medihound
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-medihound-name
+    description: ghost-role-information-dogborg-medihound-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisMedicalMedihound
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_medihound.rsi
+      state: medihound
+
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgMedihoundDark
+  suffix: dogborg, Medihound Dark
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-medihounddark-name
+    description: ghost-role-information-dogborg-medihound-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisMedicalMedihoundDark
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_medihounddark.rsi
+      state: medihounddark
+
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgValeMed
+  suffix: dogborg, Vale (medical)
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-valemed-name
+    description: ghost-role-information-dogborg-vale-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisMedicalVale
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_valemed.rsi
+      state: valemed
+
+# ===== Engineering =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgPupDozer
+  suffix: dogborg, Pup Dozer
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-pupdozer-name
+    description: ghost-role-information-dogborg-pupdozer-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisEngineerPupDozer
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_pupdozer.rsi
+      state: pupdozer
+
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgValeEng
+  suffix: dogborg, Vale (engineering)
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-valeeng-name
+    description: ghost-role-information-dogborg-vale-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisEngineerVale
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_valeeng.rsi
+      state: valeeng
+
+# ===== Janitor =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgScrubpup
+  suffix: dogborg, Scrubpup
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-scrubpup-name
+    description: ghost-role-information-dogborg-scrubpup-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisJanitorScrubpup
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_scrubpup.rsi
+      state: scrubpup
+
+# ===== Service =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgValeServ
+  suffix: dogborg, Vale (service)
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-valeserv-name
+    description: ghost-role-information-dogborg-vale-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisServiceVale
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_valeserv.rsi
+      state: valeserv
+
+# ===== Mining =====
+- type: entity
+  parent: BaseSpawnPointGhostDogborg
+  id: SpawnPointGhostRoleDogborgBlade
+  suffix: dogborg, Blade
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-dogborg-blade-name
+    description: ghost-role-information-dogborg-blade-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSiliconBrain
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BorgChassisMiningBlade
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Silicon/dogborg_blade.rsi
+      state: blade

@@ -31,6 +31,7 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem : SharedChatSystem
 {
+    [Dependency] private TelepathicChatSystem _telepath = default!; // claw command - psionics port
     [Dependency] private IReplayRecordingManager _replay = default!;
     [Dependency] private IConfigurationManager _configurationManager = default!;
     [Dependency] private IChatManager _chatManager = default!;
@@ -114,8 +115,11 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case GameRunLevel.PostRound:
             case GameRunLevel.PreRoundLobby:
-                if (!_configurationManager.GetCVar(CCVars.OocEnableDuringRound))
-                    _configurationManager.SetCVar(CCVars.OocEnabled, true);
+                // CLAW COMMAND - always re-enable OOC once the round ends / players return to the lobby,
+                // even when OOC is allowed during the round (OocEnableDuringRound). Otherwise a manual
+                // mid-round `setooc`-off (e.g. an admin silencing OOC drama, then going offline and
+                // forgetting) would persist as a permanent OOC blackout into every following round.
+                _configurationManager.SetCVar(CCVars.OocEnabled, true);
                 break;
         }
     }
@@ -230,6 +234,13 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case InGameICChatType.Emote:
                 SendEntityEmote(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
+                break;
+            case InGameICChatType.Subtle: // CLAW COMMAND: Added.
+                SendEntitySubtle(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
+                break;
+            case InGameICChatType.Telepathic: // CLAW COMMAND: psionics port.
+                // Telepathic chat has no in-world component to hide, so hideLog is the only relevant flag here.
+                _telepath.SendTelepathicChat(source, message, hideLog);
                 break;
         }
     }

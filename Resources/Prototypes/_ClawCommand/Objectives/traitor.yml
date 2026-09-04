@@ -1,0 +1,59 @@
+# Claw Command - "kill once" Syndicate kill objectives, used by Extended Irregular.
+#
+# The upstream kill objectives are round-removal orders: `requireMaroon` means the target must
+# also fail to reach CentComm, so reviving them or getting them onto evac undoes the kill. That
+# suits Secret, which still uses them. Irregular wants a contract that is settled the moment the
+# target dies, so these drop the maroon requirement and latch instead (see LatchOnDeath) - the
+# crew are free to clone the victim and send them home, and the agent still gets paid.
+#
+# Difficulty is deliberately left at the upstream values. These are easier objectives, but
+# `maxDifficulty` is a workload budget: lowering them would hand Irregular traitors MORE
+# objectives, which is the opposite of what a roleplay-first mode wants.
+
+- type: entity
+  parent: [BaseTraitorObjective, BaseKillRandomObjective]
+  id: KillOncePersonObjective
+  description: Do it however you like. Once they're dead the contract is settled - what the medbay does afterwards is not our problem.
+  components:
+  - type: Objective
+    difficulty: 1.75
+    unique: false
+  - type: TargetObjective
+    title: cc-objective-condition-kill-once-title
+  # Characters with the Marked Target trait get picked first, random otherwise.
+  - type: PickRandomPerson
+    preferredConditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - MarkedTarget
+  - type: KillPersonCondition
+    requireDead: true
+    latchOnDeath: true
+
+- type: entity
+  parent: [BaseTraitorObjective, BaseKillRandomObjective]
+  id: KillOnceHeadObjective
+  description: We need this head to stop breathing, at least once, in front of as many people as possible. What happens after is between them and their cloner.
+  components:
+  - type: Objective
+    difficulty: 3.0
+    # killing 1 head is enough
+    unique: true
+  - type: TargetObjective
+    title: cc-objective-condition-kill-once-head-title
+  - type: PickRandomPerson
+    conditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - CommandStaff
+    # A marked head outranks an unmarked one, but the pool is still heads only.
+    preferredConditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - MarkedTarget
+  - type: KillPersonCondition
+    requireDead: true
+    latchOnDeath: true

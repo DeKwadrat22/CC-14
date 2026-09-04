@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Sprite by the Mighty DeKwadrat22, will it work? No.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "mattew-plushie"
+        },
+        {
+            "name": "mattew-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "mattew-inhand-right",
+            "directions": 4
+        }
+    ]
+}

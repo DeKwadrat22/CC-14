@@ -8,6 +8,8 @@
     DrinkIcedTeaCan: 2
     DrinkSolDryCan: 2
     DrinkFourteenLokoCan: 2
+    DrinkBoykisserEnergy: 2 # Claw Command - Floof port
+    DrinkNNNCan: 2 # Claw Command - Floof port
   contrabandInventory:
     DrinkSpaceMountainWindBottleFull: 2
     DrinkSpaceUpBottleFull: 2

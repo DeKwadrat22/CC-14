@@ -9,6 +9,7 @@
       path: /Audio/Items/wirecutter_drop.ogg
   - type: Tag
     tags:
+    - PlantSampleTaker
     - Wirecutter
   - type: Sprite
     sprite: Objects/Tools/wirecutters.rsi
@@ -43,7 +44,17 @@
       Steel: 100
   - type: StaticPrice
     price: 30
-  - type: BotanySampleTaker
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 18
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: screwdriver
@@ -264,7 +275,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: [ Screwing ]
+      - behavior: Screwing
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_screw
@@ -276,7 +287,7 @@
           path: /Audio/Items/change_drill.ogg
           params:
             volume: -5
-      - behavior: [ Anchoring ]
+      - behavior: Anchoring
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_bolt
@@ -387,6 +398,74 @@
     rechargeDuration: 1
 
 - type: entity
+  id: RPD
+  parent: RCD
+  name: RPD
+  description: A device used to rapidly construct atmospheric pipes and devices.
+  components:
+  - type: Tag
+    tags:
+    - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+  - type: LimitedCharges
+    maxCharges: 50
+  - type: Sprite
+    sprite: Objects/Tools/rpd.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Tools/rpd.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+      Plastic: 150
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    lastCharges: -1
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: Cyborg-mounted Rapid Pipe Dispenser which creates compressed matter on the fly using an internal fabricator.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
   name: compressed matter
   parent: BaseItem
   id: RCDAmmo
@@ -432,7 +511,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: [ Screwing ]
+      - behavior: Screwing
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-screwing
@@ -440,7 +519,7 @@
           path: /Audio/Items/drill_use.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: [ Prying ]
+      - behavior: Prying
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-prying
@@ -448,7 +527,7 @@
           path: /Audio/Items/jaws_pry.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: [ Anchoring ]
+      - behavior: Anchoring
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-wrenching
@@ -456,7 +535,7 @@
           path: /Audio/Items/ratchet.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: [ Cutting ]
+      - behavior: Cutting
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-snipping
@@ -464,7 +543,7 @@
           path: /Audio/Items/jaws_cut.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: [ Pulsing ]
+      - behavior: Pulsing
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-pulsing

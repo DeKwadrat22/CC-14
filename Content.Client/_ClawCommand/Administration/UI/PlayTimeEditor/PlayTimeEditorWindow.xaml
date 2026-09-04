@@ -1,0 +1,41 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                Title="{Loc playtime-editor-title}"
+                MinWidth="500">
+    <BoxContainer Orientation="Vertical" VerticalExpand = "True">
+        <BoxContainer Orientation="Horizontal" Margin="2">
+            <Label Name="TargetLabel" Text="{Loc playtime-editor-target-label}" MinWidth = "120"/>
+            <Control MinWidth ="10"/>
+            <LineEdit Name="TargetInput" PlaceHolder="PlayerName" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal" Margin="2">
+            <CheckBox Name="BatchCheckbox" Text="{Loc playtime-editor-checkbox-batch}" MinWidth = "120"/>
+            <Control MinWidth ="10"/>
+            <LineEdit Name="BatchDurationInput" PlaceHolder="0h0m" HorizontalExpand="True" />
+        </BoxContainer>
+        <Control MinHeight="5"/>
+        <LineEdit Name="RoleSearch" Access="Public" StyleClasses="actionSearchBox" HorizontalExpand="True" PlaceHolder="{Loc playtime-editor-search-placeholder}"/>
+        <Control MinHeight="10"/>
+        <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+                </PanelContainer.PanelOverride>
+            <ScrollContainer HScrollEnabled="False"
+                     HorizontalExpand="True"
+                     VerticalExpand="True"
+                     MinHeight="400"
+                     SizeFlagsStretchRatio="2.5">
+                <BoxContainer Name ="RoleContainer" Orientation="Vertical"/>
+            </ScrollContainer>
+        </PanelContainer>
+        <Control MinHeight="10" />
+        <controls:StripeBack>
+            <Label Name="StatusLabel" Text=" " HorizontalAlignment="Center" Margin="4 4 0 4"/>
+        </controls:StripeBack>
+        <Control MinHeight="10" />
+        <Button Name="AddButton" Text="{Loc playtime-editor-add-time}"/>
+        <Button Name="OverwriteButton" Text="{Loc playtime-editor-overwrite-time}"/>
+    </BoxContainer>
+</DefaultWindow>

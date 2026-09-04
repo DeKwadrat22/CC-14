@@ -28,6 +28,29 @@ public sealed partial class RampingStationEventSchedulerComponent : Component
     [DataField]
     public float StartingChaos;
 
+    /// <summary>
+    ///     Claw Command - if set, the chaos modifier the round opens on, instead of deriving it from
+    ///     the rolled max chaos. The vanilla derivation is MaxChaos / 10, which forces a 10:1 ratio
+    ///     between the opening and closing event rate; that is far too steep for calmer presets.
+    /// </summary>
+    [DataField]
+    public float? InitialChaos;
+
+    /// <summary>
+    ///     Claw Command - shortest possible gap between events, in seconds, before the chaos modifier
+    ///     is applied. The actual gap is a random value between this and <see cref="MaxEventTime"/>,
+    ///     each divided by the current chaos modifier.
+    /// </summary>
+    [DataField]
+    public float MinEventTime = 240f;
+
+    /// <summary>
+    ///     Claw Command - longest possible gap between events, in seconds, before the chaos modifier
+    ///     is applied. See <see cref="MinEventTime"/>.
+    /// </summary>
+    [DataField]
+    public float MaxEventTime = 720f;
+
     [DataField]
     public float TimeUntilNextEvent;
 

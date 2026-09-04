@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Claw Command",
+    "size": {
+        "x": 424,
+        "y": 192
+    },
+    "states": [
+        {
+            "name": "open_landed"
+        },
+        {
+            "name": "open_landed_no_ladder"
+        },
+        {
+            "name": "landed_closed_no_ladder"
+        },
+        {
+            "name": "idle"
+        },
+        {
+            "name": "cockpit_open"
+        },
+        {
+            "name": "exhaust_boost"
+        }
+    ]
+}

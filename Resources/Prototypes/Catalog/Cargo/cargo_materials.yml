@@ -172,3 +172,14 @@
   cost: 2500
   category: cargoproduct-category-name-atmospherics
   group: market
+
+# Claw Command - uranium materials
+- type: cargoProduct
+  id: MaterialUranium
+  icon:
+    sprite: Objects/Materials/Sheets/other.rsi
+    state: uranium_3
+  product: CrateMaterialUranium
+  cost: 12000
+  category: cargoproduct-category-name-materials
+  group: market

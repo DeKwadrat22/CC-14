@@ -1,0 +1,71 @@
+# Ported from upstream forks for the glacier map.
+# Entities that already exist in our fork (ChessBoard, KitchenSpike, PianoInstrument,
+# PlushieLizard, PottedPlantRD) were removed from this file — the audit's BOM-affected
+# scanner falsely reported them as missing.
+
+# --- BenchSofaCorpCorner ---
+- type: entity
+  name: grey sofa
+  id: BenchSofaCorpCorner
+  suffix: Corner
+  parent: BenchSofaCorpMiddle # Floof
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: SimpleStation14/Structures/Furniture/Benches/sofa_corp.rsi
+    state: corner
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Pullable
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalThud
+
+# --- N14ChairMetalGreen ---
+- type: entity
+  parent: Chair
+  id: N14ChairMetalGreen
+  description: A metal chair for sitting on.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: metal_chair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairMetalGreen
+
+# --- WashingMachineFilledClothes ---
+- type: entity
+  id: WashingMachineFilledClothes
+  parent: WashingMachine
+  name: washing machine
+  suffix: random clothes
+  components:
+  - type: StorageFill
+    contents:
+    - id: Soap
+      prob: 0.3
+    - id: ClothingOuterWinterCoatPlaid
+      prob: 0.5
+    - id: ClothingUniformMNKTracksuitBlack
+      prob: 0.3
+    - id: ClothingCostumeNaota
+      prob: 0.2
+    - id: ClothingHeadBandSkull
+      prob: 0.2
+    - id: ClothingNeckScarfStripedBlue
+      prob: 0.3

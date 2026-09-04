@@ -268,7 +268,7 @@ ImprovisedExplosiveFuel: FireBombFuel
 ClothingHeadHatHairflower: FoodPoppy
 
 # 2024-03-21
-RPED: null
+# RPED null-map removed by _ClawCommand RapidPartExchange port — entity now exists.
 
 # 2024-03-30
 TraversalDistorterMachineCircuitboard: null
@@ -539,9 +539,12 @@ LightTree06: LightTree
 DrinkIrishCarBomb: DrinkIrishSlammer
 
 # 2025-01-06
-BorgModuleRadiationDetection: null
-BorgModuleGPS: null
-BorgModuleLightReplacer: BorgModuleCustodial
+# Claw Command: BorgModuleRadiationDetection, BorgModuleGPS and BorgModuleLightReplacer
+# were brought back as part of the space-port modules port
+# (_ClawCommand/Entities/Objects/Specific/Robotics/space_port_modules.yml). The upstream
+# migration entries would silently delete or rename them at map-load, so we drop them
+# here for the three we re-added. AdvancedTreatment stays removed (we explicitly skipped
+# it during the port because HandheldHealthAnalyzerUnpowered isn't in the fork).
 BorgModuleAdvancedTreatment: null
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime
@@ -635,8 +638,9 @@ ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
 ClothingHeadHelmetHardsuitBasic: null
 SuitStorageBasic: SuitStorageEVA
 
+# _ClawCommand: Re-added.
 # 2025-05-18
-ClothingNeckCloakMiner: null
+# ClothingNeckCloakMiner: null
 
 # 2025-05-22
 MatterBinStockPart: MicroManipulatorStockPart
@@ -845,42 +849,97 @@ CratePartsT3: null
 CratePartsT3T4: null
 CratePartsT4: null
 
-# 2026-07-16
-WallNecropolis: WallSolid
-WallVaultAlien: WallSolid
-WallVaultRock: WallSolid
-WallVaultSandstone: WallSolid
-WallSandstone: WallSolid
-WallDiamond: WallReinforced
-WallCult: WallBrick
-WallClown: WallGold
-WallClock: WallBrass
-WallPlastic: WallSolid
-ClockworkGrille: Grille
-ClockworkGrilleBroken: GrilleBroken
-ClockworkGrilleDiagonal: GrilleDiagonal
-ClockworkWindow: Window
-ClockworkWindowDiagonal: WindowDiagonal
-WindowClockworkDirectional: WindowDirectional
-WindoorClockwork: Windoor
-WindoorAssemblyClockwork: WindoorAssembly
-PinionAirlock: Airlock
-PinionAirlockGlass: AirlockGlass
-PinionAirlockAssembly: AirlockAssembly
-BananiumDoor: GoldDoor
-EncrustedIronstoneDoor: SilverDoor
-IronstoneDoor: SilverDoor
-WallSnowCobblebrick: WallBrick
-WallSandCobblebrick: WallBrick
-WallChromiteCobblebrick: WallBrick
-WallAndesiteCobblebrick: WallBrick
-WallIronsandCobblebrick: WallBrick
-WallCobblebrick: WallConcrete
-WallAsteroidCobblebrick: WallConcrete
-WallBasaltCobblebrick: WallConcrete
-WallIce: WallRockSnow
+# 2026-07-04
+AirlockChiefJusticeLocked: AirlockLawyerLocked
+AirlockJusticeLocked: AirlockLawyerLocked
+AirlockClownLocked: AirlockTheatreLocked
+AirlockMimeLocked: AirlockTheatreLocked
+AirlockMusicianLocked: AirlockTheatreLocked
+AirlockCorspmanLocked: AirlockSecurityLocked
+AirlockMantisLocked: AirlockScience
+AirlockCorpsmanGlassLocked: AirlockSecurityGlassLocked
+AirlockCorpsmanLocked: AirlockSecurityGlassLocked
+AirlockNanotrasenRepresentativeCommandGlassLocked: AirlockCommandGlassLocked
+AirlockMailGlassLocked: AirlockCargoGlassLocked
+AirlockProsecutorGlassLocked: AirlockLawyerGlassLocked
+AirlockJusticeGlass: AirlockLawyerGlassLocked
+BorgModuleStun: BorgModuleSecurity
+CargoTechFab: Autolathe
+ClothingEyesGlassesChemist: ClothingEyesGlassesChemical
+ClothingEyesGlassesGarMeson: ClothingEyesGlassesMeson
+ClothingEyesGlassesMesonBudget: ClothingEyesGlassesMeson
+CrateCentCommCryo: CrateCommandSecure
+DefaultStationBeaconExam: DefaultStationBeaconMedbay
+DefaultStationBeaconJustice: DefaultStationBeaconCourtroom
+DefaultStationBeaconPsychologist: DefaultStationBeaconPsychology
+HypoMini: JetInjector
+LeftFootHuman: OrganHumanFootLeft
+LeftHandHuman: OrganHumanHandLeft
+OrganSlimeLungs: OrganSlimePersonLungs
+LockerChiefJusticeFilled: ClosetLegalFilled
+LockerClerkFilled: LockerScienceFilled
+MailTeleporter: CargoMailTeleporter
+MaterialSilo: MachineMaterialSilo
+RightHandHuman: OrganHumanHandRight
+RightLegSkeleton: OrganSkeletonPersonLegRight
+SolidReinforcedSecretDoor: EESolidReinforcedSecretDoor
+SpawnPointBlueshieldMaid: SpawnPointClawCommandMaid
+SpawnPointBlueshieldOfficer: SpawnPointClawCommandOfficer
+SpawnPointMailCarrier: SpawnPointCargoTechnician
+SpawnPointMedicalBorg: SpawnPointBorg
+UltravasculineChemistryBottle: ChemistryBottleUltravasculine
+UniqueLockerBlueshieldOfficerFilled: LockerClawCommandOfficerFilled
+WakizashiStun: WeaponMeleeKatana
+WeaponMechIndustrialKineticAccelerator: WeaponProtoKineticAccelerator
+WeaponProtoKineticAcceleratorSawn: WeaponProtoKineticAccelerator
+WoodSecretDoor: EEWoodSecretDoor
+LockerSteelIdLockable: LockerSteel
+Autodoc: null
+BorgModuleAdvancedSurgery: null
+BorgModuleKill: null
+BorgModulePka: null
+CheerfulQuadborgPlushie: null
+ClothingOuterShadowkinRestraints: null
+CrateTradeDarkSecure: null
+DeepFryerMachineCircuitboard: null
+DefaultStationBeaconChiefJustice: null
+DefaultStationBeaconCorpsman: null
+DefaultStationBeaconMantis: null
+DefaultStationBeaconMetempsychosis: null
+DefaultStationBeaconProber: null
+DefaultStationBeaconProsecutor: null
+DubiousOrganSpawner: null
+GavelBlock: null
+JermovCircuitBoard: null
+MedicalBiofabMachineBoard: null
+MetempsychoticMachine: null
+PillCryptobiolin: null
+PortalShadowkinSpawner: null
+ReverseEngineeringMachine: null
+SpawnPointAdminAssistant: null
+SpawnPointBrigmedic: null
+SpawnPointChiefJustice: null
+SpawnPointClerk: null
+SpawnPointLocationMidRoundAntag: null
+SpawnPointNanotrasenRepresentative: null
+SpawnPointProsecutor: null
+SuitStorageCorpsman: null
+TrialTimer: null
+UniqueLockerNanorepFilled: null
+VendingMachineCourierDrobe: null
+VendingMachineMNKDrobe: null
+# Claw Command - the psionics port removed five entries that used to live in this block:
+#   GlimmerProber, OracleSpawner, SophicScribeSpawner, SpawnPointForensicMantis -> null
+#   LockerForensicMantisFilled -> LockerScienceFilled
+# They were added when this content was stripped from the fork. The prototypes exist again, so the
+# migration was silently deleting (or downgrading) every one of them at map load, on every station.
+# AirlockMantisLocked / DefaultStationBeaconMantis / DefaultStationBeaconProber above are deliberately
+# left in place: those prototypes were NOT part of the port and still do not exist.
 
-#2026-07-17
+# 2026-07-06
+LockerBartender: LockerBooze # Why was this even made?
+
+#2027-07-17
 WeaponRifleM90GrenadeLauncher: null
 
 # 2026-07-18
@@ -935,200 +994,3 @@ CrateEngineeringJetpack: CrateSpaceMiniJetpack
 CrateEngineeringMiniJetpack: CrateSpaceMiniJetpack
 CrateEngineeringShuttle: CrateSpaceShuttlePower
 CrateEngineeringThruster: CrateSpaceThruster
-
-# 2026-07-22
-
-BlastDoorXenoborg: BlastDoorXeno
-BlastDoorXenoborgOpen: BlastDoorXenoOpen
-
-### Dark Tiles
-FloorTileItemDarkDiagonalMini: FloorTileItemDark
-FloorTileItemDarkDiagonal: FloorTileItemDark
-FloorTileItemDarkOffset: FloorTileItemDark
-FloorTileItemDarkSlatsContinuous: FloorTileItemDarkVerticalSlatsBordered
-
-### Steel Tiles
-FloorTileItemSteelDiagonalMini: FloorTileItemSteel
-FloorTileItemSteelDiagonal: FloorTileItemSteel
-FloorTileItemSteelOffset: FloorTileItemSteel
-FloorTileItemShowroom: FloorTileItemSteel
-FloorTileItemSteelSlatsContinuous: FloorTileItemSteelVerticalSlatsBordered
-
-### White Tiles
-FloorTileItemWhiteDiagonalMini: FloorTileItemWhite
-FloorTileItemWhiteDiagonal: FloorTileItemWhite
-FloorTileItemWhiteOffset: FloorTileItemWhite
-FloorTileItemWhiteSlatsContinuous: FloorTileItemWhiteVerticalSlatsBordered
-
-### Misc Tiles
-FloorTileItemUraniumMarble: FloorTileItemDarkMarble
-FloorTileItemPlasmaMarble: FloorTileItemWhiteMarble
-FloorTileItemEighties: FloorTileItemArcadeBlue
-FloorTileItemArcadeBlue2: FloorTileItemArcadeBlue
-FloorTileItemElevatorShaft: FloorTileItemDark
-FloorTileItemMining: FloorTileItemDarkPlastic
-FloorTileItemMiningLight: FloorTileItemDarkPlastic
-FloorTileItemMiningDark: FloorTileItemDarkPlastic
-FloorTileItemRockVault: FloorTileItemSteel
-FloorTileItemBrassReebe: null
-FloorTileItemBrassFilled: null
-FloorBananiumEntity: null
-FloorTileItemMono: FloorTileItemSteel
-
-# 2026-07-23
-AirAlarmAssemblyXeno: AirAlarmAssembly
-AirAlarmXeno: AirAlarm
-FireAlarmAssemblyXeno: FireAlarmAssembly
-FireAlarmXeno: FireAlarm
-
-# 2026-07-26
-IronsandStepConvexCorner: null
-IronsandStepConcaveCorner: null
-IronsandStep: null
-
-# 2026-07-27
-TurnstileGenpopEnter: EnergyGateGenpopEnter
-TurnstileGenpopLeave: EnergyGateGenpopLeave
-Turnstile: EnergyGate
-MetalDoor: SilverDoor
-MiningWindow: ReinforcedWindow
-MiningWindowDiagonal: ReinforcedWindowDiagonal
-FloorTileItemLightAstroGrass: FloorTileItemAstroGrass
-FloorTileItemGrayConcrete: FloorTileItemConcrete
-FloorTileItemGrayConcreteMono: FloorTileItemConcreteMono
-FloorTileItemGrayConcreteSmooth: FloorTileItemConcreteSmooth
-FloorTileItemOldConcrete: FloorTileItemConcrete
-FloorTileItemOldConcreteMono: FloorTileItemConcreteMono
-FloorTileItemOldConcreteSmooth: FloorTileItemConcreteSmooth
-FloorTileItemIronsandConcrete: null
-FloorTileItemIronsandConcreteMono: null
-FloorTileItemIronsandConcreteSmooth: null
-IronSandstone: IronRock
-IronSandstoneMining: IronRock
-AsteroidRockBananium: AsteroidRock
-AsteroidRockBananiumCrab: AsteroidRock
-IronRockBananium: IronRock
-WallRockBananium: WallRock
-WallRockChromiteBananium: WallRockChromite
-WallRockSandBananium: WallRockSand
-WallRockSnowBananium: WallRockSnow
-MeteorRockBananium: AsteroidRock
-WallRockBasalt: WallRock
-WallRockBasaltCoal: WallRockCoal
-WallRockBasaltGold: WallRockGold
-WallRockBasaltDiamond: WallRockDiamond
-WallRockBasaltPlasma: WallRockPlasma
-WallRockBasaltQuartz: WallRockQuartz
-WallRockBasaltSilver: WallRockSilver
-WallRockBasaltBananium: WallRock
-WallRockBasaltTin: WallRockTin
-WallRockBasaltUranium: WallRockUranium
-WallRockBasaltArtifactFragment: WallRockArtifactFragment
-WallRockBasaltSalt: WallRockSalt
-WallRockAndesite: WallRock
-WallRockAndesiteCoal: WallRockCoal
-WallRockAndesiteGold: WallRockGold
-WallRockAndesiteDiamond: WallRockDiamond
-WallRockAndesitePlasma: WallRockPlasma
-WallRockAndesiteQuartz: WallRockQuartz
-WallRockAndesiteSilver: WallRockSilver
-WallRockAndesiteBananium: WallRock
-WallRockAndesiteTin: WallRockTin
-WallRockAndesiteUranium: WallRockUranium
-WallRockAndesiteArtifactFragment: WallRockArtifactFragment
-WallRockAndesiteSalt: WallRockSalt
-FloorTileItemTechmaint: FloorTileItemSteelMaint
-FloorTileItemXeno: FloorTileItemExoViscera
-FloorTileItemXenoSteel: FloorTileItemExoHull
-FloorTileItemXenoSteelCorner: FloorTileItemExoCornerSW
-FloorTileItemXenoMaint: FloorTileItemExoTechmaint
-FloorTileItemXenoborg: FloorTileItemExoBorg
-FloorTileItemDarkSquiggly: FloorTileItemExoHorizontal
-
-# 2026-08-04
-FloorSnowChasm: FloorChasmEntity
-FloorDesertChasm: FloorChasmEntity
-FloorChromiteChasm: FloorChasmEntity
-
-# 2026-08-06
-FloorTileItemHydro: FloorTileItemSteel
-WallRiveted: WallMarble
-WallSpawnAsteroidBananium: null
-WallSpawnAsteroidBananiumCrab: null
-
-# 2026-08-11
-FloorTileItemDirty: null
-PinionAirlockAssemblyGlass: AirlockAssemblyGlass
-AnomalyRockBananium: AnomalyRockCoal
-ClockworkGirder: Girder
-BaseAsteroidRock: AsteroidRock
-ButtonFrameExit: ButtonFrameWhite
-
-# 2026-08-12
-WindoorSecure: Windoor
-WindoorSecurePlasma: WindoorPlasma
-WindoorSecureUranium: WindoorUranium
-WindoorSecureArmoryLocked: WindoorArmoryLocked
-PlasmaWindoorSecureArmoryLocked: PlasmaWindoorArmoryLocked
-WindoorSecureEngineeringLocked: WindoorEngineeringLocked
-WindoorSecureAtmosphericsLocked: WindoorEngineeringLocked
-PlasmaWindoorSecureEngineeringLocked: PlasmaWindoorEngineeringLocked
-PlasmaWindoorSecureAtmosphericsLocked: PlasmaWindoorAtmosphericsLocked
-WindoorSecureServiceLocked: WindoorServiceLocked
-WindoorSecureKitchenLocked: WindoorKitchenLocked
-WindoorSecureBarLocked: WindoorBarLocked
-WindoorSecureJanitorLocked: WindoorJanitorLocked
-WindoorSecureSecurityLocked: WindoorSecurityLocked
-WindoorSecureBrigLocked: WindoorBrigLocked
-WindoorSecureDetectiveLocked: WindoorDetectiveLocked
-WindoorSecureSecurityLawyerLocked: WindoorSecurityLawyerLocked
-WindoorSecureCargoLocked: WindoorCargoLocked
-WindoorSecureSalvageLocked: WindoorSalvageLocked
-WindoorSecureChapelLocked: WindoorChapelLocked
-WindoorSecureMedicalLocked: WindoorMedicalLocked
-WindoorSecureChemistryLocked: WindoorChemistryLocked
-PlasmaWindoorSecureChemistryLocked: PlasmaWindoorChemistryLocked
-WindoorSecureCommandLocked: WindoorCommandLocked
-WindoorSecureCentralCommandLocked: WindoorCentralCommandLocked
-PlasmaWindoorSecureCentralCommandLocked: PlasmaWindoorCentralCommandLocked
-UraniumWindoorSecureCentralCommandLocked: UraniumWindoorCentralCommandLocked
-PlasmaWindoorSecureCommandLocked: PlasmaWindoorCommandLocked
-UraniumWindoorSecureEngineeringLocked: UraniumWindoorEngineeringLocked
-WindoorSecureExternalLocked: WindoorExternalLocked
-PlasmaWindoorSecureJanitorLocked: PlasmaWindoorJanitorLocked
-WindoorSecureResearchDirectorLocked: WindoorResearchDirectorLocked
-PlasmaWindoorSecureSecurityLocked: PlasmaWindoorSecurityLocked
-WindoorSecureScienceLocked: WindoorScienceLocked
-PlasmaWindoorSecureScienceLocked: PlasmaWindoorScienceLocked
-WindoorSecureHeadOfPersonnelLocked: WindoorHeadOfPersonnelLocked
-WindoorSecureSyndicateLocked: WindoorSyndicateLocked
-PlasmaWindoorSecureSyndicateLocked: PlasmaWindoorSyndicateLocked
-UraniumWindoorSecureSyndicateLocked: UraniumWindoorSyndicateLocked
-WindoorSecureNukeopLocked: WindoorNukeopLocked
-PlasmaWindoorSecureNukeopLocked: PlasmaWindoorNukeopLocked
-UraniumWindoorSecureNukeopLocked: UraniumWindoorNukeopLocked
-WindoorAssemblySecure: WindoorAssembly
-WindoorAssemblySecurePlasma: WindoorAssemblyPlasma
-WindoorAssemblySecureUranium: WindoorAssemblyUranium
-LightReplacer: LightReplacerFilled
-
-#2026-08-14
-MeteorRock: AsteroidRock
-MeteorRockCoal: AsteroidRockCoal
-MeteorRockQuartz: AsteroidRockQuartz
-MeteorRockTin: AsteroidRockTin
-MeteorRockSilver: AsteroidRockSilver
-MeteorRockGold: AsteroidRockGold
-MeteorRockPlasma: AsteroidRockPlasma
-MeteorRockDiamond: AsteroidRockDiamond
-MeteorRockUranium: AsteroidRockUranium
-StatueBananiumClown: StatueOrnateClown
-
-#2026-08-18
-DrinkNeurotoxinGlass: null
-
-#2026-08-19
-JanitorServiceLight: null
-
-#2026-08-31
-DrinkWaterJug: JugWater

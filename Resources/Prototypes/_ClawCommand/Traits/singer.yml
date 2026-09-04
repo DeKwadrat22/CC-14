@@ -1,0 +1,40 @@
+# Singing trait ported from Floofstation/DeltaV. Gives a character a "Play MIDI" action that opens the
+# instrument UI, letting them sing melodies with their voice (all the usual interrupts apply - can't sing
+# while muted/incapacitated/asleep/muzzled/zombified, see SingerSystem). The source's harpy-specific
+# singing sprite layer is intentionally NOT ported - this fork has no harpy species/visuals.
+
+# Which MIDI voices the singer can use. NormalSinger is a plain human voice.
+- type: SingerInstrument
+  id: NormalSinger
+  instrumentList:
+    "Voice": {52: 0}
+  defaultInstrument: "Voice"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi
+
+# The "sing" action. This fork's action system keeps the icon/interaction fields on the base Action
+# component (InstantAction only carries the event), so the icon goes on Action, not InstantAction.
+- type: entity
+  parent: BaseAction
+  id: ActionHarpyPlayMidi
+  name: Play MIDI
+  description: Sing your heart out! Right click yourself to set an instrument.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon: DeltaV/Interface/Actions/harpy_sing.png
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.InstrumentUiKey.Key
+
+# The selectable character trait.
+- type: trait
+  id: Singer
+  name: trait-singer-name
+  description: trait-singer-desc
+  category: Quirks
+  cost: 2
+  components:
+    - type: Singer
+      proto: NormalSinger

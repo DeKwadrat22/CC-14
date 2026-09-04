@@ -1,0 +1,52 @@
+- type: entity
+  id: LockerClawCommandOfficerFilled
+  suffix: Claw Command Officer, Filled
+  parent: LockerClawCommandOfficer
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: ClothingEyesGlassesMedSec
+    # - id: PinpointerNuclear
+    # - id: WeaponLeverChester
+    # - id: WeaponEnergyMagnum
+    # - id: WeaponPistolMk58 # CLAW COMMAND - removed from locker
+    - id: TrackingImplanter
+
+# Ported from space/ Resources/Prototypes/Catalog/Fills/Lockers/heads.yml.
+# Referenced by Resources/Maps/centcomm.yml — without this prototype the centcomm grid
+# fails to load and the emergency shuttle never gets attached to stations.
+# ClothingOuterHardsuitERTCentcomm is intentionally omitted (no prototype in our fork yet).
+- type: entity
+  id: LockerCentCommFilled # CC Locker
+  suffix: Filled
+  parent: LockerCentComm
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingBackpackHolding
+      - id: JetpackBlackFilled
+      - id: DoorRemoteAll
+      - id: RubberStampCentcom
+      - id: RubberStampDenied
+      - id: RubberStampApproved
+      - id: BoxFolderCentComClipboard
+      - id: CentcomPDA
+      - id: BoxFolderCentCom
+      - id: ClothingHeadsetAltCentCom
+      - id: ClothingHeadHatCentcomcap
+      - id: ClothingMaskGasCentcom
+      - id: CentcomIDCard
+      - id: ClothingOuterWinterCCWarden
+      - id: ClothingNeckCloakCentcom
+      - id: AccessConfigurator
+      # - id: ClothingOuterHardsuitERTCentcomm # not ported to this fork yet
+      - id: WeaponDisabler
+      - id: WeaponPistolN1984
+      - id: ClothingShoesBootsCombatFilled
+      - id: ClothingUniformJumpskirtCentcomDirector
+      - id: ClothingUniformJumpsuitCentcomDirector
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHandsGlovesColorBlack
+      - id: PenCentcom
+      - id: TrackingImplanter

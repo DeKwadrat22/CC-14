@@ -1,0 +1,19 @@
+# Ported from _Floof/Entities/Objects/Specific/Robotics/endoskeleton.yml.
+# The `Cyborg` construction graph here doesn't define a `Quadborg` target node
+# and the BorgGeneric*/BorgMining*/BorgService*/BorgMedical* part tags aren't
+# defined either, so the Construction component and ItemMapper/PartAssembly
+# layer mappings are stripped. The entity still spawns as a static endoskeleton
+# prop with the quad sprite, which is all the CentComm map needs.
+
+- type: entity
+  id: Quadborgendoskeleton
+  name: Quad endoskeleton
+  parent: CyborgEndoskeleton
+  description: A frame that cyborgs are built on. Significantly less spooky than expected.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Items
+    sprite: _Floof/Objects/Specific/Robotics/parts.rsi
+    scale: 0.7, 0.7
+    state: quad_suit

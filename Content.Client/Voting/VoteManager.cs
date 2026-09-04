@@ -236,7 +236,7 @@ namespace Content.Client.Voting
             _console.LocalShell.RemoteExecuteCommand($"vote {voteId} {option}");
         }
 
-        public sealed class ActiveVote
+        public sealed partial class ActiveVote
         {
             public VoteEntry[] Entries = default!;
 
@@ -255,7 +255,7 @@ namespace Content.Client.Voting
             }
         }
 
-        public sealed class VoteEntry
+        public sealed partial class VoteEntry
         {
             public string Text { get; }
             public int Votes { get; set; }

@@ -315,7 +315,7 @@ public sealed partial class StationSystem : SharedStationSystem
 /// This is the ideal point to add components to it.
 /// </summary>
 [PublicAPI]
-public sealed class StationInitializedEvent : EntityEventArgs
+public sealed partial class StationInitializedEvent : EntityEventArgs
 {
     /// <summary>
     /// Station this event is for.
@@ -332,7 +332,7 @@ public sealed class StationInitializedEvent : EntityEventArgs
 /// Directed event fired on a station when a grid becomes a member of the station.
 /// </summary>
 [PublicAPI]
-public sealed class StationGridAddedEvent : EntityEventArgs
+public sealed partial class StationGridAddedEvent : EntityEventArgs
 {
     /// <summary>
     /// ID of the grid added to the station.
@@ -362,7 +362,7 @@ public sealed class StationGridAddedEvent : EntityEventArgs
 /// Directed event fired on a station when a grid is no longer a member of the station.
 /// </summary>
 [PublicAPI]
-public sealed class StationGridRemovedEvent : EntityEventArgs
+public sealed partial class StationGridRemovedEvent : EntityEventArgs
 {
     /// <summary>
     /// ID of the grid removed from the station.
@@ -385,7 +385,7 @@ public sealed class StationGridRemovedEvent : EntityEventArgs
 /// Directed event fired on a station when it is renamed.
 /// </summary>
 [PublicAPI]
-public sealed class StationRenamedEvent : EntityEventArgs
+public sealed partial class StationRenamedEvent : EntityEventArgs
 {
     /// <summary>
     /// Prior name of the station.

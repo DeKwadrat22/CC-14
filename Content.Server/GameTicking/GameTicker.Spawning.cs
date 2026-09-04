@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
+using Content.Server.Shuttles.Components;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
@@ -16,6 +17,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -24,6 +26,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.Chat;
 
 namespace Content.Server.GameTicking
 {
@@ -143,7 +146,7 @@ namespace Content.Server.GameTicking
 
             if (jobId != null)
             {
-                var jobs = new List<ProtoId<JobPrototype>> {jobId};
+                var jobs = new List<ProtoId<JobPrototype>> { jobId };
                 var ev = new IsRoleAllowedEvent(player, jobs, null);
                 RaiseLocalEvent(ref ev);
                 if (ev.Cancelled)
@@ -177,6 +180,20 @@ namespace Content.Server.GameTicking
             if (lateJoin && DisallowLateJoin)
             {
                 JoinAsObserver(player);
+                return;
+            }
+
+            //Claw Command Ghost system return to round, check for whether the character isn't the same.
+            if (!_cfg.GetCVar(CCVars.GhostAllowSameCharacter) && lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
+            {
+                var message = checkAvoid
+                    ? Loc.GetString("ghost-respawn-same-character-slightly-changed-name")
+                    : Loc.GetString("ghost-respawn-same-character");
+                var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+
+                _chatManager.ChatMessageToOne(ChatChannel.Server, message, wrappedMessage,
+                    default, false, player.Channel, Color.Red);
+
                 return;
             }
 
@@ -258,7 +275,12 @@ namespace Content.Server.GameTicking
 
             DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName);
 
-            if (lateJoin && !silent)
+            // _ClawCommand: defer the latejoin "has arrived at the station" announcement until
+            // the player actually steps off the arrivals shuttle onto the station grid. When
+            // PendingClockInComponent is present, ArrivalsSystem owns the announcement and fires
+            // it on EntParentChangedMessage. Players who bypass arrivals (direct spawn modes,
+            // wizard, nukeops, etc.) still get the announcement immediately here.
+            if (lateJoin && !silent && !HasComp<PendingClockInComponent>(mob) && jobPrototype.AnnounceArrival)
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {
@@ -423,7 +445,7 @@ namespace Content.Server.GameTicking
                 makeObserver = true;
             }
 
-            var ghost = _ghost.SpawnGhost(mind.Value);
+            var ghost = _ghost.SpawnGhost(mind.Value, session: player); // Claw Command - pass the session so VIP ghosts work from the lobby
             if (makeObserver)
                 _roles.MindAddRole(mind.Value, "MindRoleObserver");
 
@@ -513,5 +535,86 @@ namespace Content.Server.GameTicking
         }
 
         #endregion
+
+
+
+        // Claw Command
+        private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid)
+        {
+            checkAvoid = false;
+
+            var query = EntityQueryEnumerator<MindComponent>();
+            while (query.MoveNext(out var mindId, out var mind))
+            {
+                if (mind.OriginalOwnerUserId != player.UserId)
+                    continue;
+
+                // Claw Command - an observer's mind is created named after whatever character was selected
+                // when they clicked "observe", even though that character never entered the round. Counting
+                // it here meant merely spectating burned the character for the rest of the shift.
+                if (IsSpectatorOnlyMind(mindId))
+                    continue;
+
+                if (mind.CharacterName == character.Name)
+                    return false;
+
+                if (mind.CharacterName == null)
+                    continue;
+
+                var similarity = CalculateStringSimilarity(mind.CharacterName, character.Name);
+                switch (similarity)
+                {
+                    case >= 85f:
+                        _chatManager.SendAdminAlert(Loc.GetString("ghost-respawn-log-character-almost-same",
+                            ("player", player.Name), ("try", false), ("oldName", mind.CharacterName),
+                            ("newName", character.Name)));
+                        checkAvoid = true;
+
+                        return false;
+                    case >= 50f:
+                        _chatManager.SendAdminAlert(Loc.GetString("ghost-respawn-log-character-almost-same",
+                            ("player", player.Name), ("try", true), ("oldName", mind.CharacterName),
+                            ("newName", character.Name)));
+
+                        break;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Claw Command - true if this mind only ever spectated: it was made by
+        /// <see cref="SpawnObserver"/> (which names it after the player's selected profile) and never got a
+        /// job, so no character actually went into the round under that name.
+        /// </summary>
+        /// <remarks>
+        /// Playing a character always makes a fresh mind with a job role in <see cref="DoSpawn"/>, so a mind
+        /// that carries a job role is a real playthrough and still blocks a return, ghost or not.
+        /// </remarks>
+        private bool IsSpectatorOnlyMind(EntityUid mindId)
+        {
+            return _roles.MindHasRole<ObserverRoleComponent>(mindId)
+                   && !_roles.MindHasRole<JobRoleComponent>(mindId);
+        }
+
+        private float CalculateStringSimilarity(string str1, string str2)
+        {
+            var minLength = Math.Min(str1.Length, str2.Length);
+            var matchingCharacters = 0;
+
+            for (var i = 0; i < minLength; i++)
+            {
+                if (str1[i] == str2[i])
+                    matchingCharacters++;
+            }
+
+            float maxLength = Math.Max(str1.Length, str2.Length);
+            var similarityPercentage = (matchingCharacters / maxLength) * 100;
+
+            return similarityPercentage;
+        }
+
+
     }
 }

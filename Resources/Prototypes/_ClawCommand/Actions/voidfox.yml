@@ -1,0 +1,35 @@
+- type: entity
+  abstract: true
+  parent: BaseAction
+  id: BaseVoidfoxAction
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+
+- type: entity
+  parent: BaseVoidfoxAction
+  id: ActionVoidfoxIgnite
+  name: Ignite Engine
+  description: Light the twin reactors. Requires the cockpit sealed and a fuel mixture of at least 95% plasma purity.
+  components:
+  - type: Action
+    useDelay: 1
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_eject
+  - type: InstantAction
+    event: !type:VoidfoxIgniteEvent
+
+- type: entity
+  parent: BaseVoidfoxAction
+  id: ActionVoidfoxMassScan
+  name: Mass Scanner
+  description: Sweep the local volume for grids and notable contacts.
+  components:
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_view_stats
+  - type: InstantAction
+    event: !type:VoidfoxMassScanEvent

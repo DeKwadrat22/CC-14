@@ -36,6 +36,9 @@
   id: SubWizard
   components:
   - type: GameRule
+    # Claw Command - this had no floor at all, so a wizard could be rolled onto a nearly empty station.
+    # BaseWizardRule carries no GameRule component, so there was nothing to inherit one from either.
+    minPlayers: 15
     cancelPresetOnTooFewPlayers: false
 
 - type: entity
@@ -43,5 +46,5 @@
   id: SubXenoborgs
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 16
     cancelPresetOnTooFewPlayers: false

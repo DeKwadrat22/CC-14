@@ -1,0 +1,117 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: VlMisc
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: BlackShieldBackpack
+  parent: ClothingBackpack
+  name: "Officer's backpack \"Shadow\""
+  description: "A backpack for carrying the heads of enemies of the corporation."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/BSBackpack.rsi
+
+- type: entity
+  id: BlackShieldBeret
+  parent: ClothingHeadBase
+  name: "Beret the officer \"Shadow\""
+  description: "This is probably the only piece of black shield clothing that doesn't do much good."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/BSBeret.rsi
+  - type: Clothing
+    sprite: Imperial/VlClothes/DSO/BSBeret.rsi
+
+- type: entity
+  id: BlackShieldJumpsuit
+  parent: ClothingUniformJumpskirtHoSAlt
+  name: "Black Shield Jumpsuit"
+  description: "Quite a good-looking official suit made of elastic materials."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/BSJumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/VlClothes/DSO/BSJumpsuit.rsi
+
+- type: entity
+  id: BlackShieldWebbing
+  parent: ClothingBeltStorageBase
+  name: "Black Shield RPS"
+  description: "It is quite convenient and does not restrict the movement of the RPS."
+  suffix: "Vl, ДСО"
+  components:
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/BSWebbing.rsi
+  - type: Clothing
+    sprite: Imperial/VlClothes/DSO/BSWebbing.rsi
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - "0,0,5,3"
+
+- type: entity
+  id: ClothingGauntletsModsuitSpecialForces
+  parent: ClothingHandsBase
+  name: "Special Forces gloves"
+  description: "Thanks to them, your hands are safe. Probably..."
+  components:
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/Modsuit/Hands.rsi
+  - type: Clothing
+    sprite: Imperial/VlClothes/DSO/Modsuit/Hands.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Shock: 0.8
+        Radiation: 0.5
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 200
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetModsuitSpecialForces
+    slot: head
+    requiredSlot: gloves
+  - type: Insulated
+
+- type: entity
+  id: ClothingHeadHelmetModsuitSpecialForces
+  parent: ClothingHeadHardsuitBase
+  name: "Special Forces Helmet"
+  description: "Designed to protect your head from enemy forces"
+  components:
+  - type: Sprite
+    sprite: Imperial/VlClothes/DSO/Modsuit/Head.rsi
+  - type: Clothing
+    sprite: Imperial/VlClothes/DSO/Modsuit/Head.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Shock: 0.3
+        Caustic: 0.5
+        Radiation: 0.1
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 200
+  - type: FlashImmunity
+  - type: EyeProtection
+

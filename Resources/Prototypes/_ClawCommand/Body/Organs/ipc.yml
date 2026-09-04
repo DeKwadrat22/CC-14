@@ -1,0 +1,107 @@
+# Claw Command - IPC Organs
+
+- type: entity
+  parent: OrganBase
+  id: OrganIPCBase
+  abstract: true
+  suffix: Claw Command, MarkingsIPC
+
+- type: entity
+  parent: OrganIPCBase
+  id: OrganIPCInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/IPC/organs.rsi
+
+- type: entity
+  parent: OrganIPCBase
+  id: OrganIPCExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/IPC/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/IPC/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: MarkingsIPC
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganIPCExternal ]
+  id: OrganIPCTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganIPCExternal ]
+  id: OrganIPCHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganIPCExternal ]
+  id: OrganIPCArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganIPCExternal ]
+  id: OrganIPCArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganIPCExternal ]
+  id: OrganIPCHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganIPCExternal ]
+  id: OrganIPCHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganIPCExternal ]
+  id: OrganIPCLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganIPCExternal ]
+  id: OrganIPCLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganIPCExternal ]
+  id: OrganIPCFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganIPCExternal ]
+  id: OrganIPCFootRight
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganIPCInternal, OrganIPCExternal ]
+  id: OrganIPCEyes
+  name: robotic eyes
+  description: "01001001 00100000 01110011 01100101 01100101 00100000 01111001 01101111 01110101 00100001"
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganIPCInternal ]
+  id: OrganIPCTongue
+  name: vocal modulator
+  description: "A vocal modulator, used to produce speech."
+
+- type: entity
+  parent: [ OrganBaseEars, OrganIPCInternal ]
+  id: OrganIPCEars
+  name: sonic receptors
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganIPCInternal ]
+  id: OrganIPCPump
+  name: micro pump
+  description: "A micro pump, used to circulate coolant."
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganIPCInternal ]
+  id: OrganIPCBrain
+  name: positronic brain
+  description: "A positronic brain, the core of an IPC."

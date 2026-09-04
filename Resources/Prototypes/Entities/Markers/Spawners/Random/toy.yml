@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 # Items in this table are generally useless. They don't help in most situations and aren't interesting to serious people.
 # If you're wondering if an entity should go in this table, ask your inner child / local clown.
 - type: entityTable # size 2x4 or 3x3  # price 100
@@ -26,6 +28,9 @@
     - !type:NestedSelector
       tableId: AllLizardPlushieTable
     - id: PlushieNuke
+    - id: PlushieSteele   #ClawCommand
+    - id: PlushieMattew   #ClawCommand
+    - id: PlushieStefanie #ClawCommand
     - id: PlushieSlime
     - id: PlushieSnake
     - id: PlushieExperiment

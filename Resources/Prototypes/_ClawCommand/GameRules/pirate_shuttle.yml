@@ -1,0 +1,26 @@
+# Claw Command - pirate raider random event.
+#
+# Upstream ships Maps/Shuttles/pirate.yml and the whole PirateScooner ghost-role chain (spawner ->
+# RandomHumanoid -> randomHumanoidSettings -> starting gear -> locale), but never wired any of it up:
+# nothing referenced the map, and no map referenced the spawners. This event connects the two.
+#
+# Maps/Shuttles/pirate.yml is edited in place rather than forked: its nine SpawnPointPirates markers were
+# plain SpawnPoints, which only do anything during round-start job assignment, and there is no pirate job -
+# so they could never produce a ghost role. They are now one PirateCaptainScoonerSpawner and eight
+# PirateScoonerSpawner, with the captain on the spawn beside the captain's chest and suit storage.
+#
+# Parented to BaseUnknownShuttleRule, NOT the Announced variant: every hostile shuttle here (manowar,
+# instigator) arrives unannounced, and only the harmless clown shuttle gets a warning. Weight matches
+# manowar for the same reason its comment gives - it brings antagonists.
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: UnknownShuttlePirate
+  components:
+  - type: StationEvent
+    weight: 1 # lower because antags, same as UnknownShuttleManOWar
+    # Nine ghost roles is a big crew. Needs enough of a round for ghosts to fill them and enough crew
+    # that a boarding party is a threat rather than a massacre.
+    minimumPlayers: 20
+    earliestStart: 30
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/pirate.yml

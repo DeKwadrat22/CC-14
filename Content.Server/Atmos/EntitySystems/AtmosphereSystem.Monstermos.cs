@@ -173,7 +173,9 @@ namespace Content.Server.Atmos.EntitySystems
                         var direction = (AtmosDirection) (1 << j);
                         if (!eligibleDirections.IsFlagSet(direction)) continue;
 
-                        AdjustEqMovement(otherTile, direction, molesToMove);
+                        if (!AdjustEqMovement(otherTile, direction, molesToMove))
+                            continue; // adjacent went null between AdjacentBits being read and now — skip safely
+
                         otherTile.MonstermosInfo.MoleDelta -= molesToMove;
                         otherTile.AdjacentTiles[j]!.MonstermosInfo.MoleDelta += molesToMove;
                     }
@@ -257,13 +259,25 @@ namespace Content.Server.Atmos.EntitySystems
                     for (var i = queueLength - 1; i >= 0; i--)
                     {
                         var otherTile = _equalizeQueue[i];
-                        if (otherTile.MonstermosInfo.CurrentTransferAmount != 0 && otherTile.MonstermosInfo.CurrentTransferDirection != AtmosDirection.Invalid)
+                        if (otherTile.MonstermosInfo.CurrentTransferAmount == 0
+                            || otherTile.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
+                            continue;
+
+                        var dir = otherTile.MonstermosInfo.CurrentTransferDirection;
+                        var amt = otherTile.MonstermosInfo.CurrentTransferAmount;
+
+                        if (!AdjustEqMovement(otherTile, dir, amt))
                         {
-                            AdjustEqMovement(otherTile, otherTile.MonstermosInfo.CurrentTransferDirection, otherTile.MonstermosInfo.CurrentTransferAmount);
-                            otherTile.AdjacentTiles[otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex()]!
-                                .MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
+                            // Chain broken in this direction — the adj tile was removed (decompression
+                            // rip / grid edge change). Invalidate the direction so we don't keep
+                            // re-attempting the dead forward in future passes, and drop the orphan amount.
+                            otherTile.MonstermosInfo.CurrentTransferDirection = AtmosDirection.Invalid;
                             otherTile.MonstermosInfo.CurrentTransferAmount = 0;
+                            continue;
                         }
+
+                        otherTile.AdjacentTiles[dir.ToIndex()]!.MonstermosInfo.CurrentTransferAmount += amt;
+                        otherTile.MonstermosInfo.CurrentTransferAmount = 0;
                     }
                 }
             }
@@ -323,13 +337,22 @@ namespace Content.Server.Atmos.EntitySystems
                     for (var i = queueLength - 1; i >= 0; i--)
                     {
                         var otherTile = _equalizeQueue[i];
-                        if (otherTile.MonstermosInfo.CurrentTransferAmount == 0 || otherTile.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
+                        if (otherTile.MonstermosInfo.CurrentTransferAmount == 0
+                            || otherTile.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
                             continue;
 
-                        AdjustEqMovement(otherTile, otherTile.MonstermosInfo.CurrentTransferDirection, otherTile.MonstermosInfo.CurrentTransferAmount);
+                        var dir = otherTile.MonstermosInfo.CurrentTransferDirection;
+                        var amt = otherTile.MonstermosInfo.CurrentTransferAmount;
 
-                        otherTile.AdjacentTiles[otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex()]!
-                            .MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
+                        if (!AdjustEqMovement(otherTile, dir, amt))
+                        {
+                            // See comment in the giver branch above. Same chain-broken handling.
+                            otherTile.MonstermosInfo.CurrentTransferDirection = AtmosDirection.Invalid;
+                            otherTile.MonstermosInfo.CurrentTransferAmount = 0;
+                            continue;
+                        }
+
+                        otherTile.AdjacentTiles[dir.ToIndex()]!.MonstermosInfo.CurrentTransferAmount += amt;
                         otherTile.MonstermosInfo.CurrentTransferAmount = 0;
                     }
                 }
@@ -664,31 +687,38 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-        private void AdjustEqMovement(TileAtmosphere tile, AtmosDirection direction, float amount)
+        /// <summary>
+        /// Records that <paramref name="amount"/> moles are being pushed from <paramref name="tile"/>
+        /// in <paramref name="direction"/> into the adjacent tile. Updates the monstermos transfer
+        /// bookkeeping on both tiles.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the adjacent tile existed and the transfer was recorded; <c>false</c> if the
+        /// adjacent tile was null and the transfer was skipped (callers should treat the chain as broken
+        /// in this direction and invalidate <c>CurrentTransferDirection</c> on <paramref name="tile"/>
+        /// so they don't retry the same dead-end every tick).
+        /// </returns>
+        private bool AdjustEqMovement(TileAtmosphere tile, AtmosDirection direction, float amount)
         {
             DebugTools.AssertNotNull(tile);
             DebugTools.Assert(tile.AdjacentBits.IsFlagSet(direction));
-            DebugTools.Assert(tile.AdjacentTiles[direction.ToIndex()] != null);
-            // Every call to this method already ensures that the adjacent tile won't be null.
-
-            // Turns out: no they don't. Temporary debug checks to figure out which caller is causing problems:
-            if (tile == null)
-            {
-                Log.Error($"Encountered null-tile in {nameof(AdjustEqMovement)}. Trace: {Environment.StackTrace}");
-                return;
-            }
 
             var idx = direction.ToIndex();
             var adj = tile.AdjacentTiles[idx];
             if (adj == null)
             {
-                var nonNull = tile.AdjacentTiles.Where(x => x != null).Count();
-                Log.Error($"Encountered null adjacent tile in {nameof(AdjustEqMovement)}. Dir: {direction}, Tile: ({tile.GridIndex}, {tile.GridIndices}), non-null adj count: {nonNull}, Trace: {Environment.StackTrace}");
-                return;
+                // This happens legitimately when a tile's neighbor was removed (floor ripped by
+                // decompression, grid edge change, etc.) between the queue being built and this
+                // forward pass running. We log once at warning level — callers handle the chain
+                // break by invalidating CurrentTransferDirection.
+                Log.Warning(
+                    $"{nameof(AdjustEqMovement)}: adjacent tile is null. Dir={direction}, Tile=({tile.GridIndex}, {tile.GridIndices}), AdjacentBits={tile.AdjacentBits}");
+                return false;
             }
 
             tile.MonstermosInfo[direction] += amount;
             adj.MonstermosInfo[idx.ToOppositeDir()] -= amount;
+            return true;
         }
 
         private void HandleDecompressionFloorRip(Entity<MapGridComponent> mapGrid, TileAtmosphere tile, float sum)

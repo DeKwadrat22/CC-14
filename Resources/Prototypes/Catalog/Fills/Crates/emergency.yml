@@ -54,6 +54,8 @@
           amount: 6
         - id: NitrogenTankFilled
           amount: 6
+        - id: TankWaterVaporFilled # CLAW COMMAND: Added.
+          amount: 6
         - id: ClothingOuterSuitEmergency
           amount: 6
 

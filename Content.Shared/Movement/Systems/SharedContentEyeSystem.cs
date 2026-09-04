@@ -187,7 +187,7 @@ public abstract partial class SharedContentEyeSystem : EntitySystem
     /// Sendable from client to server to request a target zoom.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class RequestTargetZoomEvent : EntityEventArgs
+    public sealed partial class RequestTargetZoomEvent : EntityEventArgs
     {
         public Vector2 TargetZoom;
         public bool IgnoreLimit;
@@ -197,7 +197,7 @@ public abstract partial class SharedContentEyeSystem : EntitySystem
     /// Client->Server request for new PVS scale.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class RequestPvsScaleEvent(float scale) : EntityEventArgs
+    public sealed partial class RequestPvsScaleEvent(float scale) : EntityEventArgs
     {
         public float Scale = scale;
     }
@@ -206,7 +206,7 @@ public abstract partial class SharedContentEyeSystem : EntitySystem
     /// Sendable from client to server to request changing fov.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class RequestEyeEvent : EntityEventArgs
+    public sealed partial class RequestEyeEvent : EntityEventArgs
     {
         public readonly bool DrawFov;
         public readonly bool DrawLight;

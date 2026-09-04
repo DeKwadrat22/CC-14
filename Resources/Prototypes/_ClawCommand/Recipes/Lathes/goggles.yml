@@ -1,0 +1,61 @@
+# Lathe recipes for NightVision / ThermalVision goggles unlocked via research.
+
+- type: latheRecipe
+  id: ClothingEyesNightVisionGoggles
+  result: ClothingEyesNightVisionGoggles
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 200
+    Glass: 500
+    Plastic: 200
+    Uranium: 100
+
+- type: latheRecipe
+  id: ClothingEyesNightVisionSecurityGoggles
+  result: ClothingEyesNightVisionSecurityGoggles
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 200
+    Glass: 500
+    Plastic: 200
+    Uranium: 100
+
+- type: latheRecipe
+  id: ClothingEyesNightVisionMedicalGoggles
+  result: ClothingEyesNightVisionMedicalGoggles
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 200
+    Glass: 500
+    Plastic: 200
+    Uranium: 100
+
+- type: latheRecipe
+  id: ClothingEyesNightVisionDiagnosticGoggles
+  result: ClothingEyesNightVisionDiagnosticGoggles
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 200
+    Glass: 500
+    Plastic: 200
+    Uranium: 100
+
+- type: latheRecipe
+  id: ClothingEyesThermalVisionGoggles
+  result: ClothingEyesThermalVisionGoggles
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 200
+    Glass: 500
+    Plastic: 200
+    Uranium: 200

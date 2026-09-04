@@ -16,6 +16,8 @@ using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Shared.Radio.EntitySystems;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 /// <summary>
 ///     This system manages encryption keys & key holders for use with radio channels.
 /// </summary>
@@ -165,6 +167,11 @@ public sealed partial class EncryptionKeySystem : EntitySystem
     {
         if (!args.IsInDetailsRange)
             return;
+
+        // CLAW COMMAND: START
+        if (component is { KeysUnlocked: false, ExamineWhileLocked: false })
+            return;
+        // CLAW COMMAND: END
 
         if (component.KeyContainer.ContainedEntities.Count == 0)
         {

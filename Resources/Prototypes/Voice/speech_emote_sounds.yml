@@ -14,7 +14,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -57,7 +57,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -94,7 +94,7 @@
     Scream:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
-      path: /Audio/Animals/lizard_happy.ogg
+      path: /Audio/Animals/lizard_happy.ogg # As much as I liked the classic lizard sound, we can't use it. - Cookie
     Honk:
       collection: BikeHorn
     Whistle:
@@ -105,6 +105,10 @@
       collection: Weh
     Hew:
       collection: Hew
+    Yip:
+      collection: VulpkaninYips # Claw Command
+    Gekker:
+      collection: VulpkaninGekker # Claw Command
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -130,6 +134,10 @@
       collection: Weh
     Hew:
       collection: Hew
+    Yip:
+      collection: VulpkaninYips # Claw Command
+    Gekker:
+      collection: VulpkaninGekker # Claw Command
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -150,7 +158,11 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    Purr:
+      collection: FelinidPurrs # Claw Command - *purrs emote
+    Yap:
+      collection: VulpkaninYaps # Claw Command - *yaps emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -195,7 +207,11 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    Purr:
+      collection: FelinidPurrs # Claw Command - *purrs emote
+    Yap:
+      collection: VulpkaninYaps # Claw Command - *yaps emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -322,7 +338,7 @@
     Cough:
       collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -366,7 +382,7 @@
     Cough:
       collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -443,6 +459,26 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
+    # _ClawCommand: robot-themed laugh/sigh/cry/whistle, ported from space/.
+    # The matching emote prototypes (Laugh/Sigh/Crying/Whistle) had their
+    # SiliconEmotes blacklist removed in speech_emotes.yml so silicons can
+    # trigger these.
+    Laugh:
+      path: /Audio/Voice/IPC/robot-laugh_3.ogg
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: UnisexSiliconSyndicate
@@ -495,6 +531,20 @@
   params:
     variation: 0.125
   sounds:
+    CatMeow:
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    CatHisses:
+      collection: CatHisses # Claw Command
+    Mew:
+      collection: FelinidMews # Claw Command
+    Purr:
+      collection: FelinidPurrs # Claw Command
+    Yip:
+      collection: VulpkaninYips # Claw Command
+    Yap:
+      collection: VulpkaninYaps # Claw Command
+    Gekker:
+      collection: VulpkaninGekker # Claw Command
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -538,6 +588,20 @@
   params:
     variation: 0.125
   sounds:
+    CatMeow:
+      collection: FelinidMeows # Claw Command - use varied space-ported meows for *meows emote
+    CatHisses:
+      collection: CatHisses # Claw Command
+    Mew:
+      collection: FelinidMews # Claw Command
+    Purr:
+      collection: FelinidPurrs # Claw Command
+    Yip:
+      collection: VulpkaninYips # Claw Command
+    Yap:
+      collection: VulpkaninYaps # Claw Command
+    Gekker:
+      collection: VulpkaninGekker # Claw Command
     Laugh:
       collection: FemaleLaugh
     Sneeze:
@@ -589,6 +653,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
 
 - type: emoteSounds
   id: DionaBodyEmotes
@@ -606,6 +674,10 @@
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
 
 - type: emoteSounds
   id: ReptilianBodyEmotes
@@ -624,6 +696,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
 
 - type: emoteSounds
   id: MothBodyEmotes
@@ -640,6 +716,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
 
 # mobs
 - type: emoteSounds
@@ -744,6 +824,10 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Claw Command
+      collection: Blinks
+      params:
+        volume: -4
     Laugh:
       collection: WawaLaugh
     Sneeze:

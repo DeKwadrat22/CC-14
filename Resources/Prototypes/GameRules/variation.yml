@@ -14,6 +14,9 @@
   parent: BaseVariationPass
   components:
   - type: PoweredLightVariationPass
+    # Claw Command - half the stock 0.15, so roughly one light in thirteen starts broken instead
+    # of one in seven. Aging is left alone; an old bulb still lights the room.
+    lightBreakChance: 0.075
 
 - type: entity
   id: SolidWallRustingVariationPass

@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "taken from commit at https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b and modified by @absolis. Moving sprites modified by DaCookieCakes for Claw Command 14.",
+    "size": {"x": 32, "y": 32},
+    "states": [
+        {
+            "name": "kitsune_fox_body",
+            "directions": 4
+        },
+        {
+            "name": "kitsune_fox_innerear",
+            "directions": 4
+        },
+        {
+            "name": "kitsune_fox_moving_body",
+            "directions": 4,
+            "delays": [
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ]
+            ]
+        },
+        {
+            "name": "kitsune_fox_moving_innerear",
+            "directions": 4,
+            "delays": [
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ],
+                [ 0.2, 0.2, 0.2, 0.2 ]
+            ]
+        }
+    ]
+}

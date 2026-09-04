@@ -7,8 +7,12 @@ namespace Content.Shared.Humanoid
     public enum HumanoidVisualLayers : byte
     {
         Special, // for the cat ears
+        Genital, // Claw Command - genital marking layers
+        Penis, // Claw Command
+        Breasts, // Claw Command
         Tail,
-        TailOverlay, // markings that go ontop of tails
+        TailBehind, // Claw Command
+        TailOversuit, // Claw Command
         Hair,
         FacialHair,
         UndergarmentTop,

@@ -1,13 +1,14 @@
-﻿- type: entity
+- type: entity
   name: watcher
   id: MobWatcherBase
-  parent: [ SimpleSpaceMobBase, FlyingMobBase, BaseSlicingRefinable, BaseMobDestructible ]
+  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
   abstract: true
   description: It's like it's staring right through you.
   components:
+  - type: WeatherImmune # Claw Command - Lavaland
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna # Claw Command - Lavaland (was SimpleHostile)
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
@@ -42,15 +43,15 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
-  - type: ToolRefinable
-    refineResult:
+      140: Dead # Claw Command - Lavaland (was 50)
+  - type: Butcherable
+    spawned:
     - id: DiamondOre1
       amount: 1
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5
-    baseSprintSpeed: 7
-  - type: BatteryAmmoProvider
+    baseWalkSpeed: 1.65 # Claw Command - Lavaland (was 5)
+    baseSprintSpeed: 1.65 # Claw Command - Lavaland (was 7)
+  - type: BatteryAmmoProvider # Claw Command - Lavaland (was BatteryAmmoProvider)
     proto: WatcherBolt
     fireCost: 50
   - type: BatterySelfRecharger
@@ -59,7 +60,8 @@
     maxCharge: 1000
     startingCharge: 1000
   - type: Gun
-    fireRate: 0.5
+    projectileSpeed: 10 # Claw Command - Lavaland
+    fireRate: 0.2 # Claw Command - Lavaland (was 0.5)
     useKey: false
     selectedMode: SemiAuto
     availableModes:
@@ -72,6 +74,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSound:
       path: /Audio/Animals/lizard_happy.ogg
+  - type: Fauna # Claw Command - Lavaland
 
 - type: entity
   id: MobWatcherLavaland
@@ -86,9 +89,14 @@
       shader: unshaded
       color: red
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5 # Claw Command - Lavaland
+    energy: 0.5 # Claw Command - Lavaland
     color: red
+  - type: Butcherable # Claw Command - Lavaland
+    spawned:
+    - id: DiamondOre1
+    - id: MaterialWatcherWing1
+      maxAmount: 2
 
 - type: entity
   id: MobWatcherIcewing
@@ -104,9 +112,17 @@
       shader: unshaded
       color: deepskyblue
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5 # Claw Command - Lavaland
+    energy: 1 # Claw Command - Lavaland
     color: deepskyblue
+  - type: BatteryAmmoProvider # Claw Command - Lavaland
+    proto: WatcherBoltIcewing
+    fireCost: 50
+  - type: Butcherable # Claw Command - Lavaland
+    spawned:
+    - id: DiamondOre1
+    - id: MaterialWatcherIceWing1
+      maxAmount: 2
 
 - type: entity
   id: MobWatcherMagmawing
@@ -122,12 +138,17 @@
       shader: unshaded
       color: orangered
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5 # Claw Command - Lavaland
+    energy: 1 # Claw Command - Lavaland
     color: orangered
-  - type: BatteryAmmoProvider
+  - type: BatteryAmmoProvider # Claw Command - Lavaland (was BatteryAmmoProvider)
     proto: WatcherBoltMagmawing
     fireCost: 50
+  - type: Butcherable # Claw Command - Lavaland
+    spawned:
+    - id: DiamondOre1
+    - id: MaterialWatcherMagmaWing1
+      maxAmount: 2
 
 - type: entity
   id: MobWatcherPride
@@ -144,7 +165,7 @@
       state: unshaded
       shader: unshaded
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5 # Claw Command - Lavaland
+    energy: 1 # Claw Command - Lavaland
   - type: RgbLightController
     layers: [ 1 ]

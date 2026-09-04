@@ -1,0 +1,9 @@
+- type: entity
+  id: DummyEntityDoubleBarrelRubber
+  categories: [ HideSpawnMenu ]
+  name: double-barreled shotgun (beanbag)
+  description: An immortal classic. Uses .50 beanbag shells.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
+    state: icon

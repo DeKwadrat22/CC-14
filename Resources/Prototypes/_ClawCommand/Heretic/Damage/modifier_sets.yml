@@ -1,0 +1,7 @@
+# Stub damage modifier sets referenced by heretic eldritch mobs.
+
+- type: damageModifierSet
+  id: FireShark
+  coefficients:
+    Heat: 0
+    Cold: 1.5

@@ -9,6 +9,21 @@ namespace Content.Shared.Cuffs.Components;
 public sealed partial class HandcuffComponent : Component
 {
     /// <summary>
+    /// Claw Command: whether these cuffs are consumed when used — i.e. dropped from the user's
+    /// hands and moved onto the target. Set false for reusable cuffs such as a cyborg's built-in
+    /// zipties: the user keeps their (typically unremovable) tool and a fresh <see cref="SpawnedOnUse"/>
+    /// set is placed on the target instead. Ported from space/_Floof.
+    /// </summary>
+    [DataField]
+    public bool RemoveOnUse = true;
+
+    /// <summary>
+    /// Claw Command: the cuffs entity placed on the target when <see cref="RemoveOnUse"/> is false.
+    /// </summary>
+    [DataField]
+    public EntProtoId SpawnedOnUse = "Zipties";
+
+    /// <summary>
     ///     The time it takes to cuff an entity.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]

@@ -41,6 +41,87 @@ public sealed partial class PullableComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> PulledAlert = "Pulled";
+
+    #region Grab intent - claw command
+
+    /// <summary>
+    /// Alert severity shown on the victim for each grab stage.
+    /// </summary>
+    [DataField]
+    public Dictionary<Systems.GrabStage, short> PulledAlertSeverity = new()
+    {
+        { Systems.GrabStage.No, 0 },
+        { Systems.GrabStage.Soft, 1 },
+        { Systems.GrabStage.Hard, 2 },
+        { Systems.GrabStage.Suffocate, 3 },
+    };
+
+    [AutoNetworkedField, DataField]
+    public Systems.GrabStage GrabStage = Systems.GrabStage.No;
+
+    /// <summary>
+    /// Claw Command - highest grab stage anyone can escalate this entity to. Dangerous hostile mobs
+    /// cap at Soft: you can drag a space carp out of the way, but you cannot combat-grab or choke one
+    /// into submission the way you would a person. Defaults to Suffocate, i.e. no restriction.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public Systems.GrabStage MaxGrabStage = Systems.GrabStage.Suffocate;
+
+    /// <summary>
+    /// Resolved chance of breaking free on any one attempt, after mass is factored in.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public float GrabEscapeChance = 1f;
+
+    [AutoNetworkedField]
+    public TimeSpan NextEscapeAttempt = TimeSpan.Zero;
+
+    #endregion
+
+    #region Slamming - claw command
+
+    /// <summary>
+    /// Set while this entity is mid-flight from a slam. The next solid thing they touch is what they
+    /// get hurt on; cleared there.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public bool BeingSlammed;
+
+    /// <summary>
+    /// Whether the in-flight slam is into something solid (wall, locker, window) rather than onto a
+    /// table. Decides which damage figure below gets used on landing.
+    /// </summary>
+    [AutoNetworkedField, DataField]
+    public bool SlamHardSurface;
+
+    /// <summary>
+    /// How hard they get thrown at the thing.
+    /// </summary>
+    [DataField]
+    public float SlamThrowSpeed = 5f;
+
+    [DataField]
+    public float SlamStaminaDamage = 40f;
+
+    /// <summary>
+    /// Blunt taken from being put through a table, which at least gives way a little.
+    /// </summary>
+    [DataField]
+    public float SlamTableDamage = 5f;
+
+    /// <summary>
+    /// Blunt taken from being driven into a wall, locker or machine, which does not.
+    /// </summary>
+    [DataField]
+    public float SlamObjectDamage = 10f;
+
+    /// <summary>
+    /// How long they stay down afterwards. Doubled when the surface was a glass table.
+    /// </summary>
+    [DataField]
+    public TimeSpan SlamKnockdownDuration = TimeSpan.FromSeconds(3);
+
+    #endregion
 }
 
 public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;

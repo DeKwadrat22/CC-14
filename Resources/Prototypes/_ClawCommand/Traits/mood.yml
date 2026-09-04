@@ -1,0 +1,225 @@
+# Claw Command - Mood traits.
+#
+# These use specials rather than the components list, because traits add their components with overwrite
+# enabled: two traits that both hand out PermanentMoodlets or MoodModifier would clobber each other.
+# AddMoodletsSpecial and AddMoodModifierSpecial merge instead, so mood traits can be combined.
+#
+# Multipliers resolve most-specific-first and do not stack with each other: a multiplier for one moodlet
+# beats one for that moodlet's category, which beats the positive/negative multiplier.
+
+# --- Flat mood ---
+
+- type: trait
+  id: Sanguine
+  name: trait-sanguine-name
+  description: trait-sanguine-desc
+  category: Psychological
+  cost: 6
+  excludes:
+    - Saturnine
+  specials:
+    - !type:AddMoodletsSpecial
+      moodlets:
+        - TraitSanguine
+
+- type: trait
+  id: Saturnine
+  name: trait-saturnine-name
+  description: trait-saturnine-desc
+  category: Psychological
+  cost: -6
+  excludes:
+    - Sanguine
+  specials:
+    - !type:AddMoodletsSpecial
+      moodlets:
+        - TraitSaturnine
+
+# --- Sensitivity to good news ---
+
+- type: trait
+  id: Optimist
+  name: trait-optimist-name
+  description: trait-optimist-desc
+  category: Psychological
+  cost: 4
+  excludes:
+    - Pessimist
+  specials:
+    - !type:AddMoodModifierSpecial
+      positiveMultiplier: 1.3
+
+- type: trait
+  id: Pessimist
+  name: trait-pessimist-name
+  description: trait-pessimist-desc
+  category: Psychological
+  cost: -3
+  excludes:
+    - Optimist
+  specials:
+    - !type:AddMoodModifierSpecial
+      positiveMultiplier: 0.7
+
+# --- Sensitivity to bad news ---
+
+- type: trait
+  id: SteelNerves
+  name: trait-steel-nerves-name
+  description: trait-steel-nerves-desc
+  category: Psychological
+  cost: 4
+  excludes:
+    - Neurotic
+  specials:
+    - !type:AddMoodModifierSpecial
+      negativeMultiplier: 0.7
+
+- type: trait
+  id: Neurotic
+  name: trait-neurotic-name
+  description: trait-neurotic-desc
+  category: Psychological
+  cost: -4
+  excludes:
+    - SteelNerves
+  specials:
+    - !type:AddMoodModifierSpecial
+      negativeMultiplier: 1.35
+
+# --- Emotional range ---
+
+- type: trait
+  id: EvenTempered
+  name: trait-even-tempered-name
+  description: trait-even-tempered-desc
+  category: Psychological
+  cost: 1
+  excludes:
+    - Mercurial
+  specials:
+    - !type:AddMoodModifierSpecial
+      positiveMultiplier: 0.6
+      negativeMultiplier: 0.6
+
+- type: trait
+  id: Mercurial
+  name: trait-mercurial-name
+  description: trait-mercurial-desc
+  category: Psychological
+  cost: -1
+  excludes:
+    - EvenTempered
+  specials:
+    - !type:AddMoodModifierSpecial
+      positiveMultiplier: 1.4
+      negativeMultiplier: 1.4
+
+# --- Pain ---
+
+- type: trait
+  id: PainTolerance
+  name: trait-pain-tolerance-name
+  description: trait-pain-tolerance-desc
+  category: Psychological
+  cost: 3
+  excludes:
+    - Masochist
+    - Squeamish
+  specials:
+    - !type:AddMoodModifierSpecial
+      categoryMultipliers:
+        Health: 0.45
+
+- type: trait
+  id: Squeamish
+  name: trait-squeamish-name
+  description: trait-squeamish-desc
+  category: Psychological
+  cost: -3
+  excludes:
+    - PainTolerance
+    - Masochist
+  specials:
+    - !type:AddMoodModifierSpecial
+      categoryMultipliers:
+        Health: 1.5
+
+- type: trait
+  id: Masochist
+  name: trait-masochist-name
+  description: trait-masochist-desc
+  category: Psychological
+  cost: 4
+  excludes:
+    - PainTolerance
+    - Squeamish
+  specials:
+    - !type:AddMoodModifierSpecial
+      categoryMultipliers:
+        Health: -0.4
+
+# --- Food and drink ---
+
+- type: trait
+  id: Gourmand
+  name: trait-gourmand-name
+  description: trait-gourmand-desc
+  category: Psychological
+  cost: 3
+  excludes:
+    - Ascetic
+  specials:
+    - !type:AddMoodModifierSpecial
+      categoryMultipliers:
+        Hunger: 1.5
+        Thirst: 1.5
+
+- type: trait
+  id: Ascetic
+  name: trait-ascetic-name
+  description: trait-ascetic-desc
+  category: Psychological
+  cost: -3
+  excludes:
+    - Gourmand
+  specials:
+    - !type:AddMoodModifierSpecial
+      categoryMultipliers:
+        Hunger: 0.5
+        Thirst: 0.5
+
+# --- Addictions ---
+
+- type: trait
+  id: AddictionNicotine
+  name: trait-addiction-nicotine-name
+  description: trait-addiction-nicotine-desc
+  category: Psychological
+  cost: -1
+  specials:
+    - !type:AddMoodletsSpecial
+      moodlets:
+        - NicotineWithdrawal
+
+- type: trait
+  id: AddictionStimulants
+  name: trait-addiction-stimulants-name
+  description: trait-addiction-stimulants-desc
+  category: Psychological
+  cost: -3
+  specials:
+    - !type:AddMoodletsSpecial
+      moodlets:
+        - TraitAmphetamineWithdrawal
+
+- type: trait
+  id: AddictionHappiness
+  name: trait-addiction-happiness-name
+  description: trait-addiction-happiness-desc
+  category: Psychological
+  cost: -2
+  specials:
+    - !type:AddMoodletsSpecial
+      moodlets:
+        - TraitHappinessWithdrawal

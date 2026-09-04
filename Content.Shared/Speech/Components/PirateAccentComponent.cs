@@ -1,17 +1,15 @@
-using Content.Shared.Speech.EntitySystems;
-using Robust.Shared.GameStates;
+using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.Components;
 
-namespace Content.Shared.Speech.Components;
+namespace Content.Server.Speech.Components;
 
-/// <summary>
-/// Lets you speak Ratvarian!
-/// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 [Access(typeof(PirateAccentSystem))]
 public sealed partial class PirateAccentComponent : BaseAccentComponent
 {
-    [DataField]
-    public float YarrChance = 0.5f;
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("yarrChance")]
+    public float YarrChance = 0.25f; // Lowered to match space/ — half as often.
 
     [ViewVariables]
     public readonly List<string> PirateWords = new()

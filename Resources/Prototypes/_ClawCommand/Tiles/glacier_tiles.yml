@@ -1,0 +1,45 @@
+# Ported from upstream forks (DeltaV / Nyanotrasen / Floof / _NF / Nuclear14 / SimpleStation).
+# Brought in for the glacier map port.
+
+# --- FloorDirtNew ---
+- type: tile
+  id: FloorDirtNew
+  name: dirt
+  sprite: /Textures/_Nuclear14/Tiles/Dirt/dirt.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Nuclear14/Tiles/Dirt/single_edge_SE.png
+    NorthEast: /Textures/_Nuclear14/Tiles/Dirt/single_edge_NE.png
+    NorthWest: /Textures/_Nuclear14/Tiles/Dirt/single_edge_NW.png
+    SouthWest: /Textures/_Nuclear14/Tiles/Dirt/single_edge_SW.png
+    South: /Textures/_Nuclear14/Tiles/Dirt/double_edge_S.png
+    East: /Textures/_Nuclear14/Tiles/Dirt/double_edge_E.png
+    North: /Textures/_Nuclear14/Tiles/Dirt/double_edge_N.png
+    West: /Textures/_Nuclear14/Tiles/Dirt/double_edge_W.png
+  # baseTurf: FloorBase
+  isSubfloor: true
+  footstepSounds:
+    collection: N14FootstepDirt
+  heatCapacity: 10000
+  weather: false #floofstation
+
+# --- FloorMS13MetalGrate ---
+- type: tile
+  id: FloorMS13MetalGrate
+  name: ms13 metal grate
+  sprite: /Textures/_Nuclear14/Tiles/ms13/Steel/steel_grate.png
+  variants: 8
+  placementVariants: [0, 1, 2, 3, 4, 5, 6, 7]
+  baseTurf: Plating #Floofstation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  # Claw Command - FloorTileItemMetalGrate needs the FloorWasteland tile and FloorTileMetalGrate
+  # stack from the N14 set, which this fork does not carry; drops plain steel tiles instead.
+  itemDrop: FloorTileItemSteel
+  footstepSounds:
+    collection: N14FootstepMetalHollow
+  friction: 0.30
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+  weather: false #floofstation
+

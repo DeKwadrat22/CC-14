@@ -1,3 +1,5 @@
+# !! CLAW COMMAND MODIFIED !! #
+
 - type: vendingMachineInventory
   id: DinnerwareInventory
   startingInventory:
@@ -16,6 +18,7 @@
     DrinkGlass: 5
     Beaker: 5
     LargeBeaker: 5
+    IceCreamBowl: 5 # _ClawCommand: Added.
     Pitcher: 2
     DrinkMug: 5
     DrinkMugBlack: 2

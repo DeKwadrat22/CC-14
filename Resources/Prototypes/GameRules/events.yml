@@ -14,13 +14,32 @@
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
+    - id: MimicVendorRule # Claw Command - restored, upstream removed it in #44057
+    - id: MothroachSpawn # CLAW COMMAND: Added.
     - id: MouseMigration
+    # Claw Command - glimmer/noospheric events. The psionics port never registered these anywhere, so none of
+    # them could fire. They are listed here as well as in _ClawCommand/GameRules/event_pools.yml because this
+    # fork runs both schedulers: upstream's BasicStationEventScheduler feeds off this table, while the Secret
+    # and Irregular presets use the CC* pools. All but NoosphericStorm gate themselves on the glimmer level.
+    - id: NoosphericStorm
+    - id: MundaneDischarge
+    - id: NoosphericZap
+    - id: NoosphericFry
+    - id: PsionicCatGotYourTongue
+    - id: GlimmerWispSpawn
+    - id: GlimmerMiteSpawn
+    - id: GlimmerRandomSentience
+    - id: GlimmerRevenantSpawn
+    - id: FreeProber
     - id: PowerGridCheck
     - id: RandomSentience
+    - id: SlimesSpawn # Claw Command
     - id: SlimesSpawnHorde
     - id: SolarFlare
     - id: SnakeSpawnHorde
+    - id: SpiderClownSpawn # Claw Command
     - id: SpiderClownSpawnHorde
+    - id: SpiderSpawn # Claw Command
     - id: SpiderSpawnHorde
     - id: VentClog
 
@@ -31,6 +50,7 @@
     - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
+    - id: XenoVentsWeak # Claw Command
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -45,7 +65,8 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
-    - id: SpaceChangelingSpawn
+    - id: SyndieOutpostSpawn #claw command
+    - id: XenoVents # Claw Command
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -152,10 +173,6 @@
     duration: 1
     minimumPlayers: 15
   - type: BreakerFlipRule
-    blacklist:
-      components:
-        - ProtectedGrid
-
 
 - type: entity
   id: BureaucraticError
@@ -222,39 +239,6 @@
     antags:
     - !type:FixedAntagCount
       proto: Dragon
-  - type: DynamicRuleCost
-    cost: 75
-
-- type: entity
-  parent: BaseAntagGhostRoleRule
-  id: SpaceChangelingSpawn
-  components:
-  - type: StationEvent
-    weight: 6
-    earliestStart: 20 # can start early since lings need time to start doing stuff
-    reoccurrenceDelay: 40
-    minimumPlayers: 20
-    duration: null
-    occursDuringRoundEnd: false
-  - type: SpaceSpawnRule
-    spawnDistance: 80
-  - type: AntagSpawner
-    prototype: MobHeadSlugElder
-  - type: ChangelingRule
-  - type: AntagRandomObjectives
-    sets:
-    - groups: ChangelingObjectiveGroupDevourDummy
-      maxPicks: 1
-    - groups: ChangelingObjectiveGroupEscapeDummy
-      maxPicks: 1
-    - groups: ChangelingObjectiveGroupKillDummy
-      maxPicks: 1
-    maxDifficulty: 8
-  - type: AntagSelection
-    agentName: changeling-round-end-agent-name
-    antags:
-    - !type:FixedAntagCount
-      proto: SpaceChangeling
   - type: DynamicRuleCost
     cost: 75
 
@@ -385,8 +369,8 @@
       path: /Audio/Announcements/power_off.ogg
       params:
         volume: -4
-    duration: 50
-    maxDuration: 100
+    duration: 60
+    maxDuration: 120
   - type: PowerGridCheckRule
 
 - type: entity
@@ -540,7 +524,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 5.5
+    weight: 3 # Claw Command from 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
     occursDuringRoundEnd: false
@@ -570,7 +554,10 @@
       path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
-  - type: AlertLevelInterceptionRule
+  # Claw Command - AlertLevelInterceptionRule removed. Upstream flips the station to code blue the
+  # moment sleeper agents roll, which hands the crew a free "there are antags now" the announcement
+  # already implies, and does it without any human deciding it. Alert level is Command's call. This
+  # is the base every sleeper wave inherits from, so removing it here covers all of them.
   - type: AntagSelection
     antags:
     - !type:LinearAntagCount
@@ -604,6 +591,20 @@
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
+
+# Claw Command - restored. Upstream deleted this rule in #44057; we want it. The
+# MobReplacementRuleSystem and MobMimic prototype were both left in place by that PR, so this is a
+# prototype-only revert with nothing else to bring back.
+- type: entity
+  id: MimicVendorRule
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    minimumPlayers: 20
+    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    weight: 5
+  - type: MobReplacementRule
 
 - type: entity
   id: GreytideVirus

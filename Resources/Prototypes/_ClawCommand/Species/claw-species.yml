@@ -1,0 +1,148 @@
+- type: species
+  id: SpeciesFelinid
+  name: cc-species-name-felinid
+  roundStart: true
+  prototype: MobFelinid
+  dollPrototype: AppearanceFelinid
+  skinColoration: HumanToned
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexFelinid
+  - FemaleFelinid
+  - UnisexFelinid
+  voices:
+  - UnisexFelinid
+  - FemaleFelinid
+
+- type: species
+  id: SpeciesFeroxi
+  name: cc-species-name-feroxi
+  roundStart: true
+  prototype: MobFeroxi
+  defaultSkinTone: "#8DB9D6"
+  dollPrototype: AppearanceFeroxi
+  skinColoration: Hues
+  maleFirstNames: NamesFeroxiMale
+  femaleFirstNames: NamesFeroxiFemale
+  lastNames: NamesFeroxiLast
+  defaultSoundsBySex:
+  - EmoteSoundsMaleFeroxi
+  - EmoteSoundsFemaleFeroxi
+  - EmoteSoundsMaleFeroxi
+  voices:
+  - EmoteSoundsMaleFeroxi
+  - EmoteSoundsFemaleFeroxi
+
+- type: species
+  id: SpeciesKitsunes
+  name: cc-species-name-kitsunes
+  roundStart: true
+  prototype: MobKitsunes
+  dollPrototype: AppearanceKitsunes
+  skinColoration: HumanToned
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexKitsune
+  - FemaleKitsune
+  - UnisexKitsune
+  voices:
+  - UnisexKitsune
+  - FemaleKitsune
+
+- type: species
+  id: SpeciesShadowkin
+  name: cc-species-name-shadekin
+  roundStart: true
+  prototype: MobShadowkin
+  defaultSkinTone: "#FFFFFF"
+  dollPrototype: AppearanceShadowkin
+  skinColoration: Hues
+  naming: FirstTheLast # CC: Custom!
+  lastNames: NamesShadowkin
+  minAge: 18
+  maxAge: 300
+  youngAge: 20
+  oldAge: 250
+  sexes:
+  - Male
+  - Female
+  - Unsexed
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - MaleShadowkin
+  - FemaleShadowkin
+  - MaleShadowkin
+  voices:
+  - MaleShadowkin
+  - FemaleShadowkin
+
+- type: species
+  id: SpeciesTajaran
+  name: cc-species-name-tajaran
+  roundStart: true
+  prototype: MobTajaran
+  dollPrototype: AppearanceTajaran
+  skinColoration: VulpkaninColors
+  defaultSkinTone: "#5a3f2d"
+  maleFirstNames: NamesTajaranFirst
+  femaleFirstNames: NamesTajaranFirst
+  lastNames: NamesTajaranLast
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexFelinid
+  - FemaleFelinid
+  - UnisexFelinid
+  voices:
+  - UnisexFelinid
+  - FemaleFelinid
+
+- type: species
+  id: SpeciesIPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  dollPrototype: AppearanceIPC
+  skinColoration: Hues
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  sexes:
+  - Unsexed
+  lastNames: IpcLast
+  naming: FirstDashLast # CC: Custom!
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - UnisexIPC
+  - UnisexIPC
+  - UnisexIPC
+  voices:
+  - UnisexIPC
+
+- type: species
+  id: SpeciesAvali
+  name: cc-species-name-avali
+  roundStart: true
+  prototype: MobAvali
+  dollPrototype: AppearanceAvali
+  skinColoration: Hues
+  defaultSkinTone: "#faf7f7"
+  maleFirstNames: NamesAvaliMale
+  femaleFirstNames: NamesAvaliFemale
+  naming: First
+  sexes:
+  - Male
+  - Female
+  - Unsexed
+  # Claw Command - voices moved onto the species by the WizDen rebase;
+  # VocalComponent.sounds (sex-keyed) no longer exists and was silently ignored.
+  defaultSoundsBySex:
+  - MaleAvali
+  - FemaleAvali
+  - MaleAvali
+  voices:
+  - MaleAvali
+  - FemaleAvali

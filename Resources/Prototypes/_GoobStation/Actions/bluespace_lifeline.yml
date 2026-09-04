@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported from Goobstation for ClawCommand.
+
+- type: entity
+  parent: [ BaseSuicideAction, BaseImplantAction ]
+  id: ActionActivateBluespaceLifeline
+  name: Activate Bluespace Lifeline
+  description: Activates your bluespace lifeline implant, teleporting you far-far away from this station. You won't be able to come back.
+  components:
+  - type: Action
+    checkCanInteract: false
+    checkConsciousness: false
+    itemIconStyle: BigAction
+    priority: -20
+    useDelay: 120
+    icon:
+      sprite: _GoobStation/Effects/bluespace_lifeline.rsi
+      state: bluespace_lifeline
+  - type: ConfirmableAction
+    popup: bluespace-lifeline-confirm-popup
+    confirmDelay: 1
+    primeTime: 5

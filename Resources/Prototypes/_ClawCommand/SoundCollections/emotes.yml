@@ -1,0 +1,49 @@
+- type: soundCollection
+  id: FelinidMews
+  files:
+  - /Audio/_ClawCommand/Voice/Felinid/cat_mew1.ogg
+  - /Audio/_ClawCommand/Voice/Felinid/cat_mew2.ogg
+
+# Ported from space/ (Nyanotrasen) — varied meows for humanoid felinids using *meows*
+- type: soundCollection
+  id: FelinidMeows
+  files:
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow1.ogg
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow2.ogg
+  - /Audio/_ClawCommand/Voice/Felinid/cat_meow3.ogg
+
+- type: soundCollection
+  id: FelinidPurrs
+  files:
+  - /Audio/_ClawCommand/Voice/Felinid/cat_purr1.ogg
+
+- type: soundCollection
+  id: VulpkaninYaps
+  files:
+  - /Audio/_ClawCommand/Voice/Vulpkanin/yap.ogg
+
+- type: soundCollection
+  id: VulpkaninYips
+  files:
+  - /Audio/_ClawCommand/Voice/Vulpkanin/fox_squeak.ogg
+
+- type: soundCollection
+  id: VulpkaninGekker
+  files:
+  - /Audio/_ClawCommand/Voice/Vulpkanin/gekker.ogg
+
+- type: soundCollection
+  id: Blinks
+  files:
+  - /Audio/_ClawCommand/Effects/Emotes/blink1.ogg
+  - /Audio/_ClawCommand/Effects/Emotes/blink2.ogg
+
+- type: soundCollection
+  id: Mars
+  files:
+    - /Audio/_ClawCommand/Voice/Shadowkin/mar.ogg
+
+- type: soundCollection
+  id: Wurble
+  files:
+    - /Audio/_ClawCommand/Voice/Shadowkin/wurble.ogg

@@ -1,0 +1,33 @@
+- type: entity
+  name: borito pie
+  parent: FoodMealBase
+  id: FoodBoritoPie
+  description: For when you are bored of normal meals while sitting in brig.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - boritos
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Consumable/Food/Snacks/boritopie.rsi
+    state: borito-pie
+  - type: Edible
+    trash:
+    - FoodPacketBoritosTrash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 13
+        - ReagentId: CapsaicinOil
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat

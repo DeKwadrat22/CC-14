@@ -169,6 +169,7 @@ namespace Content.Server.Preferences.Managers
                         groupLoadouts.Add(new Loadout()
                         {
                             Prototype = profLoadout.LoadoutName,
+                            CustomName = profLoadout.CustomName, // Claw Command
                         });
                     }
                 }
@@ -195,7 +196,10 @@ namespace Content.Server.Preferences.Managers
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                profile.Width, // Claw Command
+                profile.Height, // Claw Command
+                profile.CustomSpeciesName // Claw Command
             );
         }
 

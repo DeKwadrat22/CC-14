@@ -1,0 +1,21 @@
+- type: weightedRandom
+  id: RandomPsionicPowerPool
+  weights:
+    MetapsionicPower: 1
+    DispelPower: 1
+    #TelegnosisPower: 1
+    PsionicRegenerationPower: 1
+#    MassSleepPower: 0.3
+    NoosphericZapPower: 0.15
+    PyrokinesisPower: 0.15
+#    PsionicInvisibilityPower: 0.15
+#    MindSwapPower: 0.15
+    TelepathyPower: 1
+    HealingWordPower: 0.85
+# Claw Command - Shadeskip / Telekinetic Pulse / Pyrokinetic Flare are commented out here and in
+# psionic_powers.yml: each needs an effect or mob prototype this fork does not have
+# (ShadowKudzuWeak, EffectFlashShadeskip, EffectFlashTelekineticPulse, EffectPyrokineticFlare).
+# The AnomalyPowerSystem behind them IS ported, so they only need those prototypes to come back.
+#    ShadeskipPower: 0.15
+#    TelekineticPulsePower: 0.15
+#    PyrokineticFlare: 0.3

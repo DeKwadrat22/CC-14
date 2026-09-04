@@ -197,11 +197,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: dwarfism
-      TailOverlay:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: dwarfism
       UndergarmentTop:
         sizeMaps:
           32:

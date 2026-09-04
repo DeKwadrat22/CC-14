@@ -1,0 +1,58 @@
+# Claw Command — caviar ported from Goob-Station (_Goobstation/.../Containers/tin.yml).
+# Sprites copied to _ClawCommand/Objects/Consumable/Food/{black,red}_caviar.rsi.
+# Flavor `fish` was substituted with `fishy` (the fork's actual flavor prototype);
+# `rich` had no flavor prototype in either repo and was dropped.
+
+# Black caviar
+- type: entity
+  parent: FoodTinBase
+  id: FoodBlackCaviar
+  name: black caviar
+  description: A tin of black caviar with a convenient pull tab. Looks expensive.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/black_caviar.rsi
+  - type: Openable
+    openableByHand: true
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: Edible
+    trash:
+    - FoodBlackCaviarTrash
+
+- type: entity
+  parent: FoodTinBaseTrash
+  id: FoodBlackCaviarTrash
+  name: black caviar
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/black_caviar.rsi
+
+# Red caviar
+- type: entity
+  parent: FoodTinBase
+  id: FoodRedCaviar
+  name: red caviar
+  description: A tin of red caviar with a convenient pull tab.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/red_caviar.rsi
+  - type: Openable
+    openableByHand: true
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: Edible
+    trash:
+    - FoodRedCaviarTrash
+
+- type: entity
+  parent: FoodTinBaseTrash
+  id: FoodRedCaviarTrash
+  name: red caviar
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Consumable/Food/red_caviar.rsi

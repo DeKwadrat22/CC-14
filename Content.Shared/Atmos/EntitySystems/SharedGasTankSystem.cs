@@ -132,6 +132,8 @@ public abstract partial class SharedGasTankSystem : GasMaxPressureSystem<GasTank
 
     public bool CanConnectToInternals(Entity<GasTankComponent> ent)
     {
+        if (!ent.Comp.IsInternals)
+            return false;
         TryGetInternalsComp(ent, out _, out var internalsComp, ent.Comp.User);
         return internalsComp != null && internalsComp.BreathTools.Count != 0 && !ent.Comp.ReleaseValveOpen;
     }
@@ -208,7 +210,7 @@ public abstract partial class SharedGasTankSystem : GasMaxPressureSystem<GasTank
     {
         var (owner, component) = ent;
 
-        if (component.User == null)
+        if (component.User == null || !component.IsInternals)
             return false;
 
         if (!forced && !_delay.TryResetDelay(ent.Owner, checkDelayed: true, id: GasTankDelay))
@@ -237,6 +239,9 @@ public abstract partial class SharedGasTankSystem : GasMaxPressureSystem<GasTank
 
     private bool ToggleInternals(Entity<GasTankComponent> ent, EntityUid? user = null)
     {
+        if (!ent.Comp.IsInternals)
+            return false;
+
         if (ent.Comp.IsConnected)
         {
             return DisconnectFromInternals(ent, user);

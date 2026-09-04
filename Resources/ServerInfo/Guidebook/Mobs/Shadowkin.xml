@@ -1,0 +1,42 @@
+<Document>
+  # Shadekin
+
+  <Box>
+    <GuideEntityEmbed Entity="AppearanceShadowkin" Caption=""/>
+  </Box>
+
+  Fluffy folks with a deep connection to The Dark — a parallel space they can occasionally slip into.
+
+  ## Ability Differences
+
+  - Need no air to survive.
+  - Can Shadeskip — a short-range blink.
+  - Can travel to and from The Dark at will, dimming nearby lights while there.
+  - When too low on energy, they may fall into a powerful sleep until they recover.
+  - Can "speak" via Empathy that only other Shadekin can understand.
+  - Less cold damage, slightly more heat damage.
+  - Near no cellular damage.
+  - More bloodloss and radiation damage.
+
+  ## Physical Differences
+
+  - Very large and brightly colored eyes with no pupils.
+  - Sees the world through their eyes' tint.
+  - Very large ears, very fluffy build.
+  - Can be Male, Female, or Unsexed.
+  - Can be 18-300 years old.
+
+  ## The Anomaly (Awakened Shadekin)
+
+  Most Shadekin walk the station as ordinary crew — "blackeyes", cut off from The Dark and without powers.
+  A rare few awaken as an **Anomaly**: a Shadekin who spawns within The Dark hideout with their full gift.
+
+  - **Phase Shift** — slip into The Dark to walk unseen and pass through walls. Costs energy, and bright light makes it harder or impossible.
+  - **Darkvision** — toggle to see in the dark.
+  - **Energy & Light** — energy regenerates in darkness and drains in light. Watch the Energy / Light Exposure alert.
+  - **The Dark** — travel between the station and the hideout through dark portals.
+  - **Rest** — sleep to recover energy faster. On the brink of death, an Anomaly is dragged back into The Dark to rejuvenate.
+
+  Anomalies are crew-aligned but not legally crew. See the **Anomaly SOP** (under Science) for conduct rules.
+
+</Document>

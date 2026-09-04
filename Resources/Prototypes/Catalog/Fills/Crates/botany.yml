@@ -66,6 +66,8 @@
         - id: ClothingHandsGlovesLeather
         - id: ChemistryBottleEZNutrient
           amount: 2
+        - id: EZNutrientChemistryBottle # Claw Command - alt-ID
+          amount: 2
 
 - type: entity
   parent: CrateHydroponics

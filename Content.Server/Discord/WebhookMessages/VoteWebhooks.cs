@@ -168,7 +168,7 @@ public sealed partial class VoteWebhooks : IPostInjectInit
         }
     }
 
-    public sealed class WebhookState
+    public sealed partial class WebhookState
     {
         public required string WebhookUrl;
         public required WebhookPayload Payload;

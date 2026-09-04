@@ -1,0 +1,46 @@
+# Ported from Nyanotrasen/Entities/Furniture/Tables/tables.yml — the
+# Construction node `TableWoodReinforced` doesn't exist on this fork's `Table`
+# graph, so the Construction component is omitted.
+
+- type: entity
+  id: TableWoodReinforced
+  parent: TableBase
+  name: reinforced wood table
+  description: A classic wooden table. Extra robust.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Structures/Furniture/Tables/rwood.rsi
+  - type: Icon
+    sprite: Nyanotrasen/Structures/Furniture/Tables/rwood.rsi
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Bonkable
+    bonkDamage:
+      types:
+        Blunt: 8
+    bonkTime: 3

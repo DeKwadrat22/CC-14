@@ -1,0 +1,144 @@
+#Left Leg
+- type: marking
+  id: VulpPointsFadeLegL
+
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-legsL
+
+- type: marking
+  id: VulpPointsSharpLegL
+
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-legsL
+
+- type: marking
+  id: VulpPointsCrestLegL
+
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-legsL
+#Right Leg
+- type: marking
+  id: VulpPointsFadeLegR
+
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-legsR
+
+- type: marking
+  id: VulpPointsSharpLegR
+
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-legsR
+
+- type: marking
+  id: VulpPointsCrestLegR
+
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-legsR
+#Left Arm
+- type: marking
+  id: VulpPointsFadeArmL
+
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-armsL
+
+- type: marking
+  id: VulpPointsSharpArmL
+
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-armsL
+
+- type: marking
+  id: VulpPointsCrestArmL
+
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-armsL
+#Right Arm
+- type: marking
+  id: VulpPointsFadeArmR
+
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-armsR
+
+- type: marking
+  id: VulpPointsSharpArmR
+
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-armsR
+
+- type: marking
+  id: VulpPointsCrestArmR
+
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-armsR
+#Right Hand
+- type: marking
+  id: VulpPointsHandsRight
+
+  bodyPart: RHand
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_handR
+#Left Hand
+- type: marking
+  id: VulpPointsHandsLeft
+
+  bodyPart: LHand
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_handL
+#Right Foot
+- type: marking
+  id: VulpPointsFeetRight
+
+  bodyPart: RFoot
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_feetR
+#Left Foot
+- type: marking
+  id: VulpPointsFeetLeft
+
+  bodyPart: LFoot
+  groupWhitelist: [ Vulpkanin, Slime, MarkingsFelinid, MarkingsKitsune , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_feetL

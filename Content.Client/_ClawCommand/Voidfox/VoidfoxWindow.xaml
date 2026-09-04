@@ -1,0 +1,66 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               MinSize="420 360" Title="{Loc voidfox-window-title}">
+    <BoxContainer Orientation="Vertical" Margin="8 8 8 8" SeparationOverride="8">
+
+        <Label Text="{Loc voidfox-section-systems}" StyleClasses="LabelHeading" />
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-ladder}" HorizontalExpand="True" />
+            <Label Name="LadderStateLabel" />
+            <Button Name="LadderButton" MinWidth="100" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-cockpit}" HorizontalExpand="True" />
+            <Label Name="CockpitStateLabel" />
+            <Button Name="CockpitButton" MinWidth="100" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-fuel-latch}" HorizontalExpand="True" />
+            <Label Name="FuelLatchStateLabel" />
+            <Button Name="FuelLatchButton" MinWidth="100" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-occupant}" HorizontalExpand="True" />
+            <Label Name="OccupantLabel" />
+        </BoxContainer>
+
+        <Control MinHeight="6" />
+
+        <Label Text="{Loc voidfox-section-fuel}" StyleClasses="LabelHeading" />
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-pressure}" HorizontalExpand="True" />
+            <Label Name="PressureLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-temperature}" HorizontalExpand="True" />
+            <Label Name="TemperatureLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-volume}" HorizontalExpand="True" />
+            <Label Name="VolumeLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-moles}" HorizontalExpand="True" />
+            <Label Name="MolesLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-purity}" HorizontalExpand="True" />
+            <Label Name="PurityLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label Text="{Loc voidfox-tank-ignition}" HorizontalExpand="True" />
+            <Label Name="IgnitionLabel" />
+        </BoxContainer>
+
+    </BoxContainer>
+</DefaultWindow>

@@ -8,8 +8,11 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
+  friendly:
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: NanoTrasen
@@ -21,14 +24,17 @@
   - Revolutionary
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Mouse
   hostile:
   - PetsNT
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
 
 - type: npcFaction
@@ -44,10 +50,14 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Dragon
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: SimpleHostile
+  friendly:
+  - AnimalFriend # Claw Command
   hostile:
   - NanoTrasen
   - Syndicate
@@ -58,8 +68,10 @@
   - Dragon
   - Xeno
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: SimpleNeutral
@@ -74,8 +86,10 @@
   - Zombie
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Xeno
@@ -87,9 +101,11 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Zombie
@@ -102,9 +118,11 @@
   - PetsNT
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Revolutionary
@@ -114,8 +132,10 @@
   - SimpleHostile
   - Dragon
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: AllHostile
@@ -133,6 +153,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - Lavafauna # Claw Command - Lavaland
 
 - type: npcFaction
   id: Wizard
@@ -149,7 +170,11 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
   - Xenoborg
+
+- type: npcFaction # Claw Command
+  id: AnimalFriend
 
 - type: npcFaction
   id: Xenoborg
@@ -165,4 +190,46 @@
 
   # cause they are hostile to them
   - SimpleHostile
+  - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
+
+# Claw Command - Lavaland mob faction
+- type: npcFaction
+  id: Lavafauna
+  hostile:
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard
+  - Xenoborg
+  - AllHostile
+  - Gorilla # Claw Command - rampaging gorilla
+  friendly:
+  - Dragon
+
+# Claw Command - Rampaging Gorilla (Magillitis Serum). A rampaging beast hostile to crew and other
+# threats; friendly only to fellow animals. Reverse hostility is wired above (next to each - AllHostile).
+- type: npcFaction
+  id: Gorilla
+  friendly:
+  - AnimalFriend
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - SimpleHostile
+  - PetsNT
+  - Zombie
+  - Xeno
+  - Dragon
+  - Revolutionary
+  - Wizard
+  - Xenoborg
+  - Lavafauna
   - AllHostile

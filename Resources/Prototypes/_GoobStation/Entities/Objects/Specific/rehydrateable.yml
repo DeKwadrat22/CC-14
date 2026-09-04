@@ -1,0 +1,130 @@
+# Claw Command - cube spawns retargeted from Goob's Mob*Random variants to this fork's own
+# species mobs; the fork has no random-appearance variants. Cubes for species the fork does
+# not have at all (Harpy, Rodentia, Yowie, Chitinid) are removed rather than left pointing at nothing.
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MonkeyCube
+  id: HumanCube
+  name: human cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobHuman
+
+- type: entity
+  parent: MonkeyCube
+  id: DionaCube
+  name: diona cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobDiona
+
+- type: entity
+  parent: MonkeyCube
+  id: FelinidCube
+  name: felinid cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFelinid
+
+- type: entity
+  parent: MonkeyCube
+  id: GingerbreadCube
+  name: gingerbread cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobGingerbread
+
+- type: entity
+  parent: MonkeyCube
+  id: MothCube
+  name: moth person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobMoth
+
+- type: entity
+  parent: MonkeyCube
+  id: DwarfCube
+  name: dwarf cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobDwarf
+
+- type: entity
+  parent: MonkeyCube
+  id: ReptilianCube
+  name: reptilian person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobReptilian
+
+- type: entity
+  parent: MonkeyCube
+  id: VulpkaninCube
+  name: vulpkanin cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobVulpkanin
+
+- type: entity
+  parent: MonkeyCube
+  id: SlimePersonCube
+  name: slime person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSlimePerson
+
+- type: entity
+  parent: MonkeyCube
+  id: TajaranCube
+  name: tajaran cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobTajaran
+
+- type: entity
+  parent: MonkeyCube
+  id: VoxCube
+  name: vox cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobVox
+
+- type: entity
+  parent: MonkeyCube
+  id: ShadowkinCube
+  name: shadowkin cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobShadowkin
+
+- type: entity
+  parent: MonkeyCube
+  id: FeroxiCube
+  name: feroxi cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFeroxi

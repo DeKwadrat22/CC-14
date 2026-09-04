@@ -1,0 +1,10 @@
+# claw command
+- type: cargoProduct
+  id: FunCuteCrate
+  icon:
+    sprite: Structures/Storage/Crates/generic.rsi
+    state: icon
+  product: CrateFunSex
+  cost: 1000
+  category: cargoproduct-category-name-fun
+  group: market

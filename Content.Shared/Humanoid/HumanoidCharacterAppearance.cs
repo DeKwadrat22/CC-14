@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 using Content.Shared.Body;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -201,6 +202,35 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
                 markingManager.EnsureValidLimits(actualMarkings, organData.Value.Group, organData.Value.Layers, skinColor, eyeColor);
 
                 validatedMarkings[organ] = actualMarkings;
+            }
+
+            // CLAW COMMAND 14 - Parenting system
+            foreach (var (organ, layers) in validatedMarkings)
+            {
+                foreach (var (layer, markings) in layers)
+                {
+                    var toAdd = new List<Marking>();
+                    foreach (var marking in markings)
+                    {
+                        if (!proto.TryIndex<MarkingPrototype>(marking.MarkingId, out var markingProto))
+                            continue;
+
+                        if (markingProto.Requires == null)
+                            continue;
+
+                        // Check if required marking is already present anywhere
+                        var alreadyPresent = validatedMarkings.Values
+                            .SelectMany(d => d.Values)
+                            .SelectMany(m => m)
+                            .Any(m => m.MarkingId == markingProto.Requires.Value.Id);
+
+                        if (!alreadyPresent)
+                            toAdd.Add(new Marking(markingProto.Requires.Value.Id, 1));
+                    }
+
+                    // Insert required markings before their dependents
+                    markings.InsertRange(0, toAdd);
+                }
             }
         }
 

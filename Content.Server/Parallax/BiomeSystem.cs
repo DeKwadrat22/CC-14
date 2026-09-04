@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Threading.Tasks;
+using Content.Server._ClawCommand.Lavaland.Procedural;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Decals;
 using Content.Server.Ghost.Roles.Components;
@@ -443,6 +444,14 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         foreach (var chunk in active)
         {
+            // _ClawCommand Lavaland change start: per-chunk load gating for planet preloader optimization
+            var beforeLoadEv = new BeforeLoadChunkEvent(chunk);
+            RaiseLocalEvent(gridUid, ref beforeLoadEv);
+
+            if (beforeLoadEv.Cancelled)
+                continue;
+            // _ClawCommand Lavaland change end
+
             LoadChunkMarkers(component, gridUid, grid, chunk, seed);
 
             if (!component.LoadedChunks.Add(chunk))
@@ -883,6 +892,14 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         foreach (var chunk in component.LoadedChunks)
         {
+            // _ClawCommand Lavaland change start: keep planet preloader chunks pinned
+            var unloadEv = new UnLoadChunkEvent(chunk);
+            RaiseLocalEvent(gridUid, ref unloadEv);
+
+            if (unloadEv.Cancelled)
+                continue;
+            // _ClawCommand Lavaland change end
+
             if (active.Contains(chunk) || !component.LoadedChunks.Remove(chunk))
                 continue;
 

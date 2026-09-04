@@ -26,4 +26,13 @@ public sealed partial class PickRandomPersonComponent : Component
     [DataField]
     [AlwaysPushInheritance]
     public EntityCondition[] Conditions;
+
+    /// <summary>
+    /// Claw Command - Optional EntityConditions used to prioritise part of the pool.
+    /// Minds that pass both <see cref="Conditions"/> and these are picked from first;
+    /// if none of them do, the pick falls back to the whole valid pool as normal.
+    /// </summary>
+    [DataField]
+    [AlwaysPushInheritance]
+    public EntityCondition[] PreferredConditions = [];
 }

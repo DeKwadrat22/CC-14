@@ -1,0 +1,26 @@
+# Ported from vanilla Recipes/Reactions/drinks.yml
+# Reactions present upstream but missing in this fork's drinks list.
+
+- type: reaction
+  id: IrishCarBomb
+  reactants:
+    Ale:
+      amount: 1
+    IrishCream:
+      amount: 1
+  products:
+    IrishCarBomb: 2
+
+- type: reaction
+  id: KiraSpecial
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    JuiceLime:
+      amount: 1
+    JuiceOrange:
+      amount: 1
+    SodaWater:
+      amount: 1
+  products:
+    KiraSpecial: 3

@@ -33,7 +33,9 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
 
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
-        var color = Color.Gold;
+        // _ClawCommand: default announcement color matches the fork's brand pink/red
+        // (same hex as ERT pings) instead of upstream gold.
+        var color = Color.FromHex("#ff2768ff");
         var sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
 
         // Optional sender argument

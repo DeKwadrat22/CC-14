@@ -1,0 +1,51 @@
+- type: entity
+  parent: AirlockCommandGlass # see standard
+  id: AirlockClawCommandGlassLocked
+  suffix: Claw Command, Locked
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Glass/clawcommand.rsi
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClawCommand ]
+
+- type: entity
+  parent: AirlockCommand # if you get centcom door somehow it counts as command, also inherit panel
+  id: AirlockClawCommandLocked
+  suffix: Claw Command, Locked
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Standard/clawcommand.rsi
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClawCommand ]
+
+- type: entity
+  parent: AirlockGlass # see standard
+  id: AirlockClawCommandGlass
+  suffix: Claw Command
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Glass/clawcommand.rsi
+
+- type: entity
+  parent: Airlock # if you get centcom door somehow it counts as command, also inherit panel
+  id: AirlockClawCommand
+  suffix: Claw Command
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Standard/clawcommand.rsi
+
+# Escape pod docking airlock — marks this airlock as preferred docking target
+# for escape pods (via PriorityDock tag: DockPod). Used by space's centcomm to
+# distinguish escape pod landing spots from regular evac shuttle docking.
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleEscapePodLanding
+  suffix: External, Pod, Glass, Docking
+  components:
+  - type: PriorityDock
+    tag: DockPod
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]

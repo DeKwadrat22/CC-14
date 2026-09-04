@@ -1,0 +1,123 @@
+# TODO - CC14 - Vulpkanin, Human, Slime, MarkingsIPC, Oni, Harpy, Arachne, Rodentia, SpeciesKitsunes , MarkingsFelinid, MarkingsKitsune
+
+# Ears Markings
+- type: marking
+  id: VulpEarNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarSharpNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-sharp
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarFadeNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-fade
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarJackalNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: jackal
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: jackal-inner
+
+- type: marking
+  id: VulpEarTerrierNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: terrier
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: terrier-inner
+
+- type: marking
+  id: VulpEarFennecNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fennec
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fennec-inner
+
+- type: marking
+  id: VulpEarFoxNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fox
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fox-inner
+
+- type: marking
+  id: VulpEarOtieNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: otie
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: otie-inner
+
+- type: marking
+  id: VulpEarShockNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: shock
+
+- type: marking
+  id: VulpEarCoyoteNew
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: coyote
+
+- type: marking
+  id: VulpEarMsai
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: msai
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: msai-inner
+
+- type: marking
+  id: VulpEarWolf
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin, Human, Slime, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: wolf
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: wolf-inner
+

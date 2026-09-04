@@ -8,10 +8,26 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - AssistiveItems
+  - LoadoutGroupCaptainShoes # CC14
+  - CCCaptainSidearm # CC14
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -22,12 +38,21 @@
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
+  - LoadoutGroupHoPShoes # CC14
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
 
 # Silicons
 - type: roleLoadout
@@ -55,9 +80,18 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- PassengerJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
 
 - type: roleLoadout
   id: JobBartender
@@ -70,9 +104,21 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  - CCBartenderWeapon # CC14
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
+  - BarkeepWeapon # Claw Command - bar defence
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -83,9 +129,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobChef
@@ -99,9 +156,19 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobLibrarian
@@ -112,9 +179,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- LibrarianJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobLawyer
@@ -126,9 +204,19 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- LawyerJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobChaplain
@@ -145,9 +233,18 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobJanitor
@@ -161,9 +258,19 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobBotanist
@@ -176,9 +283,19 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobClown
@@ -193,8 +310,17 @@
   - Glasses
   - AssistiveItems
   - SurvivalClown
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - ClownJobTrinkets
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
 
 - type: roleLoadout
   id: JobMime
@@ -210,7 +336,17 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
   #- MimeJobTrinkets
 
 - type: roleLoadout
@@ -225,9 +361,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- MusicianJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 # Cargo
 - type: roleLoadout
@@ -243,9 +390,17 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -260,9 +415,18 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -274,9 +438,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
 
 # Engineering
 - type: roleLoadout
@@ -291,9 +466,17 @@
   - ChiefEngineerShoes
   - AssistiveItems
   - SurvivalExtended
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -303,9 +486,20 @@
   - StationEngineerBackpack
   - AssistiveItems
   - SurvivalExtended
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -319,9 +513,18 @@
   - StationEngineerID
   - AssistiveItems
   - SurvivalExtended
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -333,9 +536,19 @@
   - AtmosphericTechnicianShoes
   - AssistiveItems
   - SurvivalExtended
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
 
 # Science
 - type: roleLoadout
@@ -352,9 +565,18 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
 
 - type: roleLoadout
   id: JobScientist
@@ -371,9 +593,17 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -384,9 +614,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 # Security
 - type: roleLoadout
@@ -398,12 +639,27 @@
   - SecurityBackpack
   - SecurityBelt
   - HeadofSecurityOuterClothing
-  - SecurityShoes
+  - HeadofSecurityShoes # CLAW COMMAND: 'SecurityShoes'
+  - CCSecurityGloves # CC14
   - AssistiveItems
   - SurvivalSecurity
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobWarden
@@ -415,10 +671,26 @@
   - WardenOuterClothing
   - SecurityShoes
   - AssistiveItems
+  - CCSecurityGloves # CC14
   - SurvivalSecurity
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  - WardenNeck
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -431,10 +703,26 @@
   - SecurityPDA
   - SecurityBelt
   - AssistiveItems
+  - CCSecurityGloves # CC14
   - SurvivalSecurity
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobDetective
@@ -446,10 +734,25 @@
   - DetectiveOuterClothing
   - SecurityShoes
   - AssistiveItems
+  - CCSecurityGloves # CC14
   - SurvivalSecurity
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - imported wardrobe
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -458,11 +761,29 @@
   - SecurityBackpack
   - AssistiveItems
   - SurvivalSecurity
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 # Wildcards
+  - CCServiceWeapon # Claw Command - service weapons
+  - CCServiceEquipment # Claw Command - service weapons
+  # Claw Command - service-weapon budget. Six rather than five because
+  # PointsCostLoadoutEffect rejects on `Points <= Cost`, so a five-point budget would make
+  # the five-cost guns (Viper, Python, Viper Wood) permanently unselectable.
+  points: 6
+
 - type: roleLoadout
   id: JobReporter
   groups:
@@ -474,9 +795,19 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobPsychologist
@@ -487,9 +818,20 @@
   - Glasses
   - AssistiveItems
   - Survival
+  - Rations # Claw Command
   - Trinkets
+  - Instruments # CC14
+  - CCEmergencyGear # CC14
+  - CCFoodDrink # CC14
+  - CCMiscItems # CC14
+  - CCPlushiesToys # CC14
+  - CCPets # CC14
   #- PsychologistJobTrinkets
   - GroupSpeciesBreathTool
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: JobTramDriver
@@ -516,6 +858,11 @@
   groups:
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 # gives vox a nitrogen breathing tank
 # other species get nothing
@@ -523,31 +870,55 @@
   id: RoleSurvivalVoxTank
   groups:
   - GroupEVATankVox
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalStandard
   groups:
   - Survival
+  - Rations # Claw Command
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalClown
   groups:
   - SurvivalClown
+  - Rations # Claw Command
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalExtended
   groups:
   - SurvivalExtended
+  - Rations # Claw Command
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalExtendedAntag # Used by antagonists that spawn off-station (e.g wizards)
   groups:
   - SurvivalExtendedAntag
+  - Rations # Claw Command
   - GroupSpeciesBreathTool
   - GroupTankHarness
 
@@ -555,48 +926,90 @@
   id: RoleSurvivalMedical
   groups:
   - SurvivalMedical
+  - Rations # Claw Command
   - GroupSpeciesBreathToolMedical
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
   groups:
   - SurvivalSecurity
+  - Rations # Claw Command
   - GroupSpeciesBreathToolSecurity
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalSyndicate
   groups:
   - SurvivalSyndicate
+  - Rations # Claw Command
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalMilitaryDouble
   groups:
   - SurvivalMilitaryDouble
+  - Rations # Claw Command
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalNukie
   groups:
   - SurvivalSyndicate
+  - Rations # Claw Command
   - GroupSpeciesBreathTool
   - GroupPocketTankDouble
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalEVA
   groups:
   - GroupEVATank
   - SurvivalExtended
+  - Rations # Claw Command
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear
 
 - type: roleLoadout
   id: RoleSurvivalEVAAntag # Used by antagonists that spawn off-station AND in space (e.g ninjas)
   groups:
   - GroupEVATank
   - SurvivalExtendedAntag
+  - Rations # Claw Command
 
 - type: roleLoadout
   id: RoleSurvivalSpaceNinja
   groups:
   - GroupEVATank
+  # Claw Command - imported wardrobe
+  - CCWardrobeHats
+  - CCWardrobeNeckwear
+  - CCWardrobeOutfits
+  - CCWardrobeFootwear

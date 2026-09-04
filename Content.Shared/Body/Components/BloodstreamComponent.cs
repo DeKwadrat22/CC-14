@@ -17,7 +17,7 @@ namespace Content.Shared.Body.Components;
 /// </summary>
 [RegisterComponent, NetworkedComponent,]
 [AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
-[Access(typeof(BloodstreamSystem))]
+[Access(typeof(SharedBloodstreamSystem), typeof(Content.Shared._ClawCommand.Traits.Systems.EntityThresholdAdjustSystem))]
 public sealed partial class BloodstreamComponent : Component
 {
     public const string DefaultBloodSolutionName = "bloodstream";
@@ -157,7 +157,7 @@ public sealed partial class BloodstreamComponent : Component
     /// Caches the blood data of an entity.
     /// This is modified by DNA on init so it's not savable.
     /// </summary>
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
     public List<ReagentData>? BloodData;
 
     /// <summary>

@@ -3,7 +3,9 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Atmos.Piping.Components;
+using Content.Shared.Gravity;
 using Content.Shared.Maps;
+using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
@@ -392,16 +394,29 @@ namespace Content.Server.Atmos.EntitySystems
             if (!atmosphere.ProcessingPaused)
                 QueueRunTiles(atmosphere.CurrentRunTiles, atmosphere.HighPressureDelta);
 
-            // Note: This is still processed even if space wind is turned off since this handles playing the sounds.
+            // Note: This is still processed even if space wind is turned off, because we still want
+            // to drain the queue (and HighPressureMovements no-ops when SpaceWind is disabled).
 
             var number = 0;
+            var bodies = GetEntityQuery<PhysicsComponent>();
+            var xforms = GetEntityQuery<TransformComponent>();
+            var metas = GetEntityQuery<MetaDataComponent>();
+            var pressureQuery = GetEntityQuery<MovedByPressureComponent>();
+            var projectileQuery = GetEntityQuery<ProjectileComponent>();
+
+            // The GravityComponent can live on the grid OR the map (or both, in which case both add up).
+            // Compute once here instead of per-tile.
+            var sumGravity = 0.0;
+            if (TryComp(ent.Owner, out GravityComponent? gridGravity) && gridGravity.Enabled)
+                sumGravity += gridGravity.Acceleration;
+
+            var gridMap = Transform(ent.Owner).MapUid;
+            if (gridMap is not null && TryComp(gridMap, out GravityComponent? mapGravity) && mapGravity.Enabled)
+                sumGravity += mapGravity.Acceleration;
+
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                HighPressureMovements(ent, tile);
-                tile.PressureDifference = 0f;
-                tile.LastPressureDirection = tile.PressureDirection;
-                tile.PressureDirection = AtmosDirection.Invalid;
-                tile.PressureSpecificTarget = null;
+                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
                 atmosphere.HighPressureDelta.Remove(tile);
 
                 if (number++ < LagCheckIterations)
@@ -746,28 +761,10 @@ namespace Content.Server.Atmos.EntitySystems
                     }
 
                     atmosphere.ProcessingPaused = false;
-                    atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
-                    return AtmosphereProcessingCompletionState.Continue;
-                case AtmosphereProcessingState.HighPressureDelta:
-                    if (!ProcessHighPressureDelta((ent, ent)))
-                    {
-                        atmosphere.ProcessingPaused = true;
-                        return AtmosphereProcessingCompletionState.Return;
-                    }
-
-                    atmosphere.ProcessingPaused = false;
-                    atmosphere.State = DeltaPressureDamage
-                        ? AtmosphereProcessingState.DeltaPressure
-                        : AtmosphereProcessingState.Hotspots;
-                    return AtmosphereProcessingCompletionState.Continue;
-                case AtmosphereProcessingState.DeltaPressure:
-                    if (!ProcessDeltaPressure(ent))
-                    {
-                        atmosphere.ProcessingPaused = true;
-                        return AtmosphereProcessingCompletionState.Return;
-                    }
-
-                    atmosphere.ProcessingPaused = false;
+                    // Space/ "Atmos optimizations" reorder: HighPressureDelta now runs AFTER Hotspots and
+                    // Superconductivity so it sees the most up-to-date AirArchived values when computing
+                    // the per-tile pressure vector. Old order: ExcitedGroups -> HighPressureDelta -> Hotspots.
+                    // New order: ExcitedGroups -> Hotspots -> (Superconductivity) -> HighPressureDelta.
                     atmosphere.State = AtmosphereProcessingState.Hotspots;
                     return AtmosphereProcessingCompletionState.Continue;
                 case AtmosphereProcessingState.Hotspots:
@@ -783,10 +780,32 @@ namespace Content.Server.Atmos.EntitySystems
                     //       Therefore, a change to this CVar might only be applied after that step is over.
                     atmosphere.State = Superconduction
                         ? AtmosphereProcessingState.Superconductivity
-                        : AtmosphereProcessingState.PipeNet;
+                        : AtmosphereProcessingState.HighPressureDelta;
                     return AtmosphereProcessingCompletionState.Continue;
                 case AtmosphereProcessingState.Superconductivity:
                     if (!ProcessSuperconductivity(atmosphere))
+                    {
+                        atmosphere.ProcessingPaused = true;
+                        return AtmosphereProcessingCompletionState.Return;
+                    }
+
+                    atmosphere.ProcessingPaused = false;
+                    atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
+                    return AtmosphereProcessingCompletionState.Continue;
+                case AtmosphereProcessingState.HighPressureDelta:
+                    if (!ProcessHighPressureDelta((ent, ent)))
+                    {
+                        atmosphere.ProcessingPaused = true;
+                        return AtmosphereProcessingCompletionState.Return;
+                    }
+
+                    atmosphere.ProcessingPaused = false;
+                    atmosphere.State = DeltaPressureDamage
+                        ? AtmosphereProcessingState.DeltaPressure
+                        : AtmosphereProcessingState.PipeNet;
+                    return AtmosphereProcessingCompletionState.Continue;
+                case AtmosphereProcessingState.DeltaPressure:
+                    if (!ProcessDeltaPressure(ent))
                     {
                         atmosphere.ProcessingPaused = true;
                         return AtmosphereProcessingCompletionState.Return;

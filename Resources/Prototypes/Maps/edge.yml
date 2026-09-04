@@ -1,0 +1,84 @@
+- type: gameMap
+  id: Edge
+  mapName: 'Edge'
+  mapPath: /Maps/edge.yml
+  planets: [Lavaland] # _ClawCommand: lavaland on this station
+  minPlayers: 15 # Claw Command
+  maxPlayers: 80
+  stations:
+    Edge:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Edge Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'DV'
+        - type: StationJobs
+          availableJobs:
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
+            #command
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ClawCommandOfficer: [ 2, 2 ] #claw command
+            ClawCommandMaid: [ 1, 1 ] #claw command
+            #service
+            Bartender: [ 1, 2 ]
+            Botanist: [ 2, 3 ]
+            Chef: [ 2, 3 ]
+            Clown: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Janitor: [ 2, 3 ]
+            Mime: [ 1, 1 ]
+            Lawyer: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 1, 2 ]
+            StationEngineer: [ 3, 5 ]
+            SeniorEngineer: [ 1, 1 ] # Claw Command - senior variant
+            TechnicalAssistant: [ 2, 5 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 1, 2 ]
+            Paramedic: [ 1, 2 ]
+            Psychologist: [ 1, 1 ]
+            MedicalDoctor: [ 3, 5 ]
+            SeniorPhysician: [ 1, 1 ] # Claw Command - senior variant
+            MedicalIntern: [ 2, 4 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Scientist: [ 2, 4 ]
+            SeniorResearcher: [ 1, 1 ] # Claw Command - senior variant
+            ForensicMantis: [ 1, 1 ] # Claw Command - psionics port
+            ResearchAssistant: [ 2, 4 ]
+            Librarian: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 2, 4 ]
+            SeniorOfficer: [ 1, 1 ] # Claw Command - senior variant
+            SecurityCadet: [ 1, 4 ]
+            Prisoner: [ 5, 5 ] #claw command
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 3 ]
+            CargoTechnician: [ 2, 4 ]
+            SeniorCourier: [ 1, 1 ] # Claw Command - senior variant
+            #civilian
+            Passenger: [ -1, -1 ]
+            #silicon
+            Borg: [ 1, 2 ]
+            DogborgSecurity: [ 3, 3 ]
+            DogborgMedical: [ 3, 3 ]
+            DogborgEngineering: [ 3, 3 ]
+            DogborgJanitor: [ 3, 3 ]
+            DogborgService: [ 3, 3 ]
+            DogborgMining: [ 3, 3 ]
+            StationAi: [ 1, 1 ]
+            #claw command
+            Reporter: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]

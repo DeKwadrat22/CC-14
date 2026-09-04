@@ -1,5 +1,6 @@
 ﻿using Content.Server.Anomaly.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Psionics.Glimmer; // Claw Command - GlimmerSourceComponent
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Examine;
@@ -62,6 +63,15 @@ public sealed partial class AnomalySystem
 
         if (!TryComp<AnomalyComponent>(anomaly, out var anomalyComponent) || anomalyComponent.ConnectedVessel != null)
             return;
+
+        // Claw Command - harvesting an anomaly is what turns it into a running glimmer source. This has to
+        // happen here as well as on the vessel's PowerChangedEvent: connecting an anomaly to a vessel that is
+        // already powered raises no power event, so that handler alone would never fire for the normal case.
+        if (this.IsPowered(uid, EntityManager) &&
+            TryComp<GlimmerSourceComponent>(anomaly, out var glimmerSource))
+        {
+            glimmerSource.Active = true;
+        }
 
         component.Anomaly = scanner.ScannedAnomaly;
         anomalyComponent.ConnectedVessel = uid;

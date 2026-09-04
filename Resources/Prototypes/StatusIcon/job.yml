@@ -431,7 +431,7 @@
     sprite: *icon-rsi
     state: Prisoner
   jobName: job-name-prisoner
-  isCrewJob: false
+  isCrewJob: true #claw command - Prisoner is now a selectable crew job
 
 - type: jobIcon
   parent: JobIcon
@@ -595,6 +595,14 @@
   icon:
     sprite: *icon-rsi
     state: SeniorResearcher
+
+# Claw Command - the SeniorCourier state already shipped in the RSI but had no icon prototype
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSeniorCourier
+  icon:
+    sprite: *icon-rsi
+    state: SeniorCourier
 
 # Other
 

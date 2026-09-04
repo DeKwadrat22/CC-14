@@ -108,7 +108,7 @@ public sealed partial class FlavorProfileSystem : EntitySystem
     }
 }
 
-public sealed class FlavorProfileModificationEvent : EntityEventArgs
+public sealed partial class FlavorProfileModificationEvent : EntityEventArgs
 {
     public FlavorProfileModificationEvent(EntityUid user, HashSet<ProtoId<FlavorPrototype>> flavors)
     {

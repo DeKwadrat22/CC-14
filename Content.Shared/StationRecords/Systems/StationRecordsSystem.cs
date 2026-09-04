@@ -89,7 +89,12 @@ public sealed partial class StationRecordsSystem : EntitySystem
     {
         // TODO make PlayerSpawnCompleteEvent.JobId a ProtoId
         if (string.IsNullOrEmpty(jobId)
-            || !ProtoMan.HasIndex<JobPrototype>(jobId))
+            || !ProtoMan.TryIndex<JobPrototype>(jobId, out var jobProto))
+            return;
+
+        // Claw Command: roles that are not legally crew never get a station record, which keeps
+        // them off the crew manifest and out of records consoles.
+        if (!jobProto.AddToStationRecords)
             return;
 
         if (!_inventory.TryGetSlotEntity(player, "id", out var idUid))

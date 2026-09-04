@@ -8,9 +8,10 @@ Your PDA contains both a vessel name and list of crew currently active in your v
 ## Emergency Treatment
 In the event of a serious emergency, there are a few things you can do to help ensure your long-term survival, including:
 - If entering critical condition, use the emergency medipen from your emergency box, it'll make sure you don't end up unable to do anything. Emergency medipens can also be used to revive people currently in crit on the floor, and to prolong the amount of time you have to deal with poisons/etc.
-
+- If wounded, use the first-aid medipen from your emergency box, it'll be able to treat most minor wounds, as long as your total damage isn't higher than 50. Unlike the emergency medipen, it is entirely useless when used on someone who is currently in, or about to be, crit.
 <Box>
   <GuideEntityEmbed Entity="EmergencyMedipen"/>
+  <GuideEntityEmbed Entity="firstaidpen"/>
 </Box>
 
 - Your emergency box contains a breath mask and oxygen tank, which can help you survive longer in a spacing situation. If you're one of the slimepeople, be aware that nitrogen replaces oxygen for you and that your emergency box will start with a red tank of nitrogen replacing the standard blue/yellow oxygen tank.
@@ -34,5 +35,5 @@ In the event of a serious emergency, there are a few things you can do to help e
 - Simple bed rest can allow some wounds to close up on their own. Medical beds are best for this, providing a sterile surface and support for all damaged body parts, but any bed works.
 - Actually sleeping on a bed boosts your healing rate even farther.
 - Meals that contain proteins, such as meat, will tremendously help your body's condition after severe bloodloss. It's still advised to visit a doctor and get treated though.
-
+- Certain plants can contain medicine, such as ambrosia vulgaris. If you need help and for some reason medical isn't an option, botany may be able to help.
 </Document>

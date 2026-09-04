@@ -1,0 +1,9 @@
+﻿- type: marking
+  id: SingleAntenna
+  bodyPart: HeadTop
+  groupWhitelist: [Reptilian, Slime, Vulpkanin, MarkingsFelinid, MarkingsTajaran, Human, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/unique.rsi
+    state: singleantennaprimary
+  - sprite: _ClawCommand/Mobs/Customization/unique.rsi
+    state: singleantennasecondary

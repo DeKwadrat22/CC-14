@@ -1,0 +1,83 @@
+
+# Outerclothing
+- type: loadout
+  id: ClothingClawCommandArmourVest
+  equipment:
+    outerClothing: ClothingClawCommandArmourVest
+- type: loadout
+  id: ClothingClawCommandArmoredCowboyJacket
+  equipment:
+    outerClothing: ClothingClawCommandArmoredCowboyJacket
+- type: loadout
+  id: ClothingClawCommandArmoredJacket
+  equipment:
+    outerClothing: ClothingClawCommandArmoredJacket
+
+# Jumpsuit
+- type: loadout
+  id: ClothingUniformJumpsuitClawCommandOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClawCommandOfficer
+
+- type: loadout
+  id: ClothingUniformJumpskirtClawCommandOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtClawCommandOfficer
+
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaidmini
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaidmini
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaid
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaid
+- type: loadout
+  id: ClothingUniformJumpskirtTacticalMaid
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtTacticalMaid
+
+# Back
+- type: loadout
+  id: ClothingBackpackClawCommand
+  equipment:
+    back: ClothingBackpackClawCommand
+
+- type: loadout
+  id: ClothingBackpackSatchelClawCommand
+  equipment:
+    back: ClothingBackpackSatchelClawCommand
+
+- type: loadout
+  id: ClothingBackpackDuffelClawCommand
+  equipment:
+    back: ClothingBackpackDuffelClawCommand
+
+# Trinkets
+- type: loadout
+  id: LoadoutCCMGoldenShaker
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LoadoutEffectCCM
+  storage:
+    back:
+    - DrinkShakerGold
+
+- type: loadout
+  id: LoadoutCCMGoldenPlunger
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LoadoutEffectCCM
+  storage:
+    back:
+    - GoldenPlunger
+
+# EffectGroups
+- type: loadoutEffectGroup
+  id: LoadoutEffectCCM
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClawCommandMaid
+      time: 52h

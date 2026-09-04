@@ -1,0 +1,45 @@
+# Claw Command: Path of Lock action prototypes. The C# event classes (EventHereticBulglarFinesse,
+# EventHereticLastRefugee) already existed in Heretic.Abilites.cs as undeclared stubs with no YAML
+# wiring and no handlers; this file + HereticAbilitySystem.PathLock.cs completes the path.
+
+- type: entity
+  parent: BaseAction
+  id: ActionHereticBurglarFinesse
+  name: Burglar's Finesse
+  description: Force the nearest sealed door, locker, or container within reach to spring open as if it had never been locked. The Mansus knows every keyhole.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 30
+    itemIconStyle: NoItem
+    icon:
+      sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi
+      state: icon
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:EventHereticBulglarFinesse
+  - type: HereticAction
+    requireMagicItem: true
+  - type: SpeakOnAction
+    sentence: heretic-speech-burglar-finesse
+
+- type: entity
+  parent: BaseAction
+  id: ActionHereticLastRefugee
+  name: Last Refugee
+  description: Vanish through the nearest locked door, reappearing inside the closest sealed locker or airlock. A heretic is never truly cornered.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 60
+    itemIconStyle: NoItem
+    icon:
+      sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi
+      state: icon
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:EventHereticLastRefugee
+  - type: HereticAction
+    requireMagicItem: true
+  - type: SpeakOnAction
+    sentence: heretic-speech-last-refugee

@@ -36,6 +36,15 @@
       params:
         loop: true
         volume: -6
+  # _ClawCommand: ports Goob's DeltaV-style Ashfall damage. Heat 4/s on unsheltered mobs that
+  # aren't WeatherImmune. Mirrors Goob/Resources/Prototypes/weather.yml:20-25.
+  - type: WeatherDamage
+    damage:
+      types:
+        Heat: 4
+    damageBlacklist:
+      components:
+      - WeatherImmune
 
 - type: entity
   parent: WeatherBase

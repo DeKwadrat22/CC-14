@@ -1,0 +1,104 @@
+# Claw Command: Path of Lock store listings.
+# Previously this file held only the starter listing with productHereticKnowledge commented out,
+# making Lock a dead-end UI option. Now expanded to a 5-stage progression that mirrors the
+# structure of the other paths (Ash, Blade, Flesh, Void, Rust, Cosmos).
+
+- type: listing
+  id: KnowledgePathStartLock
+  name: knowledge-path-lock-s1-name
+  description: knowledge-path-lock-s1-desc
+  icon: { sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi, state: icon }
+  productHereticKnowledge: OpeningLecture
+  cost:
+    KnowledgePoint: 1
+  categories:
+  - HereticPathLock
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:HereticPathCondition
+    stage: 0
+    # add every path here because you shouldn't be able to buy more starter knowledge
+    blacklist:
+    - Ash
+    - Blade
+    - Flesh
+    - Lock
+    - Void
+    - Rust
+    - Cosmos
+
+- type: listing
+  id: HereticLockPath2
+  name: knowledge-path-lock-s2-name
+  description: knowledge-path-lock-s2-desc
+  icon: { sprite: _ClawCommand/Heretic/mansus_grasp.rsi, state: icon }
+  productHereticKnowledge: GraspOfLock
+  cost:
+    KnowledgePoint: 1
+  categories:
+  - HereticPathLock
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:HereticPathCondition
+    stage: 1
+    whitelist:
+    - Lock
+
+- type: listing
+  id: HereticLockPath3
+  # Claw Command: locale reuses s7 "Burglar's Finesse" because that's what this knowledge actually
+  # grants — the in-between stages from the original design (Key Keeper / Mark / Concierge) are not
+  # yet implemented. Those locale entries remain in the .ftl for future expansion.
+  name: knowledge-path-lock-burglar-finesse-name
+  description: knowledge-path-lock-burglar-finesse-desc
+  icon: { sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi, state: icon }
+  productHereticKnowledge: BurglarFinesse
+  cost:
+    KnowledgePoint: 1
+  categories:
+  - HereticPathLock
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:HereticPathCondition
+    stage: 2
+    whitelist:
+    - Lock
+
+- type: listing
+  id: HereticLockPath4
+  name: knowledge-path-lock-last-refugee-name
+  description: knowledge-path-lock-last-refugee-desc
+  icon: { sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi, state: icon }
+  productHereticKnowledge: LastRefugee
+  cost:
+    KnowledgePoint: 2
+  categories:
+  - HereticPathLock
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:HereticPathCondition
+    stage: 3
+    whitelist:
+    - Lock
+
+- type: listing
+  id: HereticLockPath5
+  name: knowledge-path-lock-s10-name
+  description: knowledge-path-lock-s10-desc
+  icon: { sprite: _ClawCommand/Heretic/Blades/blade_lock.rsi, state: icon }
+  productHereticKnowledge: AscensionLock
+  cost:
+    KnowledgePoint: 2
+  categories:
+  - HereticPathLock
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:HereticPathCondition
+    stage: 4
+    whitelist:
+    - Lock

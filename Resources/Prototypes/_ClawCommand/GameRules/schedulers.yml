@@ -1,0 +1,264 @@
+# Claw Command - event schedulers for Secret and Extended Irregular.
+#
+# All of these ramp: the gap between events shrinks as the shift goes on. The gap is
+#   random(minEventTime / chaos, maxEventTime / chaos)
+# where chaos climbs linearly from `initialChaos` at round start to roughly `averageChaos`
+# plus `initialChaos` at `averageEndTime` minutes in, then holds flat there for the rest of
+# the round however long it runs. `averageEndTime` is only "when the ramp stops climbing" -
+# it is not a round length, and overrunning it never calms the round back down.
+#
+# Two knobs shape a preset:
+#   initialChaos vs averageChaos -> how steep the ramp is (how much worse hour two is)
+#   minEventTime / maxEventTime  -> the pacing band the ramp is applied to
+#
+# Both modes share initialChaos per difficulty (0.55 / 0.75 / 0.9), so the two open at the
+# same relative calm. The difference is the band: Extended Irregular applies the ramp to a
+# wide, slow 10-25 min window, Secret to a tighter 7-16.7 min one. That keeps Secret shorter
+# between events than Extended Irregular at every point of the shift without Secret's opening
+# hour feeling frantic.
+#
+# Roughly, minutes between events at round start / 60 min in / plateau. The plateau is the
+# permanent floor once the ramp tops out, so it is the number that decides how a long round
+# feels - rounds here regularly run past averageEndTime.
+#   Irregular Easy    18-45  /  9-23   /  6.1-15.2
+#   Irregular Medium  13-33  /  7-17   /  4.4-11.1
+#   Irregular Hard    11-28  /  5-13   /  3.4-8.6
+#   Secret Easy       13-30  /  6.6-16 /  4.7-11.1
+#   Secret Medium      9-22  /  4.6-11 /  3.3-7.9
+#   Secret Hard        8-19  /  3.4-8  /  2.5-5.8
+
+# ---------------------------------------------------------------------------
+# Extended Irregular
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularEasyScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.55
+    averageChaos: 1.1
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularEasyEventsTable
+
+- type: entity
+  id: CCIrregularMediumScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.75
+    averageChaos: 1.5
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMediumEventsTable
+
+- type: entity
+  id: CCIrregularHardScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 600
+    maxEventTime: 1500
+    initialChaos: 0.9
+    averageChaos: 2.0
+    averageEndTime: 120
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularHardEventsTable
+
+# ---------------------------------------------------------------------------
+# Secret
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCSecretEasyScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.55
+    averageChaos: 0.95
+    averageEndTime: 110
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretEasyEventsTable
+
+- type: entity
+  id: CCSecretMediumScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.75
+    averageChaos: 1.35
+    averageEndTime: 105
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretMediumEventsTable
+
+- type: entity
+  id: CCSecretHardScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RampingStationEventScheduler
+    minEventTime: 420
+    maxEventTime: 1000
+    initialChaos: 0.9
+    averageChaos: 1.95
+    averageEndTime: 100
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCSecretHardEventsTable
+
+# ---------------------------------------------------------------------------
+# Meteor schedulers
+#
+# Extended Irregular keeps roughly the old cadence and only fires when engineering is
+# staffed (the crew requirement lives on CCIrregularMeteorSwarmTable). Secret is markedly
+# more frequent, and gets more frequent again with difficulty.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularEasyMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1500
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1800
+      max: 7200
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCIrregularMediumMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1500
+      max: 5400
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCIrregularHardMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200
+    maximumSpanUntilFirstEvent: 600
+    minMaxEventTiming:
+      min: 1200
+      max: 4200
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCIrregularMeteorSwarmTable
+
+- type: entity
+  id: CCSecretEasyMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 900
+    maximumSpanUntilFirstEvent: 600
+    minMaxEventTiming:
+      min: 1200
+      max: 3600
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+- type: entity
+  id: CCSecretMediumMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 720
+    maximumSpanUntilFirstEvent: 480
+    minMaxEventTiming:
+      min: 900
+      max: 2700
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+- type: entity
+  id: CCSecretHardMeteorScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 600
+    maximumSpanUntilFirstEvent: 360
+    minMaxEventTiming:
+      min: 700
+      max: 2100
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
+
+# ---------------------------------------------------------------------------
+# Space traffic control
+#
+# Extended Irregular uses a pool with the lone op stripped out.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCIrregularSpaceTrafficControlScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 2700
+    maximumSpanUntilFirstEvent: 900
+    minMaxEventTiming:
+      min: 1200
+      max: 7200
+    scheduledGameRules: !type:NestedSelector
+      prob: 0.05
+      tableId: CCIrregularUnknownShuttlesTable
+
+# ---------------------------------------------------------------------------
+# Glimmer
+#
+# Unlike every other scheduler here, this one is not paced by difficulty or round time - it rolls
+# against the station's glimmer level. Below 200 glimmer it does nothing at all; at 200 there is a
+# 15% chance of a glimmer event within any half hour, rising 5% per further 100 glimmer (20% at 300,
+# 25% at 400 ...) up to a 60% ceiling. It rolls once a minute and derives the per-roll odds from
+# those numbers, so changing checkInterval will not change how often events actually land.
+#
+# It is shared by all six gamemodes on purpose. How psionic a shift gets should be down to what
+# Epistemics does to the noosphere, not which difficulty was rolled.
+#
+# Which event comes out of a successful roll is still the usual weighted pick, narrowed by each
+# event's own minimumGlimmer / maximumGlimmer window. NoosphericStorm is additionally in the ambient
+# pool so glimmer can get off the floor in the first place.
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CCGlimmerScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEventScheduler
+    minimumGlimmer: 200
+    baseChance: 0.15
+    chancePerStep: 0.05
+    glimmerPerStep: 100
+    maximumChance: 0.6
+    scheduledGameRules: !type:NestedSelector
+      tableId: CCGlimmerEventsTable

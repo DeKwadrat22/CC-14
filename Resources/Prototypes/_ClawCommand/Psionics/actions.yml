@@ -1,0 +1,313 @@
+# Claw Command - psionics port.
+#
+# The action system was split since the fork this came from. Fields that used to live on
+# EntityTargetAction / WorldTargetAction / InstantAction now belong to:
+#   - type: Action        -> icon, iconOn, useDelay, itemIconStyle, checkCanInteract, priority
+#   - type: TargetAction  -> range, checkCanAccess
+#   - the specific action -> event, whitelist/blacklist, canTargetSelf
+# Leaving them on the old component silently dropped them (the serializer ignores unknown fields), which
+# would have meant no icons, no cooldowns and default range on every psionic power.
+
+- type: entity
+  id: ActionDispel
+  name: Dispel
+  description: Dispel summoned entities such as familiars or forcewalls.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/dispel.png
+      useDelay: 45
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 6
+    - type: EntityTargetAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:DispelPowerActionEvent
+
+- type: entity
+  id: ActionMassSleep
+  name: Mass Sleep
+  description: Put targets in a small area to sleep.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/mass_sleep.png
+      useDelay: 60
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 8
+    - type: WorldTargetAction
+      event: !type:MassSleepPowerActionEvent
+
+- type: entity
+  # Claw Command - renamed from ActionMindSwap: the fork's Magic/mindswap_spell.yml already owns that ID.
+  id: ActionPsionicMindSwap
+  name: Mind Swap
+  description: Swap minds with the target. Either can change back after 20 seconds.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/mind_swap.png
+      useDelay: 30
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 10
+    - type: EntityTargetAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+          - MindShield
+      event: !type:MindSwapPowerActionEvent
+
+- type: entity
+  id: ActionMindSwapReturn
+  name: Reverse Mind Swap
+  description: Return to your original body.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/mind_swap_return.png
+      useDelay: 20
+      checkCanInteract: false
+    - type: InstantAction
+      event: !type:MindSwapPowerReturnActionEvent
+
+- type: entity
+  id: ActionNoosphericZap
+  name: Noospheric Zap
+  description: Shocks the conciousness of the target and leaves them stunned and stuttering.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/noospheric_zap.png
+      useDelay: 100
+      itemIconStyle: BigAction
+    - type: TargetAction
+      range: 5
+    - type: EntityTargetAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:NoosphericZapPowerActionEvent
+
+- type: entity
+  id: ActionPyrokinesis
+  name: Pyrokinesis
+  description: Light a flammable target on fire.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/pyrokinesis.png
+      useDelay: 50
+      itemIconStyle: BigAction
+    - type: TargetAction
+      range: 6
+      checkCanAccess: false
+    - type: EntityTargetAction
+      event: !type:PyrokinesisPowerActionEvent
+
+- type: entity
+  id: ActionMetapsionic
+  name: Metapsionic Pulse
+  description: Send a mental pulse through the area to see if there are any psychics nearby.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/metapsionic.png
+      useDelay: 45
+    - type: InstantAction
+      event: !type:MetapsionicPowerActionEvent
+
+- type: entity
+  id: ActionPsionicRegeneration
+  name: Psionic Regeneration
+  description: Push your natural metabolism to the limit to power your body's regenerative capability.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/psionic_regeneration.png
+      useDelay: 120
+    - type: InstantAction
+      event: !type:PsionicRegenerationPowerActionEvent
+
+- type: entity
+  id: ActionTelegnosis
+  name: Telegnosis
+  description: Create a telegnostic projection to remotely observe things.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/telegnosis.png
+      useDelay: 150
+    - type: InstantAction
+      event: !type:TelegnosisPowerActionEvent
+
+- type: entity
+  id: ActionPsionicInvisibility
+  name: Psionic Invisibility
+  description: Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/psionic_invisibility.png
+      useDelay: 120
+    - type: InstantAction
+      event: !type:PsionicInvisibilityPowerActionEvent
+
+- type: entity
+  id: ActionPsionicInvisibilityUsed
+  name: Turn Off Psionic Invisibility
+  description: Return to visibility, and receive a stun.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: Interface/VerbIcons/psionic_invisibility_off.png
+    - type: InstantAction
+      event: !type:RemovePsionicInvisibilityOffPowerActionEvent
+
+- type: entity
+  id: ActionHealingWord
+  name: Healing Word
+  description: Speak the Lesser Secret Of Life, and restore health to another.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
+      useDelay: 10
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 6
+    - type: EntityTargetAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:PsionicHealOtherPowerActionEvent
+        healingAmount:
+          # Claw Command - DamageSpecifier no longer takes a `groups:` wrapper; these are the same values
+          # the group form expanded to, written per damage type.
+          types:
+            Cellular: -2.5
+            Poison: -5
+            Asphyxiation: -5
+            Blunt: -2.5
+            Slash: -2.5
+            Piercing: -2.5
+            Heat: -5
+            Shock: -5
+        rotReduction: 10
+        useDelay: 1
+        doRevive: true
+        powerName: Healing Word
+        popupText: healing-word-begin
+        playSound: true
+        minGlimmer: 2
+        maxGlimmer: 4
+        glimmerSoundThreshold: 100
+        glimmerPopupThreshold: 200
+        glimmerDoAfterVisibilityThreshold: 70
+
+- type: entity
+  id: ActionRevivify
+  name: Breath of Life
+  description: Speak the Greater Secret of Life, and restore another to life.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
+      useDelay: 120
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 2
+    - type: EntityTargetAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:PsionicHealOtherPowerActionEvent
+        healingAmount:
+          # Claw Command - as above, the group values written out per damage type.
+          # Multiplied by the caster's Amplification on use.
+          types:
+            Cellular: -15
+            Poison: -30
+            Asphyxiation: -60
+            Blunt: -15
+            Slash: -15
+            Piercing: -15
+            Heat: -30
+            Shock: -30
+        rotReduction: 60
+        doRevive: true
+        powerName: Revivify
+        popupText: revivify-begin
+        playSound: true
+        minGlimmer: 10 # These also get multiplied by caster stats. So,
+        maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
+        glimmerSoundThreshold: 50
+        glimmerPopupThreshold: 100
+        glimmerDoAfterVisibilityThreshold: 35
+
+- type: entity
+  id: ActionAssay
+  name: Assay
+  description: Probe an entity at close range to glean metaphorical information about any powers they may have
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
+      useDelay: 45
+      itemIconStyle: BigAction
+    - type: TargetAction
+      checkCanAccess: false
+      range: 2
+    - type: EntityTargetAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:AssayPowerActionEvent
+
+- type: entity
+  id: ActionSummonRemilia
+  name: Summon Remilia
+  description: Call forth your ever-loyal familiar Remilia.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Action
+      icon: { sprite: Interface/Actions/psionics.rsi, state: summon_remilia }
+      useDelay: 120
+      checkCanInteract: false
+    - type: InstantAction
+      event: !type:SummonPsionicFamiliarActionEvent
+        familiarProto: MobBatRemilia
+        powerName: "Summon Remilia"
+        checkInsulation: true
+        doGlimmerEffects: true
+        followMaster: true
+        minGlimmer: 5
+        maxGlimmer: 10
+
+# Claw Command - ActionShadeskip, ActionTelekineticPulse, ActionPyrokineticFlare and ActionSummonImp are NOT
+# ported. Each depends on an entity this fork does not have and that is not psionics content in itself:
+#   ActionShadeskip        -> ShadowKudzuWeak + EffectFlashShadeskip
+#   ActionTelekineticPulse -> EffectFlashTelekineticPulse
+#   ActionPyrokineticFlare -> EffectPyrokineticFlare
+#   ActionSummonImp        -> MobPsionicFamiliarImp
+# Their powers are likewise commented out of psionic_power_pool.yml, so nothing references them.
+# The AnomalyPowerSystem that drives the first three IS ported, so re-adding them later is only a matter of
+# bringing over those effect/mob prototypes.

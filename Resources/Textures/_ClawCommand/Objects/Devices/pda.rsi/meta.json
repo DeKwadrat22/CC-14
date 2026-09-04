@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "claw command pda by steele; pda-deathsquad sprited by ShootsTheMoon (Goob Station)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "light_overlay"
+        },
+        {
+            "name": "id_overlay"
+        },
+        {
+            "name": "pda"
+        },
+        {
+            "name": "pda-ert"
+        },
+        {
+            "name": "pda-deathsquad"
+        }
+    ]
+}

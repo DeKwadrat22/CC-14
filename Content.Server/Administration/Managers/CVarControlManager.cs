@@ -89,7 +89,7 @@ public sealed partial class CVarControlManager : IPostInjectInit
     }
 }
 
-public sealed class ChangableCVar
+public sealed partial class ChangableCVar
 {
     private const string LocPrefix = "changecvar";
 

@@ -1,4 +1,5 @@
 using Content.Server.Power.Components;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.UserInterface;
 using Content.Server.Advertise.EntitySystems;
 using Content.Shared.Advertise.Components;
@@ -18,6 +19,7 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audioSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
     [Dependency] private SpeakOnUIClosedSystem _speakOnUIClosed = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -80,6 +82,8 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
             return;
         if (!TryComp<ApcPowerReceiverComponent>(uid, out var power) || !power.Powered)
             return;
+
+        _mood.AddMoodlet(msg.Actor, "ArcadePlay"); // Claw Command
 
         switch (msg.PlayerAction)
         {

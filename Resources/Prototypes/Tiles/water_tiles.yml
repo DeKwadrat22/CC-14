@@ -1,0 +1,31 @@
+# Shallow/medium water tiles ported from space/_Nuclear14 for asterisk map.
+# N14FootstepWater sound collection isn't ported - substituted with target's FootstepWater.
+- type: tile
+  id: WaterMedium
+  name: water medium
+  sprite: /Textures/_Nuclear14/Tiles/ms13/Water/water_medium.png
+  friction: 0.01
+  isSubfloor: true
+  isSpace: false
+  footstepSounds:
+    collection: FootstepWater
+  sturdy: false
+  thermalConductivity: 0.4
+  heatCapacity: 700000
+  weather: false
+  indestructible: true
+
+- type: tile
+  id: WaterShallow
+  name: water shallow
+  sprite: /Textures/_Nuclear14/Tiles/ms13/Water/water_shallow.png
+  friction: 0.01
+  isSubfloor: true
+  isSpace: false
+  footstepSounds:
+    collection: FootstepWater
+  sturdy: false
+  thermalConductivity: 0.4
+  heatCapacity: 700000
+  weather: false
+  indestructible: true

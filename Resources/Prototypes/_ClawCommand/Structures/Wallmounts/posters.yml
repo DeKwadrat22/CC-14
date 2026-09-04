@@ -1,0 +1,9 @@
+- type: entity
+  parent: PosterBase
+  id: PosterClawCommand
+  name: "Claw Command Poster"
+  description: "Glory to Claw Command!"
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Wallmounts/posters.rsi
+    state: poster1_claw

@@ -1,4 +1,7 @@
-﻿using Content.Shared.Administration;
+﻿using Content.Server.Administration.Logs;
+using Content.Server.Chat.Managers;
+using Content.Shared.Administration;
+using Content.Shared.Database;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
@@ -9,6 +12,9 @@ namespace Content.Server.Administration.Commands
     {
         [Dependency] private IComponentFactory _compFactory = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
+        // Claw Command - admin logging for removeextracomponents
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private IChatManager _chatManager = default!;
 
         public override string Command => "removeextracomponents";
 
@@ -50,6 +56,11 @@ namespace Content.Server.Administration.Commands
                 if (modified)
                     entities++;
             }
+
+            // Claw Command - admin logging
+            var adminName = shell.Player?.Name ?? "Server";
+            _adminLogger.Add(LogType.AdminCommands, LogImpact.Extreme, $"{adminName} removed {components} extra components from {entities} entities{(id != null ? $" with prototype {id}" : "")}");
+            _chatManager.SendAdminAnnouncement(Loc.GetString("admin-log-removeextracomponents", ("admin", adminName), ("count", components), ("entities", entities)));
 
             if (id != null)
             {

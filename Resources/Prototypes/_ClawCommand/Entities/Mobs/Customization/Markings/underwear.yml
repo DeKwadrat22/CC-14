@@ -1,0 +1,456 @@
+- type: marking
+  id: UnderwearBoxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: snow_boxers
+
+- type: marking
+  id: UnderwearLowriders
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: snow_lowriders
+
+- type: marking
+  id: UnderwearBriefs
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: snow_briefs
+
+- type: marking
+  id: UnderwearSatin
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: snow_satin
+
+- type: marking
+  id: UnderwearTanga
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: snow_tanga
+
+- type: marking
+  id: UnderwearClassicbriefs
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearClassicjockstrap
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: jockstrap
+
+- type: marking
+  id: UnderwearClassicmankini
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: mankini
+
+- type: marking
+  id: UnderwearClassicboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers
+
+- type: marking
+  id: UnderwearClassicheartboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers_heart
+
+- type: marking
+  id: UnderwearClassicukboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers_uk
+
+- type: marking
+  id: UnderwearClassicassblastusaboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers_assblastusa
+
+- type: marking
+  id: UnderwearClassiccommieboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers_commie
+
+- type: marking
+  id: UnderwearClassicstripedboxers
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxers_striped
+
+- type: marking
+  id: UnderwearClassicboxerbriefs
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: boxer_briefs
+
+- type: marking
+  id: UnderwearClassicbeeshorts
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: bee_shorts
+
+- type: marking
+  id: UnderwearClassicpanties
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties
+
+- type: marking
+  id: UnderwearClassicpantiesalt
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_alt
+
+- type: marking
+  id: UnderwearClassicpantiesslim
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_slim
+
+- type: marking
+  id: UnderwearClassicpantiesthin
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_thin
+
+- type: marking
+  id: UnderwearClassicpantiesneko
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_neko
+
+- type: marking
+  id: UnderwearClassicpantiesswimming
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_swimming
+
+- type: marking
+  id: UnderwearClassicthong
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: thong
+
+- type: marking
+  id: UnderwearClassicthongbabydoll
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: thong_babydoll
+
+- type: marking
+  id: UnderwearFishnetlower
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: fishnet_lower
+
+- type: marking
+  id: UnderwearClassicpantiesassblastusa
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_assblastusa
+
+- type: marking
+  id: UnderwearClassicpantiesbeekini
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_bee-kini
+
+- type: marking
+  id: UnderwearClassicpantiescommie
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_commie
+
+- type: marking
+  id: UnderwearClassicpantiesuk
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_uk
+
+- type: marking
+  id: UnderwearClassicpantiesstriped
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: striped_panties
+
+- type: marking
+  id: UnderwearClassicpantiesbow
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: bowpanties
+
+- type: marking
+  id: UnderwearClassicpantiesbowslim
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: bowpanties_slim
+
+- type: marking
+  id: UnderwearClassicthongbow
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: bowthong
+
+- type: marking
+  id: UnderwearClassicthongbowbabydoll
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: bowthong_babydoll
+
+- type: marking
+  id: UnderwearClassicpantiescow
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [MarkingsShadowkin, Diona, Arachnid, Reptilian, Moth, Slime, Human, MarkingsFelinid, MarkingsTajaran, Vulpkanin, MarkingsFeroxi, MarkingsKitsune, MarkingsAvali, MarkingsIPC]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/underwear.rsi
+    state: panties_cow
+
+

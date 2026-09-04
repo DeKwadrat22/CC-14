@@ -1,0 +1,51 @@
+# Claw Command: sprint dust visual entities. Ported from Goob-Station's
+# _Goobstation/Sprinting/sprinting.yml — same three sizes, lifetimes match the per-frame delays
+# in the RSI so the sprite plays through naturally and despawns at the end.
+
+- type: entity
+  id: SprintDustLarge
+  categories: [ HideSpawnMenu ]
+  name: dust cloud
+  description: Whoa, watch out!
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _ClawCommand/Effects/sprinting.rsi
+    state: sprint_cloud
+  - type: TimedDespawn
+    lifetime: 0.48
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: SprintDustSmall
+  name: small dust cloud
+  description: Whoa, watch out!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _ClawCommand/Effects/sprinting.rsi
+    state: sprint_cloud_small
+  - type: TimedDespawn
+    lifetime: 0.34
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: SprintDustTiny
+  name: tiny dust cloud
+  description: Whoa, watch out!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _ClawCommand/Effects/sprinting.rsi
+    state: sprint_cloud_tiny
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Tag
+    tags:
+    - HideContextMenu

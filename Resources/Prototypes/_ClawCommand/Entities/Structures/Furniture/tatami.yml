@@ -1,0 +1,25 @@
+# Ported from Nyanotrasen/Entities/Furniture/tatami.yml — only `tatamimat` is
+# referenced by the CentComm map. The base entity comes along for the ride.
+
+- type: entity
+  id: TatamiBase
+  parent: BaseStructure
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: Nyanotrasen/Structures/Furniture/tatami.rsi
+  - type: Tag
+    tags: [ Carpet ]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+
+- type: entity
+  id: tatamimat
+  parent: TatamiBase
+  name: tatami mat
+  description: It's a portion of a tatami mat.
+  components:
+  - type: Sprite
+    state: tatami_1x1P

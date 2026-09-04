@@ -1,0 +1,189 @@
+## Regular station events
+# Claw Command - space declares `startAnnouncement: true` because its StationEventComponent field is a
+# bool, and its AnnouncerSystem derived both the message and the per-announcer voice line from the rule id.
+# This fork tracks upstream, where StartAnnouncement is a LocId string and the sound is a separate
+# StartAudio field. Carrying `true` across verbatim made the announcement resolve the literal message id
+# "true" and play nothing at all, so both are spelled out here. The audio is space's NEIL announcer clip.
+- type: entity
+  id: NoosphericStorm
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      startAnnouncement: station-event-noospheric-storm-announcement
+      startAudio:
+        path: /Audio/_ClawCommand/Announcements/noospheric_storm.ogg
+      weight: 5
+      earliestStart: 15
+      reoccurrenceDelay: 5
+    - type: NoosphericStormRule
+
+# Claw Command - upstream's mid-round antag spawner rules (BaseMidRoundAntag / RatKingSpawn /
+# ParadoxAnomalySpawn) are NOT part of this port. They are not psionics content, this fork already handles
+# rat king and paradox anomaly through its own event set, and adding a second scheduler for them would make
+# both fire. The MidRoundAntagSpawnLocationComponent marker is still ported, because glimmer creature events
+# use it as a hidden-spawn fallback.
+
+# Base glimmer event
+- type: entity
+  id: BaseGlimmerEvent
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      # Favor glimmer events just a little more than regular events.
+      weight: 12
+    - type: GlimmerEvent
+
+## Glimmer events
+# Blank discharge
+- type: entity
+  id: MundaneDischarge
+  parent: BaseGlimmerEvent
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      reoccurrenceDelay: 15
+      startAnnouncement: station-event-mundane-discharge-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
+    - type: GlimmerEvent
+      maximumGlimmer: 300
+      glimmerBurnLower: 18
+      glimmerBurnUpper: 40
+    - type: MundaneDischargeRule
+
+- type: entity
+  id: NoosphericZap
+  parent: BaseGlimmerEvent
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
+      reoccurrenceDelay: 15
+      startAnnouncement: station-event-noospheric-zap-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
+    - type: GlimmerEvent
+    - type: NoosphericZapRule
+
+# Fry tinfoil hats and shoot lightnings from probers
+- type: entity
+  id: NoosphericFry
+  parent: BaseGlimmerEvent
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      startAnnouncement: station-event-noospheric-fry-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
+    - type: GlimmerEvent
+      minimumGlimmer: 550
+      maximumGlimmer: 1000
+    - type: NoosphericFryRule
+
+- type: entity
+  id: PsionicCatGotYourTongue
+  parent: BaseGlimmerEvent
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      startAnnouncement: station-event-psionic-cat-got-your-tongue-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
+    - type: GlimmerEvent
+      minimumGlimmer: 400
+      maximumGlimmer: 1000
+      glimmerBurnLower: 18
+      glimmerBurnUpper: 40
+    - type: PsionicCatGotYourTongueRule
+
+# - type: entity # Floofstation - Disabled because this is perm and this is bullshit!
+#   id: MassMindSwap
+#   parent: BaseGlimmerEvent
+#   categories: [ HideSpawnMenu ]
+#   components:
+#     - type: GlimmerEvent
+#       minimumGlimmer: 900
+#       glimmerBurnLower: 350
+#       glimmerBurnUpper: 450 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
+#     - type: MassMindSwapRule
+#       isTemporary: true # Permanent mindswap is hell.
+
+- type: entity
+  abstract: true
+  parent: BaseGlimmerEvent
+  id: BaseGlimmerSignaturesEvent
+  categories: [ HideSpawnMenu ]
+  components:
+  # Claw Command - one announcement shared by all five children (mites, wisps, revenant, prober,
+  # random sentience) rather than one each. Deliberate: the crew is told the noosphere produced
+  # something without being told what, so finding out is still the job. Matches how these already
+  # share `report: glimmer-event-report-signatures` for the Sophic Scribe's end-of-event readout.
+  - type: StationEvent
+    startAnnouncement: station-event-glimmer-signatures-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+  - type: GlimmerEvent
+    minimumGlimmer: 300
+    maximumGlimmer: 1000
+    report: glimmer-event-report-signatures
+
+- type: entity
+  id: GlimmerWispSpawn
+  parent: BaseGlimmerSignaturesEvent
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerMobRule
+    mobPrototype: MobGlimmerWisp
+
+- type: entity
+  parent: BaseGlimmerSignaturesEvent
+  id: FreeProber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: FreeProberRule
+
+## converted upstream events
+- type: entity
+  parent: BaseGlimmerSignaturesEvent
+  id: GlimmerRandomSentience
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 7
+    duration: 1
+    earliestStart: 15
+    reoccurrenceDelay: 15
+    minimumPlayers: 1
+  - type: GlimmerEvent
+    minimumGlimmer: 350
+    maximumGlimmer: 1000
+  - type: GlimmerRandomSentienceRule
+
+- type: entity
+  parent: BaseGlimmerSignaturesEvent
+  id: GlimmerRevenantSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 450
+      maximumGlimmer: 900
+      glimmerBurnLower: 50
+      glimmerBurnUpper: 100 # Gives epi a chance to recover
+    - type: GlimmerRevenantRule
+
+- type: entity
+  parent: BaseGlimmerSignaturesEvent
+  id: GlimmerMiteSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 250
+    maximumGlimmer: 900
+  - type: GlimmerMobRule
+    mobPrototype: MobGlimmerMite
+    glimmerTier: Low # get more mites earlier on
+    # Claw Command - a "mite swarm" used to be 1-3 mites, because the psionic head-count never sees players
+    # and so always floors at one. Three makes it 3 / 6 / 9 at Moderate / High / Dangerous glimmer.
+    minimumMobs: 3

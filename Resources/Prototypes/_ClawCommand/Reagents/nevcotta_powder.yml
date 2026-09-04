@@ -1,0 +1,37 @@
+# NevcottaPowder reagent ported from Goob _Goobstation toxins.
+# Adaptations for this fork:
+#   - ChemVomit -> Vomit (renamed in this codebase)
+#   - ReagentThreshold -> ReagentCondition (renamed in this codebase)
+#   - OrganType Yowie skip conditions dropped (Yowie species not in this fork)
+#   - SeeingRainbows status effect -> Drunk (closest visual analog; this fork
+#     doesn't have the SeeingRainbows status component)
+#   - Paralyze effect dropped (not in this fork's reagent system)
+
+- type: reagent
+  id: NevcottaPowder
+  name: reagent-name-nevcottapowder
+  group: Toxins
+  desc: reagent-desc-nevcottapowder
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: bitter
+  color: "#FAF9F6"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: NevcottaPowder
+          min: 10
+        probability: 0.15
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+            Asphyxiation: 0.25
+      - !type:GenericStatusEffect
+        key: Drunk
+        component: DrunkStatusEffect
+        type: Add
+        time: 20

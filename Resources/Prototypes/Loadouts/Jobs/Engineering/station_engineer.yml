@@ -62,21 +62,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineeringHazard
 
-- type: loadout
-  id: SeniorEngineerJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorEngineer
-
-- type: loadout
-  id: SeniorEngineerJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorEngineer
+# Claw Command - SeniorEngineerJumpsuit/Jumpskirt moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorEngineer job only). SeniorEngineerBeret stays here - it's the plain engineering beret,
+# not senior-branded gear.
 
 # Back
 - type: loadout
@@ -122,10 +110,5 @@
   equipment:
     id: EngineerPDA
 
-- type: loadout
-  id: SeniorEngineerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-  equipment:
-    id: SeniorEngineerPDA
+# Claw Command - SeniorEngineerPDA moved to _ClawCommand/Loadouts/Jobs/seniors.yml
+# (SeniorEngineer job only)

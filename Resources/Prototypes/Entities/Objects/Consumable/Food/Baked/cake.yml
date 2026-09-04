@@ -25,6 +25,7 @@
   - type: Tag
     tags:
     - Cake
+    - CakeBase # Claw Command: Added for construction.
   - type: SecretStash
     maxItemSize: "Normal"
     secretStashName: secret-stash-cake
@@ -140,6 +141,9 @@
     refineResult:
     - id: FoodCakePlainSlice
       amount: 8
+  - type: Construction # CLAW COMMAND: Added construction.
+    graph: CakeTiered
+    node: start
 
 # Added in type lines above
 

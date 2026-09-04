@@ -1,10 +1,10 @@
-using Content.Shared.DeviceNetwork;
-using Robust.Shared.Prototypes;
+using Content.Server._ClawCommand.SyndieOutpost; // Claw Command
 
 namespace Content.Server.SurveillanceCamera;
 
 [RegisterComponent]
-[Access(typeof(SurveillanceCameraMonitorSystem))]
+[Access(typeof(SurveillanceCameraMonitorSystem),
+    typeof(SyndieOutpostHackSystem))] // Claw Command - direct camera data tap
 public sealed partial class SurveillanceCameraMonitorComponent : Component
 {
     /// <summary>
@@ -45,7 +45,7 @@ public sealed partial class SurveillanceCameraMonitorComponent : Component
     /// Current active subnet.
     /// </summary>
     [ViewVariables]
-    public ProtoId<DeviceFrequencyPrototype>? ActiveSubnet { get; set; }
+    public string ActiveSubnet { get; set; } = default!;
 
     /// <summary>
     /// Known cameras in this subnet by address with name values.
@@ -58,5 +58,5 @@ public sealed partial class SurveillanceCameraMonitorComponent : Component
     /// The subnets known by this camera monitor.
     /// </summary>
     [ViewVariables]
-    public Dictionary<ProtoId<DeviceFrequencyPrototype>, string> KnownSubnets { get; } = new();
+    public Dictionary<string, string> KnownSubnets { get; } = new();
 }

@@ -1,0 +1,134 @@
+# Cosmic Cult decoration entities ported from Goob (_DV/CosmicCult).
+# Decoration-only port: the full cult antag system is not ported, so cult-specific
+# components (CosmicCultExamine, CosmicCorrupting, Monument*, RatvarianLanguage,
+# CosmicSpire, CosmicMalignRift, etc.) are stripped. Entities spawn as inert
+# props that the cult-themed ruin maps reference, but the cult game system is not
+# active in this fork.
+
+- type: entity
+  parent: SeatBase
+  id: CosmicChair
+  name: malign settee
+  description: A chair of unsettling, otherworldly design.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicchair.rsi
+    state: chair
+
+- type: entity
+  parent: BaseStructure
+  id: CosmicLamp
+  name: malign light
+  description: A mote of un-light shimmers within.
+  suffix: Always Powered
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmiclight.rsi
+    state: base
+    drawdepth: WallMountedItems
+  - type: PointLight
+    enabled: true
+    radius: 4
+    energy: 1.0
+    color: "#9c66ff"
+
+- type: entity
+  parent: BaseStructure
+  id: CosmicObelisk
+  name: malign obelisk
+  description: A mysterious-yet-inert structure. Unsettling.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicpillar.rsi
+    offset: 0, 0.5
+    layers:
+    - state: icon
+    drawdepth: Mobs
+    noRot: true
+
+- type: entity
+  parent: CounterBase
+  id: CosmicTable
+  name: malign table
+  description: Unfathomably, cosmically square.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmictable.rsi
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/cosmictable.rsi
+    state: full
+
+- type: entity
+  parent: BaseSecretDoor
+  id: DoorCosmicCult
+  name: malign door
+  description: A door fashioned from un-matter.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicdoor.rsi
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/cosmicdoor.rsi
+    state: closed
+
+# FloorCosmicDecay is referenced as an ENTITY in maps (not a tile prototype).
+# Implemented as a thin decal-style overlay so the map loads.
+- type: entity
+  parent: BaseStructure
+  id: FloorCosmicDecay
+  name: cosmic decay
+  description: The ground here radiates with sickly purple light.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicdecay.rsi
+    state: full
+    drawdepth: BelowFloor
+
+- type: entity
+  parent: PlushieCarp
+  id: PlushieCosmicCult
+  name: cosmic cultist plushie
+  description: A creepy plush replica of a cosmic cultist. It hums faintly.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Objects/unknownplushie.rsi
+    state: plushie_cosmic
+
+- type: entity
+  parent: BaseItem
+  id: ToyFigurineCosmicCultist
+  name: cosmic cultist action figure
+  description: A small action figure of a cosmic cultist.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Fun/figurines.rsi
+    state: cosmiccultist
+
+- type: entity
+  parent: WallSolid
+  id: WallCosmicCult
+  name: malign wall
+  description: A barrier formed of cosmic matter.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicwall.rsi
+    state: full
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/cosmicwall.rsi
+    state: full
+
+- type: entity
+  parent: Window
+  id: WindowCosmicCultDark
+  name: malign window (dark)
+  description: A pane of dark, glittering un-glass.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicwindow_dark.rsi
+    state: full
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/cosmicwindow_dark.rsi
+    state: full

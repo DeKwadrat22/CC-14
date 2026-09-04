@@ -1,0 +1,16 @@
+{
+    "version": 1,
+    "size": { "x": 32, "y": 32 },
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Made by DaCookieCakes for Claw Command 14.",
+    "states": [
+        {
+            "name": "l_nails",
+            "directions": 4
+        },
+        {
+            "name": "r_nails",
+            "directions": 4
+        }
+    ]
+}

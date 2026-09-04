@@ -69,6 +69,10 @@
   components:
   - type: SpawnPoint
     job_id: CargoTechnician
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorCourier
   - type: Sprite
     layers:
       - state: green
@@ -287,6 +291,15 @@
   components:
   - type: SpawnPoint
     job_id: Borg
+    # _ClawCommand: dogborg variants share this spawn point so mappers don't
+    # need a per-variant marker — every dogborg job spawns where regular Borgs do.
+    additionalJobs:
+    - DogborgSecurity
+    - DogborgMedical
+    - DogborgEngineering
+    - DogborgJanitor
+    - DogborgService
+    - DogborgMining
   - type: Sprite
     layers:
     - state: green
@@ -342,6 +355,10 @@
   components:
   - type: SpawnPoint
     job_id: StationEngineer
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorEngineer
   - type: Sprite
     layers:
       - state: green
@@ -380,6 +397,10 @@
   components:
   - type: SpawnPoint
     job_id: MedicalDoctor
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorPhysician
   - type: Sprite
     layers:
       - state: green
@@ -430,6 +451,10 @@
   components:
   - type: SpawnPoint
     job_id: Scientist
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorResearcher
   - type: Sprite
     layers:
       - state: green
@@ -468,6 +493,10 @@
   components:
   - type: SpawnPoint
     job_id: SecurityOfficer
+    # _ClawCommand: the senior variant shares this marker instead of needing its own
+    # spawn point placed on every station map.
+    additionalJobs:
+    - SeniorOfficer
   - type: Sprite
     layers:
       - state: green
@@ -484,16 +513,6 @@
     layers:
       - state: green
       - state: detective
-
-- type: entity
-  id: SpawnPointBrigmedic
-  parent: SpawnPointJobBase
-  name: brigmedic
-  components:
-  - type: Sprite
-    layers:
-      - state: green
-      - state: brigmedic
 
 # SPECIAL
 # ERT

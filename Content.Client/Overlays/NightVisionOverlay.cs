@@ -14,7 +14,7 @@ public sealed partial class NightVisionOverlay : Overlay
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IConfigurationManager _configManager = default!;
 
-    private static readonly ProtoId<ShaderPrototype> Shader = "NightVision";
+    private static readonly ProtoId<ShaderPrototype> Shader = "NightVisionOverlay";
     private readonly ShaderInstance _nightVisionShader;
 
     public Color OverlayColor { get; private set; } = Color.White;

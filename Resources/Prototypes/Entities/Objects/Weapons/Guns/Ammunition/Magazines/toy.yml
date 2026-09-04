@@ -2,7 +2,7 @@
   parent: MagazineLightRifleBox # It goes in a saw, its funny.
   id: MagazineFoamBox
   name: "L6 SAW magazine box (foam dart)"
-  description: Box containing a 100-round belt of linked... foam darts?
+  description: Box containing a 20-round belt of linked... foam darts?
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -10,4 +10,4 @@
       tags:
         - BulletFoam
     proto: BulletFoam
-    capacity: 100
+    capacity: 20

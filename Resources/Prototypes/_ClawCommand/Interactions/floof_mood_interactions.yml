@@ -1,0 +1,42 @@
+- type: Interaction
+  id: Kiss
+  parent: [BaseGlobal, BaseMouth]
+  priority: -1
+  delay: 0.4
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
+  minHeightRange: 1
+  hideByRequirement: true
+  requirement:
+    !type:EntityWhitelistRequirement
+    whitelist:
+      components: [MobState] # Don't go around kissing inanimate objects.
+  action:
+    !type:MoodAction
+    effect: BeingKissed
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_ClawCommand/Cute/kiss.ogg}
+  effectFailure: null
+
+- type: Interaction
+  id: Lick
+  parent: [BaseGlobal, BaseMouth]
+  priority: -2
+  delay: 0.7
+  # Claw Command - reach scales with height: 1.0 at the shortest, 1.33 at the tallest.
+  range: {max: 1.33}
+  minHeightRange: 1
+  hideByRequirement: true
+  requirement:
+    !type:EntityWhitelistRequirement
+    whitelist:
+      components: [MobState, Anomaly, Edible]
+      tags: [Window] # yes.
+  action:
+    !type:MoodAction
+    effect: BeingLicked
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_ClawCommand/Cute/lick.ogg}
+  effectFailure: null

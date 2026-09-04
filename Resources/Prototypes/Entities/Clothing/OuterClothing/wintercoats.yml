@@ -21,6 +21,7 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
+    - WinterCoat # _ClawCommand - heretic ritual input (VoidCloak)
   - type: StaticPrice
     price: 50
 

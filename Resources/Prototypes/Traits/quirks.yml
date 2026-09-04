@@ -5,6 +5,7 @@
   name: trait-pacifist-name
   description: trait-pacifist-desc
   category: Quirks
+  cost: -6
   components:
   - type: Pacified
 
@@ -13,6 +14,9 @@
   name: trait-lightweight-name
   description: trait-lightweight-desc
   category: Quirks
+  cost: -1
+  excludes:
+    - HeavyweightDrunk
   components:
   - type: LightweightDrunk
     boozeStrengthMultiplier: 2

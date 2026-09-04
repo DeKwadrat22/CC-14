@@ -1,0 +1,55 @@
+# Claw Command - Ported from Floofstation
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCollarBlue
+  name: blue collar
+  description: A cute blue collar.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_blue.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_blue.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCollarBlack
+  name: black collar
+  description: A cute black collar.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_black.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_black.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCollarPink
+  name: pink collar
+  description: A cute pink collar.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_pink.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/Collars/collar_pink.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBellCollar
+  name: bell collar
+  description: A way to inform others about your presence, or just to annoy everyone around you!
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/bellcollar.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/bellcollar.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakRedHood
+  name: red cloak
+  description: A cloak made for travel and comfort. Slightly smells of cherry pie?
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/Cloaks/redhood.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/Cloaks/redhood.rsi

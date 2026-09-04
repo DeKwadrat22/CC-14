@@ -1,0 +1,26 @@
+<Document>
+  # Kitsunes
+
+  <Box>
+    <GuideEntityEmbed Entity="AppearanceKitsunes" Caption=""/>
+  </Box>
+
+  Graceful and mysterious fox people, often associated with old superstitions about flame and mischief.
+
+  ## Diet
+
+  - Can eat raw meat.
+  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+
+  ## Benefits
+
+  - Carries a kitsune-flavored speech style and accent.
+  - Slightly more resistant to extreme temperatures than humans.
+  - Capable in melee with a Felinid-style claw attack.
+
+  ## Drawbacks
+
+  - More fragile than humans against blunt and slash damage.
+  - Their small frame means struggling to carry or pull heavy things.
+
+</Document>

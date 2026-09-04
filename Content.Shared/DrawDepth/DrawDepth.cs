@@ -40,6 +40,12 @@ namespace Content.Shared.DrawDepth
         FloorObjects = DrawDepthTag.Default - 13,
 
         /// <summary>
+        ///     Heretic floor visual effects (runes, carvings, void conduit overlay) — between
+        ///     FloorObjects and Puddles so they layer above tiles but below puddles.
+        /// </summary>
+        FloorEffects = DrawDepthTag.Default - 11,
+
+        /// <summary>
         //     Discrete drawdepth to avoid z-fighting with other FloorObjects but also above floor entities.
         /// </summary>
         Puddles = DrawDepthTag.Default - 12,

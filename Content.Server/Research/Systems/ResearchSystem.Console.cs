@@ -1,5 +1,7 @@
+using System.Linq;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Research.Components;
+using Content.Shared._ClawCommand.Research;
 using Content.Shared.UserInterface;
 using Content.Shared.Access.Components;
 using Content.Shared.Emag.Systems;
@@ -70,19 +72,57 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref component, ref clientComponent, false))
             return;
 
-        ResearchConsoleBoundInterfaceState state;
+        var allTechs = ProtoMan.EnumeratePrototypes<TechnologyPrototype>().Where(p => !p.Hidden).ToList();
+        var techList = new Dictionary<string, ResearchAvailability>(allTechs.Count);
+        var points = 0;
 
-        if (TryGetClientServer(uid, out _, out var serverComponent, clientComponent))
+        if (TryGetClientServer(uid, out var serverUid, out var serverComponent, clientComponent)
+            && TryComp<TechnologyDatabaseComponent>(serverUid, out var db))
         {
-            var points = clientComponent.ConnectedToServer ? serverComponent.Points : 0;
-            state = new ResearchConsoleBoundInterfaceState(points);
+            points = clientComponent.ConnectedToServer ? serverComponent.Points : 0;
+            var unlockedTechs = new HashSet<string>(db.UnlockedTechnologies.Select(p => p.Id));
+            var disciplineTiers = GetDisciplineTiers(db);
+
+            foreach (var proto in allTechs)
+            {
+                if (unlockedTechs.Contains(proto.ID))
+                {
+                    techList[proto.ID] = ResearchAvailability.Researched;
+                    continue;
+                }
+
+                if (!db.SupportedDisciplines.Contains(proto.Discipline))
+                {
+                    techList[proto.ID] = ResearchAvailability.Unavailable;
+                    continue;
+                }
+
+                var prereqsMet = proto.TechnologyPrerequisites.All(p => unlockedTechs.Contains(p));
+                if (!prereqsMet)
+                {
+                    techList[proto.ID] = ResearchAvailability.Unavailable;
+                    continue;
+                }
+
+                if (disciplineTiers.TryGetValue(proto.Discipline, out var maxTier) && proto.Tier > maxTier)
+                {
+                    techList[proto.ID] = ResearchAvailability.PrereqsMet;
+                    continue;
+                }
+
+                techList[proto.ID] = serverComponent.Points >= proto.Cost
+                    ? ResearchAvailability.Available
+                    : ResearchAvailability.PrereqsMet;
+            }
         }
         else
         {
-            state = new ResearchConsoleBoundInterfaceState(default);
+            foreach (var proto in allTechs)
+                techList[proto.ID] = ResearchAvailability.Unavailable;
         }
 
-        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);
+        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key,
+            new ResearchConsoleBoundInterfaceState(points, techList));
     }
 
     private void OnPointsChanged(EntityUid uid, ResearchConsoleComponent component, ref ResearchServerPointsChangedEvent args)

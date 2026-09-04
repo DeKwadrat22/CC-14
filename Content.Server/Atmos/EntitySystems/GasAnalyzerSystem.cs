@@ -281,7 +281,7 @@ public sealed partial class GasAnalyzerSystem : EntitySystem
 /// should subscribe to this and return the GasMixtures as desired. A device that is flippable should subscribe
 /// to this event to report if it is flipped or not. See GasFilterSystem or GasMixerSystem for an example.
 /// </summary>
-public sealed class GasAnalyzerScanEvent : EntityEventArgs
+public sealed partial class GasAnalyzerScanEvent : EntityEventArgs
 {
     /// <summary>
     /// The string is for the name (ex "pipe", "inlet", "filter"), GasMixture for the corresponding gas mix. Add all mixes that should be reported when scanned.

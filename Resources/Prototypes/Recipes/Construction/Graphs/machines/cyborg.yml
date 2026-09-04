@@ -34,6 +34,93 @@
 
   - node: cyborg
     entity: BorgChassisSelectable
+    # _ClawCommand: outgoing edges from the constructed regular cyborg.
+    # Apply a dogborg conversion kit to a BorgChassisSelectable to swap
+    # the chassis to the matching dogborg variant. The tag step consumes
+    # the kit (no `store`, no extra screwdriver), so it's a one-click
+    # conversion. Placed on the constructed cyborg node so the
+    # construction system doesn't conflict with the assembly path that
+    # builds the cyborg in the first place.
+    edges:
+    - to: dogborgK9
+      steps:
+      - tag: DogborgKitK9
+        name: construction-graph-tag-dogborgkitk9
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgK9Dark
+      steps:
+      - tag: DogborgKitK9Dark
+        name: construction-graph-tag-dogborgkitk9dark
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgValeSec
+      steps:
+      - tag: DogborgKitValeSec
+        name: construction-graph-tag-dogborgkitvalesec
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgMedihound
+      steps:
+      - tag: DogborgKitMedihound
+        name: construction-graph-tag-dogborgkitmedihound
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgMedihoundDark
+      steps:
+      - tag: DogborgKitMedihoundDark
+        name: construction-graph-tag-dogborgkitmedihounddark
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgValeMed
+      steps:
+      - tag: DogborgKitValeMed
+        name: construction-graph-tag-dogborgkitvalemed
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgPupDozer
+      steps:
+      - tag: DogborgKitPupDozer
+        name: construction-graph-tag-dogborgkitpupdozer
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgValeEng
+      steps:
+      - tag: DogborgKitValeEng
+        name: construction-graph-tag-dogborgkitvaleeng
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgScrubpup
+      steps:
+      - tag: DogborgKitScrubpup
+        name: construction-graph-tag-dogborgkitscrubpup
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgValeServ
+      steps:
+      - tag: DogborgKitValeServ
+        name: construction-graph-tag-dogborgkitvaleserv
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
+    - to: dogborgBlade
+      steps:
+      - tag: DogborgKitBlade
+        name: construction-graph-tag-dogborgkitblade
+        icon: { sprite: Objects/Misc/module.rsi, state: mainboard }
 
   - node: derelictcyborg
     entity: BorgChassisDerelict
+
+  # _ClawCommand: dogborg variant target nodes.
+  - node: dogborgK9
+    entity: BorgChassisSecurityK9
+  - node: dogborgK9Dark
+    entity: BorgChassisSecurityK9Dark
+  - node: dogborgValeSec
+    entity: BorgChassisSecurityVale
+  - node: dogborgMedihound
+    entity: BorgChassisMedicalMedihound
+  - node: dogborgMedihoundDark
+    entity: BorgChassisMedicalMedihoundDark
+  - node: dogborgValeMed
+    entity: BorgChassisMedicalVale
+  - node: dogborgPupDozer
+    entity: BorgChassisEngineerPupDozer
+  - node: dogborgValeEng
+    entity: BorgChassisEngineerVale
+  - node: dogborgScrubpup
+    entity: BorgChassisJanitorScrubpup
+  - node: dogborgValeServ
+    entity: BorgChassisServiceVale
+  - node: dogborgBlade
+    entity: BorgChassisMiningBlade

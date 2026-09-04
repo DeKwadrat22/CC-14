@@ -1,0 +1,172 @@
+- type: job
+  id: ClawCommandOfficer
+  name: JobClawCommandOfficer
+  description: job-description-cco
+  playTimeTracker: JobClawCommandOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2h
+  startingGear: ClawCommandOfficerGear
+  icon: "JobIconClawCommandOfficer"
+  supervisors: job-supervisors-captain
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Atmospherics
+  - Medical
+  - Research
+  - Engineering
+  - Command
+  - CentralCommand
+  - ClawCommand
+  - Bar
+  - Service
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: ClawCommandOfficerGear
+  # Claw Command - no sidearm or pistol ammo here on purpose. The CCO's firearm comes entirely from the
+  # service-weapon loadout tab, so whatever they picked there is the only gun they spawn with. The Mk58
+  # that used to sit in the backpack was left behind when the spare magazines it referenced were removed,
+  # which meant every CCO got a free pistol on top of their chosen loadout.
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+    ears: ClothingHeadsetAltCommand
+    id: ClawCommandOfficerPDA
+  storage:
+    back:
+    - Flash
+    - Zipties
+    - Zipties
+
+- type: job
+  id: ClawCommandMaid
+  name: JobClawCommandMaid
+  description: job-description-ccm
+  playTimeTracker: JobClawCommandMaid
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 3h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2h
+  startingGear: ClawCommandMaidGear
+  icon: "JobIconClawCommandMaid"
+  supervisors: job-supervisors-captain
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Service
+  - Janitor
+  - Medical
+  - Chemistry
+  - Command
+  - CentralCommand
+  - Bar
+  - Kitchen
+  - Hydroponics
+  - Theatre
+  - Cargo
+  - Salvage
+  - ClawCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: ClawCommandMaidGear
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+    ears: ClothingHeadsetAltCommand
+    id: ClawCommandMaidPDA
+  storage:
+    back:
+    - Flash
+    - Zipties
+    - Zipties
+
+
+- type: job
+  id: AdmiralClaw
+  name: job-name-admiralclaw
+  description: job-description-admiralclaw
+  playTimeTracker: JobAdmiralClaw
+  setPreference: false
+  startingGear: AdmiralClawGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - AdmiralClaw
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: AdmiralClawGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClawCommandOfficer
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesMedSec
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingClawCommandArmourVest
+    id: AdmiralClawPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityWebbingFilled
+    pocket1: MagazinePistol
+    pocket2: WeaponPistolMk58
+
+- type: chameleonOutfit
+  id: ClawCommandOfficerChameleonOutfit
+  job: ClawCommandOfficer
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpsuitClawCommandOfficer
+    shoes: ClothingShoesBootsJack
+
+- type: chameleonOutfit
+  id: ClawCommandMaidChameleonOutfit
+  job: ClawCommandMaid
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpskirtClawCommandOfficer
+    shoes: ClothingShoesBootsJack
+
+- type: chameleonOutfit
+  id: AdmiralClawChameleonOutfit
+  job: AdmiralClaw
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskGasSecurity
+    hands: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpskirtClawCommandOfficer
+    shoes: ClothingShoesBootsJack

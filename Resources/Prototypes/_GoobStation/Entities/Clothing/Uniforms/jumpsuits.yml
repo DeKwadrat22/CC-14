@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTrainer
+  name: NCT Jumpsuit
+  description: A jumpsuit issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Uniforms/Jumpsuit/trainer.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Uniforms/Jumpsuit/trainer.rsi

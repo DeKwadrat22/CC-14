@@ -36,6 +36,7 @@
 # Engineering borg
 - type: borgType
   id: engineering
+  lawBoard: EngineerCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisEngineer
@@ -52,6 +53,7 @@
   - BorgModuleTool
   - BorgModuleConstruction
   - BorgModuleRCD
+  - BorgModuleRPD # _ClawCommand: shipped by default — within ExtraModuleCount budget (3 extras + 6 defaults = 9 max, leaves 3 swap slots)
   - BorgModuleCable
 
   radioChannels:
@@ -73,6 +75,7 @@
 # Salvage borg
 - type: borgType
   id: mining
+  lawBoard: CorporateCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisMining
@@ -111,6 +114,7 @@
 # Janitor borg
 - type: borgType
   id: janitor
+  lawBoard: JanitorCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisJanitor
@@ -147,6 +151,7 @@
 # Medical borg
 - type: borgType
   id: medical
+  lawBoard: MedicalCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisMedical
@@ -197,6 +202,7 @@
 # Service borg
 - type: borgType
   id: service
+  lawBoard: StationEfficiencyCircuitBoard # _ClawCommand - department lawset
 
   # Description
   dummyPrototype: BorgChassisService

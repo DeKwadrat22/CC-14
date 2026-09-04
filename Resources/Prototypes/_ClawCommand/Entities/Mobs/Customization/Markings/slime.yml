@@ -1,0 +1,269 @@
+- type: marking
+  id: SlimeNose
+  bodyPart: Head
+  groupWhitelist: [Slime]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: nose
+
+- type: marking
+  id: SlimeMouth
+  bodyPart: Head
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: mouth
+
+- type: marking
+  id: SlimeBrain
+  bodyPart: Head
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: brain
+
+- type: marking
+  id: SlimeEyesDefault
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ] # if these get generalized to all species thats fine, but im not making it my problem yet - rosy
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: eyes
+
+- type: marking
+  id: SlimeEyeglow
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: glow
+
+- type: marking
+  id: SlimeEyesDroopy
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: droopy
+
+- type: marking
+  id: SlimeEyesDroopyGlowing
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: droopyglow
+
+- type: marking
+  id: SlimeEyesCyclops
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: cyclops
+
+- type: marking
+  id: SlimeEyesCyclopsGlowing
+  bodyPart: Eyes
+  groupWhitelist: [ Slime ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: cyclopsglow
+
+- type: marking
+  id: SlimeLungs
+  bodyPart: Chest
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: lungs
+
+- type: marking
+  id: SlimeCore
+  bodyPart: Chest
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: core
+
+- type: marking
+  id: SlimeBonehead
+  bodyPart: Head
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonehead
+
+- type: marking
+  id: SlimeBonechest
+  bodyPart: Chest
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonechest
+
+- type: marking
+  id: SlimeBonearmleft
+  bodyPart: LArm
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonearmleft
+
+- type: marking
+  id: SlimeBonearmright
+  bodyPart: RArm
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonearmright
+
+- type: marking
+  id: SlimeBonefootleft
+  bodyPart: LFoot
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonefootleft
+
+- type: marking
+  id: SlimeBonefootright
+  bodyPart: RFoot
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonefootright
+
+- type: marking
+  id: SlimeBonehandleft
+  bodyPart: LHand
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonehandleft
+
+- type: marking
+  id: SlimeBonehandright
+  bodyPart: RHand
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonehandright
+
+- type: marking
+  id: SlimeBonelegleft
+  bodyPart: LLeg
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonelegleft
+
+- type: marking
+  id: SlimeBonelegright
+  bodyPart: RLeg
+  groupWhitelist: [Slime]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#F8F8F8"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/slime_parts.rsi
+    state: bonelegright
+

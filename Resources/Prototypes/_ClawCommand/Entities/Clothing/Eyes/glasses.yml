@@ -1,0 +1,65 @@
+- type: entity
+  parent: [ClothingEyesHudBase, ShowSecurityIcons, ShowMedicalIcons, BaseCommandContraband]
+  id: ClothingEyesGlassesMedSec
+  name: M.D.G. Eyewear
+  description: Upgraded sunglasses that provide flash immunity with both medical and security HUDs.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/medsecglasses.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/medsecglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - PetWearable
+    - WhitelistChameleon
+    # - HudMedical
+    # - HudSecurity
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesBase, ShowMedicalIcons, BaseCommandContraband]
+  id: ClothingEyesGlassesMedical
+  name: medical glasses
+  description: Upgraded sunglasses that provide flash immunity and scans the humanoids in view and provides accurate data about their health status.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/medglasses.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/medglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - PetWearable
+    - WhitelistChameleon
+    # - HudMedical
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesBase, ShowMedicalIcons, ShowSecurityIcons, BaseCentcommContraband]
+  id: ClothingEyesGlassesCentcomm
+  name: Centcomm glasses
+  description: Specially designed policarbon eyewear for advanced eye protection and situational awareness.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/centcomm_glasses.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Eyes/Glasses/centcomm_glasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: VisionCorrection
+  - type: SolutionScanner
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - PetWearable
+  - type: IdentityBlocker
+    coverage: EYES

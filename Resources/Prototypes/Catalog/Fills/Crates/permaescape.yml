@@ -87,6 +87,8 @@
           prob: 0.25
         - id: OxygenTankFilled
           prob: 0.05
+        - id: TankWaterVaporFilled # _ClawCommand: Added.
+          prob: 0.05
 
 - type: entity
   parent: CrateGenericSteel

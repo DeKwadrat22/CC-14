@@ -72,7 +72,7 @@ public abstract partial class SharedBorgSwitchableTypeSystem : EntitySystem
         if (ent.Comp.SelectedBorgType != null)
             return;
 
-        if (!ProtoMan.HasIndex(args.Prototype))
+        if (!ProtoMan.TryIndex(args.Prototype, out var proto) || !proto.Selectable)
             return;
 
         SelectBorgModule(ent, args.Prototype);

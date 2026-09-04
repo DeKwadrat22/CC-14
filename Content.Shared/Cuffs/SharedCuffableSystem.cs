@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Logs;
@@ -54,6 +55,7 @@ namespace Content.Shared.Cuffs
         [Dependency] private SharedInteractionSystem _interaction = default!;
         [Dependency] private SharedPopupSystem _popup = default!;
         [Dependency] private SharedTransformSystem _transform = default!;
+        [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
         [Dependency] private UseDelaySystem _delay = default!;
         [Dependency] private SharedCombatModeSystem _combatMode = default!;
 
@@ -183,9 +185,15 @@ namespace Content.Shared.Cuffs
             _actionBlocker.UpdateCanMove(uid);
 
             if (component.CanStillInteract)
+            {
                 _alerts.ClearAlert(uid, component.CuffedAlert);
+                _mood.RemoveMoodlet(uid, "Handcuffed"); // Claw Command
+            }
             else
+            {
                 _alerts.ShowAlert(uid, component.CuffedAlert);
+                _mood.AddMoodlet(uid, "Handcuffed"); // Claw Command
+            }
 
             var ev = new CuffedStateChangeEvent();
             RaiseLocalEvent(uid, ref ev);
@@ -482,7 +490,20 @@ namespace Content.Shared.Cuffs
             RaiseLocalEvent(target, ref beforeEv);
 
             // Success!
-            _hands.TryDrop(user, handcuff);
+            // Claw Command: reusable cuffs aren't taken from the user — keep their tool and put a
+            // fresh set on the target instead (ported from space/_Floof). Otherwise a cyborg's
+            // unremovable module zipties could never actually be applied to anyone.
+            if (cuff.RemoveOnUse)
+            {
+                _hands.TryDrop(user, handcuff);
+            }
+            else
+            {
+                handcuff = PredictedSpawnAtPosition(cuff.SpawnedOnUse, Transform(user).Coordinates);
+                var newCuff = EnsureComp<HandcuffComponent>(handcuff);
+                newCuff.Used = true;
+                Dirty(handcuff, newCuff);
+            }
 
             _container.Insert(handcuff, component.Container);
 
@@ -514,7 +535,10 @@ namespace Content.Shared.Cuffs
                 return true;
             }
 
-            if (!_hands.CanDrop(user, handcuff))
+            // Claw Command: reusable cuffs (RemoveOnUse == false) are never dropped from the user's
+            // hands — a fresh set is spawned onto the target instead — so skip the drop check for
+            // them. This is what lets a cyborg cuff with its built-in, unremovable zipties.
+            if (handcuffComponent.RemoveOnUse && !_hands.CanDrop(user, handcuff))
             {
                 _popup.PopupEntity(Loc.GetString("handcuff-component-cannot-drop-cuffs", ("target", Identity.Name(target, EntityManager, user))), user, user);
                 return false;

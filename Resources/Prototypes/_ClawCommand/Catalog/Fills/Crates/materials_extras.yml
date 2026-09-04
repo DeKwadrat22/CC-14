@@ -1,0 +1,10 @@
+# Claw Command - uranium material crate ported from space
+- type: entity
+  id: CrateMaterialUranium
+  name: uranium crate
+  parent: CrateUranium
+  components:
+  - type: StorageFill
+    contents:
+      - id: SheetUranium
+        amount: 3

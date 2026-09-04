@@ -1,0 +1,547 @@
+# Claw Command - entity prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: OreBase
+  id: ArtifactFragmentOre
+  name: artifact fragment ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ArtifactFragmentOre
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/ore.rsi
+    state: artifact
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawArtifactFragment: 100
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Artifexium
+        Quantity: 10
+  - type: GuideHelp
+    guides:
+    - Xenoarchaeology
+  - type: Item
+    heldPrefix: artifact
+  - type: Tag
+    tags:
+    - Ore
+    - OreGold
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: ArtifactFragmentOre
+  id: ArtifactFragmentOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# This is kinda shitty, but the other choice is fucking with StackSystem to allow it to track entities so I can keep tabs on which ore specifically has been clained.
+# Or cook some nasty shitcode to split the unclaimed value across all of the entities in the stack if there is any. But that feels fairly wonky.
+# Enjoy having to shove any new ores here.
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: ArtifactFragmentOreUnprocessed
+  id: ArtifactFragmentOre1Unprocessed
+  name: unprocessed artifact fragment ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: ArtifactFragmentOre
+  id: ArtifactFragmentOreUnprocessed
+  name: unprocessed artifact fragment ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ArtifactFragmentOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 200
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: BananiumOreUnprocessed
+  id: BananiumOre1Unprocessed
+  name: unprocessed bananium ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: BananiumOre
+  id: BananiumOreUnprocessed
+  name: unprocessed bananium ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: BananiumOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 69 # nice
+
+# from Resources/Prototypes/Entities/Objects/Specific/Robotics/borg_modules.yml
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  id: ClothingUniformJumpsuitShaftMiner
+  name: shaft miner's jumpsuit
+  description: It's a snappy jumpsuit, looks a bit burnt.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/shaft_miner.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/shaft_miner.rsi
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: CoalUnprocessed
+  id: Coal1Unprocessed
+  name: unprocessed coal
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: Coal
+  id: CoalUnprocessed
+  name: unprocessed coal
+  suffix: Thirty
+  components:
+  - type: Stack
+    stackType: CoalUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 1 # very abundant, used up much less in steel (0.1 coal, 0.33 iron)
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: DiamondOreUnprocessed
+  id: DiamondOre1Unprocessed
+  name: unprocessed diamond ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: DiamondOre
+  id: DiamondOreUnprocessed
+  name: unprocessed diamond ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: DiamondOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 1000 # rarest ore in the game, only 1 yield, used for endgame schematics
+
+# from Resources/Prototypes/_Lavaland/Entities/Markers/Spawners/Animations/chasm.yml
+- type: entity
+  id: FloorChasmOpeningSpawner
+  name: chasm opening
+  description: A rapidly opening chasm. If it's under you, RUN!!!
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    sprite: _Lavaland/Tiles/Planet/Chasms/chasm_opening.rsi
+    drawdepth: BelowFloor
+    layers:
+    - state: chasm-opening
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: TimedDespawn
+    lifetime: 4.78
+  - type: SpawnOnDespawn
+    prototype: FloorChasmEntity
+
+# from Resources/Prototypes/_Nuclear14/Entities/Objects/Misc/tiles.yml
+- type: entity
+  parent: GoldOreUnprocessed
+  id: GoldOre1Unprocessed
+  name: unprocessed gold ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: GoldOre
+  id: GoldOreUnprocessed
+  name: unprocessed gold ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: GoldOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 12
+
+# from Resources/Prototypes/_Goobstation/Entities/Objects/Materials/materials.yml
+- type: entity
+  parent: N14ChairMetalGreen
+  id: N14ChairMetalBlue
+  suffix: blue
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: metal_chair_blue
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairMetalBlue
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: N14ChairMetalGreen
+  id: N14ChairMetalFolding
+  name: folding chair
+  suffix: folding
+  components:
+  - type: Sprite
+    state: metal_chair_folding
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairMetalFolding
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: OfficeChairBase
+  id: N14ChairOfficeBlue
+  name: office chair
+  suffix: blue
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: office_chair_blue
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairOfficeBlue
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: OfficeChairBase
+  id: N14ChairOfficeGreen
+  name: office chair
+  suffix: green
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: office_chair_green
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairOfficeGreen
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: OfficeChairBase
+  id: N14ChairOfficeRed
+  name: office chair
+  suffix: red
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: office_chair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairOfficeRed
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: N14ChairMetalGreen
+  id: N14ChairPlastic
+  name: plastic chair
+  description: A plastic chair. Looks uncomfy.
+  suffix: plastic
+  components:
+  - type: Sprite
+    state: plastic_chair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairPlastic
+  - type: StaticPrice # Floof - apparently it's expensive when deconstructed
+    price: 20
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: StoolBase
+  id: N14ChairStoolBarRed
+  description: A red bar stool.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: barstool
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairStoolBarRed
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: StoolBase
+  id: N14ChairStoolBarTan
+  description: A tan bar stool.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
+    state: bar_tan
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairStoolBarTan
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: ChairWood
+  id: N14ChairWood
+  name: wooden chair
+  description: A wooden chair suitable for sitting on.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
+    state: wooden_chair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairWood
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: ChairWood
+  id: N14ChairWood1
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: wood_chair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairWood1
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: ChairWood
+  id: N14ChairWoodPadded
+  suffix: padded
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: wood_chair_padded
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairWoodPadded
+
+# from Resources/Prototypes/_Nuclear14/Entities/Structures/Furniture/chairs.yml
+- type: entity
+  parent: N14ChairWood
+  id: N14ChairWoodSettler
+  name: wooden chair
+  description: A wooden chair claimed by some settlers.
+  components:
+  - type: Sprite
+    state: wooden_chair_settler
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairWoodSettler
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Projectiles/rude_buster.yml
+- type: entity
+  id: ReinforcedSecretDoorAssembly
+  name: secret reinforced door assembly
+  parent: BaseSecretDoorAssembly
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Doors/secret_door_reinforced.rsi
+    state: assembly
+  - type: Construction
+    graph: ReinforcedSecretDoorGraph
+    node: assembly
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: SilverOreUnprocessed
+  id: SilverOre1Unprocessed
+  name: unprocessed silver ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: SilverOre
+  id: SilverOreUnprocessed
+  name: unprocessed silver ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SilverOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 12
+
+# from Resources/Prototypes/_NF/Entities/Structures/Doors/secret_door.yml
+- type: entity
+  id: SolidReinforcedSecretDoor
+  name: reinforced wall
+  parent: BaseSecretDoor
+  components:
+  - type: Construction
+    graph: ReinforcedSecretDoorGraph
+    node: ReinforcedSecretDoorNode
+    containers:
+    - battery-container
+  - type: Sprite
+    sprite: _NF/Structures/Doors/secret_door_reinforced.rsi
+
+#wood secret door
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: SpaceQuartzUnprocessed
+  id: SpaceQuartz1Unprocessed
+  name: unprocessed space quartz
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: SpaceQuartz
+  id: SpaceQuartzUnprocessed
+  name: unprocessed space quartz
+  suffix: Thirty
+  components:
+  - type: Stack
+    stackType: SpaceQuartzUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 3.5 # slightly rarer than iron and coal
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  id: SteelOre1Unprocessed
+  parent: SteelOreUnprocessed
+  name: unprocessed iron ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: SteelOre
+  id: SteelOreUnprocessed
+  name: unprocessed iron ore
+  suffix: Thirty
+  components:
+  - type: Stack
+    stackType: SteelOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 3 # very abundant, is used up more than coal (coal 0.1, iron 0.33)
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: UraniumOreUnprocessed
+  id: UraniumOre1Unprocessed
+  name: unprocessed uranium ore
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# from Resources/Prototypes/_Lavaland/Entities/Objects/Materials/ore.yml
+- type: entity
+  parent: UraniumOre
+  id: UraniumOreUnprocessed
+  name: unprocessed uranium ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: UraniumOreUnprocessed
+  - type: UnclaimedOre
+    miningPoints: 24 # used for fuel, lategame schematics, artifacts ect
+
+# from Resources/Prototypes/_Lavaland/Entities/Structures/walls.yml
+- type: entity
+  parent: BaseWall
+  id: WallHierophantArenaTemporary
+  name: hierophant field
+  description: "Keeps the salvager in and... Why are you looking at this in a middle of a fight? You have nothing to do?!"
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    sprite: _Lavaland/Structures/Walls/hierophant_temp.rsi
+  - type: Icon
+    sprite: _Lavaland/Structures/Walls/hierophant_temp.rsi
+  - type: Destructible
+  - type: IconSmooth
+    key: hierofield
+    base: hierotemp
+    shader: unshaded
+  - type: Occluder
+    enabled: false
+  - type: RustRequiresPathStage
+    pathStage: 11 # Can't rust
+
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
+- type: entity
+  name: icewing watcher bolt
+  id: WatcherBoltIcewing
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: Projectile
+    #   soundHit:  Waiting on serv3
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Cold: 15 # goob - matches magmawings in terms of damage
+  - type: ChangeTemperatureOnCollide
+    heat: -30000 # Lavaland Change
+
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_energy.yml
+- type: entity
+  id: WoodSecretDoor
+  name: wood wall
+  parent: BaseSecretDoor
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Doors/secret_door_wood.rsi
+  - type: Construction
+    graph: WoodSecretDoorGraph
+    node: WoodSecretDoorNode
+    containers:
+    - battery-container
+
+#uranium secret door
+
+# from Resources/Prototypes/_NF/Entities/Structures/Doors/secret_door.yml
+- type: entity
+  id: WoodSecretDoorAssembly
+  name: secret wood door assembly
+  parent: BaseSecretDoorAssembly
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Doors/secret_door_wood.rsi
+    state: assembly
+  - type: Construction
+    graph: WoodSecretDoorGraph
+    node: assembly
+  placement:
+    mode: SnapgridCenter

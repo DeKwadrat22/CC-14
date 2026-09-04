@@ -83,6 +83,11 @@
         - id: ClothingHeadHatSurgcapBlue
         - id: ClothingHeadHatSurgcapPurple
         - id: ClothingHeadHatSurgcapGreen
+        - id: ClothingHeadHatSurgcapBlack # Claw Command - Delta-V surg caps
+        - id: ClothingHeadHatSurgcapCyan
+        - id: ClothingHeadHatSurgcapPink
+        - id: ClothingHeadHatSurgcapRainbow
+        - id: ClothingHeadHatSurgcapWhite
         - id: ClothingMaskSterile
           amount: 3
 

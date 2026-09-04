@@ -1,0 +1,134 @@
+# Security cyborg modules (ported/adapted from space/_Floof).
+#
+# Lineup:
+#   BorgModuleSecurity         - low-lethal patrol (disabler, stunbaton, flash, zipties)   [static]
+#   BorgModuleInvestigation    - detective toolkit (forensic scanner, PDA, whistle)        [static]
+#   BorgModuleKill             - lethal combat (adv laser, Mk58, knife, gauze)             [research]
+#   BorgModuleAdvancedMeasures - top armament (adv laser, Mk58, xray, knife, gauze)        [research]
+#   BorgModuleGorillaGauntlet  - riot melee (gorilla gauntlet)                             [research]
+#
+# The energy weapons and zipties are self-recharging / reusable borg variants (see
+# _ClawCommand/Entities/Objects/Weapons/Borgmodules/) so a security borg never has to dock to
+# reload. The other dogborg variants (medical / engineering / janitor / service / mining) reuse the
+# existing upstream modules from BorgModulesStatic + BorgLimbsStatic.
+
+- type: entity
+  id: BorgModuleSecurity
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: security cyborg module
+  description: A low-lethal security module — a disabler, a stunbaton, a flash, and zipties for apprehending suspects without killing them.
+  components:
+  # Base RSI stays upstream's borgmodule.rsi — BaseBorgModule's inhandVisuals resolve their
+  # base-*-inhand-* states against it. Only the icon layer points at the _ClawCommand RSI.
+  - type: Sprite
+    layers:
+    - state: security
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-stun
+  - type: ItemBorgModule
+    hands:
+    # Claw Command: borg-only variants auto-recharge / are reusable (see
+    # _ClawCommand/Entities/Objects/Weapons/Borgmodules/). No more dock-runs mid-shift, and the
+    # zipties are never consumed — they spawn a fresh set onto the target instead.
+    - item: WeaponBorgDisabler
+    - item: BorgStunbaton
+    - item: BorgFlash
+    - item: BorgZipties
+  - type: BorgModuleIcon
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-stun }
+  # Claw Command: security-only tag (replaces the inherited BorgModuleGeneric) so this module
+  # only fits security borg types (see dogborg_types.yml moduleWhitelist).
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
+
+- type: entity
+  id: BorgModuleInvestigation
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: investigation cyborg module
+  description: A detective's toolkit — a forensic scanner, an integrated detective PDA, and a security whistle.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-investigation
+  - type: ItemBorgModule
+    hands:
+    - item: ForensicScanner
+    - item: DetectivePDACyborg
+    - item: SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-investigation }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
+
+- type: entity
+  id: BorgModuleKill
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: combat cyborg module
+  description: A lethal response module — a self-recharging advanced laser and Mk-58 sidearm, a combat knife, and gauze for field repairs.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-kill
+  - type: ItemBorgModule
+    hands:
+    - item: BorgWeaponAdvancedLaser
+    - item: WeaponborgPistolMk58
+    - item: CombatKnife
+    - item: Gauze
+  - type: BorgModuleIcon
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-kill }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
+
+- type: entity
+  id: BorgModuleAdvancedMeasures
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: advanced combat cyborg module
+  description: A top-tier armament — a self-recharging advanced laser, Mk-58 sidearm and xray cannon, plus a combat knife and gauze.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-Advmeasures
+  - type: ItemBorgModule
+    hands:
+    - item: BorgWeaponAdvancedLaser
+    - item: WeaponborgPistolMk58
+    - item: CombatKnife
+    - item: Gauze
+    - item: BorgWeaponXrayCannon
+  - type: BorgModuleIcon
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-Advmeasures }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity
+
+# Uses icon-capture rather than sharing icon-Advmeasures with the module above — otherwise the two
+# are indistinguishable in the borg's module-swap action bar.
+- type: entity
+  id: BorgModuleGorillaGauntlet
+  parent: [BaseBorgModule, BaseProviderBorgModule]
+  name: gorilla gauntlet cyborg module
+  description: A single, brutally effective gorilla gauntlet for sending rioters flying.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-capture
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponGauntletGorilla
+  - type: BorgModuleIcon
+    icon: { sprite: _ClawCommand/Objects/Specific/Robotics/borgmodule.rsi, state: icon-capture }
+  - type: Tag # Claw Command: security-only (replaces inherited BorgModuleGeneric)
+    tags:
+    - BorgModuleSecurity

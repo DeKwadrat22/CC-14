@@ -82,6 +82,14 @@ internal sealed partial class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"whisper \"{CommandParsing.Escape(str)}\"");
                 break;
 
+            case ChatSelectChannel.Subtle: // claw command
+                _consoleHost.ExecuteCommand($"subtle \"{CommandParsing.Escape(str)}\"");
+                break;
+
+            case ChatSelectChannel.Telepathic: // claw command
+                _consoleHost.ExecuteCommand($"tsay \"{CommandParsing.Escape(str)}\"");
+                break;
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
         }

@@ -1,8 +1,10 @@
 using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
+using Content.Server.Psionics.Glimmer; // Claw Command - glimmer event window
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Psionics.Glimmer; // Claw Command - glimmer event window
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -20,6 +22,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     [Dependency] private EntityTableSystem _entityTable = default!;
     [Dependency] public GameTicker GameTicker = default!;
     [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private GlimmerSystem _glimmer = default!; // Claw Command - glimmer event window
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
@@ -343,6 +346,18 @@ public sealed partial class EventManagerSystem : EntitySystem
         }
 
         if (_roundEnd.IsRoundEndRequested() && !stationEvent.OccursDuringRoundEnd && !_roundEnd.CanCallOrRecall())
+        {
+            return false;
+        }
+
+        // Claw Command - glimmer window. GlimmerEventComponent has always carried minimumGlimmer /
+        // maximumGlimmer, but the port never brought over the check that reads them, so every glimmer
+        // event was eligible at every glimmer level - NoosphericFry could roll at glimmer 0. This is the
+        // ladder those numbers describe: mites at 250, wisps and probers at 300, sentience at 350,
+        // cat-got-your-tongue at 400, revenants at 450, fry at 550.
+        if (_configurationManager.GetCVar(CCVars.GlimmerEnabled)
+            && prototype.TryGetComponent<GlimmerEventComponent>(out var glimmerEvent, EntityManager.ComponentFactory)
+            && (_glimmer.Glimmer < glimmerEvent.MinimumGlimmer || _glimmer.Glimmer > glimmerEvent.MaximumGlimmer))
         {
             return false;
         }

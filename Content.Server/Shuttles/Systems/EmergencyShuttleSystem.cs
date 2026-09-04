@@ -567,6 +567,17 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         component.Entity = grid;
         _shuttle.TryAddFTLDestination(mapId, true, out _);
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
+
+        // Claw Command — NT-Dart shuttle spawn.
+        // The Dart used to be embedded inside centcomm.yml as a second grid (uid 20955 at
+        // pos 59.055557,53 in space/'s Resources/Maps/ClawCommand/centcomm.yml), but
+        // TryLoadGrid only accepts files with exactly one grid, so we load the Dart from
+        // its standalone Resources/Maps/Shuttles/dart.yml and dock it at the same coords.
+        if (_loader.TryLoadGrid(mapId, new ResPath("/Maps/Shuttles/dart.yml"), out var dart))
+        {
+            _transformSystem.SetLocalPosition(dart.Value, new Vector2(59.055557f, 53f));
+            Log.Info($"Spawned NT-Dart shuttle {ToPrettyString(dart)} on centcomm map.");
+        }
     }
 
     public HashSet<EntityUid> GetCentcommMaps()
@@ -672,7 +683,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     /// A result of a shuttle dock operation done by <see cref="EmergencyShuttleSystem.DockSingleEmergencyShuttle"/>.
     /// </summary>
     /// <seealso cref="ShuttleDockResultType"/>
-    public sealed class ShuttleDockResult
+    public sealed partial class ShuttleDockResult
     {
         /// <summary>
         /// The station for which the emergency shuttle got docked.

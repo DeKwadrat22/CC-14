@@ -139,7 +139,7 @@ namespace Content.Client.Clickable
             }
         }
 
-        internal sealed class ClickMap
+        internal sealed partial class ClickMap
         {
             [ViewVariables] private readonly byte[] _data;
 

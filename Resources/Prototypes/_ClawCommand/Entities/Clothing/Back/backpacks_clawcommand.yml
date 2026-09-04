@@ -1,0 +1,13 @@
+# Claw Command backpack.
+# Originally in backpacks.yml but overwritten by the "Mass port from old Claw EE
+# fork" commit (0736f07514). Restored here from git history at 0736f07514^.
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackClawCommand
+  suffix: Claw Command
+  name: claw command backpack
+  description: A very protective backpack, smells like fur.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Back/Backpacks/clawcommand.rsi

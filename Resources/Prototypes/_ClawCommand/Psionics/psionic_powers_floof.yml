@@ -1,0 +1,41 @@
+# Claw Command - psionics port.
+#
+# HypnosisPower is deliberately NOT ported.
+#
+# In the fork this came from, hypnosis is a mind-control power gated behind a per-player Consent system
+# (`_consent.HasConsent(target, "Hypno")`). This codebase has no consent system, so porting the power as-is
+# would ship mind control with no opt-out for the person on the receiving end — a behaviour change from the
+# source rather than a faithful port.
+#
+# Everything it needs is otherwise straightforward: PsionicHypnoSystem, PsionicHypnoComponent,
+# HypnotizedComponent, HypnoPowerActionEvent, the HypnoClothing pair, and two small client systems.
+# If a consent system is added later — or you decide the power should ship without one — it can be brought
+# over in one pass. The original prototype is kept below, commented out, so nothing has to be reconstructed.
+
+#- type: psionicPower
+#  id: HypnosisPower
+#  name: Psionic Hypnosis
+#  powerCategories:
+#  - Mentalic
+#  initializeFunctions:
+#    - !type:AddPsionicActions
+#      actions:
+#      - ActionHypno
+#    - !type:AddPsionicPowerComponents
+#      components:
+#      - type: PsionicHypno
+#    - !type:PsionicFeedbackPopup
+#    - !type:PsionicFeedbackSelfChat
+#      feedbackMessage: hypnosis-power-initialization-feedback
+#    - !type:PsionicModifyGlimmer
+#      glimmerModifier: -4
+#    - !type:AddPsionicAssayFeedback
+#      assayFeedback: hypnosis-power-feedback
+#  removalFunctions:
+#  - !type:RemovePsionicActions
+#  - !type:RemovePsionicPowerComponents
+#    components:
+#    - type: PsionicHypno
+#  - !type:RemovePsionicStatSources
+#  - !type:RemoveAssayFeedback
+#    assayFeedback: hypnosis-power-feedback

@@ -60,15 +60,22 @@
     data:
       state: torso
   - type: VisualOrganMarkings
+    hideableLayers: # Claw Command - allow hiding genital markings when wearing a uniform
+    - enum.HumanoidVisualLayers.Genital
+    - enum.HumanoidVisualLayers.Penis
+    - enum.HumanoidVisualLayers.Breasts
     markingData:
       layers:
       - Chest
       - Tail
       - Overlay
-      - TailOverlay
+      - TailOversuit
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+      - Genital # Claw Command
+      - Penis # Claw Command
+      - Breasts # Claw Command
 
 - type: entity
   parent:
@@ -342,6 +349,9 @@
     markingData:
       layers:
       - Eyes
+  - type: Tag # _ClawCommand - heretic ritual input (AmberFocus/RawRitual/AshenEyes)
+    tags:
+    - Eyes
 
 - type: entity
   parent:
@@ -411,6 +421,9 @@
     - state: lung-r
   - type: Item
     heldPrefix: lungs
+  - type: Tag # _ClawCommand - heretic ritual input (LonelyRitual)
+    tags:
+    - Lungs
 
 - type: entity
   parent: Solution
@@ -440,6 +453,9 @@
   - type: Metabolizer
     maxReagents: 2
     stages: [ Bloodstream ]
+  - type: Tag # _ClawCommand - heretic ritual input (LivingHeart/LonelyRitual)
+    tags:
+    - Heart
 
 - type: entity
   parent:
@@ -464,6 +480,9 @@
     - state: stomach
   - type: Item
     heldPrefix: stomach
+  - type: Tag # _ClawCommand - heretic ritual input (RawRitual/LonelyRitual)
+    tags:
+    - Stomach
 
 - type: entity
   parent: Solution
@@ -494,6 +513,9 @@
   - type: Metabolizer
     maxReagents: 1
     stages: [ Metabolites ]
+  - type: Tag # _ClawCommand - heretic ritual input (ScorchingShark)
+    tags:
+    - Liver
 
 - type: entity
   parent:

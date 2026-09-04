@@ -3,6 +3,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Traitor.Uplink;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mind;
 using Content.Shared.NPC.Systems;
@@ -32,6 +33,7 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
     [Dependency] private SharedRoleSystem _roleSystem = default!;
     [Dependency] private UplinkSystem _uplink = default!;
     [Dependency] private CodewordSystem _codewordSystem = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -137,6 +139,9 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Change faction");
         _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
         _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+
+        // Claw Command - having a purpose, however murderous, is good for morale.
+        _mood.AddMoodlet(traitor, "TraitorFocused");
 
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Finished");
         return true;

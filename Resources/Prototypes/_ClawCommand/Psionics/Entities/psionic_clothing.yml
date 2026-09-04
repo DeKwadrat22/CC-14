@@ -1,0 +1,42 @@
+# Claw Command - psionics port.
+#
+# BedsheetInvisibilityCloak and ClothingHandsGlovesColorYellowUnsulated are NOT defined here: both already
+# exist in the fork (centcomm_misc.yml and glacier_hands.yml respectively), where the psionic grant had been
+# stripped with a note saying the system was absent. That grant has now been restored in place rather than
+# redefining the entities here, which would be a duplicate ID.
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesTelegnosisSpectacles
+  name: strange spectacles
+  description: A pair of spectacular and strange spectacles with lenses constructed of an unknown material.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/glasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/glasses.rsi
+  - type: VisionCorrection
+  - type: ClothingGrantPsionicPower
+    power: TelegnosisPower
+  - type: Psionic
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsDispelGloves
+  name: patchwork gloves
+  description: These leather gloves are heavily worn, however they have been repaired in several places.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/leather.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/leather.rsi
+  # Claw Command - upstream also had `GloveHeatResistance: 1400` here. That component does not exist in this
+  # codebase (it was for handling hot light bulbs and has since been removed upstream), and it is incidental
+  # flavour rather than the point of the item, so it is dropped.
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+  - type: ClothingGrantPsionicPower
+    power: DispelPower
+  - type: Psionic

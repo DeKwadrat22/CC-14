@@ -1,0 +1,96 @@
+# _ClawCommand: senior-branded loadout items, moved here out of the base jobs' loadout files
+# so they're only offered to the matching senior job.
+#
+# These used to sit in the Security/Engineering/Medical/Science/Cargo loadouts gated behind
+# the Senior* loadoutEffectGroups (60h department). The senior jobs themselves now carry a
+# 40h department requirement, so the per-item time gate is redundant and has been dropped -
+# if you can pick the job, you can wear its uniform.
+#
+# Deliberately NOT moved: SeniorEngineerBeret and ScientificBeret. Despite the names those are
+# the plain engineering / RND berets, not senior-branded gear, so they stay available to
+# Station Engineers and Scientists on their existing timers.
+
+# Security
+- type: loadout
+  id: SeniorOfficerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+
+- type: loadout
+  id: SeniorOfficerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
+
+- type: loadout
+  id: SeniorOfficerPDA
+  equipment:
+    id: SeniorOfficerPDA
+
+# Engineering
+- type: loadout
+  id: SeniorEngineerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorEngineer
+
+- type: loadout
+  id: SeniorEngineerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorEngineer
+
+- type: loadout
+  id: SeniorEngineerPDA
+  equipment:
+    id: SeniorEngineerPDA
+
+# Medical
+- type: loadout
+  id: SeniorPhysicianBeret
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+
+- type: loadout
+  id: SeniorPhysicianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+
+- type: loadout
+  id: SeniorPhysicianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorPhysician
+
+- type: loadout
+  id: SeniorPhysicianLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabSeniorPhysician
+
+- type: loadout
+  id: SeniorPhysicianPDA
+  equipment:
+    id: SeniorPhysicianPDA
+
+# Science
+- type: loadout
+  id: SeniorResearcherJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
+
+- type: loadout
+  id: SeniorResearcherJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorResearcher
+
+- type: loadout
+  id: SeniorResearcherLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
+
+- type: loadout
+  id: SeniorResearcherPDA
+  equipment:
+    id: SeniorResearcherPDA
+
+# Cargo
+- type: loadout
+  id: SeniorCourierPDA
+  equipment:
+    id: SeniorCourierPDA

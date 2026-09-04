@@ -1,0 +1,24 @@
+# Body Markings (Chest)
+- type: marking
+  id: VulpBellyCrestNew
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin, Slime, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_crest
+
+- type: marking
+  id: VulpBellyFullNew
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin, Slime, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_full
+
+- type: marking
+  id: VulpBellyFoxNew
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin, Slime, Human, MarkingsFelinid, MarkingsKitsune, MarkingsAvali , MarkingsIPC]
+  sprites:
+    - sprite: _ClawCommand/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_fox

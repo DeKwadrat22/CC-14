@@ -111,3 +111,12 @@ marking-VoxTailDocked = Vox Tail (Vestigial)
 
 marking-VoxTailSplit-vox_tail_split = Vox Tail (Split)
 marking-VoxTailSplit = Vox Tail (Split)
+
+marking-VoxLArmScales = Vox Left Arm
+marking-VoxLFootScales = Vox Left Foot
+marking-VoxLHandScales = Vox Left Hand
+marking-VoxLLegScales = Vox Left Leg
+marking-VoxRArmScales = Vox Right Arm
+marking-VoxRFootScales = Vox Right Foot
+marking-VoxRHandScales = Vox Right Hand
+marking-VoxRLegScales = Vox Right Leg

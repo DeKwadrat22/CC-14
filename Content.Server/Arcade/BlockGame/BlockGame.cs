@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Arcade;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
@@ -82,6 +83,7 @@ public sealed partial class BlockGame
         {
             _highScorePlacement = _arcadeSystem.RegisterHighScore(meta.EntityName, Points);
             SendHighscoreUpdate();
+            _entityManager.EventBus.RaiseLocalEvent(meta.Owner, new MoodEffectEvent("ArcadePlay")); // Claw Command
         }
         SendMessage(new BlockGameMessages.BlockGameGameOverScreenMessage(Points, _highScorePlacement?.LocalPlacement, _highScorePlacement?.GlobalPlacement));
     }

@@ -35,10 +35,15 @@ public abstract partial class SharedScaleVisualsSystem : EntitySystem
     /// <summary>
     /// Used to set the <see cref="Robust.Client.GameObjects.SpriteComponent.Scale"/> datafield to a certain value from the server.
     /// </summary>
-    public void SetSpriteScale(EntityUid uid, Vector2 scale)
+    /// <param name="pinBottom">
+    /// Claw Command - see <see cref="ScaleVisualsComponent.PinBottom"/>. Pass true for anything that
+    /// stands on the floor, so growing it taller raises its head rather than sinking its feet.
+    /// </param>
+    public void SetSpriteScale(EntityUid uid, Vector2 scale, bool pinBottom = false)
     {
         var comp = EnsureComp<ScaleVisualsComponent>(uid);
         comp.Scale = scale;
+        comp.PinBottom = pinBottom; // Claw Command
         Dirty(uid, comp);
 
         var appearanceComponent = EnsureComp<AppearanceComponent>(uid);

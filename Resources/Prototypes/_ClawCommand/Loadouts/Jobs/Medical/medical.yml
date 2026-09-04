@@ -1,0 +1,14 @@
+- type: loadout
+  id: LoadoutEyesHudMedical
+  equipment:
+    eyes: ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutEyesHudMedicalEyepatch
+  equipment:
+    eyes: ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutEyesHudChemical
+  equipment:
+    eyes: ClothingEyesGlassesChemical

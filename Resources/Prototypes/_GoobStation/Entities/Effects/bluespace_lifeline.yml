@@ -1,0 +1,58 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported from Goobstation for ClawCommand.
+
+- type: entity
+  parent: Acidifier
+  id: BluespaceLifeline
+  name: bluespace lifeline
+  description: Teleports your body to save your life!
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _GoobStation/Effects/bluespace_lifeline.rsi
+    noRot: true
+    layers:
+    - state: bluespace_lifeline
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_GoobStation/Weapons/ChronoLegionnaire/stasisgun_reload.ogg
+  - type: PointLight
+    color: SkyBlue
+    radius: 3
+    energy: 1
+    netsync: false
+
+- type: entity
+  parent: BluespaceLifeline
+  id: BluespaceLifelineSpawnCore
+  name: bluespace lifeline
+  description: Teleports your body to save your life!
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _GoobStation/Effects/bluespace_lifeline.rsi
+    noRot: true
+    layers:
+    - state: bluespace_lifeline
+      shader: unshaded
+  - type: SpawnOnDespawn
+    prototype: AnomalyCoreBluespace
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_GoobStation/Weapons/ChronoLegionnaire/stasisgun_reload.ogg
+
+- type: entity
+  parent: BluespaceLifeline
+  id: BluespaceTeleportationEffect
+  categories: []
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: SpawnOnDespawn
+    prototype: AdminInstantEffectFlash
+  - type: Transform
+    anchored: false

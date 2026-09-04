@@ -1,0 +1,20 @@
+# _ClawCommand: Avali name pools.
+# Ported wholesale from space's resomi_male/_female datasets (closest-implemented analog of the
+# Avali species in space — same Starbound-inspired phonemes). Renamed to the fork's NamesXxx convention.
+#
+# Must be `localizedDataset` to match what the SpeciesPrototype name-generator path expects —
+# a plain `dataset` here makes SpeciesAvali crash on first roundstart spawn the same way
+# Shadowkin/Tajaran/IPC would if their datasets weren't localized. The actual name strings
+# live in Resources/Locale/en-US/_ClawCommand/datasets/names/avali.ftl.
+
+- type: localizedDataset
+  id: NamesAvaliMale
+  values:
+    prefix: names-avali-male-dataset-
+    count: 47
+
+- type: localizedDataset
+  id: NamesAvaliFemale
+  values:
+    prefix: names-avali-female-dataset-
+    count: 48

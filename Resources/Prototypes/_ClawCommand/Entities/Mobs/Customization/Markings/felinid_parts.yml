@@ -1,0 +1,291 @@
+# Ears
+- type: marking
+  id: CatEars
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      ears_cat_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: ears_cat_outer
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: ears_cat_inner
+
+- type: marking
+  id: CatEarsCurled
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      curled_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      curled_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: curled_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: curled_inner
+
+- type: marking
+  id: CatEarsDroopy
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      droopy_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      droopy_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: droopy_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: droopy_inner
+
+- type: marking
+  id: CatEarsFuzzy
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      ears_cat_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      fuzzy_inner:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: ears_cat_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: fuzzy_inner
+
+- type: marking
+  id: CatEarsStubby
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      stubby_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      stubby_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: stubby_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: stubby_inner
+
+- type: marking
+  id: CatEarsTorn
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      torn_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      torn_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: torn_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: torn_inner
+
+- type: marking
+  id: CatEarsWide
+  bodyPart: HeadTop
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      wide_outer:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+      wide_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: wide_outer
+  - sprite: _Nyanotrasen/Mobs/Customization/felinid_ears.rsi
+    state: wide_inner
+
+# Tails
+- type: marking
+  id: CatTail
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_cat
+
+- type: marking
+  id: CatTailBell
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  requires: CatTail # New to Claw Command!
+  renderPriority: 2 # New to Claw Command!
+  coloring:
+    layers:
+      tail_bell:
+        type:
+          !type:SimpleColoring
+            color: "#ffbf00"
+      tail_cat:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_bell
+
+- type: marking
+  id: CatTailBow
+  requires: CatTail
+  renderPriority: 2
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      tail_bow:
+        type:
+          !type:SimpleColoring
+            color: "#FF0000"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_bow
+
+- type: marking
+  id: CatTailStripesEven
+  requires: CatTail
+  renderPriority: 1
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      tail_stripes_even:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_stripes_even
+
+- type: marking
+  id: CatTailStripesOdd
+  requires: CatTail
+  renderPriority: 1
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      tail_stripes_odd:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_stripes_odd
+
+- type: marking
+  id: CatTailTip
+  requires: CatTail
+  renderPriority: 1
+  bodyPart: Tail
+  groupWhitelist: [ MarkingsFelinid ]
+  coloring:
+    layers:
+      tail_tip:
+        type:
+          !type:CategoryColoring
+          category: Hair
+        fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/cat_parts.rsi
+    state: tail_tip

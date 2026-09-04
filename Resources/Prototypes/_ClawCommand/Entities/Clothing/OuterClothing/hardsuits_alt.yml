@@ -1,0 +1,612 @@
+# Alt hardsuit variants. Stats mirror the wizden originals in hardsuits.yml so the
+# 50/50 GroupSelector locker rolls behave identically regardless of which variant
+# rolls. Genuinely new suits (BasicAlt, CombatRiotAlt, CombatWardenAlt) have no
+# upstream counterpart and keep their imported stats.
+
+#CREW HARDSUITS
+
+# Basic Hardsuit (no upstream equivalent in this project — kept as imported)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBasicAlt
+  name: basic hardsuit
+  description: A basic, universal hardsuit that protects the wearer against the horrors of life in space. Beats not having a hardsuit, at least.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/basic.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/basic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBasicAlt
+
+# Spationaut Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitSpatioAlt
+  name: spationaut hardsuit
+  description: A lightweight hardsuit designed for industrial EVA in zero gravity.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/spatio.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/spatio.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.7
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Radiation: 0.3
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSpatioAlt
+
+# Salvage Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitSalvageAlt
+  name: mining hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/salvage.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/salvage.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.3
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSalvageAlt
+
+# Maxim Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitMaximAlt
+  name: salvager maxim hardsuit
+  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/maxim.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/maxim.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.3
+        Radiation: 0.1
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitMaximAlt
+
+# Warden's Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitWardenAlt
+  name: warden's hardsuit
+  description: A specialized riot suit geared to combat low pressure environments.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/security-warden.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/security-warden.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.7
+        Heat: 0.8
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitWardenAlt
+
+# Ling Space Suit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitLingAlt
+  name: organic space suit
+  description: A spaceworthy biomass of pressure and temperature resistant tissue.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.225
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 1
+        Heat: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLingAlt
+
+# Pirate EVA Suit (Deep Space EVA Suit)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitPirateEVAAlt
+  name: deep space EVA suit
+  suffix: Pirate
+  description: A heavy space suit that provides some basic protection from the cold harsh realities of deep space.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/pirateeva.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/pirateeva.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.4
+        Caustic: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitPirateEVAAlt
+  - type: StaticPrice
+    price: 0
+
+# MISC. HARDSUITS
+
+# Clown Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitClownAlt
+  name: clown hardsuit
+  description: A custom-made clown hardsuit.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/clown.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/clown.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: Construction
+    graph: ClownHardsuit
+    node: clownHardsuit
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitClownAlt
+
+# Mime Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitClownAlt
+  id: ClothingOuterHardsuitMimeAlt
+  name: mime hardsuit
+  description: A custom-made mime hardsuit.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/mime.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/mime.rsi
+  - type: Construction
+    graph: MimeHardsuit
+    node: mimeHardsuit
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitMimeAlt
+
+# COMBAT HARDSUITS (no upstream equivalent — DeltaV import, kept as-is)
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitCombatRiotAlt
+  name: riot combat hardsuit
+  description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.50
+        Slash: 0.50
+        Piercing: 0.50
+        Radiation: 0.70
+        Caustic: 0.70
+        Heat: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCombatRiotAlt
+
+- type: entity
+  parent: ClothingOuterHardsuitCombatRiotAlt
+  id: ClothingOuterHardsuitCombatWardenAlt
+  name: warden's riot combat hardsuit
+  description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments. This one has station security and warden's rank markings.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/Combat/warden.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/Combat/warden.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCombatWardenAlt
+
+# ============================================================================
+# HELMETS
+# ============================================================================
+
+# Basic Hardsuit Helmet (no upstream equivalent — kept as imported)
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitBasicAlt
+  name: basic hardsuit helmet
+  description: A basic-looking hardsuit helmet that provides minor protection against most sources of damage.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/basic.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/basic.rsi
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+# Spationaut Hardsuit Helmet
+# Matches the layout used by the fork's vanilla ClothingHeadHelmetHardsuitSpatio so the
+# visor unshaded glow and head-light overlay render correctly. The original port carried
+# only a flat single-layer Sprite/Clothing pair from upstream, which made the worn helmet
+# show as a flat silhouette with no visor glow or togglable light.
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitSpatioAlt
+  name: spationaut hardsuit helmet
+  description: A sturdy helmet designed for complex industrial operations in space.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/spatiohelm.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/spatiohelm.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      head-feroxi:
+      - state: equipped-head-feroxi
+  - type: PointLight
+    radius: 6
+  - type: PressureProtection
+    highPressureMultiplier: 0.72
+    lowPressureMultiplier: 1000
+
+# Salvage Hardsuit Helmet
+# Mirrors vanilla ClothingHeadHelmetHardsuitSalvage by inheriting ClothingHeadSuitWithLightBase
+# so the head-mounted floodlight works and the worn sprite swaps between off-/on-equipped-HELMET.
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitSalvageAlt
+  name: mining hardsuit helmet
+  description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
+  - type: PointLight
+    radius: 7
+    energy: 3
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+
+# Maxim Hardsuit Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitMaximAlt
+  categories: [ HideSpawnMenu ]
+  name: salvager maxim helmet
+  description: A predication of decay washes over your mind.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/maxim.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/maxim.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+# Paramedic Void Helmet (no upstream equivalent — kept as imported)
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitVoidParamedAlt
+  name: paramedic void helmet
+  description: A void helmet made for paramedics.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
+        Radiation: 0.75
+
+# Warden's Hardsuit Helmet
+# Mirrors vanilla ClothingHeadHelmetHardsuitWarden by inheriting ClothingHeadSuitWithLightBase
+# so the helmet's flashlight works and the worn sprite swaps between off-/on-equipped-HELMET.
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitWardenAlt
+  name: warden's hardsuit helmet
+  description: A modified riot helmet. Oddly comfortable.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
+  - type: PointLight
+    color: "#ffeead"
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+# Ling Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitLingAlt
+  name: organic space helmet
+  description: A spaceworthy biomass of pressure and temperature resistant tissue.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/lingspacehelmet.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/lingspacehelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.225
+    lowPressureMultiplier: 1000
+
+# Pirate EVA Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitPirateEVAAlt
+  name: deep space EVA helmet
+  suffix: Pirate
+  description: A deep space EVA helmet, very heavy but provides good protection.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/pirateeva.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/pirateeva.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+
+# Pirate Captain Hardsuit Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitPirateCapAlt
+  name: pirate captain's hardsuit helmet
+  suffix: Pirate
+  description: A special hardsuit helmet, made for the captain of a pirate ship.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/piratecaptainhelm.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/piratecaptainhelm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+# Santa's Hardsuit Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitSantaAlt
+  name: Santa's hardsuit helmet
+  description: A festive-looking hardsuit helmet that provides the jolly gift-giver protection from low-pressure environments.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/santahelm.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/santahelm.rsi
+  - type: PointLight
+    color: "#f4ffad"
+    radius: 5
+    energy: 2
+
+# Clown Hardsuit Helmet (parents security helmet to mirror upstream stat inheritance)
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitClownAlt
+  name: clown hardsuit helmet
+  description: A clown hardsuit helmet.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/clown.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/clown.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Effects/Emotes/parp1.ogg
+
+# Mime Hardsuit Helmet
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitMimeAlt
+  name: mime hardsuit helmet
+  description: A mime hardsuit helmet.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/mime.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/mime.rsi
+
+# Combat hardsuit helmets (no upstream equivalent — DeltaV import, kept as-is)
+
+# Combat helmets — alt rsi has icon-flash and off-/on-equipped-HELMET states, so they support
+# the same prefix+light pattern the fork's other combat-class helmets use. Without inheriting
+# ClothingHeadSuitWithLightBase the worn sprite stayed on the default "equipped-HELMET" lookup
+# (which doesn't exist in the rsi) and the helmet had no flashlight.
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitCombatRiotAlt
+  name: riot combat hardsuit helmet
+  description: A purpose-built combat hardsuit helmet for crowd control.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/riot.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/riot.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitCombatRiotAlt
+  id: ClothingHeadHelmetHardsuitCombatWardenAlt
+  name: warden's riot combat hardsuit helmet
+  description: A purpose-built combat hardsuit helmet for crowd control. This one has station security and warden's rank markings.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/warden.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/warden.rsi

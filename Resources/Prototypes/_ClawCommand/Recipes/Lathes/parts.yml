@@ -1,0 +1,54 @@
+- type: latheRecipe
+  parent: BasePartRecipe
+  id: AdvancedManipulatorRecipe
+  result: AdvancedManipulatorPart
+  completetime: 6
+  materials:
+    Steel: 75
+    Plastic: 75
+
+- type: latheRecipe
+  parent: BasePartRecipe
+  id: SuperManipulatorRecipe
+  result: SuperManipulatorPart
+  completetime: 9
+  materials:
+    Steel: 100
+    Plastic: 100
+
+
+## !! BELOW IS OBSOLETE !! ##
+# Lathe recipes for the SuperParts research unlock.
+
+- type: latheRecipe
+  parent: BaseStockPartRecipe
+  id: PicoManipulatorStockPart
+  result: PicoManipulatorStockPart
+  completetime: 3
+  materials:
+    Steel: 100
+    Plastic: 100
+    Gold: 100
+    Diamond: 50
+
+- type: latheRecipe
+  parent: BaseStockPartRecipe
+  id: SuperCapacitorStockPart
+  result: SuperCapacitorStockPart
+  completetime: 3
+  materials:
+    Steel: 100
+    Plastic: 100
+    Gold: 100
+    Uranium: 50
+
+- type: latheRecipe
+  parent: BaseStockPartRecipe
+  id: SuperMatterBinStockPart
+  result: SuperMatterBinStockPart
+  completetime: 3
+  materials:
+    Steel: 100
+    Plastic: 100
+    Silver: 100
+    Plasma: 50

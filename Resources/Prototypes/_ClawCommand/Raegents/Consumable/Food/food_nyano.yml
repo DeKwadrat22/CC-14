@@ -1,0 +1,31 @@
+# Ported from Nyanotrasen — verbatim apart from API renames.
+# Restored over earlier substitution: Nausium was substituted with Toxin.
+#
+# API renames vs. source:
+#   !type:ReagentThreshold → !type:ReagentCondition
+#   !type:ChemVomit         → !type:Vomit
+
+- type: reagent
+  id: Nausium
+  name: reagent-name-nausium
+  group: Foods
+  desc: reagent-desc-nausium
+  physicalDesc: reagent-physical-desc-sickly
+  color: brown
+  metabolisms:
+    Food:
+      effects:
+      - !type:Vomit
+        probability: 0.9
+        conditions:
+        - !type:ReagentCondition
+          reagent: Nausium
+          min: 5
+      - !type:PopupMessage
+        type: Local
+        messages: [ "disease-sick-stomach" ]
+        probability: 0.25
+        conditions:
+        - !type:ReagentCondition
+          reagent: Nausium
+          min: 2.5

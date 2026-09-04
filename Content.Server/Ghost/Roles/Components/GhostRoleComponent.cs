@@ -5,6 +5,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Ghost.Roles.Components;
 
+// !! CLAW COMMAND MODIFIED !! //
+
 [RegisterComponent]
 [Access(typeof(GhostRoleSystem))]
 public sealed partial class GhostRoleComponent : Component
@@ -104,5 +106,12 @@ public sealed partial class GhostRoleComponent : Component
     [DataField("job")]
     [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // also FIXME Friends
     public ProtoId<JobPrototype>? JobProto = null;
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     How many hours of playtime of jobs and server are required to raffle this ghost role.
+    /// </summary>
+    [DataField]
+    public List<JobRequirement> Requirements = new();
 }
 

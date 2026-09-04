@@ -1,0 +1,77 @@
+# Claw Command - Moodlets that raise mood.
+
+- type: moodEffect
+  id: BeingHugged
+  moodChange: 4
+  timeout: 240
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingPet
+  moodChange: 3
+  timeout: 120
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingKissed
+  moodChange: 4
+  timeout: 660
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingLicked
+  moodChange: 3
+  timeout: 120
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: PetAnimal
+  moodChange: 3
+  timeout: 300
+
+- type: moodEffect
+  id: ArcadePlay
+  moodChange: 3
+  timeout: 480
+
+- type: moodEffect
+  id: GotBlessed
+  moodChange: 3
+  timeout: 480
+
+- type: moodEffect
+  id: SavedLife
+  moodChange: 7
+  timeout: 480
+
+- type: moodEffect
+  id: TraitorFocused # Used for traitors to boost their goals completion.
+  moodChange: 7
+
+- type: moodEffect
+  id: RevolutionFocused # Used for revolution
+  moodChange: 7
+
+- type: moodEffect
+  id: CultFocused
+  moodChange: 10
+
+- type: moodEffect
+  id: HereticFocused
+  moodChange: 10
+
+- type: moodEffect
+  id: TraitSanguine
+  moodChange: 8
+
+- type: moodEffect
+  id: HeirloomSecure
+  category: Heirloom
+  moodChange: 5
+  timeout: 300 # A bit of time before they realize it's gone
+  moodletOnEnd: HeirloomLost
+
+# Shadekins are at home in the dark, and suffer in the light.
+- type: moodEffect
+  id: ShadekinDarkness
+  moodChange: 3

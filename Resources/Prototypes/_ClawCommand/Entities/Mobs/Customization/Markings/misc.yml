@@ -1,0 +1,807 @@
+## I did markings for a lot of different species, so for now they're all here. ##
+## If no one else does it, I'll do a cleanup of all marking code in a few months. ##
+##-carousel##
+
+#- type: marking
+#  id: FullID
+#  bodyPart: Part (undergarments are a part, as well. idunno.)
+#  groupWhitelist: [Species, Species]
+#  you're on your own for figuring out the coloring system, my friend
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/filelocation.rsi
+#    state: filename
+#  shaded: unshaded //use for markings that ignore shader
+
+- type: marking
+  id: fizz
+  bodyPart: Head
+  groupWhitelist: [ Slime ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fizz
+
+- type: marking
+  id: bubble
+  bodyPart: Chest
+  groupWhitelist: [ Slime ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: bubble
+
+- type: marking
+  id: fishbowl
+  bodyPart: Chest
+  groupWhitelist: [ Slime ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fishbowl1
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fishbowl2
+
+- type: marking
+  id: FadingStars
+  bodyPart: Head
+  groupWhitelist: [ Slime ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars1
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars2
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars3
+    shader: unshaded
+
+- type: marking
+  id: DionaLivingNymph
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: dionalivingnymph
+
+- type: marking
+  id: DionaMossChest
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: dionamosschest
+
+- type: marking
+  id: DionaMoonBloom
+  bodyPart: HeadTop
+  groupWhitelist: [ Diona ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: dionamoonbloom
+    shader: unshaded
+
+- type: marking
+  id: DionaBigFirefly
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: dionabigfirefly
+    shader: unshaded
+
+- type: marking
+  id: DionaFirefly
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: dionafirefly
+    shader: unshaded
+
+- type: marking
+  id: DionaPollenDust
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: dionapollendust
+
+- type: marking
+  id: SpiderMirror
+  bodyPart: Chest
+  groupWhitelist: [ Arachnid ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: spidermirror
+    shader: unshaded
+
+- type: marking
+  id: SpiderGlowEyes
+  bodyPart: Eyes
+  groupWhitelist: [ Arachnid ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: spidergloweyes
+    shader: unshaded
+
+- type: marking
+  id: SpiderEyesMulti
+  bodyPart: Eyes
+  groupWhitelist: [ Arachnid ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: spidereyesmulti1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: spidereyesmulti2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: spidereyesmulti3
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: spidereyesmulti4
+
+- type: marking
+  id: MothTrueButterfly
+  bodyPart: Tail
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothtruebutterfly1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothtruebutterfly2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothtruebutterfly3
+
+- type: marking
+  id: MothRhinoBeetle
+  bodyPart: Tail
+  groupWhitelist: [ Moth]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: rhinobeetle1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: rhinobeetle2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: rhinobeetle3
+
+- type: marking
+  id: MothGlasswing
+  bodyPart: Tail
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: glasswing1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: glasswing2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: glasswing3
+
+- type: marking
+  id: MothGlowAntenna
+  bodyPart: HeadTop
+  groupWhitelist: [ Moth]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: mothglowantenna
+    shader: unshaded
+
+- type: marking
+  id: MothFireflyOverlay
+  bodyPart: Tail
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
+  forcedColoring: false
+  requires: MothFirefly
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/animatedmarkings.rsi
+    state: mothfirefly1
+    shader: unshaded
+
+- type: marking
+  id: MothFirefly
+  bodyPart: Tail
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothfirefly2
+
+- type: marking
+  id: MothBeetleTail
+  bodyPart: Tail
+  groupWhitelist: [ Moth]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: beetle1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: beetle2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: beetle3
+
+- type: marking
+  id: MothBeetleHorn1
+  bodyPart: HeadTop
+  groupWhitelist: [ Moth]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothbeetlehorn1
+
+- type: marking
+  id: MothBeetleHorn2
+  bodyPart: HeadTop
+  groupWhitelist: [ Moth]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothbeetlehorn2
+
+- type: marking
+  id: MothBiggerEyes
+  bodyPart: Eyes
+  groupWhitelist: [ Moth]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: mothbiggereyes
+
+- type: marking
+  id: MothSnoth
+  bodyPart: Tail
+  groupWhitelist: [ Moth, MarkingsShadowkin ] # CLAW COMMAND: Added Shadekin.
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: snoth1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: snoth2
+
+- type: marking
+  id: VoxCocktail
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxcocktail1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxcocktail2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxcocktail3
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxcocktail4
+
+- type: marking
+  id: VoxTailBalled
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  layering:
+    tail_stenciled: Tail
+    voxtailballed: Tail
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailballed
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_stenciled
+
+# Commented out - duplicate ID with base game vox_parts.yml
+#- type: marking
+#  id: VoxTailSplit
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  groupWhitelist: [ Vox ]
+#  forcedColoring: true
+#  coloring:
+#   default:
+#     type:
+#       !type:SkinColoring
+#  layering:
+#    tail_stenciled: Tail
+#    voxtailsplit: Tail
+#  sprites:
+#  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+#    state: voxtailsplit
+#  - sprite: Mobs/Customization/vox_parts.rsi
+#    state: tail_stenciled
+
+- type: marking
+  id: VoxTailStripes
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  layering:
+    tail_stenciled: Tail
+    voxtailstripes: Tail
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailstripes
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_stenciled
+
+- type: marking
+  id: VoxLArmProsthetic
+  bodyPart: LHand
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxarmprostheticl
+
+- type: marking
+  id: VoxRArmProsthetic
+  bodyPart: RHand
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxarmprostheticr
+
+- type: marking
+  id: VoxBeakColor
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxbeakcolor
+
+- type: marking
+  id: VoxBeakSplit
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxbeaksplit1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxbeaksplit2
+
+- type: marking
+  id: VoxBeakTipped
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxbeaktipped
+
+- type: marking
+  id: VoxChestPlumage
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxchestplumage
+
+- type: marking
+  id: VoxFootSpines
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxfootspines
+
+- type: marking
+  id: VoxFootGradientLFoot
+  bodyPart: LFoot
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxfootgradientl1
+
+- type: marking
+  id: VoxFootGradientRFoot
+  bodyPart: RFoot
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxfootgradientr1
+
+- type: marking
+  id: VoxLegGradientLLeg
+  bodyPart: LLeg
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxfootgradientl2
+
+- type: marking
+  id: VoxLegGradientRLeg
+  bodyPart: RLeg
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxfootgradientr2
+
+- type: marking
+  id: VoxHandGradientRHand
+  bodyPart: RHand
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientr1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientr2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientr3
+
+- type: marking
+  id: VoxHandGradientLHand
+  bodyPart: LHand
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientl1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientl2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxhandgradientl3
+
+- type: marking
+  id: VoxHeadGradient
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxheadgradient1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxheadgradient2
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxheadgradient3
+
+- type: marking
+  id: VoxTailBell
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailbell1
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailbell2
+
+- type: marking
+  id: VoxTailBack
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailcolorable
+
+- type: marking
+  id: VoxTailLantern
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtaillantern
+    shader: unshaded
+
+- type: marking
+  id: VoxTailSingleStripe
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailsinglestripe
+
+- type: marking
+  id: VoxTailSmallPlume
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailsmallplume
+
+- type: marking
+  id: VoxTailSpines
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxtailspines
+
+- type: marking
+  id: VoxArmsStripesLHand
+  bodyPart: LArm
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxarmsstripesl
+
+- type: marking
+  id: VoxArmsStripesRHand
+  bodyPart: RArm
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxarmsstripesr
+
+- type: marking
+  id: VoxLegsStripesLLeg
+  bodyPart: LLeg
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxlegsstripesl
+
+- type: marking
+  id: VoxLegsStripesRLeg
+  bodyPart: RLeg
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxlegsstripesr
+
+- type: marking
+  id: VoxChains
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxchains
+
+- type: marking
+  id: VoxSunAndMoon
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxsunandmoon
+
+- type: marking
+  id: VoxCheeks
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxcheeks
+
+- type: marking
+  id: VoxBelly
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  forcedColoring: false
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: voxbelly
+
+- type: marking
+  id: VitiligoHeadL
+  bodyPart: Head
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligoheadl
+
+- type: marking
+  id: VitiligoHeadR
+  bodyPart: Head
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligoheadr
+
+- type: marking
+  id: VitiligoHeadJaw
+  bodyPart: Head
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligoheadjaw
+
+- type: marking
+  id: VitiligoChestF
+  bodyPart: Chest
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligochestf
+
+- type: marking
+  id: VitiligoChestSpots
+  bodyPart: Chest
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligochestspots
+
+- type: marking
+  id: VitiligoArmR
+  bodyPart: RArm
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligoarmr
+
+- type: marking
+  id: VitiligoArmL
+  bodyPart: LArm
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligoarml
+
+- type: marking
+  id: VitiligoHandR
+  bodyPart: RHand
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligohandr
+
+- type: marking
+  id: VitiligoHandL
+  bodyPart: LHand
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligohandl
+
+- type: marking
+  id: VitiligoLegR
+  bodyPart: RLeg
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligolegr
+
+- type: marking
+  id: VitiligoLegL
+  bodyPart: LLeg
+  groupWhitelist: [ Human, MarkingsAvali ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: vitiligolegl
+
+- type: marking
+  id: ChitinidBeetleHorn1
+  bodyPart: HeadTop
+  #groupWhitelist: [Chitinid]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: chitinidbeetlehorn1
+
+- type: marking
+  id: ChitinidBeetleHorn2
+  bodyPart: HeadTop
+  #groupWhitelist: [Chitinid]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/markingsbundle1.rsi
+    state: chitinidbeetlehorn2

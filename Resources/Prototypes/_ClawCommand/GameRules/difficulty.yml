@@ -1,0 +1,288 @@
+# Claw Command - roundstart antag rolls and difficulty selection for Secret / Extended Irregular.
+#
+# Each difficulty rolls roundstart antags in three ordered steps, matching upstream's ordering
+# requirement (non-job antags first, then the metagame dummy, then job-bound antags):
+#
+#   1. <mode><difficulty>MajorAntag   - exactly one of the heavy antags, or nothing.
+#      Entries share an orGroup, so their probs are relative weights within the group and one
+#      of them always wins. The id-less entry is the "nothing happens" slice.
+#   2. DummyNonAntagChance            - upstream metagame protection.
+#   3. <mode><difficulty>StationAntags - independent rolls for job-bound antags. These can
+#      stack with whatever the major roll produced.
+#
+# Extended Irregular never rolls heretic, wizard, xenoborgs or zombies at roundstart. Secret
+# rolls all of them.
+
+# ===========================================================================
+# Extended Irregular
+# ===========================================================================
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularEasyMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.78 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.12
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.10
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularEasyStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularSubTraitor
+      prob: 0.2
+    - id: Thief
+      prob: 0.50
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularMediumMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.62 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.20
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.18
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularMediumStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularSubTraitor
+      prob: 0.4
+    - id: Thief
+      prob: 0.50
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularHardMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.48 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.26
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.26
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularHardStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularSubTraitor
+      prob: 0.6
+    - id: Thief
+      prob: 0.40
+
+# --- bundles ---------------------------------------------------------------
+# One bundle per difficulty, so the difficulty roll is a single pick that brings its
+# roundstart antags, its event scheduler and its meteor scheduler with it.
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularEasyBundle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularEasyMajorAntag
+    - id: SubDummyNonAntagChance
+    - id: CCIrregularEasyStationAntags
+    - id: CCIrregularEasyScheduler
+    - id: CCIrregularEasyMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularMediumBundle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularMediumMajorAntag
+    - id: SubDummyNonAntagChance
+    - id: CCIrregularMediumStationAntags
+    - id: CCIrregularMediumScheduler
+    - id: CCIrregularMediumMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularHardBundle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularHardMajorAntag
+    - id: SubDummyNonAntagChance
+    - id: CCIrregularHardStationAntags
+    - id: CCIrregularHardScheduler
+    - id: CCIrregularHardMeteorScheduler
+    - id: CCGlimmerScheduler # Claw Command - glimmer-rate psionic events
+
+# --- difficulty roll -------------------------------------------------------
+
+- type: entity
+  parent: BaseGameRule
+  id: CCIrregularDifficultyRoll
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CCIrregularEasyBundle
+      prob: 0.25
+      orGroup: difficulty
+    - id: CCIrregularMediumBundle
+      prob: 0.65
+      orGroup: difficulty
+    - id: CCIrregularHardBundle
+      prob: 0.10
+      orGroup: difficulty
+
+# ===========================================================================
+# Secret
+#
+# Secret picks its difficulty through secret_weights.yml instead of a roll rule, so these
+# are listed directly in the SecretEasy / SecretMedium / SecretHard presets.
+# ===========================================================================
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretEasyMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.55 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.13
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.12
+      orGroup: major
+    - id: CalmHeretic
+      prob: 0.15
+      orGroup: major
+    - id: SubWizard
+      prob: 0.05
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretEasyStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubTraitor
+      prob: 0.75
+    - id: Thief
+      prob: 0.50
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretMediumMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.32 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.20
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.15
+      orGroup: major
+    - id: CalmHeretic
+      prob: 0.16
+      orGroup: major
+    - id: SubZombie
+      prob: 0.07
+      orGroup: major
+    - id: SubWizard
+      prob: 0.06
+      orGroup: major
+    - id: SubXenoborgs
+      prob: 0.04
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretMediumStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubTraitor
+      prob: 0.90
+    - id: Thief
+      prob: 0.50
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretHardMajorAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - prob: 0.12 # nothing
+      orGroup: major
+    - id: SubNukeops
+      prob: 0.28
+      orGroup: major
+    - id: SubRevolutionary
+      prob: 0.20
+      orGroup: major
+    - id: SubHeretic
+      prob: 0.14
+      orGroup: major
+    - id: SubZombie
+      prob: 0.12
+      orGroup: major
+    - id: SubWizard
+      prob: 0.08
+      orGroup: major
+    - id: SubXenoborgs
+      prob: 0.06
+      orGroup: major
+
+- type: entity
+  parent: BaseGameRule
+  id: CCSecretHardStationAntags
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubTraitor
+      prob: 1.0
+    - id: Thief
+      prob: 0.40

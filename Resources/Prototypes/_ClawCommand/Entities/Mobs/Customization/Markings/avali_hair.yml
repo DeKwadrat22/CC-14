@@ -1,0 +1,148 @@
+# _ClawCommand: Avali-flavored hair markings.
+# Wires up the orphan resomi_hair.rsi states (18 hairstyles) into the marking system as
+# Avali-only options. These show up alongside the vanilla human hair pool which Avali
+# already access — gives the species a small flavour-bank of bird-style "hair".
+
+- type: marking
+  id: AvaliHairBackstrafe
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiBackstrafe
+
+- type: marking
+  id: AvaliHairBurstShort
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiBurstShort
+
+- type: marking
+  id: AvaliHairDefault
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiDefault
+
+- type: marking
+  id: AvaliHairDroopy
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiDroopy
+
+- type: marking
+  id: AvaliHairEars
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiEars
+
+- type: marking
+  id: AvaliHairFluffyMohawk
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiFluffymohawk
+
+- type: marking
+  id: AvaliHairHedge
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiHedge
+
+- type: marking
+  id: AvaliHairLong
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiLong
+
+- type: marking
+  id: AvaliHairLongway
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiLongway
+
+- type: marking
+  id: AvaliHairMane
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiMane
+
+- type: marking
+  id: AvaliHairManeBeardless
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiManeBeardless
+
+- type: marking
+  id: AvaliHairMohawk
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiMohawk
+
+- type: marking
+  id: AvaliHairMushroom
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiMushroom
+
+- type: marking
+  id: AvaliHairNotree
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiNotree
+
+- type: marking
+  id: AvaliHairPointy
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiPointy
+
+- type: marking
+  id: AvaliHairSpiky
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiSpiky
+
+- type: marking
+  id: AvaliHairTwies
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiTwies
+
+- type: marking
+  id: AvaliHairUpright
+  bodyPart: Hair
+  groupWhitelist: [ MarkingsAvali ]
+  sprites:
+  - sprite: _ClawCommand/Mobs/Customization/resomi_hair.rsi
+    state: ResomiUpright

@@ -1,0 +1,22 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: TGMC
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingNeckCloakCOTGMC
+  parent: ClothingNeckBase
+  name: "co cloak"
+  description: "A pompous and comfy blue cloak with a nice gold trim, while not particularly valuable as your other possessions, it sure is fancy."
+  components:
+  - type: Sprite
+    sprite: Imperial/TGMC/Clothing/Neck/Cloaks/CO.rsi
+  - type: Clothing
+    sprite: Imperial/TGMC/Clothing/Neck/Cloaks/CO.rsi
+

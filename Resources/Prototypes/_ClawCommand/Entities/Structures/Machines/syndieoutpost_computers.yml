@@ -1,0 +1,53 @@
+# Claw Command - Syndicate Outpost comms computer (uses outpost title instead of nukie)
+- type: entity
+  parent: SyndicateComputerComms
+  id: SyndicateOutpostComputerComms
+  name: syndicate outpost communications computer
+  description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
+  components:
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-syndie-outpost
+    color: "#ff0000"
+    canShuttle: false
+    global: true
+    announceSentBy: false
+    # Claw Command: override the parent SyndicateComputerComms war.ogg sting (designed for the
+    # nukie war declaration). The outpost makes regular crew-facing announcements, so it should
+    # play the standard station chime so it sounds the same as any other announcement.
+    sound: /Audio/Announcements/announce.ogg
+  - type: AccessReader
+    access: [] # No access restriction for outpost operatives
+
+# Crew monitoring console - directly taps station server data when hack succeeds
+- type: entity
+  parent: ComputerCrewMonitoring
+  id: SyndieOutpostCrewMonitoring
+  name: hacked crew monitoring computer
+  description: A crew monitoring console with a syndicate data tap. Intercepts crew sensor data directly from the station's monitoring server.
+  components:
+  - type: SyndieOutpostHack
+    hackChance: 0.5
+  - type: AccessReader
+    access: []
+
+# Surveillance camera monitor - hacked to directly query station cameras
+- type: entity
+  parent: ComputerSurveillanceWirelessCameraMonitor
+  id: SyndieOutpostCameraMonitor
+  name: hacked camera monitor
+  description: A surveillance monitor with a syndicate signal bypass. Taps directly into the station's camera network.
+  components:
+  - type: SyndieOutpostHack
+    hackChance: 0.5
+  - type: AccessReader
+    access: []
+
+# Crew monitoring server - kept for map compatibility but not needed for the data tap
+- type: entity
+  parent: CrewMonitoringServer
+  id: SyndieOutpostMonitoringServer
+  name: syndicate monitoring server
+  description: A monitoring server modified with syndicate hardware.
+  components:
+  - type: SyndieOutpostHack
+    hackChance: 0.5

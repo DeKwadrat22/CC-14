@@ -21,11 +21,11 @@
     jumpsuit: ClothingUniformJumpsuitDeathSquad
     back: ClothingBackpackDeathSquad
     mask: ClothingMaskGasDeathSquad
-    eyes: ClothingEyesHudSecurity
+    eyes: ClothingEyesGlassesCentcomm
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitDeathsquad
-    shoes: ClothingShoesBootsMagAdv
+    outerClothing: ClothingOuterHardsuitDeathsquadAlt
+    shoes: ClothingShoesBootsMagDeathsquad
     id: DeathsquadPDA
     pocket1: EnergySword
     pocket2: EnergyShield
@@ -40,7 +40,7 @@
     - ToolDebug # spanish army knife
     - WelderExperimental
     - Hypospray
-    - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
+    - BluespaceLifelineImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
   inhand:
   - WeaponPulseRifle

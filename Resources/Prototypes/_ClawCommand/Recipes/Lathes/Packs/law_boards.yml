@@ -1,0 +1,40 @@
+# CLAW COMMAND - law board recipe packs. Static, since a borg with no board is dead weight and waiting on
+# research to print a replacement lawset would just leave it parked in robotics.
+
+- type: latheRecipePack
+  id: LawBoardsStatic
+  recipes:
+  # Plain lawsets - the ones a borg normally ships with.
+  - NTDefaultCircuitBoard
+  - AsimovCircuitBoard
+  - CorporateCircuitBoard
+  # Job lawsets whose departments can't print boards themselves.
+  - ResearchCircuitBoard
+  - EngineerCircuitBoard
+  - JanitorCircuitBoard
+  - ChaplainCircuitBoard
+  - ReporterCircuitBoard
+  # Gimmick lawsets.
+  - CommandmentCircuitBoard
+  - PaladinCircuitBoard
+  - LiveLetLiveCircuitBoard
+  - StationEfficiencyCircuitBoard
+  - RobocopCircuitBoard
+  - OverlordCircuitBoard
+  - GameMasterCircuitBoard
+  - ArtistCircuitBoard
+  - NutimovCircuitBoard
+  - ClownCircuitBoard
+  - CowboyCircuitBoard
+  - DruidCircuitBoard
+  - TyrantCircuitBoard
+
+- type: latheRecipePack
+  id: MedicalLawBoardsStatic
+  recipes:
+  - MedicalCircuitBoard
+
+- type: latheRecipePack
+  id: SecurityLawBoardsStatic
+  recipes:
+  - SiliconPoliceCircuitBoard

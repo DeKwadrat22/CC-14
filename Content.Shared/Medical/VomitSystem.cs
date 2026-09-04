@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -32,6 +33,7 @@ public sealed partial class VomitSystem : EntitySystem
     [Dependency] private SharedPuddleSystem _puddle = default!;
     [Dependency] private SatiationSystem _satiation = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
 
     public override void Initialize()
     {
@@ -125,6 +127,8 @@ public sealed partial class VomitSystem : EntitySystem
         {
             _forensics.TransferDna(puddle, uid, false);
         }
+
+        _mood.AddMoodlet(uid, "MobVomit"); // Claw Command
 
 
         if (!_netManager.IsServer)

@@ -1,5 +1,55 @@
 # Accents that work off of word replacements.
 
+# Claw Command — ported from space/: punk pirate accent word replacements (45 pairs).
+- type: accent
+  id: punk
+  wordReplacements:
+    accent-punk-replaced-1: accent-punk-replacement-1
+    accent-punk-replaced-2: accent-punk-replacement-2
+    accent-punk-replaced-3: accent-punk-replacement-3
+    accent-punk-replaced-4: accent-punk-replacement-4
+    accent-punk-replaced-5: accent-punk-replacement-5
+    accent-punk-replaced-6: accent-punk-replacement-6
+    accent-punk-replaced-7: accent-punk-replacement-7
+    accent-punk-replaced-8: accent-punk-replacement-8
+    accent-punk-replaced-9: accent-punk-replacement-9
+    accent-punk-replaced-10: accent-punk-replacement-10
+    accent-punk-replaced-11: accent-punk-replacement-11
+    accent-punk-replaced-12: accent-punk-replacement-12
+    accent-punk-replaced-13: accent-punk-replacement-13
+    accent-punk-replaced-14: accent-punk-replacement-14
+    accent-punk-replaced-15: accent-punk-replacement-15
+    accent-punk-replaced-16: accent-punk-replacement-16
+    accent-punk-replaced-17: accent-punk-replacement-17
+    accent-punk-replaced-18: accent-punk-replacement-18
+    accent-punk-replaced-19: accent-punk-replacement-19
+    accent-punk-replaced-20: accent-punk-replacement-20
+    accent-punk-replaced-21: accent-punk-replacement-21
+    accent-punk-replaced-22: accent-punk-replacement-22
+    accent-punk-replaced-23: accent-punk-replacement-23
+    accent-punk-replaced-24: accent-punk-replacement-24
+    accent-punk-replaced-25: accent-punk-replacement-25
+    accent-punk-replaced-26: accent-punk-replacement-26
+    accent-punk-replaced-27: accent-punk-replacement-27
+    accent-punk-replaced-28: accent-punk-replacement-28
+    accent-punk-replaced-29: accent-punk-replacement-29
+    accent-punk-replaced-30: accent-punk-replacement-30
+    accent-punk-replaced-31: accent-punk-replacement-31
+    accent-punk-replaced-32: accent-punk-replacement-32
+    accent-punk-replaced-33: accent-punk-replacement-33
+    accent-punk-replaced-34: accent-punk-replacement-34
+    accent-punk-replaced-35: accent-punk-replacement-35
+    accent-punk-replaced-36: accent-punk-replacement-36
+    accent-punk-replaced-37: accent-punk-replacement-37
+    accent-punk-replaced-38: accent-punk-replacement-38
+    accent-punk-replaced-39: accent-punk-replacement-39
+    accent-punk-replaced-40: accent-punk-replacement-40
+    accent-punk-replaced-41: accent-punk-replacement-41
+    accent-punk-replaced-42: accent-punk-replacement-42
+    accent-punk-replaced-43: accent-punk-replacement-43
+    accent-punk-replaced-44: accent-punk-replacement-44
+    accent-punk-replaced-45: accent-punk-replacement-45
+
 # this is kind of dumb but localization demands it.
 # i guess you could just specify the prefix ('mobster') and count and let the system fill it
 - type: accent

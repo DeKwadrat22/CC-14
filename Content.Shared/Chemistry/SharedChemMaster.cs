@@ -190,6 +190,7 @@ namespace Content.Shared.Chemistry
         public readonly ChemMasterSortingType SortingType;
 
         public readonly FixedPoint2? BufferCurrentVolume;
+        public readonly FixedPoint2? BufferMaxVolume;
         public readonly uint SelectedPillType;
 
         public readonly uint PillDosageLimit;
@@ -198,10 +199,25 @@ namespace Content.Shared.Chemistry
 
         public readonly ChemMasterDrawSource DrawSource;
 
+        // CLAW COMMAND SPECIFIC
+        // Must be readonly to match the rest of the class's pattern and so the sandbox's
+        // ILVerify accepts callers that read the field (it rejected the mutable form when
+        // accessed from cross-assembly client BUIs).
+        public readonly ChemMasterReagentAmount TransferAmount;
+
         public ChemMasterBoundUserInterfaceState(
-            ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
-            IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
+            ChemMasterMode mode,
+            ChemMasterSortingType sortingType,
+            ContainerInfo? inputContainerInfo,
+            ContainerInfo? outputContainerInfo,
+            IReadOnlyList<ReagentQuantity> bufferReagents,
+            FixedPoint2 bufferCurrentVolume,
+            FixedPoint2 bufferMaxVolume,
+            uint selectedPillType,
+            uint pillDosageLimit,
+            bool updateLabel,
+            ChemMasterDrawSource drawSource,
+            ChemMasterReagentAmount transferAmount) // CC14: Added transfer amounts.
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -209,10 +225,12 @@ namespace Content.Shared.Chemistry
             Mode = mode;
             SortingType = sortingType;
             BufferCurrentVolume = bufferCurrentVolume;
+            BufferMaxVolume = bufferMaxVolume;
             SelectedPillType = selectedPillType;
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
             DrawSource = drawSource;
+            TransferAmount = transferAmount;
         }
     }
 
@@ -220,5 +238,22 @@ namespace Content.Shared.Chemistry
     public enum ChemMasterUiKey
     {
         Key
+    }
+
+    /// <summary>
+    ///     CLAW COMMAND SPECIFIC
+    ///     Transfer Amount message between the BUI and the server.
+    ///     Rewritten away from the C# 12 primary-constructor pattern that the engine's ILVerify
+    ///     sandbox rejected at type-load when referenced from a cross-assembly Client BUI lambda.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterSetTransferAmountMessage : BoundUserInterfaceMessage
+    {
+        public readonly ChemMasterReagentAmount Amount;
+
+        public ChemMasterSetTransferAmountMessage(ChemMasterReagentAmount amount)
+        {
+            Amount = amount;
+        }
     }
 }

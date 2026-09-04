@@ -5,4 +5,5 @@
   contrabandInventory:
     DrinkSodaWaterBottleFull: 2
     DrinkColaCan: 10
+    DrinkNNNCan: 20 # Claw Command - Floof port
     ClothingHeadHatUshanka: 2

@@ -1,0 +1,35 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: Adjutant
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: ClothingUniformJumpskirtAdjutant
+  parent: ClothingUniformBase
+  name: "adjutant jumpskirt"
+  description: "Who's Cap's good girl???"
+  suffix: "Adjutant"
+  components:
+  - type: Sprite
+    sprite: Imperial/Adjutant/jumpskirt.rsi
+  - type: Clothing
+    sprite: Imperial/Adjutant/jumpskirt.rsi
+
+- type: entity
+  id: ClothingUniformJumpsuitAdjutant
+  parent: ClothingUniformBase
+  name: "adjutant jumpsuit"
+  description: "Who's Cap's good boy???"
+  suffix: "Adjutant"
+  components:
+  - type: Sprite
+    sprite: Imperial/Adjutant/jumpsuit.rsi
+  - type: Clothing
+    sprite: Imperial/Adjutant/jumpsuit.rsi
+

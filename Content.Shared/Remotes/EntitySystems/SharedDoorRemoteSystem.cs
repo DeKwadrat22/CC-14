@@ -149,7 +149,7 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed class DoorRemoteModeChangeMessage : BoundUserInterfaceMessage
+public sealed partial class DoorRemoteModeChangeMessage : BoundUserInterfaceMessage
 {
     public OperatingMode Mode;
 }

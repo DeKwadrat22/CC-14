@@ -1,0 +1,129 @@
+# CLAW COMMAND - law boards are printable now that borgs take their laws from a board.
+#
+# Department lawsets print at that department's fabricator (medical techfab, security techfab); the rest,
+# including the plain NT / Crewsimov replacement boards, come out of the science circuit imprinter since
+# no other department has a fabricator that makes boards.
+
+# Department boards
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: MedicalCircuitBoard
+  result: MedicalCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: SiliconPoliceCircuitBoard
+  result: SiliconPoliceCircuitBoard
+
+# Science-printed job boards
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: ResearchCircuitBoard
+  result: ResearchCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: EngineerCircuitBoard
+  result: EngineerCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: JanitorCircuitBoard
+  result: JanitorCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: ChaplainCircuitBoard
+  result: ChaplainCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: ReporterCircuitBoard
+  result: ReporterCircuitBoard
+
+# Gimmick boards
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: ClownCircuitBoard
+  result: ClownCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: CowboyCircuitBoard
+  result: CowboyCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: DruidCircuitBoard
+  result: DruidCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: TyrantCircuitBoard
+  result: TyrantCircuitBoard
+
+# Boards that already existed but had no way of being made. A borg whose board gets yanked is inert until
+# someone slots a new one in, so at minimum the plain lawsets need to be printable.
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: NTDefaultCircuitBoard
+  result: NTDefaultCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: AsimovCircuitBoard
+  result: AsimovCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: CorporateCircuitBoard
+  result: CorporateCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: CommandmentCircuitBoard
+  result: CommandmentCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: PaladinCircuitBoard
+  result: PaladinCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: LiveLetLiveCircuitBoard
+  result: LiveLetLiveCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: StationEfficiencyCircuitBoard
+  result: StationEfficiencyCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: RobocopCircuitBoard
+  result: RobocopCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: OverlordCircuitBoard
+  result: OverlordCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: GameMasterCircuitBoard
+  result: GameMasterCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: ArtistCircuitBoard
+  result: ArtistCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseCircuitryRecipeCategory ]
+  id: NutimovCircuitBoard
+  result: NutimovCircuitBoard

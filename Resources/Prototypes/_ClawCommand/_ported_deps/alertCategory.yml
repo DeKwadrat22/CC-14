@@ -1,0 +1,6 @@
+# Claw Command - alertCategory prototypes referenced by ported content but missing from this fork.
+# Harvested from the `space` / Goob-Station trees.
+
+# from Resources/Prototypes/_Goobstation/Alerts/categories.yml
+- type: alertCategory
+  id: TileMovement

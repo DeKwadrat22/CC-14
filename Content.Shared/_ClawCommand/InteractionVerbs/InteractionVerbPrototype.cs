@@ -1,0 +1,303 @@
+using Content.Shared._ClawCommand.InteractionVerbs.Events;
+using Content.Shared.DoAfter;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+using Robust.Shared.Utility;
+
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable RA0038 // Type or member is obsolete
+
+namespace Content.Shared._ClawCommand.InteractionVerbs;
+
+/// <summary>
+///     Represents an action that can be performed on an entity.
+/// </summary>
+[Prototype("Interaction"), Serializable]
+public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPrototype
+{
+    /// <inheritdoc />
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<InteractionVerbPrototype>))]
+    public string[]? Parents { get; set; }
+
+    /// <inheritdoc />
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; set; }
+
+    [IdDataField]
+    public string ID { get; set; } = default!;
+
+    // Locale getters
+    public string Name => Loc.TryGetString($"interaction-{ID}-name", out var loc) ? loc : ID;
+
+    public string? Description => Loc.TryGetString($"interaction-{ID}-description", out var loc) ? loc : null;
+
+    [Serializable, Flags]
+    public enum ContestType : byte
+    {
+        Mass = 1,
+        Stamina = 1 << 1,
+        Health = 1 << 2,
+        All = Mass | Stamina | Health,
+        None = 0
+    }
+
+    [Serializable, Flags]
+    public enum EffectTargetSpecifier
+    {
+        /// <summary>
+        ///     Popup will be shown above the person executing the verb.
+        /// </summary>
+        User,
+        /// <summary>
+        ///     Popup will be shown above the target of the verb.
+        /// </summary>
+        Target,
+        /// <summary>
+        ///     The user will see the popup shown above itself, others will see the popup above the target.
+        /// </summary>
+        UserThenTarget,
+        /// <summary>
+        ///     The target will see the popup shown above itself, others will see the popup above the user.
+        /// </summary>
+        TargetThenUser
+    }
+
+    /// <summary>
+    ///     Sprite of the icon that the user sees on the verb button.
+    /// </summary>
+    [DataField]
+    public SpriteSpecifier? Icon;
+
+    /// <summary>
+    ///     The requirement of this verb.
+    /// </summary>
+    [DataField]
+    public InteractionRequirement? Requirement = null;
+
+    /// <summary>
+    ///     The action of this verb. It defines the conditions under which this verb is shown, as well as what the verb does.
+    /// </summary>
+    /// <remarks>Made server-only because many actions require authoritative access to the server.</remarks>
+    [DataField(serverOnly: true)]
+    public InteractionAction? Action = null;
+
+    /// <summary>
+    ///     Specifies what effects are shown when this verb is performed successfully, or unsuccessfully.
+    ///     Effects specified here are shown after the associated do-after has ended, if any.
+    /// </summary>
+    [DataField]
+    public EffectSpecifier? EffectSuccess, EffectFailure;
+
+    /// <summary>
+    ///     Specifies what popups are shown when a do-after for this verb is started.
+    ///     This is only ever used if <see cref="Delay"/> is set to a non-zero value.
+    /// </summary>
+    [DataField]
+    public EffectSpecifier? EffectDelayed;
+
+    /// <summary>
+    ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be shown, but disabled.
+    /// </summary>
+    /// <remarks>I apologize, I could not come up with a better name.</remarks>
+    [DataField]
+    public bool HideByRequirement = false;
+
+    /// <summary>
+    ///     If true, this action will be hidden if the <see cref="Action"/> does not pass its IsAllowed check. Otherwise it will be shown, but disabled.
+    /// </summary>
+    [DataField]
+    public bool HideWhenInvalid = true;
+
+    /// <summary>
+    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
+    /// </summary>
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5f);
+
+    /// <summary>
+    ///     The delay of the verb. Anything greater than zero constitutes a do-after.
+    /// </summary>
+    [DataField]
+    public TimeSpan Delay = TimeSpan.Zero;
+
+    /// <summary>
+    ///     If true, the contests defined in <see cref="AllowedContests"/> will affect the delay or the cooldown of the verb.
+    /// </summary>
+    [DataField]
+    public bool ContestDelay = true, ContestCooldown = false;
+
+    /// <summary>
+    ///     If true, the cooldown of this verb will be applied regardless of the verb target,
+    ///     i.e. a user won't be able to apply the same verb to any different entity until the cooldown ends.
+    /// </summary>
+    [DataField]
+    public bool GlobalCooldown = false;
+
+    /// <summary>
+    ///     Arguments of the do-after shown if <see cref="Delay"/> is greater than zero.
+    ///     The user, target, needHand, event, and other required parameters are set up automatically when the do-after is created.
+    /// </summary>
+    [DataField]
+    public DoAfterArgs DoAfter = new()
+    {
+        User = EntityUid.Invalid,
+        NetUser = NetEntity.Invalid,
+        BreakOnDamage = true,
+        BreakOnMove = true,
+        BreakOnWeightlessMove = true,
+        RequireCanInteract = false,
+        // Never used, but must be present because the field is non-nullable and will error during serialization if not set.
+        Event = new InteractionVerbDoAfterEvent(default, default!)
+    };
+
+    [DataField]
+    public RangeSpecifier Range = new();
+
+    /// <summary>
+    ///     Claw Command - Overrides the range used for this verb's accessibility check.
+    /// </summary>
+    /// <remarks>
+    ///     <see cref="RequiresCanAccess"/> normally relies on the verb system's generic accessibility flag,
+    ///     which is computed once at SharedInteractionSystem.InteractionRange (1.5 tiles) and shared by
+    ///     every interaction in the game. That silently caps <see cref="Range"/>: setting a max above 1.5
+    ///     does nothing, because the generic check has already failed by then.
+    ///
+    ///     Setting this makes the verb run its own accessibility check at the given range instead. It is
+    ///     the same check with the same container and line-of-sight rules, just further, so this cannot be
+    ///     used to reach through a wall or into a closed locker. Only needed for verbs whose
+    ///     <see cref="Range"/> exceeds 1.5.
+    ///
+    ///     Ignored when <see cref="MinHeightRange"/> is set, since the reach is then derived per-user.
+    /// </remarks>
+    [DataField]
+    public float? AccessRange;
+
+    /// <summary>
+    ///     Claw Command - If set, this verb's reach scales with how tall the user is. This is the reach
+    ///     at the shortest height their species allows; <see cref="Range"/>'s max is the reach at the
+    ///     tallest. Anything in between interpolates, and anything without a humanoid profile gets this.
+    /// </summary>
+    /// <remarks>
+    ///     Tall characters have longer arms, so they can lick, bite, hug, pet and shove people from
+    ///     further away; short ones have to close the distance. The accessibility check follows the
+    ///     scaled value automatically, so <see cref="AccessRange"/> is not needed alongside this.
+    /// </remarks>
+    [DataField]
+    public float? MinHeightRange;
+
+    /// <summary>
+    ///     Range of contest advantages that the user can gain while using this verb.
+    ///     The user's advantage will never exceed this range. This is applied after <see cref="ContestAdvantageRange"/> is checked.
+    /// </summary>
+    /// <returns></returns>
+    [DataField]
+    public RangeSpecifier ContestAdvantageLimit = new() { Min = 0.2f, Max = 5f };
+
+    /// <summary>
+    ///     Range of contest advantages valid for this verb.
+    ///     If the user's contest advantage is outside of this range, the verb will be disabled or hidden.
+    /// </summary>
+    /// <remarks>If not specified, contest advantage won't be calculated until the verb is performed.</remarks>
+    [DataField]
+    public RangeSpecifier? ContestAdvantageRange;
+
+    [DataField]
+    public ContestType AllowedContests = ContestType.None;
+
+    /// <summary>
+    ///     Whether this interaction implies direct body contact (transfer of fibers, fingerprints, etc).
+    /// </summary>
+    [DataField("contactInteraction")]
+    public bool DoContactInteraction = true;
+
+    /// <summary>
+    ///     If true, this verb can be invoked by the user on itself.
+    /// </summary>
+    [DataField]
+    public bool AllowSelfInteract = false;
+
+    [DataField]
+    public bool RequiresHands = false;
+
+    [DataField]
+    public bool RequiresConsciousness = true;
+
+    /// <summary>
+    ///     The true "requires can interact", checks if the user is not cuffed and is not otherwise incapacitated.
+    /// </summary>
+    [DataField("checkInteractionBlocker")]
+    public bool RequiresCanInteract = true;
+
+    /// <summary>
+    ///     Whether this verb requires the user to be able to access the target normally (with their hands or otherwise).
+    /// </summary>
+    /// <remarks>The misleading yml name is kept for backwards compatibility with downstreams.</remarks>
+    [DataField("requiresCanInteract")]
+    public bool RequiresCanAccess = true;
+
+    /// <summary>
+    ///     Priority of the verb. Verbs with higher priority will be shown first.
+    /// </summary>
+    [DataField]
+    public int Priority = 0;
+
+    /// <summary>
+    ///     If true, this verb can be invoked on any entity that the action is allowed on, even if its components don't specify it.
+    /// </summary>
+    [DataField]
+    public bool Global = false;
+
+    [DataDefinition, Serializable]
+    public partial struct RangeSpecifier()
+    {
+        [DataField] public float Min = 0f;
+        [DataField] public float Max = float.PositiveInfinity;
+        [DataField] public bool Inverse = false;
+
+        public bool IsInRange(float val) => (Inverse ? val < Min || val > Max : val >= Min && val <= Max);
+
+        public float Clamp(float val)
+        {
+            DebugTools.Assert(!Inverse, "Inverse ranges do not support clamping.");
+            return Math.Clamp(val, Min, Max);
+        }
+
+        public float Random(IRobustRandom rng)
+        {
+            DebugTools.Assert(!Inverse, "Inverse ranges do not support randomization.");
+            return Min > Max ? rng.NextFloat(Max, Min) : rng.NextFloat(Min, Max);
+        }
+    }
+
+    [DataDefinition, Serializable]
+    public partial record EffectSpecifier
+    {
+        /// <summary>
+        ///     The interaction popup to show, at <see cref="EffectLocation"/>. If null, no popup will be shown.
+        /// </summary>
+        [DataField]
+        public ProtoId<InteractionPopupPrototype>? Popup = null;
+
+        [DataField]
+        public EffectTargetSpecifier EffectTarget = EffectTargetSpecifier.TargetThenUser;
+
+        /// <summary>
+        ///     Sound played when the effect is shown, at <see cref="EffectLocation"/>. If null, no sound will be played.
+        /// </summary>
+        [DataField]
+        public SoundSpecifier? Sound;
+
+        /// <summary>
+        ///     If true, the sound will be perceived by everyone in the PVS of the popup.
+        ///     Otherwise, it will be perceived only by the target and the user.
+        /// </summary>
+        [DataField]
+        public bool SoundPerceivedByOthers = true;
+
+        [DataField]
+        public AudioParams? SoundParams = null;
+    }
+}

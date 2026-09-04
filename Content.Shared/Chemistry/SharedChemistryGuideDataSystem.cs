@@ -17,7 +17,7 @@ public abstract partial class SharedChemistryGuideDataSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed class ReagentGuideRegistryChangedEvent : EntityEventArgs
+public sealed partial class ReagentGuideRegistryChangedEvent : EntityEventArgs
 {
     public ReagentGuideChangeset Changeset;
 
@@ -28,7 +28,7 @@ public sealed class ReagentGuideRegistryChangedEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class ReagentGuideChangeset
+public sealed partial class ReagentGuideChangeset
 {
     public Dictionary<string,ReagentGuideEntry> GuideEntries;
 

@@ -46,6 +46,22 @@
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/teleport_arrival.ogg
+  # Claw Command - anomalies are psionic phenomena and are the main thing that drives station glimmer up.
+  # The psionics port brought over every handler for this (GlimmerStructuresSystem subscribes to
+  # AnomalyPulseEvent, AnomalySupercriticalEvent and the vessel's PowerChangedEvent) but never the three
+  # components they key off, so all of it was dead code and anomalies contributed nothing.
+  #
+  # `active: false` is deliberate: an anomaly only becomes a continuous glimmer source once it is scanned
+  # into a powered vessel and is being harvested for research. Pulses and going supercritical add glimmer
+  # regardless, which is why the source starts inactive rather than absent.
+  - type: Psionic
+    removable: false
+    roller: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: GlimmerSource
+    active: false
   - type: SecretDataAnomaly
     randomStartSecretMin: 0
     randomStartSecretMax: 2

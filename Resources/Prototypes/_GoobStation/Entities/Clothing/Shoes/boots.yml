@@ -1,0 +1,14 @@
+#claw
+- type: entity
+  parent: [BaseCommandContraband, ClothingShoesBootsJack]
+  id: ClothingShoesBootsJackAdvanced
+  name: advanced jackboots
+  description: This pair of jackboots was designed for the Head of Security. No one knows why are they called advanced, but they are for sure advanced in drip.
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Clothing/Shoes/Boots/advanced_jackboots.rsi
+  - type: Clothing
+    sprite: _GoobStation/Clothing/Shoes/Boots/advanced_jackboots.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots

@@ -3,6 +3,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared.Body.Systems;
+using Content.Shared._ClawCommand.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body;
@@ -14,6 +15,8 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
+using Content.Shared.Movement.Pulling.Components; // CLAW COMMAND - grab intent
+using Content.Shared.Movement.Pulling.Systems; // CLAW COMMAND - grab intent
 using Content.Shared.EntityConditions;
 using Content.Shared.EntityConditions.Conditions.Body;
 using Content.Shared.EntityEffects;
@@ -40,6 +43,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     [Dependency] private LungSystem _lungSystem = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
+    [Dependency] private SharedMoodSystem _mood = default!; // Claw Command
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
     private static readonly ProtoId<MetabolismStagePrototype> RespirationStage = new("Respiration");
@@ -87,9 +91,17 @@ public sealed partial class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
+            // CLAW COMMAND - ethereal (phased) shadekin do not respire and cannot suffocate
+            if (HasComp<Content.Server._ClawCommand.Shadekin.RespiratorImmuneComponent>(uid))
+                continue;
+
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            // CLAW COMMAND - grab intent: being choked stops you drawing breath entirely.
+            var choked = TryComp<PullableComponent>(uid, out var chokedPullable)
+                         && chokedPullable.GrabStage == GrabStage.Suffocate;
+
+            if (!_mobState.IsIncapacitated(uid) && !choked) // cannot breathe in crit.
             {
                 switch (respirator.Status)
                 {
@@ -330,6 +342,8 @@ public sealed partial class RespiratorSystem : EntitySystem
 
         var ev = new SuffocationEvent();
         RaiseLocalEvent(ent, ref ev);
+
+        _mood.AddMoodlet(ent.Owner, "Suffocating"); // Claw Command
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)

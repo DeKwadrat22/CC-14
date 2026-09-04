@@ -3,8 +3,93 @@ using Content.Shared.Administration;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using System.Text.RegularExpressions; // Claw Command
 
 namespace Content.Server.Administration.Commands;
+
+// Claw Command - time string parsing utility (e.g. "1h30m" -> 90 minutes)
+public sealed partial class PlayTimeCommandUtilities
+{
+    private static readonly Dictionary<string, int> Units = new()
+    {
+        { "y", 525960 },
+        { "mo", 43800 },
+        { "w", 10080 },
+        { "d", 1440 },
+        { "h", 60 },
+        { "m", 1 },
+    };
+
+    private static readonly Regex TimeUnitRegex = new(@"(\d+)([A-Za-z]+)", RegexOptions.Compiled);
+
+    public struct TimeUnit
+    {
+        public int TimeValue { get; }
+        public string Unit { get; }
+
+        public TimeUnit(int timeValue)
+        {
+            TimeValue = timeValue;
+            Unit = "m";
+        }
+
+        public TimeUnit(int timeValue, string unit)
+        {
+            TimeValue = timeValue;
+            Unit = unit;
+        }
+
+        public int ToMinutes()
+        {
+            var unitExists = Units.TryGetValue(Unit, out int minutes);
+            if (!unitExists)
+                return TimeValue;
+            return TimeValue * minutes;
+        }
+    }
+
+    public static List<TimeUnit> ConvertToTimeUnits(string timeString)
+    {
+        List<TimeUnit> result = new();
+
+        if (int.TryParse(timeString, out int timeValue))
+        {
+            result.Add(new TimeUnit(timeValue, "m"));
+            return result;
+        }
+
+        MatchCollection timeRegex = TimeUnitRegex.Matches(timeString);
+
+        foreach (Match match in timeRegex)
+        {
+            bool isTimeAmountNumber = int.TryParse(match.Groups[1].Value, out int amountOfTime);
+            string timeUnit = match.Groups[2].Value;
+
+            if (!isTimeAmountNumber)
+                continue;
+
+            if (!Units.ContainsKey(timeUnit))
+                continue;
+
+            result.Add(new TimeUnit(amountOfTime, timeUnit));
+        }
+
+        return result;
+    }
+
+    public static int CountMinutes(string timeString)
+    {
+        List<TimeUnit> timeUnits = ConvertToTimeUnits(timeString);
+        int total = 0;
+
+        foreach (var timeUnit in timeUnits)
+        {
+            total += timeUnit.ToMinutes();
+        }
+
+        return total;
+    }
+}
 
 [AdminCommand(AdminFlags.Moderator)]
 public sealed partial class PlayTimeAddOverallCommand : IConsoleCommand

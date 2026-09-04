@@ -21,6 +21,9 @@
     BoxCandleSmall: 2
     Urn: 5
     Bible: 1
+    ClothingHandsChaplainWarmers: 1 # Claw Command - Floof
+    ClothingUnderSocksChaplain: 1 # Claw Command - Floof
+    ClothingOuterEpiChaplainMantle: 1 # Claw Command - Floof
   contrabandInventory:
     FoodBakedBunHotX: 2
     DrinkWineBottleFull: 1

@@ -12,5 +12,8 @@
     ClothingShoesColorBlack: 2
     ClothingShoesChef: 2
     ClothingBeltChef: 2
+    ClothingShoesBootsWinterChef: 2 # Claw Command - Delta-V departmental winter boots
+    ClothingHandsChefWarmers: 2 # Claw Command - Floof
+    ClothingUnderSocksChef: 2 # Claw Command - Floof
   contrabandInventory:
     ToyFigurineChef: 1

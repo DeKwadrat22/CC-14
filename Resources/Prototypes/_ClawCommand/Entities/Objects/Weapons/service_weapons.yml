@@ -1,0 +1,778 @@
+# _ClawCommand: base weapons and ammunition backing the service-weapon loadouts, ported from
+# the `space` fork (DeltaV / Nyanotrasen / Frontier / Goobstation / Floof content it carries).
+#
+# These are the ordinary, contraband-as-upstream-intended items. The non-contraband "CC issued"
+# and "barkeep issued" variants that the loadouts actually hand out live in
+# _ClawCommand/Entities/Objects/Weapons/issued_weapons.yml.
+#
+# NOT ported: WeaponEnergyRevolver. It needs two C# components this fork does not have -
+# ProjectileBatteryAmmoProvider (shared gun plumbing) and EnergyGun (fire-mode switching,
+# plus an EnergyGunFireModeVisuals enum). That is a gun-system port in its own right, not a
+# prototype copy, so the energy revolver is left out of the service-weapon catalogue.
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/DeltaV/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/special.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BaseCartridgeSpecial
+  name: cartridge (.38 special)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeSpecial
+  - type: CartridgeAmmo
+    proto: BulletSpecial
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  id: CartridgeSpecial
+  name: cartridge (.38 special)
+  parent: BaseCartridgeSpecial
+  components:
+  - type: CartridgeAmmo
+    proto: BulletSpecial
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/DeltaV/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/special.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BulletSpecial
+  name: bullet (.38 special)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/DeltaV/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/special.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BaseSpeedLoaderSpecial
+  name: "speed loader (.38 special)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SpeedLoaderSpecial
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSpecial
+    capacity: 6
+  - type: Sprite
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: SpeedLoaderSpecial
+  name: "speed loader (.38 special)"
+  parent: BaseSpeedLoaderSpecial
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeSpecial
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-6
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: base
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/DeltaV/Entities/Objects/Weapons/Guns/Pistols/pistols.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: Pollock
+  parent: BaseWeaponPistol
+  id: WeaponPistolPollock
+  description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
+  suffix: Mercenary
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/pollock.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/pollock.rsi
+  - type: Gun
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: viper
+  parent: BaseWeaponPistol
+  id: WeaponPistolViperWood
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
+  suffix: Wood
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/viperwood.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/viperwood.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/DeltaV/Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: fitz special
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverFitz
+  description: A compact and concealable self defence snub revolver. Uses .38 special ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/fitz.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/fitz.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 1.75
+    availableModes:
+    - SemiAuto
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSpecial
+        - SpeedLoaderSpecial
+    proto: CartridgeSpecial
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: k-38 masterpiece
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverK38Master
+  description: A classic, if not outdated, law enforcement firearm. Uses .38 special ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/k38master.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/k38master.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSpecial
+        - SpeedLoaderSpecial
+    proto: CartridgeSpecial
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: snubbed .45
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverSnub
+  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 25
+    angleDecay: 5
+    fireRate: 2.5
+    availableModes:
+    - SemiAuto
+  - type: RevolverAmmoProvider
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CartridgeLightRifleRubber
+  name: cartridge (.30 rifle rubber)
+  parent: BaseCartridgeLightRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightRifleRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/magnum.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CartridgeMagnumRubber
+  name: cartridge (.45 magnum rubber)
+  parent: BaseCartridgeMagnum
+  components:
+  - type: CartridgeAmmo
+    proto: BulletMagnumRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/pistol.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CartridgePistolRubber
+  name: cartridge (.35 auto rubber)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/rifle.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: CartridgeRifleRubber
+  name: cartridge (.20 rifle rubber)
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRifleRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/pistol.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: MagazinePistolRubber
+  name: pistol magazine (.35 auto rubber)
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolRubber
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/light_rifle.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BulletLightRifleRubber
+  name: bullet (.20 rifle rubber)
+  parent: BaseBulletRubber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/magnum.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BulletMagnumRubber
+  name: bullet (.45 magnum rubber)
+  parent: BaseBulletRubber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+  - type: StaminaDamageOnCollide
+    damage: 35 # 3 hits to stun cuz revolver
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/pistol.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BulletPistolRubber
+  name: bullet (.35 auto rubber)
+  parent: BaseBulletRubber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/rifle.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BulletRifleRubber
+  name: bullet (0.20 rifle rubber)
+  parent: BaseBulletRubber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/magnum.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: SpeedLoaderMagnumRubber
+  name: "speed loader (.45 magnum rubber)"
+  parent: BaseSpeedLoaderMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumRubber
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: rubber-6
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: rubber
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Pistols/pistols.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: WeaponPistolMk58Nonlethal
+  parent: WeaponPistolMk58
+  suffix: Non-lethal
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58nl.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
+  id: WeaponPistolViperNonLethal
+  parent: WeaponPistolViper
+  suffix: Non-lethal
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/vipernl.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BaseBulletRubber
+  name: base bullet rubber
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: rubber
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/snap.ogg
+  - type: StaminaDamageOnCollide
+    damage: 22 # 5 hits to stun sounds reasonable
+  - type: Tag
+    tags:
+    - BulletRubber
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/Entities/Objects/Weapons/Guns/Snipers/snipers.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: Kardashev-Mosin
+  parent: WeaponSniperMosin
+  id: WeaponSniperMosinRubber
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo.
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleRubber
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_ClawCommand/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: jury-rigged svalinn PDW
+  parent: WeaponLaserSvalinn
+  id: WeaponLaserSvalinnPDW
+  description: A technically-legal modification of a civilian-grade laser pistol, meant for pest control in sectors where "pests" really means "dog-sized carnivorous spiders". The low quality of the base gun means the emitter tends to overheat on full-auto even with the oversized sink built into the thing.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 4
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 5
+    angleDecay: 20
+  - type: Construction
+    graph: SvalinnPDWGraph
+    node: svalinnPDW
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_Floof/Entities/Objects/Weapons/Melee/brassnuckles.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: brass knuckles
+  parent: ClothingHandsBase
+  id: WeaponBrassKnuckles
+  description: Ever wanted to protect your bar but your hands are too big for guns? SESWC has what you need!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Melee/brassknuckles.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Floof/Objects/Weapons/Melee/brassknuckles.rsi
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 2 # ~12 dps
+    damage:
+      types:
+       Blunt: 6
+    soundHit:
+      collection: Punch
+    animation: WeaponArcFist
+    mustBeEquippedToUse: true
+  - type: StaminaDamageOnHit
+    damage: 11
+  - type: Armor
+    modifiers:
+      coefficients:
+        Shock: 1.05 # oh no so conductive
+  - type: Insulated
+    coefficient: 1.5 # Extra damage. Don't punch wires, kids.
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - BrassKnuckles
+  - type: PhysicalComposition
+    materialComposition:
+      Brass: 1000
+  - type: StaticPrice
+    price: 300 # Ensures these can be sold and have a reasonable vending value.
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_Goobstation/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  id: BaseSpeedLoaderHeavyRifle
+  name: "speed loader (.20 rifle)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SpeedLoaderRifleHeavy
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRifle
+    capacity: 8
+  - type: Sprite
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: SpeedLoaderRifleHeavy
+  name: "speed loader (.20 rifle)"
+  parent: BaseSpeedLoaderHeavyRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle
+  - type: Icon
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/HeavyRifle/argenti_speed_loader.rsi
+    state: icon
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/HeavyRifle/argenti_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: base
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: SpeedLoaderRifleHeavyRubber
+  name: "speed loader (.20 rifle rubber)"
+  parent: BaseSpeedLoaderHeavyRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleRubber
+  - type: Icon
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/HeavyRifle/argenti_speed_loader.rsi
+    state: rubber-icon
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/HeavyRifle/argenti_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: rubber-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: rubber
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_NF/Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: Argenti
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverArgenti
+  suffix: Lethal  # Floof
+  description: The civilian grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo.
+  components:
+  - type: Sprite
+    scale: 0.75 , 0.75
+    sprite: _NF/Objects/Weapons/Guns/Revolvers/argenti.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Revolvers/argenti.rsi
+  - type: Gun
+    fireRate: 2.5
+    resetOnHandSelected: false
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRifle
+        - SpeedLoaderRifleHeavy
+    capacity: 8
+    proto: CartridgeRifle
+    chambers: [ True, True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null, null ]
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  parent: WeaponRevolverArgenti
+  id: WeaponRevolverArgentiNonlethal
+  suffix: Non-lethal
+  components:
+  - type: RevolverAmmoProvider
+    capacity: 8
+    proto: CartridgeRifleRubber
+    chambers: [ True, True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null, null ]
+
+# ---------------------------------------------------------------------------
+# from Resources/Prototypes/_NF/Entities/Objects/Weapons/Guns/Snipers/snipers.yml
+# ---------------------------------------------------------------------------
+
+- type: entity
+  name: N2524 Pattern Repeater
+  parent: BaseWeaponSniper
+  id: WeaponSniperRepeater
+  description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability and stopping power. Uses .45 magnum ammo.
+  components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi    
+  - type: StaticPrice
+    price: 500
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeMagnum
+    capacity: 7
+    proto: CartridgeMagnum
+
+- type: entity
+  parent: WeaponSniperRepeater
+  id: WeaponSniperRepeaterNonlethal
+  suffix: Non-lethal
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeMagnum
+    capacity: 7
+    proto: CartridgeMagnumRubber

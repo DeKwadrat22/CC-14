@@ -1,0 +1,485 @@
+# Claw Command - clothing imported from the Imperial Space public tree (imperial-space/SS14-public).
+#
+# Only entities whose sprite meta.json grants a Creative Commons licence are here; anything marked ICLA,
+# or with no licence field at all, was deliberately left behind. The artwork keeps its original
+# Resources/Textures/Imperial/... path and its meta.json travels with it, so attribution stays intact.
+# These prototypes are our own - regenerated into this fork's layout rather than copied - and nothing
+# outside this folder was modified to make them work.
+#
+# Source module: SpiderClan
+# Do not hand-edit in bulk; this file was generated from the survey and can be regenerated.
+
+- type: entity
+  id: AltJumpsuitNinja
+  parent: UnsensoredClothingUniformBase
+  name: "ninja jumpsuit"
+  description: "A comfortable ninja costume, for comfort while directly carrying out your mission."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Jumpsuits/ninjaalt.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Jumpsuits/ninjaalt.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+  - type: StaticPrice
+    price: 700
+
+- type: entity
+  id: BlueAltHelmetSpaceNinja
+  parent:
+  - ClothingHeadBase
+  - BaseMajorContraband
+  name: "space ninja mask"
+  description: "A nano-weave mask based on the Spider Clan's most advanced technology, capable of protecting against depressurisation despite its openness. It glows with a blue light."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/blueninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/blueninja.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
+
+- type: entity
+  id: BlueAltSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "A technological suit based on the Spider Clan's most advanced technology, it has its own scarf! It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/blueninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/blueninja.rsi
+  - type: StaticPrice
+    price: 35000
+
+- type: entity
+  id: BlueBackpackNinja
+  parent:
+  - ClothingBackpack
+  - BaseMajorContraband
+  name: "ninja backpack"
+  description: "A very handy technologically advanced space assassin backpack with excellent blast resistance."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Backpacks/blueninja.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    grid:
+    - "0,0,10,3"
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: BlueGlovesSpaceNinja
+  parent: ClothingHandsGlovesSpaceNinja
+  name: "space ninja gloves"
+  description: "These black nano-enhanced gloves insulate from electricity and provide fire resistance. It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/blueninja.rsi
+    layers:
+    - state: icon
+      map:
+      - enum.ToggleableVisuals.Layer
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/blueninja.rsi
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True:
+            state: icon
+          False:
+            state: off-icon
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: BlueHelmetSpaceNinja
+  parent: ClothingHeadHelmetSpaceNinja
+  name: "space ninja helmet"
+  description: "What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear. It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/blueninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/blueninja.rsi
+
+- type: entity
+  id: BlueMaskNinja
+  parent: ClothingMaskNinja
+  name: "ninja mask"
+  description: "A close-fitting nano-enhanced mask that acts both as an air filter and a post-modern fashion statement. It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/blueninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/blueninja.rsi
+  - type: StaticPrice
+    price: 700
+
+- type: entity
+  id: BlueShoesSpaceNinja
+  parent: ClothingShoesSpaceNinja
+  name: "space ninja shoes"
+  description: "A pair of nano-enhanced boots with built-in magnetic suction cups. It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/blueninja.rsi
+    state: icon-on
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/blueninja.rsi
+  - type: StaticPrice
+    price: 45000
+
+- type: entity
+  id: BlueSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation. It has a blue glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/blueninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/blueninja.rsi
+  - type: StaticPrice
+    price: 35000
+
+- type: entity
+  id: GreenAltHelmetSpaceNinja
+  parent:
+  - ClothingHeadBase
+  - BaseMajorContraband
+  name: "space ninja mask"
+  description: "A nano-weave mask based on the Spider Clan's most advanced technology, capable of protecting against depressurisation despite its openness. It glows with a green light."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/greenninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/greenninja.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
+
+- type: entity
+  id: GreenAltSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "A technological suit based on the Spider Clan's most advanced technology, it has its own scarf! It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/greenninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/greenninja.rsi
+  - type: StaticPrice
+    price: 35000
+
+- type: entity
+  id: GreenBackpackNinja
+  parent:
+  - ClothingBackpack
+  - BaseMajorContraband
+  name: "ninja backpack"
+  description: "A very handy technologically advanced space assassin backpack with excellent blast resistance."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Backpacks/greenninja.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    grid:
+    - "0,0,10,3"
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: GreenGlovesSpaceNinja
+  parent: ClothingHandsGlovesSpaceNinja
+  name: "space ninja gloves"
+  description: "These black nano-enhanced gloves insulate from electricity and provide fire resistance. It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/greenninja.rsi
+    layers:
+    - state: icon
+      map:
+      - enum.ToggleableVisuals.Layer
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/greenninja.rsi
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True:
+            state: icon
+          False:
+            state: off-icon
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: GreenHelmetSpaceNinja
+  parent: ClothingHeadHelmetSpaceNinja
+  name: "space ninja helmet"
+  description: "What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear. It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/greenninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/greenninja.rsi
+
+- type: entity
+  id: GreenMaskNinja
+  parent: ClothingMaskNinja
+  name: "ninja mask"
+  description: "A close-fitting nano-enhanced mask that acts both as an air filter and a post-modern fashion statement. It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/greenninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/greenninja.rsi
+  - type: StaticPrice
+    price: 700
+
+- type: entity
+  id: GreenShoesSpaceNinja
+  parent: ClothingShoesSpaceNinja
+  name: "space ninja shoes"
+  description: "A pair of nano-enhanced boots with built-in magnetic suction cups. It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/greenninja.rsi
+    state: icon-on
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/greenninja.rsi
+  - type: StaticPrice
+    price: 45000
+
+- type: entity
+  id: GreenSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation. It has a green glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/greenninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/greenninja.rsi
+  - type: StaticPrice
+    price: 35000
+
+- type: entity
+  id: JumpsuitNinja
+  parent: UnsensoredClothingUniformBase
+  name: "ninja jumpsuit"
+  description: "A comfortable ninja costume, for comfort while directly carrying out your mission. Hides the hair so it doesn't get in the way."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Jumpsuits/ninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Jumpsuits/ninja.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+  - type: StaticPrice
+    price: 700
+
+- type: entity
+  id: NinjaScarfID
+  parent: ClothingNeckBase
+  name: "NinjaScarf"
+  description: "Just like a ninja!"
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/ninjascarf.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/ninjascarf.rsi
+
+- type: entity
+  id: RedAltHelmetSpaceNinja
+  parent:
+  - ClothingHeadBase
+  - BaseMajorContraband
+  name: "space ninja mask"
+  description: "A nano-weave mask based on the Spider Clan's most advanced technology, capable of protecting against depressurisation despite its openness. It glows with a red light."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/redninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Helmets/redninja.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
+
+- type: entity
+  id: RedAltSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "A technological suit based on the Spider Clan's most advanced technology, it has its own scarf! It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/redninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Alternative/Suits/redninja.rsi
+  - type: StaticPrice
+    price: 35000
+
+- type: entity
+  id: RedBackpackNinja
+  parent:
+  - ClothingBackpack
+  - BaseMajorContraband
+  name: "ninja backpack"
+  description: "A very handy technologically advanced space assassin backpack with excellent blast resistance."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Backpacks/redninja.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    grid:
+    - "0,0,10,3"
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: RedGlovesSpaceNinja
+  parent: ClothingHandsGlovesSpaceNinja
+  name: "space ninja gloves"
+  description: "These black nano-enhanced gloves insulate from electricity and provide fire resistance. It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/redninja.rsi
+    layers:
+    - state: icon
+      map:
+      - enum.ToggleableVisuals.Layer
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Gloves/redninja.rsi
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True:
+            state: icon
+          False:
+            state: off-icon
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: RedHelmetSpaceNinja
+  parent: ClothingHeadHelmetSpaceNinja
+  name: "space ninja helmet"
+  description: "What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear. It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/redninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Helmets/redninja.rsi
+
+- type: entity
+  id: RedMaskNinja
+  parent: ClothingMaskNinja
+  name: "ninja mask"
+  description: "A close-fitting nano-enhanced mask that acts both as an air filter and a post-modern fashion statement. It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/redninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Masks/redninja.rsi
+  - type: StaticPrice
+    price: 700
+
+- type: entity
+  id: RedShoesSpaceNinja
+  parent: ClothingShoesSpaceNinja
+  name: "space ninja shoes"
+  description: "A pair of nano-enhanced boots with built-in magnetic suction cups. It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/redninja.rsi
+    state: icon-on
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Boots/redninja.rsi
+  - type: StaticPrice
+    price: 45000
+
+- type: entity
+  id: RedSuitSpaceNinja
+  parent: ClothingOuterSuitSpaceNinja
+  name: "space ninja suit"
+  description: "This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation. It has a red glow."
+  suffix: "Crook, SpiderClan"
+  components:
+  - type: Sprite
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/redninja.rsi
+  - type: Clothing
+    sprite: Imperial/SpiderClan/Clothing/Default/Suits/redninja.rsi
+  - type: StaticPrice
+    price: 35000
+

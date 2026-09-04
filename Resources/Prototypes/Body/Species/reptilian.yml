@@ -50,6 +50,15 @@
     enum.HumanoidVisualLayers.RFoot:
       limit: 1
       required: false
+    enum.HumanoidVisualLayers.Genital: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Penis: # Claw Command
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Breasts: # Claw Command
+      limit: 1
+      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -128,7 +137,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump']
+    allowedEmotes: ['Thump', 'Yip', 'Gekker'] # Claw Command
   - type: TypingIndicator
     proto: lizard
   - type: CreamPied
@@ -295,6 +304,7 @@
       - Pill
       - Crayon
       - Paper
+      - TagIceCream
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]

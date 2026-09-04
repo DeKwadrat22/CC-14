@@ -35,6 +35,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server.Chat.Managers;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Mind;
 using static Content.Shared.Configurable.ConfigurationComponent;
@@ -46,6 +47,7 @@ namespace Content.Server.Administration.Systems
     /// </summary>
     public sealed partial class AdminVerbSystem : EntitySystem
     {
+        [Dependency] private IChatManager _chatManager = default!; // Claw Command
         [Dependency] private IConGroupController _groupController = default!;
         [Dependency] private IConsoleHost _console = default!;
         [Dependency] private IAdminLogManager _adminLogs = default!;
@@ -464,6 +466,7 @@ namespace Content.Server.Administration.Systems
             }
 
             // Rejuvenate verb
+            // CLAW COMMAND: Added an admin announcement.
             if (_toolshed.ActivePermissionController?.CheckInvokable(new CommandSpec(_toolshed.DefaultEnvironment.GetCommand("rejuvenate"), null), player, out _) ?? false)
             {
                 Verb verb = new()
@@ -471,7 +474,11 @@ namespace Content.Server.Administration.Systems
                     Text = Loc.GetString("rejuvenate-verb-get-data-text"),
                     Category = VerbCategory.Debug,
                     Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png")),
-                    Act = () => _rejuvenate.PerformRejuvenate(args.Target),
+                    Act = () =>
+                    {
+                        _rejuvenate.PerformRejuvenate(args.Target);
+                        _chatManager.SendAdminAnnouncement($"{player.Name} rejuvenated {ToPrettyString(args.Target)}");
+                    },
                     Impact = LogImpact.Medium
                 };
                 args.Verbs.Add(verb);

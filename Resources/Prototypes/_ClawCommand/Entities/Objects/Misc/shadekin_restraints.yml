@@ -1,0 +1,16 @@
+# CLAW COMMAND - shadekin restraints. Ported from Floof/space (same sprite + name), reworked for this
+# fork's shadekin: applied like cuffs (in-hand, click the kin, do-after) to PERMANENTLY sever them from
+# the Dark (see ShadekinRestraintSystem / ShadekinSystem.RestrainShadekin), then worn on them as outer
+# clothing. They can be stripped back off by the kin or anyone else, but the sever does not come back.
+# Sprite art by JustAnOrange (CC-BY-SA-3.0).
+- type: entity
+  parent: ClothingOuterBase
+  id: ShadekinRestraints
+  name: shadekin restraints
+  description: One of the first creations after finding Shadekin, these were used to contain the Shadekin during research so they didn't teleport away.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Misc/shadowkinrestraints.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Objects/Misc/shadowkinrestraints.rsi
+  - type: ShadekinRestraint

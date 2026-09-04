@@ -731,3 +731,95 @@
       reagents:
       - ReagentId: JuiceThatMakesYouWeh
         Quantity: 60 # Need at least 50 to transform
+
+- type: entity
+  parent: [ChemicalMedipen, BaseSyndicateContraband]
+  id: firstaidpen
+  name: first-aid medipen
+  description: A single-dose, non-refillable medipen containing a chemical that can treat minor wounds.
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#5bcaca"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#5bcaca"
+      - state: base-colorB-inhand-right
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: morphen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: morphen_empty
+  - type: SolutionContainerManager
+    solutions:
+      hypospray: # _ClawCommand fix: was "pen" — Injector/Spillable/Visualizer all read solution "hypospray", so the pen rendered empty and injected 0u
+        maxVol: 40
+        reagents:
+        - ReagentId: Tricordrazine
+          Quantity: 30
+        - ReagentId: Saline
+          Quantity: 5
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+
+- type: entity
+  parent: BaseHypospray
+  id: RefillableMedipen
+  name: medipen
+  description: A single-dose, refillable medipen.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: firstaid
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Item
+    sprite: Objects/Specific/Medical/medipen.rsi
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#439822"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#439822"
+      - state: base-colorB-inhand-right
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 15
+  - type: ExaminableSolution
+    solution: drink
+  - type: Injector
+    solutionName: drink
+    currentTransferAmount: null
+    activeModeProtoId: HyposprayInjectMode
+    allowedModes:
+    - HyposprayInjectMode
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    fillBaseName: firstaid
+    emptySpriteName: firstaid_empty
+    metamorphic: true
+    metamorphicDefaultSprite:
+      sprite: Objects/Specific/Medical/medipen.rsi
+      state: firstaid
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  - type: Tag
+    tags:
+    - Bottle

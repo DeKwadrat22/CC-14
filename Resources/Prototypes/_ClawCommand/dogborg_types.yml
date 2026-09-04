@@ -1,0 +1,338 @@
+# Dogborg borg types. Each entry mirrors the matching department borgType
+# (medical / engineering / etc.) in Resources/Prototypes/borg_types.yml but
+# substitutes the sprite state names for the dogborg variant. This is needed
+# because BorgSwitchableTypeSystem runs at startup and would otherwise overwrite
+# the dogborg sprite layers with the upstream `robot`/`medical`/etc. state names.
+
+# ===== Security =====
+- type: borgType
+  id: dogborg-k9
+  lawBoard: SiliconPoliceCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisSecurityK9
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
+  radioChannels:
+  - Security
+  inventoryTemplateId: borgShort
+  spriteBodyState: k9
+  spriteBodyMovementState: k9_moving
+  spriteHasMindState: k9_e
+  spriteNoMindState: k9
+  spriteToggleLightState: k9_l
+  spriteWreckState: k9-wreck
+  spriteSitState: k9-sit
+  spriteRestState: k9-rest
+  spriteBellyUpState: k9-bellyup
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+- type: borgType
+  id: dogborg-k9-dark
+  lawBoard: SiliconPoliceCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisSecurityK9Dark
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
+  radioChannels:
+  - Security
+  inventoryTemplateId: borgShort
+  spriteBodyState: k9dark
+  spriteBodyMovementState: k9dark_moving
+  spriteHasMindState: k9dark
+  spriteNoMindState: k9dark
+  spriteToggleLightState: k9dark
+  spriteWreckState: k9dark-wreck
+  spriteSitState: k9dark-sit
+  spriteRestState: k9dark-rest
+  spriteBellyUpState: k9dark-bellyup
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+- type: borgType
+  id: dogborg-vale-sec
+  lawBoard: SiliconPoliceCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisSecurityVale
+  extraModuleCount: 5 # Claw Command: security dogborgs get 5 module slots
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity # Claw Command: security borg types can install the security modules
+  radioChannels:
+  - Security
+  inventoryTemplateId: borgShort
+  spriteBodyState: valesec
+  spriteBodyMovementState: valesec_moving
+  spriteHasMindState: valesec_e
+  spriteNoMindState: valesec
+  spriteToggleLightState: valesec_l
+  spriteWreckState: valesec-wreck
+  spriteSitState: valesec-sit
+  spriteRestState: valesec-rest
+  spriteBellyUpState: valesec-bellyup
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# ===== Medical =====
+- type: borgType
+  id: dogborg-medihound
+  lawBoard: MedicalCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisMedicalMedihound
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  inventoryTemplateId: borgDutch
+  spriteBodyState: medihound
+  spriteBodyMovementState: medihound_moving
+  spriteHasMindState: medihound_e
+  spriteNoMindState: medihound
+  spriteToggleLightState: medihound_l
+  spriteWreckState: medihound-wreck
+  spriteSitState: medihound-sit
+  spriteRestState: medihound-rest
+  spriteBellyUpState: medihound-bellyup
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+
+- type: borgType
+  id: dogborg-medihound-dark
+  lawBoard: MedicalCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisMedicalMedihoundDark
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  inventoryTemplateId: borgDutch
+  spriteBodyState: medihounddark
+  spriteBodyMovementState: medihounddark_moving
+  spriteHasMindState: medihounddark_e
+  spriteNoMindState: medihounddark
+  spriteToggleLightState: medihounddark_l
+  spriteWreckState: medihounddark-wreck
+  spriteSitState: medihounddark-sit
+  spriteRestState: medihounddark-rest
+  spriteBellyUpState: medihounddark-bellyup
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+
+- type: borgType
+  id: dogborg-vale-med
+  lawBoard: MedicalCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisMedicalVale
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  inventoryTemplateId: borgDutch
+  spriteBodyState: valemed
+  spriteBodyMovementState: valemed_moving
+  spriteHasMindState: valemed_e
+  spriteNoMindState: valemed
+  spriteToggleLightState: valemed_l
+  spriteWreckState: valemed-wreck
+  spriteSitState: valemed-sit
+  spriteRestState: valemed-rest
+  spriteBellyUpState: valemed-bellyup
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+
+# ===== Engineering =====
+- type: borgType
+  id: dogborg-pupdozer
+  lawBoard: EngineerCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisEngineerPupDozer
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Engineering
+  - Science
+  inventoryTemplateId: borgShort
+  spriteBodyState: pupdozer
+  spriteBodyMovementState: pupdozer_moving
+  spriteHasMindState: pupdozer_e
+  spriteNoMindState: pupdozer
+  spriteToggleLightState: pupdozer_l
+  spriteWreckState: pupdozer-wreck
+  spriteSitState: pupdozer-sit
+  spriteRestState: pupdozer-rest
+  spriteBellyUpState: pupdozer-bellyup
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+
+- type: borgType
+  id: dogborg-vale-eng
+  lawBoard: EngineerCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisEngineerVale
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Engineering
+  - Science
+  inventoryTemplateId: borgShort
+  spriteBodyState: valeeng
+  spriteBodyMovementState: valeeng_moving
+  spriteHasMindState: valeeng_e
+  spriteNoMindState: valeeng
+  spriteToggleLightState: valeeng_l
+  spriteWreckState: valeeng-wreck
+  spriteSitState: valeeng-sit
+  spriteRestState: valeeng-rest
+  spriteBellyUpState: valeeng-bellyup
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+
+# ===== Janitor =====
+- type: borgType
+  id: dogborg-scrubpup
+  lawBoard: JanitorCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisJanitorScrubpup
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  inventoryTemplateId: borgShort
+  spriteBodyState: scrubpup
+  spriteBodyMovementState: scrubpup_moving
+  spriteHasMindState: scrubpup_e
+  spriteNoMindState: scrubpup
+  spriteToggleLightState: scrubpup_l
+  spriteWreckState: scrubpup-wreck
+  spriteSitState: scrubpup-sit
+  spriteRestState: scrubpup-rest
+  spriteBellyUpState: scrubpup-bellyup
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg
+
+# ===== Service =====
+- type: borgType
+  id: dogborg-vale-serv
+  lawBoard: StationEfficiencyCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisServiceVale
+  extraModuleCount: 6 # Claw Command: service dogborg gets 6 module slots
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  radioChannels:
+  - Service
+  - Science
+  inventoryTemplateId: borgShort
+  spriteBodyState: valeserv
+  spriteBodyMovementState: valeserv_moving
+  spriteHasMindState: valeserv_e
+  spriteNoMindState: valeserv
+  spriteToggleLightState: valeserv_l
+  spriteWreckState: valeserv-wreck
+  spriteSitState: valeserv-sit
+  spriteRestState: valeserv-rest
+  spriteBellyUpState: valeserv-bellyup
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# ===== Mining =====
+- type: borgType
+  id: dogborg-blade
+  lawBoard: CorporateCircuitBoard # _ClawCommand - department lawset
+  selectable: false
+  dummyPrototype: BorgChassisMiningBlade
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModulePrying
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  radioChannels:
+  - Supply
+  - Science
+  inventoryTemplateId: borgTall
+  spriteBodyState: blade
+  spriteHasMindState: blade_e
+  spriteNoMindState: blade
+  spriteToggleLightState: blade_l
+  spriteWreckState: blade-wreck
+  spriteSitState: blade-sit
+  spriteRestState: blade-rest
+  spriteBellyUpState: blade-bellyup
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg

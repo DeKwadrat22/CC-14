@@ -1,0 +1,5 @@
+- type: entity
+  id: BaseStationEmergencyAccessMedbayState
+  abstract: true
+  components:
+  - type: EmergencyAccessMedbayState
