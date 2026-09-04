@@ -10,20 +10,33 @@
     noRot: true
     layers:
     - state: frame
+<<<<<<< HEAD
     - state: portal
       shader: unshaded
       map: ["enum.GatewayVisualLayers.Portal"]
+=======
+>>>>>>> root/master
     - state: on
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
+      visible: false
+    - state: portal
+      shader: unshaded
+      map: ["portal"]
+      visible: false
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
+<<<<<<< HEAD
       enum.GatewayVisuals.Active:
         enum.GatewayVisualLayers.Portal:
+=======
+      enum.LinkedEntityVisuals.HasAnyLinks:
+        portal:
+>>>>>>> root/master
           True: { visible: true }
           False: { visible: false }
   - type: InteractionOutline
@@ -43,6 +56,7 @@
         - WallLayer
         hard: false
   - type: Appearance
+<<<<<<< HEAD
 
 - type: entity
   parent: BaseGateway
@@ -55,3 +69,21 @@
       enum.GatewayUiKey.Key:
         type: GatewayBoundUserInterface
   - type: Gateway
+=======
+  - type: StationTeleporter
+    portalLayerMap: "portal"
+    autoLinkKey: Nanotrasen
+  - type: Portal
+    randomTeleport: false
+    canTeleportToOtherMaps: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 1
+  - type: AmbientSound
+    enabled: true
+    sound:
+      path: /Audio/Ambience/ambi_gateway.ogg
+    range: 5
+    volume: 8
+>>>>>>> root/master

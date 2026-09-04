@@ -25,7 +25,6 @@ public sealed partial class DecalPlacementSystem : EntitySystem
     [Dependency] private SharedMapSystem _maps = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SpriteSystem _sprite = default!;
-
     public static readonly EntProtoId DecalAction = "BaseMappingDecalAction";
 
     private string? _decalId;
@@ -74,8 +73,13 @@ public sealed partial class DecalPlacementSystem : EntitySystem
                         if (!coords.IsValid(EntityManager))
                             return false;
 
+<<<<<<< HEAD
                         var decal = new Decal(coords.Position, _decalId, _decalColor, _decalAngle, _zIndex, _cleanable);
                         RaiseNetworkEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(coords)));
+=======
+                var decal = new Decal(coords.Position, _decalId, _decalColor, _decalAngle, _zIndex, _cleanable);
+                RaisePredictiveEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(coords)));
+>>>>>>> root/master
 
                         return true;
                     },
@@ -97,9 +101,13 @@ public sealed partial class DecalPlacementSystem : EntitySystem
 
                         _erasing = true;
 
+<<<<<<< HEAD
                         // Trieste Specific //
                         var gridId = _transform.GetGrid(coords);
                         uint? targetDecalId = null;
+=======
+                RaisePredictiveEvent(new RequestDecalRemovalEvent(GetNetCoordinates(coords)));
+>>>>>>> root/master
 
                         if (gridId != null && TryComp<DecalGridComponent>(gridId.Value, out var decalComp))
                         {
@@ -175,7 +183,7 @@ public sealed partial class DecalPlacementSystem : EntitySystem
         args.Target = args.Target.Offset(new Vector2(-0.5f, -0.5f));
 
         var decal = new Decal(args.Target.Position, args.DecalId, args.Color, Angle.FromDegrees(args.Rotation), args.ZIndex, args.Cleanable);
-        RaiseNetworkEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(args.Target)));
+        RaisePredictiveEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(args.Target)));
     }
 
     private void OnFillSlot(FillActionSlotEvent ev)

@@ -15,26 +15,12 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
     [Dependency] private SharedTransformSystem _xformSystem = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
+    [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
 
-        SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
-        SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
-        SubscribeLocalEvent<BuckleComponent, BuckledEvent>(OnBuckledEvent);
-        SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
-        SubscribeLocalEvent<BuckleComponent, AttemptMobCollideEvent>(OnMobCollide);
-    }
+    #region Event Handlers
 
-    private void OnMobCollide(Entity<BuckleComponent> ent, ref AttemptMobCollideEvent args)
-    {
-        if (ent.Comp.Buckled)
-        {
-            args.Cancelled = true;
-        }
-    }
-
-    private void OnStrapMoveEvent(EntityUid uid, StrapComponent component, ref MoveEvent args)
+    [SubscribeLocalEvent]
+    private void OnStrapMoveEvent(Entity<StrapComponent> ent, ref MoveEvent args)
     {
         // I'm moving this to the client-side system, but for the sake of posterity let's keep this comment:
         // > This is mega cursed. Please somebody save me from Mr Buckle's wild ride
@@ -49,12 +35,13 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
         // Give some of the sprite rotations their own drawdepth, maybe as an offset within the rsi, or something like this
         // And we won't ever need to set the draw depth manually
 
-        if (!component.ModifyBuckleDrawDepth)
+        if (!ent.Comp.ModifyBuckleDrawDepth)
             return;
 
         if (args.NewRotation == args.OldRotation)
             return;
 
+<<<<<<< HEAD
         UpdateStrapDrawDepth((uid, component)); // Claw Command
     }
 
@@ -97,12 +84,51 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
 
         // Undo upstream's occupant lowering if anything already applied it, so a mob that was buckled
         // before this ran doesn't stay stuck underneath the item layer.
+=======
+        if (!_spriteQuery.TryComp(ent, out SpriteComponent? strapSprite))
+            return;
+
+        var newDir = (args.NewRotation + _eye.CurrentEye.Rotation).GetCardinalDir();
+        var oldDir = (args.OldRotation + _eye.CurrentEye.Rotation).GetCardinalDir();
+
+        if (newDir == oldDir)
+            return;
+
+        var isNorth = newDir == Direction.North;
+
+>>>>>>> root/master
         foreach (var buckledEntity in ent.Comp.BuckledEntities)
         {
             if (!TryComp<BuckleComponent>(buckledEntity, out var buckle))
                 continue;
 
+<<<<<<< HEAD
             RestoreBuckleDrawDepth((buckledEntity, buckle));
+=======
+            if (!_spriteQuery.TryComp(buckledEntity, out SpriteComponent? buckledSprite))
+                continue;
+
+            if (isNorth)
+            {
+                // This will only assign if empty, it won't get overwritten by new depth on multiple calls, which do happen easily
+                buckle.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+                _sprite.SetDrawDepth((buckledEntity, buckledSprite), strapSprite.DrawDepth - 1);
+            }
+            else if (buckle.OriginalDrawDepth.HasValue)
+            {
+                _sprite.SetDrawDepth((buckledEntity, buckledSprite), buckle.OriginalDrawDepth.Value);
+                buckle.OriginalDrawDepth = null;
+            }
+>>>>>>> root/master
+        }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnMobCollide(Entity<BuckleComponent> ent, ref AttemptMobCollideEvent args)
+    {
+        if (ent.Comp.Buckled)
+        {
+            args.Cancelled = true;
         }
     }
 
@@ -124,17 +150,35 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
     /// Raise the strap over the buckled entity without needing for the strap entity to rotate/move.
     /// Only do so when the strap is facing screen-local north.
     /// </summary>
+    [SubscribeLocalEvent]
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
     {
         if (!args.Strap.Comp.ModifyBuckleDrawDepth)
             return;
 
+<<<<<<< HEAD
         UpdateStrapDrawDepth((args.Strap.Owner, args.Strap.Comp)); // Claw Command
+=======
+        if (!_spriteQuery.TryComp(args.Strap, out SpriteComponent? strapSprite))
+            return;
+
+        if (!_spriteQuery.TryComp(ent.Owner, out SpriteComponent? buckledSprite))
+            return;
+
+        var angle = _xformSystem.GetWorldRotation(args.Strap) + _eye.CurrentEye.Rotation; // Get true screen position, or close enough
+
+        if (angle.GetCardinalDir() != Direction.North)
+            return;
+
+        ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+        _sprite.SetDrawDepth((ent.Owner, buckledSprite), strapSprite.DrawDepth - 1);
+>>>>>>> root/master
     }
 
     /// <summary>
     /// Was the strap raised over its occupants? Drop it back down once the last one leaves.
     /// </summary>
+    [SubscribeLocalEvent]
     private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
     {
         // Claw Command - always restore the mob, even if the strap opted out of depth changes, in case
@@ -144,24 +188,37 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
         if (!args.Strap.Comp.ModifyBuckleDrawDepth)
             return;
 
+<<<<<<< HEAD
         UpdateStrapDrawDepth((args.Strap.Owner, args.Strap.Comp)); // Claw Command
-    }
-
-    private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)
-    {
-        if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals))
+=======
+        if (!_spriteQuery.TryComp(ent.Owner, out SpriteComponent? buckledSprite))
             return;
 
-        if (!Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component) ||
+        if (!ent.Comp.OriginalDrawDepth.HasValue)
+            return;
+
+        _sprite.SetDrawDepth((ent.Owner, buckledSprite), ent.Comp.OriginalDrawDepth.Value);
+        ent.Comp.OriginalDrawDepth = null;
+>>>>>>> root/master
+    }
+
+    [SubscribeLocalEvent]
+    private void OnAppearanceChange(Entity<BuckleComponent> ent, ref AppearanceChangeEvent args)
+    {
+        if (!TryComp<RotationVisualsComponent>(ent, out var rotVisuals))
+            return;
+
+        if (!Appearance.TryGetData<bool>(ent, BuckleVisuals.Buckled, out var buckled, args.Component) ||
             !buckled ||
             args.Sprite == null)
         {
-            _rotationVisualizerSystem.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation);
+            _rotationVisualizerSystem.SetHorizontalAngle((ent, rotVisuals), rotVisuals.DefaultRotation);
             return;
         }
 
         // Animate strapping yourself to something at a given angle
         // TODO: Dump this when buckle is better
-        _rotationVisualizerSystem.AnimateSpriteRotation(uid, args.Sprite, rotVisuals.HorizontalRotation, 0.125f);
+        _rotationVisualizerSystem.AnimateSpriteRotation(ent, args.Sprite, rotVisuals.HorizontalRotation, 0.125f);
     }
+    #endregion Event Handlers
 }

@@ -4,6 +4,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-mothership-core-objective
+  guides: [ Xenoborgs ]
+  tags:
+  - OffStation
+  - Roundstart
   requirements:
   # _ClawCommand: any silicon time (Borg, Station AI, or any dogborg variant)
   # counts toward the 5h gate, so the overlapping silicon roles unlock each other.
@@ -18,7 +22,6 @@
     - JobDogborgService
     - JobDogborgMining
     time: 18000  # 5 hrs
-  guides: [ Xenoborgs ]
 
 - type: antagSpecifier
   parent: RestrictedAntag
@@ -32,6 +35,11 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-xenoborg-objective
+  guides: [ Xenoborgs ]
+  tags:
+  - OffStation
+  - Roundstart
+  - Converted
   requirements:
   # _ClawCommand: any silicon time (Borg, Station AI, or any dogborg variant)
   # counts toward the 5h gate, so the overlapping silicon roles unlock each other.
@@ -46,7 +54,6 @@
     - JobDogborgService
     - JobDogborgMining
     time: 18000  # 5 hrs
-  guides: [ Xenoborgs ]
 
 - type: antagSpecifier
   abstract: true

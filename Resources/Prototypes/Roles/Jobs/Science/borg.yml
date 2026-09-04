@@ -6,6 +6,7 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
+<<<<<<< HEAD
   # _ClawCommand: any silicon time (regular Borg or any dogborg variant)
   # counts toward the 5h gate. Replaces the upstream single-role gate so
   # players who grind dogborg roles also unlock Station AI.
@@ -21,6 +22,11 @@
     - JobDogborgMining
     time: 18000 # 5h
   weight: 10
+=======
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 5h
+>>>>>>> root/master
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain

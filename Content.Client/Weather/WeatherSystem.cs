@@ -63,11 +63,15 @@ public sealed partial class WeatherSystem : SharedWeatherSystem
             weather.Stream ??= _audio.PlayGlobal(weather.Sound, Filter.Local(), true)?.Entity;
 
             if (!_audioQuery.TryComp(weather.Stream, out var audio))
+<<<<<<< HEAD
             {
                 // Stream entity went away underneath us; clear it so it gets replayed next tick.
                 weather.Stream = null;
                 continue;
             }
+=======
+                continue;
+>>>>>>> root/master
 
             var occlusion = 0f;
 

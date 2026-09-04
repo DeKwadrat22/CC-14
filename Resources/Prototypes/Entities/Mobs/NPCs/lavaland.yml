@@ -1,7 +1,11 @@
 - type: entity
   name: watcher
   id: MobWatcherBase
+<<<<<<< HEAD
   parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+=======
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, BaseSlicingRefinable, BaseMobDestructible ]
+>>>>>>> root/master
   abstract: true
   description: It's like it's staring right through you.
   components:

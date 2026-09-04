@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 using Content.Shared.Medical.SuitSensor;
 using Content.Server._ClawCommand.SyndieOutpost; // Claw Command
+=======
+using Content.Shared.Medical.SuitSensors;
+>>>>>>> root/master
 
 namespace Content.Server.Medical.CrewMonitoring;
 
