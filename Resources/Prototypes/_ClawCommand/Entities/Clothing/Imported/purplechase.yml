@@ -164,7 +164,6 @@
     sprite: Imperial/VlClothes/PurpleChase/GlassesOne.rsi
   - type: Clothing
     sprite: Imperial/VlClothes/PurpleChase/GlassesOne.rsi
-  - type: ShowThirstIcons
   - type: SolutionScanner
   - type: FlashImmunity
 

@@ -4,6 +4,7 @@ using Content.Server.GameTicking;
 using Content.Shared.Database;
 using Content.Shared.CCVar;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;

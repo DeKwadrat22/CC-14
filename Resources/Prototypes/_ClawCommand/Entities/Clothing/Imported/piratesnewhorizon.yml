@@ -149,8 +149,6 @@
     - Inorganic
     - Silicon
     - Biological
-  - type: ShowThirstIcons
-  - type: ShowHungerIcons
   - type: ShowSyndicateIcons
   - type: TrayScanner
   - type: ClothingSpeedModifier

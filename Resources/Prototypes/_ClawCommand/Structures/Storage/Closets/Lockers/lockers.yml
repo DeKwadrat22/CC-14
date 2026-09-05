@@ -1,5 +1,5 @@
 - type: entity
-  parent: LockerBaseSecure
+  parent: LockerBase
   id: LockerClawCommandOfficer
   suffix: Claw Command
   name: claw command officer locker
@@ -32,7 +32,7 @@
     stateDoorClosed: cco_door
 
 - type: entity
-  parent: LockerBaseSecure
+  parent: LockerBase
   id: LockerClawCommandMaid
   suffix: Claw Command
   name: claw command maid locker

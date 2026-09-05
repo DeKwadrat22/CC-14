@@ -163,8 +163,7 @@ public sealed partial class GuardianSystem : EntitySystem
         args.Args.Cancelled = true;
     }
 
-    [SubscribeLocalEvent]
-    private void ToggleGuardian(Entity<GuardianHostComponent> ent)
+    public void ToggleGuardian(Entity<GuardianHostComponent> ent)
     {
         if (!_guardianQuery.TryComp(ent.Comp.HostedGuardian, out var guardianComponent))
             return;

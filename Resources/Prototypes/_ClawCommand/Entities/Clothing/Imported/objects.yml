@@ -17,8 +17,6 @@
   components:
   - type: Sprite
     sprite: Imperial/Objects/Weapons/Melee/AdvancedStunBaton/stunbaton.rsi
-  - type: Stunbaton
-    energyPerUse: 25
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000

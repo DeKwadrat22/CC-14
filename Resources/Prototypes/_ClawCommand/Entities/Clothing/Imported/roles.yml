@@ -17,8 +17,6 @@
   components:
   - type: Sprite
     sprite: Imperial/Objects/Weapons/Melee/AdvancedStunBaton/stunbaton.rsi
-  - type: Stunbaton
-    energyPerUse: 25
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:

@@ -38,14 +38,6 @@
     - HeadTop
 
 - type: entity
-  id: ClothingNeckTieBase
-  parent: ClothingNeckBase
-  abstract: true
-  components:
-  - type: Item
-    storedRotation: -45
-
-- type: entity
   id: ClothingUniformJumpsuitMinuteManBase
   parent: ClothingUniformBase
   name: "filler"

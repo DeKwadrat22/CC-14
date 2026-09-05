@@ -57,6 +57,10 @@
   - type: Mech
     maxEquipmentAmount: 0
     airtight: false
+  - type: Vehicle
+  - type: ContainerVehicle
+    containerId: "mech-pilot-slot"
+  - type: ContainerVehicleEntry
     entryDelay: 2
     exitDelay: 2
   - type: Voidfox

@@ -21,7 +21,7 @@
     sprite: _NF/Objects/Specific/Hydroponics/coffee.rsi
     state: produce-beans
   - type: Produce
-    seedId: coffee
+    plantId: CoffeePlants
   - type: Tag
     tags:
     - Fruit

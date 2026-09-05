@@ -101,6 +101,12 @@ public sealed partial class JobPrototype : IPrototype
     public ProtoId<StartingGearPrototype>? StartingGear { get; private set; }
 
     /// <summary>
+    /// Claw command - forces the player to always spawn at a job spawn point for this job (e.g. Prisoner).
+    /// </summary>
+    [DataField]
+    public bool AlwaysUseSpawner;
+
+    /// <summary>
     /// Use this to spawn in as a non-humanoid (borg, test subject, etc.)
     /// Starting gear will be ignored.
     /// If you want to just add special attributes to a humanoid, use AddComponentSpecial instead.

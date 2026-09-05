@@ -26,7 +26,7 @@
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
 
 - type: entity
-  parent: [ BaseRockGibtonite, WallRockBasalt ]
+  parent: [ BaseRockGibtonite, WallRock ]
   id: WallRockBasaltGibtonite
   components:
   - type: Sprite
@@ -103,7 +103,7 @@
 
 - type: entity
   id: WallRockAndesiteGibtonite
-  parent: [ BaseRockGibtonite, WallRockAndesite ]
+  parent: [ BaseRockGibtonite, WallRock ]
   components:
   - type: Sprite
     layers:

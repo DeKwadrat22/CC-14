@@ -26,7 +26,7 @@
   - type: Sprite
     sprite: _GoobStation/Objects/Specific/Hydroponics/strange_berries.rsi
   - type: Produce
-    seedId: strangeBerries
+    plantId: StrangeBerryPlants
   - type: Extractable
     juiceSolution:
       reagents:
@@ -44,7 +44,7 @@
     state: icon
   - type: SolutionContainerManager
   - type: Produce
-    seedId: towercap
+    plantId: TowercapPlants
   - type: ToolRefinable
     refineResult:
     - id: NevcottaBark
@@ -92,7 +92,7 @@
   - type: Item
     heldPrefix: produce
   - type: Produce
-    seedId: bluespaceTomato
+    plantId: BlueTomatoPlants
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
@@ -141,7 +141,7 @@
   - type: Item
     heldPrefix: produce
   - type: Produce
-    seedId: mango
+    plantId: MangoPlants
   - type: Extractable
     juiceSolution:
       reagents:

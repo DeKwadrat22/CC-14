@@ -35,9 +35,11 @@
   metabolisms:
     Metabolites:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -3
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -3
       - !type:ModifyBleedAmount
         amount: -1

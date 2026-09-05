@@ -39,7 +39,7 @@
 - type: entity
   id: LockerCentComm
   name: central command officer locker
-  parent: LockerBaseSecure
+  parent: LockerBase
   components:
   - type: Appearance
   - type: AccessReader
