@@ -22,7 +22,7 @@
 - type: tile
   id: LavalandFloorHierophantArena
   name: DO NOT MAP
-  sprite: /Textures/Tiles/Planet/basalt.png
+  sprite: /Textures/_ClawCommand/Lavaland/Tiles/basalt.png
   isSubfloor: false
   footstepSounds:
     collection: FootstepFloor

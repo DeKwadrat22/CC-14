@@ -4,6 +4,7 @@
   parent: BaseStationTile
   name: tiles-steel-floor
   sprite: /Textures/Tiles/Basic/Gray/gray.png
+  variants: 4
   itemDrop: FloorTileItemSteel
 
 - type: tile
@@ -87,6 +88,7 @@
   parent: BaseStationTile
   name: tiles-white-floor
   sprite: /Textures/Tiles/Basic/White/white.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
@@ -165,6 +167,7 @@
   parent: BaseStationTile
   name: tiles-dark-floor
   sprite: /Textures/Tiles/Basic/Dark/dark.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark

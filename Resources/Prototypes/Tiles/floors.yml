@@ -42,6 +42,7 @@
   parent: BaseStationTile
   name: tiles-wood
   sprite: /Textures/Tiles/Wood/wood.png
+  variants: 4
   footstepSounds:
     collection: FootstepWood
   barestepSounds:

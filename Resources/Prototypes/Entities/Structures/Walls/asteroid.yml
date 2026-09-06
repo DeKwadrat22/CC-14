@@ -1,5 +1,5 @@
 #TODO: Someone should probably move the ore vein prototypes into their own file, or otherwise split this up in some way. This should not be 1.5k lines long.
-# I halved it, but we could still split the planet walls from the asteroid walls. Or prototype generation.
+# 1000 is fine I guess, cobbled all rock defining files together.
 
 # Anyway
 # See WallRock variants for the remappings.
@@ -454,7 +454,7 @@
   id: IronRockArtifactFragment
 
 - type: entity
-  parent: [ BaseRockGibtonite, BaseIronRockVisuals, IronRock ]
+  parent: [ BaseRockGibtonite, BaseIronRockVisuals, BaseAsteroidRock ]
   id: IronRockGibtonite
 
 - type: entity
@@ -770,5 +770,311 @@
 - type: entity
   parent: [ BaseVeinSalt, WallRockChromite ]
   id: WallRockChromiteSalt
+
+#endregion
+#region Wall Rock (Basalt)
+
+- type: entity
+  parent: WallRock
+  id: WallRockBasalt
+  name: basalt
+  description: A heat-forged basalt formation.
+
+#endregion
+#region Wall Rock (Andesite)
+
+- type: entity
+  parent: WallRock
+  id: WallRockAndesite
+  name: andesite
+  description: A craggy andesite formation.
+
+#endregion
+#region BSCrystal
+
+- type: entity
+  id: MeteorRockBSCrystal
+  parent: AsteroidRock
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: IronRockBSCrystal
+  parent: IronRock
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockBSCrystal
+  parent: WallRock
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockBasaltBSCrystal
+  parent: WallRock
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockSnowBSCrystal
+  parent: WallRockSnow
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockSandBSCrystal
+  parent: WallRockSand
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockChromiteBSCrystal
+  parent: WallRockChromite
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+- type: entity
+  id: WallRockAndesiteBSCrystal
+  parent: WallRock
+  suffix: bluespace crystal
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreGold
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_void_opal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false
+
+#endregion
+#region Gibtonite (Wall Rock)
+
+# There was issue with Destructible and Gibtonite
+
+- type: entity
+  abstract: true
+  id: BaseDirtRockVisuals
+  name: rock
+  description: A rocky asteroid.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone-dirt.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone-dirt.rsi
+
+- type: entity
+  abstract: true
+  id: BaseSnowRockVisuals
+  name: snowdrift
+  description: A rocky snowdrift.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone-snow.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone-snow.rsi
+
+- type: entity
+  abstract: true
+  id: BaseSandRockVisuals
+  name: sandstone
+  description: A sandy rock formation.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone-sand.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone-sand.rsi
+
+- type: entity
+  abstract: true
+  id: BaseChromiteRockVisuals
+  name: chromite
+  description: A chromite rock formation.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone-chromite.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone-chromite.rsi
+
+- type: entity
+  abstract: true
+  id: BaseMountainRockVisuals
+  name: mountain rock
+  description: A craggy mountain wall.
+  components:
+  - type: Icon
+    sprite: DeltaV/Structures/Walls/mountain_rock_ore.rsi
+    state: full
+  - type: Sprite
+    sprite: DeltaV/Structures/Walls/mountain_rock_ore.rsi
+
+- type: entity
+  parent: [ BaseRockGibtonite, BaseDirtRockVisuals, BaseAsteroidRock ]
+  id: WallRockGibtonite
+
+- type: entity
+  parent: WallRockGibtonite
+  id: WallRockBasaltGibtonite
+  name: basalt
+  description: A heat-forged basalt formation.
+
+- type: entity
+  parent: WallRockGibtonite
+  id: WallRockAndesiteGibtonite
+  name: andesite
+  description: A craggy andesite formation.
+
+- type: entity
+  parent: [ BaseRockGibtonite, BaseSnowRockVisuals, BaseAsteroidRock ]
+  id: WallRockSnowGibtonite
+
+- type: entity
+  parent: [ BaseRockGibtonite, BaseSandRockVisuals, BaseAsteroidRock ]
+  id: WallRockSandGibtonite
+
+- type: entity
+  parent: [ BaseRockGibtonite, BaseChromiteRockVisuals, BaseAsteroidRock ]
+  id: WallRockChromiteGibtonite
+
+- type: entity
+  parent: [ BaseRockGibtonite, BaseMountainRockVisuals, BaseAsteroidRock ]
+  id: MountainRockGibtonite
+  components:
+  - type: OreVein
+    oreChance: 0.20
+    oreRarityPrototypeId: RandomOreDistributionHigh
 
 #endregion

@@ -387,6 +387,74 @@
     rechargeDuration: 1
 
 - type: entity
+  id: RPD
+  parent: RCD
+  name: RPD
+  description: A device used to rapidly construct atmospheric pipes and devices.
+  components:
+  - type: Tag
+    tags:
+    - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+  - type: LimitedCharges
+    maxCharges: 50
+  - type: Sprite
+    sprite: Objects/Tools/rpd.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Tools/rpd.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+      Plastic: 150
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    lastCharges: -1
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: Cyborg-mounted Rapid Pipe Dispenser which creates compressed matter on the fly using an internal fabricator.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
   name: compressed matter
   parent: BaseItem
   id: RCDAmmo
