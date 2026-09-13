@@ -120,7 +120,6 @@
     checkFixtureCollision: true
     allowMachineLayer: true
   - type: Airlock
-    keepOpenIfClicked: true
     openPanelVisible: true
     denyAnimationTime: 0.4
     animatePanel: false

@@ -4,6 +4,7 @@
   id: PosterBase
   components:
   - type: Sprite
+    drawdepth: HighWallMountedItems
     sprite: Structures/Wallmounts/posters.rsi
   - type: Destructible
     thresholds:

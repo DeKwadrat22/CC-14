@@ -126,37 +126,6 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaximAlt
 
-# Warden's Hardsuit
-- type: entity
-  parent: [ClothingOuterHardsuitBase]
-  id: ClothingOuterHardsuitWardenAlt
-  name: warden's hardsuit
-  description: A specialized riot suit geared to combat low pressure environments.
-  components:
-  - type: Sprite
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/security-warden.rsi
-  - type: Clothing
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/security-warden.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.7
-        Heat: 0.8
-        Caustic: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
-  - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitWardenAlt
-
 # Ling Space Suit
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -276,7 +245,7 @@
 
 - type: entity
   parent: [ClothingOuterHardsuitBase]
-  id: ClothingOuterHardsuitCombatRiotAlt
+  id: ClothingOuterHardsuitRiot
   name: riot combat hardsuit
   description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments.
   components:
@@ -288,25 +257,25 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.50
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.50
-        Slash: 0.50
-        Piercing: 0.50
-        Radiation: 0.70
-        Caustic: 0.70
-        Heat: 0.70
+        Blunt: 0.30
+        Slash: 0.30
+        Piercing: 0.60
+        Radiation: 0.50
+        Caustic: 0.30
+        Heat: 0.30
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.80
+    sprintModifier: 0.80
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatRiotAlt
 
 - type: entity
-  parent: ClothingOuterHardsuitCombatRiotAlt
-  id: ClothingOuterHardsuitCombatWardenAlt
+  parent: ClothingOuterHardsuitRiot
+  id: ClothingOuterHardsuitRiotWarden
   name: warden's riot combat hardsuit
   description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments. This one has station security and warden's rank markings.
   components:
@@ -315,7 +284,7 @@
   - type: Clothing
     sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/Combat/warden.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitCombatWardenAlt
+    clothingPrototype: ClothingHeadHelmetHardsuitRiotWarden
 
 # ============================================================================
 # HELMETS
@@ -391,8 +360,8 @@
     lowPressureMultiplier: 1000
 
 # Salvage Hardsuit Helmet
-# Mirrors vanilla ClothingHeadHelmetHardsuitSalvage by inheriting ClothingHeadSuitWithLightBase
-# so the head-mounted floodlight works and the worn sprite swaps between off-/on-equipped-HELMET.
+# This alt rsi uses off-/on-equipped-HELMET and icon-flash states (no equipped-head*/icon-unshaded/
+# light-overlay), so the floodlight works prefix-driven: toggling swaps the equipped prefix off/on.
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSalvageAlt
@@ -402,8 +371,21 @@
   - type: BreathMask
   - type: Sprite
     sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      shader: unshaded
+      visible: false
+      map: [ "flash" ]
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/salvage.rsi
+    equippedPrefix: off
+    clothingVisuals:
+      none: []
+  - type: ToggleableVisuals
+    spriteLayer: flash
+    clothingVisuals:
+      none: []
   - type: PointLight
     radius: 7
     energy: 3
@@ -452,33 +434,6 @@
       coefficients:
         Heat: 0.90
         Radiation: 0.75
-
-# Warden's Hardsuit Helmet
-# Mirrors vanilla ClothingHeadHelmetHardsuitWarden by inheriting ClothingHeadSuitWithLightBase
-# so the helmet's flashlight works and the worn sprite swaps between off-/on-equipped-HELMET.
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitWardenAlt
-  name: warden's hardsuit helmet
-  description: A modified riot helmet. Oddly comfortable.
-  components:
-  - type: BreathMask
-  - type: Sprite
-    sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
-  - type: Clothing
-    sprite: _ClawCommand/Clothing/Head/Hardsuits/security-warden.rsi
-  - type: PointLight
-    color: "#ffeead"
-  - type: PressureProtection
-    highPressureMultiplier: 0.525
-    lowPressureMultiplier: 1000
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
 
 # Ling Helmet
 - type: entity
@@ -584,10 +539,11 @@
 
 # Combat hardsuit helmets (no upstream equivalent — DeltaV import, kept as-is)
 
-# Combat helmets — alt rsi has icon-flash and off-/on-equipped-HELMET states, so they support
-# the same prefix+light pattern the fork's other combat-class helmets use. Without inheriting
-# ClothingHeadSuitWithLightBase the worn sprite stayed on the default "equipped-HELMET" lookup
-# (which doesn't exist in the rsi) and the helmet had no flashlight.
+# Combat helmets — these alt RSIs use off-/on-equipped-HELMET, off/on-inhand-* and icon-flash states
+# (they have no equipped-head*/icon-unshaded/light-overlay), so sprites are prefix-driven: toggling the
+# flashlight swaps the equipped/held prefix between "off" and "on". We keep ClothingHeadSuitWithLightBase
+# for the flashlight, battery and prefix behavior, but replace its Sprite layers, Clothing visuals and
+# ToggleableVisuals target so only states present in the RSI are referenced.
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatRiotAlt
@@ -597,16 +553,43 @@
   - type: BreathMask
   - type: Sprite
     sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/riot.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      shader: unshaded
+      visible: false
+      map: [ "flash" ]
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/riot.rsi
+    equippedPrefix: off
+    clothingVisuals:
+      none: []
+  - type: ToggleableVisuals
+    spriteLayer: flash
+    clothingVisuals:
+      none: []
 
 - type: entity
-  parent: ClothingHeadHelmetHardsuitCombatRiotAlt
-  id: ClothingHeadHelmetHardsuitCombatWardenAlt
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitRiotWarden
   name: warden's riot combat hardsuit helmet
   description: A purpose-built combat hardsuit helmet for crowd control. This one has station security and warden's rank markings.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/warden.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      shader: unshaded
+      visible: false
+      map: [ "flash" ]
   - type: Clothing
     sprite: _ClawCommand/Clothing/Head/Hardsuits/Combat/warden.rsi
+    equippedPrefix: off
+    clothingVisuals:
+      none: []
+  - type: ToggleableVisuals
+    spriteLayer: flash
+    clothingVisuals:
+      none: []

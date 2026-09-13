@@ -295,10 +295,11 @@
     modifiers:
       coefficients:
         Blunt: 0.4
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.8
-        Caustic: 0.7
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -461,7 +462,7 @@
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
   name: head of security's hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of balistic armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
@@ -474,10 +475,10 @@
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
-      coefficients:
+      coefficients: #I don't enjoy this role but making them suffer with that protection?
         Blunt: 0.6
-        Slash: 0.5
-        Piercing: 0.5
+        Slash: 0.6
+        Piercing: 0.4
         Heat: 0.8
         Radiation: 0.5
         Caustic: 0.6

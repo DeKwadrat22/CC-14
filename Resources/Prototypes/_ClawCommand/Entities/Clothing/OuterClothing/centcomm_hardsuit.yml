@@ -6,9 +6,9 @@
   description: Suit specifically made to meet harsh CentComm requirements of mobility, protection and robust beauty. Asbestos isolation, diamond visor and certified green drip. Extremally expensive and sought after.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuit/cco-hardsuit.rsi
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/cco-hardsuit.rsi
   - type: Clothing
-    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuit/cco-hardsuit.rsi
+    sprite: _ClawCommand/Clothing/OuterClothing/Hardsuits/cco-hardsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000

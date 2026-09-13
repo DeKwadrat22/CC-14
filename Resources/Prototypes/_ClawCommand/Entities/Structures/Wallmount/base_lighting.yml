@@ -9,7 +9,7 @@
   - type: Sprite
     sprite: Structures/Wallmounts/lightbulbcaged.rsi
     state: base
-    drawdepth: Overdoors
+    drawdepth: WallMountedItems
     offset: 0, 1 # 0.75 is better but breaks for east west placement
   - type: PointLight
     energy: 1.0

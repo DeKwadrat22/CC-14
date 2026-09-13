@@ -1,3 +1,4 @@
+#Claw Command Officer filled
 - type: entity
   id: LockerClawCommandOfficerFilled
   suffix: Claw Command Officer, Filled
@@ -12,6 +13,23 @@
     # - id: WeaponEnergyMagnum
     # - id: WeaponPistolMk58 # CLAW COMMAND - removed from locker
     - id: TrackingImplanter
+
+#Claw Command Maid filled
+- type: entity
+  id: LockerClawCommandMaidFilled
+  suffix: Claw Command Maid, Filled
+  parent: LockerClawCommandMaid
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: ClothingHeadHatHoodBioJanitor
+    - id: ClothingOutherBioJanitor
+    - id: BoxCleanerGrenades
+    - id: SoapNT
+    - id: TrackingImplanter
+    - id: ClothingEyesGlassesSunglasses
+
 
 # Ported from space/ Resources/Prototypes/Catalog/Fills/Lockers/heads.yml.
 # Referenced by Resources/Maps/centcomm.yml — without this prototype the centcomm grid

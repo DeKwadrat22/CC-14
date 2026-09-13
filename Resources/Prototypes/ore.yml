@@ -94,6 +94,12 @@
   minOreYield: 1
   maxOreYield: 3
 
+- type: ore
+  id: OreBSCrystal
+  oreEntity: MaterialBluespace1
+  minOreYield: 1
+  maxOreYield: 3
+
 - type: weightedRandomOre
   id: RandomOreDistributionStandard
   weights:

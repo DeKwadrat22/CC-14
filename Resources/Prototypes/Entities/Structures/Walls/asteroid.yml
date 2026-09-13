@@ -799,8 +799,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_asteroid
         - map: [ "enum.EdgeLayer.South" ]
@@ -811,9 +812,13 @@
           state: rock_asteroid_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_asteroid_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: IronRockBSCrystal
@@ -822,8 +827,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: ironrock
         - map: [ "enum.EdgeLayer.South" ]
@@ -834,9 +840,13 @@
           state: ironrock_north
         - map: [ "enum.EdgeLayer.West" ]
           state: ironrock_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockBSCrystal
@@ -845,8 +855,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock
         - map: [ "enum.EdgeLayer.South" ]
@@ -857,9 +868,13 @@
           state: rock_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockBasaltBSCrystal
@@ -868,8 +883,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_wall
         - map: [ "enum.EdgeLayer.South" ]
@@ -880,9 +896,13 @@
           state: rock_wall_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockSnowBSCrystal
@@ -891,8 +911,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_snow
         - map: [ "enum.EdgeLayer.South" ]
@@ -903,9 +924,13 @@
           state: rock_snow_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_snow_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockSandBSCrystal
@@ -914,8 +939,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_sand
         - map: [ "enum.EdgeLayer.South" ]
@@ -926,9 +952,13 @@
           state: rock_sand_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_sand_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockChromiteBSCrystal
@@ -937,8 +967,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_chromite
         - map: [ "enum.EdgeLayer.South" ]
@@ -949,9 +980,13 @@
           state: rock_chromite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_chromite_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 - type: entity
   id: WallRockAndesiteBSCrystal
@@ -960,8 +995,9 @@
   components:
     - type: OreVein
       oreChance: 1.0
-      currentOre: OreGold
+      currentOre: OreBSCrystal
     - type: Sprite
+      sprite: Structures/Walls/rock.rsi
       layers:
         - state: rock_andesite
         - map: [ "enum.EdgeLayer.South" ]
@@ -972,9 +1008,13 @@
           state: rock_andesite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_andesite_west
-        - state: rock_void_opal
+        - state: rock_bluespace_crystal
+          sprite: Structures/Walls/stone-ore.rsi
           map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false
+    - type: IconSmooth
+      mode: NoSprite
+      key: stone
+    - type: SmoothEdge
 
 #endregion
 #region Gibtonite (Wall Rock)

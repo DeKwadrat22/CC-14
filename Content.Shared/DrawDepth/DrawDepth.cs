@@ -91,53 +91,58 @@ namespace Content.Shared.DrawDepth
         WallMountedItems = DrawDepthTag.Default + 2,
 
         /// <summary>
+        ///     Wallmounted items that need to render above other WallMountedItems, e.g. posters on top of wall lights.
+        /// </summary>
+        HighWallMountedItems = DrawDepthTag.Default + 3,
+
+        /// <summary>
         ///     To use for objects that would usually fall under SmallObjects, but appear taller than 1 tile. For example: Reagent Grinder
         /// </summary>
-        LargeObjects = DrawDepthTag.Default + 3,
+        LargeObjects = DrawDepthTag.Default + 4,
 
         /// <summary>
         ///     Generic items. Things that should be above crates & tables, but underneath mobs.
         /// </summary>
-        Items = DrawDepthTag.Default + 4,
+        Items = DrawDepthTag.Default + 5,
         /// <summary>
         /// Stuff that should be drawn below mobs, but on top of items. Like muzzle flash.
         /// </summary>
-        BelowMobs = DrawDepthTag.Default + 5,
+        BelowMobs = DrawDepthTag.Default + 6,
 
-        Mobs = DrawDepthTag.Default + 6,
+        Mobs = DrawDepthTag.Default + 7,
 
-        OverMobs = DrawDepthTag.Default + 7,
+        OverMobs = DrawDepthTag.Default + 8,
 
-        Doors = DrawDepthTag.Default + 8,
+        Doors = DrawDepthTag.Default + 9,
 
         /// <summary>
         /// Blast doors and shutters which go over the usual doors.
         /// </summary>
-        BlastDoors = DrawDepthTag.Default + 9,
+        BlastDoors = DrawDepthTag.Default + 10,
 
         /// <summary>
         /// Stuff that needs to draw over most things, but not effects, like Kudzu.
         /// </summary>
-        Overdoors = DrawDepthTag.Default + 10,
+        Overdoors = DrawDepthTag.Default + 11,
 
         // NOTE: There's a gap here for subfloor layers in mapping mode (need 6 layers in between)
 
         /// <summary>
         ///     Visible atmos gas.
         /// </summary>
-        Gasses = DrawDepthTag.Default + 17,
+        Gasses = DrawDepthTag.Default + 18,
 
         /// <summary>
         ///     Explosions, fire, melee swings. Whatever.
         /// </summary>
-        Effects = DrawDepthTag.Default + 18,
+        Effects = DrawDepthTag.Default + 19,
 
-        Ghosts = DrawDepthTag.Default + 19,
+        Ghosts = DrawDepthTag.Default + 20,
 
         /// <summary>
         ///    Use this selectively if it absolutely needs to be drawn above (almost) everything else. Examples include
         ///    the pointing arrow, the drag & drop ghost-entity, and some debug tools.
         /// </summary>
-        Overlays = DrawDepthTag.Default + 20,
+        Overlays = DrawDepthTag.Default + 21,
     }
 }

@@ -10,7 +10,7 @@
         - !type:NestedSelector
           tableId: FillLockerWarden
         - !type:NestedSelector
-          tableId: FillLockerWardenHarduit
+          tableId: FillLockerWardenHardsuit
 
 - type: entity
   id: LockerWardenFilled
@@ -51,14 +51,13 @@
       prob: 0.02
 
 - type: entityTable
-  id: FillLockerWardenHarduit
+  id: FillLockerWardenHardsuit
   table: !type:AllSelector
     children:
-    - !type:GroupSelector # Claw Command - 33/33/33 Warden / WardenAlt / CombatWardenAlt (DeltaV riot combat hardsuit)
+    - !type:GroupSelector # You get either tank hardsuit or decent one for mime abuse
       children:
       - id: ClothingOuterHardsuitWarden
-      - id: ClothingOuterHardsuitWardenAlt
-      - id: ClothingOuterHardsuitCombatWardenAlt
+      - id: ClothingOuterHardsuitRiotWarden
     - id: OxygenTankFilled
     - id: ClothingMaskBreath
 

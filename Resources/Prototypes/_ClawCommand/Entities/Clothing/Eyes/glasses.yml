@@ -57,6 +57,12 @@
   - type: EyeProtection
   - type: VisionCorrection
   - type: SolutionScanner
+  - type: NightVisionOverlay
+    isEquipment: true
+    toggleAction: ToggleNightVision
+  - type: ThermalVision
+    isEquipment: true
+    toggleAction: ToggleThermalVision
   - type: Tag
     tags:
     - HamsterWearable

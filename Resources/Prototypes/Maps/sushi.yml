@@ -5,7 +5,7 @@
   minPlayers: 45
   maxPlayers: 70
   stations:
-    Sushi:
+    Serpentcrest:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
