@@ -1,6 +1,7 @@
 ﻿using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Content.Shared.Body.Components; // Claw Command - BloodstreamComponent moved to Shared
+using Content.Shared.Body.Systems;
 using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Shared.Abilities.Psionics;

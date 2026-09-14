@@ -7,6 +7,7 @@ using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Components;
+using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Audio.Systems;
 

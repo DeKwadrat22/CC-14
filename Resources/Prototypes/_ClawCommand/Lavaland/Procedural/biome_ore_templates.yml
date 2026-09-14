@@ -2,7 +2,10 @@
   id: OreGibtonite
   entityMask:
     AsteroidRock: AsteroidRockGibtonite
+    IronRock: IronRockGibtonite
+    MountainRock: MountainRockGibtonite
     WallRock: WallRockGibtonite
+    WallRockAndesite: WallRockAndesiteGibtonite
     WallRockBasalt: WallRockBasaltGibtonite
     WallRockChromite: WallRockChromiteGibtonite
     WallRockSand: WallRockSandGibtonite

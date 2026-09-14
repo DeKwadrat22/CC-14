@@ -54,9 +54,6 @@
   id: Ash
 
 - type: Tag
-  id: Stunbaton
-
-- type: Tag
   id: Muzzle
 
 - type: Tag

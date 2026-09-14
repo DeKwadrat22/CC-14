@@ -14,28 +14,18 @@
   id: Civilian
   name: department-Civilian
   description: department-Civilian-description
-  color: "#9FED58"
+  color: "#7F7F7F"
   weight: -10
+  ignoreForDepartmentFallback: true
   roles:
-  - Bartender
-  - Botanist
-  - Chaplain
-  - Chef
-  - Clown
-  - HeadOfPersonnel
-  - Janitor
-  - Lawyer
-  - Librarian
-  - Mime
-  - Musician
   - Passenger
-  - Reporter
   - Visitor
   - ServiceWorker
   - Prisoner #claw command
   - DogborgJanitor # _ClawCommand
   - DogborgService # _ClawCommand
 
+# Please kill this
 - type: department
   id: CentralCommand
   name: department-CentralCommand
@@ -70,6 +60,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  # Please kill these
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -111,6 +102,16 @@
   - SeniorPhysician # _ClawCommand
 
 - type: department
+  id: Science
+  name: department-Science
+  description: department-Science-description
+  color: "#D381C9"
+  roles:
+  - ResearchDirector
+  - Scientist
+  - ResearchAssistant
+
+- type: department
   id: Security
   name: department-Security
   description: department-Security-description
@@ -126,14 +127,25 @@
   - SeniorOfficer # _ClawCommand
 
 - type: department
-  id: Science
-  name: department-Science
-  description: department-Science-description
-  color: "#D381C9"
+  id: Service
+  name: department-Service
+  description: department-Service-description
+  color: "#9FED58"
   roles:
-  - ResearchDirector
-  - Scientist
-  - ResearchAssistant
+  - Bartender
+  - Botanist
+  - Chaplain
+  - Chef
+  - Clown
+  - HeadOfPersonnel
+  - Janitor
+  - Lawyer
+  - Librarian
+  - Mime
+  - Musician
+  - Reporter
+  - ServiceWorker
+  - TramDriver
   - SeniorResearcher # _ClawCommand
   - ForensicMantis # _ClawCommand - psionics port
 
@@ -152,8 +164,10 @@
   description: department-Specific-description
   color: "#9FED58"
   weight: 10
+  ignoreForDepartmentFallback: true
   roles:
   - Reporter
   - Psychologist
   - Anomaly # CLAW COMMAND - Shadekin awakened role
+  - TramDriver
   primary: false

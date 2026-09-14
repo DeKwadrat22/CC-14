@@ -25,6 +25,7 @@ using Content.Shared.Eye;
 using Content.Shared.Heretic;
 using Content.Shared.Mind;
 using Content.Shared.Store.Components;
+using Content.Shared.Store;
 using Content.Shared.Heretic.Prototypes;
 using Content.Server.Chat.Systems;
 using Robust.Shared.Audio;
@@ -254,7 +255,7 @@ public sealed partial class HereticSystem : SharedHereticSystem
         var (mindId, heretic, store, mind) = ent;
         var uid = user ?? mind.CurrentEntity;
 
-        _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { "KnowledgePoint", amount } }, mindId, store);
+        _store.TryAddCurrency(new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> { { "KnowledgePoint", amount } }, mindId, store);
         _store.UpdateUserInterface(uid, mindId, store);
 
         if (_mind.TryGetObjectiveComp<HereticKnowledgeConditionComponent>(mindId, out var objective, mind))

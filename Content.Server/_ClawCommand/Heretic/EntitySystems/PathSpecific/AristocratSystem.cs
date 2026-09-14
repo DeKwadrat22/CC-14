@@ -42,6 +42,7 @@ using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Effects;
 using Content.Shared.Heretic;
+using Content.Goobstation.Common.Atmos;
 using Content.Shared.Movement.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Standing;
@@ -346,7 +347,7 @@ public sealed partial class AristocratSystem : EntitySystem
                     ignored.Add(ent);
                     if (statusQuery.TryComp(ent, out var status))
                     {
-                        _status.TryAddStatusEffect<PressureImmunityComponent>(ent,
+                        _status.TryAddStatusEffect<SpecialPressureImmunityComponent>(ent,
                             "PressureImmunity",
                             TimeSpan.FromSeconds(2),
                             true,

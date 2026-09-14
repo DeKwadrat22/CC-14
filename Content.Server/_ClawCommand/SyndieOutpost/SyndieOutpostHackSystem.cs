@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.Medical.CrewMonitoring;
 using Content.Shared._ClawCommand.SyndieOutpost;
 using Content.Shared.Medical.CrewMonitoring;
-using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Medical.SuitSensors;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 

@@ -7,7 +7,7 @@
   id: StrangeBerrySeeds
   components:
     - type: Seed
-      seedId: strangeBerries
+      plantId: StrangeBerryPlants
     - type: Sprite
       sprite: _GoobStation/Objects/Specific/Hydroponics/strange_berries.rsi
 
@@ -17,6 +17,6 @@
   id: MangoSeeds
   components:
     - type: Seed
-      seedId: mango
+      plantId: MangoPlants
     - type: Sprite
       sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi

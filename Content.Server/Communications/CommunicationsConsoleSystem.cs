@@ -1,29 +1,24 @@
-using System.Linq; // Claw Command
 using Content.Server.Administration.Logs;
-using Content.Server.AlertLevel;
 using Content.Server.Chat.Systems;
 using Content.Server.DeviceNetwork.Systems;
-using Content.Server.Discord; // Claw Command
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
-using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.AlertLevel;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Communications;
 using Content.Shared.Database;
-using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
-using Content.Server.Administration.Managers; // Claw Command
-using Content.Server.Chat.Managers; // Claw Command
+using Content.Shared.Screens;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
-using Robust.Server.Player; // Claw Command
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Communications
 {
@@ -41,23 +36,15 @@ namespace Content.Server.Communications
         [Dependency] private IConfigurationManager _cfg = default!;
         [Dependency] private IAdminLogManager _adminLogger = default!;
         [Dependency] private IdentitySystem _identity = default!;
-        [Dependency] private IChatManager _chatManager = default!; // Claw Command
-        [Dependency] private IAdminManager _adminManager = default!; // Claw Command
-        [Dependency] private DiscordWebhook _discord = default!; // Claw Command
-        [Dependency] private IPlayerManager _playerManager = default!; // Claw Command
 
         private const float UIUpdateInterval = 5.0f;
-
-        // Claw Command - global ERT request cooldown (15 minutes)
-        private const float ERTRequestCooldown = 900f;
-        private float _ertRequestCooldownRemaining;
 
         public override void Initialize()
         {
             // All events that refresh the BUI
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<RoundEndSystemChangedEvent>(_ => OnGenericBroadcastEvent());
-            SubscribeLocalEvent<AlertLevelDelayFinishedEvent>(_ => OnGenericBroadcastEvent());
+            SubscribeLocalEvent<AlertLevelDelayFinishedEvent>((ref AlertLevelDelayFinishedEvent ev) => OnGenericBroadcastEvent());
 
             // Messages from the BUI
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleSelectAlertLevelMessage>(OnSelectAlertLevelMessage);
@@ -65,7 +52,6 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleBroadcastMessage>(OnBroadcastMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
-            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRequestERTMessage>(OnRequestERTMessage); // Claw Command
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -73,10 +59,6 @@ namespace Content.Server.Communications
 
         public override void Update(float frameTime)
         {
-            // Claw Command - tick global ERT request cooldown
-            if (_ertRequestCooldownRemaining > 0f)
-                _ertRequestCooldownRemaining -= frameTime;
-
             var query = EntityQueryEnumerator<CommunicationsConsoleComponent>();
             while (query.MoveNext(out var uid, out var comp))
             {
@@ -122,7 +104,7 @@ namespace Content.Server.Communications
         /// Updates all comms consoles belonging to the station that the alert level was set on
         /// </summary>
         /// <param name="args">Alert level changed event arguments</param>
-        private void OnAlertLevelChanged(AlertLevelChangedEvent args)
+        private void OnAlertLevelChanged(ref AlertLevelChangedEvent args)
         {
             var query = EntityQueryEnumerator<CommunicationsConsoleComponent>();
             while (query.MoveNext(out var uid, out var comp))
@@ -150,39 +132,10 @@ namespace Content.Server.Communications
         /// </summary>
         public void UpdateCommsConsoleInterface(EntityUid uid, CommunicationsConsoleComponent comp)
         {
-            var stationUid = _stationSystem.GetOwningStation(uid);
-            List<string>? levels = null;
-            string currentLevel = default!;
-            float currentDelay = 0;
-
-            if (stationUid != null)
-            {
-                if (TryComp(stationUid.Value, out AlertLevelComponent? alertComp) &&
-                    alertComp.AlertLevels != null)
-                {
-                    if (alertComp.IsSelectable)
-                    {
-                        levels = new();
-                        foreach (var (id, detail) in alertComp.AlertLevels.Levels)
-                        {
-                            if (detail.Selectable)
-                            {
-                                levels.Add(id);
-                            }
-                        }
-                    }
-
-                    currentLevel = alertComp.CurrentLevel;
-                    currentDelay = _alertLevelSystem.GetAlertLevelDelay(stationUid.Value, alertComp);
-                }
-            }
-
+            // TODO: Use component states and predict the UI
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 CanAnnounce(comp),
                 CanCallOrRecall(comp),
-                levels,
-                currentLevel,
-                currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd
             ));
         }
@@ -240,7 +193,7 @@ namespace Content.Server.Communications
             var stationUid = _stationSystem.GetOwningStation(uid);
             if (stationUid != null)
             {
-                _alertLevelSystem.SetLevel(stationUid.Value, message.Level, true, true);
+                _alertLevelSystem.SetLevel(stationUid.Value, message.Level);
             }
         }
 
@@ -298,12 +251,12 @@ namespace Content.Server.Communications
             if (!TryComp<DeviceNetworkComponent>(uid, out var net))
                 return;
 
-            var payload = new NetworkPayload
+            var payload = new ScreenTextPayload
             {
-                [ScreenMasks.Text] = message.Message
+                Text = message.Message,
             };
 
-            _deviceNetworkSystem.QueuePacket(uid, null, payload, net.TransmitFrequency);
+            _deviceNetworkSystem.SendPacket(uid, null, ref payload, net.TransmitFrequency);
 
             _adminLogger.Add(LogType.DeviceNetwork, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following broadcast: {message.Message:msg}");
         }
@@ -348,81 +301,6 @@ namespace Content.Server.Communications
 
             _roundEndSystem.CancelRoundEndCountdown(mob, uid);
             _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(message.Actor):player} has recalled the shuttle.");
-        }
-
-        // Claw Command - ERT request from comms console
-        private void OnRequestERTMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleRequestERTMessage message)
-        {
-            var mob = message.Actor;
-
-            if (_ertRequestCooldownRemaining > 0f)
-            {
-                var minutes = (int) Math.Ceiling(_ertRequestCooldownRemaining / 60f);
-                _popupSystem.PopupEntity(Loc.GetString("comms-console-ert-request-cooldown", ("minutes", minutes)), uid, message.Actor, PopupType.Medium);
-                return;
-            }
-
-            var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, mob, false);
-            RaiseLocalEvent(tryGetIdentityShortInfoEvent);
-            var charName = tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("comms-console-announcement-unknown-sender");
-
-            // Get the player's SS14 account name
-            var accountName = "Unknown";
-            if (_playerManager.TryGetSessionByEntity(mob, out var session))
-                accountName = session.Name;
-
-            var adminCount = _adminManager.ActiveAdmins.Count();
-
-            _ertRequestCooldownRemaining = ERTRequestCooldown;
-
-            _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(mob):player} has requested an ERT from the comms console.");
-
-            // Notify in-game admins via chat
-            _chatManager.SendAdminAlert(Loc.GetString("comms-console-ert-request-admin", ("sender", charName)));
-
-            // Notify Discord
-            SendERTRequestDiscordMessage(charName, accountName, adminCount);
-
-            _popupSystem.PopupEntity(Loc.GetString("comms-console-ert-request-sent"), uid, message.Actor, PopupType.Medium);
-        }
-
-        // Claw Command
-        private async void SendERTRequestDiscordMessage(string charName, string accountName, int adminCount)
-        {
-            try
-            {
-                var webhookUrl = _cfg.GetCVar(CCVars.DiscordERTRequestWebhook);
-                if (string.IsNullOrEmpty(webhookUrl))
-                    return;
-
-                if (await _discord.GetWebhook(webhookUrl) is not { } identifier)
-                    return;
-
-                var roleId = _cfg.GetCVar(CCVars.DiscordERTRequestRoleWebhook);
-
-                var adminStatus = adminCount > 0
-                    ? $"**{adminCount}** admin(s) currently online."
-                    : "**No admins** currently online.";
-
-                var message = $"An ERT has been requested by **{charName}** (account: `{accountName}`) from the communications console. {adminStatus} An admin is needed to approve and deploy the team.";
-
-                // Only ping the role if no admins are online
-                string content;
-                if (adminCount == 0 && !string.IsNullOrEmpty(roleId))
-                    content = $"<@&{roleId}> {message}";
-                else
-                    content = message;
-
-                var payload = new WebhookPayload { Content = content };
-                if (adminCount == 0 && !string.IsNullOrEmpty(roleId))
-                    payload.AllowedMentions.AllowRoleMentions();
-
-                await _discord.CreateMessage(identifier.ToIdentifier(), payload);
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Error while sending ERT request Discord message:\n{e}");
-            }
         }
     }
 

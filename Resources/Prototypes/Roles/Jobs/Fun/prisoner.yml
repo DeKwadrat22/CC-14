@@ -1,0 +1,11 @@
+# Prisoner isn't an actual roundstart role, so these startingGear prototypes are mostly for use with the "Set Outfit" debug verb
+# PrisonerGear / PrisonerChameleonOutfit are overridden by _ClawCommand/Roles/Jobs/prisoner.yml.
+
+- type: startingGear
+  id: PrisonerMuzzledGear
+  equipment:
+    mask: ClothingMaskMuzzle
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+    id: PrisonerIDCard
+

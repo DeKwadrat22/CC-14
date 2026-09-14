@@ -32,7 +32,6 @@
     belt: ClothingBeltCentcommSheathFilled
     suitstorage: OxygenTankFilled
     pocket1: WeaponPulsePistol
-    pocket2: FlashlightSeclite
   storage:
     back:
       - BoxSurvivalMilitaryDouble

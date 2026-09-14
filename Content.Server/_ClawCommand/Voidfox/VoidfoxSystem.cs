@@ -8,13 +8,13 @@ using Content.Shared.Actions;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.DragDrop;
-using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Mind.Components;
 using Content.Shared.NodeContainer;
 using Content.Shared.Popups;
+using Content.Shared.Vehicle;
+using Content.Shared.Vehicle.Systems;
 using Robust.Server.GameObjects;
-using Robust.Shared.Containers;
 using Robust.Shared.Map;
 
 namespace Content.Server._ClawCommand.Voidfox;
@@ -36,6 +36,7 @@ public sealed partial class VoidfoxSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedMapSystem _mapManager = default!;
+    [Dependency] private VehicleSystem _vehicleSystem = default!;
 
     /// <summary>Pipe node id used for the fuel-fill port on the voidfox prototype.</summary>
     public const string FuelPortName = "fuelPort";
@@ -59,41 +60,30 @@ public sealed partial class VoidfoxSystem : EntitySystem
 
         SubscribeLocalEvent<VoidfoxComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
 
-        // Pilot insert/eject -> grant/revoke pilot actions.
-        SubscribeLocalEvent<VoidfoxComponent, EntInsertedIntoContainerMessage>(OnContainerInserted);
-        SubscribeLocalEvent<VoidfoxComponent, EntRemovedFromContainerMessage>(OnContainerRemoved);
+        // Pilot enter/exit -> grant/revoke pilot actions.
+        SubscribeLocalEvent<VoidfoxComponent, VehicleOperatorSetEvent>(OnVehicleOperatorSet);
 
         // Pilot action handlers.
         SubscribeLocalEvent<VoidfoxComponent, VoidfoxIgniteEvent>(OnIgnite);
         SubscribeLocalEvent<VoidfoxComponent, VoidfoxMassScanEvent>(OnMassScan);
     }
 
-    private void OnContainerInserted(Entity<VoidfoxComponent> ent, ref EntInsertedIntoContainerMessage args)
+    private void OnVehicleOperatorSet(Entity<VoidfoxComponent> ent, ref VehicleOperatorSetEvent args)
     {
-        if (!IsPilotSlot(ent.Owner, args.Container))
-            return;
+        if (args.OldOperator is { } oldPilot)
+        {
+            _actions.RemoveProvidedActions(oldPilot, ent.Owner);
+            ent.Comp.IgniteActionEntity = null;
+            ent.Comp.MassScanActionEntity = null;
+        }
 
-        var pilot = args.Entity;
-        _actions.AddAction(pilot, ref ent.Comp.IgniteActionEntity, ent.Comp.IgniteAction, ent.Owner);
-        _actions.AddAction(pilot, ref ent.Comp.MassScanActionEntity, ent.Comp.MassScanAction, ent.Owner);
+        if (args.NewOperator is { } pilot)
+        {
+            _actions.AddAction(pilot, ref ent.Comp.IgniteActionEntity, ent.Comp.IgniteAction, ent.Owner);
+            _actions.AddAction(pilot, ref ent.Comp.MassScanActionEntity, ent.Comp.MassScanAction, ent.Owner);
+        }
+
         UpdateUi(ent);
-    }
-
-    private void OnContainerRemoved(Entity<VoidfoxComponent> ent, ref EntRemovedFromContainerMessage args)
-    {
-        if (!IsPilotSlot(ent.Owner, args.Container))
-            return;
-
-        var pilot = args.Entity;
-        _actions.RemoveProvidedActions(pilot, ent.Owner);
-        ent.Comp.IgniteActionEntity = null;
-        ent.Comp.MassScanActionEntity = null;
-        UpdateUi(ent);
-    }
-
-    private bool IsPilotSlot(EntityUid uid, BaseContainer container)
-    {
-        return TryComp<MechComponent>(uid, out var mech) && container.ID == mech.PilotSlotId;
     }
 
     private void OnIgnite(Entity<VoidfoxComponent> ent, ref VoidfoxIgniteEvent args)
@@ -314,7 +304,7 @@ public sealed partial class VoidfoxSystem : EntitySystem
 
     private bool HasOccupant(EntityUid uid)
     {
-        return TryComp<MechComponent>(uid, out var mech) && mech.PilotSlot.ContainedEntity != null;
+        return _vehicleSystem.HasOperator(uid);
     }
 
     private void UpdateAppearance(Entity<VoidfoxComponent> ent)

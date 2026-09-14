@@ -105,44 +105,11 @@ public abstract partial class SharedResearchSystem : EntitySystem
 
     public int GetHighestDisciplineTier(TechnologyDatabaseComponent component, TechDisciplinePrototype techDiscipline)
     {
-        var allTech = ProtoMan.EnumeratePrototypes<TechnologyPrototype>()
-            .Where(p => p.Discipline == techDiscipline.ID && !p.Hidden).ToList();
-        var allUnlocked = new List<TechnologyPrototype>();
-        foreach (var recipe in component.UnlockedTechnologies)
-        {
-            var proto = ProtoMan.Index<TechnologyPrototype>(recipe);
-            if (proto.Discipline != techDiscipline.ID)
-                continue;
-            allUnlocked.Add(proto);
-        }
-
-        var highestTier = techDiscipline.TierPrerequisites.Keys.Max();
-        var tier = 2; //tier 1 is always given
-
-        // todo this might break if you have hidden technologies. i'm not sure
-
-        while (tier <= highestTier)
-        {
-            // we need to get the tech for the tier 1 below because that's
-            // what the percentage in TierPrerequisites is referring to.
-            var unlockedTierTech = allUnlocked.Where(p => p.Tier == tier - 1).ToList();
-            var allTierTech = allTech.Where(p => p.Discipline == techDiscipline.ID && p.Tier == tier - 1).ToList();
-
-            if (allTierTech.Count == 0)
-                break;
-
-            var percent = (float) unlockedTierTech.Count / allTierTech.Count;
-            if (percent < techDiscipline.TierPrerequisites[tier])
-                break;
-
-            if (tier >= techDiscipline.LockoutTier &&
-                component.MainDiscipline != null &&
-                techDiscipline.ID != component.MainDiscipline)
-                break;
-            tier++;
-        }
-
-        return tier - 1;
+        // _ClawCommand: tier-prerequisite gate removed. Technologies are unlocked purely
+        // through their technologyPrerequisites chains, so every tier is always reachable
+        // regardless of how many techs in the previous tier have been purchased. The
+        // TierPrerequisites percentages and the lockout-tier mechanic no longer gate anything.
+        return techDiscipline.TierPrerequisites.Keys.Max();
     }
 
     public FormattedMessage GetTechnologyDescription(

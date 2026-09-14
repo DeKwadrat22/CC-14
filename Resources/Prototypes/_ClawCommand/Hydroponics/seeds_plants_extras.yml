@@ -1,0 +1,423 @@
+# Plant entities for sibling-fork seeds, modernised from `- type: seed` prototypes.
+# Each pairs with a seed packet in:
+#   _ClawCommand/Entities/Objects/Specific/Hydroponics/seeds_extras.yml
+#
+# Some chemicals referenced below (Philterex, Libidozenithizine, Pomelustine,
+# Quartzite) do not exist in this fork and will silently not be added to produce.
+
+# ===== _NF =====
+
+- type: entity
+  parent: BasePlant
+  id: SpesosTreePlants
+  categories: [HideSpawnMenu]
+  name: spesos tree
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/spesostree.rsi
+  - type: PlantData
+    name: seeds-spesos-name
+    packetPrototype: SpesosTreeSeeds
+    productPrototypes: [ SpaceCash ]
+  - type: Plant
+    lifespan: 45
+    maturation: 15
+    production: 8
+    yield: 3
+    potency: 10
+    growthStages: 2
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+
+- type: entity
+  parent: BasePlant
+  id: PearPlants
+  categories: [HideSpawnMenu]
+  name: pear tree
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/pear.rsi
+  - type: PlantData
+    name: seeds-pear-name
+    packetPrototype: PearSeeds
+    productPrototypes: [ FoodPear ]
+  - type: Plant
+    lifespan: 55
+    maturation: 6
+    production: 6
+    yield: 3
+    potency: 10
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 10
+        potencyDivisor: 10
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 25
+
+- type: entity
+  parent: BasePlant
+  id: CoffeePlants
+  categories: [HideSpawnMenu]
+  name: coffee shrub
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/coffee.rsi
+  - type: PlantData
+    name: seeds-coffee-name
+    packetPrototype: CoffeeSeeds
+    productPrototypes: [ FoodCoffee ]
+  - type: Plant
+    lifespan: 25
+    maturation: 9
+    production: 1
+    yield: 2
+    potency: 5
+    growthStages: 5
+  - type: PlantGrowth
+    waterConsumption: 0.60
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 2
+        max: 8
+        potencyDivisor: 16
+      Theobromine:
+        min: 1
+        max: 4
+        potencyDivisor: 25
+
+- type: entity
+  parent: BasePlant
+  id: AvocadoPlants
+  categories: [HideSpawnMenu]
+  name: avocado tree
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/avocado.rsi
+  - type: PlantData
+    name: seeds-avocado-name
+    packetPrototype: AvocadoSeeds
+    productPrototypes: [ FoodAvocado ]
+  - type: Plant
+    lifespan: 55
+    maturation: 6
+    production: 6
+    yield: 3
+    potency: 10
+    growthStages: 5
+  - type: PlantGrowth
+    waterConsumption: 0.60
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 10
+        potencyDivisor: 10
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 25
+
+- type: entity
+  parent: BasePlant
+  id: CucumberPlants
+  categories: [HideSpawnMenu]
+  name: cucumber plant
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/cucumber.rsi
+  - type: PlantData
+    name: seeds-cucumber-name
+    packetPrototype: CucumberSeeds
+    productPrototypes: [ FoodCucumber ]
+  - type: Plant
+    lifespan: 50
+    maturation: 7
+    production: 5
+    yield: 4
+    potency: 10
+    growthStages: 5
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 10
+        potencyDivisor: 10
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 25
+
+- type: entity
+  parent: BasePlant
+  id: BeePlants
+  categories: [HideSpawnMenu]
+  name: bee hive
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Hydroponics/bees.rsi
+  - type: PlantData
+    name: seeds-bees-name
+    noun: seeds-noun-nothing # loc key 'seeds-noun-nothing' is not defined in this fork
+    packetPrototype: BeeSeeds
+    productPrototypes: [ FoodHoneyComb ]
+  - type: Plant
+    lifespan: 60
+    maturation: 7
+    production: 5
+    yield: 4
+    potency: 10
+    growthStages: 4
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 10
+        potencyDivisor: 10
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 25
+
+# ===== _Floof =====
+
+- type: entity
+  parent: BasePlant
+  id: HumpShroomPlants
+  categories: [HideSpawnMenu]
+  name: humpshroom
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/humpshroom.rsi
+  - type: PlantData
+    name: seeds-humpshroom-name
+    noun: seeds-noun-spores
+    packetPrototype: HumpShroomSeeds
+    productPrototypes: [ FoodHumpShroom ]
+    mutationPrototypes: [ BreedShroomPlants ]
+  - type: Plant
+    lifespan: 25
+    maturation: 12
+    production: 3
+    yield: 3
+    potency: 10
+    growthStages: 2
+  - type: PlantGrowth
+    waterConsumption: 0.60
+    nutrientConsumption: 0.50
+  - type: PlantChemicals
+    chemicals:
+      Philterex:
+        min: 1
+        max: 5
+        potencyDivisor: 4
+      Milk: # Claw Command - substitute (no Cum reagent in this fork)
+        min: 1
+        max: 20
+        potencyDivisor: 10
+      Nutriment:
+        min: 1
+        max: 5
+        potencyDivisor: 20
+
+- type: entity
+  parent: BasePlant
+  id: BreedShroomPlants
+  categories: [HideSpawnMenu]
+  name: breedshroom
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/breedshroom.rsi
+  - type: PlantData
+    name: seeds-breedshroom-name
+    noun: seeds-noun-spores
+    packetPrototype: BreedShroomSeeds
+    productPrototypes: [ FoodBreedShroom ]
+  - type: Plant
+    lifespan: 25
+    maturation: 12
+    production: 3
+    yield: 3
+    potency: 10
+    growthStages: 2
+  - type: PlantGrowth
+    waterConsumption: 0.80
+    nutrientConsumption: 0.60
+  - type: PlantChemicals
+    chemicals:
+      Libidozenithizine:
+        min: 1
+        max: 2
+        potencyDivisor: 4
+      Milk: # Claw Command - substitute (no Cum reagent in this fork)
+        min: 1
+        max: 20
+        potencyDivisor: 20
+      Philterex:
+        min: 1
+        max: 4
+        potencyDivisor: 5
+      Happiness:
+        min: 1
+        max: 4
+        potencyDivisor: 5
+
+- type: entity # Floofstation
+  parent: BasePlant
+  id: PomegranatePlants
+  categories: [HideSpawnMenu]
+  name: pomegranate bush
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+  - type: PlantData
+    name: seeds-pomegranate-name
+    packetPrototype: PomegranateSeeds
+    productPrototypes: [ FoodPomegranate ]
+  - type: Plant
+    lifespan: 55
+    maturation: 6
+    production: 6
+    yield: 3
+    potency: 10
+  - type: PlantGrowth
+    waterConsumption: 0.60
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Pomelustine:
+        min: 5
+        max: 30
+        potencyDivisor: 10
+      Nutriment:
+        min: 1
+        max: 10
+        potencyDivisor: 25
+
+# ===== DeltaV =====
+
+- type: entity
+  parent: BasePlant
+  id: CrystalThistlePlants
+  categories: [HideSpawnMenu]
+  name: crystal thistle
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Specific/Hydroponics/Crystal_Thistle.rsi
+  - type: PlantData
+    name: seeds-CrystalThistle-name
+    packetPrototype: CrystalThistleSeeds
+    productPrototypes: [ FoodCrystalThistle ]
+  - type: Plant
+    lifespan: 25
+    maturation: 10
+    production: 3
+    yield: 3
+    potency: 10
+    growthStages: 3
+  - type: PlantGrowth
+    waterConsumption: 0.60
+  - type: PlantChemicals
+    chemicals:
+      Ethyloxyephedrine:
+        min: 1
+        max: 25
+        potencyDivisor: 4
+      Quartzite:
+        min: 1
+        max: 25
+        potencyDivisor: 4
+
+- type: entity
+  parent: BasePlant
+  id: GhostPepperPlants
+  categories: [HideSpawnMenu]
+  name: ghost pepper plant
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Specific/Hydroponics/Ghost_Pepper.rsi
+  - type: PlantData
+    name: seeds-GhostPepper-name
+    packetPrototype: GhostPepperSeeds
+    productPrototypes: [ FoodGhostPepper ]
+    mutationPrototypes: [ CosmicRevenantPlants ]
+  - type: Plant
+    lifespan: 25
+    maturation: 6
+    production: 6
+    yield: 2
+    potency: 20
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      CapsaicinOil:
+        min: 2
+        max: 20
+        potencyDivisor: 10
+      Nutriment:
+        min: 2
+        max: 8
+        potencyDivisor: 25
+      Vitamin:
+        min: 2
+        max: 8
+        potencyDivisor: 25
+      Thermite:
+        min: 5
+        max: 20
+        potencyDivisor: 10
+
+- type: entity
+  parent: BasePlant
+  id: CosmicRevenantPlants
+  categories: [HideSpawnMenu]
+  name: cosmic revenant pepper plant
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Specific/Hydroponics/Cosmic_Revenant.rsi
+  - type: PlantData
+    name: seeds-CosmicRevenant-name
+    packetPrototype: CosmicRevenantSeeds
+    productPrototypes: [ FoodCosmicRevenant ]
+  - type: Plant
+    lifespan: 25
+    maturation: 6
+    production: 6
+    yield: 2
+    potency: 20
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      CapsaicinOil:
+        min: 3
+        max: 30
+        potencyDivisor: 10
+      Nutriment:
+        min: 4
+        max: 10
+        potencyDivisor: 25
+      Vitamin:
+        min: 4
+        max: 10
+        potencyDivisor: 25
+      Ectoplasm:
+        min: 1
+        max: 5
+        potencyDivisor: 10

@@ -7,8 +7,6 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Weapons.Melee;
 
-// !! CLAW COMMAND MODIFIED !! //
-
 /// <summary>
 /// When given to a mob lets them do unarmed attacks, or when given to an item lets someone wield it to do attacks.
 /// </summary>
@@ -101,6 +99,12 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public Angle Angle = Angle.FromDegrees(60);
 
+    /// <summary>
+    /// Maximum number of targets allowed for a wide attack.
+    /// </summary>
+    [DataField]
+    public int MaxTargets = 5;
+
     [DataField, AutoNetworkedField]
     public EntProtoId Animation = "WeaponArcThrust";
 
@@ -144,7 +148,7 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField("soundSwing"), AutoNetworkedField]
     public SoundSpecifier SwingSound { get; set; } = new SoundPathSpecifier("/Audio/Weapons/punchmiss.ogg")
     {
-        Params = AudioParams.Default.WithVolume(-3f).WithVariation(0.025f),
+        Params = AudioParams.Default.AddVolume(-3f).WithVariation(0.025f),
     };
 
     // We do not predict the below sounds in case the client thinks but the server disagrees. If this were the case
@@ -171,11 +175,28 @@ public sealed partial class MeleeWeaponComponent : Component
     public bool MustBeEquippedToUse = false;
 
     /// <summary>
-    ///     CC: Moved here from <see cref="SharedMeleeWeaponSystem"/>
-    ///     Maximum number of targets allowed for a wide-attack.
+    /// The last entity hit that the weapon was unable to damage.
+    /// Used to track <see cref="UndamagedSwings"/>.
+    /// <remarks>Only dealt with clientside; therefore not networked.</remarks>
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? LastUndamagedHitEntity;
+
+    /// <summary>
+    /// The number of failed swings against an entity required to display a pop-up that the weapon isn't dealing any damage.
+    /// If set to 0, no pop-up will be displayed.
+    /// <remarks>Only dealt with clientside; therefore not networked.</remarks>
     /// </summary>
     [DataField]
-    public int MaxTargets = 5;
+    public int UndamagedAlertThreshold = 5;
+
+    /// <summary>
+    /// Tracks the number of swings that dealt no damage to <see cref="LastUndamagedHitEntity"/>.
+    /// <seealso cref="UndamagedAlertThreshold"/>
+    /// <remarks>Only dealt with clientside; therefore not networked.</remarks>
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int UndamagedSwings = 0;
 }
 
 /// <summary>

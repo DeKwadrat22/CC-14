@@ -19,7 +19,7 @@ public sealed partial class GunUpgradesSystem : SharedGunUpgradesSystem
 
         // _ClawCommand: GunUpgradeDamage.GunShotEvent already handled by fork's vanilla GunUpgradeSystem.
         // Skip re-subscription. Pressure-multiplier behavior remains on insertion/removal events.
-        SubscribeLocalEvent<GunUpgradeDamageComponent, ProjectileShotEvent>(OnProjectileShot);
+        SubscribeLocalEvent<GunUpgradeDamageComponent, Content.Shared._ClawCommand.Lavaland.Weapons.Ranged.Events.ProjectileShotEvent>(OnProjectileShot);
         SubscribeLocalEvent<GunUpgradePressureComponent, EntGotInsertedIntoContainerMessage>(OnPressureUpgradeInserted);
         SubscribeLocalEvent<GunUpgradePressureComponent, EntGotRemovedFromContainerMessage>(OnPressureUpgradeRemoved);
     }
@@ -44,7 +44,7 @@ public sealed partial class GunUpgradesSystem : SharedGunUpgradesSystem
         }
     }
 
-    private void OnProjectileShot(Entity<GunUpgradeDamageComponent> ent, ref ProjectileShotEvent args)
+    private void OnProjectileShot(Entity<GunUpgradeDamageComponent> ent, ref Content.Shared._ClawCommand.Lavaland.Weapons.Ranged.Events.ProjectileShotEvent args)
     {
         if (!TryComp<ProjectileComponent>(args.FiredProjectile, out var projectile))
             return;

@@ -281,8 +281,8 @@ public sealed partial class OracleSystem : EntitySystem
 
     private bool GetRandomPlantProto(Entity<OracleComponent> oracle, [NotNullWhen(true)] out string? proto)
     {
-        var allPlants = _protoMan.EnumeratePrototypes<SeedPrototype>()
-            .Select(x => x.ProductPrototypes.FirstOrDefault())
+        var allPlants = _protoMan.EnumeratePrototypes<EntityPrototype>()
+            .Select(x => (EntProtoId?) x.ID)
             .Where(x => IsDemandValid(oracle, x))
             .ToList();
 

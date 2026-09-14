@@ -10,7 +10,7 @@
   id: SpesosTreeSeeds
   components:
     - type: Seed
-      seedId: spesos
+      plantId: SpesosTreePlants
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/spesostree.rsi
 
@@ -21,7 +21,7 @@
   id: PearSeeds
   components:
     - type: Seed
-      seedId: pear
+      plantId: PearPlants
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/pear.rsi
 
@@ -32,7 +32,7 @@
   id: CoffeeSeeds
   components:
     - type: Seed
-      seedId: coffee
+      plantId: CoffeePlants
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/coffee.rsi
 
@@ -43,7 +43,7 @@
   id: AvocadoSeeds
   components:
     - type: Seed
-      seedId: avocado
+      plantId: AvocadoPlants
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/avocado.rsi
 
@@ -54,7 +54,7 @@
   id: CucumberSeeds
   components:
     - type: Seed
-      seedId: cucumber
+      plantId: CucumberPlants
     - type: Sprite
       sprite: _NF/Objects/Specific/Hydroponics/cucumber.rsi
 
@@ -65,7 +65,7 @@
   id: BeeSeeds
   components:
     - type: Seed
-      seedId: bees
+      plantId: BeePlants
     - type: StaticPrice
       price: 50
     - type: Sprite
@@ -110,7 +110,7 @@
   id: HumpShroomSeeds
   components:
     - type: Seed
-      seedId: humpShroom
+      plantId: HumpShroomPlants
     - type: Sprite
       sprite: _Floof/Objects/Specific/Hydroponics/humpshroom.rsi
 
@@ -120,7 +120,7 @@
   id: BreedShroomSeeds
   components:
     - type: Seed
-      seedId: breedShroom
+      plantId: BreedShroomPlants
     - type: Sprite
       sprite: _Floof/Objects/Specific/Hydroponics/breedshroom.rsi
 
@@ -131,7 +131,7 @@
   id: PomegranateSeeds
   components:
     - type: Seed
-      seedId: pomegranate
+      plantId: PomegranatePlants
     - type: Sprite
       sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
 
@@ -144,7 +144,7 @@
   id: CrystalThistleSeeds
   components:
     - type: Seed
-      seedId: CrystalThistle
+      plantId: CrystalThistlePlants
     - type: Sprite
       sprite: DeltaV/Objects/Specific/Hydroponics/Crystal_Thistle.rsi
 
@@ -155,7 +155,7 @@
   id: GhostPepperSeeds
   components:
     - type: Seed
-      seedId: GhostPepper
+      plantId: GhostPepperPlants
     - type: Sprite
       sprite: DeltaV/Objects/Specific/Hydroponics/Ghost_Pepper.rsi
 
@@ -166,6 +166,6 @@
   id: CosmicRevenantSeeds
   components:
     - type: Seed
-      seedId: CosmicRevenant
+      plantId: CosmicRevenantPlants
     - type: Sprite
       sprite: DeltaV/Objects/Specific/Hydroponics/Cosmic_Revenant.rsi

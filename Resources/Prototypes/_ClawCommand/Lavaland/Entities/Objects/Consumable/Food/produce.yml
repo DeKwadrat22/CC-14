@@ -15,7 +15,7 @@
       types:
         Blunt: 10
   - type: Produce
-    seedId: towercap
+    plantId: TowercapPlants
   - type: ToolRefinable
     refineResult:
     - id: MaterialAshwoodPlank1

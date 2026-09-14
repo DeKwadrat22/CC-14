@@ -34,7 +34,7 @@ public sealed partial class RitualMuteGhoulifyBehavior : RitualSacrificeBehavior
                 GiveBlade = true,
             };
             args.EntityManager.AddComponent(uid, ghoul, overwrite: true);
-            args.EntityManager.EnsureComponent<MutedComponent>(uid);
+            args.EntityManager.EnsureComponent<MutedStatusEffectComponent>(uid);
             args.EntityManager.EnsureComponent<HereticBladeUserBonusDamageComponent>(uid);
 
             if (args.Limited == null)

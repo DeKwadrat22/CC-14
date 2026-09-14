@@ -144,7 +144,7 @@ public sealed partial class TelepathicChatSystem
             }
         }
 
-        if (!HasComp<SpeechComponent>(uid) || HasComp<MutedComponent>(uid))
+        if (!HasComp<SpeechComponent>(uid) || HasComp<MutedStatusEffectComponent>(uid))
             ev.Descriptors.Add(Loc.GetString("p-descriptor-dumb"));
 
         if (!HasComp<CombatModeComponent>(uid) || HasComp<PacifiedComponent>(uid))

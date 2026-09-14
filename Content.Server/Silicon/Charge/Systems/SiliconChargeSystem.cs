@@ -77,7 +77,7 @@ public sealed partial class SiliconChargeSystem : EntitySystem
         while (query.MoveNext(out var silicon, out var siliconComp))
         {
             if (_mobState.IsDead(silicon)
-                || !siliconComp.BatteryPowered)
+                    || !siliconComp.BatteryPowered)
                 continue;
 
             if (siliconComp.EntityType.Equals(SiliconType.Npc))
@@ -108,7 +108,7 @@ public sealed partial class SiliconChargeSystem : EntitySystem
             var drainRateFinalAddi = 0f;
 
             if (!siliconComp.EntityType.Equals(SiliconType.Npc))
-                drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1;
+                    drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1;
 
             drainRate += Math.Clamp(drainRateFinalAddi, drainRate * -0.9f, batteryComp.Value.Comp.MaxCharge / 240);
 
@@ -120,7 +120,7 @@ public sealed partial class SiliconChargeSystem : EntitySystem
         }
     }
 
-    public void UpdateChargeState(EntityUid uid, short chargePercent, SiliconComponent component)
+        public void UpdateChargeState(EntityUid uid, short chargePercent, SiliconComponent component)
     {
         component.ChargeState = chargePercent;
 
@@ -144,9 +144,9 @@ public sealed partial class SiliconChargeSystem : EntitySystem
         var upperThresh = thermalComp.NormalBodyTemperature + thermalComp.ThermalRegulationTemperatureThreshold;
         var upperThreshHalf = thermalComp.NormalBodyTemperature + thermalComp.ThermalRegulationTemperatureThreshold * 0.5f;
 
-        if (temperComp.CurrentTemperature > upperThreshHalf)
+        if (temperComp.Temperature > upperThreshHalf)
         {
-            var hotTempMulti = Math.Min(temperComp.CurrentTemperature / upperThreshHalf, 4);
+            var hotTempMulti = Math.Min(temperComp.Temperature / upperThreshHalf, 4);
 
             siliconComp.OverheatAccumulator += frameTime;
             if (!(siliconComp.OverheatAccumulator >= 5))
@@ -157,7 +157,7 @@ public sealed partial class SiliconChargeSystem : EntitySystem
             if (!TryComp<FlammableComponent>(silicon, out var flamComp)
                 || flamComp is { OnFire: true }
                 || !TryComp<TemperatureDamageComponent>(silicon, out var tempDmgComp)
-                || !(temperComp.CurrentTemperature > tempDmgComp.HeatDamageThreshold))
+                || !(temperComp.Temperature > tempDmgComp.HeatDamageThreshold))
                 return hotTempMulti;
 
             _popup.PopupEntity(Loc.GetString("silicon-overheating"), silicon, silicon, PopupType.MediumCaution);
@@ -166,8 +166,8 @@ public sealed partial class SiliconChargeSystem : EntitySystem
             return hotTempMulti;
         }
 
-        if (temperComp.CurrentTemperature < thermalComp.NormalBodyTemperature)
-            return 0.5f + temperComp.CurrentTemperature / thermalComp.NormalBodyTemperature * 0.5f;
+        if (temperComp.Temperature < thermalComp.NormalBodyTemperature)
+            return 0.5f + temperComp.Temperature / thermalComp.NormalBodyTemperature * 0.5f;
 
         return 0;
     }

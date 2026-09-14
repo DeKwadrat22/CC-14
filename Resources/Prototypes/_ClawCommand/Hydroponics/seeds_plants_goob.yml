@@ -1,0 +1,67 @@
+# Plant entities for Goob-Station seeds, modernised from - type: seed prototypes.
+# The `bluespaceTomato` seed from Goob was dropped: upstream BlueTomatoPlants/BlueTomatoSeeds
+# already cover it and the IDs would collide.
+
+- type: entity
+  parent: BasePlant
+  id: StrangeBerryPlants
+  categories: [HideSpawnMenu]
+  name: strange berry bush
+  components:
+  - type: Sprite
+    sprite: _GoobStation/Objects/Specific/Hydroponics/strange_berries.rsi
+  - type: PlantData
+    name: seeds-strange-berries-name
+    packetPrototype: StrangeBerrySeeds
+    productPrototypes: [ FoodStrangeBerries ]
+  - type: Plant
+    lifespan: 50
+    maturation: 6
+    production: 6
+    yield: 4
+    potency: 10
+  - type: PlantGrowth
+    nutrientConsumption: 0.6
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Artifexium:
+        min: 2
+        max: 5
+        potencyDivisor: 30
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 40
+
+- type: entity
+  parent: BasePlant
+  id: MangoPlants
+  categories: [HideSpawnMenu]
+  name: mango tree
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi
+  - type: PlantData
+    name: seeds-mango-name
+    packetPrototype: MangoSeeds
+    productPrototypes: [ FoodMango ]
+  - type: Plant
+    lifespan: 55
+    maturation: 6
+    production: 6
+    yield: 3
+    potency: 10
+  - type: PlantHarvest
+    harvestRepeat: Repeat
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 5
+        potencyDivisor: 20
+      Vitamin:
+        min: 1
+        max: 4
+        potencyDivisor: 25

@@ -19,7 +19,7 @@
   - type: Sprite
     sprite: DeltaV/Objects/Specific/Hydroponics/Crystal_Thistle.rsi
   - type: Produce
-    seedId: CrystalThistle
+    plantId: CrystalThistlePlants
   - type: Extractable
     grindableSolutionName: food
 
@@ -51,7 +51,7 @@
   - type: Sprite
     sprite: DeltaV/Objects/Specific/Hydroponics/Ghost_Pepper.rsi
   - type: Produce
-    seedId: GhostPepper
+    plantId: GhostPepperPlants
   - type: Tag
     tags:
     - Vegetable
@@ -84,7 +84,7 @@
   - type: Sprite
     sprite: DeltaV/Objects/Specific/Hydroponics/Cosmic_Revenant.rsi
   - type: Produce
-    seedId: CosmicRevenant
+    plantId: CosmicRevenantPlants
   - type: Tag
     tags:
     - Vegetable

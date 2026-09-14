@@ -16,9 +16,11 @@
   metabolisms:
     Drink:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 0.1
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -0.25
 
 - type: reagent
@@ -35,7 +37,8 @@
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions:
         - !type:ReagentCondition
           reagent: Nutriment
@@ -59,7 +62,8 @@
       metabolismRate: 0.1
       effects:
       # !type:MovespeedModifier stripped — effect not present in this fork.
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
       - !type:HealthChange # minor health benefit if you eat full meals
         conditions:
         - !type:ReagentCondition

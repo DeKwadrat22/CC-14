@@ -12,6 +12,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
+using Content.Shared.Speech.Components;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Prototypes;
 using Content.Shared.Traits.Assorted.Systems;

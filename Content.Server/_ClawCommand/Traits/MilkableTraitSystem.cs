@@ -7,7 +7,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
-using Content.Shared.Udder;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;

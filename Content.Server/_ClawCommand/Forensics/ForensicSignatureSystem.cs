@@ -1,7 +1,7 @@
-using Content.Server.Forensics;
 using Content.Shared._ClawCommand.Forensics;
 using Content.Shared.Forensics;
 using Content.Shared.Forensics.Components;
+using Content.Shared.Forensics.Systems;
 
 namespace Content.Server._ClawCommand.Forensics;
 
