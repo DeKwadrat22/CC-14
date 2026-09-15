@@ -17,7 +17,8 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_sushi.yml
         - type: StationJobs
           availableJobs:
-            # Command (7)
+            # Command (7) / CLAW COMMAND
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
@@ -25,6 +26,8 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
+            ClawCommandOfficer: [ 1, 1 ]
+            ClawCommandMaid: [ 1, 1 ]
             # Service (11-13)
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 2 ]

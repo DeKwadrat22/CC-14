@@ -10,7 +10,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ MetabolizerFelinid ]
+    metabolizerTypes: [ Animal, MetabolizerFelinid ] # CC14 - tajaran also count as animals for digestion/metabolism
 
 - type: entity
   parent: OrganTajaranBase
@@ -115,14 +115,8 @@
   parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranStomach
   components:
-  - type: Stomach
-    specialDigestible:
-      tags:
-      - Meat
-      - Vegetable
-      - Pill
-      - TagNutribrick
-      - TagIceCream
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ] # CC14 - give tajaran an animal stomach for digestion
 
 - type: entity
   parent: [ OrganBaseLiver, OrganTajaranInternal, OrganTajaranMetabolizer ]

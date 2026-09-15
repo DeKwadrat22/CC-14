@@ -44,4 +44,17 @@
                 ToolTip="{Loc 'comms-console-menu-broadcast-button-tooltip'}" />
         </BoxContainer>
     </BoxContainer>
+
+    <!-- Controls for requesting an Emergency Response Team -->
+    <BoxContainer Orientation="Vertical" VerticalExpand="True"
+        TabContainer.TabTitle="{Loc 'comms-console-emergency-tab-title'}">
+        <Label StyleClasses="StatusFieldTitle" Align="Center" VAlign="Top"
+            VerticalAlignment="Top"
+            Text="{Loc 'comms-console-station-emergency-header'}" />
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">
+            <Button Name="RequestErtButton" HorizontalExpand="True" Margin="6 6 6 6"
+                Text="{Loc 'comms-console-menu-request-ert'}"
+                ToolTip="{Loc 'comms-console-menu-request-ert-tooltip'}" />
+        </BoxContainer>
+    </BoxContainer>
 </TabContainer>

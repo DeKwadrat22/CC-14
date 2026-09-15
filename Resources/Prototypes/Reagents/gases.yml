@@ -16,7 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid ]
+          type: [ Human, Animal, Rat, Plant, Arachnid, MetabolizerFelinid, MetabolizerKitsune, MetabolizerFeroxi, MetabolizerFeroxiDehydrated ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth ]
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, MetabolizerFelinid, MetabolizerKitsune, MetabolizerFeroxi, MetabolizerFeroxiDehydrated ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

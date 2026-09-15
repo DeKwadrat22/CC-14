@@ -195,3 +195,17 @@
       prob: 0.001
     - id: MobXenoCrusher
       prob: 0.001
+
+# Claw Command - restored. Upstream deleted this rule in #44057; we want it. The
+# MobReplacementRuleSystem and MobMimic prototype were both left in place by that PR, so this is a
+# prototype-only revert with nothing else to bring back.
+- type: entity
+  id: MimicVendorRule
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    minimumPlayers: 20
+    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    weight: 5
+  - type: MobReplacementRule

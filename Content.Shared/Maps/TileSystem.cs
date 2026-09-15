@@ -122,9 +122,9 @@ public sealed partial class TileSystem : EntitySystem
     /// </summary>
     public byte PickVariant(ContentTileDefinition tile, IRobustRandom random)
     {
-        // Null variants? Uniform distribution.
+        // Null variants? Always use variant 0 (vanilla behavior).
         if (tile.PlacementVariants == null)
-            return random.NextByte(tile.Variants);
+            return 0;
 
         var variants = tile.PlacementVariants;
 

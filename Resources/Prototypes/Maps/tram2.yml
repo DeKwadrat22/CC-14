@@ -17,6 +17,8 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_accordia.yml
         - type: StationJobs
           availableJobs:
+            #command / CLAW COMMAND
+            Anomaly: [ 4, 4 ] # CLAW COMMAND - Shadekin
             #service 13-15
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -29,6 +31,8 @@
             ServiceWorker: [ 1, 1 ]
             Detective: [ 1, 2 ]
             TramDriver: [ 1, 1 ]
+            ClawCommandOfficer: [ 1, 1 ]
+            ClawCommandMaid: [ 1, 1 ]
             #engineering 9
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
@@ -41,10 +45,11 @@
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Psychologist: [1, 1]
-            #science 6
+            #science 7
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
             ResearchAssistant: [ 2, 2 ]
+            ForensicMantis: [ 1, 1 ] # Claw Command - psionics port
             #security 8-9
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]

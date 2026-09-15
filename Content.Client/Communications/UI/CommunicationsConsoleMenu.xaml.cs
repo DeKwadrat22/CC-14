@@ -19,6 +19,7 @@ public sealed partial class CommunicationsConsoleMenu : FancyWindow
     public event Action<ProtoId<AlertLevelPrototype>>? OnAlertLevelChanged;
     public event Action<string>? OnRadioAnnounce;
     public event Action<string>? OnScreenBroadcast;
+    public event Action? OnRequestErt;
 
     public CommunicationsConsoleMenu()
     {
@@ -27,6 +28,7 @@ public sealed partial class CommunicationsConsoleMenu : FancyWindow
 
         MessagingControls.OnRadioAnnounce += message => OnRadioAnnounce?.Invoke(message);
         MessagingControls.OnScreenBroadcast += message => OnScreenBroadcast?.Invoke(message);
+        MessagingControls.OnRequestErt += () => OnRequestErt?.Invoke();
 
         AlertLevelControls.OnAlertLevelChanged += newLevel => OnAlertLevelChanged?.Invoke(newLevel);
 
