@@ -30,6 +30,7 @@ public sealed partial class MessagingControls : TabContainer
 
     public event Action<string>? OnRadioAnnounce;
     public event Action<string>? OnScreenBroadcast;
+    public event Action? OnRequestErt;
 
     private bool _canRadioAnnounce;
     public bool CanRadioAnnounce
@@ -74,6 +75,8 @@ public sealed partial class MessagingControls : TabContainer
             var strings = GetScreenStringArray();
             OnScreenBroadcast?.Invoke(GetScreenString(strings));
         };
+
+        RequestErtButton.OnPressed += _ => OnRequestErt?.Invoke();
 
         SyncButtonState();
         UpdateScreenText();

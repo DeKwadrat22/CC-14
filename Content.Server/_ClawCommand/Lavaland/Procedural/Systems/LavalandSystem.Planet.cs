@@ -90,6 +90,11 @@ public sealed partial class LavalandSystem
         if (prototype.AddComponents != null)
             EntityManager.AddComponents(lavalandMap, prototype.AddComponents);
 
+        // _ClawCommand: planets are generated after the round starts (deferred), so any
+        // docking shuttle that already exists (e.g. the mining shuttle) never saw this FTL
+        // destination. Refresh every docking shuttle's destination list and its consoles.
+        _dockingShuttle.RefreshAllDestinations();
+
         // Preload here to prevent biome entities from overlaying with everything else
         _biome.Preload(lavalandMap, Comp<BiomeComponent>(lavalandMap), loadBox);
 

@@ -37,6 +37,7 @@ public sealed partial class CommunicationsConsoleBoundUserInterface(EntityUid ow
         _menu.OnAlertLevelChanged += AlertLevelSelected;
         _menu.OnShuttleCalled += CallShuttle;
         _menu.OnShuttleRecalled += RecallShuttle;
+        _menu.OnRequestErt += RequestErt;
 
         if (EntMan.TryGetComponent<CommunicationsConsoleComponent>(Owner, out var console))
             _menu.SetBroadcastDisplayEntity(console.ScreenDisplayId);
@@ -74,6 +75,11 @@ public sealed partial class CommunicationsConsoleBoundUserInterface(EntityUid ow
     public void RecallShuttle()
     {
         SendMessage(new CommunicationsConsoleRecallEmergencyShuttleMessage());
+    }
+
+    public void RequestErt()
+    {
+        SendMessage(new CommunicationsConsoleRequestERTMessage());
     }
 
     // TODO: Use component states and update in an AfterAutoHandleState subscription

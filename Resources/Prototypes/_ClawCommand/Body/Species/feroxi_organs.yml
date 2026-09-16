@@ -11,7 +11,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ MetabolizerFeroxi ]
+    metabolizerTypes: [ Animal, MetabolizerFeroxi ] # CC14 - feroxis also count as animals for digestion/metabolism
 
 - type: entity
   parent: OrganFeroxi
@@ -120,14 +120,8 @@
   parent: [ OrganBaseStomach, OrganFeroxiInternal, OrganFeroxiMetabolizer ]
   id: OrganFeroxiStomach
   components:
-  - type: Stomach
-    specialDigestible:
-      tags:
-      - Meat
-      - Pill
-      - TagNutribrick
-      - Crayon
-      - TagIceCream
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ] # CC14 - give feroxis an animal stomach for digestion
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganFeroxiInternal, OrganFeroxiMetabolizer ]

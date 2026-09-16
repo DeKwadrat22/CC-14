@@ -60,18 +60,7 @@ public sealed partial class DockingShuttleSystem : SharedDockingShuttleSystem
     {
         // add any whitelisted destinations that it can FTL to
         // since it needs a whitelist, this excludes the station
-        var query = EntityQueryEnumerator<FTLDestinationComponent, MapComponent>();
-        while (query.MoveNext(out var mapUid, out var dest, out var map))
-        {
-            if (!dest.Enabled || _whitelist.IsWhitelistFailOrNull(dest.Whitelist, ent))
-                continue;
-
-            ent.Comp.Destinations.Add(new DockingDestination()
-            {
-                Name = Name(mapUid),
-                Map = map.MapId
-            });
-        }
+        RefreshDestinations(ent);
 
         // Also update all consoles
         var consoleQuery = EntityQueryEnumerator<DockingConsoleComponent>();
@@ -81,6 +70,52 @@ public sealed partial class DockingShuttleSystem : SharedDockingShuttleSystem
                 continue;
 
             _console.UpdateShuttle((uid, dest));
+        }
+    }
+
+    /// <summary>
+    /// Adds any whitelisted FTL destinations the shuttle doesn't already have.
+    /// Called on map init and via <see cref="RefreshAllDestinations"/> when a new
+    /// FTL destination appears (e.g. when a lavaland planet is generated after the
+    /// shuttle's own map init).
+    /// </summary>
+    private void RefreshDestinations(Entity<DockingShuttleComponent> ent)
+    {
+        var query = EntityQueryEnumerator<FTLDestinationComponent, MapComponent>();
+        while (query.MoveNext(out var mapUid, out var dest, out var map))
+        {
+            if (!dest.Enabled || _whitelist.IsWhitelistFailOrNull(dest.Whitelist, ent))
+                continue;
+
+            if (ent.Comp.Destinations.Any(d => d.Map == map.MapId))
+                continue;
+
+            ent.Comp.Destinations.Add(new DockingDestination()
+            {
+                Name = Name(mapUid),
+                Map = map.MapId
+            });
+
+            Dirty(ent);
+        }
+    }
+
+    /// <summary>
+    /// _ClawCommand: lavaland planets are generated after the round starts (deferred),
+    /// so any shuttle that already spawned won't have seen their FTL destination yet.
+    /// Call this after a new destination-bearing map is created to refresh every docking
+    /// shuttle's destination list and its consoles.
+    /// </summary>
+    public void RefreshAllDestinations()
+    {
+        var query = EntityQueryEnumerator<DockingShuttleComponent>();
+        while (query.MoveNext(out var shuttleUid, out var docking))
+        {
+            if (TerminatingOrDeleted(shuttleUid))
+                continue;
+
+            RefreshDestinations((shuttleUid, docking));
+            _console.UpdateConsolesUsing(shuttleUid);
         }
     }
 

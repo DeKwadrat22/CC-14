@@ -10,7 +10,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ MetabolizerKitsune ]
+    metabolizerTypes: [ Animal, MetabolizerKitsune ] # CC14 - kitsunes also count as animals for digestion/metabolism
 
 - type: entity
   parent: OrganKitsune
@@ -122,6 +122,9 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
   id: OrganKitsuneStomach
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ] # CC14 - give kitsunes an animal stomach for digestion
 
 - type: entity
   parent: [ OrganBaseLiver, OrganKitsuneInternal, OrganKitsuneMetabolizer ]
