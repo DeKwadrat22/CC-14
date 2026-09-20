@@ -29,6 +29,8 @@ public sealed partial class ConditionalSpawnerSystem : EntitySystem
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private TransformSystem _xform = default!;
 
+    private readonly HashSet<EntityUid> _deferredEntityTableSpawns = new();
+
     [SubscribeLocalEvent]
     private void OnCondSpawnMapInit(Entity<ConditionalSpawnerComponent> ent, ref MapInitEvent args)
     {
@@ -46,9 +48,41 @@ public sealed partial class ConditionalSpawnerSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnEntityTableSpawnMapInit(Entity<EntityTableSpawnerComponent> ent, ref MapInitEvent args)
     {
+        if (_xform.GetMapCoordinates(ent, Transform(ent)).MapId == MapId.Nullspace)
+        {
+            _deferredEntityTableSpawns.Add(ent);
+            return;
+        }
+
+        SpawnEntityTableChildren(ent);
+    }
+
+    private void SpawnEntityTableChildren(Entity<EntityTableSpawnerComponent> ent)
+    {
         Spawn(ent);
         if (ent.Comp.DeleteSpawnerAfterSpawn && !TerminatingOrDeleted(ent) && Exists(ent))
             QueueDel(ent);
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (_deferredEntityTableSpawns.Count == 0)
+            return;
+
+        _deferredEntityTableSpawns.RemoveWhere(uid =>
+        {
+            if (!Exists(uid))
+                return true;
+
+            var xform = Transform(uid);
+            if (_xform.GetMapCoordinates(uid, xform).MapId == MapId.Nullspace)
+                return false;
+
+            if (TryComp(uid, out EntityTableSpawnerComponent? comp))
+                SpawnEntityTableChildren((uid, comp));
+
+            return true;
+        });
     }
 
     [SubscribeLocalEvent]
